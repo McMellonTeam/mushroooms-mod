@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "R": {
+      "item": "mushrooomsmod:purple_mushroom_powder"
+    }
+  },
+  "pattern": [
+    "RRR",
+    "RRR",
+    "RRR"
+  ],
+  "result": {
+    "item": "mushrooomsmod:compressed_purple_mushroom"
+  },
+  "show_notification": true
+}

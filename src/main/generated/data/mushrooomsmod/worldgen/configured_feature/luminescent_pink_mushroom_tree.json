@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:huge_luminescent_pink_mushroom",
+  "config": {
+    "cap_provider": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "mushrooomsmod:luminescent_pink_mushroom_block"
+      }
+    },
+    "foliage_radius": 4,
+    "stem_provider": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "mushrooomsmod:transparent_mushroom_stem"
+      }
+    }
+  }
+}
