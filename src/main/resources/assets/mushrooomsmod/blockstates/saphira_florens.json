@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "mushrooomsmod:block/saphira_florens_bottom"
+    },
+    "half=upper": {
+      "model": "mushrooomsmod:block/saphira_florens_top"
+    }
+  }
+}

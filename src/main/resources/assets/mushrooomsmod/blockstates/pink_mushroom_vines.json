@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "berries=false": {
+      "model": "mushrooomsmod:block/pink_mushroom_vines"
+    },
+    "berries=true": {
+      "model": "mushrooomsmod:block/pink_mushroom_vines_lit"
+    }
+  }
+}

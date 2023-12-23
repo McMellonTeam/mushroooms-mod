@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "age=0": {
+      "model": "mushrooomsmod:block/big_purple_mushroom_stage1"
+    },
+    "age=1": {
+      "model": "mushrooomsmod:block/big_purple_mushroom_stage2"
+    },
+    "age=2": {
+      "model": "mushrooomsmod:block/big_purple_mushroom_stage3"
+    },
+    "age=3": {
+      "model": "mushrooomsmod:block/big_purple_mushroom_stage4"
+    }
+  }
+}

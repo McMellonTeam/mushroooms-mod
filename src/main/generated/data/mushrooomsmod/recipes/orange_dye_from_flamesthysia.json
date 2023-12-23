@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "orange_perennial_dye_craft",
+  "ingredients": [
+    {
+      "item": "mushrooomsmod:flamesthysia"
+    }
+  ],
+  "result": {
+    "item": "minecraft:orange_dye"
+  }
+}

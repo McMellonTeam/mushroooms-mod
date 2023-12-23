@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "lyellow_quince_dye_craft",
+  "ingredients": [
+    {
+      "item": "mushrooomsmod:quince_yellow"
+    }
+  ],
+  "result": {
+    "item": "minecraft:yellow_dye"
+  }
+}

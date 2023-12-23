@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "mushrooomsmod:block/turquosum_stilus_bottom"
+    },
+    "half=upper": {
+      "model": "mushrooomsmod:block/turquosum_stilus_top"
+    }
+  }
+}

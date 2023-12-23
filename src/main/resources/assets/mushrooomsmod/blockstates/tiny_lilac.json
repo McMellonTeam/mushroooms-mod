@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "mushrooomsmod:block/lilac_bottom"
+    },
+    "half=upper": {
+      "model": "mushrooomsmod:block/lilac_top"
+    }
+  }
+}

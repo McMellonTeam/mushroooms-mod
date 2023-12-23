@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "mushrooomsmod:block/caerulea_volubilis_stage3"
+  }
+}

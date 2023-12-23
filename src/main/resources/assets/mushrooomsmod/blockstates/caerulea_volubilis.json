@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "age=0": {"model": "mushrooomsmod:block/caerulea_volubilis_stage0"},
+    "age=1": {"model": "mushrooomsmod:block/caerulea_volubilis_stage1"},
+    "age=2": {"model": "mushrooomsmod:block/caerulea_volubilis_stage2"},
+    "age=3": {"model": "mushrooomsmod:block/caerulea_volubilis_stage3"},
+    "age=4": {"model": "mushrooomsmod:block/caerulea_volubilis_stage4"}
+
+  }
+}

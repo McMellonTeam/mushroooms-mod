@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "mushrooomsmod:item/purple_mushroom_powder"
+  }
+}

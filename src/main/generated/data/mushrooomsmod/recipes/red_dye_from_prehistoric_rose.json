@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "red_prehistoric_rose_dye_craft",
+  "ingredients": [
+    {
+      "item": "mushrooomsmod:prehistoric_rose"
+    }
+  ],
+  "result": {
+    "item": "minecraft:red_dye"
+  }
+}

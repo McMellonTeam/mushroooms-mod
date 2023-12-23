@@ -1,0 +1,44 @@
+{
+	"schemaVersion": 1,
+	"id": "mushrooomsmod",
+	"version": "${version}",
+	"name": "Mushroooms Mod",
+	"description": "This is my first mod where I try to add new mushrooms and different a bunch of things to minecraft!",
+	"authors": [
+		"RodoFire"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "MIT",
+	"icon": "assets/mushrooomsmod/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.louis.mushrooomsmod.MushrooomsMod"
+		],
+		"client": [
+			"net.louis.mushrooomsmod.MushrooomsModClient"
+		],
+		"fabric-datagen": [
+          "net.louis.mushrooomsmod.MushrooomsModDataGenerator"
+		],
+		"terrablender" : [
+			"net.louis.mushrooomsmod.world.biome.ModTerrablenderAPI"
+		]
+	},
+	"mixins": [
+		"mushrooomsmod.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.14.22",
+		"minecraft": "~1.20.1",
+		"java": ">=17",
+		"geckolib": ">=4.2.2",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}

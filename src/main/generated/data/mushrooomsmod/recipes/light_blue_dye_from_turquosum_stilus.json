@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "turquosum_dye_craft",
+  "ingredients": [
+    {
+      "item": "mushrooomsmod:turquosum_stilus"
+    }
+  ],
+  "result": {
+    "item": "minecraft:light_blue_dye"
+  }
+}

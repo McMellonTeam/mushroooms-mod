@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "blue_perennial_dye_craft",
+  "ingredients": [
+    {
+      "item": "mushrooomsmod:perennial_blue"
+    }
+  ],
+  "result": {
+    "item": "minecraft:blue_dye"
+  }
+}

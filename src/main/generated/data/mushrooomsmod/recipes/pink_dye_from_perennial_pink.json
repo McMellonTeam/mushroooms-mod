@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "pink_perennial_dye_craft",
+  "ingredients": [
+    {
+      "item": "mushrooomsmod:perennial_pink"
+    }
+  ],
+  "result": {
+    "item": "minecraft:pink_dye"
+  }
+}

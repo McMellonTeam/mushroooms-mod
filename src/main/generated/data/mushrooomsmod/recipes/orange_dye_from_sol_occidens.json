@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "orange_sol_occidentis_dye_craft",
+  "ingredients": [
+    {
+      "item": "mushrooomsmod:sol_occidens"
+    }
+  ],
+  "result": {
+    "item": "minecraft:orange_dye"
+  }
+}

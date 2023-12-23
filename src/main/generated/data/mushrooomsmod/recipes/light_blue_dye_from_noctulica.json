@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "noctulica_dye_craft",
+  "ingredients": [
+    {
+      "item": "mushrooomsmod:noctulica"
+    }
+  ],
+  "result": {
+    "item": "minecraft:light_blue_dye"
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "block.mushrooomsmod.blue_mushroom" : "Champignon Bleu",
+  "block.mushrooomsmod.blue_mushroom_block" : "Bloc De Champignon Bleu",
+
+  "block.mushrooomsmod.green_mushroom" : "Champignon Vert",
+  "block.mushrooomsmod.green_mushroom_block" : "Bloc De Champignon Vert",
+
+  "block.mushrooomsmod.luminescent_mushroom" : "Champignon Luminescent",
+  "block.mushrooomsmod.luminescent_mushroom_block" : "Bloc De Champignon Luminescent",
+  "block.mushrooomsmod.luminescent_mushroom_stem" : "Tige De Champignon Luminescent",
+
+  "block.mushrooomsmod.mushroom_flowers": "Bosquet De Champignons",
+
+  "block.mushrooomsmod.luminescent_pink_mushroom" : "Champignon Luminescent Rose",
+  "block.mushrooomsmod.luminescent_pink_mushroom_block" : "Bloc De Champignon Rose Luminescent",
+
+  "block.mushrooomsmod.purple_mushroom" : "Champignon Violet",
+  "block.mushrooomsmod.purple_mushroom_block" : "Bloc De Champignon Violet",
+
+  "block.mushrooomsmod.transparent_mushroom_stem" : "Tige De Champignon Tranparente",
+
+
+  "block.mushrooomsmod.green_lantern" : "Lanterne Verte",
+  "block.mushrooomsmod.red_lantern" : "Lanterne Rouge",
+  "block.mushrooomsmod.green_campfire" : "Feu De Camp Vert",
+
+
+  "block.mushrooomsmod.oculae" : "Oculae",
+  "block.mushrooomsmod.compressed_purple_mushroom" : "Bloc De Gros Champignons Violets Ecrasés",
+
+
+  "item.mushrooomsmod.baguette" : "Baguette",
+  "item.mushrooomsmod.big_purple_mushrooms_seed" : "Graines De Gros Champignon Violet",
+  "item.mushrooomsmod.compressed_purple_mushroom" : "Gros Champignon Violet Compressé",
+  "item.mushrooomsmod.green_torch_item" : "Torche Verte",
+  "item.mushrooomsmod.purple_mushroom_powder" : "Poudre De Gros Champignon Violet",
+
+
+
+
+  "block.mushrooomsmod.big_purple_mushroom": "Gros Champignon Violet",
+  "block.mushrooomsmod.big_purple_mushroom_plant": "Plante De Gros Champignon Violet",
+  "block.mushrooomsmod.red_lumeria": "Lumeria Rouge",
+  "block.mushrooomsmod.green_torch": "Torche Verte",
+  "item.mushrooomsmod.big_purple_mushroom_seed": "Graines De Gros Champignon Violet"
+}
