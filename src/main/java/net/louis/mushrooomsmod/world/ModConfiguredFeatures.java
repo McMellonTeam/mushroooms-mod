@@ -63,6 +63,12 @@ public class ModConfiguredFeatures <FC extends FeatureConfig>  {
     public static final RegistryKey<ConfiguredFeature<?,?>> TINY_LILAC_KEY = registerKey("tiny_lilac_key");
     public static final RegistryKey<ConfiguredFeature<?,?>> YELICE_KEY = registerKey("yelice_key");
     public static final RegistryKey<ConfiguredFeature<?,?>> FLAMESTHYSIA_KEY = registerKey("flamesthysia_key");
+    public static final RegistryKey<ConfiguredFeature<?,?>> APAGANTHE_KEY = registerKey("apaganthe_key");
+    public static final RegistryKey<ConfiguredFeature<?,?>> PINK_HEATER_KEY = registerKey("pink_heater_key");
+    public static final RegistryKey<ConfiguredFeature<?,?>> WYSTERIA_KEY = registerKey("wysteria_key");
+    public static final RegistryKey<ConfiguredFeature<?,?>> BLUEBELL_KEY = registerKey("bluebell_key");
+
+    public static final RegistryKey<ConfiguredFeature<?,?>> BLUE_LUMINESCENT_VINES_KEY = registerKey("blue_luminescent_vines");
 
 
 
@@ -76,6 +82,9 @@ public class ModConfiguredFeatures <FC extends FeatureConfig>  {
     public static final Feature<ModMushroomFeatureConfig> HUGE_BIG_PURPLE_MUSHROOM = ModConfiguredFeatures.registercustomfeature("huge_big_purple_mushroom_feature", new HugeBigMuchroomFeature(ModMushroomFeatureConfig.CODEC));
     public static final Feature<ModMushroomFeatureConfig> HUGE_BIG_GREEN_MUSHROOM = ModConfiguredFeatures.registercustomfeature("huge_big_green_mushroom_feature", new HugeBigGreenMushroomFeature(ModMushroomFeatureConfig.CODEC));
     public static final Feature<ModMushroomFeatureConfig> HUGE_BIG_RED_MUSHROOM = ModConfiguredFeatures.registercustomfeature("huge_red_green_mushroom_feature", new HugeBigRedMushroomFeature(ModMushroomFeatureConfig.CODEC));
+
+    //Vines Features
+    public static final Feature<TwistingVinesFeatureConfig> BLUE_LUMINESCENT_VINES = ModConfiguredFeatures.registercustomfeature("blue_luminescent_vines_feature", new BlueLuminescentVinesFeature(TwistingVinesFeatureConfig.CODEC));
 
 
 
@@ -126,6 +135,13 @@ public class ModConfiguredFeatures <FC extends FeatureConfig>  {
         register(context, TINY_LILAC_KEY, Feature.FLOWER, new RandomPatchFeatureConfig(32, 6, 2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.TINY_LILAC)))));
         register(context, YELICE_KEY, Feature.FLOWER, new RandomPatchFeatureConfig(32, 6, 2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.YELICE)))));
         register(context, FLAMESTHYSIA_KEY, Feature.FLOWER, new RandomPatchFeatureConfig(32, 6, 2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.FLAMESTHYSIA)))));
+        register(context, APAGANTHE_KEY, Feature.FLOWER, new RandomPatchFeatureConfig(32, 6, 2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.APAGANTHE)))));
+        register(context, PINK_HEATER_KEY, Feature.FLOWER, new RandomPatchFeatureConfig(32, 6, 2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.PINK_HEATER)))));
+        register(context, WYSTERIA_KEY, Feature.FLOWER, new RandomPatchFeatureConfig(32, 6, 2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.WYSTERIA)))));
+        register(context, BLUEBELL_KEY, Feature.FLOWER, new RandomPatchFeatureConfig(32, 6, 2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.BLUEBELL)))));
+
+        //vines
+        register(context, BLUE_LUMINESCENT_VINES_KEY, ModConfiguredFeatures.BLUE_LUMINESCENT_VINES, new TwistingVinesFeatureConfig(10,10,50));
     }
 
     public static RegistryKey<ConfiguredFeature<?, ?>> registerKey(String name) {

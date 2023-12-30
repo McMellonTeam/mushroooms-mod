@@ -8,6 +8,7 @@ import net.louis.mushrooomsmod.item.ModItems;
 import net.minecraft.block.Blocks;
 import net.minecraft.loot.condition.BlockStatePropertyLootCondition;
 import net.minecraft.predicate.StatePredicate;
+import software.bernie.shadowed.eliotlash.mclib.math.functions.classic.Mod;
 
 public class ModLootTableProvider extends FabricBlockLootTableProvider {
     public ModLootTableProvider(FabricDataOutput dataOutput) {
@@ -19,6 +20,7 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
 
 
         //Blocks
+        //Mushrooms
         addDrop(ModBlocks.PURPLE_MUSHROOM_BLOCK);
         addDrop(ModBlocks.GREEN_MUSHROOM_BLOCK);
         addDrop(ModBlocks.BLUE_MUSHROOM_BLOCK);
@@ -26,6 +28,10 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.LUMINESCENT_MUSHROOM_STEM);
         addDrop(ModBlocks.LUMINESCENT_PINK_MUSHROOM_BLOCK);
         addDrop(ModBlocks.COMPRESSED_PURPLE_MUSHROOM);
+
+        //Soft Blocks
+        addDrop(ModBlocks.COMPRESSED_DIRT);
+        addDrop(ModBlocks.LIGHT_COMPRESSED_DIRT);
 
         //Hard Blocks
         addDropWithSilkTouch(ModBlocks.PURPLE_SCHROOM_DEESLATE, Blocks.DEEPSLATE);
@@ -67,6 +73,10 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.TINY_LILAC);
         addDrop(ModBlocks.YELICE);
         addDrop(ModBlocks.FLAMESTHYSIA);
+        addDrop(ModBlocks.APAGANTHE);
+        addDrop(ModBlocks.PINK_HEATER);
+        addDrop(ModBlocks.WYSTERIA);
+        addDrop(ModBlocks.BLUEBELL);
 
         //Vines
         addDrop(ModBlocks.PINK_MUSHROOM_VINES,ModItems.PINK_MUSHROOM_VINES_ITEM);
@@ -112,6 +122,9 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addPottedPlantDrops(ModBlocks.POTTED_YELLOW_QUINCE);
         addPottedPlantDrops(ModBlocks.POTTED_YELICE);
         addPottedPlantDrops(ModBlocks.POTTED_FLAMESTHYSIA);
+        addPottedPlantDrops(ModBlocks.POTTED_APAGANTHE);
+        addPottedPlantDrops(ModBlocks.POTTED_WYSTERIA);
+        addPottedPlantDrops(ModBlocks.POTTED_BLUEBELL);
 
         //Light Blocks
         addDrop(ModBlocks.RED_LANTERN);

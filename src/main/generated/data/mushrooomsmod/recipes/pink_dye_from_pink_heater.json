@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "pink_heater_dye_craft",
+  "ingredients": [
+    {
+      "item": "mushrooomsmod:pink_heater"
+    }
+  ],
+  "result": {
+    "item": "minecraft:pink_dye"
+  }
+}

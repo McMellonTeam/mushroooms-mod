@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:blue_luminescent_vines_feature",
+  "config": {
+    "max_height": 50,
+    "spread_height": 10,
+    "spread_width": 10
+  }
+}

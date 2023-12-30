@@ -1,10 +1,4 @@
 package net.louis.mushrooomsmod.world.biome;
-
-import net.louis.mushrooomsmod.MushrooomsMod;
-import net.louis.mushrooomsmod.world.biome.surface.ModMaterialsRules;
-import net.minecraft.util.Identifier;
-import terrablender.api.Regions;
-import terrablender.api.SurfaceRuleManager;
 import terrablender.api.TerraBlenderApi;
 
 public class ModTerrablenderAPI implements TerraBlenderApi {

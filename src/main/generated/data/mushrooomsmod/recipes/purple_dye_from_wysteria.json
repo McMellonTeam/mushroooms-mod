@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "wysteria_dye_craft",
+  "ingredients": [
+    {
+      "item": "mushrooomsmod:wysteria"
+    }
+  ],
+  "result": {
+    "item": "minecraft:purple_dye"
+  }
+}

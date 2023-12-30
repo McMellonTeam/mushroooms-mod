@@ -83,7 +83,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         //orange
         offerSingleOutputShapelessRecipe(exporter,Items.ORANGE_DYE,ModBlocks.SOL_OCCIDENTIS,"orange_sol_occidentis_dye_craft");
         offerSingleOutputShapelessRecipe(exporter,Items.ORANGE_DYE,ModBlocks.ORANGE_PERENNIAL,"orange_perennial_dye_craft");
-        offerSingleOutputShapelessRecipe(exporter,Items.ORANGE_DYE,ModBlocks.FLAMESTHYSIA,"orange_perennial_dye_craft");
+        offerSingleOutputShapelessRecipe(exporter,Items.ORANGE_DYE,ModBlocks.FLAMESTHYSIA,"flamesthysia_dye_craft");
 
         //red
         offerSingleOutputShapelessRecipe(exporter,Items.RED_DYE,ModBlocks.PREHISTORIC_ROSE,"red_prehistoric_rose_dye_craft");
@@ -97,15 +97,19 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         offerSingleOutputShapelessRecipe(exporter,Items.LIGHT_BLUE_DYE,ModBlocks.TURQUOSUM_STILUS,"turquosum_dye_craft");
         offerSingleOutputShapelessRecipe(exporter,Items.LIGHT_BLUE_DYE,ModBlocks.SAPHIRA_FLORENS,"saphira_florens_dye_craft");
         offerSingleOutputShapelessRecipe(exporter,Items.LIGHT_BLUE_DYE,ModBlocks.CAERULEA_VOLUBILIS,"caerulea_volubilis_dye_craft");
+        offerSingleOutputShapelessRecipe(exporter,Items.LIGHT_BLUE_DYE,ModBlocks.APAGANTHE,"apaganthe_dye_craft");
 
         //blue
         offerSingleOutputShapelessRecipe(exporter,Items.BLUE_DYE,ModBlocks.BLUE_PERENNIAL,"blue_perennial_dye_craft");
+        offerSingleOutputShapelessRecipe(exporter,Items.BLUE_DYE,ModBlocks.BLUEBELL,"bluebelll_dye_craft");
 
         //purple
         offerSingleOutputShapelessRecipe(exporter,Items.PURPLE_DYE,ModBlocks.PURPLE_PERENNIAL,"purple_perennial_dye_craft");
+        offerSingleOutputShapelessRecipe(exporter,Items.PURPLE_DYE,ModBlocks.WYSTERIA,"wysteria_dye_craft");
 
         //pink
         offerSingleOutputShapelessRecipe(exporter,Items.PINK_DYE,ModBlocks.PINK_PERENNIAL,"pink_perennial_dye_craft");
+        offerSingleOutputShapelessRecipe(exporter,Items.PINK_DYE,ModBlocks.PINK_HEATER,"pink_heater_dye_craft");
 
         //green
         offerSingleOutputShapelessRecipe(exporter,Items.GREEN_DYE,ModBlocks.GREEN_PERENNIAL,"green_perennial_dye_craft");

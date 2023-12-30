@@ -11,9 +11,13 @@
 
 
 
+  "block.mushrooomsmod.compressed_dirt": "Compressed Dirt",
+  "block.mushrooomsmod.light_compressed_dirt": "Light Compressed Dirt",
+
   "block.mushrooomsmod.purple_schroom_deepslate" : "Purple Schroom Deepslate",
   "block.mushrooomsmod.blue_luminescent_schroom_deepslate" : "Blue Luminescent Schroom Deepslate",
   "block.mushrooomsmod.green_stony_schroom_depot" : "Green Stony Schroom Depot",
+  "block.mushrooomsmod.rhyolite" : "Rhyolite",
 
 
 
@@ -48,6 +52,14 @@
   "block.mushrooomsmod.perennial_purple": "Purple Perennial",
   "block.mushrooomsmod.quince_red": "Red Quince",
   "block.mushrooomsmod.quince_yellow": "Yellow Quince",
+  "block.mushrooomsmod.yelice": "Yelice",
+  "block.mushrooomsmod.flamesthysia": "Flamesthysia",
+  "block.mushrooomsmod.apaganthe": "Apaganthe",
+  "block.mushrooomsmod.pink_heater": "Pink Heater",
+  "block.mushrooomsmod.wysteria": "Wysteria",
+  "block.mushrooomsmod.bluebell": "BlueBell",
+  "block.mushrooomsmod.tiny_lilac": "Tiny Lilac",
+
 
 
 

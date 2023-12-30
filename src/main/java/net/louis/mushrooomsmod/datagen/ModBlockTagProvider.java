@@ -27,7 +27,9 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 
         //Shovel
         getOrCreateTagBuilder(BlockTags.SHOVEL_MINEABLE)
-                .add(ModBlocks.COMPRESSED_PURPLE_MUSHROOM);
+                .add(ModBlocks.COMPRESSED_PURPLE_MUSHROOM)
+                .add(ModBlocks.COMPRESSED_DIRT)
+                .add(ModBlocks.LIGHT_COMPRESSED_DIRT);
 
         //Axe
         getOrCreateTagBuilder(BlockTags.AXE_MINEABLE)

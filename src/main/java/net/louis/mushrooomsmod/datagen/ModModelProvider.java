@@ -26,6 +26,10 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.GREEN_MUSHROOM_STEM);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.COMPRESSED_PURPLE_MUSHROOM);
 
+        //Soft Blocks
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.COMPRESSED_DIRT);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.LIGHT_COMPRESSED_DIRT);
+
         //Hard Blocks
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.RHYOLITE);
 
@@ -57,6 +61,9 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.YELLOW_QUINCE, ModBlocks.POTTED_YELLOW_QUINCE, BlockStateModelGenerator.TintType.NOT_TINTED);
         blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.YELICE, ModBlocks.POTTED_YELICE, BlockStateModelGenerator.TintType.NOT_TINTED);
         blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.FLAMESTHYSIA, ModBlocks.POTTED_FLAMESTHYSIA, BlockStateModelGenerator.TintType.NOT_TINTED);
+        blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.APAGANTHE, ModBlocks.POTTED_APAGANTHE, BlockStateModelGenerator.TintType.NOT_TINTED);
+        blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.WYSTERIA, ModBlocks.POTTED_WYSTERIA, BlockStateModelGenerator.TintType.NOT_TINTED);
+        blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.BLUEBELL, ModBlocks.POTTED_BLUEBELL, BlockStateModelGenerator.TintType.NOT_TINTED);
 
         //Lights
         blockStateModelGenerator.registerLantern(ModBlocks.RED_LANTERN);

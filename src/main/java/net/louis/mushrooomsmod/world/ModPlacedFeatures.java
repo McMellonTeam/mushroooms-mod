@@ -56,6 +56,13 @@ public class ModPlacedFeatures {
     public static final RegistryKey<PlacedFeature> TINY_LILAC_PLACED_KEY = registerKey("tiny_lilac_placed_key");
     public static final RegistryKey<PlacedFeature> YELICE_PLACED_KEY = registerKey("yelice_placed_key");
     public static final RegistryKey<PlacedFeature> FLAMESTHYSIA_PLACED_KEY = registerKey("flamesthysia_placed_key");
+    public static final RegistryKey<PlacedFeature> APAGANTHE_PLACED_KEY = registerKey("apaganthe_placed_key");
+    public static final RegistryKey<PlacedFeature> PINK_HEATER_PLACED_KEY = registerKey("pink_heater_placed_key");
+    public static final RegistryKey<PlacedFeature> WYSTERIA_PLACED_KEY = registerKey("wysteria_placed_key");
+    public static final RegistryKey<PlacedFeature> BLUEBELL_PLACED_KEY = registerKey("bluebell_placed_key");
+
+    //Vines
+    public static final RegistryKey<PlacedFeature> BLUE_LUMINESCENT_VINES_PLACED_KEY = registerKey("blue_luminescent_vines_placed_key");
 
 
 
@@ -91,7 +98,13 @@ public class ModPlacedFeatures {
         register(context,TINY_LILAC_PLACED_KEY,configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.TINY_LILAC_KEY),VegetationPlacedFeatures.treeModifiersWithWouldSurvive(PlacedFeatures.createCountExtraModifier(1,0.1f,2),ModBlocks.TINY_LILAC));
         register(context,YELICE_PLACED_KEY,configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.YELICE_KEY),VegetationPlacedFeatures.treeModifiersWithWouldSurvive(PlacedFeatures.createCountExtraModifier(1,0.1f,2),ModBlocks.YELICE));
         register(context,FLAMESTHYSIA_PLACED_KEY,configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.FLAMESTHYSIA_KEY),VegetationPlacedFeatures.treeModifiersWithWouldSurvive(PlacedFeatures.createCountExtraModifier(1,0.1f,2),ModBlocks.FLAMESTHYSIA));
+        register(context,APAGANTHE_PLACED_KEY,configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.APAGANTHE_KEY),VegetationPlacedFeatures.treeModifiersWithWouldSurvive(PlacedFeatures.createCountExtraModifier(1,0.1f,2),ModBlocks.APAGANTHE));
+        register(context,PINK_HEATER_PLACED_KEY,configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.PINK_HEATER_KEY),VegetationPlacedFeatures.treeModifiersWithWouldSurvive(PlacedFeatures.createCountExtraModifier(1,0.1f,2),ModBlocks.PINK_HEATER));
+        register(context,WYSTERIA_PLACED_KEY,configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.WYSTERIA_KEY),VegetationPlacedFeatures.treeModifiersWithWouldSurvive(PlacedFeatures.createCountExtraModifier(1,0.1f,2),ModBlocks.WYSTERIA));
+        register(context,BLUEBELL_PLACED_KEY,configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.BLUEBELL_KEY),VegetationPlacedFeatures.treeModifiersWithWouldSurvive(PlacedFeatures.createCountExtraModifier(1,0.1f,2),ModBlocks.BLUEBELL));
 
+        //Vines
+        register(context,BLUE_LUMINESCENT_VINES_PLACED_KEY,configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.BLUE_LUMINESCENT_VINES_KEY),VegetationPlacedFeatures.treeModifiersWithWouldSurvive(PlacedFeatures.createCountExtraModifier(1,0.1f,2),ModBlocks.CAERULEA_VOLUBILIS));
 
     }
 

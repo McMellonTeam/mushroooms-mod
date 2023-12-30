@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "mushrooomsmod:block/pink_heater_bottom"
+    },
+    "half=upper": {
+      "model": "mushrooomsmod:block/pink_heater_top"
+    }
+  }
+}
