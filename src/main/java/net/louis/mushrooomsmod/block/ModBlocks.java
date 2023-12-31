@@ -121,6 +121,10 @@ public class ModBlocks {
         entries.add(ModItems.HYMNE_FRANCAIS_MUSIC_DISC);
         entries.add(ModItems.HYMNE_URSS_MUSIC_DISC);
     }
+    private static void addItemstoSpawnEggsGroup(FabricItemGroupEntries entries){
+        entries.add(ModItems.GROKI_SPAWN_EGG);
+        entries.add(ModItems.BOLETE_COW_SPAWN_EGG);
+    }
 
     //Mushrooms Blocks
     public static final Block LUMINESCENT_MUSHROOM_BLOCK = registerBlock("luminescent_mushroom_block", new GlassBlock(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM_BLOCK).nonOpaque().luminance(10)));
@@ -263,5 +267,6 @@ public class ModBlocks {
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register(ModBlocks::addItemstoFoodGroup);
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.FUNCTIONAL).register(ModBlocks::addItemstoFunctionalGroup);
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(ModBlocks::addItemstoToolsGroup);
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.SPAWN_EGGS).register(ModBlocks::addItemstoSpawnEggsGroup);
     }
 }

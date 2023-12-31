@@ -6,7 +6,9 @@ import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.louis.mushrooomsmod.block.ModBlocks;
 import net.louis.mushrooomsmod.entity.ModEntities;
+import net.louis.mushrooomsmod.entity.client.BoleteCowRenderer;
 import net.louis.mushrooomsmod.entity.client.GrokiRenderer;
+import net.louis.mushrooomsmod.entity.custom.BoleteCowEntity;
 import net.louis.mushrooomsmod.entity.custom.GrokiEntity;
 import net.louis.mushrooomsmod.particle.ModParticles;
 import net.louis.mushrooomsmod.particle.custom.GreenfireParticle;
@@ -124,6 +126,7 @@ public class MushrooomsModClient implements ClientModInitializer {
 
         //Entity
         EntityRendererRegistry.register(ModEntities.GROKI, GrokiRenderer::new);
+        EntityRendererRegistry.register(ModEntities.BOLETE_COW, BoleteCowRenderer::new);
 
 
         //Particle

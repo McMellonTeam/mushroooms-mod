@@ -44,8 +44,6 @@ public class GrokiEntity extends AnimalEntity implements GeoEntity {
         this.goalSelector.add(1, new SwimGoal(this));
         this.goalSelector.add(2, new WanderAroundFarGoal(this, 0.6f, 1));
         this.goalSelector.add(3, new LookAroundGoal(this));
-
-
     }
 
     @Override

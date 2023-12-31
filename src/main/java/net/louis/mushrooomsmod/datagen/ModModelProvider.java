@@ -6,6 +6,7 @@ import net.louis.mushrooomsmod.block.ModBlocks;
 import net.louis.mushrooomsmod.item.ModItems;
 import net.minecraft.data.client.BlockStateModelGenerator;
 import net.minecraft.data.client.ItemModelGenerator;
+import net.minecraft.data.client.ModelIds;
 import net.minecraft.data.client.Models;
 
 public class ModModelProvider extends FabricModelProvider {
@@ -69,6 +70,10 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerLantern(ModBlocks.RED_LANTERN);
         blockStateModelGenerator.registerLantern(ModBlocks.GREEN_LANTERN);
         blockStateModelGenerator.registerTorch(ModBlocks.GREEN_TORCH, ModBlocks.WALL_GREEN_TORCH);
+
+        //Spawn Eggs
+        blockStateModelGenerator.registerParentedItemModel(ModItems.GROKI_SPAWN_EGG, ModelIds.getMinecraftNamespacedItem("template_spawn_egg"));
+        blockStateModelGenerator.registerParentedItemModel(ModItems.BOLETE_COW_SPAWN_EGG, ModelIds.getMinecraftNamespacedItem("template_spawn_egg"));
     }
 
     @Override

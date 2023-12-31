@@ -3,8 +3,8 @@ package net.louis.mushrooomsmod.item;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.louis.mushrooomsmod.MushrooomsMod;
 import net.louis.mushrooomsmod.block.ModBlocks;
+import net.louis.mushrooomsmod.entity.ModEntities;
 import net.louis.mushrooomsmod.sound.ModSounds;
-import net.minecraft.block.Blocks;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -33,6 +33,10 @@ public class ModItems {
     //Disc
     public static final Item HYMNE_FRANCAIS_MUSIC_DISC = registerItem("hymne_francais_music_disc", new MusicDiscItem(11, ModSounds.LA_MARSEILLAISE_DISC, new FabricItemSettings().maxCount(1), 80));
     public static final Item HYMNE_URSS_MUSIC_DISC = registerItem("hymne_urss_music_disc", new MusicDiscItem(10, ModSounds.HYMEN_URSS, new FabricItemSettings().maxCount(1), 210));
+
+    //Egg
+    public static final Item GROKI_SPAWN_EGG = registerItem("groki_spawn_egg", new SpawnEggItem(ModEntities.GROKI,0x765A34,0x1BC2CF,new FabricItemSettings()));
+    public static final Item BOLETE_COW_SPAWN_EGG = registerItem("bolete_cow_spawn_egg", new SpawnEggItem(ModEntities.BOLETE_COW,0xBF28DD,0xF4DBF9,new FabricItemSettings()));
 
 
 
