@@ -30,12 +30,14 @@ public class ModBlocks {
         //Mushroom Related
         entries.add(BLUE_MUSHROOM_BLOCK);
         entries.add(LUMINESCENT_MUSHROOM_BLOCK);
-        entries.add(LUMINESCENT_MUSHROOM_STEM);
         entries.add(PURPLE_MUSHROOM_BLOCK);
         entries.add(GREEN_MUSHROOM_BLOCK);
+        entries.add(YELLOW_MUSHROOM_BLOCK);
+        entries.add(ORANGE_MUSHROOM_BLOCK);
+        entries.add(LUMINESCENT_PINK_MUSHROOM_BLOCK);
+        entries.add(LUMINESCENT_MUSHROOM_STEM);
         entries.add(TRANSPARENT_MUSHROOM_STEM);
         entries.add(GREEN_MUSHROOM_STEM);
-        entries.add(LUMINESCENT_PINK_MUSHROOM_BLOCK);
         entries.add(COMPRESSED_PURPLE_MUSHROOM);
 
         //Soft Blocks
@@ -48,6 +50,7 @@ public class ModBlocks {
         entries.add(GREEN_STONY_SCHROOM_DEPOT);
         entries.add(RHYOLITE);
 
+        //Plants
         //Mushrooms
         entries.add(GREEN_MUSHROOM);
         entries.add(BLUE_MUSHROOM);
@@ -132,6 +135,8 @@ public class ModBlocks {
     public static final Block BLUE_MUSHROOM_BLOCK = registerBlock("blue_mushroom_block", new Block(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM_BLOCK)));
     public static final Block PURPLE_MUSHROOM_BLOCK = registerBlock("purple_mushroom_block", new Block(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM_BLOCK)));
     public static final Block GREEN_MUSHROOM_BLOCK = registerBlock("green_mushroom_block", new Block(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM_BLOCK)));
+    public static final Block YELLOW_MUSHROOM_BLOCK = registerBlock("yellow_mushroom_block", new Block(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM_BLOCK)));
+    public static final Block ORANGE_MUSHROOM_BLOCK = registerBlock("orange_mushroom_block", new Block(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM_BLOCK)));
     public static final Block LUMINESCENT_PINK_MUSHROOM_BLOCK = registerBlock("luminescent_pink_mushroom_block", new GlassBlock(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM_BLOCK).nonOpaque().luminance(10)));
     public static final Block TRANSPARENT_MUSHROOM_STEM = registerBlock("transparent_mushroom_stem", new GlassBlock(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM_BLOCK).nonOpaque().luminance(9)));
     public static final Block GREEN_MUSHROOM_STEM = registerBlock("green_mushroom_stem", new GlassBlock(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM_BLOCK).nonOpaque()));

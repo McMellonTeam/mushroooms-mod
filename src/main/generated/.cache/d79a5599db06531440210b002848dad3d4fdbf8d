@@ -1,8 +1,9 @@
-// 1.20.1	2023-12-31T13:39:57.1794909	Mushroooms Mod/Block Loot Tables
+// 1.20.1	2024-01-01T18:50:02.8692494	Mushroooms Mod/Block Loot Tables
 d89e51bb380c94d583d6cf7ee38b48298b9f0de3 data\mushrooomsmod\loot_tables\blocks\noctulica.json
 c5778176d3abc2cb85c86edc95a8a250dc1094f9 data\mushrooomsmod\loot_tables\blocks\perennial_pink.json
 9052c922f61ece9895ae6bc39a9cd5b11200f400 data\mushrooomsmod\loot_tables\blocks\tiny_green_mushroom.json
 5724aab0224ef6f820c176c448b4cc566c917fa3 data\mushrooomsmod\loot_tables\blocks\compressed_purple_mushroom.json
+0da31c1afece73368ac96b69a8e2e17e3e8d31df data\mushrooomsmod\loot_tables\blocks\yellow_mushroom_block.json
 8591d500c9d848ae025ca05d707b470da361a1cf data\mushrooomsmod\loot_tables\blocks\wysteria.json
 24786126e51921a67c5e46cd8af882aac4e02825 data\mushrooomsmod\loot_tables\blocks\potted_blue_mushroom.json
 f5e2a9df0b54a374e379276362ff38e70f78e7ca data\mushrooomsmod\loot_tables\blocks\potted_flamesthysia.json
@@ -15,6 +16,7 @@ cc7a760bf1a0262bf1744bf796cd8b660a22020a data\mushrooomsmod\loot_tables\blocks\q
 1efac2c84705db53c3655b124a6195e8eb350c8f data\mushrooomsmod\loot_tables\blocks\little_purple_mushroom.json
 9316296193e917b94fb6759b5fc84ea00ff756ba data\mushrooomsmod\loot_tables\blocks\potted_prehisto_blue_schroom.json
 5fc21bff0aed2ea16fbdcfea8abec16fd9fa4fe1 data\mushrooomsmod\loot_tables\blocks\cyanea.json
+4fe0a953378d48d7b74736a7dbc5d8cf12bffc3b data\mushrooomsmod\loot_tables\blocks\orange_mushroom_block.json
 1323ed20693fa1cc241a73c23f01c699152b0c92 data\mushrooomsmod\loot_tables\blocks\luminescent_mushroom_stem.json
 7d2603af626b55889658144ddba14ef638456779 data\mushrooomsmod\loot_tables\blocks\potted_prehisto_green_schroom.json
 336f5fe53ca04529797ae1cca922fdda028924f7 data\mushrooomsmod\loot_tables\blocks\yelice.json

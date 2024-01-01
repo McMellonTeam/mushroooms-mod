@@ -17,11 +17,14 @@ public class ModModelProvider extends FabricModelProvider {
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
         //Blocks
+        //Mushrooms Blocks
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.LUMINESCENT_MUSHROOM_BLOCK);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.LUMINESCENT_MUSHROOM_STEM);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.GREEN_MUSHROOM_BLOCK);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.PURPLE_MUSHROOM_BLOCK);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.BLUE_MUSHROOM_BLOCK);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.YELLOW_MUSHROOM_BLOCK);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.ORANGE_MUSHROOM_BLOCK);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.LUMINESCENT_PINK_MUSHROOM_BLOCK);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.TRANSPARENT_MUSHROOM_STEM);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.GREEN_MUSHROOM_STEM);

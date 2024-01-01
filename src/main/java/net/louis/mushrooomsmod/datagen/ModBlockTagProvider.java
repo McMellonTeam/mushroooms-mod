@@ -38,6 +38,8 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.LUMINESCENT_PINK_MUSHROOM_BLOCK)
                 .add(ModBlocks.LUMINESCENT_MUSHROOM_BLOCK)
                 .add(ModBlocks.GREEN_MUSHROOM_BLOCK)
+                .add(ModBlocks.YELLOW_MUSHROOM_BLOCK)
+                .add(ModBlocks.ORANGE_MUSHROOM_BLOCK)
                 .add(ModBlocks.LUMINESCENT_MUSHROOM_STEM)
                 .add(ModBlocks.GREEN_MUSHROOM_STEM)
                 .add(ModBlocks.TRANSPARENT_MUSHROOM_STEM);
