@@ -38,8 +38,24 @@ public class ModOverworldRegion extends Region {
                 .depth(ParameterUtils.Depth.UNDERGROUND)
                 .weirdness(ParameterUtils.Weirdness.MID_SLICE_NORMAL_ASCENDING, ParameterUtils.Weirdness.MID_SLICE_NORMAL_DESCENDING)
                 .build().forEach(point -> builder.add(point, ModBiomes.BLUE_LUMINESCENT_SHROOM_CAVE));
+        new ParameterUtils.ParameterPointListBuilder()
+                        .temperature(ParameterUtils.Temperature.span(ParameterUtils.Temperature.NEUTRAL,ParameterUtils.Temperature.WARM))
+                        .humidity(ParameterUtils.Humidity.span(ParameterUtils.Humidity.NEUTRAL, ParameterUtils.Humidity.WET))
+                        .continentalness(ParameterUtils.Continentalness.INLAND, ParameterUtils.Continentalness.DEEP_OCEAN, ParameterUtils.Continentalness.OCEAN,ParameterUtils.Continentalness.COAST)
+                        .erosion(ParameterUtils.Erosion.EROSION_1,ParameterUtils.Erosion.EROSION_2, ParameterUtils.Erosion.EROSION_3)
+                        .depth(ParameterUtils.Depth.UNDERGROUND)
+                        .weirdness(ParameterUtils.Weirdness.MID_SLICE_NORMAL_ASCENDING, ParameterUtils.Weirdness.MID_SLICE_NORMAL_DESCENDING)
+                        .build().forEach(point -> builder.add(point, ModBiomes.PURPLE_SHROOM_CAVE));
+        new ParameterUtils.ParameterPointListBuilder()
+                                .temperature(ParameterUtils.Temperature.span(ParameterUtils.Temperature.ICY, ParameterUtils.Temperature.FROZEN))
+                                .humidity(ParameterUtils.Humidity.span(ParameterUtils.Humidity.NEUTRAL, ParameterUtils.Humidity.WET))
+                                .continentalness(ParameterUtils.Continentalness.INLAND, ParameterUtils.Continentalness.DEEP_OCEAN, ParameterUtils.Continentalness.OCEAN,ParameterUtils.Continentalness.COAST)
+                                .erosion(ParameterUtils.Erosion.EROSION_0, ParameterUtils.Erosion.EROSION_1,ParameterUtils.Erosion.EROSION_2)
+                                .depth(ParameterUtils.Depth.SURFACE)
+                                .weirdness(ParameterUtils.Weirdness.MID_SLICE_NORMAL_ASCENDING, ParameterUtils.Weirdness.MID_SLICE_NORMAL_DESCENDING)
+                                .build().forEach(point -> builder.add(point, ModBiomes.MAGICAL_PLAIN));
 
-        // Add our points to the mapper
+
         builder.build().forEach(mapper);
     }
 }

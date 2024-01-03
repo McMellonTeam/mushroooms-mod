@@ -1,12 +1,21 @@
 package net.louis.mushrooomsmod.world.tree.HugeBigRedMushroom;
 
 import com.mojang.serialization.Codec;
+import me.emafire003.dev.structureplacerapi.StructurePlacerAPI;
+import net.louis.mushrooomsmod.MushrooomsMod;
 import net.louis.mushrooomsmod.feature.mushroomfeature.ModMushroomFeatureConfig;
 import net.minecraft.block.BlockState;
 import net.minecraft.registry.tag.BlockTags;
+import net.minecraft.server.world.ServerWorld;
+import net.minecraft.util.BlockMirror;
+import net.minecraft.util.BlockRotation;
+import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.WorldAccess;
+import net.minecraft.world.gen.chunk.placement.StructurePlacement;
+import net.minecraft.world.gen.chunk.placement.StructurePlacementCalculator;
+import net.minecraft.world.gen.chunk.placement.StructurePlacementType;
 import net.minecraft.world.gen.feature.util.FeatureContext;
 
 public class HugeBigRedMushroomFeature extends CustomHugeBigRedMushroomFeature{
@@ -17,7 +26,7 @@ public class HugeBigRedMushroomFeature extends CustomHugeBigRedMushroomFeature{
 
 
     @Override
-    protected Integer[] trunkPlace(BlockPos start, int height, int large, BlockPos.Mutable mutable, WorldAccess world, ModMushroomFeatureConfig config, Random random) {
+    protected Integer[] trunkPlace(BlockPos start, int large, BlockPos.Mutable mutable, WorldAccess world, ModMushroomFeatureConfig config, Random random) {
         System.out.println("trunk");
         int trunkheight= Random.create().nextBetween(2,5);
         int randx=0;
@@ -30,7 +39,7 @@ public class HugeBigRedMushroomFeature extends CustomHugeBigRedMushroomFeature{
                 randz = Random.create().nextBetween(-1,1);
             }
         }
-        if(!canGenerate(height,large,new Integer[]{randx,randz,trunkheight-2},world,start,mutable))return new Integer[]{0};
+        if(!canGenerate(large,new Integer[]{randx,randz,trunkheight-2},world,start,mutable))return new Integer[]{0};
         BlockState blockstate=config.stemProvider.get(random,mutable);
         for (int j=0;j<2;++j){
             mutable.set(start,0,j,0);
@@ -47,33 +56,57 @@ public class HugeBigRedMushroomFeature extends CustomHugeBigRedMushroomFeature{
 
 
     @Override
-    protected boolean capPlacer(BlockPos start,int large, int height, BlockPos.Mutable mutable, WorldAccess world, ModMushroomFeatureConfig config, Integer[] coordinates,Random random) {
-        System.out.println("cap");
+    protected boolean capPlacer(BlockPos start,int large, BlockPos.Mutable mutable, WorldAccess world, ModMushroomFeatureConfig config, Integer[] coordinates,Random random) {
         if (coordinates.length==1)return false;
+
+        int large1;
         int randx = coordinates[0];
         int height1 = coordinates[1];
         int randz = coordinates[2];
-        for (int i=0;i<height;i++){
-            for (int j=-large;j<=large;++j){
-                for(int k=-large;k<=large;++k){
-                    mutable.set(start, j+randx, i+1+height1, k+randz);
-                    BlockState blockstate1 = config.capProvider.get(random,mutable);
-                    BlockState blockState2 = config.secondcapProvider.get(random,mutable);
-                    int random1 = Random.create().nextBetween(0,10);
-                    if (random1==0){
-                        this.setBlockState(world,mutable,blockState2);
-                    }else {
-                        this.setBlockState(world,mutable,blockstate1);
-                    }
-                }
-            }
+        int rotation = Random.create().nextInt(4);
+        int randomcapnumber = Random.create().nextInt(3)+1;
+
+        String path = "red_cap_"+large+"_"+randomcapnumber;
+        BlockRotation blockRotation;
+
+        start= start.add(randx,height1+1,randz);
+
+        switch (rotation){
+            case 0 :
+                blockRotation = BlockRotation.NONE;
+                large=-large;
+                large1=large;
+                break;
+            case 1 :
+                blockRotation = BlockRotation.CLOCKWISE_90;
+                large1=-large;
+                break;
+            case 2 :
+                blockRotation = BlockRotation.CLOCKWISE_180;
+                large1=large;
+                break;
+            default:
+                blockRotation = BlockRotation.COUNTERCLOCKWISE_90;
+                large1=large;
+                large=-large;
+                break;
+        }
+        if(!world.isClient()){
+            System.out.println("api");
+            StructurePlacerAPI structure = new StructurePlacerAPI((ServerWorld) world,new Identifier(MushrooomsMod.MOD_ID,path),start, BlockMirror.NONE, blockRotation,true,1f,new BlockPos(large,0,large1));
+            structure.loadStructure();
         }
         return true;
     }
-    protected boolean canGenerate(int height,int large, Integer[] coordinates, WorldAccess world, BlockPos pos,BlockPos.Mutable mutable){
+    protected boolean canGenerate(int large, Integer[] coordinates, WorldAccess world, BlockPos pos,BlockPos.Mutable mutable){
         int randx = coordinates[0];
         int randz = coordinates[1];
         int height1 = coordinates[2];
+        int height;
+
+        if(large==1)height=7;
+        else if (large==2)height=9;
+        else height=15;
 
         for (int i=0;i<2;++i){
             BlockState blockState2 = world.getBlockState(pos);
@@ -99,4 +132,6 @@ public class HugeBigRedMushroomFeature extends CustomHugeBigRedMushroomFeature{
         }
         return true;
     }
+
+
 }

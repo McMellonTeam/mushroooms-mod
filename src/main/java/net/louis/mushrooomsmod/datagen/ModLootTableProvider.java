@@ -8,7 +8,6 @@ import net.louis.mushrooomsmod.item.ModItems;
 import net.minecraft.block.Blocks;
 import net.minecraft.loot.condition.BlockStatePropertyLootCondition;
 import net.minecraft.predicate.StatePredicate;
-import software.bernie.shadowed.eliotlash.mclib.math.functions.classic.Mod;
 
 public class ModLootTableProvider extends FabricBlockLootTableProvider {
     public ModLootTableProvider(FabricDataOutput dataOutput) {
@@ -26,10 +25,20 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.BLUE_MUSHROOM_BLOCK);
         addDrop(ModBlocks.YELLOW_MUSHROOM_BLOCK);
         addDrop(ModBlocks.ORANGE_MUSHROOM_BLOCK);
-        addDrop(ModBlocks.LUMINESCENT_MUSHROOM_BLOCK);
+        addDrop(ModBlocks.BLUE_LUMINESCENT_MUSHROOM_BLOCK);
         addDrop(ModBlocks.LUMINESCENT_MUSHROOM_STEM);
         addDrop(ModBlocks.LUMINESCENT_PINK_MUSHROOM_BLOCK);
         addDrop(ModBlocks.COMPRESSED_PURPLE_MUSHROOM);
+
+        addDrop(ModBlocks.DARK_MUSHROOM_BLUE_LUMINESCENT_BLOCK);
+        addDrop(ModBlocks.DARK_ORANGE_MUSHROOM_BLOCK);
+        addDrop(ModBlocks.DARK_GREEN_MUSHROOM_BLOCK);
+        addDrop(ModBlocks.DARK_YELLOW_MUSHROOM_BLOCK);
+        addDrop(ModBlocks.DARK_LUMINESCENT_PINK_MUSHROOM_BLOCK);
+        addDrop(ModBlocks.DARK_BLUE_MUSHROOM_BLOCK);
+        addDrop(ModBlocks.DARK_PURPLE_MUSHROOM_BLOCK);
+        addDrop(ModBlocks.DARK_RED_MUSHROOM_BLOCK);
+
 
         //Soft Blocks
         addDrop(ModBlocks.COMPRESSED_DIRT);
@@ -79,6 +88,17 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.PINK_HEATER);
         addDrop(ModBlocks.WYSTERIA);
         addDrop(ModBlocks.BLUEBELL);
+        addDrop(ModBlocks.VIPERIN);
+        addDrop(ModBlocks.HIBISCUS);
+        addDrop(ModBlocks.PLATUM);
+        addDrop(ModBlocks.DIANTHUS);
+        addDrop(ModBlocks.CYCAS);
+        addDrop(ModBlocks.ARUM);
+        addDrop(ModBlocks.HYDRANGEA);
+        addDrop(ModBlocks.ANEMONE);
+        addDrop(ModBlocks.JACYNTHE);
+        addDrop(ModBlocks.ACONIT);
+        addDrop(ModBlocks.PERVENCHE);
 
         //Vines
         addDrop(ModBlocks.PINK_MUSHROOM_VINES,ModItems.PINK_MUSHROOM_VINES_ITEM);
@@ -127,6 +147,16 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addPottedPlantDrops(ModBlocks.POTTED_APAGANTHE);
         addPottedPlantDrops(ModBlocks.POTTED_WYSTERIA);
         addPottedPlantDrops(ModBlocks.POTTED_BLUEBELL);
+        addPottedPlantDrops(ModBlocks.POTTED_VIPERIN);
+        addPottedPlantDrops(ModBlocks.POTTED_HIBISCUS);
+        addPottedPlantDrops(ModBlocks.POTTED_PLATUM);
+        addPottedPlantDrops(ModBlocks.POTTED_DIANTHUS);
+        addPottedPlantDrops(ModBlocks.POTTED_CYCAS);
+        addPottedPlantDrops(ModBlocks.POTTED_ARUM);
+        addPottedPlantDrops(ModBlocks.POTTED_HYDRANGEA);
+        addPottedPlantDrops(ModBlocks.POTTED_ANEMONE);
+        addPottedPlantDrops(ModBlocks.POTTED_JACYNTHE);
+
 
         //Light Blocks
         addDrop(ModBlocks.RED_LANTERN);
