@@ -5,6 +5,7 @@ import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.louis.mushrooomsmod.block.ModBlocks;
 import net.louis.mushrooomsmod.entity.ModEntities;
+import net.louis.mushrooomsmod.entity.custom.BoleteCowEntity;
 import net.louis.mushrooomsmod.entity.custom.GrokiEntity;
 import net.louis.mushrooomsmod.item.ModItems;
 import net.louis.mushrooomsmod.particle.ModParticles;
@@ -29,6 +30,7 @@ public class MushrooomsMod implements ModInitializer {
 		ModLootTableModifier.modifyLootTable();
 
 		FabricDefaultAttributeRegistry.register(ModEntities.GROKI, GrokiEntity.setAttributes());
+		FabricDefaultAttributeRegistry.register(ModEntities.BOLETE_COW, BoleteCowEntity.setAttributes());
 		System.out.println("Starting Mushroooms Mod!");
 
 	}

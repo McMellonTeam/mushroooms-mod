@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "mushrooomsmod:block/aconit_bottom"
+    },
+    "half=upper": {
+      "model": "mushrooomsmod:block/aconit_top"
+    }
+  }
+}

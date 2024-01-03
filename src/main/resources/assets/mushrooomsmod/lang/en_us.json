@@ -3,7 +3,24 @@
   "block.mushrooomsmod.luminescent_mushroom_block": "Luminescent Mushroom Block",
   "block.mushrooomsmod.purple_mushroom_block": "Purple Mushroom Block",
   "block.mushrooomsmod.green_mushroom_block": "Green Mushroom Block",
+  "block.mushrooomsmod.orange_mushroom_block": "Orange Mushroom Block",
+  "block.mushrooomsmod.yellow_mushroom_block": "Yellow Mushroom Block",
   "block.mushrooomsmod.luminescent_pink_mushroom_block": "Pink Luminescent Mushroom Block",
+
+
+  "block.mushrooomsmod.mushroom_dark_pink_block": "Dark Pink Mushroom Block",
+  "block.mushrooomsmod.mushroom_dark_orange_block": "Dark Orange Mushroom Block",
+  "block.mushrooomsmod.mushroom_dark_blue_block": "Dark Blue Mushroom Block",
+  "block.mushrooomsmod.mushroom_dark_purple_block": "Dark Purple Mushroom Block",
+  "block.mushrooomsmod.mushroom_dark_green_block": "Dark Yellow Mushroom Block",
+  "block.mushrooomsmod.mushroom_dark_blue_luminescent_block": "Dark Blue Luminescent Mushroom Block",
+  "block.mushrooomsmod.mushroom_dark_green_luminescent_block": "Dark Green Mushroom Block",
+  "block.mushrooomsmod.mushroom_dark_red_luminescent_block": "Dark Red Mushroom Block",
+
+
+
+
+
   "block.mushrooomsmod.green_mushroom_stem" : "Green Mushroom Stem",
   "block.mushrooomsmod.luminescent_mushroom_stem": "Luminescent Mushroom Stem",
   "block.mushrooomsmod.transparent_mushroom_stem" : "Transparent Mushroom Stem",
@@ -59,6 +76,17 @@
   "block.mushrooomsmod.wysteria": "Wysteria",
   "block.mushrooomsmod.bluebell": "BlueBell",
   "block.mushrooomsmod.tiny_lilac": "Tiny Lilac",
+  "block.mushrooomsmod.viperin": "Viperin",
+  "block.mushrooomsmod.hibiscus": "Hibiscus",
+  "block.mushrooomsmod.platum": "Platum",
+  "block.mushrooomsmod.dianthus": "Dianthus",
+  "block.mushrooomsmod.cycas": "Cycas",
+  "block.mushrooomsmod.arum": "Arum",
+  "block.mushrooomsmod.hydrangea": "Hydrangea",
+  "block.mushrooomsmod.anemone": "Anemone",
+  "block.mushrooomsmod.jacynthe": "Jacynthe",
+  "block.mushrooomsmod.aconit": "Aconit",
+  "block.mushrooomsmod.pervenche": "Pervenche",
 
 
 
@@ -89,6 +117,9 @@
   "item.mushrooomsmod.green_torch_item" : "Green Torch",
   "item.mushrooomsmod.big_purple_mushroom_seed" : "Big Purple Mushroom Seed",
   "item.mushrooomsmod.purple_mushroom_powder" : "Big Purple Mushroom Powder",
+
+  "item.mushrooomsmod.bolete_cow_spawn_egg": "Bolete Cow Spawn Egg",
+  "item.mushrooomsmod.groki_spawn_egg": "Groki Spawn Egg",
 
 
   "biome.mushrooomsmod.blue_luminescent_schroom_cave" : "Blue Luminescent Schroom Cave"

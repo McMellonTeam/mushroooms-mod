@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "mushrooomsmod:block/pervenche_bottom"
+    },
+    "half=upper": {
+      "model": "mushrooomsmod:block/pervenche_top"
+    }
+  }
+}
