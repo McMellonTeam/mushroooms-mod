@@ -3,7 +3,7 @@ package net.louis.mushrooomsmod.datagen;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
 import net.louis.mushrooomsmod.block.ModBlocks;
-import net.louis.mushrooomsmod.block.bigmushroom.BigMushroomPlant;
+import net.louis.mushrooomsmod.block.custom.bigmushroom.BigMushroomPlant;
 import net.louis.mushrooomsmod.item.ModItems;
 import net.minecraft.block.Blocks;
 import net.minecraft.loot.condition.BlockStatePropertyLootCondition;
@@ -59,6 +59,9 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.TRANSPARENT_MUSHROOM_STEM);
         addDrop(ModBlocks.GREEN_MUSHROOM_STEM);
         addDrop(ModBlocks.MUSHROOM_FLOWERS);
+        addDrop(ModBlocks.ORANGE_MUSHROOM);
+        addDrop(ModBlocks.YELLOW_MUSHROOM);
+        addDrop(ModBlocks.PURPLE_MUSHROOM_FERMENTED_BLOCK);
 
         //Flowers
         addDrop(ModBlocks.MUSHROOM_FLOWERS);
@@ -156,6 +159,8 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addPottedPlantDrops(ModBlocks.POTTED_HYDRANGEA);
         addPottedPlantDrops(ModBlocks.POTTED_ANEMONE);
         addPottedPlantDrops(ModBlocks.POTTED_JACYNTHE);
+        addPottedPlantDrops(ModBlocks.POTTED_YELLOW_MUSHROOM);
+        addPottedPlantDrops(ModBlocks.POTTED_ORANGE_MUSHROOM);
 
 
         //Light Blocks

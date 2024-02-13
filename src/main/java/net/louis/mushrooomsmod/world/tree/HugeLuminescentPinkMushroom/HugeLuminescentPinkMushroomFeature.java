@@ -2,7 +2,6 @@ package net.louis.mushrooomsmod.world.tree.HugeLuminescentPinkMushroom;
 
 import com.mojang.serialization.Codec;
 import net.louis.mushrooomsmod.world.ModConfiguredFeatures;
-import net.louis.mushrooomsmod.world.tree.HugePurpleMushroom.CustomHugePurpleMushroomFeature;
 import net.minecraft.block.BlockState;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.util.math.BlockPos;

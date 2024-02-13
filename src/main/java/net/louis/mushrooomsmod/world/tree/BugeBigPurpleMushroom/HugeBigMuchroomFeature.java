@@ -115,7 +115,6 @@ public class HugeBigMuchroomFeature extends CustomHugePompomMuchroomFeature {
 
         if (randnumbcap == 2) {
             String seconddirection = get2nddirection(choisis, nord,nordouest,ouest,sudouest,sud,sudest,est,nordest);
-            System.out.println("directions : " + choisis +"   "+seconddirection+"   ");
             boolean nord2 = false;
             boolean nordouest2 = false;
             boolean ouest2 = false;
@@ -193,11 +192,9 @@ public class HugeBigMuchroomFeature extends CustomHugePompomMuchroomFeature {
                 }
 
             }
-            System.out.println(randx1 + "   " +randmaxheiht1+ "   "+ randz1 +randx2 + "   " +randmaxheiht2+ "   "+ randz2);
             return new Integer[]{randx1n,randmaxheiht1,randz1n,randx2n,randmaxheiht2,randz2n};
         }
         else{
-            System.out.println("on entre");
             String[] directions = get3rddirection(choisis);
             boolean nord2 = false;
             boolean nordouest2 = false;
@@ -217,7 +214,6 @@ public class HugeBigMuchroomFeature extends CustomHugePompomMuchroomFeature {
             boolean nordest3 = false;
             String seconddirection = directions[0];
             String thirddirection = directions[1];
-            System.out.println("directions : " + choisis +"   "+seconddirection+"   "+thirddirection);
             if(seconddirection.equals("nord")){
                 nord2 =true;
             } else if (seconddirection.equals("nordouest")) {
@@ -321,7 +317,6 @@ public class HugeBigMuchroomFeature extends CustomHugePompomMuchroomFeature {
                     }
                 }
             }
-            System.out.println(randx1 + "   " +randmaxheiht1+ "   "+ randz1+ randx2 + "   " +randmaxheiht2+ "   "+ randz2 +randx3 + "   " +randmaxheiht3+ "   "+ randz3);
             return new Integer[]{randx1n, randmaxheiht1 ,randz1n, randx2n,randmaxheiht2, randz2n, randx3n,randmaxheiht3, randz3n};
         }
     }
@@ -654,7 +649,6 @@ public class HugeBigMuchroomFeature extends CustomHugePompomMuchroomFeature {
             mutable.set(start, randx1n, i+1, randz1n);
             this.setBlockState(world, mutable, blockState);
             height1=1;
-            System.out.println("alse");
         }
         randomheight=randomnewheight;
         Integer[] height = new Integer[2];
@@ -677,7 +671,6 @@ public class HugeBigMuchroomFeature extends CustomHugePompomMuchroomFeature {
 
     @Override
     protected void generateCap(WorldAccess world, Random random, BlockPos start, BlockPos.Mutable mutable, Integer[] coordinates, ModMushroomFeatureConfig config) {
-        System.out.println("generate cap");
         int capheightsize =0;
         int xmax=0;
         int x=0;
@@ -685,13 +678,11 @@ public class HugeBigMuchroomFeature extends CustomHugePompomMuchroomFeature {
         int z=0;
         int capsize=0;
         BlockState blockState = config.capProvider.get(random,start);
-        System.out.println(coordinates.length);
         for (int i =0;i<coordinates.length/3;++i){
             capheightsize=Random.create().nextBetween(2,3);
             x=coordinates[i*3];
             y=coordinates[i*3+1];
             z=coordinates[i*3+2];
-            System.out.println("co : "  +i +"   "+x +"   "+y +"   "+z);
             xmax = getCapSize(x,y,z,0,mutable,world,start );
             capsize = Random.create().nextBetween(2,xmax);
             if (capsize<5){
@@ -724,13 +715,10 @@ public class HugeBigMuchroomFeature extends CustomHugePompomMuchroomFeature {
                 }
             }
         }
-        System.out.println("on a generate cap");
     }
     protected Integer getCapSize(int x, int y,int z,int a, BlockPos.Mutable mutable, WorldAccess world, BlockPos start){
-        System.out.println("on entre dans capsize");
         BlockState blockState= Blocks.REDSTONE_BLOCK.getDefaultState();
         if (a==6){
-            System.out.println(a);
             return a;
         }
         for (int k =0;k<3;++k) {
@@ -741,7 +729,6 @@ public class HugeBigMuchroomFeature extends CustomHugePompomMuchroomFeature {
                     }
                     BlockState blockState2 = world.getBlockState(mutable.set(start, i, y + k, j));
                     if (blockState2.isAir() || blockState2.isIn(BlockTags.LEAVES)) continue;
-                    System.out.println(a - 1);
                     if (a - 1 < 2) {
                         a = 3;
                     }

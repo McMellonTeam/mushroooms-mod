@@ -3,6 +3,8 @@ package net.louis.mushrooomsmod.datagen;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.louis.mushrooomsmod.block.ModBlocks;
+import net.louis.mushrooomsmod.util.ModTags;
+import net.minecraft.block.Blocks;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.BlockTags;
 
@@ -50,10 +52,23 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.DARK_BLUE_MUSHROOM_BLOCK)
                 .add(ModBlocks.DARK_RED_MUSHROOM_BLOCK)
 
+                .add(ModBlocks.PURPLE_MUSHROOM_FERMENTED_BLOCK)
+
 
 
                 .add(ModBlocks.LUMINESCENT_MUSHROOM_STEM)
                 .add(ModBlocks.GREEN_MUSHROOM_STEM)
                 .add(ModBlocks.TRANSPARENT_MUSHROOM_STEM);
+
+        getOrCreateTagBuilder(ModTags.Blocks.MUSHROOM_PLANT)
+                .add(ModBlocks.YELLOW_MUSHROOM)
+                .add(ModBlocks.PURPLE_MUSHROOM)
+                .add(ModBlocks.ORANGE_MUSHROOM)
+                .add(ModBlocks.BLUE_MUSHROOM)
+                .add(ModBlocks.GREEN_MUSHROOM)
+                .add(ModBlocks.LUMINESCENT_MUSHROOM)
+                .add(ModBlocks.LUMINESCENT_PINK_MUSHROOM)
+                .add(Blocks.RED_MUSHROOM)
+                .add(Blocks.BROWN_MUSHROOM);
     }
 }

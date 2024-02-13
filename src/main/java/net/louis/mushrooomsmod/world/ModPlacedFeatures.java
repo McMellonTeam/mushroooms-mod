@@ -28,6 +28,8 @@ public class ModPlacedFeatures {
     public static final RegistryKey<PlacedFeature> BLUE_MUSHROOM_FLOWER_PLACED_KEY = registerKey("blue_mushroom_flower_placed_key");
     public static final RegistryKey<PlacedFeature> GREEN_MUSHROOM_FLOWER_PLACED_KEY = registerKey("green_mushroom_flower_placed_key");
     public static final RegistryKey<PlacedFeature> PURPLE_MUSHROOM_FLOWER_PLACED_KEY = registerKey("purple_mushroom_flower_placed_key");
+    public static final RegistryKey<PlacedFeature> ORANGE_MUSHROOM_FLOWER_PLACED_KEY = registerKey("orange_mushroom_flower_placed_key");
+    public static final RegistryKey<PlacedFeature> YELLOW_MUSHROOM_FLOWER_PLACED_KEY = registerKey("yellow_mushroom_flower_placed_key");
 
     //flowers
     public static final RegistryKey<PlacedFeature> OCULAE_PLACED_KEY = registerKey("oculae_placed_key");

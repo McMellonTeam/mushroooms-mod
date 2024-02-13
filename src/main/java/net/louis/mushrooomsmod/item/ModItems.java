@@ -5,6 +5,9 @@ import net.louis.mushrooomsmod.MushrooomsMod;
 import net.louis.mushrooomsmod.block.ModBlocks;
 import net.louis.mushrooomsmod.entity.ModEntities;
 import net.louis.mushrooomsmod.sound.ModSounds;
+import net.louis.mushrooomsmod.world.biome.ModBiomes;
+import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -26,6 +29,7 @@ public class ModItems {
 
     //food
     public static final Item BAGUETTE = registerItem("baguette", new Item(new FabricItemSettings().food(ModFoodComponents.BAGUETTE)));
+    public static final Item LUMINESCENT_SCHROOM_SOUP = registerItem("luminescent_schroom_soup", new SchroomSoup(new FabricItemSettings(), ModBiomes.BLUE_LUMINESCENT_SHROOM_CAVE, new StatusEffectInstance(StatusEffects.NIGHT_VISION, 300,0)));
 
     //Lights
     public static final Item GREEN_TORCH = registerItem("green_torch_item", new VerticallyAttachableBlockItem(ModBlocks.GREEN_TORCH, ModBlocks.WALL_GREEN_TORCH, new Item.Settings(), Direction.DOWN));
@@ -37,6 +41,11 @@ public class ModItems {
     //Egg
     public static final Item GROKI_SPAWN_EGG = registerItem("groki_spawn_egg", new SpawnEggItem(ModEntities.GROKI,0x765A34,0x1BC2CF,new FabricItemSettings()));
     public static final Item BOLETE_COW_SPAWN_EGG = registerItem("bolete_cow_spawn_egg", new SpawnEggItem(ModEntities.BOLETE_COW,0xBF28DD,0xF4DBF9,new FabricItemSettings()));
+
+
+    public static final Item CRUSHED_DIAMOND = registerItem("crushed_diamond", new Item(new FabricItemSettings()));
+
+
 
 
 
