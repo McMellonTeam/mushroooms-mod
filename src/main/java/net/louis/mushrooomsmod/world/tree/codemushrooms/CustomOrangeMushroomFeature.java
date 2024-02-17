@@ -16,7 +16,7 @@ public class CustomOrangeMushroomFeature extends CustomOrangeMushroom{
     }
 
     @Override
-    protected void generateTrunk(WorldAccess world, Random random, BlockPos pos, BlockPos.Mutable mutable, int height, HugeMushroomFeatureConfig config) {
+    protected void generateGiantTrunk(WorldAccess world, Random random, BlockPos pos, BlockPos.Mutable mutable, int height, HugeMushroomFeatureConfig config) {
         System.out.println("on entre");
         BlockState blockState = config.stemProvider.get(random, pos);
         int firstlarge = Random.create().nextBetween(2,4);
@@ -28,13 +28,16 @@ public class CustomOrangeMushroomFeature extends CustomOrangeMushroom{
             this.setBlockState(world, mutable, blockState);
         }
         ArrayList<Integer> coordinates = new ArrayList<>();
-        coordinates.add(Random.create().nextBetween(2,height/3));
-        coordinates.add(Random.create().nextBetween(2,height/3));
-        coordinates.add(Random.create().nextBetween(2,height/3));
-        coordinates.add(Random.create().nextBetween(2,height/3));
+        coordinates.add(Random.create().nextBetween(3,height/3));
+        coordinates.add(Random.create().nextBetween(3,height/3));
+        coordinates.add(Random.create().nextBetween(3,height/3));
+        coordinates.add(Random.create().nextBetween(3,height/3));
 
-        for(int i =0;i<8;++i){
-            coordinates.add(Random.create().nextBetween((int)(-0.2*i+1.8),coordinates.get(i)-1));
+        for(int i =0;i<4;++i){
+            coordinates.add(Random.create().nextBetween(2,coordinates.get(i)-1));
+        }
+        for(int i =0;i<4;++i){
+            coordinates.add(Random.create().nextBetween(0,coordinates.get(i)-1));
         }
         placeBase(world,mutable,pos,blockState,1,0,coordinates.get(0));
         placeBase(world,mutable,pos,blockState,0,1,coordinates.get(1));
@@ -52,13 +55,13 @@ public class CustomOrangeMushroomFeature extends CustomOrangeMushroom{
         placeBase(world,mutable,pos,blockState,-1,-1,coordinates.get(7));
 
         ArrayList<Integer> topcoordinates = new ArrayList<>();
-        topcoordinates.add(Random.create().nextBetween(0,height/4));
-        topcoordinates.add(Random.create().nextBetween(0,height/4));
-        topcoordinates.add(Random.create().nextBetween(0,height/4));
-        topcoordinates.add(Random.create().nextBetween(0,height/4));
+        topcoordinates.add(Random.create().nextBetween(2,height/4));
+        topcoordinates.add(Random.create().nextBetween(2,height/4));
+        topcoordinates.add(Random.create().nextBetween(2,height/4));
+        topcoordinates.add(Random.create().nextBetween(2,height/4));
 
         for(int i =0;i<4;++i){
-            topcoordinates.add(Random.create().nextBetween((int)(-0.2*i+1.8),topcoordinates.get(i)-1));
+            topcoordinates.add(Random.create().nextBetween(0,topcoordinates.get(i)-1));
         }
 
         placeTop(world,mutable,pos,blockState,1,0,height,topcoordinates.get(0));
@@ -71,6 +74,82 @@ public class CustomOrangeMushroomFeature extends CustomOrangeMushroom{
         placeTop(world,mutable,pos,blockState,-1,1,height,topcoordinates.get(6));
         placeTop(world,mutable,pos,blockState,-1,-1,height,topcoordinates.get(7));
 
+
+
+
+    }
+
+    @Override
+    protected void generateGiantCap(WorldAccess world, Random random, BlockPos pos, int height, BlockPos.Mutable mutable, HugeMushroomFeatureConfig config, int large) {
+        BlockState blockState = config.capProvider.get(random, pos);
+        BlockState blockState2 = Blocks.AIR.getDefaultState();
+
+        for (float secondlarge = large-2; secondlarge <= large; secondlarge = secondlarge + 0.25f){
+            for (double i = -Math.PI / (3 * large); i <= Math.PI / 2; i = i + Math.PI / (8 * large)) {
+                for (double j = -Math.PI; j <= Math.PI; j = j + Math.PI / (7 * large)) {
+                    double x = secondlarge *0.9* Math.cos(i) * Math.cos(j);
+                    double z = secondlarge *0.9* Math.cos(i) * Math.sin(j);
+                    double y = secondlarge*2.4* Math.sin(i);
+                    mutable.set(pos, (int) x , (int) (y + height-2.4*large+4) , (int) z);
+                    if(!world.getBlockState(mutable).isOf(blockState.getBlock()))this.setBlockState(world, mutable, blockState);
+                }
+            }
+        }
+        for (float secondlarge = 0; secondlarge < large-0.75f; secondlarge = secondlarge + 0.25f){
+            for (double i = 0; i <= Math.PI / 2; i = i + Math.PI / (4 * large)) {
+                for (double j = -Math.PI; j <= Math.PI; j = j + Math.PI / (4 * large)) {
+                    double x = secondlarge *0.9* Math.cos(i) * Math.cos(j);
+                    double z = secondlarge *0.9* Math.cos(i) * Math.sin(j);
+                    double y = secondlarge * 2.4 * Math.sin(i);
+                    mutable.set(pos, (int) x, (int) (y + height-2.4*large), (int) z);
+                    if(world.getBlockState(mutable).isOf(blockState.getBlock()))this.setBlockState(world, mutable, blockState2);
+                }
+            }
+        }
+    }
+
+    @Override
+    protected void generateTrunk(WorldAccess world, Random random, BlockPos pos, BlockPos.Mutable mutable, int height, HugeMushroomFeatureConfig config) {
+        BlockState blockState = config.stemProvider.get(random, pos);
+        int firstlarge = Random.create().nextBetween(2,4);
+        int lastlarge = 1;
+
+        System.out.println(firstlarge+"  "+lastlarge);
+        for(int i =0;i<=height;++i) {
+            mutable.set(pos, 0, i, 0);
+            this.setBlockState(world, mutable, blockState);
+        }
+        ArrayList<Integer> coordinates = new ArrayList<>();
+        coordinates.add(Random.create().nextBetween(1,height/3));
+        coordinates.add(Random.create().nextBetween(1,height/3));
+        coordinates.add(Random.create().nextBetween(1,height/3));
+        coordinates.add(Random.create().nextBetween(1,height/3));
+
+        for(int i =0;i<4;++i){
+            coordinates.add(Random.create().nextBetween(0,coordinates.get(i)-1));
+        }
+
+        placeBase(world,mutable,pos,blockState,1,0,coordinates.get(0));
+        placeBase(world,mutable,pos,blockState,0,1,coordinates.get(1));
+        placeBase(world,mutable,pos,blockState,0,-1,coordinates.get(2));
+        placeBase(world,mutable,pos,blockState,-1,0,coordinates.get(3));
+
+        placeBase(world,mutable,pos,blockState,1,1,coordinates.get(4));
+        placeBase(world,mutable,pos,blockState,1,-1,coordinates.get(5));
+        placeBase(world,mutable,pos,blockState,-1,1,coordinates.get(6));
+        placeBase(world,mutable,pos,blockState,-1,-1,coordinates.get(7));
+
+
+        ArrayList<Integer> topcoordinates = new ArrayList<>();
+        topcoordinates.add(Random.create().nextBetween(2,height/4));
+        topcoordinates.add(Random.create().nextBetween(2,height/4));
+        topcoordinates.add(Random.create().nextBetween(2,height/4));
+        topcoordinates.add(Random.create().nextBetween(2,height/4));
+
+        placeTop(world,mutable,pos,blockState,1,0,height,topcoordinates.get(0));
+        placeTop(world,mutable,pos,blockState,0,1,height,topcoordinates.get(1));
+        placeTop(world,mutable,pos,blockState,0,-1,height,topcoordinates.get(2));
+        placeTop(world,mutable,pos,blockState,-1,0,height,topcoordinates.get(3));
 
 
 
@@ -89,33 +168,35 @@ public class CustomOrangeMushroomFeature extends CustomOrangeMushroom{
         }
     }
 
+
+
     @Override
     protected void generateCap(WorldAccess world, Random random, BlockPos pos, int height, BlockPos.Mutable mutable, HugeMushroomFeatureConfig config, int large) {
         BlockState blockState = config.capProvider.get(random, pos);
         BlockState blockState2 = Blocks.AIR.getDefaultState();
 
-        /*for (float secondlarge = large-2; secondlarge <= large; secondlarge = secondlarge + 0.25f){
-            for (double i = -Math.PI / (3 * large); i <= Math.PI / 2; i = i + Math.PI / (6 * large)) {
+        for (float secondlarge = large-2; secondlarge <= large; secondlarge = secondlarge + 0.25f){
+            for (double i = -Math.PI / (3 * large); i <= Math.PI / 2; i = i + Math.PI / (7 * large)) {
                 for (double j = -Math.PI; j <= Math.PI; j = j + Math.PI / (6 * large)) {
                     double x = secondlarge * Math.cos(i) * Math.cos(j);
                     double z = secondlarge * Math.cos(i) * Math.sin(j);
-                    double y = secondlarge*3* Math.sin(i);
+                    double y = secondlarge*2.4* Math.sin(i);
                     mutable.set(pos, (int) x , (int) (y + height-large+3) , (int) z);
-                    this.setBlockState(world, mutable, blockState);
+                    if(!world.getBlockState(mutable).isOf(blockState.getBlock()))this.setBlockState(world, mutable, blockState);
                 }
             }
-        }*/
-        /*for (float secondlarge = 0; secondlarge <= large; secondlarge = secondlarge + 0.25f){
+        }
+        for (float secondlarge = 0; secondlarge < large-0.75f; secondlarge = secondlarge + 0.25f){
             for (double i = 0; i <= Math.PI / 2; i = i + Math.PI / (4 * large)) {
                 for (double j = -Math.PI; j <= Math.PI; j = j + Math.PI / (4 * large)) {
-                    double x = secondlarge *1.4* Math.cos(i) * Math.cos(j);
-                    double z = secondlarge *1.4* Math.cos(i) * Math.sin(j);
-                    double y = secondlarge * Math.sin(i);
+                    double x = secondlarge * Math.cos(i) * Math.cos(j);
+                    double z = secondlarge * Math.cos(i) * Math.sin(j);
+                    double y = secondlarge * 2.4 * Math.sin(i);
                     mutable.set(pos, (int) x, (int) (y + height-large-1), (int) z);
                     if(world.getBlockState(mutable).isOf(blockState.getBlock()))this.setBlockState(world, mutable, blockState2);
                 }
             }
-        }*/
+        }
     }
 
 

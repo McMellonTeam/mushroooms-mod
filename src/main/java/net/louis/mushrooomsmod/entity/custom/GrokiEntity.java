@@ -1,16 +1,20 @@
 package net.louis.mushrooomsmod.entity.custom;
 
 import net.louis.mushrooomsmod.entity.ModEntities;
+import net.louis.mushrooomsmod.item.ModItems;
+import net.louis.mushrooomsmod.util.ModTags;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
+import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.passive.AnimalEntity;
-import net.minecraft.entity.passive.ChickenEntity;
-import net.minecraft.entity.passive.MerchantEntity;
 import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.util.ActionResult;
+import net.minecraft.util.Hand;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.animatable.GeoEntity;
@@ -66,4 +70,18 @@ public class GrokiEntity extends AnimalEntity implements GeoEntity {
     public AnimatableInstanceCache getAnimatableInstanceCache() {
         return cache;
     }
+
+
+    @Override
+    public ActionResult interactMob(PlayerEntity player, Hand hand
+    ) {
+        ItemStack itemStack = player.getStackInHand(hand);
+        if(itemStack.isIn(ModTags.Items.DIAMOND_ITEMS)){
+            player.clearActiveItem();
+            this.dropItem(ModItems.CRUSHED_DIAMOND, 1);
+            return ActionResult.SUCCESS;
+        }
+        return ActionResult.PASS;
+    }
+
 }

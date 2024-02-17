@@ -115,5 +115,15 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         offerSingleOutputShapelessRecipe(exporter,Items.GREEN_DYE,ModBlocks.GREEN_PERENNIAL,"green_perennial_dye_craft");
 
 
+        //Construction Blocks
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS,ModBlocks.LAVA_BLACKSTONE_BRICKS, 4)
+                .pattern("RR")
+                .pattern("RR")
+                .input(Character.valueOf('R'), ModBlocks.LAVA_BLACKSTONE)
+                .criterion(hasItem(ModBlocks.LAVA_BLACKSTONE), conditionsFromItem(ModBlocks.LAVA_BLACKSTONE))
+                .offerTo(exporter, new Identifier("lava_blackstone_bricks_craft"));
+
+        offerPressurePlateRecipe(exporter, ModBlocks.LAVA_BLACKSTONE_MEDIUM_BRICKS,ModBlocks.LAVA_BLACKSTONE_BRICKS);
+        offerPressurePlateRecipe(exporter, ModBlocks.LAVA_BLACKSTONE_TINY_BRICKS,ModBlocks.LAVA_BLACKSTONE_MEDIUM_BRICKS);
     }
 }

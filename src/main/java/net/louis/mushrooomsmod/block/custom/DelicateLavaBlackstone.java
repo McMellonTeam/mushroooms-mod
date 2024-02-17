@@ -1,4 +1,4 @@
-package net.louis.mushrooomsmod.block;
+package net.louis.mushrooomsmod.block.custom;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;

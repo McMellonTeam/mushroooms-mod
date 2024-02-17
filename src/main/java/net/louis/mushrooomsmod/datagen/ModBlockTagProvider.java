@@ -25,7 +25,11 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.RED_LANTERN)
                 .add(ModBlocks.GREEN_LANTERN)
                 .add(ModBlocks.GREEN_CAMPFIRE)
-                .add(ModBlocks.RHYOLITE);
+                .add(ModBlocks.RHYOLITE)
+                .add(ModBlocks.LAVA_BLACKSTONE_BRICKS)
+                .add(ModBlocks.LAVA_BLACKSTONE)
+                .add(ModBlocks.LAVA_BLACKSTONE_TINY_BRICKS)
+                .add(ModBlocks.LAVA_BLACKSTONE_MEDIUM_BRICKS);
 
         //Shovel
         getOrCreateTagBuilder(BlockTags.SHOVEL_MINEABLE)

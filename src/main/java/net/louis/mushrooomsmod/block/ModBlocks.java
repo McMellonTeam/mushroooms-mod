@@ -29,134 +29,18 @@ import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 public class ModBlocks {
     private static void  addItemstoNaturalGroup(FabricItemGroupEntries entries){
-        //Blocks
-        //Natural
-        //Mushroom Related
-        entries.add(BLUE_MUSHROOM_BLOCK);
-        entries.add(BLUE_LUMINESCENT_MUSHROOM_BLOCK);
-        entries.add(PURPLE_MUSHROOM_BLOCK);
-        entries.add(GREEN_MUSHROOM_BLOCK);
-        entries.add(YELLOW_MUSHROOM_BLOCK);
-        entries.add(ORANGE_MUSHROOM_BLOCK);
-        entries.add(LUMINESCENT_PINK_MUSHROOM_BLOCK);
 
-        entries.add(DARK_LUMINESCENT_PINK_MUSHROOM_BLOCK);
-        entries.add(DARK_PURPLE_MUSHROOM_BLOCK);
-        entries.add(DARK_GREEN_MUSHROOM_BLOCK);
-        entries.add(DARK_ORANGE_MUSHROOM_BLOCK);
-        entries.add(DARK_YELLOW_MUSHROOM_BLOCK);
-        entries.add(DARK_MUSHROOM_BLUE_LUMINESCENT_BLOCK);
-        entries.add(DARK_BLUE_MUSHROOM_BLOCK);
-        entries.add(DARK_RED_MUSHROOM_BLOCK);
-
-        entries.add(PURPLE_MUSHROOM_FERMENTED_BLOCK);
-
-
-        entries.add(LUMINESCENT_MUSHROOM_STEM);
-        entries.add(TRANSPARENT_MUSHROOM_STEM);
-        entries.add(GREEN_MUSHROOM_STEM);
-        entries.add(COMPRESSED_PURPLE_MUSHROOM);
-
-        //Soft Blocks
-        entries.add(COMPRESSED_DIRT);
-        entries.add(LIGHT_COMPRESSED_DIRT);
-
-        //Hard Blocks
-        entries.add(PURPLE_SCHROOM_DEESLATE);
-        entries.add(BLUE_LUMINESCENT_SCHROOM_DEESLATE);
-        entries.add(GREEN_STONY_SCHROOM_DEPOT);
-        entries.add(RHYOLITE);
-
-        //Plants
-        //Mushrooms
-        entries.add(GREEN_MUSHROOM);
-        entries.add(BLUE_MUSHROOM);
-        entries.add(PURPLE_MUSHROOM);
-        entries.add(LUMINESCENT_MUSHROOM);
-        entries.add(LUMINESCENT_PINK_MUSHROOM);
-        entries.add(ORANGE_MUSHROOM);
-        entries.add(YELLOW_MUSHROOM);
-
-        //Flowers
-        entries.add(PREHISTO_PINK_SCHROOM);
-        entries.add(PREHISTO_BLUE_SCHROOM);
-        entries.add(PREHISTURPLE_SCHROOM);
-        entries.add(PREHISTO_GREEN_SCHROOM);
-        entries.add(MUSHROOM_FLOWERS);
-        entries.add(RED_LUMERIA);
-        entries.add(SOL_OCCIDENTIS);
-        entries.add(CYANUS_RUBENS);
-        entries.add(CYANEA);
-        entries.add(FUTIALI);
-        entries.add(NOCTULICA);
-        entries.add(TURQUOSUM_STILUS);
-        entries.add(SAPHIRA_FLORENS);
-        entries.add(PREHISTORIC_ROSE);
-        entries.add(ORANGE_PERENNIAL);
-        entries.add(BLUE_PERENNIAL);
-        entries.add(GREEN_PERENNIAL);
-        entries.add(PINK_PERENNIAL);
-        entries.add(LUMINESCENT_PERENNIAL);
-        entries.add(PURPLE_PERENNIAL);
-        entries.add(YELLOW_PERENNIAL);
-        entries.add(YELLOW_QUINCE);
-        entries.add(RED_QUINCE);
-        entries.add(TINY_LILAC);
-        entries.add(OCULAE);
-        entries.add(YELICE);
-        entries.add(FLAMESTHYSIA);
-        entries.add(APAGANTHE);
-        entries.add(PINK_HEATER);
-        entries.add(WYSTERIA);
-        entries.add(BLUEBELL);
-        entries.add(VIPERIN);
-        entries.add(HIBISCUS);
-        entries.add(PLATUM);
-        entries.add(DIANTHUS);
-        entries.add(CYCAS);
-        entries.add(ARUM);
-        entries.add(HYDRANGEA);
-        entries.add(ANEMONE);
-        entries.add(JACYNTHE);
-        entries.add(ACONIT);
-        entries.add(PERVENCHE);
-
-
-        //Vines
-        entries.add(ModItems.CAERULEA_VOLUBILIS_ITEM);
-        entries.add(ModItems.PINK_MUSHROOM_VINES_ITEM);
-
-        //Big Mushrooms
-        entries.add(ModItems.BIG_PURPLE_MUSHROOM_SEED);
-        entries.add(ModItems.BIG_GREEN_MUSHROOM_SEED);
-        entries.add(ModItems.PURPLE_MUSHROOM_POWDER);
-        entries.add(ModBlocks.TINY_PURPLE_MUSHROOM);
-        entries.add(ModBlocks.LITTLE_PURPLE_MUSHROOM);
-        entries.add(ModBlocks.MEDIUM_PURPLE_MUSHROOM);
-        entries.add(ModBlocks.BIG_PURPLE_MUSHROOM);
-        entries.add(ModBlocks.TINY_GREEN_MUSHROOM);
-        entries.add(ModBlocks.LITTLE_GREEN_MUSHROOM);
-        entries.add(ModBlocks.MEDIUM_GREEN_MUSHROOM);
-        entries.add(ModBlocks.BIG_GREEN_MUSHROOM);
     }
     private static void  addItemstoFoodGroup(FabricItemGroupEntries entries){
         entries.add(ModItems.BAGUETTE);
     }
     private static void addItemstoFunctionalGroup(FabricItemGroupEntries entries){
-        //Light Blocks
-        entries.add(GREEN_LANTERN);
-        entries.add(RED_LANTERN);
-        entries.add(ModItems.GREEN_TORCH);
-        entries.add(GREEN_CAMPFIRE);
     }
     private static void addItemstoToolsGroup(FabricItemGroupEntries entries){
-        //Music Disk
-        entries.add(ModItems.HYMNE_FRANCAIS_MUSIC_DISC);
-        entries.add(ModItems.HYMNE_URSS_MUSIC_DISC);
+
     }
     private static void addItemstoSpawnEggsGroup(FabricItemGroupEntries entries){
-        entries.add(ModItems.GROKI_SPAWN_EGG);
-        entries.add(ModItems.BOLETE_COW_SPAWN_EGG);
+
     }
 
     //Mushrooms Blocks
@@ -198,6 +82,7 @@ public class ModBlocks {
     public static final Block BLUE_LUMINESCENT_SCHROOM_DEESLATE = registerBlock("blue_luminescent_schroom_deepslate", new Block(FabricBlockSettings.copyOf(Blocks.DEEPSLATE).luminance(3).requiresTool().instrument(Instrument.BASEDRUM)));
     public static final Block GREEN_STONY_SCHROOM_DEPOT = registerBlock("green_stony_schroom_depot", new Block(FabricBlockSettings.copyOf(Blocks.STONE).requiresTool().instrument(Instrument.BASEDRUM)));
     public static final Block RHYOLITE = registerBlock("rhyolite", new Block(FabricBlockSettings.copyOf(Blocks.STONE).requiresTool().instrument(Instrument.BASEDRUM)));
+    public static final Block LAVA_BLACKSTONE = registerBlock("blackstone_lava", new Block(FabricBlockSettings.copyOf(Blocks.BLACKSTONE).luminance(8)));
 
 
     //mushrooms
@@ -326,6 +211,12 @@ public class ModBlocks {
     public static final Block WALL_GREEN_TORCH = registerBlock("wall_green_torch", new WallTorchBlock(FabricBlockSettings.copyOf(Blocks.WALL_TORCH).luminance(12).nonOpaque(), ModParticles.GREENFIRE_PARTICLE));
     public static final Block GREEN_CAMPFIRE = registerBlock("green_campfire", new CampfireBlock(true, 1, FabricBlockSettings.copyOf(Blocks.CAMPFIRE).luminance(13).nonOpaque()));
 
+
+
+    //Construction Blocks
+    public static final Block LAVA_BLACKSTONE_BRICKS = registerBlock("blackstone_lava_bricks", new Block(FabricBlockSettings.copyOf(Blocks.BLACKSTONE).luminance(8)));
+    public static final Block LAVA_BLACKSTONE_MEDIUM_BRICKS = registerBlock("blackstone_lava_medium_bricks", new Block(FabricBlockSettings.copyOf(Blocks.BLACKSTONE).luminance(8)));
+    public static final Block LAVA_BLACKSTONE_TINY_BRICKS = registerBlock("blackstone_lava_tiny_bricks", new Block(FabricBlockSettings.copyOf(Blocks.BLACKSTONE).luminance(8)));
 
 
 

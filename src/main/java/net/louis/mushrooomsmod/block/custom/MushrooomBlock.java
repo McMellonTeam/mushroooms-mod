@@ -56,7 +56,10 @@ public class MushrooomBlock extends Block implements Fertilizable {
                 for(int k =-3; k<=3;++k) {
                     mutable.set(pos, i,j,k );
                     BlockState blockState = world.getBlockState(mutable);
-                    if(blockState.isIn(ModTags.Blocks.MUSHROOM_PLANT)) return true;
+                    if(blockState.isIn(ModTags.Blocks.MUSHROOM_PLANT)) {
+                        System.out.println("on");
+                        return true;
+                    }
                 }
             }
         }

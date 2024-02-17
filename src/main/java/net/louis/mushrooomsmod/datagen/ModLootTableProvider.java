@@ -49,6 +49,7 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDropWithSilkTouch(ModBlocks.BLUE_LUMINESCENT_SCHROOM_DEESLATE, Blocks.DEEPSLATE);
         addDropWithSilkTouch(ModBlocks.GREEN_STONY_SCHROOM_DEPOT, Blocks.STONE);
         addDrop(ModBlocks.RHYOLITE);
+        addDrop(ModBlocks.LAVA_BLACKSTONE);
 
         //Mushrooms
         addDrop(ModBlocks.PURPLE_MUSHROOM);
@@ -167,5 +168,10 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.RED_LANTERN);
         addDrop(ModBlocks.GREEN_LANTERN);
         addDrop(ModBlocks.GREEN_TORCH);
+
+        //Construction Blocks
+        addDrop(ModBlocks.LAVA_BLACKSTONE_BRICKS);
+        addDrop(ModBlocks.LAVA_BLACKSTONE_MEDIUM_BRICKS);
+        addDrop(ModBlocks.LAVA_BLACKSTONE_TINY_BRICKS);
     }
 }

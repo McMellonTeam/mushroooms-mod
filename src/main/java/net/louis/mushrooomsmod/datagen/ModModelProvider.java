@@ -49,6 +49,7 @@ public class ModModelProvider extends FabricModelProvider {
 
         //Hard Blocks
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.RHYOLITE);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.LAVA_BLACKSTONE);
 
         //Potted Flowers
         blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.BLUE_MUSHROOM, ModBlocks.POTTED_BLUE_MUSHROOM, BlockStateModelGenerator.TintType.NOT_TINTED);
@@ -97,6 +98,11 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerLantern(ModBlocks.RED_LANTERN);
         blockStateModelGenerator.registerLantern(ModBlocks.GREEN_LANTERN);
         blockStateModelGenerator.registerTorch(ModBlocks.GREEN_TORCH, ModBlocks.WALL_GREEN_TORCH);
+
+        //Construction Blocks
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.LAVA_BLACKSTONE_BRICKS);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.LAVA_BLACKSTONE_MEDIUM_BRICKS);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.LAVA_BLACKSTONE_TINY_BRICKS);
 
         //Spawn Eggs
         blockStateModelGenerator.registerParentedItemModel(ModItems.GROKI_SPAWN_EGG, ModelIds.getMinecraftNamespacedItem("template_spawn_egg"));

@@ -146,7 +146,7 @@ public class CustomYellowMushroomFeature extends CustomYellowMushroom{
                     double z = secondlarge*1.5 * Math.cos(i) * Math.sin(j);
                     double y = secondlarge * Math.sin(i);
                     mutable.set(pos, (int) x + randomx, (int) (y + height-large+3) , (int) z + randomz);
-                    if (world.getBlockState(mutable).isOf(config.stemProvider.get(random,pos).getBlock()))this.setBlockState(world, mutable, blockState);
+                    if (!world.getBlockState(mutable).isOf(config.stemProvider.get(random,pos).getBlock()))this.setBlockState(world, mutable, blockState);
                 }
             }
         }
