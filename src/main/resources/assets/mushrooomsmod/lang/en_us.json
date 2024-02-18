@@ -10,12 +10,22 @@
 
   "block.mushrooomsmod.mushroom_dark_pink_block": "Dark Pink Mushroom Block",
   "block.mushrooomsmod.mushroom_dark_orange_block": "Dark Orange Mushroom Block",
+  "block.mushrooomsmod.mushroom_dark_yellow_block": "Dark Yellow Mushroom Block",
   "block.mushrooomsmod.mushroom_dark_blue_block": "Dark Blue Mushroom Block",
   "block.mushrooomsmod.mushroom_dark_purple_block": "Dark Purple Mushroom Block",
   "block.mushrooomsmod.mushroom_dark_green_block": "Dark Yellow Mushroom Block",
   "block.mushrooomsmod.mushroom_dark_blue_luminescent_block": "Dark Blue Luminescent Mushroom Block",
   "block.mushrooomsmod.mushroom_dark_green_luminescent_block": "Dark Green Mushroom Block",
-  "block.mushrooomsmod.mushroom_dark_red_luminescent_block": "Dark Red Mushroom Block",
+  "block.mushrooomsmod.mushroom_dark_red_block": "Dark Red Mushroom Block",
+
+
+  "block.mushrooomsmod.fermented_mushroom_purple" : "Purple Fermented Mushroom",
+
+
+  "block.mushrooomsmod.blackstone_lava" : "Lava Blackstone",
+  "block.mushrooomsmod.blackstone_lava_bricks" : "Lava Blackstone Bricks",
+  "block.mushrooomsmod.blackstone_lava_medium_bricks" : "Medium Lava Blackstone Bricks",
+  "block.mushrooomsmod.blackstone_lava_tiny_bricks" : "Tiny Lava Blackstone Bricks",
 
 
 
@@ -122,7 +132,17 @@
   "item.mushrooomsmod.groki_spawn_egg": "Groki Spawn Egg",
 
 
-  "biome.mushrooomsmod.blue_luminescent_schroom_cave" : "Blue Luminescent Schroom Cave"
+  "item.mushrooomsmod.hymne_francais_music_disc" : "French Anthem",
+  "item.mushrooomsmod.hymne_francais_music_disc.desc" : "La Marseillaise",
+  "item.mushrooomsmod.hymne_urss_music_disc.desc" : "Guimn Sovietskogo Soïouza",
+  "item.mushrooomsmod.hymne_urss_music_disc" : "USSR Anthem",
+
+
+  "biome.mushrooomsmod.blue_luminescent_schroom_cave" : "Blue Luminescent Schroom Cave",
+
+
+
+  "itemgroup.mushroooms" : "Mushroooms"
 
 
 
