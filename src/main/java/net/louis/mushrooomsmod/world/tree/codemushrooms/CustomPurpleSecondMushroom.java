@@ -1,4 +1,4 @@
-package net.louis.mushrooomsmod.world.tree.BugeBigPurpleMushroom;
+package net.louis.mushrooomsmod.world.tree.codemushrooms;
 
 import com.mojang.serialization.Codec;
 import net.louis.mushrooomsmod.feature.mushroomfeature.ModMushroomFeatureConfig;
@@ -11,8 +11,8 @@ import net.minecraft.world.WorldAccess;
 
 import java.util.ArrayList;
 
-public class HugeBigMuchroomFeature extends CustomHugePompomMuchroomFeature {
-    public HugeBigMuchroomFeature(Codec<ModMushroomFeatureConfig> codec) {
+public class CustomPurpleSecondMushroom extends CustomPurpleSecondMushroomFeature {
+    public CustomPurpleSecondMushroom(Codec<ModMushroomFeatureConfig> codec) {
         super(codec);
     }
 

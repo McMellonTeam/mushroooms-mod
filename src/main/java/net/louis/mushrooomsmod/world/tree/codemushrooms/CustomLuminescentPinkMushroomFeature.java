@@ -1,4 +1,4 @@
-package net.louis.mushrooomsmod.world.tree.HugeLuminescentPinkMushroom;
+package net.louis.mushrooomsmod.world.tree.codemushrooms;
 
 import com.mojang.serialization.Codec;
 import net.louis.mushrooomsmod.world.ModConfiguredFeatures;
@@ -10,8 +10,8 @@ import net.minecraft.world.WorldAccess;
 import net.minecraft.world.gen.feature.ConfiguredFeature;
 import net.minecraft.world.gen.feature.HugeMushroomFeatureConfig;
 
-public class HugeLuminescentPinkMushroomFeature extends CustomHugeLuminescentPinkMushroomFeature {
-    public HugeLuminescentPinkMushroomFeature(Codec<HugeMushroomFeatureConfig> codec) {
+public class CustomLuminescentPinkMushroomFeature extends CustomLuminescentPinkMushroom {
+    public CustomLuminescentPinkMushroomFeature(Codec<HugeMushroomFeatureConfig> codec) {
         super(codec);
     }
 
