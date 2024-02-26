@@ -7,6 +7,7 @@ import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.util.Identifier;
+import software.bernie.geckolib.core.animatable.model.CoreGeoBone;
 import software.bernie.geckolib.renderer.GeoEntityRenderer;
 
 public class BoleteCowRenderer extends GeoEntityRenderer<BoleteCowEntity> {
@@ -27,4 +28,5 @@ public class BoleteCowRenderer extends GeoEntityRenderer<BoleteCowEntity> {
 
         super.render(entity, entityYaw, partialTick, poseStack, bufferSource, packedLight);
     }
+
 }

@@ -59,8 +59,6 @@ public class BoleteCowEntity extends CowEntity implements GeoEntity {
         }else{
             geoAnimatableAnimationState.getController().setAnimation(RawAnimation.begin().then("animation.bolete_cow.idle", Animation.LoopType.LOOP));
         }
-
-
         return PlayState.CONTINUE;
     }
 }

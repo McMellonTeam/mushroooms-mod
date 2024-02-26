@@ -1,11 +1,10 @@
-package net.louis.mushrooomsmod.world.tree.structuremushrooms;
+package net.louis.mushrooomsmod.world.tree.mushrooms.structuremushrooms;
 
 import com.mojang.serialization.Codec;
 import me.emafire003.dev.structureplacerapi.StructurePlacerAPI;
 import net.louis.mushrooomsmod.MushrooomsMod;
 import net.louis.mushrooomsmod.world.ModConfiguredFeatures;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.BlockMirror;

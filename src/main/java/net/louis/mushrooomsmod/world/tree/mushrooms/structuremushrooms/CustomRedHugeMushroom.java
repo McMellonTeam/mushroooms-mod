@@ -1,4 +1,4 @@
-package net.louis.mushrooomsmod.world.tree.structuremushrooms;
+package net.louis.mushrooomsmod.world.tree.mushrooms.structuremushrooms;
 
 import com.mojang.serialization.Codec;
 import net.louis.mushrooomsmod.feature.mushroomfeature.ModMushroomFeatureConfig;

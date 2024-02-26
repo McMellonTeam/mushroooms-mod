@@ -1,6 +1,7 @@
-package net.louis.mushrooomsmod.world.tree.codemushrooms;
+package net.louis.mushrooomsmod.world.tree.mushrooms.codemushrooms;
 
 import com.mojang.serialization.Codec;
+import net.louis.mushrooomsmod.feature.mushroomfeature.ModMushroomFeatureConfig;
 import net.minecraft.block.BlockState;
 import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.util.math.BlockPos;
@@ -10,15 +11,14 @@ import net.minecraft.world.StructureWorldAccess;
 import net.minecraft.world.WorldAccess;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.HugeMushroomFeature;
-import net.minecraft.world.gen.feature.HugeMushroomFeatureConfig;
 import net.minecraft.world.gen.feature.util.FeatureContext;
 
-public abstract class CustomLuminescentPinkMushroom extends Feature<HugeMushroomFeatureConfig> {
-    public CustomLuminescentPinkMushroom(Codec<HugeMushroomFeatureConfig> codec) {
+public abstract class CustomPurpleSecondMushroomFeature extends Feature<ModMushroomFeatureConfig> {
+    public CustomPurpleSecondMushroomFeature(Codec<ModMushroomFeatureConfig> codec) {
         super(codec);
     }
 
-    protected void generateStem(WorldAccess world, Random random, BlockPos pos, BlockPos start, HugeMushroomFeatureConfig config, int height, BlockPos.Mutable mutablePos, BlockPos.Mutable mutable) {
+    protected void generateStem(WorldAccess world, Random random, BlockPos pos, BlockPos start, ModMushroomFeatureConfig config, int height, BlockPos.Mutable mutablePos, BlockPos.Mutable mutable) {
         for (int i = 0; i < height; ++i) {
             mutablePos.set(pos).move(Direction.UP, i);
             if (world.getBlockState(mutablePos).isOpaqueFullCube(world, mutablePos)) continue;
@@ -60,7 +60,7 @@ public abstract class CustomLuminescentPinkMushroom extends Feature<HugeMushroom
         return i;
     }
 
-    protected boolean canGenerate(WorldAccess world, BlockPos pos, int height, BlockPos.Mutable mutablePos, HugeMushroomFeatureConfig config) {
+    protected boolean canGenerate(WorldAccess world, BlockPos pos, int height, BlockPos.Mutable mutablePos, ModMushroomFeatureConfig config) {
         int i = pos.getY();
         if (i < world.getBottomY() + 1 || i + height + 1 >= world.getTopY()) {
             return false;
@@ -83,27 +83,28 @@ public abstract class CustomLuminescentPinkMushroom extends Feature<HugeMushroom
     }
 
     @Override
-    public boolean generate(FeatureContext<HugeMushroomFeatureConfig> context) {
+    public boolean generate(FeatureContext<ModMushroomFeatureConfig> context) {
         BlockPos.Mutable mutable;
         StructureWorldAccess structureWorldAccess = context.getWorld();
         BlockPos blockPos = context.getOrigin();
         Random random = context.getRandom();
-        HugeMushroomFeatureConfig hugeMushroomFeatureConfig = context.getConfig();
+        ModMushroomFeatureConfig modMushroomFeatureConfig = context.getConfig();
         int i = this.getHeight(random);
-        if (!this.canGenerate(structureWorldAccess, blockPos, i, mutable = new BlockPos.Mutable(), hugeMushroomFeatureConfig)) {
+        if (!this.canGenerate(structureWorldAccess, blockPos, i, mutable = new BlockPos.Mutable(), modMushroomFeatureConfig)) {
             return false;
         }
-        int z = hugeMushroomFeatureConfig.foliageRadius;
-        this.generateBottomCap(structureWorldAccess, random, blockPos, i-1, mutable, hugeMushroomFeatureConfig, z+3);
-        this.generateSecondCap(structureWorldAccess, random, blockPos, i, mutable, hugeMushroomFeatureConfig, z+1);
-        this.generateCap(structureWorldAccess, random, blockPos, i+1, mutable, hugeMushroomFeatureConfig, z-1);
-        this.generateStem(structureWorldAccess, random, blockPos, blockPos,  hugeMushroomFeatureConfig, i, mutable, mutable);
+        int z = modMushroomFeatureConfig.foliageRadius;
+
+        Integer[] coordinates =  placeTrunk(structureWorldAccess, random , blockPos, i,   mutable , modMushroomFeatureConfig );
+        generateCap(structureWorldAccess,random,blockPos, mutable,coordinates,modMushroomFeatureConfig);
         return true;
     }
-
+    protected abstract Integer[] placeTrunk(WorldAccess world, Random random, BlockPos start, int y, BlockPos.Mutable mutable, ModMushroomFeatureConfig config) ;
+    protected abstract void placeBranch(WorldAccess world, BlockPos pos, BlockPos.Mutable mutable ,  int dx, int dy, int dz, int a);
     protected abstract int getCapSize(int var1, int var2, int var3, int var4);
 
-    protected abstract void generateCap(WorldAccess var1, Random var2, BlockPos var3, int var4, BlockPos.Mutable var5, HugeMushroomFeatureConfig var6, int var7);
-    protected abstract void generateSecondCap(WorldAccess var1, Random var2, BlockPos var3, int var4, BlockPos.Mutable var5, HugeMushroomFeatureConfig var6, int var7);
-    protected abstract void generateBottomCap(WorldAccess var1, Random var2, BlockPos var3, int var4, BlockPos.Mutable var5, HugeMushroomFeatureConfig var6, int var7);
+    protected abstract void generateCap(WorldAccess var1, Random var2, BlockPos var3,  BlockPos.Mutable var5,  Integer[]coordinates, ModMushroomFeatureConfig config);
+    protected abstract void generateSecondCap(WorldAccess var1, Random var2, BlockPos var3, int var4, BlockPos.Mutable var5, ModMushroomFeatureConfig var6, int var7);
+    protected abstract void generateBottomCap(WorldAccess var1, Random var2, BlockPos var3, int var4, BlockPos.Mutable var5, ModMushroomFeatureConfig var6, int var7);
 }
+

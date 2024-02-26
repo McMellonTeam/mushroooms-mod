@@ -1,4 +1,4 @@
-// 1.20.1	2024-02-18T11:31:08.1648998	Mushroooms Mod/Block Loot Tables
+// 1.20.1	2024-02-26T13:14:23.3556931	Mushroooms Mod/Block Loot Tables
 9052c922f61ece9895ae6bc39a9cd5b11200f400 data\mushrooomsmod\loot_tables\blocks\tiny_green_mushroom.json
 c5778176d3abc2cb85c86edc95a8a250dc1094f9 data\mushrooomsmod\loot_tables\blocks\perennial_pink.json
 d89e51bb380c94d583d6cf7ee38b48298b9f0de3 data\mushrooomsmod\loot_tables\blocks\noctulica.json
@@ -103,8 +103,8 @@ c2ae7eb24db14519afc6f3582298710b8d85a95d data\mushrooomsmod\loot_tables\blocks\m
 298f65bb5177761a224ad9a98c4bc8f2a8ebac2a data\mushrooomsmod\loot_tables\blocks\potted_purple_mushroom.json
 c79edc6afa03379166e7535e48fbc36242691831 data\mushrooomsmod\loot_tables\blocks\potted_perennial_green.json
 88c530df849c8cbb34fdf35464b7a88100c19f9f data\mushrooomsmod\loot_tables\blocks\blackstone_lava_bricks.json
-63d66b982fa9a6a9569e1d221ebd7ee3c2b5a6ce data\mushrooomsmod\loot_tables\blocks\potted_luminescent_mushroom.json
 5a44e0539b73ba4b43beb042d1798c89d093ccf4 data\mushrooomsmod\loot_tables\blocks\mushroom_dark_blue_luminescent_block.json
+63d66b982fa9a6a9569e1d221ebd7ee3c2b5a6ce data\mushrooomsmod\loot_tables\blocks\potted_luminescent_mushroom.json
 1ed724676f75d29a86ac7ca0a4b4f83980548aa9 data\mushrooomsmod\loot_tables\blocks\green_torch.json
 719a2e457964bbc37b1d7b92ee59d19e061790f4 data\mushrooomsmod\loot_tables\blocks\potted_oculae.json
 9bb31ccc87c161a01f1fb396f42030923fd351cd data\mushrooomsmod\loot_tables\blocks\potted_perennial_yellow.json

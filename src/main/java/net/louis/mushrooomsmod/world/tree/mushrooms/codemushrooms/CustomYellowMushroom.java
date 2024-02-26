@@ -1,8 +1,7 @@
-package net.louis.mushrooomsmod.world.tree.codemushrooms;
+package net.louis.mushrooomsmod.world.tree.mushrooms.codemushrooms;
 
 import com.mojang.serialization.Codec;
 import net.louis.mushrooomsmod.block.ModBlocks;
-import net.minecraft.block.Blocks;
 import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;

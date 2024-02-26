@@ -2,15 +2,10 @@ package net.louis.mushrooomsmod.world;
 import net.louis.mushrooomsmod.MushrooomsMod;
 import net.louis.mushrooomsmod.block.ModBlocks;
 import net.louis.mushrooomsmod.feature.mushroomfeature.ModMushroomFeatureConfig;
-import net.louis.mushrooomsmod.world.tree.codemushrooms.CustomOrangeMushroomFeature;
-import net.louis.mushrooomsmod.world.tree.codemushrooms.CustomYellowMushroomFeature;
-import net.louis.mushrooomsmod.world.tree.structuremushrooms.CustomRedHugeMushroomFeature;
+import net.louis.mushrooomsmod.world.tree.mushrooms.codemushrooms.*;
+import net.louis.mushrooomsmod.world.tree.mushrooms.structuremushrooms.CustomRedHugeMushroomFeature;
 import net.louis.mushrooomsmod.world.tree.HugeBlueMushroom.HugeBlueMushroomFeature;
-import net.louis.mushrooomsmod.world.tree.structuremushrooms.CustomGreenSecondMushroomFeature;
-import net.louis.mushrooomsmod.world.tree.codemushrooms.CustomLuminescentMushroomFeature;
-import net.louis.mushrooomsmod.world.tree.codemushrooms.CustomLuminescentPinkMushroomFeature;
-import net.louis.mushrooomsmod.world.tree.codemushrooms.CustomPurpleSecondMushroom;
-import net.louis.mushrooomsmod.world.tree.codemushrooms.CustomPurpleMushroomFeature;
+import net.louis.mushrooomsmod.world.tree.mushrooms.structuremushrooms.CustomGreenSecondMushroomFeature;
 import net.minecraft.block.Blocks;
 import net.minecraft.registry.*;
 import net.minecraft.util.Identifier;
@@ -91,7 +86,7 @@ public class ModConfiguredFeatures <FC extends FeatureConfig>  {
     //Huge mushroom features
     public static final Feature<HugeMushroomFeatureConfig> HUGE_BLUE_MUSHROOM = ModConfiguredFeatures.registercustomfeature("huge_blue_mushroom", new HugeBlueMushroomFeature(HugeMushroomFeatureConfig.CODEC));
     public static final Feature<HugeMushroomFeatureConfig> HUGE_PURPLE_MUSHROOM = ModConfiguredFeatures.registercustomfeature("huge_purple_mushroom", new CustomPurpleMushroomFeature(HugeMushroomFeatureConfig.CODEC));
-    public static final Feature<HugeMushroomFeatureConfig> HUGE_GREEN_MUSHROOM = ModConfiguredFeatures.registercustomfeature("huge_green_mushroom", new CustomGreenSecondMushroomFeature(HugeMushroomFeatureConfig.CODEC));
+    public static final Feature<ModMushroomFeatureConfig> HUGE_GREEN_MUSHROOM = ModConfiguredFeatures.registercustomfeature("huge_green_mushroom", new CustomGreenMushroomFeature(ModMushroomFeatureConfig.CODEC));
     public static final Feature<HugeMushroomFeatureConfig> HUGE_LUMINESCENT_MUSHROOM = ModConfiguredFeatures.registercustomfeature("huge_luminescent_mushroom", new CustomLuminescentMushroomFeature(HugeMushroomFeatureConfig.CODEC));
 
     public static final Feature<HugeMushroomFeatureConfig> HUGE_LUMINESCENT_PINK_MUSHROOM = ModConfiguredFeatures.registercustomfeature("huge_luminescent_pink_mushroom", new CustomLuminescentPinkMushroomFeature(HugeMushroomFeatureConfig.CODEC));
@@ -113,7 +108,7 @@ public class ModConfiguredFeatures <FC extends FeatureConfig>  {
         //huge mushrooms
         register(context, BLUE_MUSHROOM_KEY, ModConfiguredFeatures.HUGE_BLUE_MUSHROOM, new  HugeMushroomFeatureConfig(BlockStateProvider.of(ModBlocks.BLUE_MUSHROOM_BLOCK), BlockStateProvider.of(Blocks.MUSHROOM_STEM), 4));
         register(context, PURPLE_MUSHROOM_KEY, ModConfiguredFeatures.HUGE_PURPLE_MUSHROOM, new  HugeMushroomFeatureConfig(BlockStateProvider.of(ModBlocks.PURPLE_MUSHROOM_BLOCK), BlockStateProvider.of(Blocks.MUSHROOM_STEM), 5));
-        register(context, GREEN_MUSHROOM_KEY, ModConfiguredFeatures.HUGE_GREEN_MUSHROOM, new  HugeMushroomFeatureConfig(BlockStateProvider.of(ModBlocks.GREEN_MUSHROOM_BLOCK), BlockStateProvider.of(Blocks.MUSHROOM_STEM), 20));
+        register(context, GREEN_MUSHROOM_KEY, ModConfiguredFeatures.HUGE_GREEN_MUSHROOM, new ModMushroomFeatureConfig(BlockStateProvider.of(ModBlocks.GREEN_MUSHROOM_BLOCK), BlockStateProvider.of(Blocks.MUSHROOM_STEM),BlockStateProvider.of(Blocks.MUSHROOM_STEM), 20));
         register(context, LUMINESCENT_MUSHROOM_KEY, ModConfiguredFeatures.HUGE_LUMINESCENT_MUSHROOM, new  HugeMushroomFeatureConfig(BlockStateProvider.of(ModBlocks.BLUE_LUMINESCENT_MUSHROOM_BLOCK), BlockStateProvider.of(ModBlocks.LUMINESCENT_MUSHROOM_STEM), 6));
         register(context, LUMINESCENT_PINK_MUSHROOM_KEY, ModConfiguredFeatures.HUGE_LUMINESCENT_PINK_MUSHROOM, new  HugeMushroomFeatureConfig(BlockStateProvider.of(ModBlocks.LUMINESCENT_PINK_MUSHROOM_BLOCK), BlockStateProvider.of(ModBlocks.TRANSPARENT_MUSHROOM_STEM), 4));
         register(context, BIG_PURPLE_MUSHROOM_KEY, ModConfiguredFeatures.HUGE_BIG_PURPLE_MUSHROOM, new  ModMushroomFeatureConfig(BlockStateProvider.of(ModBlocks.PURPLE_MUSHROOM_BLOCK), BlockStateProvider.of(Blocks.MUSHROOM_STEM) ,BlockStateProvider.of(Blocks.MUSHROOM_STEM), 4));

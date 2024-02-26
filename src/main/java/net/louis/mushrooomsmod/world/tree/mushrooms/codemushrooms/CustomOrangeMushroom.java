@@ -1,4 +1,4 @@
-package net.louis.mushrooomsmod.world.tree.codemushrooms;
+package net.louis.mushrooomsmod.world.tree.mushrooms.codemushrooms;
 
 import com.mojang.serialization.Codec;
 import net.louis.mushrooomsmod.block.ModBlocks;
