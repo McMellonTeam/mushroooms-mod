@@ -36,6 +36,8 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.DARK_ORANGE_MUSHROOM_BLOCK);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.DARK_RED_MUSHROOM_BLOCK);
 
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.PURPLE_ALTERED_MUSHROOM_BLOCK);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.PURPLE_DEGRADATED_MUSHROOM_BLOCK);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.PURPLE_MUSHROOM_FERMENTED_BLOCK);
 
 

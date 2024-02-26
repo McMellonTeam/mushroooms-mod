@@ -2,6 +2,7 @@ package net.rodofire.mushrooomsmod.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
+import net.rodofire.mushrooomsmod.item.ModItems;
 import net.rodofire.mushrooomsmod.util.ModTags;
 import net.minecraft.item.Items;
 import net.minecraft.registry.RegistryWrapper;
@@ -29,6 +30,9 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(Items.DIAMOND_HELMET)
                 .add(Items.DIAMOND_HORSE_ARMOR)
                 .add(Items.DIAMOND_PICKAXE);
+
+        getOrCreateTagBuilder(ModTags.Items.MUSHROOM_POWDER)
+                .add(ModItems.PURPLE_MUSHROOM_POWDER);
 
     }
 }

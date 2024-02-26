@@ -26,7 +26,12 @@ public class ModItems {
                         //Mushroom Related
                         entries.add(ModBlocks.BLUE_MUSHROOM_BLOCK);
                         entries.add(ModBlocks.BLUE_LUMINESCENT_MUSHROOM_BLOCK);
+
                         entries.add(ModBlocks.PURPLE_MUSHROOM_BLOCK);
+                        entries.add(ModBlocks.PURPLE_ALTERED_MUSHROOM_BLOCK);
+                        entries.add(ModBlocks.PURPLE_DEGRADATED_MUSHROOM_BLOCK);
+                        entries.add(ModBlocks.PURPLE_MUSHROOM_FERMENTED_BLOCK);
+
                         entries.add(ModBlocks.GREEN_MUSHROOM_BLOCK);
                         entries.add(ModBlocks.YELLOW_MUSHROOM_BLOCK);
                         entries.add(ModBlocks.ORANGE_MUSHROOM_BLOCK);
@@ -41,7 +46,7 @@ public class ModItems {
                         entries.add(ModBlocks.DARK_BLUE_MUSHROOM_BLOCK);
                         entries.add(ModBlocks.DARK_RED_MUSHROOM_BLOCK);
 
-                        entries.add(ModBlocks.PURPLE_MUSHROOM_FERMENTED_BLOCK);
+
 
 
                         entries.add(ModBlocks.LUMINESCENT_MUSHROOM_STEM);

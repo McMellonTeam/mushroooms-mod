@@ -1,5 +1,12 @@
 package net.rodofire.mushrooomsmod.block.custom;
 
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.ActionResult;
+import net.minecraft.util.Hand;
+import net.minecraft.util.hit.BlockHitResult;
+import net.rodofire.mushrooomsmod.block.custom.PinkMushroomBlock.PinkMushroomVines;
 import net.rodofire.mushrooomsmod.util.ModTags;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -13,7 +20,7 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldView;
 
-public class MushrooomBlock extends Block implements Fertilizable {
+public class MushrooomBlock extends Block  {
     public static Block fermentedblock;
     public static final VoxelShape SHAPE = createCuboidShape(0,0,0,16,16,16);
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
@@ -25,45 +32,13 @@ public class MushrooomBlock extends Block implements Fertilizable {
     }
 
     @Override
-    public boolean isFertilizable(WorldView world, BlockPos pos, BlockState state, boolean isClient) {
-        return false;
-    }
-
-
-    @Override
-    public boolean canGrow(World world, Random random, BlockPos pos, BlockState state) {
-        System.out.println("can grow");
-        return hasMushrooms(world, pos);
-    }
-
-    @Override
-    public void grow(ServerWorld world, Random random, BlockPos pos, BlockState state) {
-        world.setBlockState(pos,fermentedblock.getDefaultState());
-    }
-
-    public boolean hasMushrooms(World world, BlockPos pos){
-        System.out.println("has msuhrooms");
-        BlockPos.Mutable mutable = pos.mutableCopy();
-        for (int i =-3;i<=3;++i){
-            for(int j = -3;j<=3;++j) {
-                for(int k =-3; k<=3;++k) {
-                    mutable.set(pos, i,j,k );
-                    BlockState blockState = world.getBlockState(mutable);
-                    if(blockState.isIn(ModTags.Blocks.MUSHROOM_PLANT)) {
-                        System.out.println("on");
-                        return true;
-                    }
-                }
-            }
+    public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
+        ItemStack itemStack = player.getStackInHand(hand);
+        if(itemStack.isIn(ModTags.Items.MUSHROOM_POWDER)){
+            world.setBlockState(pos,fermentedblock.getDefaultState());
+            itemStack.decrement(-1);
+            return ActionResult.SUCCESS;
         }
-        System.out.println("false");
-        return false;
+        return ActionResult.PASS;
     }
-    public void neighborUpdate(BlockState state, World world, BlockPos pos, Block sourceBlock, BlockPos sourcePos, boolean notify) {
-        System.out.println("neighbour update");
-        canGrow(world,world.getRandom(),pos,state);
-    }
-
-
-
 }

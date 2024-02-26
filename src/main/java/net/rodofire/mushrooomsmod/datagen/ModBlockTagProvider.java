@@ -56,6 +56,8 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.DARK_BLUE_MUSHROOM_BLOCK)
                 .add(ModBlocks.DARK_RED_MUSHROOM_BLOCK)
 
+                .add(ModBlocks.PURPLE_ALTERED_MUSHROOM_BLOCK)
+                .add(ModBlocks.PURPLE_DEGRADATED_MUSHROOM_BLOCK)
                 .add(ModBlocks.PURPLE_MUSHROOM_FERMENTED_BLOCK)
 
 

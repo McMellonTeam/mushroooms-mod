@@ -42,15 +42,6 @@ public interface PinkMushroomVines {
         return state.contains(BERRIES) && state.get(BERRIES) != false;
     }
 
-    /**
-     * {@return a function that receives a {@link BlockState} and returns the luminance for the state}
-     * If there are no berries, it supplies the value 0.
-     *
-     * @apiNote The return value is meant to be passed to
-     * {@link AbstractBlock.Settings#luminance} builder method.
-     *
-     * @param luminance luminance supplied when the block has berries
-     */
     public static ToIntFunction<BlockState> getLuminanceSupplier(int luminance) {
         return state -> state.get(Properties.BERRIES) != false ? luminance : 0;
     }

@@ -27,11 +27,8 @@ public class FermentedMushroomBlock extends Block  {
     }
 
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
-        System.out.println("on use");
         Item item = player.getMainHandStack().getItem();
-        System.out.println(item);
         if (item.equals(Items.DIAMOND_AXE)||item.equals(Items.NETHERITE_AXE)||item.equals(Items.IRON_AXE)){
-            System.out.println("axe");
             int random = Random.create().nextBetween(0,10);
             if (random!=0){
                 world.setBlockState(pos,block.getDefaultState());

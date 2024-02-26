@@ -77,7 +77,7 @@ public class GrokiEntity extends AnimalEntity implements GeoEntity {
         System.out.println(itemStack);
         if(itemStack.isIn(ModTags.Items.DIAMOND_ITEMS)){
             System.out.println("ok");
-            player.clearActiveItem();
+            itemStack.decrement(-1);
             this.dropItem(ModItems.CRUSHED_DIAMOND, 1);
             return ActionResult.SUCCESS;
         }
