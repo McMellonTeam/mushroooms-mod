@@ -1,4 +1,6 @@
-// 1.20.1	2024-01-03T14:55:33.9211372	Mushroooms Mod/Tags for minecraft:block
-bc8551118c3d4f698aea025ea2f7d7056b4472a1 data\minecraft\tags\blocks\mineable\pickaxe.json
+// 1.20.1	2024-02-26T18:13:01.0944166	Mushroooms Mod/Tags for minecraft:block
+17494c6c72189d5cedbff958e25bffe6d367713e data\mushrooomsmod\tags\blocks\mushroom_plant.json
+b16c73b0c365f6737aa2f36ca4733d755da8720c data\minecraft\tags\blocks\mineable\pickaxe.json
+75dfbc647a6be6c310824a4d205fb462f088c04c data\minecraft\tags\blocks\flowers.json
 c7cd8925b6f3cfd2060caaa4e6315bfc5f4c4879 data\minecraft\tags\blocks\mineable\shovel.json
-b78651d2a95ee8681e64a0941361321b5b2f6414 data\minecraft\tags\blocks\mineable\axe.json
+f8e4e1bc59790ffaac69d3a79e67d45d0a0c6266 data\minecraft\tags\blocks\mineable\axe.json

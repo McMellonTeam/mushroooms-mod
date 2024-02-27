@@ -7,6 +7,10 @@
     "mushrooomsmod:red_lantern",
     "mushrooomsmod:green_lantern",
     "mushrooomsmod:green_campfire",
-    "mushrooomsmod:rhyolite"
+    "mushrooomsmod:rhyolite",
+    "mushrooomsmod:blackstone_lava_bricks",
+    "mushrooomsmod:blackstone_lava",
+    "mushrooomsmod:blackstone_lava_tiny_bricks",
+    "mushrooomsmod:blackstone_lava_medium_bricks"
   ]
 }

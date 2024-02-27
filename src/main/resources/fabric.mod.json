@@ -16,16 +16,16 @@
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"net.louis.mushrooomsmod.MushrooomsMod"
+			"net.rodofire.mushrooomsmod.MushrooomsMod"
 		],
 		"client": [
-			"net.louis.mushrooomsmod.MushrooomsModClient"
+			"net.rodofire.mushrooomsmod.MushrooomsModClient"
 		],
 		"fabric-datagen": [
-          "net.louis.mushrooomsmod.MushrooomsModDataGenerator"
+          "net.rodofire.mushrooomsmod.MushrooomsModDataGenerator"
 		],
 		"terrablender" : [
-			"net.louis.mushrooomsmod.world.biome.ModTerrablenderAPI"
+			"net.rodofire.mushrooomsmod.world.biome.ModTerrablenderAPI"
 		]
 	},
 	"mixins": [
