@@ -7,10 +7,11 @@ import net.minecraft.util.math.random.Random;
 public class Hammer extends ToolItem {
     private final float attackDamage;
     float attackspeed;
+
     public Hammer(ToolMaterial material, int attackDamage, float attackspeed, Settings settings) {
         super(material, settings);
-        this.attackDamage = attackDamage + (float) Random.create().nextBetween(0, 2) /2;
-        this.attackspeed=attackspeed;
+        this.attackDamage = attackDamage + (float) Random.create().nextBetween(0, 2) / 2;
+        this.attackspeed = attackspeed;
     }
 
 }

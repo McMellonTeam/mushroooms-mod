@@ -20,7 +20,7 @@ public class ModItems {
     public static final ItemGroup MUSHROOM_GROUP = Registry.register(Registries.ITEM_GROUP,
             new Identifier(MushrooomsMod.MOD_ID, "luminescent_mushroom"),
             FabricItemGroup.builder().displayName(Text.translatable("itemgroup.mushroooms"))
-                .icon(() -> new ItemStack(ModBlocks.LUMINESCENT_MUSHROOM)).entries((displayContext, entries) -> {
+                    .icon(() -> new ItemStack(ModBlocks.LUMINESCENT_MUSHROOM)).entries((displayContext, entries) -> {
                         //Blocks
                         //Natural
                         //Mushroom Related
@@ -45,8 +45,6 @@ public class ModItems {
                         entries.add(ModBlocks.DARK_MUSHROOM_BLUE_LUMINESCENT_BLOCK);
                         entries.add(ModBlocks.DARK_BLUE_MUSHROOM_BLOCK);
                         entries.add(ModBlocks.DARK_RED_MUSHROOM_BLOCK);
-
-
 
 
                         entries.add(ModBlocks.LUMINESCENT_MUSHROOM_STEM);
@@ -157,7 +155,7 @@ public class ModItems {
                         entries.add(ModItems.BOLETE_COW_SPAWN_EGG);
 
 
-    }).build());
+                    }).build());
 
     //Blocks
     public static final Item PURPLE_MUSHROOM_POWDER = registerItem("purple_mushroom_powder", new Item(new FabricItemSettings()));
@@ -173,7 +171,7 @@ public class ModItems {
 
     //food
     public static final Item BAGUETTE = registerItem("baguette", new Item(new FabricItemSettings().food(ModFoodComponents.BAGUETTE)));
-    public static final Item LUMINESCENT_SCHROOM_SOUP = registerItem("luminescent_schroom_soup", new SchroomSoup(new FabricItemSettings(), ModBiomes.BLUE_LUMINESCENT_SHROOM_CAVE, new StatusEffectInstance(StatusEffects.NIGHT_VISION, 300,0)));
+    public static final Item LUMINESCENT_SCHROOM_SOUP = registerItem("luminescent_schroom_soup", new SchroomSoup(new FabricItemSettings(), ModBiomes.BLUE_LUMINESCENT_SHROOM_CAVE, new StatusEffectInstance(StatusEffects.NIGHT_VISION, 300, 0)));
 
     //Lights
     public static final Item GREEN_TORCH = registerItem("green_torch_item", new VerticallyAttachableBlockItem(ModBlocks.GREEN_TORCH, ModBlocks.WALL_GREEN_TORCH, new Item.Settings(), Direction.DOWN));
@@ -183,24 +181,18 @@ public class ModItems {
     public static final Item HYMNE_URSS_MUSIC_DISC = registerItem("hymne_urss_music_disc", new MusicDiscItem(10, ModSounds.HYMEN_URSS, new FabricItemSettings().maxCount(1), 210));
 
     //Egg
-    public static final Item GROKI_SPAWN_EGG = registerItem("groki_spawn_egg", new SpawnEggItem(ModEntities.GROKI,0x765A34,0x1BC2CF,new FabricItemSettings()));
-    public static final Item BOLETE_COW_SPAWN_EGG = registerItem("bolete_cow_spawn_egg", new SpawnEggItem(ModEntities.BOLETE_COW,0xBF28DD,0xF4DBF9,new FabricItemSettings()));
+    public static final Item GROKI_SPAWN_EGG = registerItem("groki_spawn_egg", new SpawnEggItem(ModEntities.GROKI, 0x765A34, 0x1BC2CF, new FabricItemSettings()));
+    public static final Item BOLETE_COW_SPAWN_EGG = registerItem("bolete_cow_spawn_egg", new SpawnEggItem(ModEntities.BOLETE_COW, 0xBF28DD, 0xF4DBF9, new FabricItemSettings()));
 
 
     public static final Item CRUSHED_DIAMOND = registerItem("crushed_diamond", new Item(new FabricItemSettings()));
 
 
-
-
-
-
-
-
-
-    private static Item registerItem(String name, Item item){
+    private static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, new Identifier(MushrooomsMod.MOD_ID, name), item);
     }
-    public static void registerModItems(){
+
+    public static void registerModItems() {
         MushrooomsMod.LOGGER.info("registering mod items");
     }
 }

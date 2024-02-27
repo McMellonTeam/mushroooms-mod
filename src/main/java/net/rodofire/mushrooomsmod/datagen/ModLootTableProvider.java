@@ -109,8 +109,8 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.PERVENCHE);
 
         //Vines
-        addDrop(ModBlocks.PINK_MUSHROOM_VINES,ModItems.PINK_MUSHROOM_VINES_ITEM);
-        addDrop(ModBlocks.PINK_MUSHROOM_VINES_PLANT,ModItems.PINK_MUSHROOM_VINES_ITEM);
+        addDrop(ModBlocks.PINK_MUSHROOM_VINES, ModItems.PINK_MUSHROOM_VINES_ITEM);
+        addDrop(ModBlocks.PINK_MUSHROOM_VINES_PLANT, ModItems.PINK_MUSHROOM_VINES_ITEM);
 
         //Big Mushrooms
         addDrop(ModBlocks.TINY_PURPLE_MUSHROOM);
@@ -123,7 +123,7 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.BIG_GREEN_MUSHROOM);
 
         BlockStatePropertyLootCondition.Builder builder = BlockStatePropertyLootCondition.builder(ModBlocks.BIG_PURPLE_MUSHROOM_PLANT).properties(StatePredicate.Builder.create().exactMatch(BigMushroomPlant.AGE, 3));
-        addDrop(ModBlocks.BIG_PURPLE_MUSHROOM_PLANT, cropDrops(ModBlocks.BIG_PURPLE_MUSHROOM_PLANT, ModItems.PURPLE_MUSHROOM_POWDER, ModItems.BIG_PURPLE_MUSHROOM_SEED, builder ));
+        addDrop(ModBlocks.BIG_PURPLE_MUSHROOM_PLANT, cropDrops(ModBlocks.BIG_PURPLE_MUSHROOM_PLANT, ModItems.PURPLE_MUSHROOM_POWDER, ModItems.BIG_PURPLE_MUSHROOM_SEED, builder));
 
         //Potted Flowers
         addPottedPlantDrops(ModBlocks.POTTED_LUMINESCENT_MUSHROOM);

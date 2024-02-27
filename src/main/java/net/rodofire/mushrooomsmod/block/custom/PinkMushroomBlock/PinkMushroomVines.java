@@ -1,7 +1,6 @@
 package net.rodofire.mushrooomsmod.block.custom.PinkMushroomBlock;
 
 import net.rodofire.mushrooomsmod.item.ModItems;
-import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;

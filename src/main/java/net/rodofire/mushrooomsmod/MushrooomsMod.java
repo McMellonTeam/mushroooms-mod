@@ -30,7 +30,7 @@ public class MushrooomsMod implements ModInitializer {
 
 		FabricDefaultAttributeRegistry.register(ModEntities.GROKI, GrokiEntity.setAttributes());
 		FabricDefaultAttributeRegistry.register(ModEntities.BOLETE_COW, BoleteCowEntity.setAttributes());
-		System.out.println("Starting Mushroooms Mod!");
+		LOGGER.info("Starting MushrooomsMod!");
 
 	}
 }
