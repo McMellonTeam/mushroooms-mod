@@ -29,7 +29,9 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.LAVA_BLACKSTONE_BRICKS)
                 .add(ModBlocks.LAVA_BLACKSTONE)
                 .add(ModBlocks.LAVA_BLACKSTONE_TINY_BRICKS)
-                .add(ModBlocks.LAVA_BLACKSTONE_MEDIUM_BRICKS);
+                .add(ModBlocks.LAVA_BLACKSTONE_MEDIUM_BRICKS)
+                .add(ModBlocks.PINK_CRYSTAL)
+                .add(ModBlocks.PINK_CRYSTAL_BLOCK);
 
         //Shovel
         getOrCreateTagBuilder(BlockTags.SHOVEL_MINEABLE)

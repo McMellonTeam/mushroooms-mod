@@ -16,7 +16,7 @@ public class CustomPurpleSecondMushroom extends CustomPurpleSecondMushroomFeatur
         super(codec);
     }
 
-
+    //Good Luck understanding what I done here
     @Override
     protected Integer[] placeTrunk(WorldAccess world, Random random, BlockPos start, int y, BlockPos.Mutable mutable, ModMushroomFeatureConfig config) {
         int rand = Random.create().nextBetween(12, 18);

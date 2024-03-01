@@ -90,6 +90,4 @@ public class BlueLuminescentVines extends Block implements Fertilizable {
         }
         return super.getStateForNeighborUpdate(state, direction, neighborState, world, pos, neighborPos);
     }
-
-
 }
