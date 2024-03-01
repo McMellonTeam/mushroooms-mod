@@ -2,6 +2,7 @@ package net.rodofire.mushrooomsmod.item;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
+import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.rodofire.mushrooomsmod.MushrooomsMod;
 import net.rodofire.mushrooomsmod.block.ModBlocks;
 import net.rodofire.mushrooomsmod.entity.ModEntities;
@@ -154,6 +155,15 @@ public class ModItems {
                         entries.add(ModItems.GROKI_SPAWN_EGG);
                         entries.add(ModItems.BOLETE_COW_SPAWN_EGG);
 
+                        //crystal
+                        entries.add(ModItems.PINK_CRYSTAL_ITEM);
+                        entries.add(ModBlocks.PINK_CRYSTAL_BLOCK);
+
+                        entries.add(ModItems.CRUSHED_DIAMOND);
+
+                        //Utils
+                        entries.add(ModBlocks.FORGE_BLOCK);
+
 
                     }).build());
 
@@ -186,6 +196,7 @@ public class ModItems {
 
 
     public static final Item CRUSHED_DIAMOND = registerItem("crushed_diamond", new Item(new FabricItemSettings()));
+    public static final Item PINK_CRYSTAL_ITEM = registerItem("pink_crystal_item", new AliasedBlockItem(ModBlocks.PINK_CRYSTAL, new FabricItemSettings()));
 
 
     private static Item registerItem(String name, Item item) {

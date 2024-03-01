@@ -21,6 +21,7 @@ public class ModTags {
 
         public static final TagKey<Item> DIAMOND_ITEMS = createTag("diamond_item");
         public static final TagKey<Item> MUSHROOM_POWDER = createTag("mushroom_powder");
+        public static final TagKey<Item> FORGEABLE_ITEMS = createTag("forgeable_items");
         private static TagKey<Item> createTag(String name) {
             return TagKey.of(RegistryKeys.ITEM, new Identifier(MushrooomsMod.MOD_ID, name));
         }

@@ -109,6 +109,9 @@ public class ModModelProvider extends FabricModelProvider {
         //Spawn Eggs
         blockStateModelGenerator.registerParentedItemModel(ModItems.GROKI_SPAWN_EGG, ModelIds.getMinecraftNamespacedItem("template_spawn_egg"));
         blockStateModelGenerator.registerParentedItemModel(ModItems.BOLETE_COW_SPAWN_EGG, ModelIds.getMinecraftNamespacedItem("template_spawn_egg"));
+
+        //Crystals
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.PINK_CRYSTAL_BLOCK);
     }
 
     @Override
@@ -119,6 +122,8 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.HYMNE_URSS_MUSIC_DISC, Models.GENERATED);
         itemModelGenerator.register(ModItems.HYMNE_FRANCAIS_MUSIC_DISC, Models.GENERATED);
         itemModelGenerator.register(ModItems.PINK_MUSHROOM_VINES_ITEM, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PINK_CRYSTAL_ITEM, Models.GENERATED);
+        itemModelGenerator.register(ModItems.CRUSHED_DIAMOND, Models.GENERATED);
     }
 
 }

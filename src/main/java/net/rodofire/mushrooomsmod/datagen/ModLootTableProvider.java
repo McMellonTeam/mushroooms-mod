@@ -2,6 +2,7 @@ package net.rodofire.mushrooomsmod.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
+import net.minecraft.block.Block;
 import net.rodofire.mushrooomsmod.block.ModBlocks;
 import net.rodofire.mushrooomsmod.block.custom.bigmushroom.BigMushroomPlant;
 import net.rodofire.mushrooomsmod.item.ModItems;
@@ -177,5 +178,12 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.LAVA_BLACKSTONE_BRICKS);
         addDrop(ModBlocks.LAVA_BLACKSTONE_MEDIUM_BRICKS);
         addDrop(ModBlocks.LAVA_BLACKSTONE_TINY_BRICKS);
+
+        //Crystals
+        addDropWithSilkTouch(Block.getBlockFromItem(ModItems.PINK_CRYSTAL_ITEM),ModBlocks.PINK_CRYSTAL );
+        addDrop(ModBlocks.PINK_CRYSTAL_BLOCK);
+
+        //Utils
+        addDrop(ModBlocks.FORGE_BLOCK);
     }
 }

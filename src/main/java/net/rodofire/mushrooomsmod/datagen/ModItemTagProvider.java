@@ -34,5 +34,8 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
         getOrCreateTagBuilder(ModTags.Items.MUSHROOM_POWDER)
                 .add(ModItems.PURPLE_MUSHROOM_POWDER);
 
+        getOrCreateTagBuilder(ModTags.Items.FORGEABLE_ITEMS)
+                .add(Items.DIAMOND);
+
     }
 }
