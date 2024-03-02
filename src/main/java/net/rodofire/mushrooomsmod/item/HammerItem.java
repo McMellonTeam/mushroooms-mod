@@ -35,8 +35,8 @@ public class HammerItem extends ToolItem {
         double attackDamage1 = attackDamage + (float) Random.create().nextBetween(0, 2) / 2;
         this.attackSpeed = attackSpeed;
         ImmutableMultimap.Builder<EntityAttribute, EntityAttributeModifier> builder = ImmutableMultimap.builder();
-        builder.put(EntityAttributes.GENERIC_ATTACK_DAMAGE, new EntityAttributeModifier(ATTACK_DAMAGE_MODIFIER_ID, "Weapon modifier", (double) attackDamage1, EntityAttributeModifier.Operation.ADDITION));
-        builder.put(EntityAttributes.GENERIC_ATTACK_SPEED, new EntityAttributeModifier(ATTACK_SPEED_MODIFIER_ID, "Weapon modifier", (double) attackSpeed, EntityAttributeModifier.Operation.ADDITION));
+        builder.put(EntityAttributes.GENERIC_ATTACK_DAMAGE, new EntityAttributeModifier(ATTACK_DAMAGE_MODIFIER_ID, "Weapon modifier",  attackDamage1, EntityAttributeModifier.Operation.ADDITION));
+        builder.put(EntityAttributes.GENERIC_ATTACK_SPEED, new EntityAttributeModifier(ATTACK_SPEED_MODIFIER_ID, "Weapon modifier",  attackSpeed, EntityAttributeModifier.Operation.ADDITION));
 
         this.maxcrushableblocks = maxcrushableblocks;
     }
@@ -46,10 +46,10 @@ public class HammerItem extends ToolItem {
     public boolean canMine(BlockState state, World world, BlockPos pos, PlayerEntity miner) {
         if (hammeruse != 0 || world.isClient()) return mine(state, world, pos, miner);
         System.out.println(hammeruse);
-        return use(state, world, pos, miner);
+        return use(world, pos);
     }
 
-    public boolean use(BlockState state, World world, BlockPos pos, PlayerEntity miner) {
+    public boolean use( World world, BlockPos pos) {
         Block targetedblock = world.getBlockState(pos).getBlock();
         if (targetedblock.equals(ModBlocks.FORGE_BLOCK)) {
             hammeruse = 100;
@@ -81,9 +81,8 @@ public class HammerItem extends ToolItem {
         return true;
     }
 
-    public boolean mine(BlockState state, World world, BlockPos pos, PlayerEntity miner) {
-        if (world.getBlockState(pos).isOf(ModBlocks.FORGE_BLOCK)) return false;
-        return true;
+    public boolean mine(World world, BlockPos pos) {
+        return !world.getBlockState(pos).isOf(ModBlocks.FORGE_BLOCK);
     }
 
     @Override
