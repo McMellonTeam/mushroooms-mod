@@ -44,7 +44,7 @@ public class HammerItem extends ToolItem {
 
     @Override
     public boolean canMine(BlockState state, World world, BlockPos pos, PlayerEntity miner) {
-        if (hammeruse != 0 || world.isClient()) return mine(state, world, pos, miner);
+        if (hammeruse != 0 || world.isClient()) return mine( world, pos);
         System.out.println(hammeruse);
         return use(world, pos);
     }
