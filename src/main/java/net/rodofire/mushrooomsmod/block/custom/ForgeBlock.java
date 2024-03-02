@@ -21,7 +21,7 @@ import net.rodofire.mushrooomsmod.util.ModTags;
 import org.jetbrains.annotations.Nullable;
 
 public class ForgeBlock extends BlockWithEntity implements BlockEntityProvider {
-    private static final VoxelShape SHAPE = Block.createCuboidShape(0, 0, 0, 16, 19, 16);
+    private static final VoxelShape SHAPE = Block.createCuboidShape(0, 0, 0, 16, 16, 16);
 
     public ForgeBlock(Settings settings) {
         super(settings);
@@ -45,67 +45,64 @@ public class ForgeBlock extends BlockWithEntity implements BlockEntityProvider {
 
     @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
-        if(hand.equals(Hand.OFF_HAND))return ActionResult.PASS;
-        if (!world.isClient()) {
-            BlockEntity blockEntity = world.getBlockEntity(pos);
-            Inventory inventory = (Inventory) blockEntity;
-            ItemStack itemStack = player.getMainHandStack();
-            ItemStack putItemStack = itemStack.getItem().getDefaultStack();
-            int itemfirstslot = inventory.getStack(0).getCount();
-            System.out.println(itemStack);
-            putItemStack.setCount(itemfirstslot + 1);
+        if(hand.equals(Hand.OFF_HAND)||world.isClient())return ActionResult.PASS;
 
-            //System.out.println(inventory.getStack(0) + "   " + inventory.getStack(0).getCount());
+        BlockEntity blockEntity = world.getBlockEntity(pos);
+        Inventory inventory = (Inventory) blockEntity;
+        ItemStack itemStack = player.getMainHandStack();
+        ItemStack putItemStack = itemStack.getItem().getDefaultStack();
+        int itemfirstslot = inventory.getStack(0).getCount();
+        putItemStack.setCount(itemfirstslot + 1);
 
-            if (!inventory.isEmpty()) {
-                //code to get the inventory
-                if (itemStack.isEmpty() || !itemStack.isIn(ModTags.Items.FORGEABLE_ITEMS)) {
-                    if (itemStack.isEmpty()) {
-                        if (inventory.getStack(1).isEmpty()) {
-                            player.giveItemStack(inventory.getStack(0));
-                            inventory.removeStack(0);
-                        } else {
-                            player.giveItemStack(inventory.getStack(1));
-                            inventory.removeStack(1);
-                        }
-                        return ActionResult.SUCCESS;
+        if (!inventory.isEmpty()) {
+            //code to get the inventory
+            if (itemStack.isEmpty() || !itemStack.isIn(ModTags.Items.FORGEABLE_ITEMS)) {
+                if (itemStack.isEmpty()) {
+                    if (inventory.getStack(1).isEmpty()) {
+                        player.giveItemStack(inventory.getStack(0));
+                        inventory.removeStack(0);
                     } else {
-                        if (inventory.getStack(1).isEmpty()) {
-                            dropStack(world, pos.up(), inventory.getStack(0));
-                            inventory.removeStack(0);
-                        } else {
-                            dropStack(world, pos.up(), inventory.getStack(1));
-                            inventory.removeStack(0);
-                        }
-                        return ActionResult.SUCCESS;
-
+                        player.giveItemStack(inventory.getStack(1));
+                        inventory.removeStack(1);
                     }
-                }
-                //put stuff
-                if (inventory.getStack(0).getCount() != 64) {
-                    if (itemStack.isIn(ModTags.Items.FORGEABLE_ITEMS)) {
-                        if (player.isSneaking()) {
-                            inventory.setStack(0, putItemStack);
-                            itemStack.decrement(64);
-                        } else {
-                            inventory.setStack(0, putItemStack);
-                            itemStack.decrement(1);
-                        }
-                        return ActionResult.SUCCESS;
-                    }
-                }
-            } else {
-                if (!itemStack.isIn(ModTags.Items.FORGEABLE_ITEMS)) return ActionResult.PASS;
-                if (player.isSneaking()) {
-                    inventory.setStack(0, putItemStack);
-                    itemStack.decrement(64);
+                    return ActionResult.SUCCESS;
                 } else {
-                    inventory.setStack(0, putItemStack);
-                    itemStack.decrement(1);
+                    if (inventory.getStack(1).isEmpty()) {
+                        dropStack(world, pos.up(), inventory.getStack(0));
+                        inventory.removeStack(0);
+                    } else {
+                        dropStack(world, pos.up(), inventory.getStack(1));
+                        inventory.removeStack(0);
+                    }
+                    return ActionResult.SUCCESS;
+
                 }
-                return ActionResult.SUCCESS;
             }
+            //put stuff
+            if (inventory.getStack(0).getCount() != 64) {
+                if (itemStack.isIn(ModTags.Items.FORGEABLE_ITEMS)) {
+                    if (player.isSneaking()) {
+                        inventory.setStack(0, putItemStack);
+                        itemStack.decrement(64);
+                    } else {
+                        inventory.setStack(0, putItemStack);
+                        itemStack.decrement(1);
+                    }
+                    return ActionResult.SUCCESS;
+                }
+            }
+        } else {
+            if (!itemStack.isIn(ModTags.Items.FORGEABLE_ITEMS)) return ActionResult.PASS;
+            if (player.isSneaking()) {
+                inventory.setStack(0, putItemStack);
+                itemStack.decrement(64);
+            } else {
+                inventory.setStack(0, putItemStack);
+                itemStack.decrement(1);
+            }
+            return ActionResult.SUCCESS;
         }
+
         return ActionResult.PASS;
     }
 
@@ -126,4 +123,6 @@ public class ForgeBlock extends BlockWithEntity implements BlockEntityProvider {
             super.onStateReplaced(state, world, pos, newState, moved);
         }
     }
+
+
 }
