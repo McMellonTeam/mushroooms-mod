@@ -69,20 +69,20 @@ public class ModBlocks {
 
 
     //Mushroom Block
-    public static final Block PURPLE_MUSHROOM_BLOCK = registerBlock("purple_mushroom_block", new GlassBlock(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM_BLOCK)));
-    public static final Block YELLOW_MUSHROOM_BLOCK = registerBlock("yellow_mushroom_block", new GlassBlock(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM_BLOCK)));
+    public static final Block PURPLE_MUSHROOM_BLOCK = registerBlock("purple_mushroom_block", new FermentedMushroomBlock("purple","altered",false,FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM_BLOCK)));
+    public static final Block YELLOW_MUSHROOM_BLOCK = registerBlock("yellow_mushroom_block", new Block(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM_BLOCK)));
 
     //Fermented Stage 1
-    public static final Block PURPLE_ALTERED_MUSHROOM_BLOCK = registerBlock("altered_mushroom_purple", new GlassBlock(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM_BLOCK)));
-    public static final Block YELLOW_ALTERED_MUSHROOM_BLOCK = registerBlock("altered_mushroom_yellow", new GlassBlock(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM_BLOCK)));
+    public static final Block PURPLE_ALTERED_MUSHROOM_BLOCK = registerBlock("altered_mushroom_purple", new FermentedMushroomBlock("purple","degradated",false,FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM_BLOCK)));
+    public static final Block YELLOW_ALTERED_MUSHROOM_BLOCK = registerBlock("altered_mushroom_yellow", new Block(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM_BLOCK)));
 
     //Fermented Stage 2
-    public static final Block PURPLE_DEGRADATED_MUSHROOM_BLOCK = registerBlock("degradated_mushroom_purple", new FermentedMushroomBlock(ModBlocks.PURPLE_MUSHROOM_FERMENTED_BLOCK,true, FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM_BLOCK)));
-    public static final Block YELLOW_DEGRADATED_MUSHROOM_BLOCK = registerBlock("degradated_mushroom_yellow", new FermentedMushroomBlock(ModBlocks.YELLOW_MUSHROOM_FERMENTED_BLOCK, false, FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM_BLOCK)));
+    public static final Block PURPLE_DEGRADATED_MUSHROOM_BLOCK = registerBlock("degradated_mushroom_purple", new FermentedMushroomBlock("purple","fermented",false,FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM_BLOCK)));
+    public static final Block YELLOW_DEGRADATED_MUSHROOM_BLOCK = registerBlock("degradated_mushroom_yellow", new Block( FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM_BLOCK)));
 
     //Fermented Mushrooms
-    public static final Block PURPLE_MUSHROOM_FERMENTED_BLOCK = registerBlock("fermented_mushroom_purple", new FermentedMushroomBlock(ModBlocks.PURPLE_DEGRADATED_MUSHROOM_BLOCK,true, FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM_BLOCK)));
-    public static final Block YELLOW_MUSHROOM_FERMENTED_BLOCK = registerBlock("fermented_mushroom_yellow", new FermentedMushroomBlock(ModBlocks.YELLOW_DEGRADATED_MUSHROOM_BLOCK, true,FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM_BLOCK)));
+    public static final Block PURPLE_MUSHROOM_FERMENTED_BLOCK = registerBlock("fermented_mushroom_purple", new FermentedMushroomBlock("purple","normal",true, FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM_BLOCK)));
+    public static final Block YELLOW_MUSHROOM_FERMENTED_BLOCK = registerBlock("fermented_mushroom_yellow", new Block(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM_BLOCK)));
 
 
     //Mushroom Stem
