@@ -1,12 +1,9 @@
 package net.rodofire.mushrooomsmod.block.entity;
 
-import net.minecraft.block.BlockEntityProvider;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
-import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.inventory.Inventories;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.network.listener.ClientPlayPacketListener;
 import net.minecraft.network.packet.Packet;
@@ -30,6 +27,7 @@ public class ForgeBlockEntity extends BlockEntity implements ImplementedInventor
     }
         @Override
     public void readNbt(NbtCompound nbt){
+        inventory.clear();
         super.readNbt(nbt);
         Inventories.readNbt(nbt,inventory);
     }
@@ -42,8 +40,14 @@ public class ForgeBlockEntity extends BlockEntity implements ImplementedInventor
     public DefaultedList<ItemStack> getItems() {
         return inventory;
     }
+    @Override
+    public void markDirty() {
+        super.markDirty();
+        world.updateListeners(pos, getCachedState(), getCachedState(), 3);
+    }
 
     public ArrayList<ItemStack> getRenderStack(){
+        System.out.println(inventory.get(0)+"  "+inventory.get(1));
         ArrayList<ItemStack> itemStacks = new ArrayList<>();
         if (inventory.get(0).getCount()==0&&inventory.get(1).getCount()==0) itemStacks.add(ItemStack.EMPTY);
         else if (inventory.get(0).getCount()!=0&&inventory.get(1).getCount()==0)itemStacks.add(inventory.get(0));
@@ -55,11 +59,7 @@ public class ForgeBlockEntity extends BlockEntity implements ImplementedInventor
         return itemStacks;
     }
 
-    @Override
-    public void markDirty() {
-        world.updateListeners(pos, getCachedState(), getCachedState(), 3);
-        super.markDirty();
-    }
+
     @Nullable
     @Override
     public Packet<ClientPlayPacketListener> toUpdatePacket() {
@@ -70,4 +70,6 @@ public class ForgeBlockEntity extends BlockEntity implements ImplementedInventor
     public NbtCompound toInitialChunkDataNbt() {
         return createNbt();
     }
+
+
 }
