@@ -1,9 +1,9 @@
 {
 	"schemaVersion": 1,
 	"id": "mushrooomsmod",
-	"version": "${version}",
+	"version": "0.0.2",
 	"name": "Mushroooms Mod",
-	"description": "This is my first mod where I try to add new mushrooms and different a bunch of things to minecraft!",
+	"description": "This is my first mod where I try to add new mushrooms a bunch of things to minecraft!",
 	"authors": [
 		"RodoFire"
 	],
