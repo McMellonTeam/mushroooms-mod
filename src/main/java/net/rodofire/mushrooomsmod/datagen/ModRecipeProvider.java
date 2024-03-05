@@ -120,5 +120,24 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
         offerPressurePlateRecipe(exporter, ModBlocks.LAVA_BLACKSTONE_MEDIUM_BRICKS, ModBlocks.LAVA_BLACKSTONE_BRICKS);
         offerPressurePlateRecipe(exporter, ModBlocks.LAVA_BLACKSTONE_TINY_BRICKS, ModBlocks.LAVA_BLACKSTONE_MEDIUM_BRICKS);
+
+        //utils
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC,ModBlocks.FORGE_BLOCK)
+                .pattern("RRR")
+                .pattern(" S ")
+                .pattern("SRS")
+                .input(Character.valueOf('R'),Blocks.IRON_BLOCK)
+                .input(Character.valueOf('S'),Items.IRON_INGOT)
+                .criterion(hasItem(Items.IRON_INGOT), conditionsFromItem(Blocks.IRON_BLOCK))
+                .offerTo(exporter, new Identifier("forge_craft"));
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModBlocks.FORGE_BLOCK)
+                .pattern("S S")
+                .pattern("SRS")
+                .pattern(" S ")
+                .input(Character.valueOf('S'), Items.IRON_INGOT)
+                .input(Character.valueOf('R'), Blocks.ANVIL)
+                .criterion(hasItem(Items.IRON_INGOT), conditionsFromItem(Blocks.ANVIL))
+                .offerTo(exporter, new Identifier("forge_craft_with_anvil"));
     }
 }

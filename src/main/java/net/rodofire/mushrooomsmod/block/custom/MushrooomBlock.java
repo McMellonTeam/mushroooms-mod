@@ -22,7 +22,7 @@ public class MushrooomBlock extends Block {
         this.block = block;
     }
 
-    @Override
+
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
         ItemStack itemStack = player.getStackInHand(hand);
         if (itemStack.isIn(ModTags.Items.MUSHROOM_POWDER)) {

@@ -5,10 +5,7 @@ import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.rodofire.mushrooomsmod.MushrooomsMod;
-import net.rodofire.mushrooomsmod.block.custom.BlueLuminescentVines;
-import net.rodofire.mushrooomsmod.block.custom.FermentedMushroomBlock;
-import net.rodofire.mushrooomsmod.block.custom.FlowersMushroomBlock;
-import net.rodofire.mushrooomsmod.block.custom.MushrooomBlock;
+import net.rodofire.mushrooomsmod.block.custom.*;
 import net.rodofire.mushrooomsmod.block.custom.PinkLuminescentVines.PinkLuminescentBodyVinesBlock;
 import net.rodofire.mushrooomsmod.block.custom.PinkLuminescentVines.PinkLuminescentHeadVinesBlock;
 import net.rodofire.mushrooomsmod.block.custom.PinkMushroomBlock.PinkMushroomVinesBodyBlock;
@@ -16,6 +13,7 @@ import net.rodofire.mushrooomsmod.block.custom.PinkMushroomBlock.PinkMushroomVin
 import net.rodofire.mushrooomsmod.block.custom.bigmushroom.*;
 import net.rodofire.mushrooomsmod.item.ModItems;
 import net.rodofire.mushrooomsmod.particle.ModParticles;
+import net.rodofire.mushrooomsmod.sound.ModBlockSoundGroup;
 import net.rodofire.mushrooomsmod.world.ModConfiguredFeatures;
 import net.minecraft.block.*;
 import net.minecraft.block.enums.Instrument;
@@ -46,6 +44,8 @@ public class ModBlocks {
     }
 
     private static void addItemstoSpawnEggsGroup(FabricItemGroupEntries entries) {
+        entries.add(ModItems.BOLETE_COW_SPAWN_EGG);
+        entries.add(ModItems.GROKI_SPAWN_EGG);
 
     }
 
@@ -69,21 +69,20 @@ public class ModBlocks {
 
 
     //Mushroom Block
-    public static final Block PURPLE_MUSHROOM_BLOCK = registerBlock("purple_mushroom_block", new GlassBlock( FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM_BLOCK)));
-    public static final Block YELLOW_MUSHROOM_BLOCK = registerBlock("yellow_mushroom_block", new GlassBlock( FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM_BLOCK)));
+    public static final Block PURPLE_MUSHROOM_BLOCK = registerBlock("purple_mushroom_block", new FermentedMushroomBlock("purple","altered",false,FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM_BLOCK)));
+    public static final Block YELLOW_MUSHROOM_BLOCK = registerBlock("yellow_mushroom_block", new Block(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM_BLOCK)));
 
     //Fermented Stage 1
-    public static final Block PURPLE_ALTERED_MUSHROOM_BLOCK = registerBlock("altered_mushroom_purple", new GlassBlock( FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM_BLOCK)));
-    public static final Block YELLOW_ALTERED_MUSHROOM_BLOCK = registerBlock("altered_mushroom_yellow", new GlassBlock( FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM_BLOCK)));
+    public static final Block PURPLE_ALTERED_MUSHROOM_BLOCK = registerBlock("altered_mushroom_purple", new FermentedMushroomBlock("purple","degradated",false,FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM_BLOCK)));
+    public static final Block YELLOW_ALTERED_MUSHROOM_BLOCK = registerBlock("altered_mushroom_yellow", new Block(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM_BLOCK)));
 
     //Fermented Stage 2
-    public static final Block PURPLE_DEGRADATED_MUSHROOM_BLOCK = registerBlock("degradated_mushroom_purple", new MushrooomBlock(ModBlocks.PURPLE_MUSHROOM_FERMENTED_BLOCK, FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM_BLOCK)));
-    public static final Block YELLOW_DEGRADATED_MUSHROOM_BLOCK = registerBlock("degradated_mushroom_yellow", new MushrooomBlock(ModBlocks.YELLOW_MUSHROOM_FERMENTED_BLOCK, FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM_BLOCK)));
+    public static final Block PURPLE_DEGRADATED_MUSHROOM_BLOCK = registerBlock("degradated_mushroom_purple", new FermentedMushroomBlock("purple","fermented",false,FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM_BLOCK)));
+    public static final Block YELLOW_DEGRADATED_MUSHROOM_BLOCK = registerBlock("degradated_mushroom_yellow", new Block( FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM_BLOCK)));
 
     //Fermented Mushrooms
-    public static final Block PURPLE_MUSHROOM_FERMENTED_BLOCK = registerBlock("fermented_mushroom_purple", new FermentedMushroomBlock(ModBlocks.PURPLE_DEGRADATED_MUSHROOM_BLOCK, FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM_BLOCK)));
-    public static final Block YELLOW_MUSHROOM_FERMENTED_BLOCK = registerBlock("fermented_mushroom_yellow", new FermentedMushroomBlock(ModBlocks.YELLOW_DEGRADATED_MUSHROOM_BLOCK, FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM_BLOCK)));
-
+    public static final Block PURPLE_MUSHROOM_FERMENTED_BLOCK = registerBlock("fermented_mushroom_purple", new FermentedMushroomBlock("purple","normal",true, FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM_BLOCK)));
+    public static final Block YELLOW_MUSHROOM_FERMENTED_BLOCK = registerBlock("fermented_mushroom_yellow", new Block(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM_BLOCK)));
 
 
     //Mushroom Stem
@@ -236,6 +235,13 @@ public class ModBlocks {
     public static final Block LAVA_BLACKSTONE_BRICKS = registerBlock("blackstone_lava_bricks", new Block(FabricBlockSettings.copyOf(Blocks.BLACKSTONE).luminance(8)));
     public static final Block LAVA_BLACKSTONE_MEDIUM_BRICKS = registerBlock("blackstone_lava_medium_bricks", new Block(FabricBlockSettings.copyOf(Blocks.BLACKSTONE).luminance(8)));
     public static final Block LAVA_BLACKSTONE_TINY_BRICKS = registerBlock("blackstone_lava_tiny_bricks", new Block(FabricBlockSettings.copyOf(Blocks.BLACKSTONE).luminance(8)));
+
+    //Crystal Blocks
+    public static final Block PINK_CRYSTAL = registerBlock("pink_crystal", new PinkCrystal(FabricBlockSettings.copyOf(Blocks.AMETHYST_CLUSTER)));
+    public static final Block PINK_CRYSTAL_BLOCK = registerBlock("pink_crystal_block", new AmethystBlock(FabricBlockSettings.copyOf(Blocks.AMETHYST_BLOCK).sounds(ModBlockSoundGroup.PINK_CRYSTAL)));
+
+    //Util Blocks
+    public static final Block FORGE_BLOCK = registerBlock("forge_block", new ForgeBlock(FabricBlockSettings.copyOf(Blocks.ANVIL).nonOpaque()));
 
 
     private static Block registerBlock(String name, Block block) {

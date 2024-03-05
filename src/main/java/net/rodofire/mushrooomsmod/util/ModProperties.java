@@ -1,6 +1,8 @@
 package net.rodofire.mushrooomsmod.util;
 
 import net.minecraft.state.property.BooleanProperty;
+import net.minecraft.state.property.IntProperty;
+import net.minecraft.state.property.Properties;
 
 public class ModProperties {
     public static final BooleanProperty MANY_VINES = BooleanProperty.of("many_vines");

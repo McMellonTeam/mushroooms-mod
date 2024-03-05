@@ -19,6 +19,10 @@
   "block.mushrooomsmod.mushroom_dark_red_block": "Dark Red Mushroom Block",
 
 
+  "block.mushrooomsmod.altered_mushroom_purple" : "Purple Altered Mushroom",
+
+  "block.mushrooomsmod.degradated_mushroom_purple" : "Purple Degradated Mushroom",
+
   "block.mushrooomsmod.fermented_mushroom_purple" : "Purple Fermented Mushroom",
 
 
@@ -53,6 +57,10 @@
   "block.mushrooomsmod.purple_mushroom": "Purple Mushroom",
   "block.mushrooomsmod.luminescent_mushroom": "Luminescent Mushroom",
   "block.mushrooomsmod.luminescent_pink_mushroom" : "Pink Luminescent Mushroom",
+  "block.mushrooomsmod.orange_mushroom" : "Orange Mushroom",
+  "block.mushrooomsmod.yellow_mushroom" : "Yellow Mushroom",
+
+
   "block.mushrooomsmod.prehisto_pink_schroom" : "Prehisto Pink Schroom",
   "block.mushrooomsmod.prehisto_blue_schroom" : "Prehisto Blue Schroom",
   "block.mushrooomsmod.prehisto_green_schroom" : "Prehisto Green Schroom",
@@ -120,6 +128,10 @@
   "block.mushrooomsmod.green_campfire": "Green Campfire",
   "block.mushrooomsmod.green_torch" : "Green Torch",
 
+  "block.mushrooomsmod.pink_crystal_block" : "Pink Crystal Block",
+
+  "block.mushrooomsmod.forge" : "Forge",
+
 
   "item.mushrooomsmod.baguette": "Baguette",
 
@@ -137,12 +149,20 @@
   "item.mushrooomsmod.hymne_urss_music_disc.desc" : "Guimn Sovietskogo Soïouza",
   "item.mushrooomsmod.hymne_urss_music_disc" : "USSR Anthem",
 
+  "item.mushrooomsmod.crushed_diamonds" : "Crushed Diamonds",
+  "item.mushrooomsmod.pink_crystal_item" : "Pink Crystal",
+
+  "item.mushrooomsmod.iron_hammer" : "Iron Hammer",
+  "tooltip.mushrooomsmod.hammer.attack_damage" : "Attack Damage ",
+  "tooltip.mushrooomsmod.hammer.usage" : "Use Left Click On A Forge With An Item To Crush It ",
 
   "biome.mushrooomsmod.blue_luminescent_schroom_cave" : "Blue Luminescent Schroom Cave",
 
 
 
   "itemgroup.mushroooms" : "Mushroooms"
+
+
 
 
 
