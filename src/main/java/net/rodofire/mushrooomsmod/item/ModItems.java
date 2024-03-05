@@ -2,7 +2,6 @@ package net.rodofire.mushrooomsmod.item;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.rodofire.mushrooomsmod.MushrooomsMod;
 import net.rodofire.mushrooomsmod.block.ModBlocks;
 import net.rodofire.mushrooomsmod.entity.ModEntities;
@@ -202,7 +201,7 @@ public class ModItems {
     public static final Item PINK_CRYSTAL_ITEM = registerItem("pink_crystal_item", new AliasedBlockItem(ModBlocks.PINK_CRYSTAL, new FabricItemSettings()));
 
     //Tools
-    public static final Item IRON_HAMMER = registerItem("iron_hammer", new HammerItem(ToolMaterials.IRON, 40,200,4,new FabricItemSettings()));
+    public static final Item IRON_HAMMER = registerItem("iron_hammer", new HammerItem(ToolMaterials.IRON, 40,-3.7f,4,new FabricItemSettings()));
 
 
     private static Item registerItem(String name, Item item) {

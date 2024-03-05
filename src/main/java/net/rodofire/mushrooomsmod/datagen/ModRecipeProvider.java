@@ -139,5 +139,15 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input(Character.valueOf('R'), Blocks.ANVIL)
                 .criterion(hasItem(Items.IRON_INGOT), conditionsFromItem(Blocks.ANVIL))
                 .offerTo(exporter, new Identifier("forge_craft_with_anvil"));
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.IRON_HAMMER)
+                .pattern("BBB")
+                .pattern("ISI")
+                .pattern(" S ")
+                .input(Character.valueOf('S'), Items.STICK)
+                .input(Character.valueOf('B'), Blocks.IRON_BLOCK)
+                .input(Character.valueOf('I'), Items.IRON_INGOT)
+                .criterion(hasItem(Items.IRON_INGOT), conditionsFromItem(Blocks.IRON_BLOCK))
+                .offerTo(exporter, new Identifier("hammer_craft"));
     }
 }
