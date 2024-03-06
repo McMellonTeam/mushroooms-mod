@@ -17,14 +17,11 @@ import net.rodofire.mushrooomsmod.util.ModTags;
 import java.util.function.Supplier;
 
 public class FermentedMushroomBlock extends Block {
-    //public final String color;
-    //public final String stage;
     Supplier<Block> blockSupplier;
     public boolean ismaxfermented;
 
 
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
-        //Block block = getMushroomBlock(color, stage);
         ItemStack stack = player.getMainHandStack();
         if (!ismaxfermented) {
             if (stack.isIn(ModTags.Items.MUSHROOM_POWDER)) {
@@ -44,38 +41,9 @@ public class FermentedMushroomBlock extends Block {
     public FermentedMushroomBlock(Supplier<Block> blockSupplier, boolean ismaxfermented, Settings settings) {
         super(settings);
         this.blockSupplier=blockSupplier;
-        //this.color = color;
-        //this.stage = stage;
         this.ismaxfermented = ismaxfermented;
     }
 
-
-    //Very inneficient way but by putting    Block block   on directly was crashing my game
-    /*public Block getMushroomBlock(String color, String stage) {
-        switch (color) {
-            case "purple" -> {
-                if (stage.equals("altered")) return ModBlocks.PURPLE_ALTERED_MUSHROOM_BLOCK;
-                if (stage.equals("degradated")) return ModBlocks.PURPLE_DEGRADATED_MUSHROOM_BLOCK;
-                if (stage.equals("fermented")) return ModBlocks.PURPLE_MUSHROOM_FERMENTED_BLOCK;
-                if (stage.equals("normal")) return ModBlocks.PURPLE_MUSHROOM_BLOCK;
-            }
-            case "green" -> {
-            }
-            case "yellow" -> {
-            }
-            case "orange" -> {
-            }
-            case "brown" -> {
-            }
-            case "red" -> {
-            }
-            case "pink" -> {
-            }
-            case "blue" -> {
-            }
-        }
-        return Blocks.MAGENTA_BANNER;
-    }*/
 
 
 }
