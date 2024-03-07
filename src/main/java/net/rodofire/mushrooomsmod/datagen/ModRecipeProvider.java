@@ -3,6 +3,7 @@ package net.rodofire.mushrooomsmod.datagen;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.rodofire.mushrooomsmod.block.ModBlocks;
+import net.rodofire.mushrooomsmod.datagen.recipe.ForgeRecipeBuilder;
 import net.rodofire.mushrooomsmod.item.ModItems;
 import net.minecraft.block.Blocks;
 import net.minecraft.data.server.recipe.RecipeJsonProvider;
@@ -149,5 +150,10 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input(Character.valueOf('I'), Items.IRON_INGOT)
                 .criterion(hasItem(Items.IRON_INGOT), conditionsFromItem(Blocks.IRON_BLOCK))
                 .offerTo(exporter, new Identifier("hammer_craft"));
+
+
+        //Forge Recipe
+        new ForgeRecipeBuilder(Items.DIAMOND,ModItems.CRUSHED_DIAMOND ,1)
+                .offerTo(exporter);
     }
 }
