@@ -21,14 +21,7 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
 
         //Blocks
         //Mushrooms
-        addDrop(ModBlocks.PURPLE_MUSHROOM_BLOCK);
-        addDrop(ModBlocks.GREEN_MUSHROOM_BLOCK);
-        addDrop(ModBlocks.BLUE_MUSHROOM_BLOCK);
-        addDrop(ModBlocks.YELLOW_MUSHROOM_BLOCK);
-        addDrop(ModBlocks.ORANGE_MUSHROOM_BLOCK);
-        addDrop(ModBlocks.BLUE_LUMINESCENT_MUSHROOM_BLOCK);
         addDrop(ModBlocks.LUMINESCENT_MUSHROOM_STEM);
-        addDrop(ModBlocks.LUMINESCENT_PINK_MUSHROOM_BLOCK);
         addDrop(ModBlocks.COMPRESSED_PURPLE_MUSHROOM);
 
         addDrop(ModBlocks.DARK_MUSHROOM_BLUE_LUMINESCENT_BLOCK);
@@ -44,6 +37,44 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.PURPLE_DEGRADATED_MUSHROOM_BLOCK);
         addDrop(ModBlocks.PURPLE_MUSHROOM_FERMENTED_BLOCK);
 
+        //Mushroom
+        addDrop(ModBlocks.ORANGE_MUSHROOM_BLOCK);
+        addDrop(ModBlocks.ORANGE_ALTERED_MUSHROOM_BLOCK);
+        addDrop(ModBlocks.ORANGE_DEGRADATED_MUSHROOM_BLOCK);
+        addDrop(ModBlocks.ORANGE_FERMENTED_MUSHROOM_BLOCK);
+
+        addDrop(ModBlocks.YELLOW_MUSHROOM_BLOCK);
+        addDrop(ModBlocks.YELLOW_ALTERED_MUSHROOM_BLOCK);
+        addDrop(ModBlocks.YELLOW_DEGRADATED_MUSHROOM_BLOCK);
+        addDrop(ModBlocks.YELLOW_FERMENTED_MUSHROOM_BLOCK);
+
+        addDrop(ModBlocks.BLUE_MUSHROOM_BLOCK);
+        addDrop(ModBlocks.BLUE_ALTERED_MUSHROOM_BLOCK);
+        addDrop(ModBlocks.BLUE_DEGRADATED_MUSHROOM_BLOCK);
+        addDrop(ModBlocks.BLUE_FERMENTED_MUSHROOM_BLOCK);
+
+        addDrop(ModBlocks.GREEN_MUSHROOM_BLOCK);
+        addDrop(ModBlocks.GREEN_ALTERED_MUSHROOM_BLOCK);
+        addDrop(ModBlocks.GREEN_DEGRADATED_MUSHROOM_BLOCK);
+        addDrop(ModBlocks.GREEN_FERMENTED_MUSHROOM_BLOCK);
+
+        addDrop(ModBlocks.BLUE_LUMINESCENT_MUSHROOM_BLOCK);
+        addDrop(ModBlocks.BLUE_LUMINESCENT_ALTERED_MUSHROOM_BLOCK);
+        addDrop(ModBlocks.BLUE_LUMINESCENT_DEGRADATED_MUSHROOM_BLOCK);
+        addDrop(ModBlocks.BLUE_LUMINESCENT_FERMENTED_MUSHROOM_BLOCK);
+
+        addDrop(ModBlocks.PINK_LUMINESCENT_MUSHROOM_BLOCK);
+        addDrop(ModBlocks.PINK_LUMINESCENT_ALTERED_MUSHROOM_BLOCK);
+        addDrop(ModBlocks.PINK_LUMINESCENT_DEGRADATED_MUSHROOM_BLOCK);
+        addDrop(ModBlocks.PINK_LUMINESCENT_FERMENTED_MUSHROOM_BLOCK);
+
+        addDrop(ModBlocks.RED_ALTERED_MUSHROOM_BLOCK);
+        addDrop(ModBlocks.RED_DEGRADATED_MUSHROOM_BLOCK);
+        addDrop(ModBlocks.RED_FERMENTED_MUSHROOM_BLOCK);
+
+        addDrop(ModBlocks.BROWN_ALTERED_MUSHROOM_BLOCK);
+        addDrop(ModBlocks.BROWN_DEGRADATED_MUSHROOM_BLOCK);
+        addDrop(ModBlocks.BROWN_FERMENTED_MUSHROOM_BLOCK);
 
         //Soft Blocks
         addDrop(ModBlocks.COMPRESSED_DIRT);

@@ -10,6 +10,7 @@ import net.rodofire.mushrooomsmod.entity.custom.BoleteCowEntity;
 import net.rodofire.mushrooomsmod.entity.custom.GrokiEntity;
 import net.rodofire.mushrooomsmod.item.ModItems;
 import net.rodofire.mushrooomsmod.particle.ModParticles;
+import net.rodofire.mushrooomsmod.recipe.ModRecipes;
 import net.rodofire.mushrooomsmod.sound.ModSounds;
 import net.rodofire.mushrooomsmod.util.ModLootTableModifier;
 import org.slf4j.Logger;
@@ -22,13 +23,18 @@ public class MushrooomsMod implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
+
 		ModBlocks.registerModBlocks();
 		ModBlockEntities.registerBlockEntities();
 		ModItems.registerModItems();
+
 		ModParticles.registerParticles();
 		ModSounds.registerModSound();
+
 		//ModWorldGeneration.generateModWorldGen();
 		ModLootTableModifier.modifyLootTable();
+
+		ModRecipes.registerRecipes();
 
 		FabricDefaultAttributeRegistry.register(ModEntities.GROKI, GrokiEntity.setAttributes());
 		FabricDefaultAttributeRegistry.register(ModEntities.BOLETE_COW, BoleteCowEntity.setAttributes());
