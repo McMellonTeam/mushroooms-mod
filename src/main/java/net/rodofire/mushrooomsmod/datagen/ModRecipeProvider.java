@@ -154,6 +154,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
         //Forge Recipe
         new ForgeRecipeBuilder(Items.DIAMOND,ModItems.CRUSHED_DIAMOND ,1)
+                .criterion(hasItem(Items.DIAMOND), conditionsFromItem(Items.DIAMOND))
                 .offerTo(exporter);
     }
 }

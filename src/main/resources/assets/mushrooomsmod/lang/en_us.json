@@ -130,7 +130,7 @@
 
   "block.mushrooomsmod.pink_crystal_block" : "Pink Crystal Block",
 
-  "block.mushrooomsmod.forge" : "Forge",
+  "block.mushrooomsmod.forge_block" : "Forge",
 
 
   "item.mushrooomsmod.baguette": "Baguette",
@@ -149,7 +149,7 @@
   "item.mushrooomsmod.hymne_urss_music_disc.desc" : "Guimn Sovietskogo Soïouza",
   "item.mushrooomsmod.hymne_urss_music_disc" : "USSR Anthem",
 
-  "item.mushrooomsmod.crushed_diamonds" : "Crushed Diamonds",
+  "item.mushrooomsmod.crushed_diamond" : "Crushed Diamonds",
   "item.mushrooomsmod.pink_crystal_item" : "Pink Crystal",
 
   "item.mushrooomsmod.iron_hammer" : "Iron Hammer",

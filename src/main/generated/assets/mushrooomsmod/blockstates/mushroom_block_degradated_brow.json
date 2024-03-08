@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "mushrooomsmod:block/mushroom_block_degradated_brow"
+      },
+      {
+        "model": "mushrooomsmod:block/mushroom_block_degradated_brow",
+        "y": 90
+      },
+      {
+        "model": "mushrooomsmod:block/mushroom_block_degradated_brow",
+        "y": 180
+      },
+      {
+        "model": "mushrooomsmod:block/mushroom_block_degradated_brow",
+        "y": 270
+      }
+    ]
+  }
+}

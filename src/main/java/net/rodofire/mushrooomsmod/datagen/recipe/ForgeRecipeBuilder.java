@@ -96,7 +96,7 @@ public class ForgeRecipeBuilder implements CraftingRecipeJsonBuilder {
         @Override
         public Identifier getRecipeId() {
             return new Identifier(MushrooomsMod.MOD_ID,
-                    Registries.ITEM.getId(this.result).getPath() + "_from_gem_empowering");
+                    Registries.ITEM.getId(this.result).getPath() + "_from_forge");
         }
 
         @Override
