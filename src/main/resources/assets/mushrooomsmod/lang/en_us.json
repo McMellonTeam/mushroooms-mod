@@ -1,29 +1,40 @@
 {
-  "block.mushrooomsmod.blue_mushroom_block": "Blue Mushroom Block",
-  "block.mushrooomsmod.luminescent_mushroom_block": "Luminescent Mushroom Block",
-  "block.mushrooomsmod.purple_mushroom_block": "Purple Mushroom Block",
-  "block.mushrooomsmod.green_mushroom_block": "Green Mushroom Block",
-  "block.mushrooomsmod.orange_mushroom_block": "Orange Mushroom Block",
-  "block.mushrooomsmod.yellow_mushroom_block": "Yellow Mushroom Block",
-  "block.mushrooomsmod.luminescent_pink_mushroom_block": "Pink Luminescent Mushroom Block",
+  "block.mushrooomsmod.mushroom_block_blue": "Blue Mushroom Block",
+  "block.mushrooomsmod.mushroom_block_fermented_blue": "Blue Fermented Mushroom Block",
+  "block.mushrooomsmod.mushroom_block_altered_blue": "Blue Altered Mushroom Block",
+  "block.mushrooomsmod.mushroom_block_degradated_blue": "Blue Degradated Mushroom Block",
+
+  "block.mushrooomsmod.mushroom_block_blue_luminescent": "Luminescent Mushroom Block",
+  "block.mushrooomsmod.mushroom_block_fermented_blue_luminescent": "Luminescent Fermented Mushroom Block",
+  "block.mushrooomsmod.mushroom_block_degradated_blue_luminescent": "Luminescent Degradated Mushroom Block",
+  "block.mushrooomsmod.mushroom_block_altered_blue_luminescent": "Luminescent Altered Mushroom Block",
+
+  "block.mushrooomsmod.mushroom_block_purple": "Purple Mushroom Block",
+  "block.mushrooomsmod.mushroom_block_fermented_purple": "Purple Fermented Mushroom Block",
+  "block.mushrooomsmod.mushroom_block_degradated_purple": "Purple Degradated Mushroom Block",
+  "block.mushrooomsmod.mushroom_block_altered_purple": "Purple Altered Mushroom Block",
+
+  "block.mushrooomsmod.mushroom_block_green": "Green Mushroom Block",
+  "block.mushrooomsmod.mushroom_block_fermented_green": "Green Fermented Mushroom Block",
+  "block.mushrooomsmod.mushroom_block_degradated_green": "Green Degradated Mushroom Block",
+  "block.mushrooomsmod.mushroom_block_altered_green": "Green Altered Mushroom Block",
+
+  "block.mushrooomsmod.mushroom_block_orange": "Orange Mushroom Block",
+  "block.mushrooomsmod.mushroom_block_fermented_orange": "Orange Fermented Mushroom Block",
+  "block.mushrooomsmod.mushroom_block_degradated_orange": "Orange Degradated Mushroom Block",
+  "block.mushrooomsmod.mushroom_block_altered_orange": "Orange Altered Mushroom Block",
+
+  "block.mushrooomsmod.mushroom_block_yellow": "Yellow Mushroom Block",
+  "block.mushrooomsmod.mushroom_block_fermented_yellow": "Yellow Fermented Mushroom Block",
+  "block.mushrooomsmod.mushroom_block_degradated_yellow": "Yellow Degradated Mushroom Block",
+  "block.mushrooomsmod.mushroom_block_altered_yellow": "Yellow Altered Mushroom Block",
+
+  "block.mushrooomsmod.mushroom_block_pink_luminescent": "Pink Luminescent Mushroom Block",
+  "block.mushrooomsmod.mushroom_block_fermented_pink_luminescent": "Pink Luminescent Fermented Mushroom Block",
+  "block.mushrooomsmod.mushroom_block_degradated_pink_luminescent": "Pink Luminescent Degradated Mushroom Block",
+  "block.mushrooomsmod.mushroom_block_altered_pink_luminescent": "Pink Luminescent Altered Mushroom Block",
 
 
-  "block.mushrooomsmod.mushroom_dark_pink_block": "Dark Pink Mushroom Block",
-  "block.mushrooomsmod.mushroom_dark_orange_block": "Dark Orange Mushroom Block",
-  "block.mushrooomsmod.mushroom_dark_yellow_block": "Dark Yellow Mushroom Block",
-  "block.mushrooomsmod.mushroom_dark_blue_block": "Dark Blue Mushroom Block",
-  "block.mushrooomsmod.mushroom_dark_purple_block": "Dark Purple Mushroom Block",
-  "block.mushrooomsmod.mushroom_dark_green_block": "Dark Yellow Mushroom Block",
-  "block.mushrooomsmod.mushroom_dark_blue_luminescent_block": "Dark Blue Luminescent Mushroom Block",
-  "block.mushrooomsmod.mushroom_dark_green_luminescent_block": "Dark Green Mushroom Block",
-  "block.mushrooomsmod.mushroom_dark_red_block": "Dark Red Mushroom Block",
-
-
-  "block.mushrooomsmod.altered_mushroom_purple" : "Purple Altered Mushroom",
-
-  "block.mushrooomsmod.degradated_mushroom_purple" : "Purple Degradated Mushroom",
-
-  "block.mushrooomsmod.fermented_mushroom_purple" : "Purple Fermented Mushroom",
 
 
   "block.mushrooomsmod.blackstone_lava" : "Lava Blackstone",
@@ -130,7 +141,7 @@
 
   "block.mushrooomsmod.pink_crystal_block" : "Pink Crystal Block",
 
-  "block.mushrooomsmod.forge" : "Forge",
+  "block.mushrooomsmod.forge_block" : "Forge",
 
 
   "item.mushrooomsmod.baguette": "Baguette",
@@ -149,12 +160,12 @@
   "item.mushrooomsmod.hymne_urss_music_disc.desc" : "Guimn Sovietskogo Soïouza",
   "item.mushrooomsmod.hymne_urss_music_disc" : "USSR Anthem",
 
-  "item.mushrooomsmod.crushed_diamonds" : "Crushed Diamonds",
+  "item.mushrooomsmod.crushed_diamond" : "Crushed Diamonds",
   "item.mushrooomsmod.pink_crystal_item" : "Pink Crystal",
 
   "item.mushrooomsmod.iron_hammer" : "Iron Hammer",
   "tooltip.mushrooomsmod.hammer.attack_damage" : "Attack Damage ",
-  "tooltip.mushrooomsmod.hammer.usage" : "Use Left Click On A Forge With An Item To Crush It ",
+  "tooltip.mushrooomsmod.hammer.usage" : "Use Left Click on a Forge With an Item to Crush it ",
 
   "biome.mushrooomsmod.blue_luminescent_schroom_cave" : "Blue Luminescent Schroom Cave",
 

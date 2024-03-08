@@ -1,9 +1,13 @@
 package net.rodofire.mushrooomsmod.item;
 
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.registry.RegistryKey;
+import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
+import net.rodofire.mushrooomsmod.world.biome.ModBiomesTags;
 
 public class SchroomSoup extends Item {
     protected final RegistryKey<Biome> biome;
@@ -13,11 +17,11 @@ public class SchroomSoup extends Item {
         this.biome=biome;
         this.effects=effects;
     }
-    /*public void usageTick(World world, LivingEntity user, ItemStack stack, int remainingUseTicks) {
+    public void usageTick(World world, LivingEntity user, ItemStack stack, int remainingUseTicks) {
         if(user.eatFood(world,stack).isOf(ModItems.LUMINESCENT_SCHROOM_SOUP)){
-            if (biome.){
+            if (world.getBiome(user.getBlockPos()).isIn(ModBiomesTags.IS_LUMINESCENT_CAVE)){
                 user.addStatusEffect(effects);
             }
         }
-    }*/
+    }
 }

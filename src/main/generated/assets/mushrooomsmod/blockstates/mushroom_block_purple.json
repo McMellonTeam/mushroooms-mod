@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "mushrooomsmod:block/mushroom_block_purple"
+      },
+      {
+        "model": "mushrooomsmod:block/mushroom_block_purple",
+        "y": 90
+      },
+      {
+        "model": "mushrooomsmod:block/mushroom_block_purple",
+        "y": 180
+      },
+      {
+        "model": "mushrooomsmod:block/mushroom_block_purple",
+        "y": 270
+      }
+    ]
+  }
+}

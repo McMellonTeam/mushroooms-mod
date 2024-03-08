@@ -43,25 +43,54 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
         getOrCreateTagBuilder(BlockTags.AXE_MINEABLE)
                 .add(ModBlocks.BLUE_MUSHROOM_BLOCK)
                 .add(ModBlocks.PURPLE_MUSHROOM_BLOCK)
-                .add(ModBlocks.LUMINESCENT_PINK_MUSHROOM_BLOCK)
                 .add(ModBlocks.BLUE_LUMINESCENT_MUSHROOM_BLOCK)
                 .add(ModBlocks.GREEN_MUSHROOM_BLOCK)
                 .add(ModBlocks.YELLOW_MUSHROOM_BLOCK)
                 .add(ModBlocks.ORANGE_MUSHROOM_BLOCK)
 
-                .add(ModBlocks.DARK_MUSHROOM_BLUE_LUMINESCENT_BLOCK)
-                .add(ModBlocks.DARK_LUMINESCENT_PINK_MUSHROOM_BLOCK)
-                .add(ModBlocks.DARK_GREEN_MUSHROOM_BLOCK)
-                .add(ModBlocks.DARK_PURPLE_MUSHROOM_BLOCK)
-                .add(ModBlocks.DARK_ORANGE_MUSHROOM_BLOCK)
-                .add(ModBlocks.DARK_YELLOW_MUSHROOM_BLOCK)
-                .add(ModBlocks.DARK_BLUE_MUSHROOM_BLOCK)
-                .add(ModBlocks.DARK_RED_MUSHROOM_BLOCK)
 
                 .add(ModBlocks.PURPLE_ALTERED_MUSHROOM_BLOCK)
                 .add(ModBlocks.PURPLE_DEGRADATED_MUSHROOM_BLOCK)
-                .add(ModBlocks.PURPLE_MUSHROOM_FERMENTED_BLOCK)
+                .add(ModBlocks.PURPLE_FERMENTED_MUSHROOM_BLOCK)
 
+                .add(ModBlocks.ORANGE_MUSHROOM_BLOCK)
+                .add(ModBlocks.ORANGE_ALTERED_MUSHROOM_BLOCK)
+                .add(ModBlocks.ORANGE_DEGRADATED_MUSHROOM_BLOCK)
+                .add(ModBlocks.ORANGE_FERMENTED_MUSHROOM_BLOCK)
+
+                .add(ModBlocks.YELLOW_MUSHROOM_BLOCK)
+                .add(ModBlocks.YELLOW_ALTERED_MUSHROOM_BLOCK)
+                .add(ModBlocks.YELLOW_DEGRADATED_MUSHROOM_BLOCK)
+                .add(ModBlocks.YELLOW_FERMENTED_MUSHROOM_BLOCK)
+
+                .add(ModBlocks.BLUE_MUSHROOM_BLOCK)
+                .add(ModBlocks.BLUE_ALTERED_MUSHROOM_BLOCK)
+                .add(ModBlocks.BLUE_DEGRADATED_MUSHROOM_BLOCK)
+                .add(ModBlocks.BLUE_FERMENTED_MUSHROOM_BLOCK)
+
+                .add(ModBlocks.GREEN_MUSHROOM_BLOCK)
+                .add(ModBlocks.GREEN_ALTERED_MUSHROOM_BLOCK)
+                .add(ModBlocks.GREEN_DEGRADATED_MUSHROOM_BLOCK)
+                .add(ModBlocks.GREEN_FERMENTED_MUSHROOM_BLOCK)
+
+                .add(ModBlocks.BLUE_LUMINESCENT_MUSHROOM_BLOCK)
+                .add(ModBlocks.BLUE_LUMINESCENT_ALTERED_MUSHROOM_BLOCK)
+                .add(ModBlocks.BLUE_LUMINESCENT_DEGRADATED_MUSHROOM_BLOCK)
+                .add(ModBlocks.BLUE_LUMINESCENT_FERMENTED_MUSHROOM_BLOCK)
+
+                .add(ModBlocks.PINK_LUMINESCENT_MUSHROOM_BLOCK)
+                .add(ModBlocks.PINK_LUMINESCENT_ALTERED_MUSHROOM_BLOCK)
+                .add(ModBlocks.PINK_LUMINESCENT_DEGRADATED_MUSHROOM_BLOCK)
+                .add(ModBlocks.PINK_LUMINESCENT_FERMENTED_MUSHROOM_BLOCK)
+
+
+                .add(ModBlocks.RED_ALTERED_MUSHROOM_BLOCK)
+                .add(ModBlocks.RED_DEGRADATED_MUSHROOM_BLOCK)
+                .add(ModBlocks.RED_FERMENTED_MUSHROOM_BLOCK)
+
+                .add(ModBlocks.BROWN_ALTERED_MUSHROOM_BLOCK)
+                .add(ModBlocks.BROWN_DEGRADATED_MUSHROOM_BLOCK)
+                .add(ModBlocks.BROWN_FERMENTED_MUSHROOM_BLOCK)
 
 
                 .add(ModBlocks.LUMINESCENT_MUSHROOM_STEM)

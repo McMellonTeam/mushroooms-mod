@@ -36,7 +36,7 @@ public class PinkLuminescentHeadVinesBlock extends Block {
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit){
 
         BlockState blocAuDessus = world.getBlockState(pos.up());
-        if (blocAuDessus.getBlock() == ModBlocks.LUMINESCENT_PINK_MUSHROOM_BLOCK || blocAuDessus.getBlock() == ModBlocks.PINK_LUMINESCENT_BODY_VINES) {
+        if (blocAuDessus.getBlock() == ModBlocks.PINK_LUMINESCENT_MUSHROOM_BLOCK || blocAuDessus.getBlock() == ModBlocks.PINK_LUMINESCENT_BODY_VINES) {
             BlockState blockState = (BlockState)state.with(MANY_VINES, true);
             world.setBlockState(pos, blockState, Block.NOTIFY_LISTENERS);
             return ActionResult.SUCCESS;
@@ -49,7 +49,7 @@ public class PinkLuminescentHeadVinesBlock extends Block {
     public static int getluminancesupplier(int luminance, World world, BlockPos pos){
         System.out.println("on initialise");
         BlockState blocAuDessus = world.getBlockState(pos.up());
-        if (blocAuDessus.getBlock() == ModBlocks.LUMINESCENT_PINK_MUSHROOM_BLOCK || blocAuDessus.getBlock() == ModBlocks.PINK_LUMINESCENT_BODY_VINES) {
+        if (blocAuDessus.getBlock() == ModBlocks.PINK_LUMINESCENT_MUSHROOM_BLOCK || blocAuDessus.getBlock() == ModBlocks.PINK_LUMINESCENT_BODY_VINES) {
             System.out.println("true");
             return luminance;
         }

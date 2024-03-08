@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "mushrooomsmod:block/altered_mushroom_purple"
-  }
-}

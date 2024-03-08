@@ -84,4 +84,8 @@ public class GrokiEntity extends AnimalEntity implements GeoEntity {
         return ActionResult.PASS;
     }
 
+    @Override
+    public void tick() {
+        super.tick();
+    }
 }

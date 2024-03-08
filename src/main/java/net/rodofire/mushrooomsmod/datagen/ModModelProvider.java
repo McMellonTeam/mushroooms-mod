@@ -18,30 +18,54 @@ public class ModModelProvider extends FabricModelProvider {
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
         //Blocks
         //Mushrooms Blocks
-        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.BLUE_LUMINESCENT_MUSHROOM_BLOCK);
-        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.LUMINESCENT_MUSHROOM_STEM);
-        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.GREEN_MUSHROOM_BLOCK);
-        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.PURPLE_MUSHROOM_BLOCK);
-        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.BLUE_MUSHROOM_BLOCK);
-        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.YELLOW_MUSHROOM_BLOCK);
-        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.ORANGE_MUSHROOM_BLOCK);
-        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.LUMINESCENT_PINK_MUSHROOM_BLOCK);
+        blockStateModelGenerator.registerRotatable(ModBlocks.PURPLE_MUSHROOM_BLOCK);
+        blockStateModelGenerator.registerRotatable(ModBlocks.PURPLE_ALTERED_MUSHROOM_BLOCK);
+        blockStateModelGenerator.registerRotatable(ModBlocks.PURPLE_DEGRADATED_MUSHROOM_BLOCK);
+        blockStateModelGenerator.registerRotatable(ModBlocks.PURPLE_FERMENTED_MUSHROOM_BLOCK);
 
-        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.DARK_MUSHROOM_BLUE_LUMINESCENT_BLOCK);
-        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.DARK_YELLOW_MUSHROOM_BLOCK);
-        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.DARK_LUMINESCENT_PINK_MUSHROOM_BLOCK);
-        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.DARK_PURPLE_MUSHROOM_BLOCK);
-        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.DARK_BLUE_MUSHROOM_BLOCK);
-        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.DARK_GREEN_MUSHROOM_BLOCK);
-        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.DARK_ORANGE_MUSHROOM_BLOCK);
-        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.DARK_RED_MUSHROOM_BLOCK);
+        blockStateModelGenerator.registerRotatable(ModBlocks.ORANGE_MUSHROOM_BLOCK);
+        blockStateModelGenerator.registerRotatable(ModBlocks.ORANGE_ALTERED_MUSHROOM_BLOCK);
+        blockStateModelGenerator.registerRotatable(ModBlocks.ORANGE_DEGRADATED_MUSHROOM_BLOCK);
+        blockStateModelGenerator.registerRotatable(ModBlocks.ORANGE_FERMENTED_MUSHROOM_BLOCK);
 
-        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.PURPLE_ALTERED_MUSHROOM_BLOCK);
-        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.PURPLE_DEGRADATED_MUSHROOM_BLOCK);
-        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.PURPLE_MUSHROOM_FERMENTED_BLOCK);
+        blockStateModelGenerator.registerRotatable(ModBlocks.YELLOW_MUSHROOM_BLOCK);
+        blockStateModelGenerator.registerRotatable(ModBlocks.YELLOW_ALTERED_MUSHROOM_BLOCK);
+        blockStateModelGenerator.registerRotatable(ModBlocks.YELLOW_DEGRADATED_MUSHROOM_BLOCK);
+        blockStateModelGenerator.registerRotatable(ModBlocks.YELLOW_FERMENTED_MUSHROOM_BLOCK);
+
+        blockStateModelGenerator.registerRotatable(ModBlocks.BLUE_MUSHROOM_BLOCK);
+        blockStateModelGenerator.registerRotatable(ModBlocks.BLUE_ALTERED_MUSHROOM_BLOCK);
+        blockStateModelGenerator.registerRotatable(ModBlocks.BLUE_DEGRADATED_MUSHROOM_BLOCK);
+        blockStateModelGenerator.registerRotatable(ModBlocks.BLUE_FERMENTED_MUSHROOM_BLOCK);
+
+        blockStateModelGenerator.registerRotatable(ModBlocks.GREEN_MUSHROOM_BLOCK);
+        blockStateModelGenerator.registerRotatable(ModBlocks.GREEN_ALTERED_MUSHROOM_BLOCK);
+        blockStateModelGenerator.registerRotatable(ModBlocks.GREEN_DEGRADATED_MUSHROOM_BLOCK);
+        blockStateModelGenerator.registerRotatable(ModBlocks.GREEN_FERMENTED_MUSHROOM_BLOCK);
+
+        blockStateModelGenerator.registerRotatable(ModBlocks.BLUE_LUMINESCENT_MUSHROOM_BLOCK);
+        blockStateModelGenerator.registerRotatable(ModBlocks.BLUE_LUMINESCENT_ALTERED_MUSHROOM_BLOCK);
+        blockStateModelGenerator.registerRotatable(ModBlocks.BLUE_LUMINESCENT_DEGRADATED_MUSHROOM_BLOCK);
+        blockStateModelGenerator.registerRotatable(ModBlocks.BLUE_LUMINESCENT_FERMENTED_MUSHROOM_BLOCK);
+
+        blockStateModelGenerator.registerRotatable(ModBlocks.PINK_LUMINESCENT_MUSHROOM_BLOCK);
+        blockStateModelGenerator.registerRotatable(ModBlocks.PINK_LUMINESCENT_ALTERED_MUSHROOM_BLOCK);
+        blockStateModelGenerator.registerRotatable(ModBlocks.PINK_LUMINESCENT_DEGRADATED_MUSHROOM_BLOCK);
+        blockStateModelGenerator.registerRotatable(ModBlocks.PINK_LUMINESCENT_FERMENTED_MUSHROOM_BLOCK);
+
+        blockStateModelGenerator.registerRotatable(ModBlocks.RED_ALTERED_MUSHROOM_BLOCK);
+        blockStateModelGenerator.registerRotatable(ModBlocks.RED_DEGRADATED_MUSHROOM_BLOCK);
+        blockStateModelGenerator.registerRotatable(ModBlocks.RED_FERMENTED_MUSHROOM_BLOCK);
+
+        blockStateModelGenerator.registerRotatable(ModBlocks.BROWN_ALTERED_MUSHROOM_BLOCK);
+        blockStateModelGenerator.registerRotatable(ModBlocks.BROWN_DEGRADATED_MUSHROOM_BLOCK);
+        blockStateModelGenerator.registerRotatable(ModBlocks.BROWN_FERMENTED_MUSHROOM_BLOCK);
+
+
 
 
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.TRANSPARENT_MUSHROOM_STEM);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.LUMINESCENT_MUSHROOM_STEM);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.GREEN_MUSHROOM_STEM);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.COMPRESSED_PURPLE_MUSHROOM);
 
@@ -124,6 +148,7 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.PINK_MUSHROOM_VINES_ITEM, Models.GENERATED);
         itemModelGenerator.register(ModItems.PINK_CRYSTAL_ITEM, Models.GENERATED);
         itemModelGenerator.register(ModItems.CRUSHED_DIAMOND, Models.GENERATED);
+        itemModelGenerator.register(ModItems.LUMINESCENT_SCHROOM_SOUP, Models.GENERATED);
     }
 
 }

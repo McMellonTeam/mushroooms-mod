@@ -3,6 +3,7 @@ package net.rodofire.mushrooomsmod.datagen;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.rodofire.mushrooomsmod.block.ModBlocks;
+import net.rodofire.mushrooomsmod.datagen.recipe.ForgeRecipeBuilder;
 import net.rodofire.mushrooomsmod.item.ModItems;
 import net.minecraft.block.Blocks;
 import net.minecraft.data.server.recipe.RecipeJsonProvider;
@@ -139,5 +140,21 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input(Character.valueOf('R'), Blocks.ANVIL)
                 .criterion(hasItem(Items.IRON_INGOT), conditionsFromItem(Blocks.ANVIL))
                 .offerTo(exporter, new Identifier("forge_craft_with_anvil"));
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.IRON_HAMMER)
+                .pattern("BBB")
+                .pattern("ISI")
+                .pattern(" S ")
+                .input(Character.valueOf('S'), Items.STICK)
+                .input(Character.valueOf('B'), Blocks.IRON_BLOCK)
+                .input(Character.valueOf('I'), Items.IRON_INGOT)
+                .criterion(hasItem(Items.IRON_INGOT), conditionsFromItem(Blocks.IRON_BLOCK))
+                .offerTo(exporter, new Identifier("hammer_craft"));
+
+
+        //Forge Recipe
+        new ForgeRecipeBuilder(Items.DIAMOND,ModItems.CRUSHED_DIAMOND ,1)
+                .criterion(hasItem(Items.DIAMOND), conditionsFromItem(Items.DIAMOND))
+                .offerTo(exporter);
     }
 }

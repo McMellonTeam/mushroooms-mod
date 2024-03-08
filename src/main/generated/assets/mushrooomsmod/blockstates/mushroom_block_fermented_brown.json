@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "mushrooomsmod:block/mushroom_block_fermented_brown"
+      },
+      {
+        "model": "mushrooomsmod:block/mushroom_block_fermented_brown",
+        "y": 90
+      },
+      {
+        "model": "mushrooomsmod:block/mushroom_block_fermented_brown",
+        "y": 180
+      },
+      {
+        "model": "mushrooomsmod:block/mushroom_block_fermented_brown",
+        "y": 270
+      }
+    ]
+  }
+}

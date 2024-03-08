@@ -2,7 +2,7 @@ package net.rodofire.mushrooomsmod.item;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.block.Blocks;
 import net.rodofire.mushrooomsmod.MushrooomsMod;
 import net.rodofire.mushrooomsmod.block.ModBlocks;
 import net.rodofire.mushrooomsmod.entity.ModEntities;
@@ -25,28 +25,50 @@ public class ModItems {
                         //Blocks
                         //Natural
                         //Mushroom Related
-                        entries.add(ModBlocks.BLUE_MUSHROOM_BLOCK);
                         entries.add(ModBlocks.BLUE_LUMINESCENT_MUSHROOM_BLOCK);
+                        /*entries.add(ModBlocks.BLUE_LUMINESCENT_ALTERED_MUSHROOM_BLOCK);
+                        entries.add(ModBlocks.BLUE_LUMINESCENT_DEGRADATED_MUSHROOM_BLOCK);
+                        entries.add(ModBlocks.BLUE_LUMINESCENT_FERMENTED_MUSHROOM_BLOCK);*/
+
+                        entries.add(ModBlocks.BLUE_MUSHROOM_BLOCK);
+                        /*entries.add(ModBlocks.BLUE_ALTERED_MUSHROOM_BLOCK);
+                        entries.add(ModBlocks.BLUE_DEGRADATED_MUSHROOM_BLOCK);
+                        entries.add(ModBlocks.BLUE_FERMENTED_MUSHROOM_BLOCK);*/
 
                         entries.add(ModBlocks.PURPLE_MUSHROOM_BLOCK);
                         entries.add(ModBlocks.PURPLE_ALTERED_MUSHROOM_BLOCK);
                         entries.add(ModBlocks.PURPLE_DEGRADATED_MUSHROOM_BLOCK);
-                        entries.add(ModBlocks.PURPLE_MUSHROOM_FERMENTED_BLOCK);
+                        entries.add(ModBlocks.PURPLE_FERMENTED_MUSHROOM_BLOCK);
 
                         entries.add(ModBlocks.GREEN_MUSHROOM_BLOCK);
+                        entries.add(ModBlocks.GREEN_ALTERED_MUSHROOM_BLOCK);
+                        entries.add(ModBlocks.GREEN_DEGRADATED_MUSHROOM_BLOCK);
+                        entries.add(ModBlocks.GREEN_FERMENTED_MUSHROOM_BLOCK);
+
                         entries.add(ModBlocks.YELLOW_MUSHROOM_BLOCK);
+                        /*entries.add(ModBlocks.YELLOW_ALTERED_MUSHROOM_BLOCK);
+                        entries.add(ModBlocks.YELLOW_DEGRADATED_MUSHROOM_BLOCK);
+                        entries.add(ModBlocks.YELLOW_FERMENTED_MUSHROOM_BLOCK);*/
+
                         entries.add(ModBlocks.ORANGE_MUSHROOM_BLOCK);
-                        entries.add(ModBlocks.LUMINESCENT_PINK_MUSHROOM_BLOCK);
+                        entries.add(ModBlocks.ORANGE_ALTERED_MUSHROOM_BLOCK);
+                        entries.add(ModBlocks.ORANGE_DEGRADATED_MUSHROOM_BLOCK);
+                        entries.add(ModBlocks.ORANGE_FERMENTED_MUSHROOM_BLOCK);
 
-                        entries.add(ModBlocks.DARK_LUMINESCENT_PINK_MUSHROOM_BLOCK);
-                        entries.add(ModBlocks.DARK_PURPLE_MUSHROOM_BLOCK);
-                        entries.add(ModBlocks.DARK_GREEN_MUSHROOM_BLOCK);
-                        entries.add(ModBlocks.DARK_ORANGE_MUSHROOM_BLOCK);
-                        entries.add(ModBlocks.DARK_YELLOW_MUSHROOM_BLOCK);
-                        entries.add(ModBlocks.DARK_MUSHROOM_BLUE_LUMINESCENT_BLOCK);
-                        entries.add(ModBlocks.DARK_BLUE_MUSHROOM_BLOCK);
-                        entries.add(ModBlocks.DARK_RED_MUSHROOM_BLOCK);
+                        entries.add(Blocks.RED_MUSHROOM_BLOCK);
+                        /*entries.add(ModBlocks.RED_ALTERED_MUSHROOM_BLOCK);
+                        entries.add(ModBlocks.RED_DEGRADATED_MUSHROOM_BLOCK);
+                        entries.add(ModBlocks.RED_FERMENTED_MUSHROOM_BLOCK);*/
 
+                        entries.add(ModBlocks.PINK_LUMINESCENT_MUSHROOM_BLOCK);
+                        /*entries.add(ModBlocks.PINK_LUMINESCENT_ALTERED_MUSHROOM_BLOCK);
+                        entries.add(ModBlocks.PINK_LUMINESCENT_DEGRADATED_MUSHROOM_BLOCK);
+                        entries.add(ModBlocks.PINK_LUMINESCENT_FERMENTED_MUSHROOM_BLOCK);*/
+
+                        entries.add(Blocks.BROWN_MUSHROOM_BLOCK);
+                        /*entries.add(ModBlocks.BROWN_ALTERED_MUSHROOM_BLOCK);
+                        entries.add(ModBlocks.BROWN_DEGRADATED_MUSHROOM_BLOCK);
+                        entries.add(ModBlocks.BROWN_FERMENTED_MUSHROOM_BLOCK);*/
 
                         entries.add(ModBlocks.LUMINESCENT_MUSHROOM_STEM);
                         entries.add(ModBlocks.TRANSPARENT_MUSHROOM_STEM);
@@ -202,7 +224,7 @@ public class ModItems {
     public static final Item PINK_CRYSTAL_ITEM = registerItem("pink_crystal_item", new AliasedBlockItem(ModBlocks.PINK_CRYSTAL, new FabricItemSettings()));
 
     //Tools
-    public static final Item IRON_HAMMER = registerItem("iron_hammer", new HammerItem(ToolMaterials.IRON, 40,200,4,new FabricItemSettings()));
+    public static final Item IRON_HAMMER = registerItem("iron_hammer", new HammerItem(ToolMaterials.IRON, 40,-3.7f,4,new FabricItemSettings()));
 
 
     private static Item registerItem(String name, Item item) {

@@ -10,7 +10,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.ItemScatterer;
-import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.shape.VoxelShape;
@@ -53,7 +52,6 @@ public class ForgeBlock extends BlockWithEntity implements BlockEntityProvider {
         ItemStack putItemStack = itemStack.getItem().getDefaultStack();
         int itemfirstslot = inventory.getStack(0).getCount();
         putItemStack.setCount(itemfirstslot + 1);
-        System.out.println(inventory.getStack(0) + "  " + inventory.getStack(1));
         if (!inventory.isEmpty()) {
             //code to get the inventory
             if (itemStack.isEmpty() || !itemStack.isIn(ModTags.Items.FORGEABLE_ITEMS)) {
@@ -78,6 +76,7 @@ public class ForgeBlock extends BlockWithEntity implements BlockEntityProvider {
 
                 }
             }
+
             //put stuff
             if (inventory.getStack(0).getCount() != 64) {
                 if (itemStack.isIn(ModTags.Items.FORGEABLE_ITEMS)) {
@@ -86,11 +85,12 @@ public class ForgeBlock extends BlockWithEntity implements BlockEntityProvider {
                         itemStack.decrement(64);
                     } else {
                         inventory.setStack(0, putItemStack);
-                        itemStack.decrement(1);
+                        if(!player.isCreative())itemStack.decrement(1);
                     }
                     return ActionResult.SUCCESS;
                 }
             }
+
         } else {
             if (!itemStack.isIn(ModTags.Items.FORGEABLE_ITEMS)) return ActionResult.PASS;
             if (player.isSneaking()) {
