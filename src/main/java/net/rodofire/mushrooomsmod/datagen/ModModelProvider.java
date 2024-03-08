@@ -148,6 +148,7 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.PINK_MUSHROOM_VINES_ITEM, Models.GENERATED);
         itemModelGenerator.register(ModItems.PINK_CRYSTAL_ITEM, Models.GENERATED);
         itemModelGenerator.register(ModItems.CRUSHED_DIAMOND, Models.GENERATED);
+        itemModelGenerator.register(ModItems.LUMINESCENT_SCHROOM_SOUP, Models.GENERATED);
     }
 
 }

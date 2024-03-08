@@ -16,18 +16,18 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(ClientPlayNetworkHandler.class)
 public abstract class ClientPlayNetworkHandlerMixin {
 
-    /*@Shadow
+    @Shadow
     private final MinecraftClient client;
 
     protected ClientPlayNetworkHandlerMixin(MinecraftClient client) {
         this.client = client;
-    }*/
+    }
 
-    /*@Inject(method = "onGameJoin", at = @At("TAIL"))
+    @Inject(method = "onGameJoin", at = @At("TAIL"))
     private void friendsandfoes_showUpdateMessage(GameJoinS2CPacket arg, CallbackInfo ci) {
         if (client.player == null) {
             return;
         }
         client.player.sendMessage(Text.of("MushrooomsMod : Note that this mod is still on beta and a lot of new things are going to come. Please note that some existing features provided by this mod might change"));
-    }*/
+    }
 }

@@ -85,7 +85,7 @@ public class ForgeBlock extends BlockWithEntity implements BlockEntityProvider {
                         itemStack.decrement(64);
                     } else {
                         inventory.setStack(0, putItemStack);
-                        itemStack.decrement(1);
+                        if(!player.isCreative())itemStack.decrement(1);
                     }
                     return ActionResult.SUCCESS;
                 }

@@ -26,7 +26,7 @@ public class FermentedMushroomBlock extends Block {
         if (!ismaxfermented) {
             if (stack.isIn(ModTags.Items.MUSHROOM_POWDER)) {
                 world.setBlockState(pos, blockSupplier.get().getDefaultState());
-                //stack.decrement(-1);
+                if(!player.isCreative())stack.decrement(1);
                 return ActionResult.SUCCESS;
             }
         } else {

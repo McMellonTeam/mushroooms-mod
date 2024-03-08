@@ -1,4 +1,4 @@
-// 1.20.1	2024-03-08T17:02:06.2452905	Mushroooms Mod/Recipes
+// 1.20.1	2024-03-08T20:10:08.0229302	Mushroooms Mod/Recipes
 e9da0d235caa0a10f04ebbb70744a5e1d832d5bf data\mushrooomsmod\advancements\recipes\misc\blue_dye_from_bluebell.json
 70581b0cfa088448f2ee285ddc403ee3da07085f data\mushrooomsmod\recipes\light_blue_dye_from_futiali.json
 c74faf16165f7a2a380fe2bcc688ee46e8acb227 data\mushrooomsmod\recipes\red_dye_from_prehistoric_rose.json
@@ -33,8 +33,8 @@ c9a5bae01a6ac8f48cce7deb6aef514b2320ea6d data\mushrooomsmod\advancements\recipes
 de6bb8c201a1f127e7b507fd8ea95f7bf9e17a91 data\mushrooomsmod\advancements\recipes\misc\pink_dye_from_pink_heater.json
 a8f9de9e2bbaeac0c893190bc1249112c0eb1a8f data\mushrooomsmod\recipes\blue_dye_from_perennial_blue.json
 ae14dbeff78ffee85623b48bc944bfaa8bad222c data\mushrooomsmod\recipes\red_lantern_craft.json
-d8cb137adb1f764083726f125498c2ea292c7ba4 data\mushrooomsmod\advancements\recipes\building_blocks\red_lantern_craft.json
 845e2f3faad2fc03da9e1c85fd85bd1057b8e41a data\mushrooomsmod\recipes\orange_dye_from_flamesthysia.json
+d8cb137adb1f764083726f125498c2ea292c7ba4 data\mushrooomsmod\advancements\recipes\building_blocks\red_lantern_craft.json
 1b917b80673c3713fd3bdea3ac76bf7668ead0a8 data\mushrooomsmod\advancements\recipes\redstone\blackstone_lava_medium_bricks.json
 09cf558882c76a3a875f59bff1947358890888b5 data\mushrooomsmod\recipes\hammer_craft.json
 72683a1a182fc22891c134c6a5a2234acdb118c1 data\mushrooomsmod\recipes\orange_dye_from_sol_occidens.json
