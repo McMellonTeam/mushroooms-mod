@@ -6,6 +6,8 @@ import net.minecraft.block.Blocks;
 import net.rodofire.mushrooomsmod.MushrooomsMod;
 import net.rodofire.mushrooomsmod.block.ModBlocks;
 import net.rodofire.mushrooomsmod.entity.ModEntities;
+import net.rodofire.mushrooomsmod.item.Custom.HammerItem;
+import net.rodofire.mushrooomsmod.item.Custom.SchroomSoup;
 import net.rodofire.mushrooomsmod.sound.ModSounds;
 import net.rodofire.mushrooomsmod.world.biome.ModBiomes;
 import net.minecraft.entity.effect.StatusEffectInstance;
