@@ -6,6 +6,8 @@ import net.minecraft.block.Blocks;
 import net.rodofire.mushrooomsmod.MushrooomsMod;
 import net.rodofire.mushrooomsmod.block.ModBlocks;
 import net.rodofire.mushrooomsmod.entity.ModEntities;
+import net.rodofire.mushrooomsmod.item.Custom.HammerItem;
+import net.rodofire.mushrooomsmod.item.Custom.SchroomSoup;
 import net.rodofire.mushrooomsmod.sound.ModSounds;
 import net.rodofire.mushrooomsmod.world.biome.ModBiomes;
 import net.minecraft.entity.effect.StatusEffectInstance;
@@ -26,9 +28,9 @@ public class ModItems {
                         //Natural
                         //Mushroom Related
                         entries.add(ModBlocks.BLUE_LUMINESCENT_MUSHROOM_BLOCK);
-                        /*entries.add(ModBlocks.BLUE_LUMINESCENT_ALTERED_MUSHROOM_BLOCK);
+                        entries.add(ModBlocks.BLUE_LUMINESCENT_ALTERED_MUSHROOM_BLOCK);
                         entries.add(ModBlocks.BLUE_LUMINESCENT_DEGRADATED_MUSHROOM_BLOCK);
-                        entries.add(ModBlocks.BLUE_LUMINESCENT_FERMENTED_MUSHROOM_BLOCK);*/
+                        entries.add(ModBlocks.BLUE_LUMINESCENT_FERMENTED_MUSHROOM_BLOCK);
 
                         entries.add(ModBlocks.BLUE_MUSHROOM_BLOCK);
                         /*entries.add(ModBlocks.BLUE_ALTERED_MUSHROOM_BLOCK);
