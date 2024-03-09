@@ -11,6 +11,7 @@ public class Flickering extends StatusEffect {
     @Override
     public void applyUpdateEffect(LivingEntity entity, int amplifier) {
         if(!entity.getWorld().isClient()){
+            return;
         }
         super.applyUpdateEffect(entity, amplifier);
     }

@@ -13,6 +13,7 @@ import net.rodofire.mushrooomsmod.particle.ModParticles;
 import net.rodofire.mushrooomsmod.recipe.ModRecipes;
 import net.rodofire.mushrooomsmod.sound.ModSounds;
 import net.rodofire.mushrooomsmod.util.ModLootTableModifier;
+import net.rodofire.mushrooomsmod.world.gen.ModWorldGeneration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -31,7 +32,7 @@ public class MushrooomsMod implements ModInitializer {
 		ModParticles.registerParticles();
 		ModSounds.registerModSound();
 
-		//ModWorldGeneration.generateModWorldGen();
+		ModWorldGeneration.generateModWorldGen();
 		ModLootTableModifier.modifyLootTable();
 
 		ModRecipes.registerRecipes();

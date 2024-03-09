@@ -16,6 +16,10 @@ public class ModBiomesTagsProvider extends TagProvider<Biome> {
 
     @Override
     protected void configure(RegistryWrapper.WrapperLookup lookup) {
-        getOrCreateTagBuilder(ModBiomesTags.IS_LUMINESCENT_CAVE).add(ModBiomes.BLUE_LUMINESCENT_SHROOM_CAVE);
+        getOrCreateTagBuilder(ModBiomesTags.LUMINESCENT_CAVE)
+                .add(ModBiomes.BLUE_LUMINESCENT_SHROOM_CAVE);
+
+        getOrCreateTagBuilder(ModBiomesTags.COLORFUL_PLAINS)
+                .add(ModBiomes.COLORFUL_PLAINS);
     }
 }
