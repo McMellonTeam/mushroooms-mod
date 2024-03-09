@@ -24,7 +24,7 @@ public abstract class ClientPlayNetworkHandlerMixin {
     }
 
     @Inject(method = "onGameJoin", at = @At("TAIL"))
-    private void friendsandfoes_showUpdateMessage(GameJoinS2CPacket arg, CallbackInfo ci) {
+    private void mushroom_warning(GameJoinS2CPacket arg, CallbackInfo ci) {
         if (client.player == null) {
             return;
         }

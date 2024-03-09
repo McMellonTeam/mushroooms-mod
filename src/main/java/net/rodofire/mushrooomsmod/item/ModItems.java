@@ -28,9 +28,9 @@ public class ModItems {
                         //Natural
                         //Mushroom Related
                         entries.add(ModBlocks.BLUE_LUMINESCENT_MUSHROOM_BLOCK);
-                        /*entries.add(ModBlocks.BLUE_LUMINESCENT_ALTERED_MUSHROOM_BLOCK);
+                        entries.add(ModBlocks.BLUE_LUMINESCENT_ALTERED_MUSHROOM_BLOCK);
                         entries.add(ModBlocks.BLUE_LUMINESCENT_DEGRADATED_MUSHROOM_BLOCK);
-                        entries.add(ModBlocks.BLUE_LUMINESCENT_FERMENTED_MUSHROOM_BLOCK);*/
+                        entries.add(ModBlocks.BLUE_LUMINESCENT_FERMENTED_MUSHROOM_BLOCK);
 
                         entries.add(ModBlocks.BLUE_MUSHROOM_BLOCK);
                         /*entries.add(ModBlocks.BLUE_ALTERED_MUSHROOM_BLOCK);
