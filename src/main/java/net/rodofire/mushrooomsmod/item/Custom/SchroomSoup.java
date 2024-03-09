@@ -1,4 +1,4 @@
-package net.rodofire.mushrooomsmod.item;
+package net.rodofire.mushrooomsmod.item.Custom;
 
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
@@ -7,6 +7,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
+import net.rodofire.mushrooomsmod.item.ModItems;
 import net.rodofire.mushrooomsmod.world.biome.ModBiomesTags;
 
 public class SchroomSoup extends Item {
