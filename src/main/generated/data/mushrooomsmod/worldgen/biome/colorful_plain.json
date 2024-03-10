@@ -70,7 +70,8 @@
     ],
     [
       "minecraft:glow_lichen",
-      "minecraft:trees_plains"
+      "minecraft:trees_plains",
+      "minecraft:patch_grass_badlands"
     ],
     [
       "minecraft:freeze_top_layer"

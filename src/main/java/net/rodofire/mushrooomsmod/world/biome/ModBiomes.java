@@ -210,10 +210,9 @@ public class ModBiomes {
 
         globalOverworldGeneration(biomeBuilder);
         DefaultBiomeFeatures.addDefaultOres(biomeBuilder);
-        //DefaultBiomeFeatures.addDefaultGrass(biomeBuilder);
 
         biomeBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, VegetationPlacedFeatures.TREES_PLAINS);
-
+        DefaultBiomeFeatures.addDefaultGrass(biomeBuilder);
 
         return new Biome.Builder()
                 .precipitation(true)
