@@ -28,18 +28,25 @@ public class BlueLuminescentVinesFeature extends Feature<TwistingVinesFeatureCon
         int maxheight = canGenerate(randomheight, pos, world);
         int state;
 
-        if (maxheight != randomheight) randomheight = Random.create().nextBetween(3, maxheight);
+        if (maxheight <= randomheight) randomheight = Random.create().nextBetween(0, maxheight);
 
-
-        for (int i = 0; i <= randomheight; ++i) {
-            pos = pos.up();
-            state = randomheight - i;
-            if (state == randomheight) state = 4;
-            else if (state == randomheight - 1) state = 3;
-            else if (state == randomheight - 2) state = 2;
-            else if (state == 0) state = 0;
-            else state = 1;
-            world.setBlockState(pos.down(), ModBlocks.CAERULEA_VOLUBILIS.getDefaultState().with(BlueLuminescentVines.STAGE, state), Block.NOTIFY_NEIGHBORS);
+        if (randomheight <= 4) {
+            for (int i = 0; i < randomheight; ++i) {
+                pos = pos.up();
+                state = randomheight - i-1;
+                world.setBlockState(pos.down(), ModBlocks.CAERULEA_VOLUBILIS.getDefaultState().with(BlueLuminescentVines.STAGE, state), Block.NOTIFY_NEIGHBORS);
+            }
+        } else {
+            for (int i = 0; i <= randomheight; ++i) {
+                pos = pos.up();
+                state = randomheight - i;
+                if (state == randomheight) state = 4;
+                else if (state == randomheight - 1) state = 3;
+                else if (state == randomheight - 2) state = 2;
+                else if (state == 0) state = 0;
+                else state = 1;
+                world.setBlockState(pos.down(), ModBlocks.CAERULEA_VOLUBILIS.getDefaultState().with(BlueLuminescentVines.STAGE, state), Block.NOTIFY_NEIGHBORS);
+            }
         }
         return true;
     }
