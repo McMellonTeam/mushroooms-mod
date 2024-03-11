@@ -121,6 +121,11 @@ public class ModBlocks {
     public static final Block ORANGE_MUSHROOM = registerBlock("orange_mushroom", new MushroomPlantBlock(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM), ModConfiguredFeatures.BIG_ORANGE_MUSHROOM_KEY));
     public static final Block YELLOW_MUSHROOM = registerBlock("yellow_mushroom", new MushroomPlantBlock(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM).luminance(5), ModConfiguredFeatures.BIG_YELLOW_MUSHROOM_KEY));
 
+    //Flowers Mushroom
+    public static final Block STERILE_BLUE_MUSHROOM = registerBlock("sterile_blue_mushroom" , new FlowerBlock(StatusEffects.GLOWING,10 ,FabricBlockSettings.copyOf(Blocks.ROSE_BUSH).nonOpaque().noCollision()));
+    public static final Block MUSHROOM_SMALL_BROWN = registerBlock("mushroom_small_brown" , new FlowerBlock(StatusEffects.GLOWING,10 ,FabricBlockSettings.copyOf(Blocks.ROSE_BUSH).nonOpaque().noCollision()));
+    public static final Block MUSHROOM_SMALL_RED = registerBlock("mushroom_small_red" , new FlowerBlock(StatusEffects.GLOWING,10 ,FabricBlockSettings.copyOf(Blocks.ROSE_BUSH).nonOpaque().noCollision()));
+
 
     //Flowers
     public static final Block OCULAE = registerBlock("oculae", new FlowerBlock(StatusEffects.DARKNESS, 1000, FabricBlockSettings.copyOf(Blocks.GRASS).nonOpaque().noCollision()));
@@ -164,6 +169,12 @@ public class ModBlocks {
     public static final Block JACYNTHE = registerBlock("jacynthe", new FlowerBlock(StatusEffects.GLOWING, 10, FabricBlockSettings.copyOf(Blocks.ROSE_BUSH).nonOpaque().noCollision()));
     public static final Block PERVENCHE = registerBlock("pervenche", new TallFlowerBlock(FabricBlockSettings.copyOf(Blocks.ROSE_BUSH).nonOpaque().noCollision()));
     public static final Block ACONIT = registerBlock("aconit", new TallFlowerBlock(FabricBlockSettings.copyOf(Blocks.ROSE_BUSH).nonOpaque().noCollision()));
+
+    //Potted Mushrooms
+    public static final Block POTTED_STERILE_BLUE_MUSHROOM=Registry.register(Registries.BLOCK,new Identifier(MushrooomsMod.MOD_ID,"potted_sterile_blue_mushroom"),new FlowerPotBlock(STERILE_BLUE_MUSHROOM,FabricBlockSettings.copyOf(Blocks.POTTED_RED_MUSHROOM).nonOpaque()));
+    public static final Block POTTED_MUSHROOM_SMALL_BROWN=Registry.register(Registries.BLOCK,new Identifier(MushrooomsMod.MOD_ID,"potted_mushroom_small_brown"),new FlowerPotBlock(MUSHROOM_SMALL_BROWN,FabricBlockSettings.copyOf(Blocks.POTTED_RED_MUSHROOM).nonOpaque()));
+    public static final Block POTTED_MUSHROOM_SMALL_RED=Registry.register(Registries.BLOCK,new Identifier(MushrooomsMod.MOD_ID,"potted_mushroom_small_red"),new FlowerPotBlock(MUSHROOM_SMALL_RED,FabricBlockSettings.copyOf(Blocks.POTTED_RED_MUSHROOM).nonOpaque()));
+
 
     //Vines
     public static final Block PINK_MUSHROOM_VINES = registerHiddenBlock("pink_mushroom_vines", new PinkMushroomVinesHeadBlock(FabricBlockSettings.create().breakInstantly().sounds(BlockSoundGroup.CAVE_VINES).pistonBehavior(PistonBehavior.DESTROY).noCollision()));

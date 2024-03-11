@@ -92,6 +92,11 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.YELLOW_MUSHROOM);
         addDrop(ModBlocks.PURPLE_FERMENTED_MUSHROOM_BLOCK);
 
+        //Flowers Mushrooms
+        addDrop(ModBlocks.STERILE_BLUE_MUSHROOM);
+        addDrop(ModBlocks.MUSHROOM_SMALL_BROWN);
+        addDrop(ModBlocks.MUSHROOM_SMALL_RED);
+
         //Flowers
         addDrop(ModBlocks.MUSHROOM_FLOWERS);
         addDrop(ModBlocks.RED_LUMERIA);
@@ -190,6 +195,11 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addPottedPlantDrops(ModBlocks.POTTED_JACYNTHE);
         addPottedPlantDrops(ModBlocks.POTTED_YELLOW_MUSHROOM);
         addPottedPlantDrops(ModBlocks.POTTED_ORANGE_MUSHROOM);
+
+        //Potted Flowers Mushrooms
+        addPottedPlantDrops(ModBlocks.POTTED_STERILE_BLUE_MUSHROOM);
+        addPottedPlantDrops(ModBlocks.POTTED_MUSHROOM_SMALL_BROWN);
+        addPottedPlantDrops(ModBlocks.POTTED_MUSHROOM_SMALL_RED);
 
 
         //Light Blocks

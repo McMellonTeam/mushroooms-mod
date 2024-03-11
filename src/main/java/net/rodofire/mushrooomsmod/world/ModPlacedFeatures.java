@@ -29,6 +29,11 @@ public class ModPlacedFeatures {
     public static final RegistryKey<PlacedFeature> ORANGE_MUSHROOM_FLOWER_PLACED_KEY = registerKey("orange_mushroom_flower_placed_key");
     public static final RegistryKey<PlacedFeature> YELLOW_MUSHROOM_FLOWER_PLACED_KEY = registerKey("yellow_mushroom_flower_placed_key");
 
+    //Flowers Mushrooms
+    public static final RegistryKey<PlacedFeature> STERILE_BLUE_MUSHROOM_PLACED_KEY = registerKey("sterile_blue_mushroom_placed_key");
+    public static final RegistryKey<PlacedFeature> MUSHROOM_SMALL_BROWN_PLACED_KEY = registerKey("mushroom_small_brown_placed_key");
+    public static final RegistryKey<PlacedFeature> MUSHROOM_SMALL_RED_PLACED_KEY = registerKey("mushroom_small_red_placed_key");
+
     //flowers
     public static final RegistryKey<PlacedFeature> OCULAE_PLACED_KEY = registerKey("oculae_placed_key");
     public static final RegistryKey<PlacedFeature> CYANUS_RUBENS_PLACED_KEY = registerKey("cyanus_rubens_placed_key");
@@ -80,6 +85,11 @@ public class ModPlacedFeatures {
         var configuredFeatureRegistryEntryLookup = context.getRegistryLookup(RegistryKeys.CONFIGURED_FEATURE);
         //Mushrooms
         register(context, PINK_LUMINESCENT_MUSHROOM_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.LUMINESCENT_PINK_MUSHROOM_KEY), VegetationPlacedFeatures.treeModifiersWithWouldSurvive(PlacedFeatures.createCountExtraModifier(1, 0.1f, 2), ModBlocks.LUMINESCENT_PINK_MUSHROOM));
+
+        //Flowers Mushrooms
+        register(context,STERILE_BLUE_MUSHROOM_PLACED_KEY,configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.STERILE_BLUE_MUSHROOM_KEY),VegetationPlacedFeatures.treeModifiersWithWouldSurvive(PlacedFeatures.createCountExtraModifier(1,0.1f,2),ModBlocks.STERILE_BLUE_MUSHROOM));
+        register(context,MUSHROOM_SMALL_BROWN_PLACED_KEY,configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.MUSHROOM_SMALL_BROWN_KEY),VegetationPlacedFeatures.treeModifiersWithWouldSurvive(PlacedFeatures.createCountExtraModifier(1,0.1f,2),ModBlocks.MUSHROOM_SMALL_BROWN));
+        register(context,MUSHROOM_SMALL_RED_PLACED_KEY,configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.MUSHROOM_SMALL_RED_KEY),VegetationPlacedFeatures.treeModifiersWithWouldSurvive(PlacedFeatures.createCountExtraModifier(1,0.1f,2),ModBlocks.MUSHROOM_SMALL_RED));
 
         //Flowers
         register(context, OCULAE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.OCULAE_KEY), VegetationPlacedFeatures.treeModifiersWithWouldSurvive(PlacedFeatures.createCountExtraModifier(1, 0.1f, 2), ModBlocks.OCULAE));

@@ -97,6 +97,11 @@ public class ModItems {
                         entries.add(ModBlocks.ORANGE_MUSHROOM);
                         entries.add(ModBlocks.YELLOW_MUSHROOM);
 
+                        //Flowers Mushrooms
+                        entries.add(ModBlocks.STERILE_BLUE_MUSHROOM);
+                        entries.add(ModBlocks.MUSHROOM_SMALL_BROWN);
+                        entries.add(ModBlocks.MUSHROOM_SMALL_RED);
+
                         //Flowers
                         entries.add(ModBlocks.PREHISTO_PINK_SCHROOM);
                         entries.add(ModBlocks.PREHISTO_BLUE_SCHROOM);
