@@ -85,6 +85,10 @@ public class ModConfiguredFeatures<FC extends FeatureConfig> {
     public static final RegistryKey<ConfiguredFeature<?, ?>> ACONIT_KEY = registerKey("aconit_key");
     public static final RegistryKey<ConfiguredFeature<?, ?>> PERVENCHE_KEY = registerKey("pervenche_key");
 
+    //Grass
+    public static final RegistryKey<ConfiguredFeature<?,?>> TINY_GRASSS_KEY = registerKey("tiny_grass_key");
+
+    //Vines
     public static final RegistryKey<ConfiguredFeature<?, ?>> BLUE_LUMINESCENT_VINES_KEY = registerKey("blue_luminescent_vines");
 
 
@@ -174,6 +178,9 @@ public class ModConfiguredFeatures<FC extends FeatureConfig> {
         register(context, PERVENCHE_KEY, Feature.FLOWER, new RandomPatchFeatureConfig(32, 6, 2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.PERVENCHE)))));
         register(context, ORANGE_MUSHROOM_FLOWER_KEY, Feature.FLOWER, new RandomPatchFeatureConfig(32, 6, 2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.ORANGE_MUSHROOM)))));
         register(context, YELLOW_MUSHROOM_FLOWER_KEY, Feature.FLOWER, new RandomPatchFeatureConfig(32, 6, 2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.YELLOW_MUSHROOM)))));
+
+        //Grass
+        register(context, TINY_GRASSS_KEY, Feature.FLOWER, new RandomPatchFeatureConfig(32,6,2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.TINY_GRASS)))));
 
         //vines
         register(context, BLUE_LUMINESCENT_VINES_KEY, ModConfiguredFeatures.BLUE_LUMINESCENT_VINES, new TwistingVinesFeatureConfig(10, 10, 50));

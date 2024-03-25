@@ -106,7 +106,7 @@ public class ModBlocks {
 
     //Hard Blocks
     public static final Block PURPLE_SCHROOM_DEESLATE = registerBlock("purple_schroom_deepslate", new Block(FabricBlockSettings.copyOf(Blocks.DEEPSLATE).requiresTool().instrument(Instrument.BASEDRUM)));
-    public static final Block BLUE_LUMINESCENT_SCHROOM_DEESLATE = registerBlock("blue_luminescent_schroom_deepslate", new Block(FabricBlockSettings.copyOf(Blocks.DEEPSLATE).luminance(3).requiresTool().instrument(Instrument.BASEDRUM)));
+    public static final Block BLUE_LUMINESCENT_SCHROOM_DEESLATE = registerBlock("blue_luminescent_schroom_deepslate", new GrassBlock(FabricBlockSettings.copyOf(Blocks.DEEPSLATE).luminance(3).requiresTool().instrument(Instrument.BASEDRUM)));
     public static final Block GREEN_STONY_SCHROOM_DEPOT = registerBlock("green_stony_schroom_depot", new Block(FabricBlockSettings.copyOf(Blocks.STONE).requiresTool().instrument(Instrument.BASEDRUM)));
     public static final Block RHYOLITE = registerBlock("rhyolite", new Block(FabricBlockSettings.copyOf(Blocks.STONE).requiresTool().instrument(Instrument.BASEDRUM)));
     public static final Block LAVA_BLACKSTONE = registerBlock("blackstone_lava", new Block(FabricBlockSettings.copyOf(Blocks.BLACKSTONE).luminance(8)));
@@ -175,6 +175,9 @@ public class ModBlocks {
     public static final Block POTTED_MUSHROOM_SMALL_BROWN=Registry.register(Registries.BLOCK,new Identifier(MushrooomsMod.MOD_ID,"potted_mushroom_small_brown"),new FlowerPotBlock(MUSHROOM_SMALL_BROWN,FabricBlockSettings.copyOf(Blocks.POTTED_RED_MUSHROOM).nonOpaque()));
     public static final Block POTTED_MUSHROOM_SMALL_RED=Registry.register(Registries.BLOCK,new Identifier(MushrooomsMod.MOD_ID,"potted_mushroom_small_red"),new FlowerPotBlock(MUSHROOM_SMALL_RED,FabricBlockSettings.copyOf(Blocks.POTTED_RED_MUSHROOM).nonOpaque()));
 
+
+    //Grass
+    public static final Block TINY_GRASS = registerBlock("tiny_grass", new GrassBlock(FabricBlockSettings.copyOf(Blocks.GRASS)));
 
     //Vines
     public static final Block PINK_MUSHROOM_VINES = registerHiddenBlock("pink_mushroom_vines", new PinkMushroomVinesHeadBlock(FabricBlockSettings.create().breakInstantly().sounds(BlockSoundGroup.CAVE_VINES).pistonBehavior(PistonBehavior.DESTROY).noCollision()));

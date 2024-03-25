@@ -137,9 +137,13 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.ACONIT);
         addDrop(ModBlocks.PERVENCHE);
 
+        //Grass
+        addDrop(ModBlocks.TINY_GRASS);
+
         //Vines
         addDrop(ModBlocks.PINK_MUSHROOM_VINES, ModItems.PINK_MUSHROOM_VINES_ITEM);
         addDrop(ModBlocks.PINK_MUSHROOM_VINES_PLANT, ModItems.PINK_MUSHROOM_VINES_ITEM);
+        addDrop(ModBlocks.CAERULEA_VOLUBILIS);
 
         //Big Mushrooms
         addDrop(ModBlocks.TINY_PURPLE_MUSHROOM);
