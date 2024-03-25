@@ -6,6 +6,7 @@ import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.world.biome.Biome;
+import net.rodofire.mushrooomsmod.world.biome.overworld.ModOverworldBiomes;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -17,9 +18,9 @@ public class ModBiomesTagsProvider extends TagProvider<Biome> {
     @Override
     protected void configure(RegistryWrapper.WrapperLookup lookup) {
         getOrCreateTagBuilder(ModBiomesTags.LUMINESCENT_CAVE)
-                .add(ModBiomes.BLUE_LUMINESCENT_SHROOM_CAVE);
+                .add(ModOverworldBiomes.BLUE_LUMINESCENT_SHROOM_CAVE);
 
         getOrCreateTagBuilder(ModBiomesTags.COLORFUL_PLAINS)
-                .add(ModBiomes.COLORFUL_PLAINS);
+                .add(ModOverworldBiomes.COLORFUL_PLAINS);
     }
 }

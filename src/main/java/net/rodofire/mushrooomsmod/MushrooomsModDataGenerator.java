@@ -5,7 +5,7 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.rodofire.mushrooomsmod.datagen.*;
 import net.rodofire.mushrooomsmod.world.ModConfiguredFeatures;
 import net.rodofire.mushrooomsmod.world.ModPlacedFeatures;
-import net.rodofire.mushrooomsmod.world.biome.ModBiomes;
+import net.rodofire.mushrooomsmod.world.biome.overworld.ModOverworldBiomes;
 import net.minecraft.registry.RegistryBuilder;
 import net.minecraft.registry.RegistryKeys;
 
@@ -27,6 +27,6 @@ public class MushrooomsModDataGenerator implements DataGeneratorEntrypoint {
 	public void buildRegistry(RegistryBuilder registryBuilder) {
 		registryBuilder.addRegistry(RegistryKeys.CONFIGURED_FEATURE, ModConfiguredFeatures::bootstrap);
 		registryBuilder.addRegistry(RegistryKeys.PLACED_FEATURE, ModPlacedFeatures::bootstrap);
-		registryBuilder.addRegistry(RegistryKeys.BIOME, ModBiomes::bootstrap);
+		registryBuilder.addRegistry(RegistryKeys.BIOME, ModOverworldBiomes::bootstrap);
 	}
 }

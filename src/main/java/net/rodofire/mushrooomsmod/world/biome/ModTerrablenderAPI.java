@@ -1,6 +1,8 @@
 package net.rodofire.mushrooomsmod.world.biome;
 import net.minecraft.util.Identifier;
 import net.rodofire.mushrooomsmod.MushrooomsMod;
+import net.rodofire.mushrooomsmod.world.biome.overworld.ModOverworldRegion;
+import net.rodofire.mushrooomsmod.world.biome.overworld.ModOverworldRegionSimplified;
 import net.rodofire.mushrooomsmod.world.biome.surface.ModMaterialsRules;
 import terrablender.api.Regions;
 import terrablender.api.SurfaceRuleManager;

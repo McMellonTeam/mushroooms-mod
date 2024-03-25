@@ -125,6 +125,8 @@ public class ModModelProvider extends FabricModelProvider {
         generator.registerFlowerPotPlant(ModBlocks.MUSHROOM_SMALL_BROWN, ModBlocks.POTTED_MUSHROOM_SMALL_BROWN, BlockStateModelGenerator.TintType.NOT_TINTED);
         generator.registerFlowerPotPlant(ModBlocks.MUSHROOM_SMALL_RED, ModBlocks.POTTED_MUSHROOM_SMALL_RED, BlockStateModelGenerator.TintType.NOT_TINTED);
 
+        //Grass
+        generator.registerTintableCross(ModBlocks.TINY_GRASS, BlockStateModelGenerator.TintType.NOT_TINTED);
 
         //Lights
         generator.registerLantern(ModBlocks.RED_LANTERN);

@@ -1,4 +1,4 @@
-package net.rodofire.mushrooomsmod.world.biome;
+package net.rodofire.mushrooomsmod.world.biome.overworld;
 
 import com.mojang.datafixers.util.Pair;
 import net.minecraft.registry.Registry;
@@ -28,7 +28,7 @@ public class ModOverworldRegion extends Region {
                 .erosion(ParameterUtils.Erosion.EROSION_0, ParameterUtils.Erosion.EROSION_1)
                 .depth(ParameterUtils.Depth.SURFACE, ParameterUtils.Depth.SURFACE)
                 .weirdness(ParameterUtils.Weirdness.MID_SLICE_NORMAL_ASCENDING, ParameterUtils.Weirdness.MID_SLICE_NORMAL_DESCENDING)
-                .build().forEach(point -> builder.add(point, ModBiomes.SHROOM_ISLAND));
+                .build().forEach(point -> builder.add(point, ModOverworldBiomes.SHROOM_ISLAND));
 
         new ParameterUtils.ParameterPointListBuilder()
                 .temperature(ParameterUtils.Temperature.span(ParameterUtils.Temperature.ICY, ParameterUtils.Temperature.FROZEN))
@@ -37,7 +37,7 @@ public class ModOverworldRegion extends Region {
                 .erosion(ParameterUtils.Erosion.EROSION_0, ParameterUtils.Erosion.EROSION_1,ParameterUtils.Erosion.EROSION_2)
                 .depth(ParameterUtils.Depth.UNDERGROUND)
                 .weirdness(ParameterUtils.Weirdness.MID_SLICE_NORMAL_ASCENDING, ParameterUtils.Weirdness.MID_SLICE_NORMAL_DESCENDING)
-                .build().forEach(point -> builder.add(point, ModBiomes.BLUE_LUMINESCENT_SHROOM_CAVE));
+                .build().forEach(point -> builder.add(point, ModOverworldBiomes.BLUE_LUMINESCENT_SHROOM_CAVE));
 
         new ParameterUtils.ParameterPointListBuilder()
                 .temperature(ParameterUtils.Temperature.span(ParameterUtils.Temperature.NEUTRAL,ParameterUtils.Temperature.WARM))
@@ -46,7 +46,7 @@ public class ModOverworldRegion extends Region {
                 .erosion(ParameterUtils.Erosion.EROSION_1,ParameterUtils.Erosion.EROSION_2, ParameterUtils.Erosion.EROSION_3)
                 .depth(ParameterUtils.Depth.UNDERGROUND)
                 .weirdness(ParameterUtils.Weirdness.MID_SLICE_NORMAL_ASCENDING, ParameterUtils.Weirdness.MID_SLICE_NORMAL_DESCENDING)
-                .build().forEach(point -> builder.add(point, ModBiomes.PURPLE_SHROOM_CAVE));
+                .build().forEach(point -> builder.add(point, ModOverworldBiomes.PURPLE_SHROOM_CAVE));
 
         new ParameterUtils.ParameterPointListBuilder()
                 .temperature(ParameterUtils.Temperature.span(ParameterUtils.Temperature.ICY, ParameterUtils.Temperature.FROZEN))
@@ -55,7 +55,7 @@ public class ModOverworldRegion extends Region {
                 .erosion(ParameterUtils.Erosion.EROSION_0, ParameterUtils.Erosion.EROSION_1,ParameterUtils.Erosion.EROSION_2)
                 .depth(ParameterUtils.Depth.SURFACE)
                 .weirdness(ParameterUtils.Weirdness.MID_SLICE_NORMAL_ASCENDING, ParameterUtils.Weirdness.MID_SLICE_NORMAL_DESCENDING)
-                .build().forEach(point -> builder.add(point, ModBiomes.MAGICAL_PLAIN));
+                .build().forEach(point -> builder.add(point, ModOverworldBiomes.MAGICAL_PLAIN));
 
         builder.build().forEach(mapper);
     }

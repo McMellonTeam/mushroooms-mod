@@ -1,4 +1,4 @@
-package net.rodofire.mushrooomsmod.world.biome;
+package net.rodofire.mushrooomsmod.world.biome.overworld;
 
 import net.rodofire.mushrooomsmod.MushrooomsMod;
 import net.minecraft.entity.EntityType;
@@ -15,8 +15,9 @@ import net.minecraft.world.biome.SpawnSettings;
 import net.minecraft.world.gen.GenerationStep;
 import net.minecraft.world.gen.feature.DefaultBiomeFeatures;
 import net.minecraft.world.gen.feature.VegetationPlacedFeatures;
+import net.rodofire.mushrooomsmod.world.biome.ModBiomeFeatures;
 
-public class ModBiomes {
+public class ModOverworldBiomes {
     public static final RegistryKey<Biome> SHROOM_ISLAND = RegistryKey.of(RegistryKeys.BIOME, new Identifier(MushrooomsMod.MOD_ID,"shroom_island" ));
     public static final RegistryKey<Biome> BLUE_LUMINESCENT_SHROOM_CAVE = RegistryKey.of(RegistryKeys.BIOME, new Identifier(MushrooomsMod.MOD_ID,"blue_luminescent_shroom_cave" ));
     public static final RegistryKey<Biome> PURPLE_SHROOM_CAVE = RegistryKey.of(RegistryKeys.BIOME, new Identifier(MushrooomsMod.MOD_ID,"purple_luminescent_shroom_cave"));
@@ -80,7 +81,6 @@ public class ModBiomes {
     public static Biome blueLuminescentShroomCave(Registerable<Biome> context) {
         SpawnSettings.Builder spawnBuilder = new SpawnSettings.Builder();
 
-        spawnBuilder.spawn(SpawnGroup.CREATURE, new SpawnSettings.SpawnEntry(EntityType.WOLF, 5, 4, 4));
 
         DefaultBiomeFeatures.addFarmAnimals(spawnBuilder);
         DefaultBiomeFeatures.addBatsAndMonsters(spawnBuilder);
@@ -89,16 +89,15 @@ public class ModBiomes {
                 new GenerationSettings.LookupBackedBuilder(context.getRegistryLookup(RegistryKeys.PLACED_FEATURE),
                         context.getRegistryLookup(RegistryKeys.CONFIGURED_CARVER));
 
-        globalOverworldGeneration(biomeBuilder);
-        DefaultBiomeFeatures.addMossyRocks(biomeBuilder);
         DefaultBiomeFeatures.addDefaultOres(biomeBuilder);
 
         biomeBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, VegetationPlacedFeatures.TREES_PLAINS);
-        DefaultBiomeFeatures.addForestFlowers(biomeBuilder);
-        DefaultBiomeFeatures.addLargeFerns(biomeBuilder);
+
 
         DefaultBiomeFeatures.addDefaultMushrooms(biomeBuilder);
         DefaultBiomeFeatures.addDefaultVegetation(biomeBuilder);
+
+        ModBiomeFeatures.addLuminescentFlowers(biomeBuilder);
 
         return new Biome.Builder()
                 .precipitation(true)
@@ -212,7 +211,7 @@ public class ModBiomes {
         DefaultBiomeFeatures.addDefaultOres(biomeBuilder);
 
         biomeBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, VegetationPlacedFeatures.TREES_PLAINS);
-        DefaultBiomeFeatures.addDefaultGrass(biomeBuilder);
+        biomeBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, VegetationPlacedFeatures.PATCH_GRASS_PLAIN);
 
         return new Biome.Builder()
                 .precipitation(true)

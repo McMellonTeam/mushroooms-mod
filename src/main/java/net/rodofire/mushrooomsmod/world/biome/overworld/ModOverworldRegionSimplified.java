@@ -1,4 +1,4 @@
-package net.rodofire.mushrooomsmod.world.biome;
+package net.rodofire.mushrooomsmod.world.biome.overworld;
 
 
 import java.util.function.Consumer;
@@ -22,7 +22,7 @@ public class ModOverworldRegionSimplified extends Region {
     @Override
     public void addBiomes(Registry<Biome> registry, Consumer<Pair<MultiNoiseUtil.NoiseHypercube, RegistryKey<Biome>>> mapper) {
         this.addModifiedVanillaOverworldBiomes(mapper, modifiedVanillaOverworldBuilder -> {
-            modifiedVanillaOverworldBuilder.replaceBiome(BiomeKeys.PLAINS, ModBiomes.COLORFUL_PLAINS);
+            modifiedVanillaOverworldBuilder.replaceBiome(BiomeKeys.PLAINS, ModOverworldBiomes.COLORFUL_PLAINS);
         });
     }
 }
