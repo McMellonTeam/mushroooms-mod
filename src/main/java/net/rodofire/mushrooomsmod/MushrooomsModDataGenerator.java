@@ -4,10 +4,11 @@ import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.rodofire.mushrooomsmod.datagen.*;
 import net.rodofire.mushrooomsmod.world.ModConfiguredFeatures;
-import net.rodofire.mushrooomsmod.world.ModPlacedFeatures;
+import net.rodofire.mushrooomsmod.world.biome.placedfeatures.ModSurfacePlacedFeatures;
 import net.rodofire.mushrooomsmod.world.biome.overworld.ModOverworldBiomes;
 import net.minecraft.registry.RegistryBuilder;
 import net.minecraft.registry.RegistryKeys;
+import net.rodofire.mushrooomsmod.world.biome.placedfeatures.ModUndergroundPlacedFeatures;
 
 public class MushrooomsModDataGenerator implements DataGeneratorEntrypoint {
 	@Override
@@ -26,7 +27,8 @@ public class MushrooomsModDataGenerator implements DataGeneratorEntrypoint {
 	@Override
 	public void buildRegistry(RegistryBuilder registryBuilder) {
 		registryBuilder.addRegistry(RegistryKeys.CONFIGURED_FEATURE, ModConfiguredFeatures::bootstrap);
-		registryBuilder.addRegistry(RegistryKeys.PLACED_FEATURE, ModPlacedFeatures::bootstrap);
+		registryBuilder.addRegistry(RegistryKeys.PLACED_FEATURE, ModSurfacePlacedFeatures::bootstrap);
+		registryBuilder.addRegistry(RegistryKeys.PLACED_FEATURE, ModUndergroundPlacedFeatures::bootstrap);
 		registryBuilder.addRegistry(RegistryKeys.BIOME, ModOverworldBiomes::bootstrap);
 	}
 }

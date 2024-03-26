@@ -124,5 +124,8 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.YELLOW_PERENNIAL)
                 .add(ModBlocks.YELLOW_QUINCE)
                 .add(ModBlocks.SOL_OCCIDENTIS);
+
+        getOrCreateTagBuilder(BlockTags.DIRT)
+                .add(ModBlocks.BLUE_LUMINESCENT_SCHROOM_DEESLATE);
     }
 }
