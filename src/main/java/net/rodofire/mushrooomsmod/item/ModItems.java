@@ -9,7 +9,7 @@ import net.rodofire.mushrooomsmod.entity.ModEntities;
 import net.rodofire.mushrooomsmod.item.Custom.HammerItem;
 import net.rodofire.mushrooomsmod.item.Custom.SchroomSoup;
 import net.rodofire.mushrooomsmod.sound.ModSounds;
-import net.rodofire.mushrooomsmod.world.biome.ModBiomes;
+import net.rodofire.mushrooomsmod.world.biome.overworld.ModOverworldBiomes;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.*;
@@ -33,9 +33,9 @@ public class ModItems {
                         entries.add(ModBlocks.BLUE_LUMINESCENT_FERMENTED_MUSHROOM_BLOCK);
 
                         entries.add(ModBlocks.BLUE_MUSHROOM_BLOCK);
-                        /*entries.add(ModBlocks.BLUE_ALTERED_MUSHROOM_BLOCK);
+                        entries.add(ModBlocks.BLUE_ALTERED_MUSHROOM_BLOCK);
                         entries.add(ModBlocks.BLUE_DEGRADATED_MUSHROOM_BLOCK);
-                        entries.add(ModBlocks.BLUE_FERMENTED_MUSHROOM_BLOCK);*/
+                        entries.add(ModBlocks.BLUE_FERMENTED_MUSHROOM_BLOCK);
 
                         entries.add(ModBlocks.PURPLE_MUSHROOM_BLOCK);
                         entries.add(ModBlocks.PURPLE_ALTERED_MUSHROOM_BLOCK);
@@ -48,9 +48,9 @@ public class ModItems {
                         entries.add(ModBlocks.GREEN_FERMENTED_MUSHROOM_BLOCK);
 
                         entries.add(ModBlocks.YELLOW_MUSHROOM_BLOCK);
-                        /*entries.add(ModBlocks.YELLOW_ALTERED_MUSHROOM_BLOCK);
+                        entries.add(ModBlocks.YELLOW_ALTERED_MUSHROOM_BLOCK);
                         entries.add(ModBlocks.YELLOW_DEGRADATED_MUSHROOM_BLOCK);
-                        entries.add(ModBlocks.YELLOW_FERMENTED_MUSHROOM_BLOCK);*/
+                        entries.add(ModBlocks.YELLOW_FERMENTED_MUSHROOM_BLOCK);
 
                         entries.add(ModBlocks.ORANGE_MUSHROOM_BLOCK);
                         entries.add(ModBlocks.ORANGE_ALTERED_MUSHROOM_BLOCK);
@@ -83,7 +83,7 @@ public class ModItems {
 
                         //Hard Blocks
                         entries.add(ModBlocks.PURPLE_SCHROOM_DEESLATE);
-                        entries.add(ModBlocks.BLUE_LUMINESCENT_SCHROOM_DEESLATE);
+                        entries.add(ModBlocks.BLUE_LUMINESCENT_SCHROOM_DEEPSLATE);
                         entries.add(ModBlocks.GREEN_STONY_SCHROOM_DEPOT);
                         entries.add(ModBlocks.RHYOLITE);
 
@@ -96,6 +96,11 @@ public class ModItems {
                         entries.add(ModBlocks.LUMINESCENT_PINK_MUSHROOM);
                         entries.add(ModBlocks.ORANGE_MUSHROOM);
                         entries.add(ModBlocks.YELLOW_MUSHROOM);
+
+                        //Flowers Mushrooms
+                        entries.add(ModBlocks.STERILE_BLUE_MUSHROOM);
+                        entries.add(ModBlocks.MUSHROOM_SMALL_BROWN);
+                        entries.add(ModBlocks.MUSHROOM_SMALL_RED);
 
                         //Flowers
                         entries.add(ModBlocks.PREHISTO_PINK_SCHROOM);
@@ -141,6 +146,8 @@ public class ModItems {
                         entries.add(ModBlocks.ACONIT);
                         entries.add(ModBlocks.PERVENCHE);
 
+                        //Grass
+                        entries.add(ModBlocks.TINY_GRASS);
 
                         //Vines
                         entries.add(ModItems.CAERULEA_VOLUBILIS_ITEM);
@@ -208,7 +215,7 @@ public class ModItems {
 
     //food
     public static final Item BAGUETTE = registerItem("baguette", new Item(new FabricItemSettings().food(ModFoodComponents.BAGUETTE)));
-    public static final Item LUMINESCENT_SCHROOM_SOUP = registerItem("luminescent_schroom_soup", new SchroomSoup(new FabricItemSettings(), ModBiomes.BLUE_LUMINESCENT_SHROOM_CAVE, new StatusEffectInstance(StatusEffects.NIGHT_VISION, 300, 0)));
+    public static final Item LUMINESCENT_SCHROOM_SOUP = registerItem("luminescent_schroom_soup", new SchroomSoup(new FabricItemSettings(), ModOverworldBiomes.BLUE_LUMINESCENT_SHROOM_CAVE, new StatusEffectInstance(StatusEffects.NIGHT_VISION, 300, 0)));
 
     //Lights
     public static final Item GREEN_TORCH = registerItem("green_torch_item", new VerticallyAttachableBlockItem(ModBlocks.GREEN_TORCH, ModBlocks.WALL_GREEN_TORCH, new Item.Settings(), Direction.DOWN));

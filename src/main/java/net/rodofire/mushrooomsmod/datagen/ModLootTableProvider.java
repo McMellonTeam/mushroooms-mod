@@ -74,7 +74,7 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
 
         //Hard Blocks
         addDropWithSilkTouch(ModBlocks.PURPLE_SCHROOM_DEESLATE, Blocks.DEEPSLATE);
-        addDropWithSilkTouch(ModBlocks.BLUE_LUMINESCENT_SCHROOM_DEESLATE, Blocks.DEEPSLATE);
+        addDropWithSilkTouch(ModBlocks.BLUE_LUMINESCENT_SCHROOM_DEEPSLATE, Blocks.DEEPSLATE);
         addDropWithSilkTouch(ModBlocks.GREEN_STONY_SCHROOM_DEPOT, Blocks.STONE);
         addDrop(ModBlocks.RHYOLITE);
         addDrop(ModBlocks.LAVA_BLACKSTONE);
@@ -91,6 +91,11 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.ORANGE_MUSHROOM);
         addDrop(ModBlocks.YELLOW_MUSHROOM);
         addDrop(ModBlocks.PURPLE_FERMENTED_MUSHROOM_BLOCK);
+
+        //Flowers Mushrooms
+        addDrop(ModBlocks.STERILE_BLUE_MUSHROOM);
+        addDrop(ModBlocks.MUSHROOM_SMALL_BROWN);
+        addDrop(ModBlocks.MUSHROOM_SMALL_RED);
 
         //Flowers
         addDrop(ModBlocks.MUSHROOM_FLOWERS);
@@ -132,9 +137,13 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.ACONIT);
         addDrop(ModBlocks.PERVENCHE);
 
+        //Grass
+        addDrop(ModBlocks.TINY_GRASS);
+
         //Vines
         addDrop(ModBlocks.PINK_MUSHROOM_VINES, ModItems.PINK_MUSHROOM_VINES_ITEM);
         addDrop(ModBlocks.PINK_MUSHROOM_VINES_PLANT, ModItems.PINK_MUSHROOM_VINES_ITEM);
+        addDrop(ModBlocks.CAERULEA_VOLUBILIS);
 
         //Big Mushrooms
         addDrop(ModBlocks.TINY_PURPLE_MUSHROOM);
@@ -190,6 +199,11 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addPottedPlantDrops(ModBlocks.POTTED_JACYNTHE);
         addPottedPlantDrops(ModBlocks.POTTED_YELLOW_MUSHROOM);
         addPottedPlantDrops(ModBlocks.POTTED_ORANGE_MUSHROOM);
+
+        //Potted Flowers Mushrooms
+        addPottedPlantDrops(ModBlocks.POTTED_STERILE_BLUE_MUSHROOM);
+        addPottedPlantDrops(ModBlocks.POTTED_MUSHROOM_SMALL_BROWN);
+        addPottedPlantDrops(ModBlocks.POTTED_MUSHROOM_SMALL_RED);
 
 
         //Light Blocks

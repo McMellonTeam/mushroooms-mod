@@ -19,7 +19,7 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
     protected void configure(RegistryWrapper.WrapperLookup arg) {
         //Pickaxe
         getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)
-                .add(ModBlocks.BLUE_LUMINESCENT_SCHROOM_DEESLATE)
+                .add(ModBlocks.BLUE_LUMINESCENT_SCHROOM_DEEPSLATE)
                 .add(ModBlocks.PURPLE_SCHROOM_DEESLATE)
                 .add(ModBlocks.GREEN_STONY_SCHROOM_DEPOT)
                 .add(ModBlocks.RED_LANTERN)
@@ -124,5 +124,8 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.YELLOW_PERENNIAL)
                 .add(ModBlocks.YELLOW_QUINCE)
                 .add(ModBlocks.SOL_OCCIDENTIS);
+
+        getOrCreateTagBuilder(BlockTags.DIRT)
+                .add(ModBlocks.BLUE_LUMINESCENT_SCHROOM_DEEPSLATE);
     }
 }

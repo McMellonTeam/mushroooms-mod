@@ -20,7 +20,7 @@ public class SchroomSoup extends Item {
     }
     public void usageTick(World world, LivingEntity user, ItemStack stack, int remainingUseTicks) {
         if(user.eatFood(world,stack).isOf(ModItems.LUMINESCENT_SCHROOM_SOUP)){
-            if (world.getBiome(user.getBlockPos()).isIn(ModBiomesTags.IS_LUMINESCENT_CAVE)){
+            if (world.getBiome(user.getBlockPos()).isIn(ModBiomesTags.LUMINESCENT_CAVE)){
                 user.addStatusEffect(effects);
             }
         }

@@ -15,127 +15,135 @@ public class ModModelProvider extends FabricModelProvider {
     }
 
     @Override
-    public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
+    public void generateBlockStateModels(BlockStateModelGenerator generator) {
         //Blocks
         //Mushrooms Blocks
-        blockStateModelGenerator.registerRotatable(ModBlocks.PURPLE_MUSHROOM_BLOCK);
-        blockStateModelGenerator.registerRotatable(ModBlocks.PURPLE_ALTERED_MUSHROOM_BLOCK);
-        blockStateModelGenerator.registerRotatable(ModBlocks.PURPLE_DEGRADATED_MUSHROOM_BLOCK);
-        blockStateModelGenerator.registerRotatable(ModBlocks.PURPLE_FERMENTED_MUSHROOM_BLOCK);
+        generator.registerSimpleCubeAll(ModBlocks.PURPLE_MUSHROOM_BLOCK);
+        generator.registerSimpleCubeAll(ModBlocks.PURPLE_ALTERED_MUSHROOM_BLOCK);
+        generator.registerSimpleCubeAll(ModBlocks.PURPLE_DEGRADATED_MUSHROOM_BLOCK);
+        generator.registerSimpleCubeAll(ModBlocks.PURPLE_FERMENTED_MUSHROOM_BLOCK);
 
-        blockStateModelGenerator.registerRotatable(ModBlocks.ORANGE_MUSHROOM_BLOCK);
-        blockStateModelGenerator.registerRotatable(ModBlocks.ORANGE_ALTERED_MUSHROOM_BLOCK);
-        blockStateModelGenerator.registerRotatable(ModBlocks.ORANGE_DEGRADATED_MUSHROOM_BLOCK);
-        blockStateModelGenerator.registerRotatable(ModBlocks.ORANGE_FERMENTED_MUSHROOM_BLOCK);
+        generator.registerSimpleCubeAll(ModBlocks.ORANGE_MUSHROOM_BLOCK);
+        generator.registerSimpleCubeAll(ModBlocks.ORANGE_ALTERED_MUSHROOM_BLOCK);
+        generator.registerSimpleCubeAll(ModBlocks.ORANGE_DEGRADATED_MUSHROOM_BLOCK);
+        generator.registerSimpleCubeAll(ModBlocks.ORANGE_FERMENTED_MUSHROOM_BLOCK);
 
-        blockStateModelGenerator.registerRotatable(ModBlocks.YELLOW_MUSHROOM_BLOCK);
-        blockStateModelGenerator.registerRotatable(ModBlocks.YELLOW_ALTERED_MUSHROOM_BLOCK);
-        blockStateModelGenerator.registerRotatable(ModBlocks.YELLOW_DEGRADATED_MUSHROOM_BLOCK);
-        blockStateModelGenerator.registerRotatable(ModBlocks.YELLOW_FERMENTED_MUSHROOM_BLOCK);
+        generator.registerSimpleCubeAll(ModBlocks.YELLOW_MUSHROOM_BLOCK);
+        generator.registerSimpleCubeAll(ModBlocks.YELLOW_ALTERED_MUSHROOM_BLOCK);
+        generator.registerSimpleCubeAll(ModBlocks.YELLOW_DEGRADATED_MUSHROOM_BLOCK);
+        generator.registerSimpleCubeAll(ModBlocks.YELLOW_FERMENTED_MUSHROOM_BLOCK);
 
-        blockStateModelGenerator.registerRotatable(ModBlocks.BLUE_MUSHROOM_BLOCK);
-        blockStateModelGenerator.registerRotatable(ModBlocks.BLUE_ALTERED_MUSHROOM_BLOCK);
-        blockStateModelGenerator.registerRotatable(ModBlocks.BLUE_DEGRADATED_MUSHROOM_BLOCK);
-        blockStateModelGenerator.registerRotatable(ModBlocks.BLUE_FERMENTED_MUSHROOM_BLOCK);
+        generator.registerSimpleCubeAll(ModBlocks.BLUE_MUSHROOM_BLOCK);
+        generator.registerSimpleCubeAll(ModBlocks.BLUE_ALTERED_MUSHROOM_BLOCK);
+        generator.registerSimpleCubeAll(ModBlocks.BLUE_DEGRADATED_MUSHROOM_BLOCK);
+        generator.registerSimpleCubeAll(ModBlocks.BLUE_FERMENTED_MUSHROOM_BLOCK);
 
-        blockStateModelGenerator.registerRotatable(ModBlocks.GREEN_MUSHROOM_BLOCK);
-        blockStateModelGenerator.registerRotatable(ModBlocks.GREEN_ALTERED_MUSHROOM_BLOCK);
-        blockStateModelGenerator.registerRotatable(ModBlocks.GREEN_DEGRADATED_MUSHROOM_BLOCK);
-        blockStateModelGenerator.registerRotatable(ModBlocks.GREEN_FERMENTED_MUSHROOM_BLOCK);
+        generator.registerSimpleCubeAll(ModBlocks.GREEN_MUSHROOM_BLOCK);
+        generator.registerSimpleCubeAll(ModBlocks.GREEN_ALTERED_MUSHROOM_BLOCK);
+        generator.registerSimpleCubeAll(ModBlocks.GREEN_DEGRADATED_MUSHROOM_BLOCK);
+        generator.registerSimpleCubeAll(ModBlocks.GREEN_FERMENTED_MUSHROOM_BLOCK);
 
-        blockStateModelGenerator.registerRotatable(ModBlocks.BLUE_LUMINESCENT_MUSHROOM_BLOCK);
-        blockStateModelGenerator.registerRotatable(ModBlocks.BLUE_LUMINESCENT_ALTERED_MUSHROOM_BLOCK);
-        blockStateModelGenerator.registerRotatable(ModBlocks.BLUE_LUMINESCENT_DEGRADATED_MUSHROOM_BLOCK);
-        blockStateModelGenerator.registerRotatable(ModBlocks.BLUE_LUMINESCENT_FERMENTED_MUSHROOM_BLOCK);
+        generator.registerSimpleCubeAll(ModBlocks.BLUE_LUMINESCENT_MUSHROOM_BLOCK);
+        generator.registerSimpleCubeAll(ModBlocks.BLUE_LUMINESCENT_ALTERED_MUSHROOM_BLOCK);
+        generator.registerSimpleCubeAll(ModBlocks.BLUE_LUMINESCENT_DEGRADATED_MUSHROOM_BLOCK);
+        generator.registerSimpleCubeAll(ModBlocks.BLUE_LUMINESCENT_FERMENTED_MUSHROOM_BLOCK);
 
-        blockStateModelGenerator.registerRotatable(ModBlocks.PINK_LUMINESCENT_MUSHROOM_BLOCK);
-        blockStateModelGenerator.registerRotatable(ModBlocks.PINK_LUMINESCENT_ALTERED_MUSHROOM_BLOCK);
-        blockStateModelGenerator.registerRotatable(ModBlocks.PINK_LUMINESCENT_DEGRADATED_MUSHROOM_BLOCK);
-        blockStateModelGenerator.registerRotatable(ModBlocks.PINK_LUMINESCENT_FERMENTED_MUSHROOM_BLOCK);
+        generator.registerSimpleCubeAll(ModBlocks.PINK_LUMINESCENT_MUSHROOM_BLOCK);
+        generator.registerSimpleCubeAll(ModBlocks.PINK_LUMINESCENT_ALTERED_MUSHROOM_BLOCK);
+        generator.registerSimpleCubeAll(ModBlocks.PINK_LUMINESCENT_DEGRADATED_MUSHROOM_BLOCK);
+        generator.registerSimpleCubeAll(ModBlocks.PINK_LUMINESCENT_FERMENTED_MUSHROOM_BLOCK);
 
-        blockStateModelGenerator.registerRotatable(ModBlocks.RED_ALTERED_MUSHROOM_BLOCK);
-        blockStateModelGenerator.registerRotatable(ModBlocks.RED_DEGRADATED_MUSHROOM_BLOCK);
-        blockStateModelGenerator.registerRotatable(ModBlocks.RED_FERMENTED_MUSHROOM_BLOCK);
+        generator.registerSimpleCubeAll(ModBlocks.RED_ALTERED_MUSHROOM_BLOCK);
+        generator.registerSimpleCubeAll(ModBlocks.RED_DEGRADATED_MUSHROOM_BLOCK);
+        generator.registerSimpleCubeAll(ModBlocks.RED_FERMENTED_MUSHROOM_BLOCK);
 
-        blockStateModelGenerator.registerRotatable(ModBlocks.BROWN_ALTERED_MUSHROOM_BLOCK);
-        blockStateModelGenerator.registerRotatable(ModBlocks.BROWN_DEGRADATED_MUSHROOM_BLOCK);
-        blockStateModelGenerator.registerRotatable(ModBlocks.BROWN_FERMENTED_MUSHROOM_BLOCK);
-
-
+        generator.registerSimpleCubeAll(ModBlocks.BROWN_ALTERED_MUSHROOM_BLOCK);
+        generator.registerSimpleCubeAll(ModBlocks.BROWN_DEGRADATED_MUSHROOM_BLOCK);
+        generator.registerSimpleCubeAll(ModBlocks.BROWN_FERMENTED_MUSHROOM_BLOCK);
 
 
-        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.TRANSPARENT_MUSHROOM_STEM);
-        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.LUMINESCENT_MUSHROOM_STEM);
-        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.GREEN_MUSHROOM_STEM);
-        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.COMPRESSED_PURPLE_MUSHROOM);
+
+
+        generator.registerSimpleCubeAll(ModBlocks.TRANSPARENT_MUSHROOM_STEM);
+        generator.registerSimpleCubeAll(ModBlocks.LUMINESCENT_MUSHROOM_STEM);
+        generator.registerSimpleCubeAll(ModBlocks.GREEN_MUSHROOM_STEM);
+        generator.registerSimpleCubeAll(ModBlocks.COMPRESSED_PURPLE_MUSHROOM);
 
         //Soft Blocks
-        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.COMPRESSED_DIRT);
-        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.LIGHT_COMPRESSED_DIRT);
+        generator.registerSimpleCubeAll(ModBlocks.COMPRESSED_DIRT);
+        generator.registerSimpleCubeAll(ModBlocks.LIGHT_COMPRESSED_DIRT);
 
         //Hard Blocks
-        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.RHYOLITE);
-        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.LAVA_BLACKSTONE);
+        generator.registerSimpleCubeAll(ModBlocks.RHYOLITE);
+        generator.registerSimpleCubeAll(ModBlocks.LAVA_BLACKSTONE);
 
         //Potted Flowers
-        blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.BLUE_MUSHROOM, ModBlocks.POTTED_BLUE_MUSHROOM, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.GREEN_MUSHROOM, ModBlocks.POTTED_GREEN_MUSHROOM, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.PURPLE_MUSHROOM, ModBlocks.POTTED_PURPLE_MUSHROOM, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.LUMINESCENT_MUSHROOM, ModBlocks.POTTED_LUMINESCENT_MUSHROOM, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.LUMINESCENT_PINK_MUSHROOM, ModBlocks.POTTED_LUMINESCENT_PINK_MUSHROOM, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.OCULAE, ModBlocks.POTTED_OCULAE, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.CYANEA, ModBlocks.POTTED_CYANEA, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.CYANUS_RUBENS, ModBlocks.POTTED_CYANUS_RUBENS, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.SOL_OCCIDENTIS, ModBlocks.POTTED_SOL_OCCIDENTIS, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.FUTIALI, ModBlocks.POTTED_FUTIALI, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.NOCTULICA, ModBlocks.POTTED_NOCTULICA, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.PREHISTORIC_ROSE, ModBlocks.POTTED_PREHISTORIC_ROSE, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.PREHISTO_PINK_SCHROOM, ModBlocks.POTTED_PREHISTO_PINK_SCHROOM, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.PREHISTO_BLUE_SCHROOM, ModBlocks.POTTED_PREHISTO_BLUE_SCHROOM, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.PREHISTURPLE_SCHROOM, ModBlocks.POTTED_PREHISTURPLE_SCHROOM, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.PREHISTO_GREEN_SCHROOM, ModBlocks.POTTED_PREHISTO_GREEN_SCHROOM, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.ORANGE_PERENNIAL, ModBlocks.POTTED_ORANGE_PERENNIAL, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.BLUE_PERENNIAL, ModBlocks.POTTED_BLUE_PERENNIAL, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.PURPLE_PERENNIAL, ModBlocks.POTTED_PURPLE_PERENNIAL, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.GREEN_PERENNIAL, ModBlocks.POTTED_GREEN_PERENNIAL, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.LUMINESCENT_PERENNIAL, ModBlocks.POTTED_LUMINESCENT_PERENNIAL, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.YELLOW_PERENNIAL, ModBlocks.POTTED_YELLOW_PERENNIAL, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.PINK_PERENNIAL, ModBlocks.POTTED_PINK_PERENNIAL, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.RED_QUINCE, ModBlocks.POTTED_RED_QUINCE, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.YELLOW_QUINCE, ModBlocks.POTTED_YELLOW_QUINCE, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.YELICE, ModBlocks.POTTED_YELICE, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.FLAMESTHYSIA, ModBlocks.POTTED_FLAMESTHYSIA, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.APAGANTHE, ModBlocks.POTTED_APAGANTHE, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.WYSTERIA, ModBlocks.POTTED_WYSTERIA, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.BLUEBELL, ModBlocks.POTTED_BLUEBELL, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.VIPERIN, ModBlocks.POTTED_VIPERIN, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.HIBISCUS, ModBlocks.POTTED_HIBISCUS, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.PLATUM, ModBlocks.POTTED_PLATUM, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.DIANTHUS, ModBlocks.POTTED_DIANTHUS, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.CYCAS, ModBlocks.POTTED_CYCAS, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.ARUM, ModBlocks.POTTED_ARUM, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.HYDRANGEA, ModBlocks.POTTED_HYDRANGEA, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.ANEMONE, ModBlocks.POTTED_ANEMONE, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.JACYNTHE, ModBlocks.POTTED_JACYNTHE, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.YELLOW_MUSHROOM, ModBlocks.POTTED_YELLOW_MUSHROOM, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.ORANGE_MUSHROOM, ModBlocks.POTTED_ORANGE_MUSHROOM, BlockStateModelGenerator.TintType.NOT_TINTED);
+        generator.registerFlowerPotPlant(ModBlocks.BLUE_MUSHROOM, ModBlocks.POTTED_BLUE_MUSHROOM, BlockStateModelGenerator.TintType.NOT_TINTED);
+        generator.registerFlowerPotPlant(ModBlocks.GREEN_MUSHROOM, ModBlocks.POTTED_GREEN_MUSHROOM, BlockStateModelGenerator.TintType.NOT_TINTED);
+        generator.registerFlowerPotPlant(ModBlocks.PURPLE_MUSHROOM, ModBlocks.POTTED_PURPLE_MUSHROOM, BlockStateModelGenerator.TintType.NOT_TINTED);
+        generator.registerFlowerPotPlant(ModBlocks.LUMINESCENT_MUSHROOM, ModBlocks.POTTED_LUMINESCENT_MUSHROOM, BlockStateModelGenerator.TintType.NOT_TINTED);
+        generator.registerFlowerPotPlant(ModBlocks.LUMINESCENT_PINK_MUSHROOM, ModBlocks.POTTED_LUMINESCENT_PINK_MUSHROOM, BlockStateModelGenerator.TintType.NOT_TINTED);
+        generator.registerFlowerPotPlant(ModBlocks.OCULAE, ModBlocks.POTTED_OCULAE, BlockStateModelGenerator.TintType.NOT_TINTED);
+        generator.registerFlowerPotPlant(ModBlocks.CYANEA, ModBlocks.POTTED_CYANEA, BlockStateModelGenerator.TintType.NOT_TINTED);
+        generator.registerFlowerPotPlant(ModBlocks.CYANUS_RUBENS, ModBlocks.POTTED_CYANUS_RUBENS, BlockStateModelGenerator.TintType.NOT_TINTED);
+        generator.registerFlowerPotPlant(ModBlocks.SOL_OCCIDENTIS, ModBlocks.POTTED_SOL_OCCIDENTIS, BlockStateModelGenerator.TintType.NOT_TINTED);
+        generator.registerFlowerPotPlant(ModBlocks.FUTIALI, ModBlocks.POTTED_FUTIALI, BlockStateModelGenerator.TintType.NOT_TINTED);
+        generator.registerFlowerPotPlant(ModBlocks.NOCTULICA, ModBlocks.POTTED_NOCTULICA, BlockStateModelGenerator.TintType.NOT_TINTED);
+        generator.registerFlowerPotPlant(ModBlocks.PREHISTORIC_ROSE, ModBlocks.POTTED_PREHISTORIC_ROSE, BlockStateModelGenerator.TintType.NOT_TINTED);
+        generator.registerFlowerPotPlant(ModBlocks.PREHISTO_PINK_SCHROOM, ModBlocks.POTTED_PREHISTO_PINK_SCHROOM, BlockStateModelGenerator.TintType.NOT_TINTED);
+        generator.registerFlowerPotPlant(ModBlocks.PREHISTO_BLUE_SCHROOM, ModBlocks.POTTED_PREHISTO_BLUE_SCHROOM, BlockStateModelGenerator.TintType.NOT_TINTED);
+        generator.registerFlowerPotPlant(ModBlocks.PREHISTURPLE_SCHROOM, ModBlocks.POTTED_PREHISTURPLE_SCHROOM, BlockStateModelGenerator.TintType.NOT_TINTED);
+        generator.registerFlowerPotPlant(ModBlocks.PREHISTO_GREEN_SCHROOM, ModBlocks.POTTED_PREHISTO_GREEN_SCHROOM, BlockStateModelGenerator.TintType.NOT_TINTED);
+        generator.registerFlowerPotPlant(ModBlocks.ORANGE_PERENNIAL, ModBlocks.POTTED_ORANGE_PERENNIAL, BlockStateModelGenerator.TintType.NOT_TINTED);
+        generator.registerFlowerPotPlant(ModBlocks.BLUE_PERENNIAL, ModBlocks.POTTED_BLUE_PERENNIAL, BlockStateModelGenerator.TintType.NOT_TINTED);
+        generator.registerFlowerPotPlant(ModBlocks.PURPLE_PERENNIAL, ModBlocks.POTTED_PURPLE_PERENNIAL, BlockStateModelGenerator.TintType.NOT_TINTED);
+        generator.registerFlowerPotPlant(ModBlocks.GREEN_PERENNIAL, ModBlocks.POTTED_GREEN_PERENNIAL, BlockStateModelGenerator.TintType.NOT_TINTED);
+        generator.registerFlowerPotPlant(ModBlocks.LUMINESCENT_PERENNIAL, ModBlocks.POTTED_LUMINESCENT_PERENNIAL, BlockStateModelGenerator.TintType.NOT_TINTED);
+        generator.registerFlowerPotPlant(ModBlocks.YELLOW_PERENNIAL, ModBlocks.POTTED_YELLOW_PERENNIAL, BlockStateModelGenerator.TintType.NOT_TINTED);
+        generator.registerFlowerPotPlant(ModBlocks.PINK_PERENNIAL, ModBlocks.POTTED_PINK_PERENNIAL, BlockStateModelGenerator.TintType.NOT_TINTED);
+        generator.registerFlowerPotPlant(ModBlocks.RED_QUINCE, ModBlocks.POTTED_RED_QUINCE, BlockStateModelGenerator.TintType.NOT_TINTED);
+        generator.registerFlowerPotPlant(ModBlocks.YELLOW_QUINCE, ModBlocks.POTTED_YELLOW_QUINCE, BlockStateModelGenerator.TintType.NOT_TINTED);
+        generator.registerFlowerPotPlant(ModBlocks.YELICE, ModBlocks.POTTED_YELICE, BlockStateModelGenerator.TintType.NOT_TINTED);
+        generator.registerFlowerPotPlant(ModBlocks.FLAMESTHYSIA, ModBlocks.POTTED_FLAMESTHYSIA, BlockStateModelGenerator.TintType.NOT_TINTED);
+        generator.registerFlowerPotPlant(ModBlocks.APAGANTHE, ModBlocks.POTTED_APAGANTHE, BlockStateModelGenerator.TintType.NOT_TINTED);
+        generator.registerFlowerPotPlant(ModBlocks.WYSTERIA, ModBlocks.POTTED_WYSTERIA, BlockStateModelGenerator.TintType.NOT_TINTED);
+        generator.registerFlowerPotPlant(ModBlocks.BLUEBELL, ModBlocks.POTTED_BLUEBELL, BlockStateModelGenerator.TintType.NOT_TINTED);
+        generator.registerFlowerPotPlant(ModBlocks.VIPERIN, ModBlocks.POTTED_VIPERIN, BlockStateModelGenerator.TintType.NOT_TINTED);
+        generator.registerFlowerPotPlant(ModBlocks.HIBISCUS, ModBlocks.POTTED_HIBISCUS, BlockStateModelGenerator.TintType.NOT_TINTED);
+        generator.registerFlowerPotPlant(ModBlocks.PLATUM, ModBlocks.POTTED_PLATUM, BlockStateModelGenerator.TintType.NOT_TINTED);
+        generator.registerFlowerPotPlant(ModBlocks.DIANTHUS, ModBlocks.POTTED_DIANTHUS, BlockStateModelGenerator.TintType.NOT_TINTED);
+        generator.registerFlowerPotPlant(ModBlocks.CYCAS, ModBlocks.POTTED_CYCAS, BlockStateModelGenerator.TintType.NOT_TINTED);
+        generator.registerFlowerPotPlant(ModBlocks.ARUM, ModBlocks.POTTED_ARUM, BlockStateModelGenerator.TintType.NOT_TINTED);
+        generator.registerFlowerPotPlant(ModBlocks.HYDRANGEA, ModBlocks.POTTED_HYDRANGEA, BlockStateModelGenerator.TintType.NOT_TINTED);
+        generator.registerFlowerPotPlant(ModBlocks.ANEMONE, ModBlocks.POTTED_ANEMONE, BlockStateModelGenerator.TintType.NOT_TINTED);
+        generator.registerFlowerPotPlant(ModBlocks.JACYNTHE, ModBlocks.POTTED_JACYNTHE, BlockStateModelGenerator.TintType.NOT_TINTED);
+        generator.registerFlowerPotPlant(ModBlocks.YELLOW_MUSHROOM, ModBlocks.POTTED_YELLOW_MUSHROOM, BlockStateModelGenerator.TintType.NOT_TINTED);
+        generator.registerFlowerPotPlant(ModBlocks.ORANGE_MUSHROOM, ModBlocks.POTTED_ORANGE_MUSHROOM, BlockStateModelGenerator.TintType.NOT_TINTED);
+
+        //Potted Flowers Mushrooms
+        generator.registerFlowerPotPlant(ModBlocks.STERILE_BLUE_MUSHROOM, ModBlocks.POTTED_STERILE_BLUE_MUSHROOM, BlockStateModelGenerator.TintType.NOT_TINTED);
+        generator.registerFlowerPotPlant(ModBlocks.MUSHROOM_SMALL_BROWN, ModBlocks.POTTED_MUSHROOM_SMALL_BROWN, BlockStateModelGenerator.TintType.NOT_TINTED);
+        generator.registerFlowerPotPlant(ModBlocks.MUSHROOM_SMALL_RED, ModBlocks.POTTED_MUSHROOM_SMALL_RED, BlockStateModelGenerator.TintType.NOT_TINTED);
+
+        //Grass
+        generator.registerTintableCross(ModBlocks.TINY_GRASS, BlockStateModelGenerator.TintType.NOT_TINTED);
 
         //Lights
-        blockStateModelGenerator.registerLantern(ModBlocks.RED_LANTERN);
-        blockStateModelGenerator.registerLantern(ModBlocks.GREEN_LANTERN);
-        blockStateModelGenerator.registerTorch(ModBlocks.GREEN_TORCH, ModBlocks.WALL_GREEN_TORCH);
+        generator.registerLantern(ModBlocks.RED_LANTERN);
+        generator.registerLantern(ModBlocks.GREEN_LANTERN);
+        generator.registerTorch(ModBlocks.GREEN_TORCH, ModBlocks.WALL_GREEN_TORCH);
 
         //Construction Blocks
-        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.LAVA_BLACKSTONE_BRICKS);
-        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.LAVA_BLACKSTONE_MEDIUM_BRICKS);
-        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.LAVA_BLACKSTONE_TINY_BRICKS);
+        generator.registerSimpleCubeAll(ModBlocks.LAVA_BLACKSTONE_BRICKS);
+        generator.registerSimpleCubeAll(ModBlocks.LAVA_BLACKSTONE_MEDIUM_BRICKS);
+        generator.registerSimpleCubeAll(ModBlocks.LAVA_BLACKSTONE_TINY_BRICKS);
 
         //Spawn Eggs
-        blockStateModelGenerator.registerParentedItemModel(ModItems.GROKI_SPAWN_EGG, ModelIds.getMinecraftNamespacedItem("template_spawn_egg"));
-        blockStateModelGenerator.registerParentedItemModel(ModItems.BOLETE_COW_SPAWN_EGG, ModelIds.getMinecraftNamespacedItem("template_spawn_egg"));
+        generator.registerParentedItemModel(ModItems.GROKI_SPAWN_EGG, ModelIds.getMinecraftNamespacedItem("template_spawn_egg"));
+        generator.registerParentedItemModel(ModItems.BOLETE_COW_SPAWN_EGG, ModelIds.getMinecraftNamespacedItem("template_spawn_egg"));
 
         //Crystals
-        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.PINK_CRYSTAL_BLOCK);
+        generator.registerSimpleCubeAll(ModBlocks.PINK_CRYSTAL_BLOCK);
     }
 
     @Override

@@ -1,21 +1,7 @@
 {
   "variants": {
-    "": [
-      {
-        "model": "mushrooomsmod:block/mushroom_block_degradated_purple"
-      },
-      {
-        "model": "mushrooomsmod:block/mushroom_block_degradated_purple",
-        "y": 90
-      },
-      {
-        "model": "mushrooomsmod:block/mushroom_block_degradated_purple",
-        "y": 180
-      },
-      {
-        "model": "mushrooomsmod:block/mushroom_block_degradated_purple",
-        "y": 270
-      }
-    ]
+    "": {
+      "model": "mushrooomsmod:block/mushroom_block_degradated_purple"
+    }
   }
 }
