@@ -106,7 +106,7 @@ public class ModBlocks {
 
     //Hard Blocks
     public static final Block PURPLE_SCHROOM_DEESLATE = registerBlock("purple_schroom_deepslate", new Block(FabricBlockSettings.copyOf(Blocks.DEEPSLATE).requiresTool().instrument(Instrument.BASEDRUM)));
-    public static final Block BLUE_LUMINESCENT_SCHROOM_DEESLATE = registerBlock("blue_luminescent_schroom_deepslate", new GrassBlock(FabricBlockSettings.copyOf(Blocks.DEEPSLATE).requiresTool().instrument(Instrument.BASEDRUM)));
+    public static final Block BLUE_LUMINESCENT_SCHROOM_DEEPSLATE = registerBlock("blue_luminescent_schroom_deepslate", new GrassBlock(FabricBlockSettings.copyOf(Blocks.DEEPSLATE).requiresTool().instrument(Instrument.BASEDRUM)));
     public static final Block GREEN_STONY_SCHROOM_DEPOT = registerBlock("green_stony_schroom_depot", new Block(FabricBlockSettings.copyOf(Blocks.STONE).requiresTool().instrument(Instrument.BASEDRUM)));
     public static final Block RHYOLITE = registerBlock("rhyolite", new Block(FabricBlockSettings.copyOf(Blocks.STONE).requiresTool().instrument(Instrument.BASEDRUM)));
     public static final Block LAVA_BLACKSTONE = registerBlock("blackstone_lava", new Block(FabricBlockSettings.copyOf(Blocks.BLACKSTONE).luminance(8)));

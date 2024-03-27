@@ -125,7 +125,7 @@ public class ModConfiguredFeatures<FC extends FeatureConfig> {
         register(context, BLUE_MUSHROOM_FLOWER_KEY, Feature.FLOWER, new RandomPatchFeatureConfig(32, 6, 2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.BLUE_MUSHROOM)))));
         register(context, GREEN_MUSHROOM_FLOWER_KEY, Feature.FLOWER, new RandomPatchFeatureConfig(32, 6, 2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.GREEN_MUSHROOM)))));
         register(context, PURPLE_MUSHROOM_FLOWER_KEY, Feature.FLOWER, new RandomPatchFeatureConfig(32, 6, 2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.PURPLE_MUSHROOM)))));
-        register(context, LUMINESCENT_MUSHROOM_FLOWER_KEY, Feature.FLOWER, new RandomPatchFeatureConfig(32, 6, 2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.LUMINESCENT_MUSHROOM)))));
+        register(context, LUMINESCENT_MUSHROOM_FLOWER_KEY, Feature.FLOWER, new RandomPatchFeatureConfig(40, 6, 2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.LUMINESCENT_MUSHROOM)))));
         register(context, PINK_LUMINESCENT_MUSHROOM_FLOWER_KEY, Feature.FLOWER, new RandomPatchFeatureConfig(32, 6, 2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.LUMINESCENT_PINK_MUSHROOM)))));
 
         //Flowers Mushrooms
@@ -183,7 +183,7 @@ public class ModConfiguredFeatures<FC extends FeatureConfig> {
         register(context, TINY_GRASSS_KEY, Feature.FLOWER, new RandomPatchFeatureConfig(32,6,2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.TINY_GRASS)))));
 
         //vines
-        register(context, BLUE_LUMINESCENT_VINES_KEY, ModConfiguredFeatures.BLUE_LUMINESCENT_VINES, new TwistingVinesFeatureConfig(1, 1, 30));
+        register(context, BLUE_LUMINESCENT_VINES_KEY, ModConfiguredFeatures.BLUE_LUMINESCENT_VINES, new TwistingVinesFeatureConfig(25, 1, 30));
     }
 
     public static RegistryKey<ConfiguredFeature<?, ?>> registerKey(String name) {

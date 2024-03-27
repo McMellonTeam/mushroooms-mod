@@ -26,17 +26,16 @@ public class BlueLuminescentVinesFeature extends Feature<TwistingVinesFeatureCon
         StructureWorldAccess world = context.getWorld();
         TwistingVinesFeatureConfig config = context.getConfig();
 
-        int randomheight = Random.create().nextBetween(3, config.maxHeight());
-        int maxheight = canGenerate(randomheight, secondmutable.set(pos), world);
+        int randomheight;
+        int maxheight;
         int i = config.spreadWidth();
 
-        if (maxheight <= randomheight) randomheight = Random.create().nextBetween(0, maxheight);
-
         mutable.set(pos);
-        for (int a=0; a<=i*i; ++a){
-            mutable.set(pos).move(Random.create().nextBetween(-i,i),Random.create().nextBetween(3, config.maxHeight()), Random.create().nextBetween(-i,i) );
-            if (canGenerate(randomheight, secondmutable.set(pos), world)==0)continue;
-            if (maxheight <= randomheight) randomheight = Random.create().nextBetween(0, maxheight);
+        for (int a = 0; a <= i * i; ++a) {
+            mutable.set(pos).move(Random.create().nextBetween(-i, i), randomheight = Random.create().nextBetween(3, config.maxHeight()), Random.create().nextBetween(-i, i));
+            secondmutable.set(mutable);
+            if ((maxheight = canGenerate(randomheight, secondmutable, world)) == 0) continue;
+            if (maxheight < randomheight) randomheight = Random.create().nextBetween(0, maxheight);
             generateColumn(randomheight, world, mutable);
         }
 
@@ -67,7 +66,7 @@ public class BlueLuminescentVinesFeature extends Feature<TwistingVinesFeatureCon
     }
 
     public static int canGenerate(int height, BlockPos.Mutable mutable, StructureWorldAccess world) {
-        if (canBePlaced(mutable, world)) return 0;
+        if (!canBePlaced(mutable, world)) return 0;
         for (int i = 0; i < height; ++i) {
             mutable.move(Direction.UP);
             if (world.isAir(mutable)) continue;
@@ -77,7 +76,6 @@ public class BlueLuminescentVinesFeature extends Feature<TwistingVinesFeatureCon
     }
 
     public static boolean canBePlaced(BlockPos.Mutable mutable, StructureWorldAccess world) {
-        return world.getBlockState(mutable).isOf(ModBlocks.BLUE_LUMINESCENT_SCHROOM_DEEPSLATE);
+        return world.getBlockState(mutable.down()).isOf(ModBlocks.BLUE_LUMINESCENT_SCHROOM_DEEPSLATE);
     }
-
 }

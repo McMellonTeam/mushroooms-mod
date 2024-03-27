@@ -7,6 +7,7 @@ import net.rodofire.mushrooomsmod.world.biome.placedfeatures.ModUndergroundPlace
 
 public class ModBiomeFeatures {
     public static void addLuminescentFlowers(GenerationSettings.LookupBackedBuilder builder){
+        builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModUndergroundPlacedFeatures.BLUE_LMINESCENT_MUSHROOM_FLOWER_UNDERGROUND_PLACED_KEY);
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModUndergroundPlacedFeatures.BLUE_LUMINESCENT_VINES_PLACED_KEY);
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModUndergroundPlacedFeatures.FUTIALI_PLACED_KEY);
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModUndergroundPlacedFeatures.CYANEA_PLACED_KEY);

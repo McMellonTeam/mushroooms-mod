@@ -74,7 +74,7 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
 
         //Hard Blocks
         addDropWithSilkTouch(ModBlocks.PURPLE_SCHROOM_DEESLATE, Blocks.DEEPSLATE);
-        addDropWithSilkTouch(ModBlocks.BLUE_LUMINESCENT_SCHROOM_DEESLATE, Blocks.DEEPSLATE);
+        addDropWithSilkTouch(ModBlocks.BLUE_LUMINESCENT_SCHROOM_DEEPSLATE, Blocks.DEEPSLATE);
         addDropWithSilkTouch(ModBlocks.GREEN_STONY_SCHROOM_DEPOT, Blocks.STONE);
         addDrop(ModBlocks.RHYOLITE);
         addDrop(ModBlocks.LAVA_BLACKSTONE);

@@ -83,7 +83,7 @@ public class ModItems {
 
                         //Hard Blocks
                         entries.add(ModBlocks.PURPLE_SCHROOM_DEESLATE);
-                        entries.add(ModBlocks.BLUE_LUMINESCENT_SCHROOM_DEESLATE);
+                        entries.add(ModBlocks.BLUE_LUMINESCENT_SCHROOM_DEEPSLATE);
                         entries.add(ModBlocks.GREEN_STONY_SCHROOM_DEPOT);
                         entries.add(ModBlocks.RHYOLITE);
 
