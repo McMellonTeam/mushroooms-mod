@@ -16,25 +16,25 @@ import net.minecraft.world.gen.stateprovider.BlockStateProvider;
 public class ModConfiguredFeatures<FC extends FeatureConfig> {
 
     //huge mushrooms
-    public static final RegistryKey<ConfiguredFeature<?, ?>> BLUE_MUSHROOM_KEY = registerKey("blue_mushroom_tree");
-    public static final RegistryKey<ConfiguredFeature<?, ?>> GREEN_MUSHROOM_KEY = registerKey("green_mushroom_tree");
-    public static final RegistryKey<ConfiguredFeature<?, ?>> PURPLE_MUSHROOM_KEY = registerKey("purple_mushroom_tree");
-    public static final RegistryKey<ConfiguredFeature<?, ?>> LUMINESCENT_MUSHROOM_KEY = registerKey("luminescent_mushroom_tree");
-    public static final RegistryKey<ConfiguredFeature<?, ?>> LUMINESCENT_PINK_MUSHROOM_KEY = registerKey("luminescent_pink_mushroom_tree");
-    public static final RegistryKey<ConfiguredFeature<?, ?>> BIG_PURPLE_MUSHROOM_KEY = registerKey("big_purple_mushroom_tree");
-    public static final RegistryKey<ConfiguredFeature<?, ?>> BIG_GREEN_MUSHROOM_KEY = registerKey("big_green_mushroom_tree");
-    public static final RegistryKey<ConfiguredFeature<?, ?>> BIG_RED_MUSHROOM_KEY = registerKey("big_red_mushroom_tree");
-    public static final RegistryKey<ConfiguredFeature<?, ?>> BIG_ORANGE_MUSHROOM_KEY = registerKey("big_orange_mushroom_tree");
-    public static final RegistryKey<ConfiguredFeature<?, ?>> BIG_YELLOW_MUSHROOM_KEY = registerKey("big_yellow_mushroom_tree");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> BLUE_MUSHROOM_TREE_KEY = registerKey("blue_mushroom_tree");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> GREEN_MUSHROOM_TREE_KEY = registerKey("green_mushroom_tree");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> PURPLE_MUSHROOM_TREE_KEY = registerKey("purple_mushroom_tree");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> BLUE_LUMINESCENT_MUSHROOM_TREE_KEY = registerKey("blue_luminescent_mushroom_tree");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> PINK_LUMINESCENT_MUSHROOM_TREE_KEY = registerKey("pink_luminescent_mushroom_tree");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> BIG_PURPLE_MUSHROOM_TREE_KEY = registerKey("big_purple_mushroom_tree");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> BIG_GREEN_MUSHROOM_TREE_KEY = registerKey("big_green_mushroom_tree");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> BIG_RED_MUSHROOM_TREE_KEY = registerKey("big_red_mushroom_tree");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> ORANGE_MUSHROOM_TREE_KEY = registerKey("big_orange_mushroom_tree");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> YELLOW_MUSHROOM_TREE_KEY = registerKey("big_yellow_mushroom_tree");
 
     //mushrooms
-    public static final RegistryKey<ConfiguredFeature<?, ?>> BLUE_MUSHROOM_FLOWER_KEY = registerKey("blue_mushroom_flower_key");
-    public static final RegistryKey<ConfiguredFeature<?, ?>> GREEN_MUSHROOM_FLOWER_KEY = registerKey("green_mushroom_flower_key");
-    public static final RegistryKey<ConfiguredFeature<?, ?>> PURPLE_MUSHROOM_FLOWER_KEY = registerKey("purple_mushroom_flower_key");
-    public static final RegistryKey<ConfiguredFeature<?, ?>> PINK_LUMINESCENT_MUSHROOM_FLOWER_KEY = registerKey("pink_luminescent_mushroom_flower_key");
-    public static final RegistryKey<ConfiguredFeature<?, ?>> LUMINESCENT_MUSHROOM_FLOWER_KEY = registerKey("luminescent_mushroom_flower_key");
-    public static final RegistryKey<ConfiguredFeature<?, ?>> ORANGE_MUSHROOM_FLOWER_KEY = registerKey("orange_mushroom_flower_key");
-    public static final RegistryKey<ConfiguredFeature<?, ?>> YELLOW_MUSHROOM_FLOWER_KEY = registerKey("yellow_mushroom_flower_key");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> BLUE_MUSHROOM_KEY = registerKey("blue_mushroom_key");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> GREEN_MUSHROOM_KEY = registerKey("green_mushroom_key");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> PURPLE_MUSHROOM_KEY = registerKey("purple_mushroom_key");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> PINK_LUMINESCENT_MUSHROOM_KEY = registerKey("pink_luminescent_mushroom_key");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> BLUE_LUMINESCENT_MUSHROOM_KEY = registerKey("luminescent_mushroom_key");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> ORANGE_MUSHROOM_KEY = registerKey("orange_mushroom_key");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> YELLOW_MUSHROOM_KEY = registerKey("yellow_mushroom_key");
 
     //Flowers Mushrooms
     public static final RegistryKey<ConfiguredFeature<?, ?>> STERILE_BLUE_MUSHROOM_KEY = registerKey("sterile_blue_mushroom_key");
@@ -111,22 +111,23 @@ public class ModConfiguredFeatures<FC extends FeatureConfig> {
 
     public static void bootstrap(Registerable<ConfiguredFeature<?, ?>> context) {
         //huge mushrooms
-        register(context, BLUE_MUSHROOM_KEY, ModConfiguredFeatures.HUGE_BLUE_MUSHROOM, new HugeMushroomFeatureConfig(BlockStateProvider.of(ModBlocks.BLUE_MUSHROOM_BLOCK), BlockStateProvider.of(Blocks.MUSHROOM_STEM), 4));
-        register(context, PURPLE_MUSHROOM_KEY, ModConfiguredFeatures.HUGE_PURPLE_MUSHROOM, new HugeMushroomFeatureConfig(BlockStateProvider.of(ModBlocks.PURPLE_MUSHROOM_BLOCK), BlockStateProvider.of(Blocks.MUSHROOM_STEM), 5));
-        register(context, GREEN_MUSHROOM_KEY, ModConfiguredFeatures.HUGE_GREEN_MUSHROOM, new ModMushroomFeatureConfig(BlockStateProvider.of(ModBlocks.GREEN_MUSHROOM_BLOCK), BlockStateProvider.of(Blocks.MUSHROOM_STEM), BlockStateProvider.of(Blocks.MUSHROOM_STEM), 20));
-        register(context, LUMINESCENT_MUSHROOM_KEY, ModConfiguredFeatures.HUGE_LUMINESCENT_MUSHROOM, new HugeMushroomFeatureConfig(BlockStateProvider.of(ModBlocks.BLUE_LUMINESCENT_MUSHROOM_BLOCK), BlockStateProvider.of(ModBlocks.LUMINESCENT_MUSHROOM_STEM), 6));
-        register(context, LUMINESCENT_PINK_MUSHROOM_KEY, ModConfiguredFeatures.HUGE_LUMINESCENT_PINK_MUSHROOM, new HugeMushroomFeatureConfig(BlockStateProvider.of(ModBlocks.PINK_LUMINESCENT_MUSHROOM_BLOCK), BlockStateProvider.of(ModBlocks.TRANSPARENT_MUSHROOM_STEM), 4));
-        register(context, BIG_PURPLE_MUSHROOM_KEY, ModConfiguredFeatures.HUGE_BIG_PURPLE_MUSHROOM, new ModMushroomFeatureConfig(BlockStateProvider.of(ModBlocks.PURPLE_MUSHROOM_BLOCK), BlockStateProvider.of(Blocks.MUSHROOM_STEM), BlockStateProvider.of(Blocks.MUSHROOM_STEM), 4));
-        register(context, BIG_GREEN_MUSHROOM_KEY, ModConfiguredFeatures.HUGE_BIG_GREEN_MUSHROOM, new HugeMushroomFeatureConfig(BlockStateProvider.of(ModBlocks.GREEN_MUSHROOM_BLOCK), BlockStateProvider.of(Blocks.MUSHROOM_STEM), 4));
-        register(context, BIG_RED_MUSHROOM_KEY, ModConfiguredFeatures.HUGE_BIG_RED_MUSHROOM, new ModMushroomFeatureConfig(BlockStateProvider.of(Blocks.RED_MUSHROOM_BLOCK), BlockStateProvider.of(Blocks.MUSHROOM_STEM), BlockStateProvider.of(Blocks.MUSHROOM_STEM), 4));
-        register(context, BIG_YELLOW_MUSHROOM_KEY, ModConfiguredFeatures.HUGE_BIG_YELLOW_MUSHROOM, new HugeMushroomFeatureConfig(BlockStateProvider.of(ModBlocks.YELLOW_MUSHROOM_BLOCK), BlockStateProvider.of(Blocks.MUSHROOM_STEM), 4));
-        register(context, BIG_ORANGE_MUSHROOM_KEY, ModConfiguredFeatures.HUGE_BIG_ORANGE_MUSHROOM, new HugeMushroomFeatureConfig(BlockStateProvider.of(ModBlocks.ORANGE_MUSHROOM_BLOCK), BlockStateProvider.of(Blocks.MUSHROOM_STEM), 4));
+        register(context, BLUE_MUSHROOM_TREE_KEY, ModConfiguredFeatures.HUGE_BLUE_MUSHROOM, new HugeMushroomFeatureConfig(BlockStateProvider.of(ModBlocks.BLUE_MUSHROOM_BLOCK), BlockStateProvider.of(Blocks.MUSHROOM_STEM), 4));
+        register(context, PURPLE_MUSHROOM_TREE_KEY, ModConfiguredFeatures.HUGE_PURPLE_MUSHROOM, new HugeMushroomFeatureConfig(BlockStateProvider.of(ModBlocks.PURPLE_MUSHROOM_BLOCK), BlockStateProvider.of(Blocks.MUSHROOM_STEM), 5));
+        register(context, GREEN_MUSHROOM_TREE_KEY, ModConfiguredFeatures.HUGE_GREEN_MUSHROOM, new ModMushroomFeatureConfig(BlockStateProvider.of(ModBlocks.GREEN_MUSHROOM_BLOCK), BlockStateProvider.of(Blocks.MUSHROOM_STEM), BlockStateProvider.of(Blocks.MUSHROOM_STEM), 20));
+        register(context, BLUE_LUMINESCENT_MUSHROOM_TREE_KEY, ModConfiguredFeatures.HUGE_LUMINESCENT_MUSHROOM, new HugeMushroomFeatureConfig(BlockStateProvider.of(ModBlocks.BLUE_LUMINESCENT_MUSHROOM_BLOCK), BlockStateProvider.of(ModBlocks.BLUE_LUMINESCENT_MUSHROOM_STEM), 4));
+        register(context, PINK_LUMINESCENT_MUSHROOM_TREE_KEY, ModConfiguredFeatures.HUGE_LUMINESCENT_PINK_MUSHROOM, new HugeMushroomFeatureConfig(BlockStateProvider.of(ModBlocks.PINK_LUMINESCENT_MUSHROOM_BLOCK), BlockStateProvider.of(ModBlocks.TRANSPARENT_MUSHROOM_STEM), 4));
+        register(context, BIG_PURPLE_MUSHROOM_TREE_KEY, ModConfiguredFeatures.HUGE_BIG_PURPLE_MUSHROOM, new ModMushroomFeatureConfig(BlockStateProvider.of(ModBlocks.PURPLE_MUSHROOM_BLOCK), BlockStateProvider.of(Blocks.MUSHROOM_STEM), BlockStateProvider.of(Blocks.MUSHROOM_STEM), 4));
+        register(context, BIG_GREEN_MUSHROOM_TREE_KEY, ModConfiguredFeatures.HUGE_BIG_GREEN_MUSHROOM, new HugeMushroomFeatureConfig(BlockStateProvider.of(ModBlocks.GREEN_MUSHROOM_BLOCK), BlockStateProvider.of(Blocks.MUSHROOM_STEM), 4));
+        register(context, BIG_RED_MUSHROOM_TREE_KEY, ModConfiguredFeatures.HUGE_BIG_RED_MUSHROOM, new ModMushroomFeatureConfig(BlockStateProvider.of(Blocks.RED_MUSHROOM_BLOCK), BlockStateProvider.of(Blocks.MUSHROOM_STEM), BlockStateProvider.of(Blocks.MUSHROOM_STEM), 4));
+        register(context, YELLOW_MUSHROOM_TREE_KEY, ModConfiguredFeatures.HUGE_BIG_YELLOW_MUSHROOM, new HugeMushroomFeatureConfig(BlockStateProvider.of(ModBlocks.YELLOW_MUSHROOM_BLOCK), BlockStateProvider.of(Blocks.MUSHROOM_STEM), 4));
+        register(context, ORANGE_MUSHROOM_TREE_KEY, ModConfiguredFeatures.HUGE_BIG_ORANGE_MUSHROOM, new HugeMushroomFeatureConfig(BlockStateProvider.of(ModBlocks.ORANGE_MUSHROOM_BLOCK), BlockStateProvider.of(Blocks.MUSHROOM_STEM), 4));
+
         //mushrooms
-        register(context, BLUE_MUSHROOM_FLOWER_KEY, Feature.FLOWER, new RandomPatchFeatureConfig(32, 6, 2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.BLUE_MUSHROOM)))));
-        register(context, GREEN_MUSHROOM_FLOWER_KEY, Feature.FLOWER, new RandomPatchFeatureConfig(32, 6, 2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.GREEN_MUSHROOM)))));
-        register(context, PURPLE_MUSHROOM_FLOWER_KEY, Feature.FLOWER, new RandomPatchFeatureConfig(32, 6, 2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.PURPLE_MUSHROOM)))));
-        register(context, LUMINESCENT_MUSHROOM_FLOWER_KEY, Feature.FLOWER, new RandomPatchFeatureConfig(40, 6, 2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.LUMINESCENT_MUSHROOM)))));
-        register(context, PINK_LUMINESCENT_MUSHROOM_FLOWER_KEY, Feature.FLOWER, new RandomPatchFeatureConfig(32, 6, 2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.LUMINESCENT_PINK_MUSHROOM)))));
+        register(context, BLUE_MUSHROOM_KEY, Feature.FLOWER, new RandomPatchFeatureConfig(32, 6, 2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.BLUE_MUSHROOM)))));
+        register(context, GREEN_MUSHROOM_KEY, Feature.FLOWER, new RandomPatchFeatureConfig(32, 6, 2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.GREEN_MUSHROOM)))));
+        register(context, PURPLE_MUSHROOM_KEY, Feature.FLOWER, new RandomPatchFeatureConfig(32, 6, 2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.PURPLE_MUSHROOM)))));
+        register(context, BLUE_LUMINESCENT_MUSHROOM_KEY, Feature.FLOWER, new RandomPatchFeatureConfig(40, 6, 2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.BLUE_LUMINESCENT_MUSHROOM)))));
+        register(context, PINK_LUMINESCENT_MUSHROOM_KEY, Feature.FLOWER, new RandomPatchFeatureConfig(32, 6, 2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.LUMINESCENT_PINK_MUSHROOM)))));
 
         //Flowers Mushrooms
         register(context, STERILE_BLUE_MUSHROOM_KEY, Feature.FLOWER, new RandomPatchFeatureConfig(32, 6, 2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.STERILE_BLUE_MUSHROOM)))));
@@ -176,8 +177,8 @@ public class ModConfiguredFeatures<FC extends FeatureConfig> {
         register(context, JACYNTHE_KEY, Feature.FLOWER, new RandomPatchFeatureConfig(32, 6, 2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.JACYNTHE)))));
         register(context, ACONIT_KEY, Feature.FLOWER, new RandomPatchFeatureConfig(32, 6, 2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.ACONIT)))));
         register(context, PERVENCHE_KEY, Feature.FLOWER, new RandomPatchFeatureConfig(32, 6, 2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.PERVENCHE)))));
-        register(context, ORANGE_MUSHROOM_FLOWER_KEY, Feature.FLOWER, new RandomPatchFeatureConfig(32, 6, 2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.ORANGE_MUSHROOM)))));
-        register(context, YELLOW_MUSHROOM_FLOWER_KEY, Feature.FLOWER, new RandomPatchFeatureConfig(32, 6, 2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.YELLOW_MUSHROOM)))));
+        register(context, ORANGE_MUSHROOM_KEY, Feature.FLOWER, new RandomPatchFeatureConfig(32, 6, 2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.ORANGE_MUSHROOM)))));
+        register(context, YELLOW_MUSHROOM_KEY, Feature.FLOWER, new RandomPatchFeatureConfig(32, 6, 2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.YELLOW_MUSHROOM)))));
 
         //Grass
         register(context, TINY_GRASSS_KEY, Feature.FLOWER, new RandomPatchFeatureConfig(32,6,2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.TINY_GRASS)))));

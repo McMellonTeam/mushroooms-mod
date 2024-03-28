@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "mushrooomsmod:block/green_torch"
+    "layer0": "mushrooomsmod:block/torch_green"
   }
 }

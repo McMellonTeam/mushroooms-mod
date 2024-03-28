@@ -65,7 +65,7 @@ public class ModModelProvider extends FabricModelProvider {
 
 
         generator.registerSimpleCubeAll(ModBlocks.TRANSPARENT_MUSHROOM_STEM);
-        generator.registerSimpleCubeAll(ModBlocks.LUMINESCENT_MUSHROOM_STEM);
+        generator.registerSimpleCubeAll(ModBlocks.BLUE_LUMINESCENT_MUSHROOM_STEM);
         generator.registerSimpleCubeAll(ModBlocks.GREEN_MUSHROOM_STEM);
         generator.registerSimpleCubeAll(ModBlocks.COMPRESSED_PURPLE_MUSHROOM);
 
@@ -81,7 +81,7 @@ public class ModModelProvider extends FabricModelProvider {
         generator.registerFlowerPotPlant(ModBlocks.BLUE_MUSHROOM, ModBlocks.POTTED_BLUE_MUSHROOM, BlockStateModelGenerator.TintType.NOT_TINTED);
         generator.registerFlowerPotPlant(ModBlocks.GREEN_MUSHROOM, ModBlocks.POTTED_GREEN_MUSHROOM, BlockStateModelGenerator.TintType.NOT_TINTED);
         generator.registerFlowerPotPlant(ModBlocks.PURPLE_MUSHROOM, ModBlocks.POTTED_PURPLE_MUSHROOM, BlockStateModelGenerator.TintType.NOT_TINTED);
-        generator.registerFlowerPotPlant(ModBlocks.LUMINESCENT_MUSHROOM, ModBlocks.POTTED_LUMINESCENT_MUSHROOM, BlockStateModelGenerator.TintType.NOT_TINTED);
+        generator.registerFlowerPotPlant(ModBlocks.BLUE_LUMINESCENT_MUSHROOM, ModBlocks.POTTED_BLUE_LUMINESCENT_MUSHROOM, BlockStateModelGenerator.TintType.NOT_TINTED);
         generator.registerFlowerPotPlant(ModBlocks.LUMINESCENT_PINK_MUSHROOM, ModBlocks.POTTED_LUMINESCENT_PINK_MUSHROOM, BlockStateModelGenerator.TintType.NOT_TINTED);
         generator.registerFlowerPotPlant(ModBlocks.OCULAE, ModBlocks.POTTED_OCULAE, BlockStateModelGenerator.TintType.NOT_TINTED);
         generator.registerFlowerPotPlant(ModBlocks.CYANEA, ModBlocks.POTTED_CYANEA, BlockStateModelGenerator.TintType.NOT_TINTED);

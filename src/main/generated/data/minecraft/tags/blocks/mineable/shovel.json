@@ -1,8 +1,8 @@
 {
   "replace": false,
   "values": [
-    "mushrooomsmod:compressed_purple_mushroom",
-    "mushrooomsmod:compressed_dirt",
-    "mushrooomsmod:light_compressed_dirt"
+    "mushrooomsmod:mushroom_compressed_purple",
+    "mushrooomsmod:dirt_compressed",
+    "mushrooomsmod:dirt_compressed_light"
   ]
 }

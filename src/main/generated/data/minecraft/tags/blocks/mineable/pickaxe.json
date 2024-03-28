@@ -1,18 +1,18 @@
 {
   "replace": false,
   "values": [
-    "mushrooomsmod:blue_luminescent_schroom_deepslate",
-    "mushrooomsmod:purple_schroom_deepslate",
-    "mushrooomsmod:green_stony_schroom_depot",
-    "mushrooomsmod:red_lantern",
-    "mushrooomsmod:green_lantern",
-    "mushrooomsmod:green_campfire",
+    "mushrooomsmod:deepslate_mushroom_blue_luminescent",
+    "mushrooomsmod:deepslate_mushroom_purple",
+    "mushrooomsmod:stone_mushrooms_green",
+    "mushrooomsmod:lantern_red",
+    "mushrooomsmod:lantern_green",
+    "mushrooomsmod:campfire_green",
     "mushrooomsmod:rhyolite",
     "mushrooomsmod:blackstone_lava_bricks",
     "mushrooomsmod:blackstone_lava",
     "mushrooomsmod:blackstone_lava_tiny_bricks",
     "mushrooomsmod:blackstone_lava_medium_bricks",
-    "mushrooomsmod:pink_crystal",
-    "mushrooomsmod:pink_crystal_block"
+    "mushrooomsmod:crystal_pink",
+    "mushrooomsmod:crystal_block_pink"
   ]
 }

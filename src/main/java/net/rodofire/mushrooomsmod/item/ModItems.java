@@ -23,7 +23,7 @@ public class ModItems {
     public static final ItemGroup MUSHROOM_GROUP = Registry.register(Registries.ITEM_GROUP,
             new Identifier(MushrooomsMod.MOD_ID, "luminescent_mushroom"),
             FabricItemGroup.builder().displayName(Text.translatable("itemgroup.mushroooms"))
-                    .icon(() -> new ItemStack(ModBlocks.LUMINESCENT_MUSHROOM)).entries((displayContext, entries) -> {
+                    .icon(() -> new ItemStack(ModBlocks.BLUE_LUMINESCENT_MUSHROOM)).entries((displayContext, entries) -> {
                         //Blocks
                         //Natural
                         //Mushroom Related
@@ -72,7 +72,7 @@ public class ModItems {
                         entries.add(ModBlocks.BROWN_DEGRADATED_MUSHROOM_BLOCK);
                         entries.add(ModBlocks.BROWN_FERMENTED_MUSHROOM_BLOCK);*/
 
-                        entries.add(ModBlocks.LUMINESCENT_MUSHROOM_STEM);
+                        entries.add(ModBlocks.BLUE_LUMINESCENT_MUSHROOM_STEM);
                         entries.add(ModBlocks.TRANSPARENT_MUSHROOM_STEM);
                         entries.add(ModBlocks.GREEN_MUSHROOM_STEM);
                         entries.add(ModBlocks.COMPRESSED_PURPLE_MUSHROOM);
@@ -92,7 +92,7 @@ public class ModItems {
                         entries.add(ModBlocks.GREEN_MUSHROOM);
                         entries.add(ModBlocks.BLUE_MUSHROOM);
                         entries.add(ModBlocks.PURPLE_MUSHROOM);
-                        entries.add(ModBlocks.LUMINESCENT_MUSHROOM);
+                        entries.add(ModBlocks.BLUE_LUMINESCENT_MUSHROOM);
                         entries.add(ModBlocks.LUMINESCENT_PINK_MUSHROOM);
                         entries.add(ModBlocks.ORANGE_MUSHROOM);
                         entries.add(ModBlocks.YELLOW_MUSHROOM);

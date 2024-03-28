@@ -1,13 +1,13 @@
 {
   "replace": false,
   "values": [
-    "mushrooomsmod:yellow_mushroom",
-    "mushrooomsmod:purple_mushroom",
-    "mushrooomsmod:orange_mushroom",
-    "mushrooomsmod:blue_mushroom",
-    "mushrooomsmod:green_mushroom",
-    "mushrooomsmod:luminescent_mushroom",
-    "mushrooomsmod:luminescent_pink_mushroom",
+    "mushrooomsmod:mushroom_yellow",
+    "mushrooomsmod:mushroom_purple",
+    "mushrooomsmod:mushroom_orange",
+    "mushrooomsmod:mushroom_blue",
+    "mushrooomsmod:mushroom_green",
+    "mushrooomsmod:mushroom_blue_luminescent",
+    "mushrooomsmod:mushroom_pink_luminescent",
     "minecraft:red_mushroom",
     "minecraft:brown_mushroom"
   ]

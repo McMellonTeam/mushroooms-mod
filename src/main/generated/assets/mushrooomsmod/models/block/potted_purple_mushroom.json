@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/flower_pot_cross",
   "textures": {
-    "plant": "mushrooomsmod:block/purple_mushroom"
+    "plant": "mushrooomsmod:block/mushroom_purple"
   }
 }

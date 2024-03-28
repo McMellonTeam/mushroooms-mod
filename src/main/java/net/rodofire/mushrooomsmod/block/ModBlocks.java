@@ -93,33 +93,33 @@ public class ModBlocks {
 
 
     //Mushroom Stem
-    public static final Block TRANSPARENT_MUSHROOM_STEM = registerBlock("transparent_mushroom_stem", new GlassBlock(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM_BLOCK).nonOpaque().luminance(9)));
-    public static final Block LUMINESCENT_MUSHROOM_STEM = registerBlock("luminescent_mushroom_stem", new GlassBlock(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM_BLOCK).nonOpaque().luminance(9)));
-    public static final Block GREEN_MUSHROOM_STEM = registerBlock("green_mushroom_stem", new GlassBlock(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM_BLOCK).nonOpaque()));
+    public static final Block TRANSPARENT_MUSHROOM_STEM = registerBlock("mushroom_stem_transparent", new GlassBlock(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM_BLOCK).nonOpaque().luminance(9)));
+    public static final Block BLUE_LUMINESCENT_MUSHROOM_STEM = registerBlock("mushroom_stem_blue_luminescent", new GlassBlock(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM_BLOCK).nonOpaque().luminance(9)));
+    public static final Block GREEN_MUSHROOM_STEM = registerBlock("mushroom_stem_green", new GlassBlock(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM_BLOCK).nonOpaque()));
 
 
-    public static final Block COMPRESSED_PURPLE_MUSHROOM = registerBlock("compressed_purple_mushroom", new MossBlock(FabricBlockSettings.copyOf(Blocks.MOSS_BLOCK)));
+    public static final Block COMPRESSED_PURPLE_MUSHROOM = registerBlock("mushroom_compressed_purple", new MossBlock(FabricBlockSettings.copyOf(Blocks.MOSS_BLOCK)));
 
     //Soft Blocks
-    public static final Block COMPRESSED_DIRT = registerBlock("compressed_dirt", new Block(FabricBlockSettings.copyOf(Blocks.DIRT)));
-    public static final Block LIGHT_COMPRESSED_DIRT = registerBlock("light_compressed_dirt", new Block(FabricBlockSettings.copyOf(Blocks.DIRT)));
+    public static final Block COMPRESSED_DIRT = registerBlock("dirt_compressed", new Block(FabricBlockSettings.copyOf(Blocks.DIRT)));
+    public static final Block LIGHT_COMPRESSED_DIRT = registerBlock("dirt_compressed_light", new Block(FabricBlockSettings.copyOf(Blocks.DIRT)));
 
     //Hard Blocks
-    public static final Block PURPLE_SCHROOM_DEESLATE = registerBlock("purple_schroom_deepslate", new Block(FabricBlockSettings.copyOf(Blocks.DEEPSLATE).requiresTool().instrument(Instrument.BASEDRUM)));
-    public static final Block BLUE_LUMINESCENT_SCHROOM_DEEPSLATE = registerBlock("blue_luminescent_schroom_deepslate", new GrassBlock(FabricBlockSettings.copyOf(Blocks.DEEPSLATE).requiresTool().instrument(Instrument.BASEDRUM)));
-    public static final Block GREEN_STONY_SCHROOM_DEPOT = registerBlock("green_stony_schroom_depot", new Block(FabricBlockSettings.copyOf(Blocks.STONE).requiresTool().instrument(Instrument.BASEDRUM)));
+    public static final Block PURPLE_SCHROOM_DEESLATE = registerBlock("deepslate_mushroom_purple", new Block(FabricBlockSettings.copyOf(Blocks.DEEPSLATE).requiresTool().instrument(Instrument.BASEDRUM)));
+    public static final Block BLUE_LUMINESCENT_SCHROOM_DEEPSLATE = registerBlock("deepslate_mushroom_blue_luminescent", new GrassBlock(FabricBlockSettings.copyOf(Blocks.DEEPSLATE).requiresTool().instrument(Instrument.BASEDRUM)));
+    public static final Block GREEN_STONY_SCHROOM_DEPOT = registerBlock("stone_mushrooms_green", new Block(FabricBlockSettings.copyOf(Blocks.STONE).requiresTool().instrument(Instrument.BASEDRUM)));
     public static final Block RHYOLITE = registerBlock("rhyolite", new Block(FabricBlockSettings.copyOf(Blocks.STONE).requiresTool().instrument(Instrument.BASEDRUM)));
     public static final Block LAVA_BLACKSTONE = registerBlock("blackstone_lava", new Block(FabricBlockSettings.copyOf(Blocks.BLACKSTONE).luminance(8)));
 
 
     //mushrooms
-    public static final Block GREEN_MUSHROOM = registerBlock("green_mushroom", new MushroomPlantBlock(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM), ModConfiguredFeatures.GREEN_MUSHROOM_KEY));
-    public static final Block PURPLE_MUSHROOM = registerBlock("purple_mushroom", new MushroomPlantBlock(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM), ModConfiguredFeatures.PURPLE_MUSHROOM_KEY));
-    public static final Block BLUE_MUSHROOM = registerBlock("blue_mushroom", new MushroomPlantBlock(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM), ModConfiguredFeatures.BLUE_MUSHROOM_KEY));
-    public static final Block LUMINESCENT_MUSHROOM = registerBlock("luminescent_mushroom", new MushroomPlantBlock(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM).luminance(5), ModConfiguredFeatures.LUMINESCENT_MUSHROOM_KEY));
-    public static final Block LUMINESCENT_PINK_MUSHROOM = registerBlock("luminescent_pink_mushroom", new MushroomPlantBlock(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM).luminance(5), ModConfiguredFeatures.LUMINESCENT_PINK_MUSHROOM_KEY));
-    public static final Block ORANGE_MUSHROOM = registerBlock("orange_mushroom", new MushroomPlantBlock(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM), ModConfiguredFeatures.BIG_ORANGE_MUSHROOM_KEY));
-    public static final Block YELLOW_MUSHROOM = registerBlock("yellow_mushroom", new MushroomPlantBlock(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM).luminance(5), ModConfiguredFeatures.BIG_YELLOW_MUSHROOM_KEY));
+    public static final Block GREEN_MUSHROOM = registerBlock("mushroom_green", new MushroomPlantBlock(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM), ModConfiguredFeatures.GREEN_MUSHROOM_TREE_KEY));
+    public static final Block PURPLE_MUSHROOM = registerBlock("mushroom_purple", new MushroomPlantBlock(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM), ModConfiguredFeatures.PURPLE_MUSHROOM_TREE_KEY));
+    public static final Block BLUE_MUSHROOM = registerBlock("mushroom_blue", new MushroomPlantBlock(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM), ModConfiguredFeatures.BLUE_MUSHROOM_TREE_KEY));
+    public static final Block BLUE_LUMINESCENT_MUSHROOM = registerBlock("mushroom_blue_luminescent", new MushroomPlantBlock(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM).luminance(5), ModConfiguredFeatures.BLUE_LUMINESCENT_MUSHROOM_TREE_KEY));
+    public static final Block LUMINESCENT_PINK_MUSHROOM = registerBlock("mushroom_pink_luminescent", new MushroomPlantBlock(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM).luminance(5), ModConfiguredFeatures.PINK_LUMINESCENT_MUSHROOM_TREE_KEY));
+    public static final Block ORANGE_MUSHROOM = registerBlock("mushroom_orange", new MushroomPlantBlock(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM), ModConfiguredFeatures.ORANGE_MUSHROOM_TREE_KEY));
+    public static final Block YELLOW_MUSHROOM = registerBlock("mushroom_yellow", new MushroomPlantBlock(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM).luminance(5), ModConfiguredFeatures.YELLOW_MUSHROOM_TREE_KEY));
 
     //Flowers Mushroom
     public static final Block STERILE_BLUE_MUSHROOM = registerBlock("sterile_blue_mushroom" , new FlowerBlock(StatusEffects.GLOWING,10 ,FabricBlockSettings.copyOf(Blocks.ROSE_BUSH).nonOpaque().noCollision()));
@@ -133,7 +133,7 @@ public class ModBlocks {
     public static final Block CYANEA = registerBlock("cyanea", new FlowerBlock(StatusEffects.DARKNESS, 1000, FabricBlockSettings.copyOf(Blocks.GRASS).luminance(12).nonOpaque().noCollision()));
     public static final Block SOL_OCCIDENTIS = registerBlock("sol_occidens", new FlowerBlock(StatusEffects.DARKNESS, 1000, FabricBlockSettings.copyOf(Blocks.GRASS).nonOpaque().noCollision()));
     public static final Block FUTIALI = registerBlock("futiali", new FlowerBlock(StatusEffects.DARKNESS, 1000, FabricBlockSettings.copyOf(Blocks.GRASS).nonOpaque().luminance(11).noCollision()));
-    public static final Block MUSHROOM_FLOWERS = registerBlock("mushroom_flowers", new FlowersMushroomBlock(FabricBlockSettings.copyOf(Blocks.TALL_GRASS).nonOpaque().noCollision(), ModConfiguredFeatures.BIG_PURPLE_MUSHROOM_KEY));
+    public static final Block MUSHROOM_FLOWERS = registerBlock("mushroom_flowers", new FlowersMushroomBlock(FabricBlockSettings.copyOf(Blocks.TALL_GRASS).nonOpaque().noCollision(), ModConfiguredFeatures.BIG_PURPLE_MUSHROOM_TREE_KEY));
     public static final Block TURQUOSUM_STILUS = registerBlock("turquosum_stilus", new TallFlowerBlock(FabricBlockSettings.copyOf(Blocks.ROSE_BUSH).luminance(11).nonOpaque().noCollision()));
     public static final Block NOCTULICA = registerBlock("noctulica", new FlowerBlock(StatusEffects.DARKNESS, 1000, FabricBlockSettings.copyOf(Blocks.GRASS).luminance(12).nonOpaque().noCollision()));
     public static final Block SAPHIRA_FLORENS = registerBlock("saphira_florens", new TallFlowerBlock(FabricBlockSettings.copyOf(Blocks.ROSE_BUSH).nonOpaque().luminance(11).noCollision()));
@@ -180,10 +180,10 @@ public class ModBlocks {
     public static final Block TINY_GRASS = registerBlock("tiny_grass", new GrassBlock(FabricBlockSettings.copyOf(Blocks.GRASS)));
 
     //Vines
-    public static final Block PINK_MUSHROOM_VINES = registerHiddenBlock("pink_mushroom_vines", new PinkMushroomVinesHeadBlock(FabricBlockSettings.create().breakInstantly().sounds(BlockSoundGroup.CAVE_VINES).pistonBehavior(PistonBehavior.DESTROY).noCollision()));
-    public static final Block PINK_MUSHROOM_VINES_PLANT = registerHiddenBlock("pink_mushroom_vines_plant", new PinkMushroomVinesBodyBlock(FabricBlockSettings.create().breakInstantly().sounds(BlockSoundGroup.CAVE_VINES).pistonBehavior(PistonBehavior.DESTROY).noCollision()));
-    public static final Block PINK_LUMINESCENT_BODY_VINES = registerHiddenBlock("pink_luminescent_body_vines", new PinkLuminescentBodyVinesBlock(FabricBlockSettings.create().nonOpaque().sounds(BlockSoundGroup.HONEY).pistonBehavior(PistonBehavior.DESTROY).breakInstantly().luminance(state -> state.get(PinkLuminescentBodyVinesBlock.MANY_VINES) ? 0 : 15)));
-    public static final Block PINK_LUMINESCENT_HEAD_VINES = registerHiddenBlock("pink_luminescent_head_vines", new PinkLuminescentHeadVinesBlock(FabricBlockSettings.create().nonOpaque().sounds(BlockSoundGroup.HONEY).pistonBehavior(PistonBehavior.DESTROY).breakInstantly().luminance(3)));
+    public static final Block PINK_MUSHROOM_VINES = registerHiddenBlock("mushroom_vines_pink", new PinkMushroomVinesHeadBlock(FabricBlockSettings.create().breakInstantly().sounds(BlockSoundGroup.CAVE_VINES).pistonBehavior(PistonBehavior.DESTROY).noCollision()));
+    public static final Block PINK_MUSHROOM_VINES_PLANT = registerHiddenBlock("mushroom_vines_pink_plant", new PinkMushroomVinesBodyBlock(FabricBlockSettings.create().breakInstantly().sounds(BlockSoundGroup.CAVE_VINES).pistonBehavior(PistonBehavior.DESTROY).noCollision()));
+    public static final Block PINK_LUMINESCENT_BODY_VINES = registerHiddenBlock("mushroom_vines_pink_luminescent_body", new PinkLuminescentBodyVinesBlock(FabricBlockSettings.create().nonOpaque().sounds(BlockSoundGroup.HONEY).pistonBehavior(PistonBehavior.DESTROY).breakInstantly().luminance(state -> state.get(PinkLuminescentBodyVinesBlock.MANY_VINES) ? 0 : 15)));
+    public static final Block PINK_LUMINESCENT_HEAD_VINES = registerHiddenBlock("mushroom_vines_pink_luminescent_head", new PinkLuminescentHeadVinesBlock(FabricBlockSettings.create().nonOpaque().sounds(BlockSoundGroup.HONEY).pistonBehavior(PistonBehavior.DESTROY).breakInstantly().luminance(3)));
     public static final Block CAERULEA_VOLUBILIS = registerHiddenBlock("caerulea_volubilis", new BlueLuminescentVines(FabricBlockSettings.copyOf(Blocks.TWISTING_VINES).luminance(12)));
 
 
@@ -191,7 +191,7 @@ public class ModBlocks {
     public static final Block POTTED_GREEN_MUSHROOM = Registry.register(Registries.BLOCK, new Identifier(MushrooomsMod.MOD_ID, "potted_green_mushroom"), new FlowerPotBlock(GREEN_MUSHROOM, FabricBlockSettings.copyOf(Blocks.POTTED_RED_MUSHROOM).nonOpaque()));
     public static final Block POTTED_BLUE_MUSHROOM = Registry.register(Registries.BLOCK, new Identifier(MushrooomsMod.MOD_ID, "potted_blue_mushroom"), new FlowerPotBlock(BLUE_MUSHROOM, FabricBlockSettings.copyOf(Blocks.POTTED_RED_MUSHROOM).nonOpaque()));
     public static final Block POTTED_PURPLE_MUSHROOM = Registry.register(Registries.BLOCK, new Identifier(MushrooomsMod.MOD_ID, "potted_purple_mushroom"), new FlowerPotBlock(PURPLE_MUSHROOM, FabricBlockSettings.copyOf(Blocks.POTTED_RED_MUSHROOM).nonOpaque()));
-    public static final Block POTTED_LUMINESCENT_MUSHROOM = Registry.register(Registries.BLOCK, new Identifier(MushrooomsMod.MOD_ID, "potted_luminescent_mushroom"), new FlowerPotBlock(LUMINESCENT_MUSHROOM, FabricBlockSettings.copyOf(Blocks.POTTED_RED_MUSHROOM).nonOpaque().luminance(5)));
+    public static final Block POTTED_BLUE_LUMINESCENT_MUSHROOM = Registry.register(Registries.BLOCK, new Identifier(MushrooomsMod.MOD_ID, "potted_blue_luminescent_mushroom"), new FlowerPotBlock(BLUE_LUMINESCENT_MUSHROOM, FabricBlockSettings.copyOf(Blocks.POTTED_RED_MUSHROOM).nonOpaque().luminance(5)));
     public static final Block POTTED_OCULAE = Registry.register(Registries.BLOCK, new Identifier(MushrooomsMod.MOD_ID, "potted_oculae"), new FlowerPotBlock(OCULAE, FabricBlockSettings.copyOf(Blocks.POTTED_ALLIUM).nonOpaque()));
     public static final Block POTTED_LUMINESCENT_PINK_MUSHROOM = Registry.register(Registries.BLOCK, new Identifier(MushrooomsMod.MOD_ID, "potted_luminescent_pink_mushroom"), new FlowerPotBlock(LUMINESCENT_PINK_MUSHROOM, FabricBlockSettings.copyOf(Blocks.POTTED_RED_MUSHROOM).nonOpaque()));
     public static final Block POTTED_CYANUS_RUBENS = Registry.register(Registries.BLOCK, new Identifier(MushrooomsMod.MOD_ID, "potted_cyanus_rubens"), new FlowerPotBlock(CYANUS_RUBENS, FabricBlockSettings.copyOf(Blocks.POTTED_RED_MUSHROOM).nonOpaque()));
@@ -232,24 +232,24 @@ public class ModBlocks {
 
 
     //Big Mushrooms
-    public static final Block BIG_PURPLE_MUSHROOM_PLANT = registerHiddenBlock("big_purple_mushroom_plant", new BigPurpleMushroomPlant(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM).collidable(true), ModBlocks.TINY_PURPLE_MUSHROOM, ModBlocks.LITTLE_PURPLE_MUSHROOM, ModBlocks.MEDIUM_PURPLE_MUSHROOM, ModBlocks.BIG_PURPLE_MUSHROOM));
-    public static final Block TINY_PURPLE_MUSHROOM = registerBlock("tiny_purple_mushroom", new TinyPurpleMushroom(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM).collidable(true).nonOpaque(), ModConfiguredFeatures.BIG_PURPLE_MUSHROOM_KEY));
-    public static final Block LITTLE_PURPLE_MUSHROOM = registerBlock("little_purple_mushroom", new LittlePurpleMushroom(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM).collidable(true).nonOpaque(), ModConfiguredFeatures.BIG_PURPLE_MUSHROOM_KEY));
-    public static final Block MEDIUM_PURPLE_MUSHROOM = registerBlock("medium_purple_mushroom", new MediumPurpleMushroom(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM).collidable(true).nonOpaque(), ModConfiguredFeatures.BIG_PURPLE_MUSHROOM_KEY));
-    public static final Block BIG_PURPLE_MUSHROOM = registerBlock("big_purple_mushroom", new BigPurpleMushroom(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM).collidable(true).nonOpaque(), ModConfiguredFeatures.BIG_PURPLE_MUSHROOM_KEY));
-    public static final Block TINY_GREEN_MUSHROOM = registerBlock("tiny_green_mushroom", new TinyGreenMushroom(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM).collidable(true).nonOpaque(), ModConfiguredFeatures.BIG_GREEN_MUSHROOM_KEY));
-    public static final Block LITTLE_GREEN_MUSHROOM = registerBlock("little_green_mushroom", new LittleGreenMushroom(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM).collidable(true).nonOpaque(), ModConfiguredFeatures.BIG_GREEN_MUSHROOM_KEY));
-    public static final Block MEDIUM_GREEN_MUSHROOM = registerBlock("medium_green_mushroom", new MediumGreenMushroom(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM).collidable(true).nonOpaque(), ModConfiguredFeatures.BIG_GREEN_MUSHROOM_KEY));
-    public static final Block BIG_GREEN_MUSHROOM = registerBlock("big_green_mushroom", new BigGreenMushroom(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM).collidable(true).nonOpaque(), ModConfiguredFeatures.BIG_GREEN_MUSHROOM_KEY));
-    public static final Block BIG_GREEN_MUSHROOM_PLANT = registerHiddenBlock("big_green_mushroom_plant", new BigGreenMushroomPlant(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM).collidable(true), ModBlocks.TINY_GREEN_MUSHROOM, ModBlocks.LITTLE_GREEN_MUSHROOM, ModBlocks.MEDIUM_GREEN_MUSHROOM, ModBlocks.BIG_GREEN_MUSHROOM));
-    public static final Block RED_LUMERIA = registerBlock("red_lumeria", new BigRedMushroom(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM).nonOpaque().noCollision(), ModConfiguredFeatures.BIG_RED_MUSHROOM_KEY));
+    public static final Block BIG_PURPLE_MUSHROOM_PLANT = registerHiddenBlock("mushroom_big_plant_purple", new BigPurpleMushroomPlant(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM).collidable(true), ModBlocks.TINY_PURPLE_MUSHROOM, ModBlocks.LITTLE_PURPLE_MUSHROOM, ModBlocks.MEDIUM_PURPLE_MUSHROOM, ModBlocks.BIG_PURPLE_MUSHROOM));
+    public static final Block TINY_PURPLE_MUSHROOM = registerBlock("mushroom_tiny_purple", new TinyPurpleMushroom(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM).collidable(true).nonOpaque(), ModConfiguredFeatures.BIG_PURPLE_MUSHROOM_TREE_KEY));
+    public static final Block LITTLE_PURPLE_MUSHROOM = registerBlock("mushroom_little_purple", new LittlePurpleMushroom(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM).collidable(true).nonOpaque(), ModConfiguredFeatures.BIG_PURPLE_MUSHROOM_TREE_KEY));
+    public static final Block MEDIUM_PURPLE_MUSHROOM = registerBlock("mushroom_medium_purple", new MediumPurpleMushroom(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM).collidable(true).nonOpaque(), ModConfiguredFeatures.BIG_PURPLE_MUSHROOM_TREE_KEY));
+    public static final Block BIG_PURPLE_MUSHROOM = registerBlock("mushroom_big_purple", new BigPurpleMushroom(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM).collidable(true).nonOpaque(), ModConfiguredFeatures.BIG_PURPLE_MUSHROOM_TREE_KEY));
+    public static final Block TINY_GREEN_MUSHROOM = registerBlock("mushroom_tiny_green", new TinyGreenMushroom(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM).collidable(true).nonOpaque(), ModConfiguredFeatures.BIG_GREEN_MUSHROOM_TREE_KEY));
+    public static final Block LITTLE_GREEN_MUSHROOM = registerBlock("mushroom_little_green", new LittleGreenMushroom(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM).collidable(true).nonOpaque(), ModConfiguredFeatures.BIG_GREEN_MUSHROOM_TREE_KEY));
+    public static final Block MEDIUM_GREEN_MUSHROOM = registerBlock("mushroom_medium_green", new MediumGreenMushroom(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM).collidable(true).nonOpaque(), ModConfiguredFeatures.BIG_GREEN_MUSHROOM_TREE_KEY));
+    public static final Block BIG_GREEN_MUSHROOM = registerBlock("mushroom_big_green", new BigGreenMushroom(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM).collidable(true).nonOpaque(), ModConfiguredFeatures.BIG_GREEN_MUSHROOM_TREE_KEY));
+    public static final Block BIG_GREEN_MUSHROOM_PLANT = registerHiddenBlock("mushroom_big_plant_green", new BigGreenMushroomPlant(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM).collidable(true), ModBlocks.TINY_GREEN_MUSHROOM, ModBlocks.LITTLE_GREEN_MUSHROOM, ModBlocks.MEDIUM_GREEN_MUSHROOM, ModBlocks.BIG_GREEN_MUSHROOM));
+    public static final Block RED_LUMERIA = registerBlock("red_lumeria", new BigRedMushroom(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM).nonOpaque().noCollision(), ModConfiguredFeatures.BIG_RED_MUSHROOM_TREE_KEY));
 
     //Light Blocks
-    public static final Block RED_LANTERN = registerBlock("red_lantern", new LanternBlock(FabricBlockSettings.copyOf(Blocks.LANTERN).luminance(15).nonOpaque()));
-    public static final Block GREEN_LANTERN = registerBlock("green_lantern", new LanternBlock(FabricBlockSettings.copyOf(Blocks.LANTERN).luminance(13).nonOpaque()));
-    public static final Block GREEN_TORCH = registerHiddenBlock("green_torch", new TorchBlock(FabricBlockSettings.copyOf(Blocks.TORCH).luminance(12).nonOpaque(), ModParticles.GREENFIRE_PARTICLE));
-    public static final Block WALL_GREEN_TORCH = registerHiddenBlock("wall_green_torch", new WallTorchBlock(FabricBlockSettings.copyOf(Blocks.WALL_TORCH).luminance(12).nonOpaque(), ModParticles.GREENFIRE_PARTICLE));
-    public static final Block GREEN_CAMPFIRE = registerBlock("green_campfire", new CampfireBlock(true, 1, FabricBlockSettings.copyOf(Blocks.CAMPFIRE).luminance(13).nonOpaque()));
+    public static final Block RED_LANTERN = registerBlock("lantern_red", new LanternBlock(FabricBlockSettings.copyOf(Blocks.LANTERN).luminance(15).nonOpaque()));
+    public static final Block GREEN_LANTERN = registerBlock("lantern_green", new LanternBlock(FabricBlockSettings.copyOf(Blocks.LANTERN).luminance(13).nonOpaque()));
+    public static final Block GREEN_TORCH = registerHiddenBlock("torch_green", new TorchBlock(FabricBlockSettings.copyOf(Blocks.TORCH).luminance(12).nonOpaque(), ModParticles.GREENFIRE_PARTICLE));
+    public static final Block WALL_GREEN_TORCH = registerHiddenBlock("torch_wall_green", new WallTorchBlock(FabricBlockSettings.copyOf(Blocks.WALL_TORCH).luminance(12).nonOpaque(), ModParticles.GREENFIRE_PARTICLE));
+    public static final Block GREEN_CAMPFIRE = registerBlock("campfire_green", new CampfireBlock(true, 1, FabricBlockSettings.copyOf(Blocks.CAMPFIRE).luminance(13).nonOpaque()));
 
 
     //Construction Blocks
@@ -258,8 +258,8 @@ public class ModBlocks {
     public static final Block LAVA_BLACKSTONE_TINY_BRICKS = registerBlock("blackstone_lava_tiny_bricks", new Block(FabricBlockSettings.copyOf(Blocks.BLACKSTONE).luminance(8)));
 
     //Crystal Blocks
-    public static final Block PINK_CRYSTAL = registerHiddenBlock("pink_crystal", new PinkCrystal(FabricBlockSettings.copyOf(Blocks.AMETHYST_CLUSTER)));
-    public static final Block PINK_CRYSTAL_BLOCK = registerBlock("pink_crystal_block", new AmethystBlock(FabricBlockSettings.copyOf(Blocks.AMETHYST_BLOCK).sounds(ModBlockSoundGroup.PINK_CRYSTAL)));
+    public static final Block PINK_CRYSTAL = registerHiddenBlock("crystal_pink", new PinkCrystal(FabricBlockSettings.copyOf(Blocks.AMETHYST_CLUSTER)));
+    public static final Block PINK_CRYSTAL_BLOCK = registerBlock("crystal_block_pink", new AmethystBlock(FabricBlockSettings.copyOf(Blocks.AMETHYST_BLOCK).sounds(ModBlockSoundGroup.PINK_CRYSTAL)));
 
     //Util Blocks
     public static final Block FORGE_BLOCK = registerBlock("forge_block", new ForgeBlock(FabricBlockSettings.copyOf(Blocks.ANVIL).nonOpaque()));

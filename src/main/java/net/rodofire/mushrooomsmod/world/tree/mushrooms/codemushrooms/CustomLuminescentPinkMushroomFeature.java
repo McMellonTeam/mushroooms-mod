@@ -17,7 +17,7 @@ public class CustomLuminescentPinkMushroomFeature extends CustomLuminescentPinkM
 
 
     protected RegistryKey<ConfiguredFeature<?, ?>> getTreeFeature(Random random, boolean bees) {
-        return ModConfiguredFeatures.LUMINESCENT_PINK_MUSHROOM_KEY;
+        return ModConfiguredFeatures.PINK_LUMINESCENT_MUSHROOM_TREE_KEY;
     }
 
 

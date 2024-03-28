@@ -16,7 +16,7 @@ public class HugeBlueMushroomFeature extends CustomHugeBlueMushroomFeature {
         super(codec);
     }
     protected RegistryKey<ConfiguredFeature<?, ?>> getMushroomFeature(Random random, boolean bees) {
-        return ModConfiguredFeatures.BLUE_MUSHROOM_KEY;
+        return ModConfiguredFeatures.BLUE_MUSHROOM_TREE_KEY;
     }
     @Override
     protected int getCapSize(int i, int j, int capSize, int y) {
