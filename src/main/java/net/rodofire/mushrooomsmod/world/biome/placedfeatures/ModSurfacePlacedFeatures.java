@@ -15,20 +15,19 @@ import java.util.List;
 
 public class ModSurfacePlacedFeatures {
     //Huge Mushrooms
-    public static final RegistryKey<PlacedFeature> PINK_LUMINESCENT_MUSHROOM_PLACED_KEY = registerKey("pink_luminescent_mushrooom_placed_key");
-    public static final RegistryKey<PlacedFeature> LUMINESCENT_MUSHROOM_PLACED_KEY = registerKey("luminescent_mushrooom_placed_key");
-    public static final RegistryKey<PlacedFeature> BLUE_MUSHROOM_PLACED_KEY = registerKey("blue_mushrooom_placed_key");
-    public static final RegistryKey<PlacedFeature> PURPLE_MUSHROOM_PLACED_KEY = registerKey("purple_mushrooom_placed_key");
-    public static final RegistryKey<PlacedFeature> GREEN_MUSHROOM_PLACED_KEY = registerKey("green_mushrooom_placed_key");
+    public static final RegistryKey<PlacedFeature> PINK_LUMINESCENT_MUSHROOM_TREE_PLACED_KEY = registerKey("pink_luminescent_mushrooom_tree_placed_key");
+    public static final RegistryKey<PlacedFeature> BLUE_MUSHROOM_TREE_PLACED_KEY = registerKey("blue_mushrooom_tree_placed_key");
+    public static final RegistryKey<PlacedFeature> PURPLE_MUSHROOM_TREE_PLACED_KEY = registerKey("purple_mushrooom_tree_placed_key");
+    public static final RegistryKey<PlacedFeature> GREEN_MUSHROOM_TREE_PLACED_KEY = registerKey("green_mushrooom_tree_placed_key");
 
     //Mushrooms
-    public static final RegistryKey<PlacedFeature> PINK_LUMINESCENT_MUSHROOM_FLOWER_PLACED_KEY = registerKey("pink_luminescent_mushroom_flower_placed_key");
-    public static final RegistryKey<PlacedFeature> LUMINESCENT_MUSHROOM_FLOWER_PLACED_KEY = registerKey("luminescent_mushroom_flower_placed_key");
-    public static final RegistryKey<PlacedFeature> BLUE_MUSHROOM_FLOWER_PLACED_KEY = registerKey("blue_mushroom_flower_placed_key");
-    public static final RegistryKey<PlacedFeature> GREEN_MUSHROOM_FLOWER_PLACED_KEY = registerKey("green_mushroom_flower_placed_key");
-    public static final RegistryKey<PlacedFeature> PURPLE_MUSHROOM_FLOWER_PLACED_KEY = registerKey("purple_mushroom_flower_placed_key");
-    public static final RegistryKey<PlacedFeature> ORANGE_MUSHROOM_FLOWER_PLACED_KEY = registerKey("orange_mushroom_flower_placed_key");
-    public static final RegistryKey<PlacedFeature> YELLOW_MUSHROOM_FLOWER_PLACED_KEY = registerKey("yellow_mushroom_flower_placed_key");
+    public static final RegistryKey<PlacedFeature> PINK_LUMINESCENT_MUSHROOM_PLACED_KEY = registerKey("pink_luminescent_mushroom_placed_key");
+    public static final RegistryKey<PlacedFeature> BLUE_LUMINESCENT_MUSHROOM_PLACED_KEY = registerKey("luminescent_mushroom_placed_key");
+    public static final RegistryKey<PlacedFeature> BLUE_MUSHROOM_PLACED_KEY = registerKey("blue_mushroom_placed_key");
+    public static final RegistryKey<PlacedFeature> GREEN_MUSHROOM_PLACED_KEY = registerKey("green_mushroom_placed_key");
+    public static final RegistryKey<PlacedFeature> PURPLE_MUSHROOM_PLACED_KEY = registerKey("purple_mushroom_placed_key");
+    public static final RegistryKey<PlacedFeature> ORANGE_MUSHROOM_PLACED_KEY = registerKey("orange_mushroom_placed_key");
+    public static final RegistryKey<PlacedFeature> YELLOW_MUSHROOM_PLACED_KEY = registerKey("yellow_mushroom_placed_key");
 
     //Flowers Mushrooms
     public static final RegistryKey<PlacedFeature> STERILE_BLUE_MUSHROOM_PLACED_KEY = registerKey("sterile_blue_mushroom_placed_key");
@@ -82,13 +81,13 @@ public class ModSurfacePlacedFeatures {
     public static void bootstrap(Registerable<PlacedFeature> context) {
         var configuredFeatureRegistryEntryLookup = context.getRegistryLookup(RegistryKeys.CONFIGURED_FEATURE);
         //Mushrooms
-        register(context, PINK_LUMINESCENT_MUSHROOM_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.LUMINESCENT_PINK_MUSHROOM_KEY), VegetationPlacedFeatures.treeModifiersWithWouldSurvive(PlacedFeatures.createCountExtraModifier(1, 0.1f, 2), ModBlocks.LUMINESCENT_PINK_MUSHROOM));
+        register(context, PINK_LUMINESCENT_MUSHROOM_TREE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.PINK_LUMINESCENT_MUSHROOM_TREE_KEY), VegetationPlacedFeatures.treeModifiersWithWouldSurvive(PlacedFeatures.createCountExtraModifier(1, 0.1f, 2), ModBlocks.LUMINESCENT_PINK_MUSHROOM));
 
         //Flowers Mushrooms
         register(context, STERILE_BLUE_MUSHROOM_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.STERILE_BLUE_MUSHROOM_KEY), RarityFilterPlacementModifier.of(4), SquarePlacementModifier.of(), PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of());
         register(context, MUSHROOM_SMALL_BROWN_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.MUSHROOM_SMALL_BROWN_KEY), RarityFilterPlacementModifier.of(4), SquarePlacementModifier.of(), PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of());
         register(context, MUSHROOM_SMALL_RED_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.MUSHROOM_SMALL_RED_KEY), RarityFilterPlacementModifier.of(4), SquarePlacementModifier.of(), PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of());
-        register(context, LUMINESCENT_MUSHROOM_FLOWER_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.LUMINESCENT_MUSHROOM_FLOWER_KEY), RarityFilterPlacementModifier.of(8), SquarePlacementModifier.of(), PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of());
+        register(context, BLUE_LUMINESCENT_MUSHROOM_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.BLUE_LUMINESCENT_MUSHROOM_KEY), RarityFilterPlacementModifier.of(8), SquarePlacementModifier.of(), PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of());
 
         //Flowers
         register(context, OCULAE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.OCULAE_KEY), RarityFilterPlacementModifier.of(4), SquarePlacementModifier.of(), PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of());

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "mushrooomsmod:block/mushroom_vines_pink_plant_lit"
+  }
+}

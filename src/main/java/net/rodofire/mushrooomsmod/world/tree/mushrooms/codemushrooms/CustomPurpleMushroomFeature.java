@@ -17,7 +17,7 @@ public class CustomPurpleMushroomFeature extends CustomPurpleMushroom {
 
 
     protected RegistryKey<ConfiguredFeature<?, ?>> getTreeFeature(Random random, boolean bees) {
-        return ModConfiguredFeatures.PURPLE_MUSHROOM_KEY;
+        return ModConfiguredFeatures.PURPLE_MUSHROOM_TREE_KEY;
     }
 
     @Override

@@ -21,7 +21,7 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
 
         //Blocks
         //Mushrooms
-        addDrop(ModBlocks.LUMINESCENT_MUSHROOM_STEM);
+        addDrop(ModBlocks.BLUE_LUMINESCENT_MUSHROOM_STEM);
         addDrop(ModBlocks.COMPRESSED_PURPLE_MUSHROOM);
 
 
@@ -83,7 +83,7 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.PURPLE_MUSHROOM);
         addDrop(ModBlocks.GREEN_MUSHROOM);
         addDrop(ModBlocks.BLUE_MUSHROOM);
-        addDrop(ModBlocks.LUMINESCENT_MUSHROOM);
+        addDrop(ModBlocks.BLUE_LUMINESCENT_MUSHROOM);
         addDrop(ModBlocks.LUMINESCENT_PINK_MUSHROOM);
         addDrop(ModBlocks.TRANSPARENT_MUSHROOM_STEM);
         addDrop(ModBlocks.GREEN_MUSHROOM_STEM);
@@ -159,7 +159,7 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.BIG_PURPLE_MUSHROOM_PLANT, cropDrops(ModBlocks.BIG_PURPLE_MUSHROOM_PLANT, ModItems.PURPLE_MUSHROOM_POWDER, ModItems.BIG_PURPLE_MUSHROOM_SEED, builder));
 
         //Potted Flowers
-        addPottedPlantDrops(ModBlocks.POTTED_LUMINESCENT_MUSHROOM);
+        addPottedPlantDrops(ModBlocks.POTTED_BLUE_LUMINESCENT_MUSHROOM);
         addPottedPlantDrops(ModBlocks.POTTED_GREEN_MUSHROOM);
         addPottedPlantDrops(ModBlocks.POTTED_PURPLE_MUSHROOM);
         addPottedPlantDrops(ModBlocks.POTTED_BLUE_MUSHROOM);

@@ -93,7 +93,7 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.BROWN_FERMENTED_MUSHROOM_BLOCK)
 
 
-                .add(ModBlocks.LUMINESCENT_MUSHROOM_STEM)
+                .add(ModBlocks.BLUE_LUMINESCENT_MUSHROOM_STEM)
                 .add(ModBlocks.GREEN_MUSHROOM_STEM)
                 .add(ModBlocks.TRANSPARENT_MUSHROOM_STEM);
 
@@ -103,7 +103,7 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.ORANGE_MUSHROOM)
                 .add(ModBlocks.BLUE_MUSHROOM)
                 .add(ModBlocks.GREEN_MUSHROOM)
-                .add(ModBlocks.LUMINESCENT_MUSHROOM)
+                .add(ModBlocks.BLUE_LUMINESCENT_MUSHROOM)
                 .add(ModBlocks.LUMINESCENT_PINK_MUSHROOM)
                 .add(Blocks.RED_MUSHROOM)
                 .add(Blocks.BROWN_MUSHROOM);
@@ -114,7 +114,7 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.ORANGE_MUSHROOM)
                 .add(ModBlocks.BLUE_MUSHROOM)
                 .add(ModBlocks.GREEN_MUSHROOM)
-                .add(ModBlocks.LUMINESCENT_MUSHROOM)
+                .add(ModBlocks.BLUE_LUMINESCENT_MUSHROOM)
                 .add(ModBlocks.LUMINESCENT_PINK_MUSHROOM)
                 .add(Blocks.RED_MUSHROOM)
                 .add(Blocks.BROWN_MUSHROOM)

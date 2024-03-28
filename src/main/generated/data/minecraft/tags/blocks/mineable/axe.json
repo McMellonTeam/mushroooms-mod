@@ -40,8 +40,8 @@
     "mushrooomsmod:mushroom_block_altered_brown",
     "mushrooomsmod:mushroom_block_degradated_brow",
     "mushrooomsmod:mushroom_block_fermented_brown",
-    "mushrooomsmod:luminescent_mushroom_stem",
-    "mushrooomsmod:green_mushroom_stem",
-    "mushrooomsmod:transparent_mushroom_stem"
+    "mushrooomsmod:mushroom_stem_blue_luminescent",
+    "mushrooomsmod:mushroom_stem_green",
+    "mushrooomsmod:mushroom_stem_transparent"
   ]
 }

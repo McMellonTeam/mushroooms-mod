@@ -3,7 +3,7 @@
   "category": "building",
   "key": {
     "R": {
-      "item": "mushrooomsmod:purple_mushroom_powder"
+      "item": "mushrooomsmod:mushroom_powder_purple"
     }
   },
   "pattern": [
@@ -12,7 +12,7 @@
     "RRR"
   ],
   "result": {
-    "item": "mushrooomsmod:compressed_purple_mushroom"
+    "item": "mushrooomsmod:mushroom_compressed_purple"
   },
   "show_notification": true
 }

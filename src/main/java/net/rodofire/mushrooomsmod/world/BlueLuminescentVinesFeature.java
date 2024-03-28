@@ -69,6 +69,7 @@ public class BlueLuminescentVinesFeature extends Feature<TwistingVinesFeatureCon
         if (!canBePlaced(mutable, world)) return 0;
         for (int i = 0; i < height; ++i) {
             mutable.move(Direction.UP);
+            if (world.isOutOfHeightLimit(mutable)) return i;
             if (world.isAir(mutable)) continue;
             return i;
         }

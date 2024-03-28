@@ -8,6 +8,6 @@ import net.minecraft.world.gen.GenerationStep;
 
 public class ModTreeGeneration {
     public static void generateTrees(){
-        BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.MUSHROOM_FIELDS), GenerationStep.Feature.VEGETAL_DECORATION, ModSurfacePlacedFeatures.PINK_LUMINESCENT_MUSHROOM_PLACED_KEY);
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.MUSHROOM_FIELDS), GenerationStep.Feature.VEGETAL_DECORATION, ModSurfacePlacedFeatures.PINK_LUMINESCENT_MUSHROOM_TREE_PLACED_KEY);
     }
 }

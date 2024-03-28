@@ -14,28 +14,26 @@ import java.util.List;
 
 public class ModUndergroundPlacedFeatures {
     //Mushrooms
-    public static final RegistryKey<PlacedFeature> BLUE_LMINESCENT_MUSHROOM_FLOWER_UNDERGROUND_PLACED_KEY = registerKey("blue_luminescent_mushroom_flower_underground_placed_key");
+    public static final RegistryKey<PlacedFeature> BLUE_LUMINESCENT_MUSHROOM_UNDERGROUND_PLACED_KEY = registerKey("blue_luminescent_mushroom_underground_placed_key");
 
     //Flowers
     public static final RegistryKey<PlacedFeature> PLATUM_PLACED_KEY = registerKey("platum_placed_key");
-
     public static final RegistryKey<PlacedFeature> SAPHIRA_FLORENS_PLACED_KEY = registerKey("saphira_florens_placed_key");
-
     public static final RegistryKey<PlacedFeature> NOCTULICA_PLACED_KEY = registerKey("noctulica_placed_key");
-
     public static final RegistryKey<PlacedFeature> TURQUOSUM_STILUS_PLACED_KEY = registerKey("turquosum_stilus_placed_key");
-
     public static final RegistryKey<PlacedFeature> FUTIALI_PLACED_KEY = registerKey("futiali_placed_key");
-
     public static final RegistryKey<PlacedFeature> CYANEA_PLACED_KEY = registerKey("cyanea_placed_key");
 
     //Vines
     public static final RegistryKey<PlacedFeature> BLUE_LUMINESCENT_VINES_PLACED_KEY = registerKey("blue_luminescent_vines_placed_key");
 
+    //Huge Mushrooms
+    public static final RegistryKey<PlacedFeature> BLUE_LUMINESCENT_MUSHROOM_TREE_UNDERGROUND_PLACED_KEY = registerKey("blue_luminescent_mushroom_tree_underground_placed_key");
+
     public static void bootstrap(Registerable<PlacedFeature> context) {
         var configuredFeatureRegistryEntryLookup = context.getRegistryLookup(RegistryKeys.CONFIGURED_FEATURE);
         //Mushrooms
-        register(context, BLUE_LMINESCENT_MUSHROOM_FLOWER_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.LUMINESCENT_MUSHROOM_FLOWER_KEY), CountPlacementModifier.of(14), SquarePlacementModifier.of(), PlacedFeatures.BOTTOM_TO_120_RANGE, BiomePlacementModifier.of());
+        register(context, BLUE_LUMINESCENT_MUSHROOM_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.BLUE_LUMINESCENT_MUSHROOM_KEY), CountPlacementModifier.of(20), SquarePlacementModifier.of(), PlacedFeatures.BOTTOM_TO_120_RANGE, BiomePlacementModifier.of());
 
         //Flowers
         register(context, TURQUOSUM_STILUS_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.TURQUOSUM_STILUS_KEY), CountPlacementModifier.of(17), SquarePlacementModifier.of(), PlacedFeatures.BOTTOM_TO_120_RANGE, BiomePlacementModifier.of());
@@ -46,8 +44,10 @@ public class ModUndergroundPlacedFeatures {
         register(context, CYANEA_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.CYANEA_KEY), CountPlacementModifier.of(17), SquarePlacementModifier.of(), PlacedFeatures.FOUR_ABOVE_AND_BELOW_RANGE, BiomePlacementModifier.of());
 
         //Vines
-        register(context, BLUE_LUMINESCENT_VINES_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.BLUE_LUMINESCENT_VINES_KEY), CountPlacementModifier.of(23), SquarePlacementModifier.of(), PlacedFeatures.BOTTOM_TO_120_RANGE, BiomePlacementModifier.of());
+        register(context, BLUE_LUMINESCENT_VINES_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.BLUE_LUMINESCENT_VINES_KEY), CountPlacementModifier.of(20), SquarePlacementModifier.of(), PlacedFeatures.BOTTOM_TO_120_RANGE, BiomePlacementModifier.of());
 
+        //Huge Mushrooms
+        register(context, BLUE_LUMINESCENT_MUSHROOM_TREE_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.BLUE_LUMINESCENT_MUSHROOM_TREE_KEY), CountPlacementModifier.of(9), SquarePlacementModifier.of(), PlacedFeatures.BOTTOM_TO_120_RANGE, BiomePlacementModifier.of());
     }
 
     public static RegistryKey<PlacedFeature> registerKey(String name) {
