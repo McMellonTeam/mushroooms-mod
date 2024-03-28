@@ -150,6 +150,7 @@ public class ModModelProvider extends FabricModelProvider {
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
         itemModelGenerator.register(ModItems.BAGUETTE, Models.GENERATED);
         itemModelGenerator.register(ModItems.BIG_GREEN_MUSHROOM_SEED, Models.GENERATED);
+        itemModelGenerator.register(ModItems.BIG_PURPLE_MUSHROOM_SEED, Models.GENERATED);
         itemModelGenerator.register(ModItems.CAERULEA_VOLUBILIS_ITEM, Models.GENERATED);
         itemModelGenerator.register(ModItems.HYMNE_URSS_MUSIC_DISC, Models.GENERATED);
         itemModelGenerator.register(ModItems.HYMNE_FRANCAIS_MUSIC_DISC, Models.GENERATED);
@@ -157,6 +158,7 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.PINK_CRYSTAL_ITEM, Models.GENERATED);
         itemModelGenerator.register(ModItems.CRUSHED_DIAMOND, Models.GENERATED);
         itemModelGenerator.register(ModItems.LUMINESCENT_SCHROOM_SOUP, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PURPLE_MUSHROOM_POWDER, Models.GENERATED);
     }
 
 }

@@ -23,11 +23,11 @@
                   }
                 }
               ],
-              "name": "mushrooomsmod:purple_mushroom_powder"
+              "name": "mushrooomsmod:mushroom_powder_purple"
             },
             {
               "type": "minecraft:item",
-              "name": "mushrooomsmod:big_purple_mushroom_seed"
+              "name": "mushrooomsmod:mushroom_big_purple_seed"
             }
           ]
         }
@@ -59,7 +59,7 @@
               }
             }
           ],
-          "name": "mushrooomsmod:big_purple_mushroom_seed"
+          "name": "mushrooomsmod:mushroom_big_purple_seed"
         }
       ],
       "rolls": 1.0

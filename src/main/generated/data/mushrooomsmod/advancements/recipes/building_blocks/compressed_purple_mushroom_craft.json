@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_purple_mushroom_powder": {
+    "has_mushroom_powder_purple": {
       "conditions": {
         "items": [
           {
             "items": [
-              "mushrooomsmod:purple_mushroom_powder"
+              "mushrooomsmod:mushroom_powder_purple"
             ]
           }
         ]
@@ -22,7 +22,7 @@
   },
   "requirements": [
     [
-      "has_purple_mushroom_powder",
+      "has_mushroom_powder_purple",
       "has_the_recipe"
     ]
   ],
