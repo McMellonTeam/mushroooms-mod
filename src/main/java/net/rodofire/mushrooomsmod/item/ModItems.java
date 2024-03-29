@@ -198,6 +198,10 @@ public class ModItems {
                         //Tools
                         entries.add(ModItems.IRON_HAMMER);
 
+                        //Food
+                        entries.add(ModItems.BAGUETTE);
+                        entries.add(ModItems.LUMINESCENT_SCHROOM_SOUP);
+
 
                     }).build());
 
