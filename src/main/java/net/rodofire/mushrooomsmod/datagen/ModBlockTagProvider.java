@@ -44,6 +44,7 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.BLUE_MUSHROOM_BLOCK)
                 .add(ModBlocks.PURPLE_MUSHROOM_BLOCK)
                 .add(ModBlocks.BLUE_LUMINESCENT_MUSHROOM_BLOCK)
+                .add(ModBlocks.PINK_LUMINESCENT_MUSHROOM_BLOCK)
                 .add(ModBlocks.GREEN_MUSHROOM_BLOCK)
                 .add(ModBlocks.YELLOW_MUSHROOM_BLOCK)
                 .add(ModBlocks.ORANGE_MUSHROOM_BLOCK)
@@ -97,6 +98,7 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.GREEN_MUSHROOM_STEM)
                 .add(ModBlocks.TRANSPARENT_MUSHROOM_STEM);
 
+
         getOrCreateTagBuilder(ModTags.Blocks.MUSHROOM_PLANT)
                 .add(ModBlocks.YELLOW_MUSHROOM)
                 .add(ModBlocks.PURPLE_MUSHROOM)
@@ -106,7 +108,16 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.BLUE_LUMINESCENT_MUSHROOM)
                 .add(ModBlocks.LUMINESCENT_PINK_MUSHROOM)
                 .add(Blocks.RED_MUSHROOM)
-                .add(Blocks.BROWN_MUSHROOM);
+                .add(Blocks.BROWN_MUSHROOM)
+
+                .add(ModBlocks.STERILE_BLUE_MUSHROOM)
+                .add(ModBlocks.MUSHROOM_SMALL_BROWN)
+                .add(ModBlocks.MUSHROOM_SMALL_RED)
+
+                .add(ModBlocks.PREHISTO_BLUE_SCHROOM)
+                .add(ModBlocks.PREHISTO_GREEN_SCHROOM)
+                .add(ModBlocks.PREHISTO_PINK_SCHROOM)
+                .add(ModBlocks.PREHISTURPLE_SCHROOM);
 
         getOrCreateTagBuilder(BlockTags.FLOWERS)
                 .add(ModBlocks.YELLOW_MUSHROOM)
@@ -118,14 +129,76 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.LUMINESCENT_PINK_MUSHROOM)
                 .add(Blocks.RED_MUSHROOM)
                 .add(Blocks.BROWN_MUSHROOM)
+
+                .add(ModBlocks.STERILE_BLUE_MUSHROOM)
+                .add(ModBlocks.MUSHROOM_SMALL_BROWN)
+                .add(ModBlocks.MUSHROOM_SMALL_RED)
+
+                .add(ModBlocks.PREHISTO_BLUE_SCHROOM)
+                .add(ModBlocks.PREHISTO_GREEN_SCHROOM)
+                .add(ModBlocks.PREHISTO_PINK_SCHROOM)
+                .add(ModBlocks.PREHISTURPLE_SCHROOM)
+
                 .add(ModBlocks.RED_LUMERIA)
-                .add(ModBlocks.RED_LUMERIA)
-                .add(ModBlocks.RED_QUINCE)
+                .add(ModBlocks.MUSHROOM_FLOWERS)
+
+                .add(ModBlocks.SOL_OCCIDENTIS)
+                .add(ModBlocks.CYANUS_RUBENS)
+                .add(ModBlocks.CYANEA)
+                .add(ModBlocks.FUTIALI)
+                .add(ModBlocks.NOCTULICA)
+                .add(ModBlocks.TURQUOSUM_STILUS)
+                .add(ModBlocks.SAPHIRA_FLORENS)
+                .add(ModBlocks.PREHISTORIC_ROSE)
+                .add(ModBlocks.ORANGE_PERENNIAL)
+                .add(ModBlocks.BLUE_PERENNIAL)
+                .add(ModBlocks.GREEN_PERENNIAL)
+                .add(ModBlocks.PINK_PERENNIAL)
+                .add(ModBlocks.LUMINESCENT_PERENNIAL)
+                .add(ModBlocks.PURPLE_PERENNIAL)
                 .add(ModBlocks.YELLOW_PERENNIAL)
                 .add(ModBlocks.YELLOW_QUINCE)
-                .add(ModBlocks.SOL_OCCIDENTIS);
+                .add(ModBlocks.RED_QUINCE)
+                .add(ModBlocks.TINY_LILAC)
+                .add(ModBlocks.OCULAE)
+                .add(ModBlocks.YELICE)
+                .add(ModBlocks.FLAMESTHYSIA)
+                .add(ModBlocks.APAGANTHE)
+                .add(ModBlocks.PINK_HEATER)
+                .add(ModBlocks.WYSTERIA)
+                .add(ModBlocks.BLUEBELL)
+                .add(ModBlocks.VIPERIN)
+                .add(ModBlocks.HIBISCUS)
+                .add(ModBlocks.PLATUM)
+                .add(ModBlocks.DIANTHUS)
+                .add(ModBlocks.CYCAS)
+                .add(ModBlocks.ARUM)
+                .add(ModBlocks.HYDRANGEA)
+                .add(ModBlocks.ANEMONE)
+                .add(ModBlocks.JACYNTHE)
+                .add(ModBlocks.ACONIT)
+                .add(ModBlocks.PERVENCHE)
+                .add(ModBlocks.CAERULEA_VOLUBILIS)
+                .add(ModBlocks.PINK_MUSHROOM_VINES)
+                .add(ModBlocks.PINK_MUSHROOM_VINES_PLANT)
+                .add(ModBlocks.PINK_LUMINESCENT_BODY_VINES)
+                .add(ModBlocks.PINK_LUMINESCENT_HEAD_VINES)
+
+                .add(ModBlocks.TINY_GREEN_MUSHROOM)
+                .add(ModBlocks.LITTLE_GREEN_MUSHROOM)
+                .add(ModBlocks.MEDIUM_GREEN_MUSHROOM)
+                .add(ModBlocks.BIG_GREEN_MUSHROOM)
+                .add(ModBlocks.BIG_GREEN_MUSHROOM_PLANT)
+                .add(ModBlocks.TINY_PURPLE_MUSHROOM)
+                .add(ModBlocks.LITTLE_PURPLE_MUSHROOM)
+                .add(ModBlocks.MEDIUM_PURPLE_MUSHROOM)
+                .add(ModBlocks.BIG_PURPLE_MUSHROOM)
+                .add(ModBlocks.BIG_PURPLE_MUSHROOM_PLANT);
+
 
         getOrCreateTagBuilder(BlockTags.DIRT)
-                .add(ModBlocks.BLUE_LUMINESCENT_SCHROOM_DEEPSLATE);
+                .add(ModBlocks.BLUE_LUMINESCENT_SCHROOM_DEEPSLATE)
+                .add(ModBlocks.PURPLE_SCHROOM_DEESLATE)
+                .add(ModBlocks.GREEN_STONY_SCHROOM_DEPOT);
     }
 }
