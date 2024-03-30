@@ -20,16 +20,13 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
 
 
         //Blocks
-        //Mushrooms
-        addDrop(ModBlocks.BLUE_LUMINESCENT_MUSHROOM_STEM);
-        addDrop(ModBlocks.COMPRESSED_PURPLE_MUSHROOM);
-
-
+        //Mushroom
+        addDrop(ModBlocks.PURPLE_MUSHROOM_BLOCK);
         addDrop(ModBlocks.PURPLE_ALTERED_MUSHROOM_BLOCK);
         addDrop(ModBlocks.PURPLE_DEGRADATED_MUSHROOM_BLOCK);
         addDrop(ModBlocks.PURPLE_FERMENTED_MUSHROOM_BLOCK);
 
-        //Mushroom
+
         addDrop(ModBlocks.ORANGE_MUSHROOM_BLOCK);
         addDrop(ModBlocks.ORANGE_ALTERED_MUSHROOM_BLOCK);
         addDrop(ModBlocks.ORANGE_DEGRADATED_MUSHROOM_BLOCK);
@@ -67,6 +64,12 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.BROWN_ALTERED_MUSHROOM_BLOCK);
         addDrop(ModBlocks.BROWN_DEGRADATED_MUSHROOM_BLOCK);
         addDrop(ModBlocks.BROWN_FERMENTED_MUSHROOM_BLOCK);
+
+        //Mushroom related
+        addDrop(ModBlocks.GREEN_MUSHROOM_STEM);
+        addDrop(ModBlocks.BLUE_LUMINESCENT_MUSHROOM_STEM);
+        addDrop(ModBlocks.TRANSPARENT_MUSHROOM_STEM);
+        addDrop(ModBlocks.COMPRESSED_PURPLE_MUSHROOM);
 
         //Soft Blocks
         addDrop(ModBlocks.COMPRESSED_DIRT);
@@ -150,6 +153,7 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.LITTLE_PURPLE_MUSHROOM);
         addDrop(ModBlocks.MEDIUM_PURPLE_MUSHROOM);
         addDrop(ModBlocks.BIG_PURPLE_MUSHROOM);
+
         addDrop(ModBlocks.TINY_GREEN_MUSHROOM);
         addDrop(ModBlocks.LITTLE_GREEN_MUSHROOM);
         addDrop(ModBlocks.MEDIUM_GREEN_MUSHROOM);
