@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "hybiscus_dye_craft",
+  "ingredients": [
+    {
+      "item": "mushrooomsmod:hibiscus"
+    }
+  ],
+  "result": {
+    "item": "minecraft:orange_dye"
+  }
+}

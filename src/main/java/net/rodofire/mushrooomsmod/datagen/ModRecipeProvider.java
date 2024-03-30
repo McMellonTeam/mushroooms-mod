@@ -80,6 +80,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         offerSingleOutputShapelessRecipe(exporter, Items.ORANGE_DYE, ModBlocks.SOL_OCCIDENTIS, "orange_sol_occidentis_dye_craft");
         offerSingleOutputShapelessRecipe(exporter, Items.ORANGE_DYE, ModBlocks.ORANGE_PERENNIAL, "orange_perennial_dye_craft");
         offerSingleOutputShapelessRecipe(exporter, Items.ORANGE_DYE, ModBlocks.FLAMESTHYSIA, "flamesthysia_dye_craft");
+        offerSingleOutputShapelessRecipe(exporter, Items.ORANGE_DYE, ModBlocks.HIBISCUS, "hybiscus_dye_craft");
 
         //red
         offerSingleOutputShapelessRecipe(exporter, Items.RED_DYE, ModBlocks.PREHISTORIC_ROSE, "red_prehistoric_rose_dye_craft");
