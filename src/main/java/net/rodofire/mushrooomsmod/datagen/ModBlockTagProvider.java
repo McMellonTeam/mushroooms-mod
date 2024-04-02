@@ -205,5 +205,8 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.BLUE_LUMINESCENT_SCHROOM_DEEPSLATE)
                 .add(ModBlocks.PURPLE_SCHROOM_DEESLATE)
                 .add(ModBlocks.GREEN_STONY_SCHROOM_DEPOT);
+
+        getOrCreateTagBuilder(BlockTags.CLIMBABLE)
+                .add(ModBlocks.CAERULEA_VOLUBILIS);
     }
 }
