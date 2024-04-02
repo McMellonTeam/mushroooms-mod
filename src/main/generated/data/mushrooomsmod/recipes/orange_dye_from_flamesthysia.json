@@ -1,7 +1,7 @@
 {
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
-  "group": "flamesthysia_dye_craft",
+  "group": "orange_dye",
   "ingredients": [
     {
       "item": "mushrooomsmod:flamesthysia"

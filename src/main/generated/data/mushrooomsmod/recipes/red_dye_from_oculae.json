@@ -1,13 +1,13 @@
 {
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
-  "group": "purple_dye",
+  "group": "red_dye",
   "ingredients": [
     {
-      "item": "mushrooomsmod:wysteria"
+      "item": "mushrooomsmod:oculae"
     }
   ],
   "result": {
-    "item": "minecraft:purple_dye"
+    "item": "minecraft:red_dye"
   }
 }

@@ -1,13 +1,13 @@
 {
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
-  "group": "purple_dye",
+  "group": "pink_dye",
   "ingredients": [
     {
-      "item": "mushrooomsmod:wysteria"
+      "item": "mushrooomsmod:cycas"
     }
   ],
   "result": {
-    "item": "minecraft:purple_dye"
+    "item": "minecraft:pink_dye"
   }
 }

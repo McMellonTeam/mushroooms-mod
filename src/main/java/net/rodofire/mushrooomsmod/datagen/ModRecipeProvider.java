@@ -40,6 +40,14 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(Items.WHEAT), conditionsFromItem(Items.WHEAT))
                 .offerTo(exporter, new Identifier("baguettess_craft"));
 
+        ShapedRecipeJsonBuilder.create(RecipeCategory.FOOD, ModItems.BAGUETTE, 1)
+                .input(Character.valueOf('#'), ModBlocks.BLUE_LUMINESCENT_MUSHROOM)
+                .input(Character.valueOf('C'), Items.BOWL)
+                .pattern(" # ")
+                .pattern("#C#")
+                .criterion(hasItem(Items.WHEAT), conditionsFromItem(Items.WHEAT))
+                .offerTo(exporter, new Identifier("blue_luminescent_soup_craft"));
+
 
         //Lights
         ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.GREEN_LANTERN, 1)
@@ -72,44 +80,56 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
         //dye
         //yellow
-        offerSingleOutputShapelessRecipe(exporter, Items.YELLOW_DYE, ModBlocks.YELLOW_QUINCE, "lyellow_quince_dye_craft");
-        offerSingleOutputShapelessRecipe(exporter, Items.YELLOW_DYE, ModBlocks.YELLOW_PERENNIAL, "yellow_perennial_dye_craft");
-        offerSingleOutputShapelessRecipe(exporter, Items.YELLOW_DYE, ModBlocks.YELICE, "yelice_dye_craft");
+        offerSingleOutputShapelessRecipe(exporter, Items.YELLOW_DYE, ModBlocks.YELLOW_QUINCE, "yellow_dye");
+        offerSingleOutputShapelessRecipe(exporter, Items.YELLOW_DYE, ModBlocks.YELLOW_PERENNIAL, "yellow_dye");
+        offerSingleOutputShapelessRecipe(exporter, Items.YELLOW_DYE, ModBlocks.YELICE, "yellow_dye");
 
         //orange
-        offerSingleOutputShapelessRecipe(exporter, Items.ORANGE_DYE, ModBlocks.SOL_OCCIDENTIS, "orange_sol_occidentis_dye_craft");
-        offerSingleOutputShapelessRecipe(exporter, Items.ORANGE_DYE, ModBlocks.ORANGE_PERENNIAL, "orange_perennial_dye_craft");
-        offerSingleOutputShapelessRecipe(exporter, Items.ORANGE_DYE, ModBlocks.FLAMESTHYSIA, "flamesthysia_dye_craft");
-        offerSingleOutputShapelessRecipe(exporter, Items.ORANGE_DYE, ModBlocks.HIBISCUS, "hybiscus_dye_craft");
+        offerSingleOutputShapelessRecipe(exporter, Items.ORANGE_DYE, ModBlocks.SOL_OCCIDENTIS, "orange_dye");
+        offerSingleOutputShapelessRecipe(exporter, Items.ORANGE_DYE, ModBlocks.ORANGE_PERENNIAL, "orange_dye");
+        offerSingleOutputShapelessRecipe(exporter, Items.ORANGE_DYE, ModBlocks.FLAMESTHYSIA, "orange_dye");
+        offerSingleOutputShapelessRecipe(exporter, Items.ORANGE_DYE, ModBlocks.HIBISCUS, "orange_dye");
 
         //red
-        offerSingleOutputShapelessRecipe(exporter, Items.RED_DYE, ModBlocks.PREHISTORIC_ROSE, "red_prehistoric_rose_dye_craft");
-        offerSingleOutputShapelessRecipe(exporter, Items.RED_DYE, ModBlocks.RED_QUINCE, "red_quince_dye_craft");
+        offerSingleOutputShapelessRecipe(exporter, Items.RED_DYE, ModBlocks.PREHISTORIC_ROSE, "red_dye");
+        offerSingleOutputShapelessRecipe(exporter, Items.RED_DYE, ModBlocks.RED_QUINCE, "red_dye");
+        offerSingleOutputShapelessRecipe(exporter, Items.RED_DYE, ModBlocks.OCULAE, "red_dye");
 
         //light blue
-        offerSingleOutputShapelessRecipe(exporter, Items.LIGHT_BLUE_DYE, ModBlocks.LUMINESCENT_PERENNIAL, "luminescent_perennial_dye_craft");
-        offerSingleOutputShapelessRecipe(exporter, Items.LIGHT_BLUE_DYE, ModBlocks.CYANEA, "cyanea_dye_craft");
-        offerSingleOutputShapelessRecipe(exporter, Items.LIGHT_BLUE_DYE, ModBlocks.FUTIALI, "futiali_dye_craft");
-        offerSingleOutputShapelessRecipe(exporter, Items.LIGHT_BLUE_DYE, ModBlocks.NOCTULICA, "noctulica_dye_craft");
-        offerSingleOutputShapelessRecipe(exporter, Items.LIGHT_BLUE_DYE, ModBlocks.TURQUOSUM_STILUS, "turquosum_dye_craft");
-        offerSingleOutputShapelessRecipe(exporter, Items.LIGHT_BLUE_DYE, ModBlocks.SAPHIRA_FLORENS, "saphira_florens_dye_craft");
-        offerSingleOutputShapelessRecipe(exporter, Items.LIGHT_BLUE_DYE, ModBlocks.CAERULEA_VOLUBILIS, "caerulea_volubilis_dye_craft");
-        offerSingleOutputShapelessRecipe(exporter, Items.LIGHT_BLUE_DYE, ModBlocks.APAGANTHE, "apaganthe_dye_craft");
+        offerSingleOutputShapelessRecipe(exporter, Items.LIGHT_BLUE_DYE, ModBlocks.LUMINESCENT_PERENNIAL, "light_blue_dye");
+        offerSingleOutputShapelessRecipe(exporter, Items.LIGHT_BLUE_DYE, ModBlocks.CYANEA, "light_blue_dye");
+        offerSingleOutputShapelessRecipe(exporter, Items.LIGHT_BLUE_DYE, ModBlocks.FUTIALI, "light_blue_dye");
+        offerSingleOutputShapelessRecipe(exporter, Items.LIGHT_BLUE_DYE, ModBlocks.NOCTULICA, "light_blue_dye");
+        offerSingleOutputShapelessRecipe(exporter, Items.LIGHT_BLUE_DYE, ModBlocks.TURQUOSUM_STILUS, "light_blue_dye");
+        offerSingleOutputShapelessRecipe(exporter, Items.LIGHT_BLUE_DYE, ModBlocks.SAPHIRA_FLORENS, "light_blue_dye");
+        offerSingleOutputShapelessRecipe(exporter, Items.LIGHT_BLUE_DYE, ModBlocks.CAERULEA_VOLUBILIS, "light_blue_dye");
+        offerSingleOutputShapelessRecipe(exporter, Items.LIGHT_BLUE_DYE, ModBlocks.APAGANTHE, "light_blue_dye");
+        offerSingleOutputShapelessRecipe(exporter, Items.LIGHT_BLUE_DYE, ModBlocks.PLATUM, "light_blue_dye");
+        offerSingleOutputShapelessRecipe(exporter, Items.LIGHT_BLUE_DYE, ModBlocks.PERVENCHE, "light_blue_dye");
 
         //blue
-        offerSingleOutputShapelessRecipe(exporter, Items.BLUE_DYE, ModBlocks.BLUE_PERENNIAL, "blue_perennial_dye_craft");
-        offerSingleOutputShapelessRecipe(exporter, Items.BLUE_DYE, ModBlocks.BLUEBELL, "bluebelll_dye_craft");
+        offerSingleOutputShapelessRecipe(exporter, Items.BLUE_DYE, ModBlocks.BLUE_PERENNIAL, "blue_dye");
+        offerSingleOutputShapelessRecipe(exporter, Items.BLUE_DYE, ModBlocks.BLUEBELL, "blue_dye");
+        offerSingleOutputShapelessRecipe(exporter, Items.BLUE_DYE, ModBlocks.ANEMONE, "blue_dye");
+        offerSingleOutputShapelessRecipe(exporter, Items.BLUE_DYE, ModBlocks.JACYNTHE, "blue_dye");
 
         //purple
-        offerSingleOutputShapelessRecipe(exporter, Items.PURPLE_DYE, ModBlocks.PURPLE_PERENNIAL, "purple_perennial_dye_craft");
-        offerSingleOutputShapelessRecipe(exporter, Items.PURPLE_DYE, ModBlocks.WYSTERIA, "wysteria_dye_craft");
+        offerSingleOutputShapelessRecipe(exporter, Items.PURPLE_DYE, ModBlocks.PURPLE_PERENNIAL, "purple_dye");
+        offerSingleOutputShapelessRecipe(exporter, Items.PURPLE_DYE, ModBlocks.WYSTERIA, "purple_dye");
+        offerSingleOutputShapelessRecipe(exporter, Items.PURPLE_DYE, ModBlocks.TINY_LILAC, "purple_dye");
+        offerSingleOutputShapelessRecipe(exporter, Items.PURPLE_DYE, ModBlocks.ACONIT, "purple_dye");
 
         //pink
-        offerSingleOutputShapelessRecipe(exporter, Items.PINK_DYE, ModBlocks.PINK_PERENNIAL, "pink_perennial_dye_craft");
-        offerSingleOutputShapelessRecipe(exporter, Items.PINK_DYE, ModBlocks.PINK_HEATER, "pink_heater_dye_craft");
+        offerSingleOutputShapelessRecipe(exporter, Items.PINK_DYE, ModBlocks.PINK_PERENNIAL, "pink_dye");
+        offerSingleOutputShapelessRecipe(exporter, Items.PINK_DYE, ModBlocks.PINK_HEATER, "pink_dye");
+        offerSingleOutputShapelessRecipe(exporter, Items.PINK_DYE, ModBlocks.DIANTHUS, "pink_dye");
+        offerSingleOutputShapelessRecipe(exporter, Items.PINK_DYE, ModBlocks.CYCAS, "pink_dye");
+        offerSingleOutputShapelessRecipe(exporter, Items.PINK_DYE, ModBlocks.HYDRANGEA, "pink_dye");
 
         //green
-        offerSingleOutputShapelessRecipe(exporter, Items.GREEN_DYE, ModBlocks.GREEN_PERENNIAL, "green_perennial_dye_craft");
+        offerSingleOutputShapelessRecipe(exporter, Items.GREEN_DYE, ModBlocks.GREEN_PERENNIAL, "green_dye");
+        offerSingleOutputShapelessRecipe(exporter, Items.GREEN_DYE, ModBlocks.VIPERIN, "green_dye");
+        offerSingleOutputShapelessRecipe(exporter, Items.GREEN_DYE, ModBlocks.ARUM, "green_dye");
 
 
         //Construction Blocks

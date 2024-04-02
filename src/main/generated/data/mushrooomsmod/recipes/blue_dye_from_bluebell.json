@@ -1,7 +1,7 @@
 {
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
-  "group": "bluebelll_dye_craft",
+  "group": "blue_dye",
   "ingredients": [
     {
       "item": "mushrooomsmod:bluebell"
