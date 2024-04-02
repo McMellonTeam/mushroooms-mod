@@ -148,6 +148,8 @@ public class ModItems {
 
                         //Grass
                         entries.add(ModBlocks.TINY_GRASS);
+                        entries.add(ModBlocks.BLUE_LUMINESCENT_GRASS);
+                        entries.add(ModBlocks.BLUE_LUMINESCENT_TALL_GRASS);
 
                         //Vines
                         entries.add(ModItems.CAERULEA_VOLUBILIS_ITEM);
