@@ -3,7 +3,7 @@ package net.rodofire.mushrooomsmod.world.tree.mushrooms.structuremushrooms;
 import com.mojang.serialization.Codec;
 import me.emafire003.dev.structureplacerapi.StructurePlacerAPI;
 import net.rodofire.mushrooomsmod.MushrooomsMod;
-import net.rodofire.mushrooomsmod.world.ModConfiguredFeatures;
+import net.rodofire.mushrooomsmod.world.configuredfeatures.ModConfiguredFeatures;
 import net.minecraft.block.BlockState;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.server.world.ServerWorld;

@@ -1,4 +1,4 @@
-package net.rodofire.mushrooomsmod.world;
+package net.rodofire.mushrooomsmod.world.configuredfeatures;
 
 import net.rodofire.mushrooomsmod.MushrooomsMod;
 import net.rodofire.mushrooomsmod.block.ModBlocks;
@@ -135,15 +135,15 @@ public class ModConfiguredFeatures<FC extends FeatureConfig> {
         register(context, MUSHROOM_SMALL_RED_KEY, Feature.FLOWER, new RandomPatchFeatureConfig(32, 6, 2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.MUSHROOM_SMALL_RED)))));
 
         //flowers
-        register(context, FUTIALI_KEY, Feature.FLOWER, new RandomPatchFeatureConfig(40, 10, 5, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.FUTIALI)))));
+        register(context, FUTIALI_KEY, Feature.FLOWER, new RandomPatchFeatureConfig(42, 14, 5, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.FUTIALI)))));
         register(context, OCULAE_KEY, Feature.FLOWER, new RandomPatchFeatureConfig(32, 6, 2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.OCULAE)))));
         register(context, RED_LUMERIA_KEY, Feature.FLOWER, new RandomPatchFeatureConfig(32, 6, 2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.RED_LUMERIA)))));
         register(context, MUSHROOM_FLOWERS_KEY, Feature.FLOWER, new RandomPatchFeatureConfig(32, 6, 2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.MUSHROOM_FLOWERS)))));
         register(context, SOL_OCCIDENTIS_KEY, Feature.FLOWER, new RandomPatchFeatureConfig(32, 6, 2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.SOL_OCCIDENTIS)))));
-        register(context, CYANEA_KEY, Feature.FLOWER, new RandomPatchFeatureConfig(40, 12, 7, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.CYANEA)))));
+        register(context, CYANEA_KEY, Feature.FLOWER, new RandomPatchFeatureConfig(42, 14, 7, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.CYANEA)))));
         register(context, CYANUS_RUBENS_KEY, Feature.FLOWER, new RandomPatchFeatureConfig(32, 6, 2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.CYANUS_RUBENS)))));
-        register(context, NOCTULICA_KEY, Feature.FLOWER, new RandomPatchFeatureConfig(40, 4, 5, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.NOCTULICA)))));
-        register(context, TURQUOSUM_STILUS_KEY, Feature.FLOWER, new RandomPatchFeatureConfig(40, 10, 10, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.TURQUOSUM_STILUS)))));
+        register(context, NOCTULICA_KEY, Feature.FLOWER, new RandomPatchFeatureConfig(40, 14, 5, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.NOCTULICA)))));
+        register(context, TURQUOSUM_STILUS_KEY, Feature.FLOWER, new RandomPatchFeatureConfig(40, 14, 10, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.TURQUOSUM_STILUS)))));
         register(context, CAERULEA_VOLUBILIS_KEY, Feature.FLOWER, new RandomPatchFeatureConfig(32, 6, 2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.CAERULEA_VOLUBILIS)))));
         register(context, SAPHIRA_FLORENS_KEY, Feature.FLOWER, new RandomPatchFeatureConfig(32, 6, 2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.SAPHIRA_FLORENS)))));
         register(context, PREHISTURPLE_SCHROOM_KEY, Feature.FLOWER, new RandomPatchFeatureConfig(32, 6, 2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.PREHISTURPLE_SCHROOM)))));
@@ -175,7 +175,7 @@ public class ModConfiguredFeatures<FC extends FeatureConfig> {
         register(context, HYDRANGEA_KEY, Feature.FLOWER, new RandomPatchFeatureConfig(32, 6, 2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.HYDRANGEA)))));
         register(context, ANEMONE_KEY, Feature.FLOWER, new RandomPatchFeatureConfig(32, 6, 2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.ANEMONE)))));
         register(context, JACYNTHE_KEY, Feature.FLOWER, new RandomPatchFeatureConfig(32, 6, 2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.JACYNTHE)))));
-        register(context, ACONIT_KEY, Feature.FLOWER, new RandomPatchFeatureConfig(32, 6, 2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.ACONIT)))));
+        register(context, ACONIT_KEY, Feature.FLOWER, new RandomPatchFeatureConfig(32, 14, 2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.ACONIT)))));
         register(context, PERVENCHE_KEY, Feature.FLOWER, new RandomPatchFeatureConfig(32, 6, 2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.PERVENCHE)))));
         register(context, ORANGE_MUSHROOM_KEY, Feature.FLOWER, new RandomPatchFeatureConfig(32, 6, 2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.ORANGE_MUSHROOM)))));
         register(context, YELLOW_MUSHROOM_KEY, Feature.FLOWER, new RandomPatchFeatureConfig(32, 6, 2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.YELLOW_MUSHROOM)))));

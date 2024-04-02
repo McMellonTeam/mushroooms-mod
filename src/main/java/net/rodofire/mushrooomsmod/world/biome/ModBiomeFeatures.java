@@ -2,7 +2,7 @@ package net.rodofire.mushrooomsmod.world.biome;
 
 import net.minecraft.world.biome.GenerationSettings;
 import net.minecraft.world.gen.GenerationStep;
-import net.rodofire.mushrooomsmod.world.biome.placedfeatures.ModUndergroundPlacedFeatures;
+import net.rodofire.mushrooomsmod.world.placedfeatures.ModUndergroundPlacedFeatures;
 
 public class ModBiomeFeatures {
     public static void addLuminescentFlowers(GenerationSettings.LookupBackedBuilder builder){

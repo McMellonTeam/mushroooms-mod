@@ -1,14 +1,13 @@
 package net.rodofire.mushrooomsmod.world.tree.mushrooms.codemushrooms;
 
 import com.mojang.serialization.Codec;
-import net.rodofire.mushrooomsmod.world.ModConfiguredFeatures;
+import net.rodofire.mushrooomsmod.world.configuredfeatures.ModConfiguredFeatures;
 import net.minecraft.block.BlockState;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.WorldAccess;
 import net.minecraft.world.gen.feature.ConfiguredFeature;
-import net.minecraft.world.gen.feature.HugeMushroomFeature;
 import net.minecraft.world.gen.feature.HugeMushroomFeatureConfig;
 
 public class CustomLuminescentBlueMushroomFeature extends CustomLuminescentBlueMushroom {

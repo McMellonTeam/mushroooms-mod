@@ -16,7 +16,6 @@ import net.minecraft.world.gen.GenerationStep;
 import net.minecraft.world.gen.feature.DefaultBiomeFeatures;
 import net.minecraft.world.gen.feature.VegetationPlacedFeatures;
 import net.rodofire.mushrooomsmod.world.biome.ModBiomeFeatures;
-import net.rodofire.mushrooomsmod.world.biome.placedfeatures.ModSurfacePlacedFeatures;
 
 public class ModOverworldBiomes {
     public static final RegistryKey<Biome> SHROOM_ISLAND = RegistryKey.of(RegistryKeys.BIOME, new Identifier(MushrooomsMod.MOD_ID,"shroom_island" ));
