@@ -52,7 +52,7 @@
   "block.mushrooomsmod.blackstone_lava_medium_bricks" : "Medium Lava Blackstone Bricks",
   "block.mushrooomsmod.blackstone_lava_tiny_bricks" : "Tiny Lava Blackstone Bricks",
 
-  "block.mushroommod.rhyolite" : "Rhyolite",
+  "block.mushrooomsmod.rhyolite" : "Rhyolite",
 
 
 
@@ -66,6 +66,10 @@
   "block.mushrooomsmod.mushroom_pink_luminescent" : "Pink Luminescent Mushroom",
   "block.mushrooomsmod.mushroom_orange" : "Orange Mushroom",
   "block.mushrooomsmod.mushroom_yellow" : "Yellow Mushroom",
+
+  "block.mushrooomsmod.sterile_blue_mushroom" : "Blue Sterile Mushroom",
+  "block.mushrooomsmod.mushroom_small_brown" : "Small Brown Mushroom",
+  "block.mushrooomsmod.mushroom_small_red" : "Small Red Mushroom",
 
 
   "block.mushrooomsmod.prehisto_pink_schroom" : "Prehisto Pink Schroom",
@@ -113,6 +117,10 @@
   "block.mushrooomsmod.aconit": "Aconit",
   "block.mushrooomsmod.pervenche": "Pervenche",
 
+  "block.mushrooomsmod.tiny_grass": "Tiny Grass",
+  "block.mushrooomsmod.grass_blue_luminescent": "Blue Luminescent Grass",
+  "block.mushrooomsmod.grass_tall.blue_luminescent": "Tall Blue Luminescent Grass",
+
 
 
   "block.mushrooomsmod.mushroom_tiny_purple": "Tiny Purple Mushroom",
@@ -141,6 +149,7 @@
 
   "item.mushrooomsmod.torch_green_item" : "Green Torch",
   "item.mushrooomsmod.mushroom_big_purple_seed" : "Big Purple Mushroom Seed",
+  "item.mushrooomsmod.mushroom_big_green_seed" : "Big Green Mushroom Seed",
   "item.mushrooomsmod.mushroom_powder_purple" : "Big Purple Mushroom Powder",
 
   "item.mushrooomsmod.bolete_cow_spawn_egg": "Bolete Cow Spawn Egg",
@@ -158,6 +167,9 @@
   "item.mushrooomsmod.iron_hammer" : "Iron Hammer",
   "tooltip.mushrooomsmod.hammer.attack_damage" : "Attack Damage ",
   "tooltip.mushrooomsmod.hammer.usage" : "Use Left Click on a Forge With an Item to Crush it ",
+
+  "items.mushrooomsmod.luminescent_schroom_soup" : "Luminescent Schroom Soup",
+  "tooltip.mushrooomsmod.schroom_soup.description" : "Drink this soup in a Blue Luminescent Cave to get ???",
 
   "biome.mushrooomsmod.blue_luminescent_schroom_cave" : "Blue Luminescent Schroom Cave",
 
