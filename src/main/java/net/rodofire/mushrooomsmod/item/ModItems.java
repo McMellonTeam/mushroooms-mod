@@ -236,7 +236,7 @@ public class ModItems {
 
 
     public static final Item CRUSHED_DIAMOND = registerItem("crushed_diamond", new Item(new FabricItemSettings()));
-    public static final Item PINK_CRYSTAL_ITEM = registerItem("pink_crystal_item", new AliasedBlockItem(ModBlocks.PINK_CRYSTAL, new FabricItemSettings()));
+    public static final Item PINK_CRYSTAL_ITEM = registerItem("crystal_pink_item", new AliasedBlockItem(ModBlocks.PINK_CRYSTAL, new FabricItemSettings()));
 
     //Tools
     public static final Item IRON_HAMMER = registerItem("iron_hammer", new HammerItem(ToolMaterials.IRON, 40,-3.7f,4,new FabricItemSettings()));
