@@ -1,7 +1,7 @@
 {
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
-  "group": "pink_heater_dye_craft",
+  "group": "pink_dye",
   "ingredients": [
     {
       "item": "mushrooomsmod:pink_heater"

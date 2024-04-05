@@ -14,7 +14,7 @@ import net.rodofire.mushrooomsmod.block.custom.bigmushroom.*;
 import net.rodofire.mushrooomsmod.item.ModItems;
 import net.rodofire.mushrooomsmod.particle.ModParticles;
 import net.rodofire.mushrooomsmod.sound.ModBlockSoundGroup;
-import net.rodofire.mushrooomsmod.world.ModConfiguredFeatures;
+import net.rodofire.mushrooomsmod.world.configuredfeatures.ModConfiguredFeatures;
 import net.minecraft.block.*;
 import net.minecraft.block.enums.Instrument;
 import net.minecraft.block.piston.PistonBehavior;
@@ -178,6 +178,8 @@ public class ModBlocks {
 
     //Grass
     public static final Block TINY_GRASS = registerBlock("tiny_grass", new GrassBlock(FabricBlockSettings.copyOf(Blocks.GRASS)));
+    public static final Block BLUE_LUMINESCENT_GRASS = registerBlock("grass_blue_luminescent", new GrassBlock(FabricBlockSettings.copyOf(Blocks.GRASS).luminance(9)));
+    public static final Block BLUE_LUMINESCENT_TALL_GRASS = registerBlock("grass_tall_blue_luminescent", new TallPlantBlock(FabricBlockSettings.copyOf(Blocks.TALL_GRASS).luminance(11)));
 
     //Vines
     public static final Block PINK_MUSHROOM_VINES = registerHiddenBlock("mushroom_vines_pink", new PinkMushroomVinesHeadBlock(FabricBlockSettings.create().breakInstantly().sounds(BlockSoundGroup.CAVE_VINES).pistonBehavior(PistonBehavior.DESTROY).noCollision()));

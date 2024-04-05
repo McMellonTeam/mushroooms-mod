@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "mushrooomsmod:item/pink_crystal_item"
+    "layer0": "mushrooomsmod:item/crystal_pink_item"
   }
 }

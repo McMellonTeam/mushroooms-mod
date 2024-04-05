@@ -1,7 +1,7 @@
 {
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
-  "group": "yelice_dye_craft",
+  "group": "yellow_dye",
   "ingredients": [
     {
       "item": "mushrooomsmod:yelice"

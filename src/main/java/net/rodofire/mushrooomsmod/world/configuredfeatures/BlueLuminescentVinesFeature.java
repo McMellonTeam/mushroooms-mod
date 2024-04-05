@@ -1,4 +1,4 @@
-package net.rodofire.mushrooomsmod.world;
+package net.rodofire.mushrooomsmod.world.configuredfeatures;
 
 import com.mojang.serialization.Codec;
 import net.minecraft.registry.tag.BlockTags;

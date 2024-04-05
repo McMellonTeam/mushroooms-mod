@@ -1,7 +1,7 @@
 {
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
-  "group": "green_perennial_dye_craft",
+  "group": "green_dye",
   "ingredients": [
     {
       "item": "mushrooomsmod:perennial_green"

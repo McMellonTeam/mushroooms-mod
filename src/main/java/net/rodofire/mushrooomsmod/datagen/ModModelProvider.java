@@ -127,6 +127,9 @@ public class ModModelProvider extends FabricModelProvider {
 
         //Grass
         generator.registerTintableCross(ModBlocks.TINY_GRASS, BlockStateModelGenerator.TintType.NOT_TINTED);
+        generator.registerTintableCross(ModBlocks.BLUE_LUMINESCENT_GRASS, BlockStateModelGenerator.TintType.NOT_TINTED);
+        generator.registerDoubleBlock(ModBlocks.BLUE_LUMINESCENT_TALL_GRASS, BlockStateModelGenerator.TintType.TINTED);
+
 
         //Lights
         generator.registerLantern(ModBlocks.RED_LANTERN);

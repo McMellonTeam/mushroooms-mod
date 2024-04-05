@@ -148,6 +148,8 @@ public class ModItems {
 
                         //Grass
                         entries.add(ModBlocks.TINY_GRASS);
+                        entries.add(ModBlocks.BLUE_LUMINESCENT_GRASS);
+                        entries.add(ModBlocks.BLUE_LUMINESCENT_TALL_GRASS);
 
                         //Vines
                         entries.add(ModItems.CAERULEA_VOLUBILIS_ITEM);
@@ -198,6 +200,10 @@ public class ModItems {
                         //Tools
                         entries.add(ModItems.IRON_HAMMER);
 
+                        //Food
+                        entries.add(ModItems.BAGUETTE);
+                        entries.add(ModItems.LUMINESCENT_SCHROOM_SOUP);
+
 
                     }).build());
 
@@ -215,7 +221,7 @@ public class ModItems {
 
     //food
     public static final Item BAGUETTE = registerItem("baguette", new Item(new FabricItemSettings().food(ModFoodComponents.BAGUETTE)));
-    public static final Item LUMINESCENT_SCHROOM_SOUP = registerItem("luminescent_schroom_soup", new SchroomSoup(new FabricItemSettings(), ModOverworldBiomes.BLUE_LUMINESCENT_SHROOM_CAVE, new StatusEffectInstance(StatusEffects.NIGHT_VISION, 300, 0)));
+    public static final Item LUMINESCENT_SCHROOM_SOUP = registerItem("luminescent_schroom_soup", new SchroomSoup(new FabricItemSettings().food(ModFoodComponents.BLUE_LUMINESCENT_SCHROOM_SOUP), ModOverworldBiomes.BLUE_LUMINESCENT_SHROOM_CAVE, new StatusEffectInstance(StatusEffects.NIGHT_VISION, 300, 0)));
 
     //Lights
     public static final Item GREEN_TORCH = registerItem("torch_green_item", new VerticallyAttachableBlockItem(ModBlocks.GREEN_TORCH, ModBlocks.WALL_GREEN_TORCH, new Item.Settings(), Direction.DOWN));
@@ -230,7 +236,7 @@ public class ModItems {
 
 
     public static final Item CRUSHED_DIAMOND = registerItem("crushed_diamond", new Item(new FabricItemSettings()));
-    public static final Item PINK_CRYSTAL_ITEM = registerItem("pink_crystal_item", new AliasedBlockItem(ModBlocks.PINK_CRYSTAL, new FabricItemSettings()));
+    public static final Item PINK_CRYSTAL_ITEM = registerItem("crystal_pink_item", new AliasedBlockItem(ModBlocks.PINK_CRYSTAL, new FabricItemSettings()));
 
     //Tools
     public static final Item IRON_HAMMER = registerItem("iron_hammer", new HammerItem(ToolMaterials.IRON, 40,-3.7f,4,new FabricItemSettings()));

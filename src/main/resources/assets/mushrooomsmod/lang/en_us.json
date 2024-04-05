@@ -35,41 +35,41 @@
   "block.mushrooomsmod.mushroom_block_altered_pink_luminescent": "Pink Luminescent Altered Mushroom Block",
 
 
+  "block.mushrooomsmod.mushroom_stem_blue_luminescent" : "Blue Luminescent Mushroom Stem",
+  "block.mushrooomsmod.mushroom_stem_transparent" : "Transparent Mushroom Stem",
+  "block.mushrooomsmod.mushroom_stem_green" : "Green Mushroom Stem",
 
+  "block.mushrooomsmod.mushroom_compressed_purple" : "Purple Compressed Mushroom",
+  "block.mushrooomsmod.dirt_compressed" : "Compressed Dirt",
+  "block.mushrooomsmod.dirt_compressed_light" : "Light Compressed Dirt",
+
+  "block.mushrooomsmod.deepslate_mushroom_purple" : "Purple Mushroom Deepslate",
+  "block.mushrooomsmod.deepslate_mushroom_blue_luminescent" : "Blue Luminescent Mushroom Deepslate",
+  "block.mushrooomsmod.stone_mushroom_green" : "Green Mushroom Stone",
 
   "block.mushrooomsmod.blackstone_lava" : "Lava Blackstone",
   "block.mushrooomsmod.blackstone_lava_bricks" : "Lava Blackstone Bricks",
   "block.mushrooomsmod.blackstone_lava_medium_bricks" : "Medium Lava Blackstone Bricks",
   "block.mushrooomsmod.blackstone_lava_tiny_bricks" : "Tiny Lava Blackstone Bricks",
 
-
-
-
-
-  "block.mushrooomsmod.green_mushroom_stem" : "Green Mushroom Stem",
-  "block.mushrooomsmod.luminescent_mushroom_stem": "Luminescent Mushroom Stem",
-  "block.mushrooomsmod.transparent_mushroom_stem" : "Transparent Mushroom Stem",
-  "block.mushrooomsmod.compressed_purple_mushroom": "Compressed Purple Mushroom",
-
-
-
-  "block.mushrooomsmod.compressed_dirt": "Compressed Dirt",
-  "block.mushrooomsmod.light_compressed_dirt": "Light Compressed Dirt",
-
-  "block.mushrooomsmod.purple_schroom_deepslate" : "Purple Schroom Deepslate",
-  "block.mushrooomsmod.blue_luminescent_schroom_deepslate" : "Blue Luminescent Schroom Deepslate",
-  "block.mushrooomsmod.green_stony_schroom_depot" : "Green Stony Schroom Depot",
   "block.mushrooomsmod.rhyolite" : "Rhyolite",
 
 
 
-  "block.mushrooomsmod.green_mushroom": "Green Mushroom",
-  "block.mushrooomsmod.blue_mushroom": "Blue Mushroom",
-  "block.mushrooomsmod.purple_mushroom": "Purple Mushroom",
-  "block.mushrooomsmod.luminescent_mushroom": "Luminescent Mushroom",
-  "block.mushrooomsmod.luminescent_pink_mushroom" : "Pink Luminescent Mushroom",
-  "block.mushrooomsmod.orange_mushroom" : "Orange Mushroom",
-  "block.mushrooomsmod.yellow_mushroom" : "Yellow Mushroom",
+
+
+
+  "block.mushrooomsmod.mushroom_green": "Green Mushroom",
+  "block.mushrooomsmod.mushroom_blue": "Blue Mushroom",
+  "block.mushrooomsmod.mushroom_purple": "Purple Mushroom",
+  "block.mushrooomsmod.mushroom_blue_luminescent": "Luminescent Mushroom",
+  "block.mushrooomsmod.mushroom_pink_luminescent" : "Pink Luminescent Mushroom",
+  "block.mushrooomsmod.mushroom_orange" : "Orange Mushroom",
+  "block.mushrooomsmod.mushroom_yellow" : "Yellow Mushroom",
+
+  "block.mushrooomsmod.sterile_blue_mushroom" : "Blue Sterile Mushroom",
+  "block.mushrooomsmod.mushroom_small_brown" : "Small Brown Mushroom",
+  "block.mushrooomsmod.mushroom_small_red" : "Small Red Mushroom",
 
 
   "block.mushrooomsmod.prehisto_pink_schroom" : "Prehisto Pink Schroom",
@@ -117,29 +117,29 @@
   "block.mushrooomsmod.aconit": "Aconit",
   "block.mushrooomsmod.pervenche": "Pervenche",
 
+  "block.mushrooomsmod.tiny_grass": "Tiny Grass",
+  "block.mushrooomsmod.grass_blue_luminescent": "Blue Luminescent Grass",
+  "block.mushrooomsmod.grass_tall.blue_luminescent": "Tall Blue Luminescent Grass",
 
 
 
-  "item.mushrooomsmod.pink_mushroom_vines_item": "Pink Mushroom Vines",
-  "item.mushrooomsmod.big_green_mushroom_seed": "Pink Mushroom Vines",
+  "block.mushrooomsmod.mushroom_tiny_purple": "Tiny Purple Mushroom",
+  "block.mushrooomsmod.mushroom_little_purple": "Little Purple Mushroom",
+  "block.mushrooomsmod.mushroom_medium_purple": "Medium Purple Mushroom",
+  "block.mushrooomsmod.mushroom_big_purple": "Big Purple Mushroom",
+
+  "block.mushrooomsmod.mushroom_tiny_green": "Tiny Green Mushroom",
+  "block.mushrooomsmod.mushroom_little_green": "Little Green Mushroom",
+  "block.mushrooomsmod.mushroom_medium_green": "Medium Green Mushroom",
+  "block.mushrooomsmod.mushroom_big_green": "Big Green Mushroom",
 
 
-  "block.mushrooomsmod.tiny_purple_mushroom": "Tiny Purple Mushroom",
-  "block.mushrooomsmod.little_purple_mushroom": "Little Purple Mushroom",
-  "block.mushrooomsmod.medium_purple_mushroom": "Medium Purple Mushroom",
-  "block.mushrooomsmod.big_purple_mushroom": "Big Purple Mushroom",
-  "block.mushrooomsmod.tiny_green_mushroom": "Tiny Green Mushroom",
-  "block.mushrooomsmod.little_green_mushroom": "Little Green Mushroom",
-  "block.mushrooomsmod.medium_green_mushroom": "Medium Green Mushroom",
-  "block.mushrooomsmod.big_green_mushroom": "Big Green Mushroom",
+  "block.mushrooomsmod.lantern_red": "Red Lantern",
+  "block.mushrooomsmod.lantern_green": "Green Lantern",
+  "block.mushrooomsmod.campfire_green": "Green Campfire",
+  "block.mushrooomsmod.torch_green" : "Green Torch",
 
-
-  "block.mushrooomsmod.red_lantern": "Red Lantern",
-  "block.mushrooomsmod.green_lantern": "Green Lantern",
-  "block.mushrooomsmod.green_campfire": "Green Campfire",
-  "block.mushrooomsmod.green_torch" : "Green Torch",
-
-  "block.mushrooomsmod.pink_crystal_block" : "Pink Crystal Block",
+  "block.mushrooomsmod.crystal_block_pink" : "Pink Crystal Block",
 
   "block.mushrooomsmod.forge_block" : "Forge",
 
@@ -147,9 +147,10 @@
   "item.mushrooomsmod.baguette": "Baguette",
 
 
-  "item.mushrooomsmod.green_torch_item" : "Green Torch",
-  "item.mushrooomsmod.big_purple_mushroom_seed" : "Big Purple Mushroom Seed",
-  "item.mushrooomsmod.purple_mushroom_powder" : "Big Purple Mushroom Powder",
+  "item.mushrooomsmod.torch_green_item" : "Green Torch",
+  "item.mushrooomsmod.mushroom_big_purple_seed" : "Big Purple Mushroom Seed",
+  "item.mushrooomsmod.mushroom_big_green_seed" : "Big Green Mushroom Seed",
+  "item.mushrooomsmod.mushroom_powder_purple" : "Big Purple Mushroom Powder",
 
   "item.mushrooomsmod.bolete_cow_spawn_egg": "Bolete Cow Spawn Egg",
   "item.mushrooomsmod.groki_spawn_egg": "Groki Spawn Egg",
@@ -161,11 +162,14 @@
   "item.mushrooomsmod.hymne_urss_music_disc" : "USSR Anthem",
 
   "item.mushrooomsmod.crushed_diamond" : "Crushed Diamonds",
-  "item.mushrooomsmod.pink_crystal_item" : "Pink Crystal",
+  "item.mushrooomsmod.crystal_pink_item" : "Pink Crystal",
 
   "item.mushrooomsmod.iron_hammer" : "Iron Hammer",
   "tooltip.mushrooomsmod.hammer.attack_damage" : "Attack Damage ",
   "tooltip.mushrooomsmod.hammer.usage" : "Use Left Click on a Forge With an Item to Crush it ",
+
+  "items.mushrooomsmod.luminescent_schroom_soup" : "Luminescent Schroom Soup",
+  "tooltip.mushrooomsmod.schroom_soup.description" : "Drink this soup in a Blue Luminescent Cave to get ???",
 
   "biome.mushrooomsmod.blue_luminescent_schroom_cave" : "Blue Luminescent Schroom Cave",
 
