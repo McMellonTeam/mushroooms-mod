@@ -52,11 +52,21 @@
   "block.mushrooomsmod.blackstone_lava_medium_bricks" : "Medium Lava Blackstone Bricks",
   "block.mushrooomsmod.blackstone_lava_tiny_bricks" : "Tiny Lava Blackstone Bricks",
 
+  "block.mushrooomsmod.log_blue_luminescent" : "Blue Luminescent Log",
+  "block.mushrooomsmod.log_stripped_blue_luminescent" : "Stripped Blue Luminescent Log",
+  "block.mushrooomsmod.wood_stripped_blue_luminescent" : "Stripped Blue Luminescent Wood",
+  "block.mushrooomsmod.wood_blue_luminescent" : "Blue Luminescent Wood",
+  "block.mushrooomsmod.planks_blue_luminescent" : "Blue Luminescent Planks",
+  "block.mushrooomsmod.trapdoor_blue_luminescent" : "Blue Luminescent Trapdoor",
+  "block.mushrooomsmod.door_blue_luminescent" : "Blue Luminescent door",
+  "block.mushrooomsmod.leaves_blue_luminescent" : "Blue Luminescent Leaves",
+  "block.mushrooomsmod.button_blue_luminescent" : "Blue Luminescent Button",
+  "block.mushrooomsmod.pressure_plate_blue_luminescent" : "Blue Luminescent Pressure Plate",
+  "block.mushrooomsmod.fence_blue_luminescent" : "Blue Luminescent Fence",
+  "block.mushrooomsmod.fence_gate_blue_luminescent" : "Blue Luminescent Fence Gate",
+  "block.mushrooomsmod.sappling_blue_luminescent" : "Blue Luminescent Sappling",
+
   "block.mushrooomsmod.rhyolite" : "Rhyolite",
-
-
-
-
 
 
   "block.mushrooomsmod.mushroom_green": "Green Mushroom",
