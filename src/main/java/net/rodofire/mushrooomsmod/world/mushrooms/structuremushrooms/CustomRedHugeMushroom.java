@@ -1,4 +1,4 @@
-package net.rodofire.mushrooomsmod.world.tree.mushrooms.structuremushrooms;
+package net.rodofire.mushrooomsmod.world.mushrooms.structuremushrooms;
 
 import com.mojang.serialization.Codec;
 import net.rodofire.mushrooomsmod.feature.mushroomfeature.ModMushroomFeatureConfig;
