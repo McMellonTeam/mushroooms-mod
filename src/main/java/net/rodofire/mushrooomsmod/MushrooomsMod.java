@@ -5,6 +5,7 @@ import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.rodofire.mushrooomsmod.block.ModBlockEntities;
 import net.rodofire.mushrooomsmod.block.ModBlocks;
+import net.rodofire.mushrooomsmod.block.BlockUtils;
 import net.rodofire.mushrooomsmod.entity.ModEntities;
 import net.rodofire.mushrooomsmod.entity.custom.BoleteCowEntity;
 import net.rodofire.mushrooomsmod.entity.custom.GrokiEntity;
@@ -14,6 +15,7 @@ import net.rodofire.mushrooomsmod.recipe.ModRecipes;
 import net.rodofire.mushrooomsmod.sound.ModSounds;
 import net.rodofire.mushrooomsmod.util.ModLootTableModifier;
 import net.rodofire.mushrooomsmod.world.gen.ModWorldGeneration;
+import net.rodofire.mushrooomsmod.world.tree.ModTrunkPlacerTypes;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -27,10 +29,15 @@ public class MushrooomsMod implements ModInitializer {
 
 		ModBlocks.registerModBlocks();
 		ModBlockEntities.registerBlockEntities();
+		BlockUtils.registerStripable();
+		BlockUtils.registerFlammable();
+
 		ModItems.registerModItems();
 
 		ModParticles.registerParticles();
 		ModSounds.registerModSound();
+
+		ModTrunkPlacerTypes.register();
 
 		ModWorldGeneration.generateModWorldGen();
 		ModLootTableModifier.modifyLootTable();

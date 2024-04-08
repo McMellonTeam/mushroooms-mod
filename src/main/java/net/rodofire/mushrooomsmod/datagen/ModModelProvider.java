@@ -125,6 +125,9 @@ public class ModModelProvider extends FabricModelProvider {
         generator.registerFlowerPotPlant(ModBlocks.MUSHROOM_SMALL_BROWN, ModBlocks.POTTED_MUSHROOM_SMALL_BROWN, BlockStateModelGenerator.TintType.NOT_TINTED);
         generator.registerFlowerPotPlant(ModBlocks.MUSHROOM_SMALL_RED, ModBlocks.POTTED_MUSHROOM_SMALL_RED, BlockStateModelGenerator.TintType.NOT_TINTED);
 
+        //Potted Sapplings
+        generator.registerFlowerPotPlant(ModBlocks.BLUE_LUMINESCENT_SAPPLING,ModBlocks.POTTED_BLUE_LUMINESCENT_SAPPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
+
         //Grass
         generator.registerTintableCross(ModBlocks.TINY_GRASS, BlockStateModelGenerator.TintType.NOT_TINTED);
         generator.registerTintableCross(ModBlocks.BLUE_LUMINESCENT_GRASS, BlockStateModelGenerator.TintType.NOT_TINTED);
@@ -140,6 +143,21 @@ public class ModModelProvider extends FabricModelProvider {
         generator.registerSimpleCubeAll(ModBlocks.LAVA_BLACKSTONE_BRICKS);
         generator.registerSimpleCubeAll(ModBlocks.LAVA_BLACKSTONE_MEDIUM_BRICKS);
         generator.registerSimpleCubeAll(ModBlocks.LAVA_BLACKSTONE_TINY_BRICKS);
+        //Wood
+        generator.registerLog(ModBlocks.BLUE_LUMINESCENT_LOG).log(ModBlocks.BLUE_LUMINESCENT_LOG).wood(ModBlocks.BLUE_LUMINESCENT_WOOD);
+        generator.registerLog(ModBlocks.BLUE_LUMINESCENT_STRIPPED_LOG).log(ModBlocks.BLUE_LUMINESCENT_STRIPPED_LOG).wood(ModBlocks.BLUE_LUMINESCENT_STRIPPED_WOOD);
+        generator.registerSimpleCubeAll(ModBlocks.BLUE_LUMINESCENT_LEAVES);
+        BlockStateModelGenerator.BlockTexturePool blue_luminescent_wood_pool = generator.registerCubeAllModelTexturePool(ModBlocks.BLUE_LUMINESCENT_PLANKS);
+
+        blue_luminescent_wood_pool.button(ModBlocks.BLUE_LUMINESCENT_BUTTON);
+        blue_luminescent_wood_pool.pressurePlate(ModBlocks.BLUE_LUMINESCENT_PRESSURE_PLATE);
+        blue_luminescent_wood_pool.fence(ModBlocks.BLUE_LUMINESCENT_FENCE);
+        blue_luminescent_wood_pool.fenceGate(ModBlocks.BLUE_LUMINESCENT_FENCE_GATE);
+        blue_luminescent_wood_pool.stairs(ModBlocks.BLUE_LUMINESCENT_STAIRS);
+        blue_luminescent_wood_pool.slab(ModBlocks.BLUE_LUMINESCENT_SLAB);
+
+        generator.registerDoor(ModBlocks.BLUE_LUMINESCENT_DOOR);
+        generator.registerTrapdoor(ModBlocks.BLUE_LUMINESCENT_TRAPDOOR);
 
         //Spawn Eggs
         generator.registerParentedItemModel(ModItems.GROKI_SPAWN_EGG, ModelIds.getMinecraftNamespacedItem("template_spawn_egg"));

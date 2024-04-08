@@ -220,6 +220,24 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.LAVA_BLACKSTONE_MEDIUM_BRICKS);
         addDrop(ModBlocks.LAVA_BLACKSTONE_TINY_BRICKS);
 
+        //wood
+        addDrop(ModBlocks.BLUE_LUMINESCENT_LOG);
+        addDrop(ModBlocks.BLUE_LUMINESCENT_STRIPPED_LOG);
+        addDrop(ModBlocks.BLUE_LUMINESCENT_STRIPPED_WOOD);
+        addDrop(ModBlocks.BLUE_LUMINESCENT_WOOD);
+        addDrop(ModBlocks.BLUE_LUMINESCENT_PLANKS);
+        addDrop(ModBlocks.BLUE_LUMINESCENT_DOOR, doorDrops(ModBlocks.BLUE_LUMINESCENT_DOOR));
+        addDrop(ModBlocks.BLUE_LUMINESCENT_TRAPDOOR);
+        addDrop(ModBlocks.BLUE_LUMINESCENT_BUTTON);
+        addDrop(ModBlocks.BLUE_LUMINESCENT_PRESSURE_PLATE);
+        addDrop(ModBlocks.BLUE_LUMINESCENT_STAIRS);
+        addDrop(ModBlocks.BLUE_LUMINESCENT_SLAB, slabDrops(ModBlocks.BLUE_LUMINESCENT_SLAB));
+        addDrop(ModBlocks.BLUE_LUMINESCENT_FENCE);
+        addDrop(ModBlocks.BLUE_LUMINESCENT_FENCE_GATE);
+        addDrop(ModBlocks.BLUE_LUMINESCENT_SAPPLING);
+
+        addDrop(ModBlocks.BLUE_LUMINESCENT_LEAVES, leavesDrops(ModBlocks.BLUE_LUMINESCENT_LEAVES, ModBlocks.BLUE_LUMINESCENT_SAPPLING,0.025f));
+
         //Crystals
         addDropWithSilkTouch(Block.getBlockFromItem(ModItems.PINK_CRYSTAL_ITEM),ModBlocks.PINK_CRYSTAL );
         addDrop(ModBlocks.PINK_CRYSTAL_BLOCK);
