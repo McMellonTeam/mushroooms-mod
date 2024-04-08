@@ -2,6 +2,7 @@ package net.rodofire.mushrooomsmod.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
+import net.minecraft.recipe.Ingredient;
 import net.rodofire.mushrooomsmod.block.ModBlocks;
 import net.rodofire.mushrooomsmod.datagen.recipe.ForgeRecipeBuilder;
 import net.rodofire.mushrooomsmod.item.ModItems;
@@ -143,13 +144,38 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         offerPressurePlateRecipe(exporter, ModBlocks.LAVA_BLACKSTONE_MEDIUM_BRICKS, ModBlocks.LAVA_BLACKSTONE_BRICKS);
         offerPressurePlateRecipe(exporter, ModBlocks.LAVA_BLACKSTONE_TINY_BRICKS, ModBlocks.LAVA_BLACKSTONE_MEDIUM_BRICKS);
 
+        //Wood
+        offerPressurePlateRecipe(exporter, ModBlocks.BLUE_LUMINESCENT_PRESSURE_PLATE, ModBlocks.BLUE_LUMINESCENT_PLANKS);
+        offerSlabRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.BLUE_LUMINESCENT_SLAB, ModBlocks.BLUE_LUMINESCENT_PLANKS);
+        createStairsRecipe(ModBlocks.BLUE_LUMINESCENT_STAIRS, Ingredient.ofItems(ModBlocks.BLUE_LUMINESCENT_PLANKS));
+        offerSingleOutputShapelessRecipe(exporter, ModBlocks.BLUE_LUMINESCENT_BUTTON, ModBlocks.BLUE_LUMINESCENT_PLANKS, "button");
+        createTrapdoorRecipe(ModBlocks.BLUE_LUMINESCENT_TRAPDOOR, Ingredient.ofItems(ModBlocks.BLUE_LUMINESCENT_PLANKS));
+        createDoorRecipe(ModBlocks.BLUE_LUMINESCENT_DOOR, Ingredient.ofItems(ModBlocks.BLUE_LUMINESCENT_PLANKS));
+        createFenceGateRecipe(ModBlocks.BLUE_LUMINESCENT_FENCE_GATE,Ingredient.ofItems(ModBlocks.BLUE_LUMINESCENT_PLANKS));
+        createFenceRecipe(ModBlocks.BLUE_LUMINESCENT_FENCE, Ingredient.ofItems(ModBlocks.BLUE_LUMINESCENT_PLANKS));
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.BLUE_LUMINESCENT_STRIPPED_WOOD, 3)
+                .pattern("RR")
+                .pattern("RR")
+                .input(Character.valueOf('R'), ModBlocks.BLUE_LUMINESCENT_STRIPPED_LOG)
+                .criterion(hasItem(ModBlocks.BLUE_LUMINESCENT_STRIPPED_LOG), conditionsFromItem(ModBlocks.BLUE_LUMINESCENT_STRIPPED_LOG))
+                .offerTo(exporter, new Identifier("blue_luminescent_stripped_wood_craft"));
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.BLUE_LUMINESCENT_WOOD, 4)
+                .pattern("RR")
+                .pattern("RR")
+                .input(Character.valueOf('R'), ModBlocks.BLUE_LUMINESCENT_LOG)
+                .criterion(hasItem(ModBlocks.BLUE_LUMINESCENT_LOG), conditionsFromItem(ModBlocks.BLUE_LUMINESCENT_LOG))
+                .offerTo(exporter, new Identifier("blue_luminescent_wood_craft"));
+
+
         //utils
-        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC,ModBlocks.FORGE_BLOCK)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModBlocks.FORGE_BLOCK)
                 .pattern("RRR")
                 .pattern(" S ")
                 .pattern("SRS")
-                .input(Character.valueOf('R'),Blocks.IRON_BLOCK)
-                .input(Character.valueOf('S'),Items.IRON_INGOT)
+                .input(Character.valueOf('R'), Blocks.IRON_BLOCK)
+                .input(Character.valueOf('S'), Items.IRON_INGOT)
                 .criterion(hasItem(Items.IRON_INGOT), conditionsFromItem(Blocks.IRON_BLOCK))
                 .offerTo(exporter, new Identifier("forge_craft"));
 
@@ -174,7 +200,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
 
         //Forge Recipe
-        new ForgeRecipeBuilder(Items.DIAMOND,ModItems.CRUSHED_DIAMOND ,1)
+        new ForgeRecipeBuilder(Items.DIAMOND, ModItems.CRUSHED_DIAMOND, 1)
                 .criterion(hasItem(Items.DIAMOND), conditionsFromItem(Items.DIAMOND))
                 .offerTo(exporter);
     }
