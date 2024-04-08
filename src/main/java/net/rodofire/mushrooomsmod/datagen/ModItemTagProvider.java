@@ -2,6 +2,9 @@ package net.rodofire.mushrooomsmod.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
+import net.minecraft.registry.tag.BlockTags;
+import net.minecraft.registry.tag.ItemTags;
+import net.rodofire.mushrooomsmod.block.ModBlocks;
 import net.rodofire.mushrooomsmod.item.ModItems;
 import net.rodofire.mushrooomsmod.util.ModTags;
 import net.minecraft.item.Items;
@@ -36,6 +39,14 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
 
         getOrCreateTagBuilder(ModTags.Items.FORGEABLE_ITEMS)
                 .add(Items.DIAMOND);
+
+        getOrCreateTagBuilder(ItemTags.PLANKS)
+                .add(ModBlocks.BLUE_LUMINESCENT_PLANKS.asItem());
+        getOrCreateTagBuilder(ItemTags.LOGS_THAT_BURN)
+                .add(ModBlocks.BLUE_LUMINESCENT_LOG.asItem())
+                .add(ModBlocks.BLUE_LUMINESCENT_STRIPPED_LOG.asItem())
+                .add(ModBlocks.BLUE_LUMINESCENT_STRIPPED_WOOD.asItem())
+                .add(ModBlocks.BLUE_LUMINESCENT_WOOD.asItem());
 
     }
 }
