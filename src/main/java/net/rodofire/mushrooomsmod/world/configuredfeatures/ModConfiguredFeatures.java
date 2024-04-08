@@ -1,19 +1,25 @@
 package net.rodofire.mushrooomsmod.world.configuredfeatures;
 
+import net.minecraft.util.math.intprovider.ConstantIntProvider;
+import net.minecraft.world.gen.feature.size.TwoLayersFeatureSize;
+import net.minecraft.world.gen.foliage.BlobFoliagePlacer;
 import net.rodofire.mushrooomsmod.MushrooomsMod;
 import net.rodofire.mushrooomsmod.block.ModBlocks;
 import net.rodofire.mushrooomsmod.feature.mushroomfeature.ModMushroomFeatureConfig;
-import net.rodofire.mushrooomsmod.world.tree.mushrooms.codemushrooms.*;
-import net.rodofire.mushrooomsmod.world.tree.mushrooms.structuremushrooms.CustomRedHugeMushroomFeature;
-import net.rodofire.mushrooomsmod.world.tree.HugeBlueMushroom.HugeBlueMushroomFeature;
-import net.rodofire.mushrooomsmod.world.tree.mushrooms.structuremushrooms.CustomGreenSecondMushroomFeature;
+import net.rodofire.mushrooomsmod.world.mushrooms.codemushrooms.*;
+import net.rodofire.mushrooomsmod.world.mushrooms.structuremushrooms.CustomRedHugeMushroomFeature;
+import net.rodofire.mushrooomsmod.world.mushrooms.HugeBlueMushroom.HugeBlueMushroomFeature;
+import net.rodofire.mushrooomsmod.world.mushrooms.structuremushrooms.CustomGreenSecondMushroomFeature;
 import net.minecraft.block.Blocks;
 import net.minecraft.registry.*;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.gen.feature.*;
 import net.minecraft.world.gen.stateprovider.BlockStateProvider;
+import net.rodofire.mushrooomsmod.world.tree.codetree.BlueLuminescentTrunkPlacer;
 
 public class ModConfiguredFeatures<FC extends FeatureConfig> {
+    //Tree
+    public static final RegistryKey<ConfiguredFeature<?,?>> BLUE_LUMINESCENT_TREE = registerKey("blue_luminescent_tree");
 
     //huge mushrooms
     public static final RegistryKey<ConfiguredFeature<?, ?>> BLUE_MUSHROOM_TREE_KEY = registerKey("blue_mushroom_tree");
@@ -40,6 +46,8 @@ public class ModConfiguredFeatures<FC extends FeatureConfig> {
     public static final RegistryKey<ConfiguredFeature<?, ?>> STERILE_BLUE_MUSHROOM_KEY = registerKey("sterile_blue_mushroom_key");
     public static final RegistryKey<ConfiguredFeature<?, ?>> MUSHROOM_SMALL_BROWN_KEY = registerKey("mushroom_small_brown_key");
     public static final RegistryKey<ConfiguredFeature<?, ?>> MUSHROOM_SMALL_RED_KEY = registerKey("mushroom_small_red_key");
+
+
 
     //flowers
     public static final RegistryKey<ConfiguredFeature<?, ?>> OCULAE_KEY = registerKey("oculae_key");
@@ -110,6 +118,10 @@ public class ModConfiguredFeatures<FC extends FeatureConfig> {
 
 
     public static void bootstrap(Registerable<ConfiguredFeature<?, ?>> context) {
+        //tree
+        register(context, BLUE_LUMINESCENT_TREE, Feature.TREE, new TreeFeatureConfig.Builder(BlockStateProvider.of(ModBlocks.BLUE_LUMINESCENT_LOG), new BlueLuminescentTrunkPlacer(6,6,6),
+                BlockStateProvider.of(ModBlocks.BLUE_LUMINESCENT_LEAVES), new BlobFoliagePlacer(ConstantIntProvider.create(5), ConstantIntProvider.create(1),3),
+                new TwoLayersFeatureSize(1,0,2)).build());
         //huge mushrooms
         register(context, BLUE_MUSHROOM_TREE_KEY, ModConfiguredFeatures.HUGE_BLUE_MUSHROOM, new HugeMushroomFeatureConfig(BlockStateProvider.of(ModBlocks.BLUE_MUSHROOM_BLOCK), BlockStateProvider.of(Blocks.MUSHROOM_STEM), 4));
         register(context, PURPLE_MUSHROOM_TREE_KEY, ModConfiguredFeatures.HUGE_PURPLE_MUSHROOM, new HugeMushroomFeatureConfig(BlockStateProvider.of(ModBlocks.PURPLE_MUSHROOM_BLOCK), BlockStateProvider.of(Blocks.MUSHROOM_STEM), 5));
