@@ -246,5 +246,8 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 
         getOrCreateTagBuilder(BlockTags.FENCE_GATES)
                 .add(ModBlocks.BLUE_LUMINESCENT_FENCE_GATE);
+
+        getOrCreateTagBuilder(BlockTags.SAPLINGS)
+                .add(ModBlocks.BLUE_LUMINESCENT_SAPPLING);
     }
 }

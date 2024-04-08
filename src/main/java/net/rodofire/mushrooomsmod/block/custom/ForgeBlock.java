@@ -44,7 +44,7 @@ public class ForgeBlock extends BlockWithEntity implements BlockEntityProvider {
 
     @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
-        if(hand.equals(Hand.OFF_HAND)||world.isClient())return ActionResult.PASS;
+        if (hand.equals(Hand.OFF_HAND) || world.isClient()) return ActionResult.PASS;
 
         BlockEntity blockEntity = world.getBlockEntity(pos);
         Inventory inventory = (Inventory) blockEntity;
@@ -85,7 +85,7 @@ public class ForgeBlock extends BlockWithEntity implements BlockEntityProvider {
                         itemStack.decrement(64);
                     } else {
                         inventory.setStack(0, putItemStack);
-                        if(!player.isCreative())itemStack.decrement(1);
+                        if (!player.isCreative()) itemStack.decrement(1);
                     }
                     return ActionResult.SUCCESS;
                 }

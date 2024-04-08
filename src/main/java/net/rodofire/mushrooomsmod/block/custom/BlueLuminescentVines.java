@@ -16,8 +16,9 @@ import net.minecraft.world.WorldView;
 import net.minecraft.util.math.Direction;
 
 public class BlueLuminescentVines extends Block implements Fertilizable {
-    public static final VoxelShape SHAPE = Block.createCuboidShape(6,0,6,10,16,10);
+    public static final VoxelShape SHAPE = Block.createCuboidShape(6, 0, 6, 10, 16, 10);
     public static final IntProperty STAGE = Properties.AGE_4;
+
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
         return SHAPE;
     }
@@ -25,6 +26,7 @@ public class BlueLuminescentVines extends Block implements Fertilizable {
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
         builder.add(STAGE);
     }
+
     public BlueLuminescentVines(Settings settings) {
         super(settings);
     }
@@ -54,23 +56,25 @@ public class BlueLuminescentVines extends Block implements Fertilizable {
                     newpos = newpos.down();
                 }
             }
-        }  else {
+        } else {
             world.setBlockState(pos, ModBlocks.CAERULEA_VOLUBILIS.getStateWithProperties(state.with(STAGE, 1)));
         }
 
         world.setBlockState(pos.up(), ModBlocks.CAERULEA_VOLUBILIS.getStateWithProperties(state.with(STAGE, 0)));
     }
-    public Integer maxStage(ServerWorld world, BlockPos pos){
+
+    public Integer maxStage(ServerWorld world, BlockPos pos) {
         int stage = 0;
-        for (int i=1;i<7;++i){
+        for (int i = 1; i < 7; ++i) {
             BlockState blockstate = world.getBlockState(pos);
-            if (blockstate.isOf(ModBlocks.CAERULEA_VOLUBILIS)){
+            if (blockstate.isOf(ModBlocks.CAERULEA_VOLUBILIS)) {
                 stage++;
             }
             pos = pos.down();
         }
         return stage;
     }
+
     @Override
     public boolean canPlaceAt(BlockState state, WorldView world, BlockPos pos) {
         BlockPos blockPos = pos.down();
@@ -80,9 +84,11 @@ public class BlueLuminescentVines extends Block implements Fertilizable {
         }
         return this.canPlantOnTop(blockState, world, blockPos);
     }
+
     protected boolean canPlantOnTop(BlockState floor, BlockView world, BlockPos pos) {
         return floor.isOpaqueFullCube(world, pos);
     }
+
     @Override
     public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
         if (!state.canPlaceAt(world, pos)) {

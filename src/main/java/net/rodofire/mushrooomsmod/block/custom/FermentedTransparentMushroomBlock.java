@@ -23,10 +23,9 @@ public class FermentedTransparentMushroomBlock extends TransparentBlock {
     public boolean ismaxfermented;
 
 
-
     public FermentedTransparentMushroomBlock(Supplier<Block> blockSupplier, boolean ismaxfermented, Settings settings) {
         super(settings);
-        this.blockSupplier=blockSupplier;
+        this.blockSupplier = blockSupplier;
         this.ismaxfermented = ismaxfermented;
     }
 
@@ -36,7 +35,7 @@ public class FermentedTransparentMushroomBlock extends TransparentBlock {
         if (!ismaxfermented) {
             if (stack.isIn(ModTags.Items.MUSHROOM_POWDER)) {
                 world.setBlockState(pos, blockSupplier.get().getDefaultState());
-                if(!player.isCreative())stack.decrement(1);
+                if (!player.isCreative()) stack.decrement(1);
                 return ActionResult.SUCCESS;
             }
         } else {
@@ -47,6 +46,7 @@ public class FermentedTransparentMushroomBlock extends TransparentBlock {
         }
         return ActionResult.PASS;
     }
+
     @Override
     public boolean isSideInvisible(BlockState state, BlockState stateFrom, Direction direction) {
         if (stateFrom.isOf(this)) {

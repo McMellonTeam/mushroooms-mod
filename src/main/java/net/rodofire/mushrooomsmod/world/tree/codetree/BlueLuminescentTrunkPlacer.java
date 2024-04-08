@@ -30,18 +30,17 @@ public class BlueLuminescentTrunkPlacer extends TrunkPlacer {
 
     @Override
     public List<FoliagePlacer.TreeNode> generate(TestableWorld world, BiConsumer<BlockPos, BlockState> replacer, Random random, int height, BlockPos startPos, TreeFeatureConfig config) {
-        setToDirt(world, replacer, random, startPos.down(), config);
         int realheight = Random.create().nextBetween(firstRandomHeight, firstRandomHeight + 4);
 
-        generateColumn(world, replacer, random, startPos, config, realheight,0);
-        for (int i=0;i<=realheight;++i){
-            if(Random.create().nextBetween(0,realheight/3)==0){
-                generateColumn(world,replacer,random,startPos.add(Random.create().nextBetween(-1,1),0, Random.create().nextBetween(-1,1)),config,realheight,i);
+        generateColumn(world, replacer, random, startPos, config, realheight, 0);
+        for (int i = 0; i <= realheight; ++i) {
+            if (Random.create().nextBetween(0, realheight / 3) == 0) {
+                generateColumn(world, replacer, random, startPos.add(Random.create().nextBetween(-1, 1), 0, Random.create().nextBetween(-1, 1)), config, realheight, i);
             }
         }
 
 
-        return ImmutableList.of(new FoliagePlacer.TreeNode(startPos.up(realheight),0,false));
+        return ImmutableList.of(new FoliagePlacer.TreeNode(startPos.up(realheight), 0, false));
     }
 
     private void generateColumn(TestableWorld world, BiConsumer<BlockPos, BlockState> replacer, Random random, BlockPos startPos, TreeFeatureConfig config, int realheight, int start) {

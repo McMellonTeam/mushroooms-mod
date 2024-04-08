@@ -42,27 +42,24 @@ public class CustomPurpleSecondMushroom extends CustomPurpleSecondMushroomFeatur
         if (randmaxheiht1 <= 5) {
             randmaxheiht1 = 6;
         }
-        if(randmaxheiht1==randmaxheiht2){
-            if(randmaxheiht2<=11){
+        if (randmaxheiht1 == randmaxheiht2) {
+            if (randmaxheiht2 <= 11) {
                 randmaxheiht1 = Random.create().nextBetween(8, rand);
-            }
-            else {
+            } else {
                 randmaxheiht1 = Random.create().nextBetween(6, 9);
             }
         }
-        if(randmaxheiht3==randmaxheiht2){
-            if(randmaxheiht2<=11){
+        if (randmaxheiht3 == randmaxheiht2) {
+            if (randmaxheiht2 <= 11) {
                 randmaxheiht3 = Random.create().nextBetween(11, rand);
-            }
-            else {
+            } else {
                 randmaxheiht3 = Random.create().nextBetween(6, 11);
             }
         }
-        if(randmaxheiht3==randmaxheiht1){
-            if(randheight1<=11){
+        if (randmaxheiht3 == randmaxheiht1) {
+            if (randheight1 <= 11) {
                 randmaxheiht3 = Random.create().nextBetween(11, rand);
-            }
-            else {
+            } else {
                 randmaxheiht3 = Random.create().nextBetween(6, 11);
             }
         }
@@ -85,28 +82,28 @@ public class CustomPurpleSecondMushroom extends CustomPurpleSecondMushroomFeatur
         int direction1 = Random.create().nextBetween(0, 7);
         if (direction1 == 0) {
             nord = true;
-            choisis="nord";
+            choisis = "nord";
         } else if (direction1 == 1) {
             nordouest = true;
-            choisis="nordouest";
+            choisis = "nordouest";
         } else if (direction1 == 2) {
             ouest = true;
-            choisis="ouest";
+            choisis = "ouest";
         } else if (direction1 == 3) {
             sudouest = true;
-            choisis="sudouest";
+            choisis = "sudouest";
         } else if (direction1 == 4) {
             sud = true;
-            choisis="sud";
+            choisis = "sud";
         } else if (direction1 == 5) {
             sudest = true;
-            choisis="sudest";
+            choisis = "sudest";
         } else if (direction1 == 6) {
             est = true;
-            choisis="est";
+            choisis = "est";
         } else if (direction1 == 7) {
             nordest = true;
-            choisis="nordest";
+            choisis = "nordest";
         }
 
 
@@ -114,7 +111,7 @@ public class CustomPurpleSecondMushroom extends CustomPurpleSecondMushroomFeatur
         int maxmax = Math.max(maxh, randmaxheiht2);
 
         if (randnumbcap == 2) {
-            String seconddirection = get2nddirection(choisis, nord,nordouest,ouest,sudouest,sud,sudest,est,nordest);
+            String seconddirection = get2nddirection(choisis, nord, nordouest, ouest, sudouest, sud, sudest, est, nordest);
             boolean nord2 = false;
             boolean nordouest2 = false;
             boolean ouest2 = false;
@@ -123,22 +120,22 @@ public class CustomPurpleSecondMushroom extends CustomPurpleSecondMushroomFeatur
             boolean sudest2 = false;
             boolean est2 = false;
             boolean nordest2 = false;
-            if(seconddirection.equals("nord")){
-                nord2 =true;
+            if (seconddirection.equals("nord")) {
+                nord2 = true;
             } else if (seconddirection.equals("nordouest")) {
                 nordouest2 = true;
             } else if (seconddirection.equals("ouest")) {
-                ouest2=true;
+                ouest2 = true;
             } else if (seconddirection.equals("sudouest")) {
-                sudouest2=true;
+                sudouest2 = true;
             } else if (seconddirection.equals("sud")) {
-                sud2=true;
+                sud2 = true;
             } else if (seconddirection.equals("sudest")) {
-                sudest2=true;
+                sudest2 = true;
             } else if (seconddirection.equals("est")) {
-                est2=true;
+                est2 = true;
             } else if (seconddirection.equals("nordest")) {
-                nordest2=true;
+                nordest2 = true;
             }
             int randx1 = 0;
             int randz1 = 0;
@@ -151,7 +148,7 @@ public class CustomPurpleSecondMushroom extends CustomPurpleSecondMushroomFeatur
             int randvaleur1 = 0;
             int randvaleur2 = 0;
             int randomheight = 0;
-            int randomheight2=0;
+            int randomheight2 = 0;
             int randomnewheight = 0;
             int sens = 3;
             int sens2 = 3;
@@ -166,35 +163,34 @@ public class CustomPurpleSecondMushroom extends CustomPurpleSecondMushroomFeatur
                     if (height1 != 0) {
                         height1 = height1 - 1;
                     } else {
-                        Integer[] coordinates = posecoordinates(randz1,randx1,randx1n,randz1n, sens,nord,sud,est,ouest,nordouest,nordest,sudouest,sudest);
+                        Integer[] coordinates = posecoordinates(randz1, randx1, randx1n, randz1n, sens, nord, sud, est, ouest, nordouest, nordest, sudouest, sudest);
                         randx1n = coordinates[0];
                         randz1n = coordinates[1];
-                        Integer[]height = generateHeight(height1, randomheight, randheight1, i, world, random, start, randmaxheiht1-i, mutable, config, randz1n, randx1n);
+                        Integer[] height = generateHeight(height1, randomheight, randheight1, i, world, random, start, randmaxheiht1 - i, mutable, config, randz1n, randx1n);
                         height1 = height[0];
                         randomheight = height[1];
-                        randz1=randz1n;
+                        randz1 = randz1n;
                         randx1 = randx1n;
                     }
                 }
-                if(i>=randheight2 && i<=randmaxheiht2){
+                if (i >= randheight2 && i <= randmaxheiht2) {
                     if (height2 != 0) {
                         height2 = height2 - 1;
                     } else {
-                        Integer[]coordinates2 = posecoordinates(randz2,randx2,randx2n,randz2n,sens2 ,nord2,sud2,est2,ouest2,nordouest2,nordest2,sudouest2,sudest2);
-                        randx2n=coordinates2[0];
-                        randz2n=coordinates2[1];
-                        Integer[]height = generateHeight(height2, randomheight2, randheight2,  i, world, random, start, randmaxheiht2-i, mutable, config, randz2n, randx2n);
+                        Integer[] coordinates2 = posecoordinates(randz2, randx2, randx2n, randz2n, sens2, nord2, sud2, est2, ouest2, nordouest2, nordest2, sudouest2, sudest2);
+                        randx2n = coordinates2[0];
+                        randz2n = coordinates2[1];
+                        Integer[] height = generateHeight(height2, randomheight2, randheight2, i, world, random, start, randmaxheiht2 - i, mutable, config, randz2n, randx2n);
                         height2 = height[0];
                         randomheight2 = height[1];
-                        randz2=randz2n;
+                        randz2 = randz2n;
                         randx2 = randx2n;
                     }
                 }
 
             }
-            return new Integer[]{randx1n,randmaxheiht1,randz1n,randx2n,randmaxheiht2,randz2n};
-        }
-        else{
+            return new Integer[]{randx1n, randmaxheiht1, randz1n, randx2n, randmaxheiht2, randz2n};
+        } else {
             String[] directions = get3rddirection(choisis);
             boolean nord2 = false;
             boolean nordouest2 = false;
@@ -214,39 +210,39 @@ public class CustomPurpleSecondMushroom extends CustomPurpleSecondMushroomFeatur
             boolean nordest3 = false;
             String seconddirection = directions[0];
             String thirddirection = directions[1];
-            if(seconddirection.equals("nord")){
-                nord2 =true;
+            if (seconddirection.equals("nord")) {
+                nord2 = true;
             } else if (seconddirection.equals("nordouest")) {
                 nordouest2 = true;
             } else if (seconddirection.equals("ouest")) {
-                ouest2=true;
+                ouest2 = true;
             } else if (seconddirection.equals("sudouest")) {
-                sudouest2=true;
+                sudouest2 = true;
             } else if (seconddirection.equals("sud")) {
-                sud2=true;
+                sud2 = true;
             } else if (seconddirection.equals("sudest")) {
-                sudest2=true;
+                sudest2 = true;
             } else if (seconddirection.equals("est")) {
-                est2=true;
+                est2 = true;
             } else if (seconddirection.equals("nordest")) {
-                nordest2=true;
+                nordest2 = true;
             }
-            if(thirddirection.equals("nord")){
-                nord3 =true;
+            if (thirddirection.equals("nord")) {
+                nord3 = true;
             } else if (thirddirection.equals("nordouest")) {
                 nordouest3 = true;
             } else if (thirddirection.equals("ouest")) {
-                ouest3=true;
+                ouest3 = true;
             } else if (thirddirection.equals("sudouest")) {
-                sudouest3=true;
+                sudouest3 = true;
             } else if (thirddirection.equals("sud")) {
-                sud3=true;
+                sud3 = true;
             } else if (thirddirection.equals("sudest")) {
-                sudest3=true;
+                sudest3 = true;
             } else if (thirddirection.equals("est")) {
-                est3=true;
+                est3 = true;
             } else if (thirddirection.equals("nordest")) {
-                nordest3=true;
+                nordest3 = true;
             }
             int randx1 = 0;
             int randz1 = 0;
@@ -261,8 +257,8 @@ public class CustomPurpleSecondMushroom extends CustomPurpleSecondMushroomFeatur
             int randz3n = 0;
             int randx3n = 0;
             int randomheight = 0;
-            int randomheight2=0;
-            int randomheight3=0;
+            int randomheight2 = 0;
+            int randomheight3 = 0;
             int sens = 3;
             int sens2 = 3;
             int sens3 = 3;
@@ -270,7 +266,7 @@ public class CustomPurpleSecondMushroom extends CustomPurpleSecondMushroomFeatur
             sens2 = Random.create().nextBetween(0, 1);
             sens3 = Random.create().nextBetween(0, 1);
             for (int i = 1; i <= maxmax; i++) {
-                if (i < randheight1 || i < randheight2 || i<randheight3) {
+                if (i < randheight1 || i < randheight2 || i < randheight3) {
                     mutable.set(start, 0, i, 0);
                     this.setBlockState(world, mutable, blockState);
                 }
@@ -278,52 +274,51 @@ public class CustomPurpleSecondMushroom extends CustomPurpleSecondMushroomFeatur
                     if (height1 != 0) {
                         height1 = height1 - 1;
                     } else {
-                        Integer[] coordinates = posecoordinates(randz1,randx1,randx1n,randz1n, sens,nord,sud,est,ouest,nordouest,nordest,sudouest,sudest);
+                        Integer[] coordinates = posecoordinates(randz1, randx1, randx1n, randz1n, sens, nord, sud, est, ouest, nordouest, nordest, sudouest, sudest);
                         randx1n = coordinates[0];
                         randz1n = coordinates[1];
-                        Integer[]height = generateHeight(height1, randomheight, randheight1, i, world, random, start, randmaxheiht1-i, mutable, config, randz1n, randx1n);
+                        Integer[] height = generateHeight(height1, randomheight, randheight1, i, world, random, start, randmaxheiht1 - i, mutable, config, randz1n, randx1n);
                         height1 = height[0];
                         randomheight = height[1];
-                        randz1=randz1n;
+                        randz1 = randz1n;
                         randx1 = randx1n;
                     }
                 }
-                if(i>=randheight2 && i<=randmaxheiht2){
+                if (i >= randheight2 && i <= randmaxheiht2) {
                     if (height2 != 0) {
                         height2 = height2 - 1;
                     } else {
-                        Integer[]coordinates2 = posecoordinates(randz2,randx2,randx2n,randz2n,sens2 ,nord2,sud2,est2,ouest2,nordouest2,nordest2,sudouest2,sudest2);
-                        randx2n=coordinates2[0];
-                        randz2n=coordinates2[1];
-                        Integer[]height = generateHeight(height2, randomheight2, randheight2,  i, world, random, start, randmaxheiht2-i, mutable, config, randz2n, randx2n);
+                        Integer[] coordinates2 = posecoordinates(randz2, randx2, randx2n, randz2n, sens2, nord2, sud2, est2, ouest2, nordouest2, nordest2, sudouest2, sudest2);
+                        randx2n = coordinates2[0];
+                        randz2n = coordinates2[1];
+                        Integer[] height = generateHeight(height2, randomheight2, randheight2, i, world, random, start, randmaxheiht2 - i, mutable, config, randz2n, randx2n);
                         height2 = height[0];
                         randomheight2 = height[1];
-                        randz2=randz2n;
+                        randz2 = randz2n;
                         randx2 = randx2n;
                     }
                 }
-                if(i>=randheight3 && i<=randmaxheiht3){
+                if (i >= randheight3 && i <= randmaxheiht3) {
                     if (height3 != 0) {
                         height3 = height3 - 1;
                     } else {
-                        Integer[]coordinates2 = posecoordinates(randz3,randx3,randx3n,randz3n,sens3 ,nord3,sud3,est3,ouest3,nordouest3,nordest3,sudouest3,sudest3);
-                        randx3n=coordinates2[0];
-                        randz3n=coordinates2[1];
-                        Integer[]height = generateHeight(height3, randomheight3, randheight3,  i, world, random, start, randmaxheiht3-i, mutable, config, randz3n, randx3n);
+                        Integer[] coordinates2 = posecoordinates(randz3, randx3, randx3n, randz3n, sens3, nord3, sud3, est3, ouest3, nordouest3, nordest3, sudouest3, sudest3);
+                        randx3n = coordinates2[0];
+                        randz3n = coordinates2[1];
+                        Integer[] height = generateHeight(height3, randomheight3, randheight3, i, world, random, start, randmaxheiht3 - i, mutable, config, randz3n, randx3n);
                         height3 = height[0];
                         randomheight3 = height[1];
-                        randz3=randz3n;
+                        randz3 = randz3n;
                         randx3 = randx3n;
                     }
                 }
             }
-            return new Integer[]{randx1n, randmaxheiht1 ,randz1n, randx2n,randmaxheiht2, randz2n, randx3n,randmaxheiht3, randz3n};
+            return new Integer[]{randx1n, randmaxheiht1, randz1n, randx2n, randmaxheiht2, randz2n, randx3n, randmaxheiht3, randz3n};
         }
     }
 
 
-
-    protected Integer[] posecoordinates(int randz1, int randx1, int randx1n, int randz1n, int sens, boolean nord, boolean sud,boolean est, boolean ouest, boolean nordouest, boolean nordest, boolean sudouest, boolean sudest) {
+    protected Integer[] posecoordinates(int randz1, int randx1, int randx1n, int randz1n, int sens, boolean nord, boolean sud, boolean est, boolean ouest, boolean nordouest, boolean nordest, boolean sudouest, boolean sudest) {
         if (randz1 == 0) {
             randx1n = 1;
         }
@@ -487,122 +482,125 @@ public class CustomPurpleSecondMushroom extends CustomPurpleSecondMushroomFeatur
         value[1] = randz1n;
         return value;
     }
+
     protected String get2nddirection(String choisis, boolean nord, boolean nordouest, boolean ouest, boolean sudouest, boolean sud, boolean sudest, boolean est, boolean nordest) {
-        int index = Random.create().nextBetween(0,7);
+        int index = Random.create().nextBetween(0, 7);
         String direction = "";
-        if(index==0) {
+        if (index == 0) {
             direction = "nord";
             nord = true;
-        } else if (index==1) {
+        } else if (index == 1) {
             direction = "nordouest";
             nordouest = true;
-        } else if (index==2) {
+        } else if (index == 2) {
             direction = "ouest";
             ouest = true;
-        } else if (index==3) {
+        } else if (index == 3) {
             direction = "sudouest";
-            sudouest =true;
-        } else if (index==4) {
+            sudouest = true;
+        } else if (index == 4) {
             direction = "sud";
             sud = true;
-        } else if (index==5) {
+        } else if (index == 5) {
             direction = "sudest";
             sudest = true;
-        } else if (index==6) {
+        } else if (index == 6) {
             direction = "est";
             est = true;
-        } else if (index==7) {
+        } else if (index == 7) {
             direction = "nordest";
             nordest = true;
         }
         if (!direction.equals(choisis)) {
-            if (choisis.equals("nord")){
+            if (choisis.equals("nord")) {
                 nord = false;
                 if (nordest || nordouest) {
                     nordest = false;
                     nordouest = false;
-                    direction =get2nddirection(choisis, nord, nordouest, ouest, sudouest, sud, sudest, est, nordest);
+                    direction = get2nddirection(choisis, nord, nordouest, ouest, sudouest, sud, sudest, est, nordest);
                 }
             }
-            if(choisis.equals("nordouest")) {
+            if (choisis.equals("nordouest")) {
                 nordouest = false;
                 if (nord || ouest) {
                     nord = false;
                     ouest = false;
-                    direction =get2nddirection(choisis, nord, nordouest, ouest, sudouest, sud, sudest, est, nordest);
+                    direction = get2nddirection(choisis, nord, nordouest, ouest, sudouest, sud, sudest, est, nordest);
                 }
             }
-            if (choisis.equals("ouest")){
+            if (choisis.equals("ouest")) {
                 ouest = false;
                 if (nordouest || sudouest) {
                     nordouest = false;
                     sudouest = false;
-                    direction =get2nddirection(choisis, nord, nordouest, ouest, sudouest, sud, sudest, est, nordest);
+                    direction = get2nddirection(choisis, nord, nordouest, ouest, sudouest, sud, sudest, est, nordest);
                 }
             }
-            if(choisis.equals("sudouest")){
+            if (choisis.equals("sudouest")) {
                 sudouest = false;
                 if (sud || ouest) {
                     sud = false;
                     ouest = false;
-                    direction =get2nddirection(choisis, nord, nordouest, ouest, sudouest, sud, sudest, est, nordest);
+                    direction = get2nddirection(choisis, nord, nordouest, ouest, sudouest, sud, sudest, est, nordest);
                 }
             }
-            if (choisis.equals("sud")){
+            if (choisis.equals("sud")) {
                 sud = false;
                 if (sudest || sudouest) {
                     sudest = false;
                     sudouest = false;
-                    direction =get2nddirection(choisis, nord, nordouest, ouest, sudouest, sud, sudest, est, nordest);
+                    direction = get2nddirection(choisis, nord, nordouest, ouest, sudouest, sud, sudest, est, nordest);
                 }
             }
-            if (choisis.equals("sudest")){
+            if (choisis.equals("sudest")) {
                 sudest = false;
                 if (sud || est) {
                     sud = false;
                     est = false;
-                    direction =get2nddirection(choisis, nord, nordouest, ouest, sudouest, sud, sudest, est, nordest);
+                    direction = get2nddirection(choisis, nord, nordouest, ouest, sudouest, sud, sudest, est, nordest);
                 }
             }
-            if (choisis.equals("est")){
+            if (choisis.equals("est")) {
                 est = false;
                 if (nordest || sudest) {
                     nordest = false;
                     sudest = false;
-                    direction =get2nddirection(choisis, nord, nordouest, ouest, sudouest, sud, sudest, est, nordest);
+                    direction = get2nddirection(choisis, nord, nordouest, ouest, sudouest, sud, sudest, est, nordest);
                 }
             }
-            if (choisis.equals("nordest")){
+            if (choisis.equals("nordest")) {
                 nordest = false;
                 if (nord || est) {
                     nord = false;
                     est = false;
-                    direction =get2nddirection(choisis, nord, nordouest, ouest, sudouest, sud, sudest, est, nordest);
+                    direction = get2nddirection(choisis, nord, nordouest, ouest, sudouest, sud, sudest, est, nordest);
                 }
             }
 
         } else {
-            direction = get2nddirection(choisis, nord,nordouest,ouest,sudouest,sud,sudest,est,nordest);
+            direction = get2nddirection(choisis, nord, nordouest, ouest, sudouest, sud, sudest, est, nordest);
         }
         return direction;
     }
-    protected String[] get3rddirection(String choisis){
-        int index = Random.create().nextBetween(2,4);
-        int index2 = Random.create().nextBetween(index+1, 6);
+
+    protected String[] get3rddirection(String choisis) {
+        int index = Random.create().nextBetween(2, 4);
+        int index2 = Random.create().nextBetween(index + 1, 6);
         String direction2 = "";
         String direction3 = "";
-        ArrayList<String>directions = new ArrayList<>();
+        ArrayList<String> directions = new ArrayList<>();
         directions = getStringdirection(choisis, directions);
-        direction2=directions.get(index);
-        direction3=directions.get(index2);
+        direction2 = directions.get(index);
+        direction3 = directions.get(index2);
         return new String[]{direction2, direction3};
     }
-    protected ArrayList<String> getStringdirection(String choisis, ArrayList<String> directions){
-        if (directions.size()==8){
+
+    protected ArrayList<String> getStringdirection(String choisis, ArrayList<String> directions) {
+        if (directions.size() == 8) {
             return directions;
         }
 
-        if (choisis.equals("nord")){
+        if (choisis.equals("nord")) {
             directions.add("nord");
             return getStringdirection("nordouest", directions);
         } else if (choisis.equals("nordouest")) {
@@ -630,30 +628,30 @@ public class CustomPurpleSecondMushroom extends CustomPurpleSecondMushroomFeatur
     }
 
 
-    protected Integer[] generateHeight(int height1, int randomheight, int randstartheight, int i, WorldAccess world, Random random, BlockPos start, int maxheight, BlockPos.Mutable mutable, ModMushroomFeatureConfig config, int randz1n, int randx1n ) {
+    protected Integer[] generateHeight(int height1, int randomheight, int randstartheight, int i, WorldAccess world, Random random, BlockPos start, int maxheight, BlockPos.Mutable mutable, ModMushroomFeatureConfig config, int randz1n, int randx1n) {
         BlockState blockState = config.stemProvider.get(random, start);
         int randomnewheight;
-        randomnewheight = Random.create().nextBetween(0,10);
-        if(randomnewheight<3 && randomheight<7 && randstartheight<6||maxheight==1){
+        randomnewheight = Random.create().nextBetween(0, 10);
+        if (randomnewheight < 3 && randomheight < 7 && randstartheight < 6 || maxheight == 1) {
             mutable.set(start, randx1n, i, randz1n);
             this.setBlockState(world, mutable, blockState);
-        } else if (randomnewheight>=7 && randomheight>=3&&maxheight>randomnewheight-5) {
-            for (int a=0; a<=randomnewheight-5; ++a){
-                mutable.set(start, randx1n, a+i, randz1n);
+        } else if (randomnewheight >= 7 && randomheight >= 3 && maxheight > randomnewheight - 5) {
+            for (int a = 0; a <= randomnewheight - 5; ++a) {
+                mutable.set(start, randx1n, a + i, randz1n);
                 this.setBlockState(world, mutable, blockState);
             }
-            height1 = randomnewheight-5;
-        }else{
+            height1 = randomnewheight - 5;
+        } else {
             mutable.set(start, randx1n, i, randz1n);
             this.setBlockState(world, mutable, blockState);
-            mutable.set(start, randx1n, i+1, randz1n);
+            mutable.set(start, randx1n, i + 1, randz1n);
             this.setBlockState(world, mutable, blockState);
-            height1=1;
+            height1 = 1;
         }
-        randomheight=randomnewheight;
+        randomheight = randomnewheight;
         Integer[] height = new Integer[2];
         height[0] = height1;
-        height[1]= randomheight;
+        height[1] = randomheight;
         return height;
     }
 
@@ -663,52 +661,54 @@ public class CustomPurpleSecondMushroom extends CustomPurpleSecondMushroomFeatur
     }
 
 
-
-
-    protected void placeBranch(WorldAccess world, BlockPos pos, BlockPos.Mutable mutable ,int dx, int dy, int dz, int a) {
+    protected void placeBranch(WorldAccess world, BlockPos pos, BlockPos.Mutable mutable, int dx, int dy, int dz, int a) {
 
     }
 
     @Override
     protected void generateCap(WorldAccess world, Random random, BlockPos start, BlockPos.Mutable mutable, Integer[] coordinates, ModMushroomFeatureConfig config) {
-        int capheightsize =0;
-        int xmax=0;
-        int x=0;
-        int y=0;
-        int z=0;
-        int capsize=0;
-        BlockState blockState = config.capProvider.get(random,start);
-        for (int i =0;i<coordinates.length/3;++i){
-            capheightsize=Random.create().nextBetween(2,3);
-            x=coordinates[i*3];
-            y=coordinates[i*3+1];
-            z=coordinates[i*3+2];
-            xmax = getCapSize(x,y,z,0,mutable,world,start );
-            capsize = Random.create().nextBetween(2,xmax);
-            if (capsize<5){
-                capheightsize=2;
+        int capheightsize = 0;
+        int xmax = 0;
+        int x = 0;
+        int y = 0;
+        int z = 0;
+        int capsize = 0;
+        BlockState blockState = config.capProvider.get(random, start);
+        for (int i = 0; i < coordinates.length / 3; ++i) {
+            capheightsize = Random.create().nextBetween(2, 3);
+            x = coordinates[i * 3];
+            y = coordinates[i * 3 + 1];
+            z = coordinates[i * 3 + 2];
+            xmax = getCapSize(x, y, z, 0, mutable, world, start);
+            capsize = Random.create().nextBetween(2, xmax);
+            if (capsize < 5) {
+                capheightsize = 2;
             }
-            for(int c=y;c<capheightsize+y;++c){
-                for (int b=-capsize;b<=capsize;++b){
-                    for (int a=-capsize;a<=capsize;++a){
-                        if (c<2+y) {
+            for (int c = y; c < capheightsize + y; ++c) {
+                for (int b = -capsize; b <= capsize; ++b) {
+                    for (int a = -capsize; a <= capsize; ++a) {
+                        if (c < 2 + y) {
                             if (capsize > 4) {
-                                if ((a > capsize - 2 || -a > capsize - 2) && (b > capsize - 2 || -b > capsize - 2))  continue;
+                                if ((a > capsize - 2 || -a > capsize - 2) && (b > capsize - 2 || -b > capsize - 2))
+                                    continue;
                                 if ((a > capsize - 3 || -a > capsize - 3) && (b == capsize || -b == capsize)) continue;
-                                if ((b > capsize - 3 || -b > capsize - 3) && (a == capsize || -a == capsize))  continue;
+                                if ((b > capsize - 3 || -b > capsize - 3) && (a == capsize || -a == capsize)) continue;
                             } else {
                                 if ((a == capsize || -a == capsize) && (b == capsize || -b == capsize)) continue;
                             }
-                                mutable.set(start, x + a, c + 1, z + b);
-                                this.setBlockState(world, mutable, blockState);
+                            mutable.set(start, x + a, c + 1, z + b);
+                            this.setBlockState(world, mutable, blockState);
 
-                        }else {
-                            if ((a > capsize - 3 || -a > capsize - 3) && (b > capsize - 3 || -b > capsize - 3))  continue;
-                            if((a>capsize-4||-a>capsize-4)&&(b==capsize-1||-b==capsize-1))continue;
-                            if((b>capsize-4||-b>capsize-4)&&(a==capsize-1||-a==capsize-1))continue;
-                            if ((a > capsize - 7 || -a > capsize - 7) && (b == capsize || -b == capsize))  continue;
-                            if ((b > capsize - 7 || -b > capsize - 7) && (a == capsize || -a == capsize))  continue;
-                            mutable.set(start, x + a, c+1, z + b);
+                        } else {
+                            if ((a > capsize - 3 || -a > capsize - 3) && (b > capsize - 3 || -b > capsize - 3))
+                                continue;
+                            if ((a > capsize - 4 || -a > capsize - 4) && (b == capsize - 1 || -b == capsize - 1))
+                                continue;
+                            if ((b > capsize - 4 || -b > capsize - 4) && (a == capsize - 1 || -a == capsize - 1))
+                                continue;
+                            if ((a > capsize - 7 || -a > capsize - 7) && (b == capsize || -b == capsize)) continue;
+                            if ((b > capsize - 7 || -b > capsize - 7) && (a == capsize || -a == capsize)) continue;
+                            mutable.set(start, x + a, c + 1, z + b);
                             this.setBlockState(world, mutable, blockState);
                         }
                     }
@@ -716,15 +716,16 @@ public class CustomPurpleSecondMushroom extends CustomPurpleSecondMushroomFeatur
             }
         }
     }
-    protected Integer getCapSize(int x, int y,int z,int a, BlockPos.Mutable mutable, WorldAccess world, BlockPos start){
-        BlockState blockState= Blocks.REDSTONE_BLOCK.getDefaultState();
-        if (a==6){
+
+    protected Integer getCapSize(int x, int y, int z, int a, BlockPos.Mutable mutable, WorldAccess world, BlockPos start) {
+        BlockState blockState = Blocks.REDSTONE_BLOCK.getDefaultState();
+        if (a == 6) {
             return a;
         }
-        for (int k =0;k<3;++k) {
-            for (int i = x-a; i <= x+a; ++i) {
-                for (int j = z-a; j <= z+a; ++j) {
-                    if ((i <= 1+x && i >= -1+x)&&(j<=1+z&&j>=-1+z)) {
+        for (int k = 0; k < 3; ++k) {
+            for (int i = x - a; i <= x + a; ++i) {
+                for (int j = z - a; j <= z + a; ++j) {
+                    if ((i <= 1 + x && i >= -1 + x) && (j <= 1 + z && j >= -1 + z)) {
                         continue;
                     }
                     BlockState blockState2 = world.getBlockState(mutable.set(start, i, y + k, j));
@@ -737,7 +738,7 @@ public class CustomPurpleSecondMushroom extends CustomPurpleSecondMushroomFeatur
             }
         }
 
-        return getCapSize(x,y,z,a+1,mutable,world,start);
+        return getCapSize(x, y, z, a + 1, mutable, world, start);
     }
 
     @Override

@@ -17,17 +17,19 @@ public abstract class CustomOrangeMushroom extends Feature<HugeMushroomFeatureCo
     }
 
     protected boolean canGenerate(WorldAccess world, BlockPos pos, int height, int large, BlockPos.Mutable mutablePos, HugeMushroomFeatureConfig config) {
-        for(int i = -1;i<=1;++i) {
-            for (int k = -1; k <= 1;++k){
+        for (int i = -1; i <= 1; ++i) {
+            for (int k = -1; k <= 1; ++k) {
                 for (int j = 1; j <= height; ++j) {
-                    if (!world.getBlockState(mutablePos.set(pos,i,j,k)).isIn(BlockTags.LEAVES)&&!world.getBlockState(mutablePos.set(pos,i,j,k)).isAir())return false;
+                    if (!world.getBlockState(mutablePos.set(pos, i, j, k)).isIn(BlockTags.LEAVES) && !world.getBlockState(mutablePos.set(pos, i, j, k)).isAir())
+                        return false;
                 }
             }
         }
-        for(int i=-large;i<=large;i++){
-            for(int j = -large;j<=large;++j){
-                for(int k =(int)(height-2.4*large);k<=height + 3;++k){
-                    if (!world.getBlockState(mutablePos.set(pos,i,k,j)).isIn(BlockTags.LEAVES)&&!world.getBlockState(mutablePos.set(pos,i,k,j)).isAir())return false;
+        for (int i = -large; i <= large; i++) {
+            for (int j = -large; j <= large; ++j) {
+                for (int k = (int) (height - 2.4 * large); k <= height + 3; ++k) {
+                    if (!world.getBlockState(mutablePos.set(pos, i, k, j)).isIn(BlockTags.LEAVES) && !world.getBlockState(mutablePos.set(pos, i, k, j)).isAir())
+                        return false;
                 }
             }
         }
@@ -46,7 +48,7 @@ public abstract class CustomOrangeMushroom extends Feature<HugeMushroomFeatureCo
         if (world.getBlockState(blockPos.east()).isOf(ModBlocks.ORANGE_MUSHROOM) || world.getBlockState(blockPos.north()).isOf(ModBlocks.ORANGE_MUSHROOM) || world.getBlockState(blockPos.south()).isOf(ModBlocks.ORANGE_MUSHROOM) || world.getBlockState(blockPos.west()).isOf(ModBlocks.ORANGE_MUSHROOM)) {
 
             int height = Random.create().nextBetween(14, 30);
-            int large = Random.create().nextBetween(4,(int)( height/2.4));
+            int large = Random.create().nextBetween(4, (int) (height / 2.4));
 
             if (!this.canGenerate(world, blockPos, height, large, mutable, hugeMushroomFeatureConfig)) {
                 return false;
@@ -69,8 +71,11 @@ public abstract class CustomOrangeMushroom extends Feature<HugeMushroomFeatureCo
     }
 
     protected abstract void generateGiantTrunk(WorldAccess world, Random random, BlockPos pos, BlockPos.Mutable mutable, int height, HugeMushroomFeatureConfig config);
+
     protected abstract void generateTrunk(WorldAccess world, Random random, BlockPos pos, BlockPos.Mutable mutable, int height, HugeMushroomFeatureConfig config);
+
     protected abstract void generateGiantCap(WorldAccess var1, Random var2, BlockPos var3, int var4, BlockPos.Mutable var5, HugeMushroomFeatureConfig var6, int large);
+
     protected abstract void generateCap(WorldAccess var1, Random var2, BlockPos var3, int var4, BlockPos.Mutable var5, HugeMushroomFeatureConfig var6, int large);
 
 }

@@ -28,10 +28,10 @@ public class CustomPurpleMushroomFeature extends CustomPurpleMushroom {
                 boolean bl = j == -i;
                 boolean bl2 = j == i;
                 boolean bl3 = k == -i;
-                boolean bl100 = k == -i+1;
-                boolean bl101 = k == i-1;
-                boolean bl102 = j == -i+1;
-                boolean bl103 = j == i-1;
+                boolean bl100 = k == -i + 1;
+                boolean bl101 = k == i - 1;
+                boolean bl102 = j == -i + 1;
+                boolean bl103 = j == i - 1;
                 boolean bl4 = k == i;
                 boolean bl5 = bl || bl2;
                 boolean bl7 = bl6 = bl3 || bl4;

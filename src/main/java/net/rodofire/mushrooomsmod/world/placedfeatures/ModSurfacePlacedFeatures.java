@@ -77,7 +77,6 @@ public class ModSurfacePlacedFeatures {
     //Vines
 
 
-
     public static void bootstrap(Registerable<PlacedFeature> context) {
         var configuredFeatureRegistryEntryLookup = context.getRegistryLookup(RegistryKeys.CONFIGURED_FEATURE);
         //Mushrooms

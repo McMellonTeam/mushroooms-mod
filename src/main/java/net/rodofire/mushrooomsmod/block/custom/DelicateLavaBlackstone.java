@@ -7,13 +7,14 @@ import net.minecraft.state.property.IntProperty;
 
 public class DelicateLavaBlackstone extends Block {
     private static int maxboom;
-    public static IntProperty RECEIVED_BOOM = IntProperty.of("received_boom",0,20);
+    public static IntProperty RECEIVED_BOOM = IntProperty.of("received_boom", 0, 20);
+
     public DelicateLavaBlackstone(Settings settings, int maxboom) {
         super(settings);
-        this.maxboom=maxboom;
+        this.maxboom = maxboom;
     }
 
-    protected void appendProperties(StateManager.Builder<Block, BlockState> builder){
+    protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
         builder.add(RECEIVED_BOOM);
     }
     

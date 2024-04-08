@@ -6,6 +6,7 @@ import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRe
 import net.rodofire.mushrooomsmod.block.ModBlockEntities;
 import net.rodofire.mushrooomsmod.block.ModBlocks;
 import net.rodofire.mushrooomsmod.block.BlockUtils;
+import net.rodofire.mushrooomsmod.effect.ModStatusEffects;
 import net.rodofire.mushrooomsmod.entity.ModEntities;
 import net.rodofire.mushrooomsmod.entity.custom.BoleteCowEntity;
 import net.rodofire.mushrooomsmod.entity.custom.GrokiEntity;
@@ -21,32 +22,34 @@ import org.slf4j.LoggerFactory;
 
 public class MushrooomsMod implements ModInitializer {
 
-	public static final String MOD_ID = "mushrooomsmod";
+    public static final String MOD_ID = "mushrooomsmod";
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
-	@Override
-	public void onInitialize() {
+    @Override
+    public void onInitialize() {
 
-		ModBlocks.registerModBlocks();
-		ModBlockEntities.registerBlockEntities();
-		BlockUtils.registerStripable();
-		BlockUtils.registerFlammable();
+        ModBlocks.registerModBlocks();
+        ModBlockEntities.registerBlockEntities();
+        BlockUtils.registerStripable();
+        BlockUtils.registerFlammable();
 
-		ModItems.registerModItems();
+        ModItems.registerModItems();
 
-		ModParticles.registerParticles();
-		ModSounds.registerModSound();
+        ModParticles.registerParticles();
+        ModStatusEffects.registerEffects();
 
-		ModTrunkPlacerTypes.register();
+        ModSounds.registerModSound();
 
-		ModWorldGeneration.generateModWorldGen();
-		ModLootTableModifier.modifyLootTable();
+        ModTrunkPlacerTypes.register();
 
-		ModRecipes.registerRecipes();
+        ModWorldGeneration.generateModWorldGen();
+        ModLootTableModifier.modifyLootTable();
 
-		FabricDefaultAttributeRegistry.register(ModEntities.GROKI, GrokiEntity.setAttributes());
-		FabricDefaultAttributeRegistry.register(ModEntities.BOLETE_COW, BoleteCowEntity.setAttributes());
-		LOGGER.info("Starting MushrooomsMod!");
+        ModRecipes.registerRecipes();
 
-	}
+        FabricDefaultAttributeRegistry.register(ModEntities.GROKI, GrokiEntity.setAttributes());
+        FabricDefaultAttributeRegistry.register(ModEntities.BOLETE_COW, BoleteCowEntity.setAttributes());
+        LOGGER.info("Starting MushrooomsMod!");
+
+    }
 }
