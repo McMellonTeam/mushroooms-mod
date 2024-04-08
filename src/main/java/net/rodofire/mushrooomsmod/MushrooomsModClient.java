@@ -156,6 +156,7 @@ public class MushrooomsModClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.POTTED_HYDRANGEA, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.POTTED_ANEMONE, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.POTTED_JACYNTHE, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.POTTED_BLUE_LUMINESCENT_SAPPLING, RenderLayer.getCutout());
 
         //Wood
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.BLUE_LUMINESCENT_LEAVES, RenderLayer.getCutout());

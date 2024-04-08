@@ -233,6 +233,7 @@ public class ModBlocks {
     public static final Block POTTED_JACYNTHE = Registry.register(Registries.BLOCK, new Identifier(MushrooomsMod.MOD_ID, "potted_jacynthe"), new FlowerPotBlock(JACYNTHE, FabricBlockSettings.copyOf(Blocks.POTTED_RED_MUSHROOM).nonOpaque()));
     public static final Block POTTED_YELLOW_MUSHROOM = Registry.register(Registries.BLOCK, new Identifier(MushrooomsMod.MOD_ID, "potted_yellow_mushroom"), new FlowerPotBlock(YELLOW_MUSHROOM, FabricBlockSettings.copyOf(Blocks.POTTED_RED_MUSHROOM).nonOpaque()));
     public static final Block POTTED_ORANGE_MUSHROOM = Registry.register(Registries.BLOCK, new Identifier(MushrooomsMod.MOD_ID, "potted_orange_mushroom"), new FlowerPotBlock(ORANGE_MUSHROOM, FabricBlockSettings.copyOf(Blocks.POTTED_RED_MUSHROOM).nonOpaque()));
+    public static final Block POTTED_BLUE_LUMINESCENT_SAPPLING = Registry.register(Registries.BLOCK, new Identifier(MushrooomsMod.MOD_ID, "potted_blue_luminescent_sappling"), new FlowerPotBlock(ModBlocks.BLUE_LUMINESCENT_SAPPLING, FabricBlockSettings.copyOf(Blocks.POTTED_RED_MUSHROOM).nonOpaque()));
 
 
     //Big Mushrooms
@@ -269,14 +270,14 @@ public class ModBlocks {
     public static final Block BLUE_LUMINESCENT_PLANKS = registerBlock("planks_blue_luminescent", new Block(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)));
     public static final Block BLUE_LUMINESCENT_TRAPDOOR = registerBlock("trapdoor_blue_luminescent", new TrapdoorBlock(FabricBlockSettings.copyOf(Blocks.OAK_TRAPDOOR), BlockSetType.OAK));
     public static final Block BLUE_LUMINESCENT_DOOR = registerBlock("door_blue_luminescent", new DoorBlock(FabricBlockSettings.copyOf(Blocks.OAK_DOOR), BlockSetType.OAK));
-    public static final Block BLUE_LUMINESCENT_LEAVES = registerBlock("leaves_blue_luminescent", new LeavesBlock(FabricBlockSettings.copyOf(Blocks.OAK_LEAVES).luminance(10)));
+    public static final Block BLUE_LUMINESCENT_LEAVES = registerBlock("leaves_blue_luminescent", new LeavesBlock(FabricBlockSettings.copyOf(Blocks.OAK_LEAVES).luminance(10).nonOpaque()));
     public static final Block BLUE_LUMINESCENT_BUTTON = registerBlock("button_blue_luminescent", new ButtonBlock(FabricBlockSettings.copyOf(Blocks.OAK_BUTTON), BlockSetType.OAK, 20,true));
     public static final Block BLUE_LUMINESCENT_PRESSURE_PLATE = registerBlock("pressure_plate_blue_luminescent", new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING,FabricBlockSettings.copyOf(Blocks.OAK_PRESSURE_PLATE), BlockSetType.OAK));
     public static final Block BLUE_LUMINESCENT_FENCE = registerBlock("fence_blue_luminescent", new FenceBlock(FabricBlockSettings.copyOf(Blocks.OAK_FENCE)));
     public static final Block BLUE_LUMINESCENT_FENCE_GATE = registerBlock("fence_gate_blue_luminescent", new FenceGateBlock(FabricBlockSettings.copyOf(Blocks.OAK_FENCE_GATE), WoodType.OAK));
-    public static final Block BLUE_LUMINESCENT_SAPPLING = registerBlock("sappling_blue_luminescent", new SaplingBlock(new BlueLuminescentSapplingGenerator(),FabricBlockSettings.copyOf(Blocks.OAK_FENCE_GATE)));
-    public static final Block BLUE_LUMINESCENT_STAIRS = registerBlock("stairs_blue_luminescent", new StairsBlock(BLUE_LUMINESCENT_PLANKS.getDefaultState(),FabricBlockSettings.copyOf(Blocks.OAK_STAIRS)));
-    public static final Block BLUE_LUMINESCENT_SLAB = registerBlock("slab_blue_luminescent", new SlabBlock(FabricBlockSettings.copyOf(Blocks.OAK_FENCE_GATE)));
+    public static final Block BLUE_LUMINESCENT_SAPPLING = registerBlock("sappling_blue_luminescent", new SaplingBlock(new BlueLuminescentSapplingGenerator(),FabricBlockSettings.copyOf(Blocks.OAK_SAPLING)));
+    public static final Block BLUE_LUMINESCENT_STAIRS = registerBlock("stairs_blue_luminescent", new StairsBlock(BLUE_LUMINESCENT_PLANKS.getDefaultState(),FabricBlockSettings.copyOf(Blocks.OAK_STAIRS).luminance(8)));
+    public static final Block BLUE_LUMINESCENT_SLAB = registerBlock("slab_blue_luminescent", new SlabBlock(FabricBlockSettings.copyOf(Blocks.OAK_SLAB)));
 
     //Crystal Blocks
     public static final Block PINK_CRYSTAL = registerHiddenBlock("crystal_pink", new PinkCrystal(FabricBlockSettings.copyOf(Blocks.AMETHYST_CLUSTER)));

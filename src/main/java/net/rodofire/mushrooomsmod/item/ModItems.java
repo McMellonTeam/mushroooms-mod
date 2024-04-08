@@ -33,8 +33,10 @@ public class ModItems {
                 entries.add(ModBlocks.BLUE_LUMINESCENT_PLANKS);
                 entries.add(ModBlocks.BLUE_LUMINESCENT_STAIRS);
                 entries.add(ModBlocks.BLUE_LUMINESCENT_SLAB);
-                entries.add(ModBlocks.BLUE_LUMINESCENT_TRAPDOOR);
+                entries.add(ModBlocks.BLUE_LUMINESCENT_FENCE);
+                entries.add(ModBlocks.BLUE_LUMINESCENT_FENCE_GATE);
                 entries.add(ModBlocks.BLUE_LUMINESCENT_DOOR);
+                entries.add(ModBlocks.BLUE_LUMINESCENT_TRAPDOOR);
                 entries.add(ModBlocks.BLUE_LUMINESCENT_PRESSURE_PLATE);
                 entries.add(ModBlocks.BLUE_LUMINESCENT_BUTTON);
 
