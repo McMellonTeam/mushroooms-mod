@@ -64,6 +64,8 @@
   "block.mushrooomsmod.pressure_plate_blue_luminescent" : "Blue Luminescent Pressure Plate",
   "block.mushrooomsmod.fence_blue_luminescent" : "Blue Luminescent Fence",
   "block.mushrooomsmod.fence_gate_blue_luminescent" : "Blue Luminescent Fence Gate",
+  "block.mushrooomsmod.stairs_blue_luminescent" : "Blue Luminescent Stairs",
+  "block.mushrooomsmod.slab_blue_luminescent" : "Blue Luminescent Slab",
   "block.mushrooomsmod.sappling_blue_luminescent" : "Blue Luminescent Sappling",
 
   "block.mushrooomsmod.rhyolite" : "Rhyolite",
