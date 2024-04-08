@@ -96,7 +96,25 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 
                 .add(ModBlocks.BLUE_LUMINESCENT_MUSHROOM_STEM)
                 .add(ModBlocks.GREEN_MUSHROOM_STEM)
-                .add(ModBlocks.TRANSPARENT_MUSHROOM_STEM);
+                .add(ModBlocks.TRANSPARENT_MUSHROOM_STEM)
+
+                .add(ModBlocks.BLUE_LUMINESCENT_LOG)
+                .add(ModBlocks.BLUE_LUMINESCENT_STRIPPED_LOG)
+                .add(ModBlocks.BLUE_LUMINESCENT_WOOD)
+                .add(ModBlocks.BLUE_LUMINESCENT_STRIPPED_WOOD)
+                .add(ModBlocks.BLUE_LUMINESCENT_PLANKS)
+                .add(ModBlocks.BLUE_LUMINESCENT_TRAPDOOR)
+                .add(ModBlocks.BLUE_LUMINESCENT_DOOR)
+                .add(ModBlocks.BLUE_LUMINESCENT_BUTTON)
+                .add(ModBlocks.BLUE_LUMINESCENT_PRESSURE_PLATE)
+                .add(ModBlocks.BLUE_LUMINESCENT_STAIRS)
+                .add(ModBlocks.BLUE_LUMINESCENT_SLAB)
+                .add(ModBlocks.BLUE_LUMINESCENT_FENCE)
+                .add(ModBlocks.BLUE_LUMINESCENT_FENCE_GATE);
+
+        getOrCreateTagBuilder(BlockTags.HOE_MINEABLE)
+                .add(ModBlocks.BLUE_LUMINESCENT_LEAVES);
+
 
 
         getOrCreateTagBuilder(ModTags.Blocks.MUSHROOM_PLANT)
@@ -208,5 +226,25 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 
         getOrCreateTagBuilder(BlockTags.CLIMBABLE)
                 .add(ModBlocks.CAERULEA_VOLUBILIS);
+
+
+
+        getOrCreateTagBuilder(BlockTags.FENCES)
+                .add(ModBlocks.BLUE_LUMINESCENT_FENCE);
+
+        getOrCreateTagBuilder(BlockTags.FENCE_GATES)
+                .add(ModBlocks.BLUE_LUMINESCENT_FENCE_GATE);
+
+        getOrCreateTagBuilder(BlockTags.LOGS_THAT_BURN)
+                .add(ModBlocks.BLUE_LUMINESCENT_LOG)
+                .add(ModBlocks.BLUE_LUMINESCENT_STRIPPED_LOG)
+                .add(ModBlocks.BLUE_LUMINESCENT_STRIPPED_WOOD)
+                .add(ModBlocks.BLUE_LUMINESCENT_WOOD);
+
+        getOrCreateTagBuilder(BlockTags.FENCES)
+                .add(ModBlocks.BLUE_LUMINESCENT_FENCE);
+
+        getOrCreateTagBuilder(BlockTags.FENCE_GATES)
+                .add(ModBlocks.BLUE_LUMINESCENT_FENCE_GATE);
     }
 }
