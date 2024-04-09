@@ -3,6 +3,7 @@ package net.rodofire.mushrooomsmod.world.configuredfeatures;
 import net.minecraft.util.math.intprovider.ConstantIntProvider;
 import net.minecraft.world.gen.feature.size.TwoLayersFeatureSize;
 import net.minecraft.world.gen.foliage.BlobFoliagePlacer;
+import net.minecraft.world.gen.trunk.LargeOakTrunkPlacer;
 import net.rodofire.mushrooomsmod.MushrooomsMod;
 import net.rodofire.mushrooomsmod.block.ModBlocks;
 import net.rodofire.mushrooomsmod.feature.mushroomfeature.ModMushroomFeatureConfig;
@@ -119,9 +120,10 @@ public class ModConfiguredFeatures<FC extends FeatureConfig> {
 
     public static void bootstrap(Registerable<ConfiguredFeature<?, ?>> context) {
         //tree
-        register(context, BLUE_LUMINESCENT_TREE, Feature.TREE, new TreeFeatureConfig.Builder(BlockStateProvider.of(ModBlocks.BLUE_LUMINESCENT_LOG), new BlueLuminescentTrunkPlacer(6,6,6),
+        register(context, BLUE_LUMINESCENT_TREE, Feature.TREE, new TreeFeatureConfig.Builder(
+                BlockStateProvider.of(ModBlocks.BLUE_LUMINESCENT_LOG), new BlueLuminescentTrunkPlacer(6,6,6),
                 BlockStateProvider.of(ModBlocks.BLUE_LUMINESCENT_LEAVES), new BlobFoliagePlacer(ConstantIntProvider.create(5), ConstantIntProvider.create(1),3),
-                new TwoLayersFeatureSize(1,0,2)).build());
+                new TwoLayersFeatureSize(15,3,15)).build());
         //huge mushrooms
         register(context, BLUE_MUSHROOM_TREE_KEY, ModConfiguredFeatures.HUGE_BLUE_MUSHROOM, new HugeMushroomFeatureConfig(BlockStateProvider.of(ModBlocks.BLUE_MUSHROOM_BLOCK), BlockStateProvider.of(Blocks.MUSHROOM_STEM), 4));
         register(context, PURPLE_MUSHROOM_TREE_KEY, ModConfiguredFeatures.HUGE_PURPLE_MUSHROOM, new HugeMushroomFeatureConfig(BlockStateProvider.of(ModBlocks.PURPLE_MUSHROOM_BLOCK), BlockStateProvider.of(Blocks.MUSHROOM_STEM), 5));
