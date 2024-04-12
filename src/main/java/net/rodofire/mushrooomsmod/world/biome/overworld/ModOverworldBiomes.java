@@ -21,6 +21,7 @@ public class ModOverworldBiomes {
     public static final RegistryKey<Biome> SHROOM_ISLAND = RegistryKey.of(RegistryKeys.BIOME, new Identifier(MushrooomsMod.MOD_ID,"shroom_island" ));
     public static final RegistryKey<Biome> BLUE_LUMINESCENT_SHROOM_CAVE = RegistryKey.of(RegistryKeys.BIOME, new Identifier(MushrooomsMod.MOD_ID,"blue_luminescent_shroom_cave" ));
     public static final RegistryKey<Biome> PURPLE_SHROOM_CAVE = RegistryKey.of(RegistryKeys.BIOME, new Identifier(MushrooomsMod.MOD_ID,"purple_luminescent_shroom_cave"));
+    public static final RegistryKey<Biome> VANILLA_SHROOM_CAVE = RegistryKey.of(RegistryKeys.BIOME, new Identifier(MushrooomsMod.MOD_ID,"vanilla_schroom_cave"));
     public static final RegistryKey<Biome> MAGICAL_PLAIN = RegistryKey.of(RegistryKeys.BIOME, new Identifier(MushrooomsMod.MOD_ID,"magical_plain"));
     public static final RegistryKey<Biome> COLORFUL_PLAINS = RegistryKey.of(RegistryKeys.BIOME, new Identifier(MushrooomsMod.MOD_ID,"colorful_plain"));
     public static void bootstrap(Registerable<Biome> context){
@@ -200,6 +201,40 @@ public class ModOverworldBiomes {
                     .build();
         }
     public static Biome colorfulPlains(Registerable<Biome> context) {
+        SpawnSettings.Builder spawnBuilder = new SpawnSettings.Builder();
+
+        DefaultBiomeFeatures.addFarmAnimals(spawnBuilder);
+        DefaultBiomeFeatures.addBatsAndMonsters(spawnBuilder);
+
+        GenerationSettings.LookupBackedBuilder biomeBuilder =
+                new GenerationSettings.LookupBackedBuilder(context.getRegistryLookup(RegistryKeys.PLACED_FEATURE),
+                        context.getRegistryLookup(RegistryKeys.CONFIGURED_CARVER));
+
+        globalOverworldGeneration(biomeBuilder);
+        DefaultBiomeFeatures.addDefaultOres(biomeBuilder);
+
+        biomeBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, VegetationPlacedFeatures.TREES_PLAINS);
+        biomeBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, VegetationPlacedFeatures.PATCH_GRASS_PLAIN);
+
+        return new Biome.Builder()
+                .precipitation(true)
+                .downfall(0.4f)
+                .temperature(0.7f)
+                .generationSettings(biomeBuilder.build())
+                .spawnSettings(spawnBuilder.build())
+                .effects((new BiomeEffects.Builder())
+                        .waterColor(0x29A7FF)
+                        .waterFogColor(0x066AAF)
+                        .skyColor(0x18A4E6)
+                        .grassColor(0x54E618)
+                        .foliageColor(0x25B258)
+                        .fogColor(0x7BC5E8)
+                        .moodSound(BiomeMoodSound.CAVE)
+                        .build())
+                .build();
+    }
+
+    public static Biome vanillaSchroomCave(Registerable<Biome> context) {
         SpawnSettings.Builder spawnBuilder = new SpawnSettings.Builder();
 
         DefaultBiomeFeatures.addFarmAnimals(spawnBuilder);
