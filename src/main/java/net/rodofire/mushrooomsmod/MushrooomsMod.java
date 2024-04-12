@@ -30,6 +30,7 @@ public class MushrooomsMod implements ModInitializer {
 
         ModBlocks.registerModBlocks();
         ModBlockEntities.registerBlockEntities();
+
         BlockUtils.registerStripable();
         BlockUtils.registerFlammable();
 
