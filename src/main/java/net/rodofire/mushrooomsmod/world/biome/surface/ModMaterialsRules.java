@@ -19,18 +19,18 @@ public class ModMaterialsRules {
 
 
     public static MaterialRules.MaterialRule makeRules() {
-        MaterialRules.MaterialCondition below0 = MaterialRules.verticalGradient("deepslate", YOffset.fixed(0), YOffset.getBottom());
+        MaterialRules.MaterialCondition deepslatelevel = MaterialRules.verticalGradient("deepslate",YOffset.fixed(0), YOffset.fixed(8));
 
 
-        MaterialRules.MaterialRule deepslatesurface = MaterialRules.condition(below0, BLUE_LUMINESCENT_DEEPSLATE);
+
+        MaterialRules.MaterialRule bluedeepslate = MaterialRules.sequence(MaterialRules.condition(MaterialRules.STONE_DEPTH_FLOOR, BLUE_LUMINESCENT_DEEPSLATE),DEEPSLATE);
+
+
 
         return MaterialRules.sequence(
                 MaterialRules.sequence(MaterialRules.condition(MaterialRules.biome(ModOverworldBiomes.BLUE_LUMINESCENT_SHROOM_CAVE),
-                                MaterialRules.condition(MaterialRules.STONE_DEPTH_FLOOR,deepslatesurface))
-                            /*MaterialRules.condition(MaterialRules.biome(ModOverworldBiomes.BLUE_LUMINESCENT_SHROOM_CAVE),
-                                MaterialRules.condition(MaterialRules.STONE_DEPTH_FLOOR,deepslatesurface1)))*/
+                        MaterialRules.condition(deepslatelevel,bluedeepslate))
 
-                //MaterialRules.sequence(MaterialRules.condition(MaterialRules.biome(ModBiomes.SHROOM_ISLAND),DEEPSLATE))
         ));
     }
 
