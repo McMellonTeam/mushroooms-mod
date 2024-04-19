@@ -8,6 +8,7 @@ import net.minecraft.util.math.Vec3i;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.util.FeatureContext;
+import net.rodofire.mushrooomsmod.block.ModBlocks;
 import net.rodofire.mushrooomsmod.feature.mushroomfeature.ModMushroomFeatureConfig;
 import net.minecraft.util.math.random.Random;
 
@@ -20,18 +21,19 @@ public abstract class CustomPurpleSecondMushroomp extends Feature<ModMushroomFea
     }
 
     public static boolean canGenerate(World world, Random random, ModMushroomFeatureConfig config, ArrayList<Vec3i> trunkcoordinates,ArrayList<Vec3i> capcoordinates, BlockPos pos) {
-        for (int i = 0; i < trunkcoordinates.size() / 3; i++) {
+        BlockPos.Mutable mutable = new BlockPos.Mutable();
+        for (int i = 0; i < trunkcoordinates.size(); i++) {
             Vec3i vec = trunkcoordinates.get(i);
-            pos.add(vec);
-            BlockState blockState = world.getBlockState(pos);
-            if (blockState.isAir() || blockState.isIn(BlockTags.LEAVES)) continue;
+            mutable.set(pos, vec);
+            BlockState blockState = world.getBlockState(mutable);
+            if (blockState.isAir() || blockState.isIn(BlockTags.LEAVES)||blockState.isOf(ModBlocks.BIG_PURPLE_MUSHROOM)) continue;
             return false;
         }
-        for (int i = 0; i < capcoordinates.size() / 3; i++) {
+        for (int i = 0; i < capcoordinates.size(); i++) {
             Vec3i vec = capcoordinates.get(i);
-            pos.add(vec);
-            BlockState blockState = world.getBlockState(pos);
-            if (blockState.isAir() || blockState.isIn(BlockTags.LEAVES)) continue;
+            mutable.set(pos, vec);
+            BlockState blockState = world.getBlockState(mutable);
+            if (blockState.isAir() || blockState.isIn(BlockTags.LEAVES)||blockState.isOf(ModBlocks.BIG_PURPLE_MUSHROOM)) continue;
             return false;
         }
         return true;
@@ -44,9 +46,12 @@ public abstract class CustomPurpleSecondMushroomp extends Feature<ModMushroomFea
         ModMushroomFeatureConfig config = context.getConfig();
         Random random = context.getRandom();
         BlockPos.Mutable mutable = new BlockPos.Mutable();
+        int maxheight = 25;
+        int minheight = 11;
+        int cap = Random.create().nextBetween(2,3);
 
-        ArrayList<Vec3i> trunkcoordinates = getTrunkCoordinates(world, pos, mutable = pos.mutableCopy(), config, random);
-        ArrayList<Vec3i> capcoordinates = getCapCoordinates(world, pos, mutable = pos.mutableCopy(), config, random, trunkcoordinates);
+        ArrayList<Vec3i> trunkcoordinates = getTrunkCoordinates( mutable = pos.mutableCopy(), config, random,maxheight,minheight, cap);
+        ArrayList<Vec3i> capcoordinates = getCapCoordinates(world, pos, mutable = pos.mutableCopy(), config, random, trunkcoordinates, cap);
 
         if (!canGenerate(world, random, config,trunkcoordinates, capcoordinates, pos)) return false;
 
@@ -54,8 +59,8 @@ public abstract class CustomPurpleSecondMushroomp extends Feature<ModMushroomFea
         return true;
     }
 
-    public abstract ArrayList<Vec3i> getTrunkCoordinates(World world, BlockPos pos, BlockPos.Mutable mutable, ModMushroomFeatureConfig config, Random random);
-    public abstract ArrayList<Vec3i> getCapCoordinates(World world, BlockPos pos, BlockPos.Mutable mutable, ModMushroomFeatureConfig config, Random random,ArrayList<Vec3i> trunkcoordinates);
+    public abstract ArrayList<Vec3i> getTrunkCoordinates( BlockPos pos,  ModMushroomFeatureConfig config, Random random, int maxheight, int minheight, int cap);
+    public abstract ArrayList<Vec3i> getCapCoordinates(World world, BlockPos pos, BlockPos.Mutable mutable, ModMushroomFeatureConfig config, Random random,ArrayList<Vec3i> trunkcoordinates, int cap);
 
     public abstract void poseCoordinates(World world, BlockPos pos, BlockPos.Mutable mutable, ModMushroomFeatureConfig config, Random random, ArrayList<Vec3i> trunkcoordinates,ArrayList<Vec3i> Capcoordinates);
 }
