@@ -2,8 +2,8 @@
   "feature": "mushrooomsmod:orange_perennial_key",
   "placement": [
     {
-      "type": "minecraft:rarity_filter",
-      "chance": 4
+      "type": "minecraft:count",
+      "count": 16
     },
     {
       "type": "minecraft:in_square"
