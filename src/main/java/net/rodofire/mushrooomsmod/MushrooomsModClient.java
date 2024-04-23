@@ -173,6 +173,8 @@ public class MushrooomsModClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.WALL_GREEN_TORCH, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.GREEN_CAMPFIRE, RenderLayer.getCutout());
 
+        //Crystal
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.BLUE_CRYSTAL, RenderLayer.getCutout());
 
         //Entity
         EntityRendererRegistry.register(ModEntities.GROKI, GrokiRenderer::new);
