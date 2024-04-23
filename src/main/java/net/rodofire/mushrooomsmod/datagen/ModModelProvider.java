@@ -177,6 +177,7 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.HYMNE_FRANCAIS_MUSIC_DISC, Models.GENERATED);
         itemModelGenerator.register(ModItems.PINK_MUSHROOM_VINES_ITEM, Models.GENERATED);
         itemModelGenerator.register(ModItems.PINK_CRYSTAL_ITEM, Models.GENERATED);
+        itemModelGenerator.register(ModItems.BLUE_CRYSTAL_ITEM, Models.GENERATED);
         itemModelGenerator.register(ModItems.CRUSHED_DIAMOND, Models.GENERATED);
         itemModelGenerator.register(ModItems.LUMINESCENT_SCHROOM_SOUP, Models.GENERATED);
         itemModelGenerator.register(ModItems.PURPLE_MUSHROOM_POWDER, Models.GENERATED);

@@ -281,6 +281,7 @@ public class ModBlocks {
 
     //Crystal Blocks
     public static final Block PINK_CRYSTAL = registerHiddenBlock("crystal_pink", new PinkCrystal(FabricBlockSettings.copyOf(Blocks.AMETHYST_CLUSTER)));
+    public static final Block BLUE_CRYSTAL = registerHiddenBlock("crystal_blue", new Crystal(FabricBlockSettings.create().solid().nonOpaque().sounds(BlockSoundGroup.AMETHYST_CLUSTER).strength(1.5f).pistonBehavior(PistonBehavior.DESTROY)));
     public static final Block PINK_CRYSTAL_BLOCK = registerBlock("crystal_block_pink", new AmethystBlock(FabricBlockSettings.copyOf(Blocks.AMETHYST_BLOCK).sounds(ModBlockSoundGroup.PINK_CRYSTAL)));
 
     //Util Blocks

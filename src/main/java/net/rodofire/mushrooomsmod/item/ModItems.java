@@ -5,6 +5,7 @@ import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.block.Blocks;
 import net.rodofire.mushrooomsmod.MushrooomsMod;
 import net.rodofire.mushrooomsmod.block.ModBlocks;
+import net.rodofire.mushrooomsmod.effect.ModStatusEffects;
 import net.rodofire.mushrooomsmod.entity.ModEntities;
 import net.rodofire.mushrooomsmod.item.Custom.HammerItem;
 import net.rodofire.mushrooomsmod.item.Custom.SchroomSoup;
@@ -213,6 +214,8 @@ public class ModItems {
                         entries.add(ModItems.PINK_CRYSTAL_ITEM);
                         entries.add(ModBlocks.PINK_CRYSTAL_BLOCK);
 
+                        entries.add(ModItems.BLUE_CRYSTAL_ITEM);
+
                         entries.add(ModItems.CRUSHED_DIAMOND);
 
                         //Utils
@@ -242,7 +245,7 @@ public class ModItems {
 
     //food
     public static final Item BAGUETTE = registerItem("baguette", new Item(new FabricItemSettings().food(ModFoodComponents.BAGUETTE)));
-    public static final Item LUMINESCENT_SCHROOM_SOUP = registerItem("luminescent_schroom_soup", new SchroomSoup(new FabricItemSettings().food(ModFoodComponents.BLUE_LUMINESCENT_SCHROOM_SOUP), ModOverworldBiomes.BLUE_LUMINESCENT_SHROOM_CAVE, new StatusEffectInstance(StatusEffects.NIGHT_VISION, 300, 0)));
+    public static final Item LUMINESCENT_SCHROOM_SOUP = registerItem("luminescent_schroom_soup", new SchroomSoup(new FabricItemSettings().food(ModFoodComponents.BLUE_LUMINESCENT_SCHROOM_SOUP), ModOverworldBiomes.BLUE_LUMINESCENT_SHROOM_CAVE, new StatusEffectInstance(ModStatusEffects.FLICKERING, 3000, 0)));
 
     //Lights
     public static final Item GREEN_TORCH = registerItem("torch_green_item", new VerticallyAttachableBlockItem(ModBlocks.GREEN_TORCH, ModBlocks.WALL_GREEN_TORCH, new Item.Settings(), Direction.DOWN));
@@ -255,9 +258,10 @@ public class ModItems {
     public static final Item GROKI_SPAWN_EGG = registerItem("groki_spawn_egg", new SpawnEggItem(ModEntities.GROKI, 0x765A34, 0x1BC2CF, new FabricItemSettings()));
     public static final Item BOLETE_COW_SPAWN_EGG = registerItem("bolete_cow_spawn_egg", new SpawnEggItem(ModEntities.BOLETE_COW, 0xBF28DD, 0xF4DBF9, new FabricItemSettings()));
 
-
+    //Crystals related
     public static final Item CRUSHED_DIAMOND = registerItem("crushed_diamond", new Item(new FabricItemSettings()));
     public static final Item PINK_CRYSTAL_ITEM = registerItem("crystal_pink_item", new AliasedBlockItem(ModBlocks.PINK_CRYSTAL, new FabricItemSettings()));
+    public static final Item BLUE_CRYSTAL_ITEM = registerItem("crystal_blue_item", new AliasedBlockItem(ModBlocks.BLUE_CRYSTAL, new FabricItemSettings()));
 
     //Tools
     public static final Item IRON_HAMMER = registerItem("iron_hammer", new HammerItem(ToolMaterials.IRON, 40, -3.7f, 4, new FabricItemSettings()));

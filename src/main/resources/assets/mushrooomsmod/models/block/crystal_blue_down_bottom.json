@@ -1,0 +1,6 @@
+{
+  "parent": "mushrooomsmod:block/crystal_blue",
+  "textures": {
+    "cross": "mushrooomsmod:block/crystal_blue_down_bottom"
+  }
+}
