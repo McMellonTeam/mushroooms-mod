@@ -1,5 +1,7 @@
 package net.rodofire.mushrooomsmod.block.custom;
 
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.item.ItemStack;
 import net.rodofire.mushrooomsmod.block.ModBlocks;
 import net.minecraft.block.*;
 import net.minecraft.server.world.ServerWorld;
@@ -14,6 +16,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
 import net.minecraft.world.WorldView;
 import net.minecraft.util.math.Direction;
+import org.jetbrains.annotations.Nullable;
 
 public class BlueLuminescentVines extends Block implements Fertilizable {
     public static final VoxelShape SHAPE = Block.createCuboidShape(6, 0, 6, 10, 16, 10);
@@ -32,6 +35,12 @@ public class BlueLuminescentVines extends Block implements Fertilizable {
     }
 
     @Override
+    public void onPlaced(World world, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack itemStack) {
+        if (!canPlaceAt(state, world, pos) || world.isClient) return;
+        changeBlockState((ServerWorld) world, pos.down(), state);
+    }
+
+    @Override
     public boolean isFertilizable(WorldView world, BlockPos pos, BlockState state, boolean isClient) {
         return true;
     }
@@ -46,6 +55,12 @@ public class BlueLuminescentVines extends Block implements Fertilizable {
         while (!world.getBlockState(pos.up()).isOf(Blocks.AIR)) {
             pos = pos.up();
         }
+        changeBlockState(world, pos, state);
+
+        world.setBlockState(pos.up(), ModBlocks.CAERULEA_VOLUBILIS.getStateWithProperties(state.with(STAGE, 0)));
+    }
+
+    public void changeBlockState(ServerWorld world, BlockPos pos, BlockState state) {
         int stage = maxStage(world, pos);
         BlockPos newpos = pos;
         if (stage < 5) {
@@ -59,8 +74,6 @@ public class BlueLuminescentVines extends Block implements Fertilizable {
         } else {
             world.setBlockState(pos, ModBlocks.CAERULEA_VOLUBILIS.getStateWithProperties(state.with(STAGE, 1)));
         }
-
-        world.setBlockState(pos.up(), ModBlocks.CAERULEA_VOLUBILIS.getStateWithProperties(state.with(STAGE, 0)));
     }
 
     public Integer maxStage(ServerWorld world, BlockPos pos) {
@@ -74,6 +87,7 @@ public class BlueLuminescentVines extends Block implements Fertilizable {
         }
         return stage;
     }
+
 
     @Override
     public boolean canPlaceAt(BlockState state, WorldView world, BlockPos pos) {
