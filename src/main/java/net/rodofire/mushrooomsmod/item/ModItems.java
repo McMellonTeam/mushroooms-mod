@@ -41,6 +41,15 @@ public class ModItems {
                         entries.add(ModBlocks.BLUE_LUMINESCENT_PRESSURE_PLATE);
                         entries.add(ModBlocks.BLUE_LUMINESCENT_BUTTON);
 
+                        //Building Blocks
+                        entries.add(ModBlocks.LAVA_BLACKSTONE);
+                        entries.add(ModBlocks.LAVA_BLACKSTONE_BRICKS);
+                        entries.add(ModBlocks.LAVA_BLACKSTONE_MEDIUM_BRICKS);
+                        entries.add(ModBlocks.LAVA_BLACKSTONE_TINY_BRICKS);
+
+                        //Idk
+                        entries.add(ModBlocks.CLOUD_BLOCK);
+
 
                         //Natural
                         //Mushroom Related
@@ -80,9 +89,9 @@ public class ModItems {
                 entries.add(ModBlocks.RED_FERMENTED_MUSHROOM_BLOCK);*/
 
                         entries.add(ModBlocks.PINK_LUMINESCENT_MUSHROOM_BLOCK);
-                /*entries.add(ModBlocks.PINK_LUMINESCENT_ALTERED_MUSHROOM_BLOCK);
-                entries.add(ModBlocks.PINK_LUMINESCENT_DEGRADATED_MUSHROOM_BLOCK);
-                entries.add(ModBlocks.PINK_LUMINESCENT_FERMENTED_MUSHROOM_BLOCK);*/
+                        entries.add(ModBlocks.PINK_LUMINESCENT_ALTERED_MUSHROOM_BLOCK);
+                        entries.add(ModBlocks.PINK_LUMINESCENT_DEGRADATED_MUSHROOM_BLOCK);
+                        entries.add(ModBlocks.PINK_LUMINESCENT_FERMENTED_MUSHROOM_BLOCK);
 
                         entries.add(Blocks.BROWN_MUSHROOM_BLOCK);
                 /*entries.add(ModBlocks.BROWN_ALTERED_MUSHROOM_BLOCK);
@@ -197,11 +206,6 @@ public class ModItems {
                         entries.add(ModItems.GREEN_TORCH);
                         entries.add(ModBlocks.GREEN_CAMPFIRE);
 
-                        //Building Blocks
-                        entries.add(ModBlocks.LAVA_BLACKSTONE);
-                        entries.add(ModBlocks.LAVA_BLACKSTONE_BRICKS);
-                        entries.add(ModBlocks.LAVA_BLACKSTONE_MEDIUM_BRICKS);
-                        entries.add(ModBlocks.LAVA_BLACKSTONE_TINY_BRICKS);
 
                         //Music Disk
                         entries.add(ModItems.HYMNE_FRANCAIS_MUSIC_DISC);

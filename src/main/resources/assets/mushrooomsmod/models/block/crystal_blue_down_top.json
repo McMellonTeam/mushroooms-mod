@@ -1,6 +1,6 @@
 {
-  "parent": "mushrooomsmod:block/crystal_blue",
+  "parent": "minecraft:block/cross",
   "textures": {
-    "cross": "mushrooomsmod:block/crystal_blue_down_up"
+    "cross": "mushrooomsmod:block/crystal_blue_down_top"
   }
 }

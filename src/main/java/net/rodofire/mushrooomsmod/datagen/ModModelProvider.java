@@ -165,6 +165,9 @@ public class ModModelProvider extends FabricModelProvider {
 
         //Crystals
         generator.registerSimpleCubeAll(ModBlocks.PINK_CRYSTAL_BLOCK);
+
+        //Idk
+        generator.registerSimpleCubeAll(ModBlocks.CLOUD_BLOCK);
     }
 
     @Override

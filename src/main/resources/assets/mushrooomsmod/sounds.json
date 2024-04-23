@@ -15,34 +15,34 @@
       }
     ]
   },
-  "pink_crystal_break" : {
+  "crystal_pink_break" : {
     "subtitles" : "sounds.mushrooomsmod.pink_crystal_break",
     "sounds" : [
-      "mushrooomsmod:pink_crystal_break"
+      "mushrooomsmod:crystal_pink_break"
     ]
   },
-  "pink_crystal_place" : {
+  "crystal_pink_place" : {
     "subtitles" : "sounds.mushrooomsmod.pink_crystal_place",
     "sounds" : [
-      "mushrooomsmod:pink_crytal_place"
+      "mushrooomsmod:crystal_pink_place"
     ]
   },
-  "pink_crystal_hit" : {
+  "crystal_pink_hit" : {
     "subtitles" : "sounds.mushrooomsmod.pink_crystal_hit",
     "sounds" : [
-      "mushrooomsmod:pink_crytal_hit"
+      "mushrooomsmod:crystal_pink_hit"
     ]
   },
-  "pink_crystal_fall" : {
+  "crystal_pink_fall" : {
     "subtitles" : "sounds.mushrooomsmod.pink_crystal_fall",
     "sounds" : [
-      "mushrooomsmod:pink_crytal_fall"
+      "mushrooomsmod:crystal_pink_fall"
     ]
   },
-  "pink_crystal_step" : {
+  "crystal_pink_step" : {
     "subtitles" : "sounds.mushrooomsmod.pink_crystal_step",
     "sounds" : [
-      "mushrooomsmod:pink_crytal_step"
+      "mushrooomsmod:crystal_pink_step"
     ]
   }
 }

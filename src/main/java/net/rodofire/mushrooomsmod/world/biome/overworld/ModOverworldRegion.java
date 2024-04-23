@@ -20,7 +20,7 @@ public class ModOverworldRegion extends Region {
 
     @Override
     public void addBiomes(Registry<Biome> registry, Consumer<Pair<MultiNoiseUtil.NoiseHypercube, RegistryKey<Biome>>> mapper) {
-        VanillaParameterOverlayBuilder builder = new VanillaParameterOverlayBuilder();
+        /*VanillaParameterOverlayBuilder builder = new VanillaParameterOverlayBuilder();
         //Schroom Island
         new ParameterUtils.ParameterPointListBuilder()
                 .temperature(ParameterUtils.Temperature.span(ParameterUtils.Temperature.COOL, ParameterUtils.Temperature.FROZEN))
@@ -73,6 +73,6 @@ public class ModOverworldRegion extends Region {
 
 
 
-        builder.build().forEach(mapper);
+        builder.build().forEach(mapper);*/
     }
 }

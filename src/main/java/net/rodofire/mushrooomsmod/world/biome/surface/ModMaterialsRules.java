@@ -26,7 +26,7 @@ public class ModMaterialsRules {
     public static MaterialRules.MaterialRule makeRules() {
         MaterialRules.MaterialCondition deepslatelevel = MaterialRules.verticalGradient("deepslate",YOffset.fixed(0), YOffset.fixed(8));
         MaterialRules.MaterialCondition stonecavelevel =  MaterialRules.aboveY(YOffset.fixed(0),1);
-        MaterialRules.MaterialCondition abovetop =  MaterialRules.aboveY(YOffset.belowTop(-2),0);
+        MaterialRules.MaterialCondition abovetop =  MaterialRules.aboveY(YOffset.belowTop(2),0);
         MaterialRules.MaterialCondition belowtop =  MaterialRules.not(abovetop);
 
         //Dirt Related

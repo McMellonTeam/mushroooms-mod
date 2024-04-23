@@ -2,10 +2,13 @@ package net.rodofire.mushrooomsmod.world.mushrooms.codemushrooms;
 
 import com.mojang.serialization.Codec;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.Vec3i;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
+import net.rodofire.mushrooomsmod.block.ModBlocks;
 import net.rodofire.mushrooomsmod.feature.mushroomfeature.ModMushroomFeatureConfig;
 
 import java.util.ArrayList;
@@ -152,15 +155,21 @@ public class CustomPurpleSecondMushroompFeature extends CustomPurpleSecondMushro
 
     @Override
     public void poseCoordinates(World world, BlockPos pos, BlockPos.Mutable mutable, ModMushroomFeatureConfig config, Random random, ArrayList<Vec3i> trunkcoordinates, ArrayList<Vec3i> capcoordinates) {
-        BlockState blockState = config.stemProvider.get(random, pos);
-        for (int i = 0; i < trunkcoordinates.size(); i++) {
-            mutable.set(pos, trunkcoordinates.get(i));
-            world.setBlockState(mutable, blockState);
-        }
 
-        blockState = config.capProvider.get(random, pos);
+        BlockState blockState = config.capProvider.get(random, pos);
         for (int i = 0; i < capcoordinates.size(); i++) {
             mutable.set(pos, capcoordinates.get(i));
+            world.setBlockState(mutable, blockState);
+        }
+         blockState = config.stemProvider.get(random, pos);
+        for (int i = 0; i < trunkcoordinates.size(); i++) {
+            mutable.set(pos, trunkcoordinates.get(i));
+            if (world.getBlockState(mutable).isOf(ModBlocks.PURPLE_MUSHROOM_BLOCK)){
+                world.setBlockState(mutable.move(Direction.EAST), Blocks.AIR.getDefaultState());
+                world.setBlockState(mutable.move(Direction.NORTH), Blocks.AIR.getDefaultState());
+                world.setBlockState(mutable.move(Direction.WEST), Blocks.AIR.getDefaultState());
+                world.setBlockState(mutable.move(Direction.SOUTH), Blocks.AIR.getDefaultState());
+            }
             world.setBlockState(mutable, blockState);
         }
     }
