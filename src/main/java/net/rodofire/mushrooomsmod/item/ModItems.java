@@ -117,10 +117,17 @@ public class ModItems {
                         entries.add(ModBlocks.GREEN_STONY_SCHROOM_DEPOT);
                         entries.add(ModBlocks.RHYOLITE);
 
-                        //Plants
+                        /*-------------------- Natural Blocks --------------------*/
                         //Leaves
                         entries.add(ModBlocks.BLUE_LUMINESCENT_LEAVES);
+                        entries.add(ModBlocks.BLUE_COLORFUL_LEAVES);
+                        entries.add(ModBlocks.PURPLE_COLORFUL_LEAVES);
+                        entries.add(ModBlocks.PINK_COLORFUL_LEAVES);
                         entries.add(ModBlocks.RED_COLORFUL_LEAVES);
+                        entries.add(ModBlocks.ORANGE_COLORFUL_LEAVES);
+                        entries.add(ModBlocks.YELLOW_COLORFUL_LEAVES);
+                        entries.add(ModBlocks.GREEN_COLORFUL_LEAVES);
+
                         //Mushrooms
                         entries.add(ModBlocks.GREEN_MUSHROOM);
                         entries.add(ModBlocks.BLUE_MUSHROOM);

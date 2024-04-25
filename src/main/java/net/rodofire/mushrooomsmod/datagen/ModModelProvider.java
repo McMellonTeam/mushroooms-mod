@@ -133,6 +133,12 @@ public class ModModelProvider extends FabricModelProvider {
         //Leaves
         generator.registerSimpleCubeAll(ModBlocks.BLUE_LUMINESCENT_LEAVES);
         generator.registerSimpleCubeAll(ModBlocks.RED_COLORFUL_LEAVES);
+        generator.registerSimpleCubeAll(ModBlocks.PINK_COLORFUL_LEAVES);
+        generator.registerSimpleCubeAll(ModBlocks.PURPLE_COLORFUL_LEAVES);
+        generator.registerSimpleCubeAll(ModBlocks.YELLOW_COLORFUL_LEAVES);
+        generator.registerSimpleCubeAll(ModBlocks.BLUE_COLORFUL_LEAVES);
+        generator.registerSimpleCubeAll(ModBlocks.GREEN_COLORFUL_LEAVES);
+        generator.registerSimpleCubeAll(ModBlocks.ORANGE_COLORFUL_LEAVES);
 
 
         //Lights

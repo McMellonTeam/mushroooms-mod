@@ -119,14 +119,26 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 
         getOrCreateTagBuilder(BlockTags.HOE_MINEABLE)
                 .add(ModBlocks.BLUE_LUMINESCENT_LEAVES)
-                .add(ModBlocks.RED_COLORFUL_LEAVES);
+                .add(ModBlocks.RED_COLORFUL_LEAVES)
+                .add(ModBlocks.YELLOW_COLORFUL_LEAVES)
+                .add(ModBlocks.BLUE_COLORFUL_LEAVES)
+                .add(ModBlocks.PURPLE_COLORFUL_LEAVES)
+                .add(ModBlocks.ORANGE_COLORFUL_LEAVES)
+                .add(ModBlocks.GREEN_COLORFUL_LEAVES)
+                .add(ModBlocks.PINK_COLORFUL_LEAVES);
 
 
         /*-------------------- Natural Blocks --------------------*/
         //Leaves
         getOrCreateTagBuilder(BlockTags.LEAVES)
                 .add(ModBlocks.BLUE_LUMINESCENT_LEAVES)
-                .add(ModBlocks.RED_COLORFUL_LEAVES);
+                .add(ModBlocks.RED_COLORFUL_LEAVES)
+                .add(ModBlocks.YELLOW_COLORFUL_LEAVES)
+                .add(ModBlocks.BLUE_COLORFUL_LEAVES)
+                .add(ModBlocks.PURPLE_COLORFUL_LEAVES)
+                .add(ModBlocks.ORANGE_COLORFUL_LEAVES)
+                .add(ModBlocks.GREEN_COLORFUL_LEAVES)
+                .add(ModBlocks.PINK_COLORFUL_LEAVES);
 
         //Mushroom Plant
         getOrCreateTagBuilder(ModTags.Blocks.MUSHROOM_PLANT)

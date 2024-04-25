@@ -240,6 +240,12 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         //Leaves
         addDrop(ModBlocks.BLUE_LUMINESCENT_LEAVES, leavesDrops(ModBlocks.BLUE_LUMINESCENT_LEAVES, ModBlocks.BLUE_LUMINESCENT_SAPPLING,0.025f));
         addDrop(ModBlocks.RED_COLORFUL_LEAVES, leavesDrops(ModBlocks.RED_COLORFUL_LEAVES, ModBlocks.BLUE_LUMINESCENT_SAPPLING,0.025f));
+        addDrop(ModBlocks.BLUE_COLORFUL_LEAVES, leavesDrops(ModBlocks.BLUE_COLORFUL_LEAVES, ModBlocks.BLUE_LUMINESCENT_SAPPLING,0.025f));
+        addDrop(ModBlocks.ORANGE_COLORFUL_LEAVES, leavesDrops(ModBlocks.ORANGE_COLORFUL_LEAVES, ModBlocks.BLUE_LUMINESCENT_SAPPLING,0.025f));
+        addDrop(ModBlocks.YELLOW_COLORFUL_LEAVES, leavesDrops(ModBlocks.YELLOW_COLORFUL_LEAVES, ModBlocks.BLUE_LUMINESCENT_SAPPLING,0.025f));
+        addDrop(ModBlocks.PURPLE_COLORFUL_LEAVES, leavesDrops(ModBlocks.PURPLE_COLORFUL_LEAVES, ModBlocks.BLUE_LUMINESCENT_SAPPLING,0.025f));
+        addDrop(ModBlocks.GREEN_COLORFUL_LEAVES, leavesDrops(ModBlocks.GREEN_COLORFUL_LEAVES, ModBlocks.BLUE_LUMINESCENT_SAPPLING,0.025f));
+        addDrop(ModBlocks.PINK_COLORFUL_LEAVES, leavesDrops(ModBlocks.PINK_COLORFUL_LEAVES, ModBlocks.BLUE_LUMINESCENT_SAPPLING,0.025f));
 
         //Crystals
         addDropWithSilkTouch(Block.getBlockFromItem(ModItems.PINK_CRYSTAL_ITEM),ModBlocks.PINK_CRYSTAL );
