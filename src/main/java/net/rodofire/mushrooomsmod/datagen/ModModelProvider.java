@@ -2,12 +2,9 @@ package net.rodofire.mushrooomsmod.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
+import net.minecraft.data.client.*;
 import net.rodofire.mushrooomsmod.block.ModBlocks;
 import net.rodofire.mushrooomsmod.item.ModItems;
-import net.minecraft.data.client.BlockStateModelGenerator;
-import net.minecraft.data.client.ItemModelGenerator;
-import net.minecraft.data.client.ModelIds;
-import net.minecraft.data.client.Models;
 
 public class ModModelProvider extends FabricModelProvider {
     public ModModelProvider(FabricDataOutput output) {
@@ -133,6 +130,10 @@ public class ModModelProvider extends FabricModelProvider {
         generator.registerTintableCross(ModBlocks.BLUE_LUMINESCENT_GRASS, BlockStateModelGenerator.TintType.NOT_TINTED);
         generator.registerDoubleBlock(ModBlocks.BLUE_LUMINESCENT_TALL_GRASS, BlockStateModelGenerator.TintType.TINTED);
 
+        //Leaves
+        generator.registerSimpleCubeAll(ModBlocks.BLUE_LUMINESCENT_LEAVES);
+        generator.registerSimpleCubeAll(ModBlocks.RED_COLORFUL_LEAVES);
+
 
         //Lights
         generator.registerLantern(ModBlocks.RED_LANTERN);
@@ -146,7 +147,6 @@ public class ModModelProvider extends FabricModelProvider {
         //Wood
         generator.registerLog(ModBlocks.BLUE_LUMINESCENT_LOG).log(ModBlocks.BLUE_LUMINESCENT_LOG).wood(ModBlocks.BLUE_LUMINESCENT_WOOD);
         generator.registerLog(ModBlocks.BLUE_LUMINESCENT_STRIPPED_LOG).log(ModBlocks.BLUE_LUMINESCENT_STRIPPED_LOG).wood(ModBlocks.BLUE_LUMINESCENT_STRIPPED_WOOD);
-        generator.registerSimpleCubeAll(ModBlocks.BLUE_LUMINESCENT_LEAVES);
         BlockStateModelGenerator.BlockTexturePool blue_luminescent_wood_pool = generator.registerCubeAllModelTexturePool(ModBlocks.BLUE_LUMINESCENT_PLANKS);
 
         blue_luminescent_wood_pool.button(ModBlocks.BLUE_LUMINESCENT_BUTTON);
@@ -165,9 +165,22 @@ public class ModModelProvider extends FabricModelProvider {
 
         //Crystals
         generator.registerSimpleCubeAll(ModBlocks.PINK_CRYSTAL_BLOCK);
+        generator.registerSimpleCubeAll(ModBlocks.AMBER_ORE);
+        generator.registerSimpleCubeAll(ModBlocks.AMBER_BLOCK);
+        generator.registerSimpleCubeAll(ModBlocks.AMBER_BLOCK_SANDIFIED);
 
         //Idk
         generator.registerSimpleCubeAll(ModBlocks.CLOUD_BLOCK);
+
+        /*generator.blockStateCollector.accept(VariantsBlockStateSupplier.create(ModBlocks.BLUE_CRYSTAL)
+                .coordinate(BlockStateVariantMap.create(Properties.AGE_1, Properties.VERTICAL_DIRECTION)
+                        .register(0, Direction.UP, BlockStateVariant.create().put(VariantSettings.MODEL, new Identifier(MushrooomsMod.MOD_ID, "crystal_blue_up_top")))
+                        .register(0, Direction.DOWN, BlockStateVariant.create().put(VariantSettings.MODEL, new Identifier(MushrooomsMod.MOD_ID, "crystal_blue_down_top")))
+                        .register(1, Direction.UP, BlockStateVariant.create().put(VariantSettings.MODEL, new Identifier(MushrooomsMod.MOD_ID, "crystal_blue_up_bottom")))
+                        .register(1, Direction.DOWN, BlockStateVariant.create().put(VariantSettings.MODEL, new Identifier(MushrooomsMod.MOD_ID, "crystal_blue_down_bottom"))))
+        );*/
+
+        //generator.modelCollector.accept(new Identifier(MushrooomsMod.MOD_ID, "crystal_blue_up_top"), gen);
     }
 
     @Override
@@ -179,8 +192,11 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.HYMNE_URSS_MUSIC_DISC, Models.GENERATED);
         itemModelGenerator.register(ModItems.HYMNE_FRANCAIS_MUSIC_DISC, Models.GENERATED);
         itemModelGenerator.register(ModItems.PINK_MUSHROOM_VINES_ITEM, Models.GENERATED);
+
         itemModelGenerator.register(ModItems.PINK_CRYSTAL_ITEM, Models.GENERATED);
         itemModelGenerator.register(ModItems.BLUE_CRYSTAL_ITEM, Models.GENERATED);
+        itemModelGenerator.register(ModItems.AMBER_ITEM, Models.GENERATED);
+
         itemModelGenerator.register(ModItems.CRUSHED_DIAMOND, Models.GENERATED);
         itemModelGenerator.register(ModItems.LUMINESCENT_SCHROOM_SOUP, Models.GENERATED);
         itemModelGenerator.register(ModItems.PURPLE_MUSHROOM_POWDER, Models.GENERATED);

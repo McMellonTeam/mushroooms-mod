@@ -17,6 +17,7 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 
     @Override
     protected void configure(RegistryWrapper.WrapperLookup arg) {
+        /*-------------------- Tools Minable --------------------*/
         //Pickaxe
         getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)
                 .add(ModBlocks.BLUE_LUMINESCENT_SCHROOM_DEEPSLATE)
@@ -31,7 +32,11 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.LAVA_BLACKSTONE_TINY_BRICKS)
                 .add(ModBlocks.LAVA_BLACKSTONE_MEDIUM_BRICKS)
                 .add(ModBlocks.PINK_CRYSTAL)
-                .add(ModBlocks.PINK_CRYSTAL_BLOCK);
+                .add(ModBlocks.PINK_CRYSTAL_BLOCK)
+                .add(ModBlocks.AMBER_BLOCK)
+                .add(ModBlocks.AMBER_ORE)
+                .add(ModBlocks.AMBER_BLOCK_SANDIFIED)
+                .add(ModBlocks.BLUE_CRYSTAL);
 
         //Shovel
         getOrCreateTagBuilder(BlockTags.SHOVEL_MINEABLE)
@@ -113,10 +118,17 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.BLUE_LUMINESCENT_FENCE_GATE);
 
         getOrCreateTagBuilder(BlockTags.HOE_MINEABLE)
-                .add(ModBlocks.BLUE_LUMINESCENT_LEAVES);
+                .add(ModBlocks.BLUE_LUMINESCENT_LEAVES)
+                .add(ModBlocks.RED_COLORFUL_LEAVES);
 
 
+        /*-------------------- Natural Blocks --------------------*/
+        //Leaves
+        getOrCreateTagBuilder(BlockTags.LEAVES)
+                .add(ModBlocks.BLUE_LUMINESCENT_LEAVES)
+                .add(ModBlocks.RED_COLORFUL_LEAVES);
 
+        //Mushroom Plant
         getOrCreateTagBuilder(ModTags.Blocks.MUSHROOM_PLANT)
                 .add(ModBlocks.YELLOW_MUSHROOM)
                 .add(ModBlocks.PURPLE_MUSHROOM)
@@ -137,6 +149,7 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.PREHISTO_PINK_SCHROOM)
                 .add(ModBlocks.PREHISTURPLE_SCHROOM);
 
+        //Flowers
         getOrCreateTagBuilder(BlockTags.FLOWERS)
                 .add(ModBlocks.YELLOW_MUSHROOM)
                 .add(ModBlocks.PURPLE_MUSHROOM)
@@ -213,22 +226,27 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.BIG_PURPLE_MUSHROOM)
                 .add(ModBlocks.BIG_PURPLE_MUSHROOM_PLANT);
 
-
+        //Dirt
         getOrCreateTagBuilder(BlockTags.DIRT)
                 .add(ModBlocks.BLUE_LUMINESCENT_SCHROOM_DEEPSLATE)
                 .add(ModBlocks.PURPLE_SCHROOM_DEESLATE)
                 .add(ModBlocks.GREEN_STONY_SCHROOM_DEPOT);
 
+        //Mushroom Grow Blocks
         getOrCreateTagBuilder(BlockTags.MUSHROOM_GROW_BLOCK)
                 .add(ModBlocks.BLUE_LUMINESCENT_SCHROOM_DEEPSLATE)
                 .add(ModBlocks.PURPLE_SCHROOM_DEESLATE)
                 .add(ModBlocks.GREEN_STONY_SCHROOM_DEPOT);
 
+        getOrCreateTagBuilder(BlockTags.SAPLINGS)
+                .add(ModBlocks.BLUE_LUMINESCENT_SAPPLING);
+
+
         getOrCreateTagBuilder(BlockTags.CLIMBABLE)
                 .add(ModBlocks.CAERULEA_VOLUBILIS);
 
 
-
+        /*-------------------- Construction Blocks --------------------*/
         getOrCreateTagBuilder(BlockTags.FENCES)
                 .add(ModBlocks.BLUE_LUMINESCENT_FENCE);
 
@@ -241,13 +259,6 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.BLUE_LUMINESCENT_STRIPPED_WOOD)
                 .add(ModBlocks.BLUE_LUMINESCENT_WOOD);
 
-        getOrCreateTagBuilder(BlockTags.FENCES)
-                .add(ModBlocks.BLUE_LUMINESCENT_FENCE);
 
-        getOrCreateTagBuilder(BlockTags.FENCE_GATES)
-                .add(ModBlocks.BLUE_LUMINESCENT_FENCE_GATE);
-
-        getOrCreateTagBuilder(BlockTags.SAPLINGS)
-                .add(ModBlocks.BLUE_LUMINESCENT_SAPPLING);
     }
 }

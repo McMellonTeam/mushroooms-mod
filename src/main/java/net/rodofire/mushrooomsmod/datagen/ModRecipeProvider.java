@@ -198,6 +198,9 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(Items.IRON_INGOT), conditionsFromItem(Blocks.IRON_BLOCK))
                 .offerTo(exporter, new Identifier("hammer_craft"));
 
+        //Crystals
+        offerCompactingRecipe(exporter,RecipeCategory.BUILDING_BLOCKS,ModBlocks.AMBER_BLOCK,ModItems.AMBER_ITEM);
+
 
         //Forge Recipe
         new ForgeRecipeBuilder(Items.DIAMOND, ModItems.CRUSHED_DIAMOND, 1)

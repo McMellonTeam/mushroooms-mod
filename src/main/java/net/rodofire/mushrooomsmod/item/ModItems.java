@@ -12,7 +12,6 @@ import net.rodofire.mushrooomsmod.item.Custom.SchroomSoup;
 import net.rodofire.mushrooomsmod.sound.ModSounds;
 import net.rodofire.mushrooomsmod.world.biome.overworld.ModOverworldBiomes;
 import net.minecraft.entity.effect.StatusEffectInstance;
-import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -46,6 +45,11 @@ public class ModItems {
                         entries.add(ModBlocks.LAVA_BLACKSTONE_BRICKS);
                         entries.add(ModBlocks.LAVA_BLACKSTONE_MEDIUM_BRICKS);
                         entries.add(ModBlocks.LAVA_BLACKSTONE_TINY_BRICKS);
+
+                        //Crystal related
+                        entries.add(ModBlocks.AMBER_BLOCK);
+                        entries.add(ModBlocks.AMBER_BLOCK_SANDIFIED);
+                        entries.add(ModBlocks.AMBER_ORE);
 
                         //Idk
                         entries.add(ModBlocks.CLOUD_BLOCK);
@@ -116,6 +120,7 @@ public class ModItems {
                         //Plants
                         //Leaves
                         entries.add(ModBlocks.BLUE_LUMINESCENT_LEAVES);
+                        entries.add(ModBlocks.RED_COLORFUL_LEAVES);
                         //Mushrooms
                         entries.add(ModBlocks.GREEN_MUSHROOM);
                         entries.add(ModBlocks.BLUE_MUSHROOM);
@@ -266,7 +271,7 @@ public class ModItems {
     public static final Item CRUSHED_DIAMOND = registerItem("crushed_diamond", new Item(new FabricItemSettings()));
     public static final Item PINK_CRYSTAL_ITEM = registerItem("crystal_pink_item", new AliasedBlockItem(ModBlocks.PINK_CRYSTAL, new FabricItemSettings()));
     public static final Item BLUE_CRYSTAL_ITEM = registerItem("crystal_blue_item", new AliasedBlockItem(ModBlocks.BLUE_CRYSTAL, new FabricItemSettings()));
-
+    public static final Item AMBER_ITEM = registerItem("amber_item", new Item(new FabricItemSettings()));
     //Tools
     public static final Item IRON_HAMMER = registerItem("iron_hammer", new HammerItem(ToolMaterials.IRON, 40, -3.7f, 4, new FabricItemSettings()));
 
