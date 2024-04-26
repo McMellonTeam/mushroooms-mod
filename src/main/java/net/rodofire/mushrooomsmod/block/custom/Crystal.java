@@ -4,9 +4,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.ShapeContext;
-import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemPlacementContext;
-import net.minecraft.item.ItemStack;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.DirectionProperty;
 import net.minecraft.state.property.IntProperty;
@@ -18,7 +16,6 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
 import net.minecraft.world.WorldView;
-import net.rodofire.mushrooomsmod.block.ModBlocks;
 import org.jetbrains.annotations.Nullable;
 
 public class Crystal extends Block {
@@ -46,7 +43,7 @@ public class Crystal extends Block {
         Direction direction = state.get(VERTICAL_DIRECTION);
         Direction direction2 = direction.getOpposite();
         System.out.println(blockState);
-        if (blockState.isOf(ModBlocks.BLUE_CRYSTAL)) direction2 = blockState.get(VERTICAL_DIRECTION);
+        if (blockState.isOf(this)) direction2 = blockState.get(VERTICAL_DIRECTION);
         return blockState.equals(state) || direction2 == direction || blockState.isSideSolidFullSquare(world, pos, state.get(VERTICAL_DIRECTION));
     }
 
@@ -69,25 +66,15 @@ public class Crystal extends Block {
             System.out.println("cant place");
             return Blocks.AIR.getDefaultState();
         }
-        if (world.getBlockState(pos.offset(direction)).isOf(ModBlocks.BLUE_CRYSTAL)){
+        if (world.getBlockState(pos.offset(direction)).isOf(this)){
             return state;
         }
         System.out.println("place stage 0");
         return super.getStateForNeighborUpdate(state, direction, neighborState, world, pos, neighborPos);
     }
 
-    /*@Override
-    public void onPlaced(World world, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack itemStack) {
-        if (!world.isClient) return;
-        Direction direction = getDirection(state, (World) world, pos);
-        if (direction == null) return;
-        if (world.getBlockState(pos.offset(direction)).getBlock() == ModBlocks.BLUE_CRYSTAL)
-            world.setBlockState(pos.offset(direction), state.with(VERTICAL_DIRECTION, direction).with(STAGE, 1), 1);
-        world.setBlockState(pos, state.with(VERTICAL_DIRECTION, direction).with(STAGE, 0), 1);
-    }*/
-
     public void updateState(World world, BlockPos pos, BlockState state, Direction direction) {
-        if (world.getBlockState(pos.offset(direction.getOpposite())).isOf(ModBlocks.BLUE_CRYSTAL)) {
+        if (world.getBlockState(pos.offset(direction.getOpposite())).isOf(this)) {
             world.setBlockState(pos.offset(direction.getOpposite()), state.with(STAGE, 1).with(VERTICAL_DIRECTION, direction));
         }
     }
@@ -98,7 +85,7 @@ public class Crystal extends Block {
         World world = ctx.getWorld();
         Direction direction = ctx.getVerticalPlayerLookDirection().getOpposite();
         BlockPos pos = ctx.getBlockPos();
-        BlockState blockState = ModBlocks.BLUE_CRYSTAL.getDefaultState();
+        BlockState blockState = this.getDefaultState();
         System.out.println("getPlacementState");
         if (canPlace(world, pos.offset(direction.getOpposite()), blockState.with(VERTICAL_DIRECTION, direction))) {
             updateState(world, pos, blockState, direction);
