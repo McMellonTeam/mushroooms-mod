@@ -1,4 +1,4 @@
-package net.rodofire.mushrooomsmod.world.configuredfeatures;
+package net.rodofire.mushrooomsmod.world.configuredfeatures.custom;
 
 import com.mojang.serialization.Codec;
 import net.minecraft.block.BlockState;
@@ -7,10 +7,8 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3i;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
-import net.minecraft.world.gen.feature.ConfiguredFeature;
 import net.minecraft.world.gen.feature.DefaultFeatureConfig;
 import net.minecraft.world.gen.feature.Feature;
-import net.minecraft.world.gen.feature.NoOpFeature;
 import net.minecraft.world.gen.feature.util.FeatureContext;
 
 public class BushFeature extends Feature<DefaultFeatureConfig> {

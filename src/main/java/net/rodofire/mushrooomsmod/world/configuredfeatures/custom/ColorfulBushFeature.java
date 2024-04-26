@@ -1,4 +1,4 @@
-package net.rodofire.mushrooomsmod.world.configuredfeatures;
+package net.rodofire.mushrooomsmod.world.configuredfeatures.custom;
 
 import com.mojang.serialization.Codec;
 import net.minecraft.block.Block;

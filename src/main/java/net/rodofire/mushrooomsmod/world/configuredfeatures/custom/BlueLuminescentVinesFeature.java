@@ -1,7 +1,6 @@
-package net.rodofire.mushrooomsmod.world.configuredfeatures;
+package net.rodofire.mushrooomsmod.world.configuredfeatures.custom;
 
 import com.mojang.serialization.Codec;
-import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.util.math.Direction;
 import net.rodofire.mushrooomsmod.block.ModBlocks;
 import net.minecraft.block.Block;
