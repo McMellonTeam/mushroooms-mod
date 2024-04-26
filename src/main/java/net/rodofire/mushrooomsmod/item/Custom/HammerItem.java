@@ -52,11 +52,10 @@ public class HammerItem extends ToolItem {
     @Override
     public boolean canMine(BlockState state, World world, BlockPos pos, PlayerEntity miner) {
         if (hammeruse != 0 || world.isClient()) return mine(world, pos);
-        System.out.println(hammeruse);
-        return use(world, pos,miner);
+        return use(world, pos, miner);
     }
 
-    public boolean use(World world, BlockPos pos,PlayerEntity miner) {
+    public boolean use(World world, BlockPos pos, PlayerEntity miner) {
         Block targetedblock = world.getBlockState(pos).getBlock();
         if (targetedblock.equals(ModBlocks.FORGE_BLOCK)) {
 
@@ -86,12 +85,12 @@ public class HammerItem extends ToolItem {
                     inventory.setStack(1, result);
                 }
 
-                world.playSound(miner,pos, SoundEvents.BLOCK_ANVIL_PLACE, SoundCategory.BLOCKS,1f,1f);
+                world.playSound(miner, pos, SoundEvents.BLOCK_ANVIL_PLACE, SoundCategory.BLOCKS, 1f, 1f);
             }
             return false;
-        }return true;
+        }
+        return true;
     }
-
 
 
     public boolean mine(World world, BlockPos pos) {
@@ -111,6 +110,7 @@ public class HammerItem extends ToolItem {
         tooltip.add(Text.translatable("tooltip.mushrooomsmod.hammer.usage").formatted(Formatting.AQUA));
         super.appendTooltip(stack, world, tooltip, context);
     }
+
     @Override
     public Multimap<EntityAttribute, EntityAttributeModifier> getAttributeModifiers(EquipmentSlot slot) {
         if (slot == EquipmentSlot.MAINHAND) {
@@ -118,6 +118,7 @@ public class HammerItem extends ToolItem {
         }
         return super.getAttributeModifiers(slot);
     }
+
     @Override
     public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
         stack.damage(1, attacker, e -> e.sendEquipmentBreakStatus(EquipmentSlot.MAINHAND));

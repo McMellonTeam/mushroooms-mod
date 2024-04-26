@@ -10,10 +10,10 @@ import net.rodofire.mushrooomsmod.world.biome.overworld.ModOverworldBiomes;
 public class ModPlantsGeneration {
     public static void generateFlowers() {
         //Flowers Mushrooms
-        BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.PLAINS), GenerationStep.Feature.VEGETAL_DECORATION, ModSurfacePlacedFeatures.STERILE_BLUE_MUSHROOM_PLACED_KEY);
+        /*BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.PLAINS), GenerationStep.Feature.VEGETAL_DECORATION, ModSurfacePlacedFeatures.STERILE_BLUE_MUSHROOM_PLACED_KEY);
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.PLAINS), GenerationStep.Feature.VEGETAL_DECORATION, ModSurfacePlacedFeatures.MUSHROOM_SMALL_BROWN_PLACED_KEY);
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.PLAINS), GenerationStep.Feature.VEGETAL_DECORATION, ModSurfacePlacedFeatures.MUSHROOM_SMALL_RED_PLACED_KEY);
-
+        */
         /*BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.PLAINS), GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.OCULAE_PLACED_KEY);
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.PLAINS), GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.CYANUS_RUBENS_PLACED_KEY);
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.PLAINS), GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.CYANEA_PLACED_KEY);

@@ -30,7 +30,6 @@ public abstract class ClientPlayNetworkHandlerMixin {
         }
         if (client.player.getWorld().isClient()) {
             client.player.sendMessage(Text.of("MushrooomsMod : Note that this mod is still on beta and a lot of new things are going to come. Please note that some existing features provided by this mod might change"));
-
         }
     }
 }

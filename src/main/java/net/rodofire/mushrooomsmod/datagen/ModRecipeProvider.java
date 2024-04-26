@@ -41,7 +41,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(Items.WHEAT), conditionsFromItem(Items.WHEAT))
                 .offerTo(exporter, new Identifier("baguettess_craft"));
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.FOOD, ModItems.BAGUETTE, 1)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.FOOD, ModItems.LUMINESCENT_SCHROOM_SOUP, 1)
                 .input(Character.valueOf('#'), ModBlocks.BLUE_LUMINESCENT_MUSHROOM)
                 .input(Character.valueOf('C'), Items.BOWL)
                 .pattern(" # ")
@@ -197,6 +197,9 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input(Character.valueOf('I'), Items.IRON_INGOT)
                 .criterion(hasItem(Items.IRON_INGOT), conditionsFromItem(Blocks.IRON_BLOCK))
                 .offerTo(exporter, new Identifier("hammer_craft"));
+
+        //Crystals
+        offerCompactingRecipe(exporter,RecipeCategory.BUILDING_BLOCKS,ModBlocks.AMBER_BLOCK,ModItems.AMBER_ITEM);
 
 
         //Forge Recipe

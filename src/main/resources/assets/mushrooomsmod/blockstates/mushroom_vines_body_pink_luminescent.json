@@ -1,6 +1,0 @@
-{
-  "variants": {
-    "many_vines=true": {"model": "mushrooomsmod:block/mushroom_vines_pink_luminescent_body"},
-    "many_vines=false": {"model": "mushrooomsmod:block/mushroom_vines_pink_luminescent_body"}
-  }
-}

@@ -7,13 +7,15 @@ import net.rodofire.mushrooomsmod.item.ModItems;
 import net.rodofire.mushrooomsmod.util.ModTags;
 
 public class CrushableItems extends Item {
-     Item crushed;
-    public CrushableItems(Item crushed,Settings settings) {
+    Item crushed;
+
+    public CrushableItems(Item crushed, Settings settings) {
         super(settings);
-        this.crushed=crushed;
+        this.crushed = crushed;
     }
-    public static ItemStack getCrushed(ItemStack stack){
-        if (stack.getItem().equals(Items.DIAMOND))return ModItems.CRUSHED_DIAMOND.asItem().getDefaultStack();
+
+    public static ItemStack getCrushed(ItemStack stack) {
+        if (stack.getItem().equals(Items.DIAMOND)) return ModItems.CRUSHED_DIAMOND.asItem().getDefaultStack();
         return null;
     }
 

@@ -20,22 +20,26 @@ import java.util.Optional;
 
 public class ForgeBlockEntity extends BlockEntity implements ImplementedInventory {
     private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(2, ItemStack.EMPTY);
-    public ForgeBlockEntity( BlockPos pos, BlockState state) {
-        super(ModBlockEntities.FORGE_BLOCK_ENTITY,pos, state);
+
+    public ForgeBlockEntity(BlockPos pos, BlockState state) {
+        super(ModBlockEntities.FORGE_BLOCK_ENTITY, pos, state);
     }
+
     @Override
     protected void writeNbt(NbtCompound nbt) {
         super.writeNbt(nbt);
         Inventories.writeNbt(nbt, inventory);
     }
-        @Override
-    public void readNbt(NbtCompound nbt){
+
+    @Override
+    public void readNbt(NbtCompound nbt) {
         inventory.clear();
         super.readNbt(nbt);
-        Inventories.readNbt(nbt,inventory);
+        Inventories.readNbt(nbt, inventory);
     }
-    public ItemStack getInventory(){
-        return inventory.get(inventory.size()-1);
+
+    public ItemStack getInventory() {
+        return inventory.get(inventory.size() - 1);
     }
 
 
@@ -43,17 +47,18 @@ public class ForgeBlockEntity extends BlockEntity implements ImplementedInventor
     public DefaultedList<ItemStack> getItems() {
         return inventory;
     }
+
     @Override
     public void markDirty() {
         super.markDirty();
         world.updateListeners(pos, getCachedState(), getCachedState(), 3);
     }
 
-    public ArrayList<ItemStack> getRenderStack(){
+    public ArrayList<ItemStack> getRenderStack() {
         ArrayList<ItemStack> itemStacks = new ArrayList<>();
-        if (inventory.get(0).getCount()==0&&inventory.get(1).getCount()==0) itemStacks.add(ItemStack.EMPTY);
-        else if (inventory.get(0).getCount()!=0&&inventory.get(1).getCount()==0)itemStacks.add(inventory.get(0));
-        else if(inventory.get(1).getCount()!=0&&inventory.get(0).getCount()==0)itemStacks.add(inventory.get(1));
+        if (inventory.get(0).getCount() == 0 && inventory.get(1).getCount() == 0) itemStacks.add(ItemStack.EMPTY);
+        else if (inventory.get(0).getCount() != 0 && inventory.get(1).getCount() == 0) itemStacks.add(inventory.get(0));
+        else if (inventory.get(1).getCount() != 0 && inventory.get(0).getCount() == 0) itemStacks.add(inventory.get(1));
         else {
             itemStacks.add(inventory.get(0));
             itemStacks.add(inventory.get(1));

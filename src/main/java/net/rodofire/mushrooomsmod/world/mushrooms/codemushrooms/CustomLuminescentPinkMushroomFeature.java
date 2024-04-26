@@ -28,10 +28,10 @@ public class CustomLuminescentPinkMushroomFeature extends CustomLuminescentPinkM
                 boolean bl = j == -i;
                 boolean bl2 = j == i;
                 boolean bl3 = k == -i;
-                boolean bl100 = k == -i+1;
-                boolean bl101 = k == i-1;
-                boolean bl102 = j == -i+1;
-                boolean bl103 = j == i-1;
+                boolean bl100 = k == -i + 1;
+                boolean bl101 = k == i - 1;
+                boolean bl102 = j == -i + 1;
+                boolean bl103 = j == i - 1;
                 boolean bl4 = k == i;
                 boolean bl5 = bl || bl2;
                 boolean bl6 = bl3 || bl4;
@@ -57,23 +57,23 @@ public class CustomLuminescentPinkMushroomFeature extends CustomLuminescentPinkM
                 boolean bl2 = j == i;
                 boolean bl3 = k == -i;
                 boolean bl4 = k == i;
-                boolean bl100 = k <= -i+3;
-                boolean bl101 = k >= i-3;
-                boolean bl102 = j <= -i+3;
-                boolean bl103 = j >= i-3;
-                boolean bl200 = j == -i+1;
-                boolean bl201 = j == i-1;
-                boolean bl202 = k == i-1;
-                boolean bl203 = k == -i+1;
+                boolean bl100 = k <= -i + 3;
+                boolean bl101 = k >= i - 3;
+                boolean bl102 = j <= -i + 3;
+                boolean bl103 = j >= i - 3;
+                boolean bl200 = j == -i + 1;
+                boolean bl201 = j == i - 1;
+                boolean bl202 = k == i - 1;
+                boolean bl203 = k == -i + 1;
                 boolean bl5 = bl || bl2;
                 boolean bl6 = bl3 || bl4;
                 boolean bl104 = bl100 || bl101;
                 boolean bl105 = bl102 || bl103;
-                boolean bl204 = bl200||bl201;
-                boolean bl205 = bl202||bl203;
+                boolean bl204 = bl200 || bl201;
+                boolean bl205 = bl202 || bl203;
                 if (bl5 && bl104) continue;
                 if (bl6 && bl105) continue;
-                if(bl204 && bl205) continue;
+                if (bl204 && bl205) continue;
                 mutable.set(start, j, y, k);
                 if (world.getBlockState(mutable).isOpaqueFullCube(world, mutable)) continue;
                 BlockState blockState = config.capProvider.get(random, start);
@@ -85,32 +85,32 @@ public class CustomLuminescentPinkMushroomFeature extends CustomLuminescentPinkM
     @Override
     protected void generateBottomCap(WorldAccess world, Random random, BlockPos start, int y, BlockPos.Mutable mutable, HugeMushroomFeatureConfig config, int i) {
         int e = config.foliageRadius;
-        for (int j = -i; j<=i; ++j){
-            for(int k =-i; k<=i; ++k){
+        for (int j = -i; j <= i; ++j) {
+            for (int k = -i; k <= i; ++k) {
                 boolean bl = j == -i;
                 boolean bl2 = j == i;
                 boolean bl3 = k == -i;
                 boolean bl4 = k == i;
 
-                boolean bl100 = k <= -i+4;
-                boolean bl101 = k >= i-4;
-                boolean bl102 = j <= -i+4;
-                boolean bl103 = j >= i-4;
+                boolean bl100 = k <= -i + 4;
+                boolean bl101 = k >= i - 4;
+                boolean bl102 = j <= -i + 4;
+                boolean bl103 = j >= i - 4;
 
-                boolean bl200 = k <= -i+2;
-                boolean bl201 = k >= i-2;
-                boolean bl202 = j <= -i+2;
-                boolean bl203 = j >= i-2;
+                boolean bl200 = k <= -i + 2;
+                boolean bl201 = k >= i - 2;
+                boolean bl202 = j <= -i + 2;
+                boolean bl203 = j >= i - 2;
 
-                boolean bl300 = j == -i+1;
-                boolean bl301 = j == i-1;
-                boolean bl302 = k == i-1;
-                boolean bl303 = k == -i+1;
+                boolean bl300 = j == -i + 1;
+                boolean bl301 = j == i - 1;
+                boolean bl302 = k == i - 1;
+                boolean bl303 = k == -i + 1;
 
-                boolean bl400 = k<=3;
-                boolean bl401 = k>=-3;
-                boolean bl402 =j<=3;
-                boolean bl403 =j>=-3;
+                boolean bl400 = k <= 3;
+                boolean bl401 = k >= -3;
+                boolean bl402 = j <= 3;
+                boolean bl403 = j >= -3;
 
                 boolean bl5 = bl || bl2;
                 boolean bl6 = bl3 || bl4;
@@ -132,13 +132,13 @@ public class CustomLuminescentPinkMushroomFeature extends CustomLuminescentPinkM
                 bl2 = j <= 1;
                 bl3 = k >= -1;
                 bl4 = k <= 1;
-                bl100 = k > -e+1;
-                bl101 = k < e-1;
-                bl102 = j > -e+1;
-                bl103 = j < e-1;
+                bl100 = k > -e + 1;
+                bl101 = k < e - 1;
+                bl102 = j > -e + 1;
+                bl103 = j < e - 1;
                 bl200 = j == e;
                 bl201 = j == -e;
-                bl202 = k== e;
+                bl202 = k == e;
                 bl203 = k == -e;
                 bl5 = bl && bl2;
                 bl6 = bl3 && bl4;

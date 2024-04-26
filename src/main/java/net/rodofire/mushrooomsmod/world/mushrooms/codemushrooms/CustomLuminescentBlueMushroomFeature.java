@@ -22,14 +22,14 @@ public class CustomLuminescentBlueMushroomFeature extends CustomLuminescentBlueM
 
     @Override
     protected int getCapSize(int capSize) {
-        return Random.create().nextBetween(capSize-1,capSize);
+        return Random.create().nextBetween(capSize - 1, capSize);
     }
 
 
     @Override
     protected void generateCap(WorldAccess world, Random random, BlockPos start, int y, BlockPos.Mutable mutable, HugeMushroomFeatureConfig config, int large) {
         for (int i = y - 3; i <= y; ++i) {
-            int j = i < y ? large : large-1;
+            int j = i < y ? large : large - 1;
             for (int l = -j; l <= j; ++l) {
                 for (int m = -j; m <= j; ++m) {
                     boolean bl6;

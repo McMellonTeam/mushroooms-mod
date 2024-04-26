@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "mushrooomsmod:amber_item"
+    },
+    {
+      "item": "mushrooomsmod:amber_item"
+    },
+    {
+      "item": "mushrooomsmod:amber_item"
+    },
+    {
+      "item": "mushrooomsmod:amber_item"
+    },
+    {
+      "item": "mushrooomsmod:amber_item"
+    },
+    {
+      "item": "mushrooomsmod:amber_item"
+    },
+    {
+      "item": "mushrooomsmod:amber_item"
+    },
+    {
+      "item": "mushrooomsmod:amber_item"
+    },
+    {
+      "item": "mushrooomsmod:amber_item"
+    }
+  ],
+  "result": {
+    "item": "mushrooomsmod:amber_block"
+  }
+}

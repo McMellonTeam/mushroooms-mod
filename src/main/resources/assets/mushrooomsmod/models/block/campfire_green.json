@@ -1,7 +1,7 @@
 {
   "parent": "block/template_campfire",
   "textures": {
-    "fire": "mushrooomsmod:block/campfire_green",
+    "fire": "mushrooomsmod:block/campfire_green_fire",
     "lit_log": "mushrooomsmod:block/campfire_green_log_lit"
   }
 }

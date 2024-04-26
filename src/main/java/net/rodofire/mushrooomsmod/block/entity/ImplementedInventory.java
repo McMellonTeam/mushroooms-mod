@@ -12,8 +12,9 @@ import org.jetbrains.annotations.Nullable;
  * A simple {@code SidedInventory} implementation with only default methods + an item list getter.
  *
  * <h2>Reading and writing to tags</h2>
- *
+ * <p>
  * License: <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0</a>
+ *
  * @author Juuz
  */
 @FunctionalInterface
