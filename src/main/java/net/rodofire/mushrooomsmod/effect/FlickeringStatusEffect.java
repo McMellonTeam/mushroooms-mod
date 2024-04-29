@@ -21,9 +21,9 @@ public class FlickeringStatusEffect extends StatusEffect {
         ServerWorld world = (ServerWorld) entity.getWorld();
         Vec3d vec3d = entity.getPos();
         for(int i=0;i<400;++i) {
-            Vec3d vec3d2 = vec3d.add((float) Random.create().nextBetween(-100, 100) / 100, (float) Random.create().nextBetween(0, 150) / 100, (float) Random.create().nextBetween(-100, 100) / 100);
-            Vec3d vec3d3 = vec3d.add((float) Random.create().nextBetween(-100, 100) / 100, (float) Random.create().nextBetween(0, 100) / 100, (float) Random.create().nextBetween(-100, 100) / 100);
-            world.spawnParticles(ParticleTypes.GLOW_SQUID_INK, vec3d2.x, vec3d2.y, vec3d2.z, 1, vec3d3.x, vec3d3.y, vec3d3.z, 0.00025f);
+            Vec3d vec3d2 = vec3d.add((float) Random.create().nextBetween(-200, 200) / 10, (float) Random.create().nextBetween(-200, 200) / 10, (float) Random.create().nextBetween(-200, 200) / 10);
+            Vec3d vec3d3 = vec3d.add((float) Random.create().nextBetween(-200, 200) / 10, (float) Random.create().nextBetween(-200, 200) / 10, (float) Random.create().nextBetween(-200, 200) / 10);
+            world.spawnParticles(ParticleTypes.GLOW_SQUID_INK, vec3d2.x, vec3d2.y, vec3d2.z, 0, vec3d3.x, vec3d3.y, vec3d3.z, 0.00025f);
         }
         super.applyUpdateEffect(entity, amplifier);
     }
