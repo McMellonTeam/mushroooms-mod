@@ -64,7 +64,9 @@
       "minecraft:glow_lichen",
       "minecraft:mushroom_island_vegetation",
       "mushrooomsmod:huge_brown_mushroom_underground_placed_key",
-      "mushrooomsmod:huge_red_mushroom_underground_placed_key"
+      "mushrooomsmod:huge_red_mushroom_underground_placed_key",
+      "mushrooomsmod:brown_mushroom_underground_placed_key",
+      "mushrooomsmod:red_mushroom_underground_placed_key"
     ],
     [
       "minecraft:freeze_top_layer"

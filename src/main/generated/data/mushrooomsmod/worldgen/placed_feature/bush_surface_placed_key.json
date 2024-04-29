@@ -1,9 +1,9 @@
 {
-  "feature": "mushrooomsmod:blue_perennial_key",
+  "feature": "mushrooomsmod:bush_key",
   "placement": [
     {
       "type": "minecraft:count",
-      "count": 7
+      "count": 3
     },
     {
       "type": "minecraft:in_square"
