@@ -15,6 +15,7 @@ import net.rodofire.mushrooomsmod.particle.ModParticles;
 import net.rodofire.mushrooomsmod.recipe.ModRecipes;
 import net.rodofire.mushrooomsmod.sound.ModSounds;
 import net.rodofire.mushrooomsmod.util.ModLootTableModifier;
+import net.rodofire.mushrooomsmod.world.configuredfeatures.ModFeatures;
 import net.rodofire.mushrooomsmod.world.gen.ModWorldGeneration;
 import net.rodofire.mushrooomsmod.world.tree.ModTrunkPlacerTypes;
 import org.slf4j.Logger;
@@ -35,6 +36,8 @@ public class MushrooomsMod implements ModInitializer {
         BlockUtils.registerFlammable();
 
         ModItems.registerModItems();
+
+        ModFeatures.addFeatures();
 
         ModParticles.registerParticles();
         ModStatusEffects.registerEffects();
