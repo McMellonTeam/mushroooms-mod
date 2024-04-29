@@ -86,7 +86,7 @@ public class ModOverworldBiomes {
                 new GenerationSettings.LookupBackedBuilder(context.getRegistryLookup(RegistryKeys.PLACED_FEATURE),
                         context.getRegistryLookup(RegistryKeys.CONFIGURED_CARVER));
 
-        DefaultBiomeFeatures.addDefaultOres(biomeBuilder);
+        ModBiomeFeatures.globalOverworldGeneration(biomeBuilder);
 
         biomeBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, VegetationPlacedFeatures.TREES_PLAINS);
 
@@ -105,12 +105,10 @@ public class ModOverworldBiomes {
                 .generationSettings(biomeBuilder.build())
                 .spawnSettings(spawnBuilder.build())
                 .effects((new BiomeEffects.Builder())
-                        .waterColor(0x3fceda)
-                        .waterFogColor(0xbf1b26)
+                        .waterColor(4159204)
+                        .waterFogColor(329011)
                         .skyColor(0x30c918)
-                        .grassColor(0x7f03fc)
-                        .foliageColor(0xd203fc)
-                        .fogColor(0x22a1e6)
+                        .fogColor(12638463)
                         .moodSound(BiomeMoodSound.CAVE)
                         .build())
                 .build();
@@ -211,6 +209,7 @@ public class ModOverworldBiomes {
 
         biomeBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, VegetationPlacedFeatures.TREES_PLAINS);
         biomeBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, VegetationPlacedFeatures.PATCH_GRASS_PLAIN);
+        ModBiomeFeatures.addColorfulPlainsFeatures(biomeBuilder);
 
         return new Biome.Builder()
                 .precipitation(true)

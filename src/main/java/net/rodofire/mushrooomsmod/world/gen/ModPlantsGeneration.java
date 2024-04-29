@@ -32,14 +32,14 @@ public class ModPlantsGeneration {
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.PLAINS), GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.PREHISTURPLE_SCHROOM_PLACED_KEY);
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.PLAINS), GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.PREHISTO_PINK_SCHROOM_PLACED_KEY);*/
 
-        BiomeModifications.addFeature(BiomeSelectors.includeByKey(ModOverworldBiomes.COLORFUL_PLAINS), GenerationStep.Feature.VEGETAL_DECORATION, ModSurfacePlacedFeatures.YELLOW_PERENNIAL_PLACED_KEY);
+        /*BiomeModifications.addFeature(BiomeSelectors.includeByKey(ModOverworldBiomes.COLORFUL_PLAINS), GenerationStep.Feature.VEGETAL_DECORATION, ModSurfacePlacedFeatures.YELLOW_PERENNIAL_PLACED_KEY);
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(ModOverworldBiomes.COLORFUL_PLAINS), GenerationStep.Feature.VEGETAL_DECORATION, ModSurfacePlacedFeatures.GREEN_PERENNIAL_PLACED_KEY);
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(ModOverworldBiomes.COLORFUL_PLAINS), GenerationStep.Feature.VEGETAL_DECORATION, ModSurfacePlacedFeatures.BLUE_PERENNIAL_PLACED_KEY);
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(ModOverworldBiomes.COLORFUL_PLAINS), GenerationStep.Feature.VEGETAL_DECORATION, ModSurfacePlacedFeatures.ORANGE_PERENNIAL_PLACED_KEY);
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(ModOverworldBiomes.COLORFUL_PLAINS), GenerationStep.Feature.VEGETAL_DECORATION, ModSurfacePlacedFeatures.LUMINESCENT_PERENNIAL_PLACED_KEY);
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(ModOverworldBiomes.COLORFUL_PLAINS), GenerationStep.Feature.VEGETAL_DECORATION, ModSurfacePlacedFeatures.PINK_PERENNIAL_PLACED_KEY);
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(ModOverworldBiomes.COLORFUL_PLAINS), GenerationStep.Feature.VEGETAL_DECORATION, ModSurfacePlacedFeatures.PURPLE_PERENNIAL_PLACED_KEY);
-
+        */
         /*BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.PLAINS), GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.RED_QUINCE_PLACED_KEY);
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.PLAINS), GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.YELLOW_QUINCE_PLACED_KEY);
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.PLAINS), GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.TINY_LILAC_PLACED_KEY);

@@ -1,6 +1,13 @@
 package net.rodofire.mushrooomsmod.world.biome.surface;
 
 import net.minecraft.util.math.VerticalSurfaceType;
+import net.minecraft.util.math.noise.DoublePerlinNoiseSampler;
+import net.minecraft.world.gen.densityfunction.DensityFunction;
+import net.minecraft.world.gen.noise.NoiseConfig;
+import net.minecraft.world.gen.noise.NoiseHelper;
+import net.minecraft.world.gen.noise.NoiseParametersKeys;
+import net.minecraft.world.gen.placementmodifier.NoiseThresholdCountPlacementModifier;
+import net.minecraft.world.gen.stateprovider.NoiseThresholdBlockStateProvider;
 import net.rodofire.mushrooomsmod.block.ModBlocks;
 import net.rodofire.mushrooomsmod.world.biome.overworld.ModOverworldBiomes;
 import net.minecraft.block.Block;
@@ -13,6 +20,8 @@ public class ModMaterialsRules {
     private static final MaterialRules.MaterialRule DIRT = makeStateRule(Blocks.DIRT);
     private static final MaterialRules.MaterialRule GRASS_BLOCK = makeStateRule(Blocks.GRASS_BLOCK);
     private static final MaterialRules.MaterialRule MYCELIUM = makeStateRule(Blocks.MYCELIUM);
+    private static final MaterialRules.MaterialRule COARSE_DIRT = makeStateRule(Blocks.COARSE_DIRT);
+    private static final MaterialRules.MaterialRule ROOTED_DIRT = makeStateRule(Blocks.ROOTED_DIRT);
 
     //Stone Related
     private static final MaterialRules.MaterialRule STONE = makeStateRule(Blocks.STONE);
@@ -26,8 +35,9 @@ public class ModMaterialsRules {
     public static MaterialRules.MaterialRule makeRules() {
         MaterialRules.MaterialCondition deepslatelevel = MaterialRules.verticalGradient("deepslate",YOffset.fixed(0), YOffset.fixed(8));
         MaterialRules.MaterialCondition stonecavelevel =  MaterialRules.aboveY(YOffset.fixed(0),1);
-        MaterialRules.MaterialCondition abovetop =  MaterialRules.aboveY(YOffset.belowTop(2),0);
-        MaterialRules.MaterialCondition belowtop =  MaterialRules.not(abovetop);
+        MaterialRules.MaterialCondition abovetop =  MaterialRules.aboveY(YOffset.belowTop(-2),0);
+        MaterialRules.MaterialCondition belowtop =  MaterialRules.not(MaterialRules.aboveY(YOffset.belowTop(-6), 1));
+
 
         //Dirt Related
         MaterialRules.MaterialRule dirt = MaterialRules.condition(MaterialRules.stoneDepth(0, true,3, VerticalSurfaceType.FLOOR),DIRT);
@@ -53,5 +63,9 @@ public class ModMaterialsRules {
 
     private static MaterialRules.MaterialRule makeStateRule(Block block) {
         return MaterialRules.block(block.getDefaultState());
+    }
+
+    public static MaterialRules.MaterialCondition noiseAbove(double min) {
+        return MaterialRules.noiseThreshold(NoiseParametersKeys.SURFACE, min);
     }
 }
