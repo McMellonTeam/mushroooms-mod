@@ -88,9 +88,9 @@ public class ModItems {
                         entries.add(ModBlocks.ORANGE_FERMENTED_MUSHROOM_BLOCK);
 
                         entries.add(Blocks.RED_MUSHROOM_BLOCK);
-                /*entries.add(ModBlocks.RED_ALTERED_MUSHROOM_BLOCK);
-                entries.add(ModBlocks.RED_DEGRADATED_MUSHROOM_BLOCK);
-                entries.add(ModBlocks.RED_FERMENTED_MUSHROOM_BLOCK);*/
+                        entries.add(ModBlocks.RED_ALTERED_MUSHROOM_BLOCK);
+                        entries.add(ModBlocks.RED_DEGRADATED_MUSHROOM_BLOCK);
+                        entries.add(ModBlocks.RED_FERMENTED_MUSHROOM_BLOCK);
 
                         entries.add(ModBlocks.PINK_LUMINESCENT_MUSHROOM_BLOCK);
                         entries.add(ModBlocks.PINK_LUMINESCENT_ALTERED_MUSHROOM_BLOCK);
