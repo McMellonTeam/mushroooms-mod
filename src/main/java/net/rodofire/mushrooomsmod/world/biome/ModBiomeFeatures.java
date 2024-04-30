@@ -3,11 +3,9 @@ package net.rodofire.mushrooomsmod.world.biome;
 import net.minecraft.world.biome.GenerationSettings;
 import net.minecraft.world.gen.GenerationStep;
 import net.minecraft.world.gen.feature.DefaultBiomeFeatures;
-import net.minecraft.world.gen.feature.TreePlacedFeatures;
-import net.minecraft.world.gen.feature.UndergroundPlacedFeatures;
 import net.minecraft.world.gen.feature.VegetationPlacedFeatures;
-import net.rodofire.mushrooomsmod.world.placedfeatures.ModSurfacePlacedFeatures;
-import net.rodofire.mushrooomsmod.world.placedfeatures.ModUndergroundPlacedFeatures;
+import net.rodofire.mushrooomsmod.world.features.placedfeatures.ModSurfacePlacedFeatures;
+import net.rodofire.mushrooomsmod.world.features.placedfeatures.ModUndergroundPlacedFeatures;
 
 public class ModBiomeFeatures {
 

@@ -3,12 +3,12 @@ package net.rodofire.mushrooomsmod;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.rodofire.mushrooomsmod.datagen.*;
-import net.rodofire.mushrooomsmod.world.configuredfeatures.ModConfiguredFeatures;
-import net.rodofire.mushrooomsmod.world.placedfeatures.ModSurfacePlacedFeatures;
+import net.rodofire.mushrooomsmod.world.features.configuredfeatures.ModConfiguredFeatures;
+import net.rodofire.mushrooomsmod.world.features.placedfeatures.ModSurfacePlacedFeatures;
 import net.rodofire.mushrooomsmod.world.biome.overworld.ModOverworldBiomes;
 import net.minecraft.registry.RegistryBuilder;
 import net.minecraft.registry.RegistryKeys;
-import net.rodofire.mushrooomsmod.world.placedfeatures.ModUndergroundPlacedFeatures;
+import net.rodofire.mushrooomsmod.world.features.placedfeatures.ModUndergroundPlacedFeatures;
 
 public class MushrooomsModDataGenerator implements DataGeneratorEntrypoint {
     @Override

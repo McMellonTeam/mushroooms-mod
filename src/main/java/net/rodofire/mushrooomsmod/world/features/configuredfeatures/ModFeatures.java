@@ -1,12 +1,12 @@
-package net.rodofire.mushrooomsmod.world.configuredfeatures;
+package net.rodofire.mushrooomsmod.world.features.configuredfeatures;
 
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.world.gen.feature.*;
-import net.rodofire.mushrooomsmod.feature.mushroomfeature.ModMushroomFeatureConfig;
-import net.rodofire.mushrooomsmod.world.configuredfeatures.custom.BlueLuminescentVinesFeature;
-import net.rodofire.mushrooomsmod.world.configuredfeatures.custom.BushFeature;
-import net.rodofire.mushrooomsmod.world.configuredfeatures.custom.ColorfulBushFeature;
+import net.rodofire.mushrooomsmod.world.features.config.ModMushroomFeatureConfig;
+import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.BlueLuminescentVinesFeature;
+import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.BushFeature;
+import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.ColorfulBushFeature;
 import net.rodofire.mushrooomsmod.world.mushrooms.HugeBlueMushroom.HugeBlueMushroomFeature;
 import net.rodofire.mushrooomsmod.world.mushrooms.codemushrooms.*;
 import net.rodofire.mushrooomsmod.world.mushrooms.structuremushrooms.CustomGreenSecondMushroomFeature;

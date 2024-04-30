@@ -14,7 +14,7 @@ import net.rodofire.mushrooomsmod.block.custom.bigmushroom.*;
 import net.rodofire.mushrooomsmod.item.ModItems;
 import net.rodofire.mushrooomsmod.particle.ModParticles;
 import net.rodofire.mushrooomsmod.sound.ModBlockSoundGroup;
-import net.rodofire.mushrooomsmod.world.configuredfeatures.ModConfiguredFeatures;
+import net.rodofire.mushrooomsmod.world.features.configuredfeatures.ModConfiguredFeatures;
 import net.minecraft.block.*;
 import net.minecraft.block.enums.Instrument;
 import net.minecraft.block.piston.PistonBehavior;

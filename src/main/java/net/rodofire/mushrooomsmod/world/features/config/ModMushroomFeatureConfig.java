@@ -1,4 +1,4 @@
-package net.rodofire.mushrooomsmod.feature.mushroomfeature;
+package net.rodofire.mushrooomsmod.world.features.config;
 
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;

@@ -2,10 +2,9 @@ package net.rodofire.mushrooomsmod.world.gen;
 
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
-import net.rodofire.mushrooomsmod.world.placedfeatures.ModSurfacePlacedFeatures;
+import net.rodofire.mushrooomsmod.world.features.placedfeatures.ModSurfacePlacedFeatures;
 import net.minecraft.world.biome.BiomeKeys;
 import net.minecraft.world.gen.GenerationStep;
-import net.rodofire.mushrooomsmod.world.biome.overworld.ModOverworldBiomes;
 
 public class ModPlantsGeneration {
     public static void generateFlowers() {

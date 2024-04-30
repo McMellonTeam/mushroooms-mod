@@ -1,7 +1,7 @@
 package net.rodofire.mushrooomsmod.world.mushrooms.HugeBlueMushroom;
 
 import com.mojang.serialization.Codec;
-import net.rodofire.mushrooomsmod.world.configuredfeatures.ModConfiguredFeatures;
+import net.rodofire.mushrooomsmod.world.features.configuredfeatures.ModConfiguredFeatures;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.MushroomBlock;
 import net.minecraft.registry.RegistryKey;

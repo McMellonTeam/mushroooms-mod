@@ -1,7 +1,7 @@
 package net.rodofire.mushrooomsmod.world.mushrooms.structuremushrooms;
 
 import com.mojang.serialization.Codec;
-import net.rodofire.mushrooomsmod.feature.mushroomfeature.ModMushroomFeatureConfig;
+import net.rodofire.mushrooomsmod.world.features.config.ModMushroomFeatureConfig;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.StructureWorldAccess;
