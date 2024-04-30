@@ -27,7 +27,7 @@ public class StructurePlacer {
     private float integrity;
     private BlockPos offset = new BlockPos(0, 0, 0);
 
-    /*public void StructurePlacer(StructureWorldAccess world, Identifier templateName, BlockPos blockPos, BlockMirror mirror, BlockRotation rotation, boolean ignoreEntities, float integrity, BlockPos offset) {
+    public StructurePlacer(StructureWorldAccess world, Identifier templateName, BlockPos blockPos, BlockMirror mirror, BlockRotation rotation, boolean ignoreEntities, float integrity, BlockPos offset) {
         this.world = world;
         this.templateName = templateName;
         this.blockPos = blockPos;
@@ -38,7 +38,7 @@ public class StructurePlacer {
         this.offset = offset;
     }
 
-    public void StructurePlacer(StructureWorldAccess world, Identifier templateName, BlockPos blockPos) {
+    public StructurePlacer(StructureWorldAccess world, Identifier templateName, BlockPos blockPos) {
         this.world = world;
         this.templateName = templateName;
         this.blockPos = blockPos;
@@ -49,7 +49,7 @@ public class StructurePlacer {
         this.offset = new BlockPos(0, 0, 0);
     }
 
-    public void StructurePlacer(StructureWorldAccess world, Identifier templateName, BlockPos blockPos, BlockPos offset) {
+    public StructurePlacer(StructureWorldAccess world, Identifier templateName, BlockPos blockPos, BlockPos offset) {
         this.world = world;
         this.templateName = templateName;
         this.blockPos = blockPos;
@@ -60,7 +60,7 @@ public class StructurePlacer {
         this.offset = offset;
     }
 
-    public void StructurePlacer(StructureWorldAccess world, Identifier templateName, BlockPos blockPos, BlockMirror mirror) {
+    public StructurePlacer(StructureWorldAccess world, Identifier templateName, BlockPos blockPos, BlockMirror mirror) {
         this.world = world;
         this.templateName = templateName;
         this.blockPos = blockPos;
@@ -71,7 +71,7 @@ public class StructurePlacer {
         this.offset = new BlockPos(0, 0, 0);
     }
 
-    public void StructurePlacer(StructureWorldAccess world, Identifier templateName, BlockPos blockPos, BlockRotation rotation) {
+    public StructurePlacer(StructureWorldAccess world, Identifier templateName, BlockPos blockPos, BlockRotation rotation) {
         this.world = world;
         this.templateName = templateName;
         this.blockPos = blockPos;
@@ -82,7 +82,7 @@ public class StructurePlacer {
         this.offset = new BlockPos(0, 0, 0);
     }
 
-    public void StructurePlacer(StructureWorldAccess world, Identifier templateName, BlockPos blockPos, BlockMirror mirror, BlockRotation rotation) {
+    public StructurePlacer(StructureWorldAccess world, Identifier templateName, BlockPos blockPos, BlockMirror mirror, BlockRotation rotation) {
         this.world = world;
         this.templateName = templateName;
         this.blockPos = blockPos;
@@ -93,16 +93,6 @@ public class StructurePlacer {
         this.offset = new BlockPos(0, 0, 0);
     }
 
-    public void StructurePlacer(StructureWorldAccess world, Identifier templateName, BlockPos blockPos, float integrity) {
-        this.world = world;
-        this.templateName = templateName;
-        this.blockPos = blockPos;
-        this.mirror = BlockMirror.NONE;
-        this.rotation = BlockRotation.NONE;
-        this.ignoreEntities = true;
-        this.integrity = integrity;
-        this.offset = new BlockPos(0, 0, 0);
-    }*/
     public StructurePlacer(StructureWorldAccess world, Identifier templateName, BlockPos blockPos, float integrity) {
         this.world = world;
         this.templateName = templateName;
@@ -125,7 +115,7 @@ public class StructurePlacer {
                 return false;
             }
 
-            return !optional.isPresent() ? false : this.place((StructureTemplate)optional.get());
+            return !optional.isPresent() ? false : this.place((StructureTemplate) optional.get());
         } else {
             return false;
         }
