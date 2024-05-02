@@ -16,6 +16,11 @@
     "mushrooomsmod:prehisto_blue_schroom",
     "mushrooomsmod:prehisto_green_schroom",
     "mushrooomsmod:prehisto_pink_schroom",
-    "mushrooomsmod:prehisturple_schroom"
+    "mushrooomsmod:prehisturple_schroom",
+    "minecraft:grass",
+    "minecraft:tall_grass",
+    "mushrooomsmod:tiny_grass",
+    "mushrooomsmod:grass_blue_luminescent",
+    "mushrooomsmod:grass_tall_blue_luminescent"
   ]
 }

@@ -40,7 +40,7 @@ public class BushFeature extends Feature<DefaultFeatureConfig> {
 
     @Override
     public boolean generate(FeatureContext<DefaultFeatureConfig> context) {
-        World world = (World)context.getWorld();
+        World world = (World) context.getWorld();
         if (world.isClient()) return false;
         BlockPos pos = context.getOrigin();
         int capnumber = Random.create().nextBetween(1, 4);
@@ -53,9 +53,9 @@ public class BushFeature extends Feature<DefaultFeatureConfig> {
                 for (int k = 0; k < 5; k++) {
                     if (world.getBlockState(pos.add(i, j, k)).isOf(Blocks.BEDROCK))
                         world.setBlockState(pos.add(i, j, k), blockState, 1);
-                    int a =1;
-                    while (world.getBlockState(pos.down(a)).isAir()){
-                        world.setBlockState(pos.add(i, j-a, k), blockState, 1);
+                    int a = 1;
+                    while (world.getBlockState(pos.down(a)).isAir()) {
+                        world.setBlockState(pos.add(i, j - a, k), blockState, 1);
                         ++a;
                     }
                 }

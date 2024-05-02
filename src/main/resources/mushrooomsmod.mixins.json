@@ -3,7 +3,8 @@
 	"package": "net.rodofire.mushrooomsmod.mixin",
 	"compatibilityLevel": "JAVA_17",
 	"mixins": [
-		"TrunkPlacerTypeInvoker"
+		"TrunkPlacerTypeInvoker",
+		"BrushItemMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
