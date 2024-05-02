@@ -38,7 +38,6 @@ public abstract class BrushItemMixin extends Item {
     public void amberBlock(World world, LivingEntity user, ItemStack stack, int remainingUseTicks, CallbackInfo ci) {
         int i = this.getMaxUseTime(stack) - remainingUseTicks + 1;
         boolean bl = i % 10 == 5;
-        System.out.println(i);
         if(bl) {
             PlayerEntity playerEntity = (PlayerEntity)user;
             HitResult hitResult = this.getHitResult(user);
