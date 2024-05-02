@@ -1,4 +1,4 @@
-package net.rodofire.mushrooomsmod.world.configuredfeatures.custom;
+package net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom;
 
 import com.mojang.serialization.Codec;
 import net.minecraft.util.math.Direction;

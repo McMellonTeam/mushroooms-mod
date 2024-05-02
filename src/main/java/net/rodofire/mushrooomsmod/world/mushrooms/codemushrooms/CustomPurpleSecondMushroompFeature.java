@@ -9,7 +9,7 @@ import net.minecraft.util.math.Vec3i;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
 import net.rodofire.mushrooomsmod.block.ModBlocks;
-import net.rodofire.mushrooomsmod.feature.mushroomfeature.ModMushroomFeatureConfig;
+import net.rodofire.mushrooomsmod.world.features.config.ModMushroomFeatureConfig;
 
 import java.util.ArrayList;
 

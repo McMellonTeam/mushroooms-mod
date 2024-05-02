@@ -1,4 +1,4 @@
-package net.rodofire.mushrooomsmod.world.placedfeatures;
+package net.rodofire.mushrooomsmod.world.features.placedfeatures;
 
 import net.minecraft.registry.Registerable;
 import net.minecraft.registry.RegistryKey;
@@ -8,7 +8,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.world.gen.feature.*;
 import net.minecraft.world.gen.placementmodifier.*;
 import net.rodofire.mushrooomsmod.MushrooomsMod;
-import net.rodofire.mushrooomsmod.world.configuredfeatures.ModConfiguredFeatures;
+import net.rodofire.mushrooomsmod.world.features.configuredfeatures.ModConfiguredFeatures;
 
 import java.util.List;
 
