@@ -9,8 +9,8 @@ import net.minecraft.util.Identifier;
 
 public class ModTags {
     public static class Blocks {
-        public static final TagKey<Block> MUSHROOM_PLANT =
-                createTag("mushroom_plant");
+        public static final TagKey<Block> MUSHROOM_PLANT = createTag("mushroom_plant");
+        public static final TagKey<Block> GRASS = createTag("mushroom_plant");
 
         private static TagKey<Block> createTag(String name) {
             return TagKey.of(RegistryKeys.BLOCK, new Identifier(MushrooomsMod.MOD_ID, name));
@@ -22,6 +22,7 @@ public class ModTags {
         public static final TagKey<Item> DIAMOND_ITEMS = createTag("diamond_item");
         public static final TagKey<Item> MUSHROOM_POWDER = createTag("mushroom_powder");
         public static final TagKey<Item> FORGEABLE_ITEMS = createTag("forgeable_items");
+
         private static TagKey<Item> createTag(String name) {
             return TagKey.of(RegistryKeys.ITEM, new Identifier(MushrooomsMod.MOD_ID, name));
         }

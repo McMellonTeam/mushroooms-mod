@@ -238,6 +238,13 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.BIG_PURPLE_MUSHROOM)
                 .add(ModBlocks.BIG_PURPLE_MUSHROOM_PLANT);
 
+        getOrCreateTagBuilder(ModTags.Blocks.GRASS)
+                .add(Blocks.GRASS)
+                .add(Blocks.TALL_GRASS)
+                .add(ModBlocks.TINY_GRASS)
+                .add(ModBlocks.BLUE_LUMINESCENT_GRASS)
+                .add(ModBlocks.BLUE_LUMINESCENT_TALL_GRASS);
+
         //Dirt
         getOrCreateTagBuilder(BlockTags.DIRT)
                 .add(ModBlocks.BLUE_LUMINESCENT_SCHROOM_DEEPSLATE)

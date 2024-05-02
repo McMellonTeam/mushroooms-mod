@@ -122,6 +122,10 @@ public class ModBlocks {
     public static final Block ORANGE_MUSHROOM = registerBlock("mushroom_orange", new MushroomPlantBlock(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM), ModConfiguredFeatures.ORANGE_MUSHROOM_TREE_KEY));
     public static final Block YELLOW_MUSHROOM = registerBlock("mushroom_yellow", new MushroomPlantBlock(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM).luminance(5), ModConfiguredFeatures.YELLOW_MUSHROOM_TREE_KEY));
 
+
+    //Side Mushrooms
+    public static final Block SIDE_MUSHROOM_BLUE_LUMINESCENT = registerBlock("side_mushroom_blue_luminescent", new SideMushroom(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM)));
+
     //Flowers Mushroom
     public static final Block STERILE_BLUE_MUSHROOM = registerBlock("sterile_blue_mushroom", new MushroomFlower( FabricBlockSettings.copyOf(Blocks.ROSE_BUSH).nonOpaque().noCollision()));
     public static final Block MUSHROOM_SMALL_BROWN = registerBlock("mushroom_small_brown", new MushroomFlower(FabricBlockSettings.copyOf(Blocks.ROSE_BUSH).nonOpaque().noCollision()));
@@ -188,6 +192,7 @@ public class ModBlocks {
     public static final Block PINK_LUMINESCENT_BODY_VINES = registerHiddenBlock("mushroom_vines_pink_luminescent_body", new PinkLuminescentBodyVinesBlock(FabricBlockSettings.create().nonOpaque().sounds(BlockSoundGroup.HONEY).pistonBehavior(PistonBehavior.DESTROY).breakInstantly().luminance(state -> state.get(PinkLuminescentBodyVinesBlock.MANY_VINES) ? 0 : 15)));
     public static final Block PINK_LUMINESCENT_HEAD_VINES = registerHiddenBlock("mushroom_vines_pink_luminescent_head", new PinkLuminescentHeadVinesBlock(FabricBlockSettings.create().nonOpaque().sounds(BlockSoundGroup.HONEY).pistonBehavior(PistonBehavior.DESTROY).breakInstantly().luminance(3)));
     public static final Block CAERULEA_VOLUBILIS = registerHiddenBlock("caerulea_volubilis", new BlueLuminescentVines(FabricBlockSettings.copyOf(Blocks.TWISTING_VINES).luminance(12)));
+    public static final Block BLUE_LUMINESCENT_VINES = registerHiddenBlock("vines_blue_luminescent", new RoofSimpleVines(FabricBlockSettings.copyOf(Blocks.VINE).nonOpaque().luminance(9)));
 
 
     //Potted Flowers
@@ -292,8 +297,8 @@ public class ModBlocks {
     public static final Block BLUE_CRYSTAL = registerHiddenBlock("crystal_blue", new Crystal(FabricBlockSettings.create().solid().nonOpaque().sounds(BlockSoundGroup.AMETHYST_CLUSTER).strength(1.5f).pistonBehavior(PistonBehavior.DESTROY).luminance(8)));
     public static final Block PINK_CRYSTAL_BLOCK = registerBlock("crystal_block_pink", new AmethystBlock(FabricBlockSettings.copyOf(Blocks.AMETHYST_BLOCK).sounds(ModBlockSoundGroup.PINK_CRYSTAL)));
 
-   public static final Block AMBER_BLOCK = registerBlock("amber_block", new Block(FabricBlockSettings.copyOf(Blocks.EMERALD_BLOCK)));
-   public static final Block AMBER_BLOCK_SANDIFIED = registerBlock("amber_block_sandified", new Block(FabricBlockSettings.copyOf(Blocks.SANDSTONE)));
+   public static final Block AMBER_BLOCK = registerBlock("amber_block", new AmbreBlock(FabricBlockSettings.copyOf(Blocks.EMERALD_BLOCK)));
+   public static final Block AMBER_BLOCK_SANDIFIED = registerBlock("amber_block_sandified", new SandifiedAmbreBlock(FabricBlockSettings.copyOf(Blocks.SANDSTONE), ModBlocks.AMBER_BLOCK));
    public static final Block AMBER_ORE = registerBlock("amber_ore", new Block(FabricBlockSettings.copyOf(Blocks.NETHER_GOLD_ORE)));
 
     //Util Blocks

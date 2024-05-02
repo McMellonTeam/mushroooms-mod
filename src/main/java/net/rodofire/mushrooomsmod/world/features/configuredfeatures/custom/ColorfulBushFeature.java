@@ -15,6 +15,7 @@ import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.util.FeatureContext;
 import net.rodofire.mushrooomsmod.MushrooomsMod;
 import net.rodofire.mushrooomsmod.block.ModBlocks;
+import net.rodofire.mushrooomsmod.util.ModTags;
 import net.rodofire.mushrooomsmod.util.StructurePlacer;
 
 public class ColorfulBushFeature extends Feature<DefaultFeatureConfig> {
@@ -27,7 +28,7 @@ public class ColorfulBushFeature extends Feature<DefaultFeatureConfig> {
             for (int j = 0; j < height; j++) {
                 for (int k = 0; k < large; k++) {
                     BlockState blockState = world.getBlockState(pos.add(i, j, k));
-                    if (j==0 && world.getBlockState(pos.add(i,0,k))==Blocks.WATER.getDefaultState()) return false;
+                    if (j == 0 && world.getBlockState(pos.add(i, 0, k)) == Blocks.WATER.getDefaultState()) return false;
                     if (blockState.isAir() || blockState.isOf(Blocks.GRASS) || blockState.isOf(Blocks.TALL_GRASS))
                         continue;
                     return false;
@@ -44,7 +45,7 @@ public class ColorfulBushFeature extends Feature<DefaultFeatureConfig> {
         BlockPos pos = context.getOrigin();
         int capnumber = Random.create().nextBetween(1, 4);
         if (!canGenerate(world, pos, 3, 2)) return false;
-        StructurePlacer bush = new StructurePlacer(world,new Identifier(MushrooomsMod.MOD_ID,"bush/bush_"+capnumber), pos, 1f);
+        StructurePlacer bush = new StructurePlacer(world, new Identifier(MushrooomsMod.MOD_ID, "bush/bush_" + capnumber), pos, 1f);
         bush.loadStructure();
         BlockState blockState = getLeaveBlock().getDefaultState().with(LeavesBlock.PERSISTENT, true);
         for (int i = 0; i < 5; ++i) {
@@ -53,10 +54,11 @@ public class ColorfulBushFeature extends Feature<DefaultFeatureConfig> {
                     if (world.getBlockState(pos.add(i, j, k)).isOf(Blocks.BEDROCK)) {
                         world.setBlockState(pos.add(i, j, k), blockState, 1);
                         int a = 1;
-                        BlockState blockState2 = world.getBlockState(pos.add(i, j-a, k));
-                        while (blockState2.isAir()||blockState2.isIn(BlockTags.FLOWERS)) {
+                        BlockState blockState2 = world.getBlockState(pos.add(i, j - a, k));
+                        while (blockState2.isAir() || blockState2.isIn(BlockTags.FLOWERS) || blockState2.isIn(ModTags.Blocks.GRASS)) {
                             world.setBlockState(pos.add(i, j - a, k), blockState, 1);
                             ++a;
+                            blockState2 = world.getBlockState(pos.add(i, j - a, k));
                         }
                     }
                 }
