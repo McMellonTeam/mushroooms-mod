@@ -22,7 +22,6 @@ import net.minecraft.block.PlantBlock;
 import net.minecraft.block.ShapeContext;
 
 public class FlowersMushroomBlock extends PlantBlock implements Fertilizable {
-    protected static final float field_31195 = 3.0f;
     private final RegistryKey<ConfiguredFeature<?, ?>> featureKey;
     protected static final VoxelShape SHAPE = Block.createCuboidShape(0, 0, 0, 16, 10, 16);
 
