@@ -96,7 +96,7 @@ public class ModOverworldBiomes {
 
         DefaultBiomeFeatures.addDefaultVegetation(biomeBuilder);
 
-        ModBiomeFeatures.addLuminescentFlowers(biomeBuilder);
+        ModBiomeFeatures.addBlueLuminescentCaveFlowers(biomeBuilder);
 
         return new Biome.Builder()
                 .precipitation(true)

@@ -221,11 +221,14 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.JACYNTHE)
                 .add(ModBlocks.ACONIT)
                 .add(ModBlocks.PERVENCHE)
+
+                //Vines
                 .add(ModBlocks.CAERULEA_VOLUBILIS)
                 .add(ModBlocks.PINK_MUSHROOM_VINES)
                 .add(ModBlocks.PINK_MUSHROOM_VINES_PLANT)
                 .add(ModBlocks.PINK_LUMINESCENT_BODY_VINES)
                 .add(ModBlocks.PINK_LUMINESCENT_HEAD_VINES)
+                .add(ModBlocks.BLUE_LUMINESCENT_VINES)
 
                 .add(ModBlocks.TINY_GREEN_MUSHROOM)
                 .add(ModBlocks.LITTLE_GREEN_MUSHROOM)
@@ -262,7 +265,8 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 
 
         getOrCreateTagBuilder(BlockTags.CLIMBABLE)
-                .add(ModBlocks.CAERULEA_VOLUBILIS);
+                .add(ModBlocks.CAERULEA_VOLUBILIS)
+                .add(ModBlocks.BLUE_LUMINESCENT_VINES);
 
 
         /*-------------------- Construction Blocks --------------------*/

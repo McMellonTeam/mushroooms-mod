@@ -124,7 +124,7 @@ public class ModBlocks {
 
 
     //Side Mushrooms
-    public static final Block SIDE_MUSHROOM_BLUE_LUMINESCENT = registerBlock("side_mushroom_blue_luminescent", new SideMushroom(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM)));
+    public static final Block SIDE_MUSHROOM_BLUE_LUMINESCENT = registerBlock("side_mushroom_blue_luminescent", new SideMushroom(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM).luminance(11)));
 
     //Flowers Mushroom
     public static final Block STERILE_BLUE_MUSHROOM = registerBlock("sterile_blue_mushroom", new MushroomFlower( FabricBlockSettings.copyOf(Blocks.ROSE_BUSH).nonOpaque().noCollision()));

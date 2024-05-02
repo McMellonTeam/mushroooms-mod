@@ -104,6 +104,7 @@ public class MushrooomsModClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.PINK_MUSHROOM_VINES_PLANT, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.PINK_LUMINESCENT_BODY_VINES, RenderLayer.getTranslucent());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.PINK_LUMINESCENT_HEAD_VINES, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.BLUE_LUMINESCENT_VINES, RenderLayer.getTranslucent());
 
         //Big Mushrooms
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.BIG_PURPLE_MUSHROOM, RenderLayer.getTranslucent());

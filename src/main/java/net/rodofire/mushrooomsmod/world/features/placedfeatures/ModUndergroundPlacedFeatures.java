@@ -33,7 +33,8 @@ public class ModUndergroundPlacedFeatures {
     public static final RegistryKey<PlacedFeature> CYANEA_PLACED_KEY = registerKey("cyanea_placed_key");
 
     //Vines
-    public static final RegistryKey<PlacedFeature> BLUE_LUMINESCENT_VINES_PLACED_KEY = registerKey("blue_luminescent_vines_placed_key");
+    public static final RegistryKey<PlacedFeature> BLUE_LUMINESCENT_VINES_UP_UNDERGROUND_PLACED_KEY = registerKey("blue_luminescent_vines_underground_placed_key");
+    public static final RegistryKey<PlacedFeature> BLUE_LUMINESCENT_VINES_DOWN_UNDERGROUND_PLACED_KEY = registerKey("blue_luminescent_vines_down_underground_placed_key");
 
     //Huge Mushrooms
     public static final RegistryKey<PlacedFeature> BLUE_LUMINESCENT_MUSHROOM_TREE_UNDERGROUND_PLACED_KEY = registerKey("blue_luminescent_mushroom_tree_underground_placed_key");
@@ -56,7 +57,8 @@ public class ModUndergroundPlacedFeatures {
         register(context, CYANEA_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.CYANEA_KEY), CountPlacementModifier.of(11), SquarePlacementModifier.of(), ModPlacedFeatures.DEEPSLATE_LEVEL, BiomePlacementModifier.of());
 
         //Vines
-        register(context, BLUE_LUMINESCENT_VINES_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.BLUE_LUMINESCENT_VINES_KEY), CountPlacementModifier.of(11), SquarePlacementModifier.of(), ModPlacedFeatures.DEEPSLATE_LEVEL, BiomePlacementModifier.of());
+        register(context, BLUE_LUMINESCENT_VINES_UP_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.BLUE_LUMINESCENT_VINES_UP_KEY), CountPlacementModifier.of(11), SquarePlacementModifier.of(), ModPlacedFeatures.DEEPSLATE_LEVEL, BiomePlacementModifier.of());
+        register(context, BLUE_LUMINESCENT_VINES_DOWN_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.BLUE_LUMINESCENT_VINES_DOWN_KEY), CountPlacementModifier.of(68), SquarePlacementModifier.of(), ModPlacedFeatures.DEEPSLATE_LEVEL, BiomePlacementModifier.of());
 
         //Huge Mushrooms
         register(context, BLUE_LUMINESCENT_MUSHROOM_TREE_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.BLUE_LUMINESCENT_MUSHROOM_TREE_KEY), CountPlacementModifier.of(140), SquarePlacementModifier.of(), ModPlacedFeatures.DEEPSLATE_LEVEL, BiomePlacementModifier.of());

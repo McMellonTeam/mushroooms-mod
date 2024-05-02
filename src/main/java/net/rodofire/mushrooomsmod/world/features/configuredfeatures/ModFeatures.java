@@ -3,10 +3,12 @@ package net.rodofire.mushrooomsmod.world.features.configuredfeatures;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.world.gen.feature.*;
+import net.rodofire.mushrooomsmod.world.features.config.DirectionConfig;
 import net.rodofire.mushrooomsmod.world.features.config.ModMushroomFeatureConfig;
 import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.BlueLuminescentVinesFeature;
 import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.BushFeature;
 import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.ColorfulBushFeature;
+import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.SimpleVinesFeature;
 import net.rodofire.mushrooomsmod.world.mushrooms.HugeBlueMushroom.HugeBlueMushroomFeature;
 import net.rodofire.mushrooomsmod.world.mushrooms.codemushrooms.*;
 import net.rodofire.mushrooomsmod.world.mushrooms.structuremushrooms.CustomGreenSecondMushroomFeature;
@@ -28,6 +30,7 @@ public abstract class ModFeatures <FC extends FeatureConfig> {
 
     //Vines Features;
     public static  Feature<TwistingVinesFeatureConfig> BLUE_LUMINESCENT_VINES;
+    public static  Feature<DirectionConfig> SIMPLE_VINES;
 
     //Bush;
     public static  Feature<DefaultFeatureConfig> BUSH;
@@ -44,7 +47,10 @@ public abstract class ModFeatures <FC extends FeatureConfig> {
         HUGE_BIG_RED_MUSHROOM = registercustomfeature("huge_red_red_mushroom_feature", new CustomRedHugeMushroomFeature(ModMushroomFeatureConfig.CODEC));
         HUGE_BIG_ORANGE_MUSHROOM = registercustomfeature("huge_orange_mushroom_feature", new CustomOrangeMushroomFeature(HugeMushroomFeatureConfig.CODEC));
         HUGE_BIG_YELLOW_MUSHROOM = registercustomfeature("huge_yellow_mushroom_feature", new CustomYellowMushroomFeature(HugeMushroomFeatureConfig.CODEC));
+
         BLUE_LUMINESCENT_VINES = registercustomfeature("blue_luminescent_vines_feature", new BlueLuminescentVinesFeature(TwistingVinesFeatureConfig.CODEC));
+        SIMPLE_VINES = registercustomfeature("simple_vines", new SimpleVinesFeature(DirectionConfig.CODEC));
+
         BUSH = registercustomfeature("bush_feature", new BushFeature(DefaultFeatureConfig.CODEC));
         COLORFUL_BUSH = registercustomfeature("colorful_bush_feature", new ColorfulBushFeature(DefaultFeatureConfig.CODEC));
     }

@@ -197,6 +197,7 @@ public class ModItems {
                         //Vines
                         entries.add(ModItems.CAERULEA_VOLUBILIS_ITEM);
                         entries.add(ModItems.PINK_MUSHROOM_VINES_ITEM);
+                        entries.add(ModBlocks.BLUE_LUMINESCENT_VINES);
 
                         //Big Mushrooms
                         entries.add(ModItems.BIG_PURPLE_MUSHROOM_SEED);
