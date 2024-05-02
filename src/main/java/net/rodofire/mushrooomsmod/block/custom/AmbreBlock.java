@@ -39,7 +39,7 @@ public class AmbreBlock extends Block {
 
     @Override
     public void appendTooltip(ItemStack stack, @Nullable BlockView world, List<Text> tooltip, TooltipContext options) {
-        tooltip.add(Text.translatable("tooltip.ambre_block"));
+        tooltip.add(Text.translatable("tooltip.ambre_blockl"));
         super.appendTooltip(stack, world, tooltip, options);
     }
 }
