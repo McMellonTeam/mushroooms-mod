@@ -14,6 +14,7 @@ import net.rodofire.mushrooomsmod.world.features.configuredfeatures.ModConfigure
 import java.util.List;
 
 public class ModSurfacePlacedFeatures {
+    //Very huge names but anyway
     //Huge Mushrooms
     public static final RegistryKey<PlacedFeature> PINK_LUMINESCENT_MUSHROOM_TREE_PLACED_KEY = registerKey("pink_luminescent_mushrooom_tree_placed_key");
     public static final RegistryKey<PlacedFeature> BLUE_MUSHROOM_TREE_PLACED_KEY = registerKey("blue_mushrooom_tree_placed_key");
@@ -33,6 +34,7 @@ public class ModSurfacePlacedFeatures {
     public static final RegistryKey<PlacedFeature> STERILE_BLUE_MUSHROOM_PLACED_KEY = registerKey("sterile_blue_mushroom_placed_key");
     public static final RegistryKey<PlacedFeature> MUSHROOM_SMALL_BROWN_PLACED_KEY = registerKey("mushroom_small_brown_placed_key");
     public static final RegistryKey<PlacedFeature> MUSHROOM_SMALL_RED_PLACED_KEY = registerKey("mushroom_small_red_placed_key");
+    public static final RegistryKey<PlacedFeature> MUSHROOM_SIDE_BLUE_LUMINESCENT_UNDERGROUND_PLACED_KEY = registerKey("mushroom_side_blue_luminescent_underground_placed_key");
 
     //flowers
     public static final RegistryKey<PlacedFeature> OCULAE_PLACED_KEY = registerKey("oculae_placed_key");
@@ -89,6 +91,7 @@ public class ModSurfacePlacedFeatures {
         register(context, MUSHROOM_SMALL_BROWN_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.MUSHROOM_SMALL_BROWN_KEY), RarityFilterPlacementModifier.of(4), SquarePlacementModifier.of(), PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of());
         register(context, MUSHROOM_SMALL_RED_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.MUSHROOM_SMALL_RED_KEY), RarityFilterPlacementModifier.of(4), SquarePlacementModifier.of(), PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of());
         register(context, BLUE_LUMINESCENT_MUSHROOM_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.BLUE_LUMINESCENT_MUSHROOM_KEY), RarityFilterPlacementModifier.of(8), SquarePlacementModifier.of(), PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of());
+        register(context, MUSHROOM_SIDE_BLUE_LUMINESCENT_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.MUSHROOM_SIDE_BLUE_LUMINESCENT_KEY), CountPlacementModifier.of(60), SquarePlacementModifier.of(), ModPlacedFeatures.DEEPSLATE_LEVEL, BiomePlacementModifier.of());
 
         //Flowers
         register(context, OCULAE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.OCULAE_KEY), RarityFilterPlacementModifier.of(4), SquarePlacementModifier.of(), PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of());
