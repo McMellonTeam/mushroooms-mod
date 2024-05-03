@@ -86,7 +86,6 @@ public class Crystal extends Block {
         Direction direction = ctx.getVerticalPlayerLookDirection().getOpposite();
         BlockPos pos = ctx.getBlockPos();
         BlockState blockState = this.getDefaultState();
-        System.out.println("getPlacementState");
         if (canPlace(world, pos.offset(direction.getOpposite()), blockState.with(VERTICAL_DIRECTION, direction))) {
             updateState(world, pos, blockState, direction);
             return blockState.with(VERTICAL_DIRECTION, direction).with(STAGE, 0);

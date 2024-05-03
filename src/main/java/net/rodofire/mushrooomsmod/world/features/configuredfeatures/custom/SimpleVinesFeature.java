@@ -23,13 +23,21 @@ public class SimpleVinesFeature extends Feature<DirectionConfig> {
         Random random = context.getRandom();
         Direction direction = context.getConfig().directionprovider;
         BlockState state = context.getConfig().blockprovider.get(random, pos);
-        int maxheight = Random.create().nextBetween(0,getMaxHeight(world, pos, direction));
-        if(!state.canPlaceAt(world, pos)) return false;
-        if (maxheight == 0) return false;
-        for (int i =0; i < maxheight; i++) {
-            world.setBlockState(pos.offset(direction, i), state, 2);
+        BlockPos.Mutable mutable = new BlockPos.Mutable();
+        for (int a=0;a<81;++a) {
+            mutable.set(pos).move(Random.create().nextBetween(-9,9), Random.create().nextBetween(-9,9), Random.create().nextBetween(-9,9));
+            int height = Random.create().nextBetween(0, getMaxHeight(world, mutable, direction));
+            if (!state.canPlaceAt(world, mutable)) continue;
+            if (height == 0) continue;
+            generateColumn(height, world, mutable, direction, state);
         }
         return true;
+    }
+
+    private static void generateColumn(int maxheight, StructureWorldAccess world, BlockPos pos, Direction direction, BlockState state) {
+        for (int i = 0; i < maxheight; i++) {
+            world.setBlockState(pos.offset(direction, i), state, 2);
+        }
     }
 
     public int getMaxHeight(StructureWorldAccess world, BlockPos pos, Direction direction) {
