@@ -124,7 +124,7 @@ public class ModBlocks {
 
 
     //Side Mushrooms
-    public static final Block SIDE_MUSHROOM_BLUE_LUMINESCENT = registerBlock("side_mushroom_blue_luminescent", new SideMushroom(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM).luminance(11)));
+    public static final Block SIDE_MUSHROOM_BLUE_LUMINESCENT = registerBlock("mushroom_side_blue_luminescent", new SideMushroom(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM).luminance(11)));
 
     //Flowers Mushroom
     public static final Block STERILE_BLUE_MUSHROOM = registerBlock("sterile_blue_mushroom", new MushroomFlower( FabricBlockSettings.copyOf(Blocks.ROSE_BUSH).nonOpaque().noCollision()));
@@ -192,7 +192,7 @@ public class ModBlocks {
     public static final Block PINK_LUMINESCENT_BODY_VINES = registerHiddenBlock("mushroom_vines_pink_luminescent_body", new PinkLuminescentBodyVinesBlock(FabricBlockSettings.create().nonOpaque().sounds(BlockSoundGroup.HONEY).pistonBehavior(PistonBehavior.DESTROY).breakInstantly().luminance(state -> state.get(PinkLuminescentBodyVinesBlock.MANY_VINES) ? 0 : 15)));
     public static final Block PINK_LUMINESCENT_HEAD_VINES = registerHiddenBlock("mushroom_vines_pink_luminescent_head", new PinkLuminescentHeadVinesBlock(FabricBlockSettings.create().nonOpaque().sounds(BlockSoundGroup.HONEY).pistonBehavior(PistonBehavior.DESTROY).breakInstantly().luminance(3)));
     public static final Block CAERULEA_VOLUBILIS = registerHiddenBlock("caerulea_volubilis", new BlueLuminescentVines(FabricBlockSettings.copyOf(Blocks.TWISTING_VINES).luminance(12)));
-    public static final Block BLUE_LUMINESCENT_VINES = registerHiddenBlock("vines_blue_luminescent", new RoofSimpleVines(FabricBlockSettings.copyOf(Blocks.VINE).nonOpaque().luminance(9)));
+    public static final Block BLUE_LUMINESCENT_VINES = registerHiddenBlock("vines_blue_luminescent", new RoofSimpleVines(FabricBlockSettings.copyOf(Blocks.VINE).nonOpaque().luminance(10)));
 
 
     //Potted Flowers

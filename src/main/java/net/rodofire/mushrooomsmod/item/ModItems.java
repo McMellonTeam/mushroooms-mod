@@ -145,6 +145,9 @@ public class ModItems {
                         entries.add(ModBlocks.MUSHROOM_SMALL_BROWN);
                         entries.add(ModBlocks.MUSHROOM_SMALL_RED);
 
+                        //Side Mushrooms
+                        entries.add(ModBlocks.SIDE_MUSHROOM_BLUE_LUMINESCENT);
+
                         //Flowers
                         entries.add(ModBlocks.PREHISTO_PINK_SCHROOM);
                         entries.add(ModBlocks.PREHISTO_BLUE_SCHROOM);
@@ -197,7 +200,7 @@ public class ModItems {
                         //Vines
                         entries.add(ModItems.CAERULEA_VOLUBILIS_ITEM);
                         entries.add(ModItems.PINK_MUSHROOM_VINES_ITEM);
-                        entries.add(ModBlocks.BLUE_LUMINESCENT_VINES);
+                        //entries.add(ModBlocks.BLUE_LUMINESCENT_VINES);
 
                         //Big Mushrooms
                         entries.add(ModItems.BIG_PURPLE_MUSHROOM_SEED);

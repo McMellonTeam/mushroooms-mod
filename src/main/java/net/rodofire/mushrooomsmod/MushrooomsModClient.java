@@ -46,6 +46,9 @@ public class MushrooomsModClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.STERILE_BLUE_MUSHROOM, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.MUSHROOM_SMALL_BROWN, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.MUSHROOM_SMALL_RED, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.SIDE_MUSHROOM_BLUE_LUMINESCENT, RenderLayer.getCutout());
+
+
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.POTTED_STERILE_BLUE_MUSHROOM, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.POTTED_MUSHROOM_SMALL_BROWN, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.POTTED_MUSHROOM_SMALL_RED, RenderLayer.getCutout());

@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "mushrooomsmod:block/mushroom_side_blue_luminescent",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "mushrooomsmod:block/mushroom_side_blue_luminescent"
+    },
+    "facing=south": {
+      "model": "mushrooomsmod:block/mushroom_side_blue_luminescent",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "mushrooomsmod:block/mushroom_side_blue_luminescent",
+      "y": 270
+    }
+  }
+}
