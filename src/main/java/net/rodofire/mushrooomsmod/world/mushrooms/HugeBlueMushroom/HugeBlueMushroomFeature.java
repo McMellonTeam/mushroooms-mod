@@ -1,7 +1,6 @@
 package net.rodofire.mushrooomsmod.world.mushrooms.HugeBlueMushroom;
 
 import com.mojang.serialization.Codec;
-import net.rodofire.mushrooomsmod.world.features.configuredfeatures.ModConfiguredFeatures;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.MushroomBlock;
 import net.minecraft.registry.RegistryKey;
@@ -10,14 +9,17 @@ import net.minecraft.util.math.random.Random;
 import net.minecraft.world.WorldAccess;
 import net.minecraft.world.gen.feature.ConfiguredFeature;
 import net.minecraft.world.gen.feature.HugeMushroomFeatureConfig;
+import net.rodofire.mushrooomsmod.world.features.configuredfeatures.ModConfiguredFeatures;
 
 public class HugeBlueMushroomFeature extends CustomHugeBlueMushroomFeature {
     public HugeBlueMushroomFeature(Codec<HugeMushroomFeatureConfig> codec) {
         super(codec);
     }
+
     protected RegistryKey<ConfiguredFeature<?, ?>> getMushroomFeature(Random random, boolean bees) {
         return ModConfiguredFeatures.BLUE_MUSHROOM_TREE_KEY;
     }
+
     @Override
     protected int getCapSize(int i, int j, int capSize, int y) {
 
@@ -46,8 +48,6 @@ public class HugeBlueMushroomFeature extends CustomHugeBlueMushroomFeature {
     }
 
 
-
-
     protected void generateCap(WorldAccess world, Random random, BlockPos start, int y, BlockPos.Mutable mutable, HugeMushroomFeatureConfig config) {
         for (int i = y - 3; i <= y; ++i) {
             int j = i < y ? config.foliageRadius : config.foliageRadius - 1;
@@ -66,7 +66,7 @@ public class HugeBlueMushroomFeature extends CustomHugeBlueMushroomFeature {
                     if (world.getBlockState(mutable).isOpaqueFullCube(world, mutable)) continue;
                     BlockState blockState = config.capProvider.get(random, start);
                     if (blockState.contains(MushroomBlock.WEST) && blockState.contains(MushroomBlock.EAST) && blockState.contains(MushroomBlock.NORTH) && blockState.contains(MushroomBlock.SOUTH) && blockState.contains(MushroomBlock.UP)) {
-                        blockState = (BlockState)((BlockState)((BlockState)((BlockState)((BlockState)blockState.with(MushroomBlock.UP, i >= y - 1)).with(MushroomBlock.WEST, l < -k)).with(MushroomBlock.EAST, l > k)).with(MushroomBlock.NORTH, m < -k)).with(MushroomBlock.SOUTH, m > k);
+                        blockState = (BlockState) ((BlockState) ((BlockState) ((BlockState) ((BlockState) blockState.with(MushroomBlock.UP, i >= y - 1)).with(MushroomBlock.WEST, l < -k)).with(MushroomBlock.EAST, l > k)).with(MushroomBlock.NORTH, m < -k)).with(MushroomBlock.SOUTH, m > k);
                     }
                     this.setBlockState(world, mutable, blockState);
                 }

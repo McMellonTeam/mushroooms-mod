@@ -2,7 +2,10 @@ package net.rodofire.mushrooomsmod.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
-import net.minecraft.data.client.*;
+import net.minecraft.data.client.BlockStateModelGenerator;
+import net.minecraft.data.client.ItemModelGenerator;
+import net.minecraft.data.client.ModelIds;
+import net.minecraft.data.client.Models;
 import net.rodofire.mushrooomsmod.block.ModBlocks;
 import net.rodofire.mushrooomsmod.item.ModItems;
 
@@ -57,8 +60,6 @@ public class ModModelProvider extends FabricModelProvider {
         generator.registerSimpleCubeAll(ModBlocks.BROWN_ALTERED_MUSHROOM_BLOCK);
         generator.registerSimpleCubeAll(ModBlocks.BROWN_DEGRADATED_MUSHROOM_BLOCK);
         generator.registerSimpleCubeAll(ModBlocks.BROWN_FERMENTED_MUSHROOM_BLOCK);
-
-
 
 
         generator.registerSimpleCubeAll(ModBlocks.TRANSPARENT_MUSHROOM_STEM);
@@ -123,7 +124,7 @@ public class ModModelProvider extends FabricModelProvider {
         generator.registerFlowerPotPlant(ModBlocks.MUSHROOM_SMALL_RED, ModBlocks.POTTED_MUSHROOM_SMALL_RED, BlockStateModelGenerator.TintType.NOT_TINTED);
 
         //Potted Sapplings
-        generator.registerFlowerPotPlant(ModBlocks.BLUE_LUMINESCENT_SAPPLING,ModBlocks.POTTED_BLUE_LUMINESCENT_SAPPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
+        generator.registerFlowerPotPlant(ModBlocks.BLUE_LUMINESCENT_SAPPLING, ModBlocks.POTTED_BLUE_LUMINESCENT_SAPPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
 
         //Vines
         generator.registerTintableCross(ModBlocks.BLUE_LUMINESCENT_VINES, BlockStateModelGenerator.TintType.NOT_TINTED);

@@ -17,7 +17,8 @@ public class ModBiomeFeatures {
         DefaultBiomeFeatures.addSprings(builder);
         DefaultBiomeFeatures.addFrozenTopLayer(builder);
     }
-    public static void addBlueLuminescentCaveFlowers(GenerationSettings.LookupBackedBuilder builder){
+
+    public static void addBlueLuminescentCaveFlowers(GenerationSettings.LookupBackedBuilder builder) {
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModUndergroundPlacedFeatures.BLUE_LUMINESCENT_MUSHROOM_TREE_UNDERGROUND_PLACED_KEY);
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModUndergroundPlacedFeatures.BLUE_LUMINESCENT_MUSHROOM_UNDERGROUND_PLACED_KEY);
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModUndergroundPlacedFeatures.BLUE_LUMINESCENT_VINES_UP_UNDERGROUND_PLACED_KEY);
@@ -30,7 +31,7 @@ public class ModBiomeFeatures {
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModUndergroundPlacedFeatures.BLUE_LUMINESCENT_VINES_DOWN_UNDERGROUND_PLACED_KEY);
     }
 
-    public static void addMushroomCaveFeatures(GenerationSettings.LookupBackedBuilder builder){
+    public static void addMushroomCaveFeatures(GenerationSettings.LookupBackedBuilder builder) {
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, VegetationPlacedFeatures.MUSHROOM_ISLAND_VEGETATION);
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModUndergroundPlacedFeatures.HUGE_BROWN_MUSHROOM_UNDERGROUND_PLACED_KEY);
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModUndergroundPlacedFeatures.HUGE_RED_MUSHROOM_UNDERGROUND_PLACED_KEY);
@@ -38,7 +39,7 @@ public class ModBiomeFeatures {
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModUndergroundPlacedFeatures.RED_MUSHROOM_UNDERGROUND_PLACED_KEY);
     }
 
-    public static void addColorfulPlainsFeatures(GenerationSettings.LookupBackedBuilder builder){
+    public static void addColorfulPlainsFeatures(GenerationSettings.LookupBackedBuilder builder) {
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModSurfacePlacedFeatures.COLORFUL_BUSH_SURFACE_PLACED_KEY);
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModSurfacePlacedFeatures.PURPLE_PERENNIAL_PLACED_KEY);
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModSurfacePlacedFeatures.PINK_PERENNIAL_PLACED_KEY);

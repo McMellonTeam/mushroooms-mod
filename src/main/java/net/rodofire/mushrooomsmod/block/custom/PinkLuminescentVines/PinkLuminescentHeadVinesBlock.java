@@ -1,7 +1,5 @@
 package net.rodofire.mushrooomsmod.block.custom.PinkLuminescentVines;
 
-import net.rodofire.mushrooomsmod.block.ModBlocks;
-import net.rodofire.mushrooomsmod.util.ModProperties;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -16,6 +14,8 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
+import net.rodofire.mushrooomsmod.block.ModBlocks;
+import net.rodofire.mushrooomsmod.util.ModProperties;
 
 import java.util.function.ToIntFunction;
 
@@ -27,26 +27,25 @@ public class PinkLuminescentHeadVinesBlock extends Block {
         super(settings);
     }
 
-    public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context){
+    public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
         return SHAPE;
     }
 
 
-
-    public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit){
+    public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
 
         BlockState blocAuDessus = world.getBlockState(pos.up());
         if (blocAuDessus.getBlock() == ModBlocks.PINK_LUMINESCENT_MUSHROOM_BLOCK || blocAuDessus.getBlock() == ModBlocks.PINK_LUMINESCENT_BODY_VINES) {
-            BlockState blockState = (BlockState)state.with(MANY_VINES, true);
+            BlockState blockState = (BlockState) state.with(MANY_VINES, true);
             world.setBlockState(pos, blockState, Block.NOTIFY_LISTENERS);
             return ActionResult.SUCCESS;
         }
-        BlockState blockState = (BlockState)state.with(MANY_VINES, false);
+        BlockState blockState = (BlockState) state.with(MANY_VINES, false);
         world.setBlockState(pos, blockState, Block.NOTIFY_LISTENERS);
         return ActionResult.SUCCESS;
     }
 
-    public static int getluminancesupplier(int luminance, World world, BlockPos pos){
+    public static int getluminancesupplier(int luminance, World world, BlockPos pos) {
         System.out.println("on initialise");
         BlockState blocAuDessus = world.getBlockState(pos.up());
         if (blocAuDessus.getBlock() == ModBlocks.PINK_LUMINESCENT_MUSHROOM_BLOCK || blocAuDessus.getBlock() == ModBlocks.PINK_LUMINESCENT_BODY_VINES) {
@@ -55,6 +54,7 @@ public class PinkLuminescentHeadVinesBlock extends Block {
         }
         return 0;
     }
+
     @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
         builder.add(MANY_VINES);

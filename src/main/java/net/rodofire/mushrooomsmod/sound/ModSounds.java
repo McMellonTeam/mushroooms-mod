@@ -1,10 +1,10 @@
 package net.rodofire.mushrooomsmod.sound;
 
-import net.rodofire.mushrooomsmod.MushrooomsMod;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
+import net.rodofire.mushrooomsmod.MushrooomsMod;
 
 public class ModSounds {
     public static SoundEvent LA_MARSEILLAISE_DISC = registerSoundEvent("la_marseillaise_disc");

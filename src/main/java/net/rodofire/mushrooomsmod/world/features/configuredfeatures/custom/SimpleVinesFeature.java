@@ -24,8 +24,8 @@ public class SimpleVinesFeature extends Feature<DirectionConfig> {
         Direction direction = context.getConfig().directionprovider;
         BlockState state = context.getConfig().blockprovider.get(random, pos);
         BlockPos.Mutable mutable = new BlockPos.Mutable();
-        for (int a=0;a<81;++a) {
-            mutable.set(pos).move(Random.create().nextBetween(-9,9), Random.create().nextBetween(-9,9), Random.create().nextBetween(-9,9));
+        for (int a = 0; a < 81; ++a) {
+            mutable.set(pos).move(Random.create().nextBetween(-9, 9), Random.create().nextBetween(-9, 9), Random.create().nextBetween(-9, 9));
             int height = Random.create().nextBetween(0, getMaxHeight(world, mutable, direction));
             if (!state.canPlaceAt(world, mutable)) continue;
             if (height == 0) continue;

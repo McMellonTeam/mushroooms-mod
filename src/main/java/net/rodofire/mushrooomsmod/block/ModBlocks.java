@@ -4,17 +4,6 @@ import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.rodofire.mushrooomsmod.MushrooomsMod;
-import net.rodofire.mushrooomsmod.block.custom.*;
-import net.rodofire.mushrooomsmod.block.custom.PinkLuminescentVines.PinkLuminescentBodyVinesBlock;
-import net.rodofire.mushrooomsmod.block.custom.PinkLuminescentVines.PinkLuminescentHeadVinesBlock;
-import net.rodofire.mushrooomsmod.block.custom.PinkMushroomBlock.PinkMushroomVinesBodyBlock;
-import net.rodofire.mushrooomsmod.block.custom.PinkMushroomBlock.PinkMushroomVinesHeadBlock;
-import net.rodofire.mushrooomsmod.block.custom.bigmushroom.*;
-import net.rodofire.mushrooomsmod.item.ModItems;
-import net.rodofire.mushrooomsmod.particle.ModParticles;
-import net.rodofire.mushrooomsmod.sound.ModBlockSoundGroup;
-import net.rodofire.mushrooomsmod.world.features.configuredfeatures.ModConfiguredFeatures;
 import net.minecraft.block.*;
 import net.minecraft.block.enums.Instrument;
 import net.minecraft.block.piston.PistonBehavior;
@@ -26,6 +15,17 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
+import net.rodofire.mushrooomsmod.MushrooomsMod;
+import net.rodofire.mushrooomsmod.block.custom.*;
+import net.rodofire.mushrooomsmod.block.custom.PinkLuminescentVines.PinkLuminescentBodyVinesBlock;
+import net.rodofire.mushrooomsmod.block.custom.PinkLuminescentVines.PinkLuminescentHeadVinesBlock;
+import net.rodofire.mushrooomsmod.block.custom.PinkMushroomBlock.PinkMushroomVinesBodyBlock;
+import net.rodofire.mushrooomsmod.block.custom.PinkMushroomBlock.PinkMushroomVinesHeadBlock;
+import net.rodofire.mushrooomsmod.block.custom.bigmushroom.*;
+import net.rodofire.mushrooomsmod.item.ModItems;
+import net.rodofire.mushrooomsmod.particle.ModParticles;
+import net.rodofire.mushrooomsmod.sound.ModBlockSoundGroup;
+import net.rodofire.mushrooomsmod.world.features.configuredfeatures.ModConfiguredFeatures;
 import net.rodofire.mushrooomsmod.world.tree.sapplinggenerator.BlueLuminescentSapplingGenerator;
 
 public class ModBlocks {
@@ -127,7 +127,7 @@ public class ModBlocks {
     public static final Block SIDE_MUSHROOM_BLUE_LUMINESCENT = registerBlock("mushroom_side_blue_luminescent", new SideMushroom(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM).luminance(11)));
 
     //Flowers Mushroom
-    public static final Block STERILE_BLUE_MUSHROOM = registerBlock("sterile_blue_mushroom", new MushroomFlower( FabricBlockSettings.copyOf(Blocks.ROSE_BUSH).nonOpaque().noCollision()));
+    public static final Block STERILE_BLUE_MUSHROOM = registerBlock("sterile_blue_mushroom", new MushroomFlower(FabricBlockSettings.copyOf(Blocks.ROSE_BUSH).nonOpaque().noCollision()));
     public static final Block MUSHROOM_SMALL_BROWN = registerBlock("mushroom_small_brown", new MushroomFlower(FabricBlockSettings.copyOf(Blocks.ROSE_BUSH).nonOpaque().noCollision()));
     public static final Block MUSHROOM_SMALL_RED = registerBlock("mushroom_small_red", new MushroomFlower(FabricBlockSettings.copyOf(Blocks.ROSE_BUSH).nonOpaque().noCollision()));
 
@@ -297,9 +297,9 @@ public class ModBlocks {
     public static final Block BLUE_CRYSTAL = registerHiddenBlock("crystal_blue", new Crystal(FabricBlockSettings.create().solid().nonOpaque().sounds(BlockSoundGroup.AMETHYST_CLUSTER).strength(1.5f).pistonBehavior(PistonBehavior.DESTROY).luminance(8)));
     public static final Block PINK_CRYSTAL_BLOCK = registerBlock("crystal_block_pink", new AmethystBlock(FabricBlockSettings.copyOf(Blocks.AMETHYST_BLOCK).sounds(ModBlockSoundGroup.PINK_CRYSTAL)));
 
-   public static final Block AMBER_BLOCK = registerBlock("amber_block", new AmbreBlock(FabricBlockSettings.copyOf(Blocks.EMERALD_BLOCK)));
-   public static final Block AMBER_BLOCK_SANDIFIED = registerBlock("amber_block_sandified", new SandifiedAmbreBlock(FabricBlockSettings.copyOf(Blocks.SANDSTONE), ModBlocks.AMBER_BLOCK));
-   public static final Block AMBER_ORE = registerBlock("amber_ore", new Block(FabricBlockSettings.copyOf(Blocks.NETHER_GOLD_ORE)));
+    public static final Block AMBER_BLOCK = registerBlock("amber_block", new AmbreBlock(FabricBlockSettings.copyOf(Blocks.EMERALD_BLOCK)));
+    public static final Block AMBER_BLOCK_SANDIFIED = registerBlock("amber_block_sandified", new SandifiedAmbreBlock(FabricBlockSettings.copyOf(Blocks.SANDSTONE), ModBlocks.AMBER_BLOCK));
+    public static final Block AMBER_ORE = registerBlock("amber_ore", new Block(FabricBlockSettings.copyOf(Blocks.NETHER_GOLD_ORE)));
 
     //Util Blocks
     public static final Block FORGE_BLOCK = registerBlock("forge_block", new ForgeBlock(FabricBlockSettings.copyOf(Blocks.ANVIL).nonOpaque()));

@@ -1,19 +1,13 @@
 package net.rodofire.mushrooomsmod.world.biome.surface;
 
-import net.minecraft.util.math.VerticalSurfaceType;
-import net.minecraft.util.math.noise.DoublePerlinNoiseSampler;
-import net.minecraft.world.gen.densityfunction.DensityFunction;
-import net.minecraft.world.gen.noise.NoiseConfig;
-import net.minecraft.world.gen.noise.NoiseHelper;
-import net.minecraft.world.gen.noise.NoiseParametersKeys;
-import net.minecraft.world.gen.placementmodifier.NoiseThresholdCountPlacementModifier;
-import net.minecraft.world.gen.stateprovider.NoiseThresholdBlockStateProvider;
-import net.rodofire.mushrooomsmod.block.ModBlocks;
-import net.rodofire.mushrooomsmod.world.biome.overworld.ModOverworldBiomes;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.util.math.VerticalSurfaceType;
 import net.minecraft.world.gen.YOffset;
+import net.minecraft.world.gen.noise.NoiseParametersKeys;
 import net.minecraft.world.gen.surfacebuilder.MaterialRules;
+import net.rodofire.mushrooomsmod.block.ModBlocks;
+import net.rodofire.mushrooomsmod.world.biome.overworld.ModOverworldBiomes;
 
 public class ModMaterialsRules {
     //Dirt Related
@@ -33,32 +27,31 @@ public class ModMaterialsRules {
 
 
     public static MaterialRules.MaterialRule makeRules() {
-        MaterialRules.MaterialCondition deepslatelevel = MaterialRules.verticalGradient("deepslate",YOffset.fixed(0), YOffset.fixed(8));
-        MaterialRules.MaterialCondition stonecavelevel =  MaterialRules.aboveY(YOffset.fixed(0),1);
-        MaterialRules.MaterialCondition abovetop =  MaterialRules.aboveY(YOffset.belowTop(-2),0);
-        MaterialRules.MaterialCondition belowtop =  MaterialRules.not(MaterialRules.aboveY(YOffset.belowTop(-6), 1));
+        MaterialRules.MaterialCondition deepslatelevel = MaterialRules.verticalGradient("deepslate", YOffset.fixed(0), YOffset.fixed(8));
+        MaterialRules.MaterialCondition stonecavelevel = MaterialRules.aboveY(YOffset.fixed(0), 1);
+        MaterialRules.MaterialCondition abovetop = MaterialRules.aboveY(YOffset.belowTop(-2), 0);
+        MaterialRules.MaterialCondition belowtop = MaterialRules.not(MaterialRules.aboveY(YOffset.belowTop(-6), 1));
 
 
         //Dirt Related
-        MaterialRules.MaterialRule dirt = MaterialRules.condition(MaterialRules.stoneDepth(0, true,3, VerticalSurfaceType.FLOOR),DIRT);
+        MaterialRules.MaterialRule dirt = MaterialRules.condition(MaterialRules.stoneDepth(0, true, 3, VerticalSurfaceType.FLOOR), DIRT);
         MaterialRules.MaterialRule mycelium = MaterialRules.condition(MaterialRules.STONE_DEPTH_FLOOR, MYCELIUM);
 
 
         //Stone Related
-        MaterialRules.MaterialRule bluedeepslate = MaterialRules.sequence(MaterialRules.condition(MaterialRules.STONE_DEPTH_FLOOR, BLUE_LUMINESCENT_DEEPSLATE),DEEPSLATE);
-
+        MaterialRules.MaterialRule bluedeepslate = MaterialRules.sequence(MaterialRules.condition(MaterialRules.STONE_DEPTH_FLOOR, BLUE_LUMINESCENT_DEEPSLATE), DEEPSLATE);
 
 
         return MaterialRules.sequence(
                 //Blue Luminescent Cave
                 MaterialRules.sequence(MaterialRules.condition(MaterialRules.biome(ModOverworldBiomes.BLUE_LUMINESCENT_SHROOM_CAVE),
-                        MaterialRules.condition(deepslatelevel,bluedeepslate)),
+                                MaterialRules.condition(deepslatelevel, bluedeepslate)),
 
-                //Vanilla Cave
-                MaterialRules.sequence(MaterialRules.condition(MaterialRules.biome(ModOverworldBiomes.VANILLA_SHROOM_CAVE),
-                        MaterialRules.sequence(MaterialRules.condition(belowtop,MaterialRules.sequence(MaterialRules.condition(stonecavelevel,mycelium),MaterialRules.condition(stonecavelevel,dirt))))))
+                        //Vanilla Cave
+                        MaterialRules.sequence(MaterialRules.condition(MaterialRules.biome(ModOverworldBiomes.VANILLA_SHROOM_CAVE),
+                                MaterialRules.sequence(MaterialRules.condition(belowtop, MaterialRules.sequence(MaterialRules.condition(stonecavelevel, mycelium), MaterialRules.condition(stonecavelevel, dirt))))))
 
-        ));
+                ));
     }
 
     private static MaterialRules.MaterialRule makeStateRule(Block block) {

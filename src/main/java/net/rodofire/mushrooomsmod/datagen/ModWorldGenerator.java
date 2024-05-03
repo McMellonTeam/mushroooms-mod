@@ -2,9 +2,9 @@ package net.rodofire.mushrooomsmod.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricDynamicRegistryProvider;
-import net.rodofire.mushrooomsmod.MushrooomsMod;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.RegistryWrapper;
+import net.rodofire.mushrooomsmod.MushrooomsMod;
 
 import java.util.concurrent.CompletableFuture;
 

@@ -19,13 +19,15 @@ import net.minecraft.world.gen.feature.ConfiguredFeature;
 import java.util.Optional;
 
 public class TinyGreenMushroom extends BigMushroom implements Fertilizable {
-    public TinyGreenMushroom(Settings settings,  RegistryKey<ConfiguredFeature<?, ?>> featureKey) {
+    public TinyGreenMushroom(Settings settings, RegistryKey<ConfiguredFeature<?, ?>> featureKey) {
         super(settings);
-        this.featureKey=featureKey;
+        this.featureKey = featureKey;
     }
+
     private final RegistryKey<ConfiguredFeature<?, ?>> featureKey;
-    public static final VoxelShape SHAPE = Block.createCuboidShape(1f,0f,1f,15f,7f,15f);
-    public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context){
+    public static final VoxelShape SHAPE = Block.createCuboidShape(1f, 0f, 1f, 15f, 7f, 15f);
+
+    public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
         return SHAPE;
     }
 
@@ -42,13 +44,14 @@ public class TinyGreenMushroom extends BigMushroom implements Fertilizable {
     public void grow(ServerWorld world, Random random, BlockPos pos, BlockState state) {
         this.trySpawningBigMushroom(world, pos, state, random);
     }
+
     public boolean trySpawningBigMushroom(ServerWorld world, BlockPos pos, BlockState state, Random random) {
         Optional<RegistryEntry.Reference<ConfiguredFeature<?, ?>>> optional = world.getRegistryManager().get(RegistryKeys.CONFIGURED_FEATURE).getEntry(this.featureKey);
         if (optional.isEmpty()) {
             return false;
         }
         world.removeBlock(pos, false);
-        if (((ConfiguredFeature)((RegistryEntry)optional.get()).value()).generate(world, world.getChunkManager().getChunkGenerator(), random, pos)) {
+        if (((ConfiguredFeature) ((RegistryEntry) optional.get()).value()).generate(world, world.getChunkManager().getChunkGenerator(), random, pos)) {
             return true;
         }
         world.setBlockState(pos, state, Block.NOTIFY_ALL);

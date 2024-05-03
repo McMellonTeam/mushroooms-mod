@@ -6,7 +6,10 @@ import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.gen.feature.*;
-import net.minecraft.world.gen.placementmodifier.*;
+import net.minecraft.world.gen.placementmodifier.BiomePlacementModifier;
+import net.minecraft.world.gen.placementmodifier.CountPlacementModifier;
+import net.minecraft.world.gen.placementmodifier.PlacementModifier;
+import net.minecraft.world.gen.placementmodifier.SquarePlacementModifier;
 import net.rodofire.mushrooomsmod.MushrooomsMod;
 import net.rodofire.mushrooomsmod.world.features.configuredfeatures.ModConfiguredFeatures;
 

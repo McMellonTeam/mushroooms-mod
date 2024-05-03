@@ -3,6 +3,13 @@ package net.rodofire.mushrooomsmod.item;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.block.Blocks;
+import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.item.*;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
+import net.minecraft.text.Text;
+import net.minecraft.util.Identifier;
+import net.minecraft.util.math.Direction;
 import net.rodofire.mushrooomsmod.MushrooomsMod;
 import net.rodofire.mushrooomsmod.block.ModBlocks;
 import net.rodofire.mushrooomsmod.effect.ModStatusEffects;
@@ -11,13 +18,6 @@ import net.rodofire.mushrooomsmod.item.Custom.HammerItem;
 import net.rodofire.mushrooomsmod.item.Custom.SchroomSoup;
 import net.rodofire.mushrooomsmod.sound.ModSounds;
 import net.rodofire.mushrooomsmod.world.biome.overworld.ModOverworldBiomes;
-import net.minecraft.entity.effect.StatusEffectInstance;
-import net.minecraft.item.*;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
-import net.minecraft.text.Text;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.math.Direction;
 
 public class ModItems {
     public static final ItemGroup MUSHROOM_GROUP = Registry.register(Registries.ITEM_GROUP,

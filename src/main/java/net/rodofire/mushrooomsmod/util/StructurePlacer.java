@@ -1,20 +1,16 @@
 package net.rodofire.mushrooomsmod.util;
 
-import java.util.Optional;
-
 import net.minecraft.structure.StructurePlacementData;
 import net.minecraft.structure.StructureTemplate;
 import net.minecraft.structure.StructureTemplateManager;
 import net.minecraft.structure.processor.BlockRotStructureProcessor;
-import net.minecraft.util.BlockMirror;
-import net.minecraft.util.BlockRotation;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.InvalidIdentifierException;
-import net.minecraft.util.Util;
+import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.StructureWorldAccess;
+
+import java.util.Optional;
 
 public class StructurePlacer {
 

@@ -2,9 +2,9 @@ package net.rodofire.mushrooomsmod.world.gen;
 
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
-import net.rodofire.mushrooomsmod.world.features.placedfeatures.ModSurfacePlacedFeatures;
 import net.minecraft.world.biome.BiomeKeys;
 import net.minecraft.world.gen.GenerationStep;
+import net.rodofire.mushrooomsmod.world.features.placedfeatures.ModSurfacePlacedFeatures;
 
 public class ModPlantsGeneration {
     public static void generateFlowers() {
@@ -61,7 +61,7 @@ public class ModPlantsGeneration {
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.PLAINS), GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.PERVENCHE_PLACED_KEY);*/
     }
 
-    public static void generateGrass(){
+    public static void generateGrass() {
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.PLAINS), GenerationStep.Feature.VEGETAL_DECORATION, ModSurfacePlacedFeatures.TINY_GRASS_PLACED_KEY);
     }
 

@@ -1,6 +1,6 @@
 package net.rodofire.mushrooomsmod.block.custom;
 
-import net.minecraft.block.*;
+import net.minecraft.block.Block;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -16,7 +16,7 @@ public class BlockBrushableBlock extends Block {
     }
 
     public boolean brush(long worldTime, PlayerEntity player, BlockPos pos, int i) {
-        if (i <=120) return false;
+        if (i <= 120) return false;
         finishBrushing(player, pos);
         return true;
     }

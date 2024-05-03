@@ -1,7 +1,5 @@
 package net.rodofire.mushrooomsmod.block.custom.bigmushroom;
 
-import net.rodofire.mushrooomsmod.block.ModBlocks;
-import net.rodofire.mushrooomsmod.item.ModItems;
 import net.minecraft.block.*;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemConvertible;
@@ -21,11 +19,13 @@ import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldView;
+import net.rodofire.mushrooomsmod.block.ModBlocks;
+import net.rodofire.mushrooomsmod.item.ModItems;
 
 public class BigGreenMushroomPlant extends CropBlock implements Fertilizable {
-    public static  int MAX_AGE = 3;
+    public static int MAX_AGE = 3;
     public static final IntProperty AGE = Properties.AGE_3;
-    public static final VoxelShape[] AGE_TO_SHAPE = new VoxelShape[]{Block.createCuboidShape(1,0,1,15,7,15), Block.createCuboidShape(0,0,0,16,10,16), Block.createCuboidShape(0,0,0,16,14,16), Block.createCuboidShape(0,0,0,16,20,16)};
+    public static final VoxelShape[] AGE_TO_SHAPE = new VoxelShape[]{Block.createCuboidShape(1, 0, 1, 15, 7, 15), Block.createCuboidShape(0, 0, 0, 16, 10, 16), Block.createCuboidShape(0, 0, 0, 16, 14, 16), Block.createCuboidShape(0, 0, 0, 16, 20, 16)};
 
 
     public BigGreenMushroomPlant(Settings settings, Block stage0, Block stage1, Block stage2, Block stage3) {
@@ -41,6 +41,7 @@ public class BigGreenMushroomPlant extends CropBlock implements Fertilizable {
         }
         world.setBlockState(pos, this.withAge(i), Block.NOTIFY_LISTENERS);
     }
+
     protected int getGrowthAmount(World world) {
         return MathHelper.nextInt(world.random, 1, 1);
     }
@@ -56,16 +57,16 @@ public class BigGreenMushroomPlant extends CropBlock implements Fertilizable {
     }
 
 
-    public static BlockState getAgeToBlockstate(int age){
-        if (age==0){
+    public static BlockState getAgeToBlockstate(int age) {
+        if (age == 0) {
             System.out.println("satge0");
             return ModBlocks.TINY_GREEN_MUSHROOM.getDefaultState();
-        } else if (age==1) {
+        } else if (age == 1) {
             System.out.println("stage1");
             return ModBlocks.LITTLE_GREEN_MUSHROOM.getDefaultState();
-        } else if (age==2) {
+        } else if (age == 2) {
             return ModBlocks.MEDIUM_GREEN_MUSHROOM.getDefaultState();
-        } else{
+        } else {
             return ModBlocks.BIG_GREEN_MUSHROOM.getDefaultState();
         }
     }
@@ -84,26 +85,32 @@ public class BigGreenMushroomPlant extends CropBlock implements Fertilizable {
     public void grow(ServerWorld world, Random random, BlockPos pos, BlockState state) {
         this.applyGrowth(world, pos, state);
     }
+
     @Override
-    public ItemConvertible getSeedsItem(){
+    public ItemConvertible getSeedsItem() {
         return ModItems.BIG_PURPLE_MUSHROOM_SEED;
     }
+
     @Override
-    public IntProperty getAgeProperty(){
+    public IntProperty getAgeProperty() {
         return AGE;
     }
+
     @Override
-    public int getMaxAge(){
+    public int getMaxAge() {
         return MAX_AGE;
     }
+
     @Override
-    protected void appendProperties(StateManager.Builder<Block, BlockState> builder){
+    protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
         builder.add(AGE);
     }
+
     @Override
     protected boolean canPlantOnTop(BlockState floor, BlockView world, BlockPos pos) {
         return floor.isOpaqueFullCube(world, pos);
     }
+
     @Override
     public boolean canPlaceAt(BlockState state, WorldView world, BlockPos pos) {
         BlockPos blockPos = pos.down();

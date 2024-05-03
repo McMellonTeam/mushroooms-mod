@@ -22,6 +22,7 @@ public class ForgeCategory implements DisplayCategory<BasicDisplay> {
             new Identifier(MushrooomsMod.MOD_ID, "textures/gui/forge_gui.png");
     public static final CategoryIdentifier<ForgeDisplay> FORGE_EMPOWERING =
             CategoryIdentifier.of(MushrooomsMod.MOD_ID, "forge_empowering");
+
     @Override
     public CategoryIdentifier getCategoryIdentifier() {
         return FORGE_EMPOWERING;
@@ -41,6 +42,7 @@ public class ForgeCategory implements DisplayCategory<BasicDisplay> {
     public int getDisplayHeight() {
         return 90;
     }
+
     @Override
     public List<Widget> setupDisplay(BasicDisplay display, Rectangle bounds) {
         List<Widget> widgets = new LinkedList<>();
@@ -48,10 +50,10 @@ public class ForgeCategory implements DisplayCategory<BasicDisplay> {
         widgets.add(Widgets.createTexturedWidget(TEXTURE,
                 new Rectangle(startPoint.x, startPoint.y, 175, 182)));
 
-        widgets.add(Widgets.createSlot(new Point(startPoint.x + 26,startPoint.y +33))
+        widgets.add(Widgets.createSlot(new Point(startPoint.x + 26, startPoint.y + 33))
                 .entries(display.getInputEntries().get(0)));
 
-        widgets.add(Widgets.createSlot(new Point(startPoint.x +134, startPoint.y +33))
+        widgets.add(Widgets.createSlot(new Point(startPoint.x + 134, startPoint.y + 33))
                 .markOutput().entries(display.getOutputEntries().get(0)));
 
         return widgets;

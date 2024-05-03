@@ -1,5 +1,6 @@
 package net.rodofire.mushrooomsmod.block.custom;
 
+import net.minecraft.block.*;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.entry.RegistryEntry;
@@ -14,12 +15,6 @@ import net.minecraft.world.WorldView;
 import net.minecraft.world.gen.feature.ConfiguredFeature;
 
 import java.util.Optional;
-
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Fertilizable;
-import net.minecraft.block.PlantBlock;
-import net.minecraft.block.ShapeContext;
 
 public class FlowersMushroomBlock extends PlantBlock implements Fertilizable {
     private final RegistryKey<ConfiguredFeature<?, ?>> featureKey;

@@ -1,8 +1,6 @@
 package net.rodofire.mushrooomsmod.world.biome.overworld;
 
 
-import java.util.function.Consumer;
-
 import com.mojang.datafixers.util.Pair;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
@@ -12,6 +10,8 @@ import net.minecraft.world.biome.BiomeKeys;
 import net.minecraft.world.biome.source.util.MultiNoiseUtil;
 import terrablender.api.Region;
 import terrablender.api.RegionType;
+
+import java.util.function.Consumer;
 
 
 public class ModOverworldRegionSimplified extends Region {

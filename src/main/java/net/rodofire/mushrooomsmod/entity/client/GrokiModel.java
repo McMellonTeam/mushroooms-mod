@@ -1,9 +1,9 @@
 package net.rodofire.mushrooomsmod.entity.client;
 
-import net.rodofire.mushrooomsmod.MushrooomsMod;
-import net.rodofire.mushrooomsmod.entity.custom.GrokiEntity;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.MathHelper;
+import net.rodofire.mushrooomsmod.MushrooomsMod;
+import net.rodofire.mushrooomsmod.entity.custom.GrokiEntity;
 import software.bernie.geckolib.constant.DataTickets;
 import software.bernie.geckolib.core.animatable.GeoAnimatable;
 import software.bernie.geckolib.core.animatable.model.CoreGeoBone;

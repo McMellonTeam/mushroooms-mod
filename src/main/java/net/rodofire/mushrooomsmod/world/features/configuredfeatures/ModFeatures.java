@@ -14,29 +14,29 @@ import net.rodofire.mushrooomsmod.world.mushrooms.codemushrooms.*;
 import net.rodofire.mushrooomsmod.world.mushrooms.structuremushrooms.CustomGreenSecondMushroomFeature;
 import net.rodofire.mushrooomsmod.world.mushrooms.structuremushrooms.CustomRedHugeMushroomFeature;
 
-public abstract class ModFeatures <FC extends FeatureConfig> {
+public abstract class ModFeatures<FC extends FeatureConfig> {
 
     //Huge mushroom features
     public static Feature<HugeMushroomFeatureConfig> HUGE_BLUE_MUSHROOM;
-    public static Feature<HugeMushroomFeatureConfig>HUGE_PURPLE_MUSHROOM;
-    public static Feature<ModMushroomFeatureConfig>HUGE_GREEN_MUSHROOM ;
-    public static Feature<HugeMushroomFeatureConfig>HUGE_BLUE_LUMINESCENT_MUSHROOM;
-    public static Feature<HugeMushroomFeatureConfig>HUGE_LUMINESCENT_PINK_MUSHROOM;
-    public static Feature<ModMushroomFeatureConfig>HUGE_BIG_PURPLE_MUSHROOM;
-    public static Feature<HugeMushroomFeatureConfig>HUGE_BIG_GREEN_MUSHROOM;
-    public static Feature<ModMushroomFeatureConfig>HUGE_BIG_RED_MUSHROOM;
-    public static Feature<HugeMushroomFeatureConfig>HUGE_BIG_ORANGE_MUSHROOM;
-    public static Feature<HugeMushroomFeatureConfig>HUGE_BIG_YELLOW_MUSHROOM;
+    public static Feature<HugeMushroomFeatureConfig> HUGE_PURPLE_MUSHROOM;
+    public static Feature<ModMushroomFeatureConfig> HUGE_GREEN_MUSHROOM;
+    public static Feature<HugeMushroomFeatureConfig> HUGE_BLUE_LUMINESCENT_MUSHROOM;
+    public static Feature<HugeMushroomFeatureConfig> HUGE_LUMINESCENT_PINK_MUSHROOM;
+    public static Feature<ModMushroomFeatureConfig> HUGE_BIG_PURPLE_MUSHROOM;
+    public static Feature<HugeMushroomFeatureConfig> HUGE_BIG_GREEN_MUSHROOM;
+    public static Feature<ModMushroomFeatureConfig> HUGE_BIG_RED_MUSHROOM;
+    public static Feature<HugeMushroomFeatureConfig> HUGE_BIG_ORANGE_MUSHROOM;
+    public static Feature<HugeMushroomFeatureConfig> HUGE_BIG_YELLOW_MUSHROOM;
 
     //Vines Features;
-    public static  Feature<TwistingVinesFeatureConfig> BLUE_LUMINESCENT_VINES;
-    public static  Feature<DirectionConfig> SIMPLE_VINES;
+    public static Feature<TwistingVinesFeatureConfig> BLUE_LUMINESCENT_VINES;
+    public static Feature<DirectionConfig> SIMPLE_VINES;
 
     //Bush;
-    public static  Feature<DefaultFeatureConfig> BUSH;
-    public static  Feature<DefaultFeatureConfig> COLORFUL_BUSH;
+    public static Feature<DefaultFeatureConfig> BUSH;
+    public static Feature<DefaultFeatureConfig> COLORFUL_BUSH;
 
-    public static void addFeatures(){
+    public static void addFeatures() {
         HUGE_BLUE_MUSHROOM = registercustomfeature("huge_blue_mushroom", new HugeBlueMushroomFeature(HugeMushroomFeatureConfig.CODEC));
         HUGE_PURPLE_MUSHROOM = registercustomfeature("huge_purple_mushroom", new CustomPurpleMushroomFeature(HugeMushroomFeatureConfig.CODEC));
         HUGE_GREEN_MUSHROOM = registercustomfeature("huge_green_mushroom", new CustomGreenMushroomFeature(ModMushroomFeatureConfig.CODEC));

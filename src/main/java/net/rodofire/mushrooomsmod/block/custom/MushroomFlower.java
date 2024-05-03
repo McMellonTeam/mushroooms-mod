@@ -17,6 +17,7 @@ public class MushroomFlower extends PlantBlock implements Fertilizable {
     public MushroomFlower(Settings settings) {
         super(settings);
     }
+
     protected static final VoxelShape SHAPE = Block.createCuboidShape(5.0, 0.0, 5.0, 11.0, 6.0, 11.0);
 
     @Override

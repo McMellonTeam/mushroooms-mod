@@ -4,7 +4,6 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.rodofire.mushrooomsmod.item.ModItems;
-import net.rodofire.mushrooomsmod.util.ModTags;
 
 public class CrushableItems extends Item {
     Item crushed;

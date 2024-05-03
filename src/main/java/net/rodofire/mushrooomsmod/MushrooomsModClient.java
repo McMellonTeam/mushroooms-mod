@@ -4,6 +4,7 @@ import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
+import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.render.block.entity.BlockEntityRendererFactories;
 import net.rodofire.mushrooomsmod.block.ModBlockEntities;
 import net.rodofire.mushrooomsmod.block.ModBlocks;
@@ -13,7 +14,6 @@ import net.rodofire.mushrooomsmod.entity.client.BoleteCowRenderer;
 import net.rodofire.mushrooomsmod.entity.client.GrokiRenderer;
 import net.rodofire.mushrooomsmod.particle.ModParticles;
 import net.rodofire.mushrooomsmod.particle.custom.GreenfireParticle;
-import net.minecraft.client.render.RenderLayer;
 
 public class MushrooomsModClient implements ClientModInitializer {
 

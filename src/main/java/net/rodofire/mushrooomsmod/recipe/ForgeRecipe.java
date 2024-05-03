@@ -11,7 +11,6 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.JsonHelper;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.world.World;
-import net.rodofire.mushrooomsmod.MushrooomsMod;
 
 import java.util.List;
 
@@ -20,15 +19,15 @@ public class ForgeRecipe implements Recipe<SimpleInventory> {
     private final ItemStack output;
     private final List<Ingredient> recipeItems;
 
-    public ForgeRecipe(Identifier id, List<Ingredient> input,ItemStack output) {
-        this.id=id;
+    public ForgeRecipe(Identifier id, List<Ingredient> input, ItemStack output) {
+        this.id = id;
         this.output = output;
         this.recipeItems = input;
     }
 
     @Override
     public boolean matches(SimpleInventory inventory, World world) {
-        if(world.isClient()){
+        if (world.isClient()) {
             return false;
         }
         return recipeItems.get(0).test(inventory.getStack(0));
@@ -71,12 +70,12 @@ public class ForgeRecipe implements Recipe<SimpleInventory> {
         return Type.INSTANCE;
     }
 
-    public static class Type implements RecipeType<ForgeRecipe>{
+    public static class Type implements RecipeType<ForgeRecipe> {
         public static final Type INSTANCE = new Type();
         public static final String ID = "forge_crafting";
     }
 
-    public static class Serializer implements RecipeSerializer<ForgeRecipe>{
+    public static class Serializer implements RecipeSerializer<ForgeRecipe> {
         public static final Serializer INSTANCE = new Serializer();
         public static final String ID = "forge_crafting";
 
@@ -103,7 +102,7 @@ public class ForgeRecipe implements Recipe<SimpleInventory> {
             }
 
             ItemStack output = buf.readItemStack();
-            return new ForgeRecipe(id,inputs, output);
+            return new ForgeRecipe(id, inputs, output);
         }
 
         @Override

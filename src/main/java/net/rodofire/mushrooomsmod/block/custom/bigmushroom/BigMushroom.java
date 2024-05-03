@@ -1,17 +1,18 @@
 package net.rodofire.mushrooomsmod.block.custom.bigmushroom;
 
-import net.rodofire.mushrooomsmod.block.ModBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.WorldView;
+import net.rodofire.mushrooomsmod.block.ModBlocks;
 
 public class BigMushroom extends Block {
     public BigMushroom(Settings settings) {
         super(settings);
     }
+
     @Override
     public boolean canPlaceAt(BlockState state, WorldView world, BlockPos pos) {
         BlockPos blockPos = pos.down();
@@ -25,9 +26,6 @@ public class BigMushroom extends Block {
     protected boolean canPlantOnTop(BlockState floor, BlockView world, BlockPos pos) {
         return floor.isOpaqueFullCube(world, pos);
     }
-
-
-
 
 
 }

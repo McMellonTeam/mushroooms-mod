@@ -1,18 +1,20 @@
 package net.rodofire.mushrooomsmod.world.features.configuredfeatures;
 
+import net.minecraft.block.Blocks;
+import net.minecraft.registry.Registerable;
+import net.minecraft.registry.RegistryKey;
+import net.minecraft.registry.RegistryKeys;
+import net.minecraft.util.Identifier;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.intprovider.ConstantIntProvider;
+import net.minecraft.world.gen.feature.*;
 import net.minecraft.world.gen.feature.size.TwoLayersFeatureSize;
 import net.minecraft.world.gen.foliage.BlobFoliagePlacer;
+import net.minecraft.world.gen.stateprovider.BlockStateProvider;
 import net.rodofire.mushrooomsmod.MushrooomsMod;
 import net.rodofire.mushrooomsmod.block.ModBlocks;
 import net.rodofire.mushrooomsmod.world.features.config.DirectionConfig;
 import net.rodofire.mushrooomsmod.world.features.config.ModMushroomFeatureConfig;
-import net.minecraft.block.Blocks;
-import net.minecraft.registry.*;
-import net.minecraft.util.Identifier;
-import net.minecraft.world.gen.feature.*;
-import net.minecraft.world.gen.stateprovider.BlockStateProvider;
 import net.rodofire.mushrooomsmod.world.tree.codetree.BlueLuminescentTrunkPlacer;
 
 public class ModConfiguredFeatures<FC extends FeatureConfig> {
@@ -97,12 +99,11 @@ public class ModConfiguredFeatures<FC extends FeatureConfig> {
 
     //Vines
     public static final RegistryKey<ConfiguredFeature<?, ?>> BLUE_LUMINESCENT_VINES_UP_KEY = registerKey("blue_luminescent_vines_up_key");
-    public static final RegistryKey<ConfiguredFeature<?,?>> BLUE_LUMINESCENT_VINES_DOWN_KEY = registerKey("blue_luminescent_vines_down_key");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> BLUE_LUMINESCENT_VINES_DOWN_KEY = registerKey("blue_luminescent_vines_down_key");
 
     //Bush
-    public static final RegistryKey<ConfiguredFeature<?,?>> BUSH_KEY = registerKey("bush_key");
-    public static final RegistryKey<ConfiguredFeature<?,?>> COLORFUL_BUSH_KEY = registerKey("colorful_bush_key");
-
+    public static final RegistryKey<ConfiguredFeature<?, ?>> BUSH_KEY = registerKey("bush_key");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> COLORFUL_BUSH_KEY = registerKey("colorful_bush_key");
 
 
     public static void bootstrap(Registerable<ConfiguredFeature<?, ?>> context) {
@@ -131,7 +132,6 @@ public class ModConfiguredFeatures<FC extends FeatureConfig> {
         register(context, PINK_LUMINESCENT_MUSHROOM_KEY, Feature.FLOWER, new RandomPatchFeatureConfig(32, 6, 2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.LUMINESCENT_PINK_MUSHROOM)))));
         register(context, RED_MUSHROOM_KEY, Feature.FLOWER, new RandomPatchFeatureConfig(32, 6, 2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(Blocks.RED_MUSHROOM)))));
         register(context, BROWN_MUSHROOM_KEY, Feature.FLOWER, new RandomPatchFeatureConfig(32, 6, 2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(Blocks.BROWN_MUSHROOM)))));
-
 
 
         //Flowers Mushrooms

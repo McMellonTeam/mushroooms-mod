@@ -28,14 +28,17 @@ public class PinkCrystalParticle extends SpriteBillboardParticle {
     public ParticleTextureSheet getType() {
         return ParticleTextureSheet.PARTICLE_SHEET_TRANSLUCENT;
     }
+
     @Override
     public void tick() {
         super.tick();
         fadeOut();
     }
+
     private void fadeOut() {
-        this.alpha = (-(1/(float)maxAge) * (float)age/2 + 1);
+        this.alpha = (-(1 / (float) maxAge) * (float) age / 2 + 1);
     }
+
     @Environment(EnvType.CLIENT)
     public static class Factory implements ParticleFactory<DefaultParticleType> {
         private final SpriteProvider sprites;

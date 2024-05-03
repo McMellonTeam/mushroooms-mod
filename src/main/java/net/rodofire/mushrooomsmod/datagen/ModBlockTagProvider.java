@@ -2,11 +2,11 @@ package net.rodofire.mushrooomsmod.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
-import net.rodofire.mushrooomsmod.block.ModBlocks;
-import net.rodofire.mushrooomsmod.util.ModTags;
 import net.minecraft.block.Blocks;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.BlockTags;
+import net.rodofire.mushrooomsmod.block.ModBlocks;
+import net.rodofire.mushrooomsmod.util.ModTags;
 
 import java.util.concurrent.CompletableFuture;
 

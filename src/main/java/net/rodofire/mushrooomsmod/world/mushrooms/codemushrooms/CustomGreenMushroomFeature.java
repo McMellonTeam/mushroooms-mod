@@ -1,11 +1,11 @@
 package net.rodofire.mushrooomsmod.world.mushrooms.codemushrooms;
 
 import com.mojang.serialization.Codec;
-import net.rodofire.mushrooomsmod.world.features.config.ModMushroomFeatureConfig;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.WorldAccess;
+import net.rodofire.mushrooomsmod.world.features.config.ModMushroomFeatureConfig;
 
 
 public class CustomGreenMushroomFeature extends CustomGreenMushroom {
