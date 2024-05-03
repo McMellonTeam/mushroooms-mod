@@ -26,6 +26,8 @@ public class ModUndergroundPlacedFeatures {
 
     public static final RegistryKey<PlacedFeature> HUGE_RED_MUSHROOM_UNDERGROUND_PLACED_KEY = registerKey("huge_red_mushroom_underground_placed_key");
     public static final RegistryKey<PlacedFeature> HUGE_BROWN_MUSHROOM_UNDERGROUND_PLACED_KEY = registerKey("huge_brown_mushroom_underground_placed_key");
+    public static final RegistryKey<PlacedFeature> MUSHROOM_SIDE_BLUE_LUMINESCENT_UNDERGROUND_PLACED_KEY = registerKey("mushroom_side_blue_luminescent_underground_placed_key");
+
 
     //Flowers
     public static final RegistryKey<PlacedFeature> PLATUM_PLACED_KEY = registerKey("platum_placed_key");
@@ -50,6 +52,7 @@ public class ModUndergroundPlacedFeatures {
         register(context, MUSHROOM_SMALL_RED_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.MUSHROOM_SMALL_RED_KEY), CountPlacementModifier.of(50), SquarePlacementModifier.of(), ModPlacedFeatures.STONE_LEVEL, BiomePlacementModifier.of());
         register(context, BROWN_MUSHROOM_UNDERGROUNG_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.BROWN_MUSHROOM_KEY), CountPlacementModifier.of(33), SquarePlacementModifier.of(), ModPlacedFeatures.STONE_LEVEL, BiomePlacementModifier.of());
         register(context, RED_MUSHROOM_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.RED_MUSHROOM_KEY), CountPlacementModifier.of(33), SquarePlacementModifier.of(), ModPlacedFeatures.STONE_LEVEL, BiomePlacementModifier.of());
+        register(context, MUSHROOM_SIDE_BLUE_LUMINESCENT_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.MUSHROOM_SIDE_BLUE_LUMINESCENT_KEY), CountPlacementModifier.of(60), SquarePlacementModifier.of(), ModPlacedFeatures.DEEPSLATE_LEVEL, BiomePlacementModifier.of());
 
         //Flowers
         register(context, TURQUOSUM_STILUS_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.TURQUOSUM_STILUS_KEY), CountPlacementModifier.of(11), SquarePlacementModifier.of(), ModPlacedFeatures.DEEPSLATE_LEVEL, BiomePlacementModifier.of());

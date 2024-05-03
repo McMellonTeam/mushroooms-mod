@@ -1,4 +1,4 @@
-// 1.20.1	2024-05-03T16:34:29.1514445	Mushroooms Mod/Recipes
+// 1.20.1	2024-05-03T20:29:17.0805344	Mushroooms Mod/Recipes
 eb7eb4d136c7d4b6ff20f977bdb8be3107351427 data\mushrooomsmod\recipes\light_blue_dye_from_futiali.json
 47995b328fc2287899be76bf7c083bce5e768af7 data\mushrooomsmod\recipes\purple_dye_from_tiny_lilac.json
 8f5ffcb37630811a483bb0a00b9d9b074ccdb049 data\mushrooomsmod\advancements\recipes\misc\light_blue_dye_from_cyanea.json
@@ -11,8 +11,8 @@ fa077a82d56460c941f868aebcc149dbea542d93 data\mushrooomsmod\recipes\green_lanter
 cdd4b822d19cdb9a57f93184fc1a87079bd2e1ba data\mushrooomsmod\advancements\recipes\misc\light_blue_dye_from_platum.json
 b9bd20dbcf696052f28b5e38257de3bfea9b0ebf data\mushrooomsmod\advancements\recipe\crushed_diamond.json
 a084bdbab7bc570427a9f9dbfea6f60607fa47dd data\mushrooomsmod\recipes\green_torch_craft.json
-cccb026981c9be66ed11c716720c6326af441a14 data\mushrooomsmod\recipes\orange_dye_from_perennial_orange.json
 493a98f3fb710e55106b1fa30386b468b8a8a8a6 data\mushrooomsmod\advancements\recipes\building_blocks\green_lantern_craft.json
+cccb026981c9be66ed11c716720c6326af441a14 data\mushrooomsmod\recipes\orange_dye_from_perennial_orange.json
 fe02ad4c45f2e46615e57c4731e331aa71796b58 data\mushrooomsmod\recipes\forge_craft.json
 5ba535ec3ea6569b4b7d4e35e2e92d4eca257721 data\mushrooomsmod\advancements\recipes\misc\green_dye_from_perennial_green.json
 962a1d13421d51b3c7a4f482b765bcc511dd05bd data\mushrooomsmod\advancements\recipes\redstone\baguette.json
