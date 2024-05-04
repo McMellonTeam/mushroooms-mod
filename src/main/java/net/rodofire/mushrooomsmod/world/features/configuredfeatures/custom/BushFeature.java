@@ -54,9 +54,11 @@ public class BushFeature extends Feature<DefaultFeatureConfig> {
                     if (world.getBlockState(pos.add(i, j, k)).isOf(Blocks.BEDROCK))
                         world.setBlockState(pos.add(i, j, k), blockState, 1);
                     int a = 1;
-                    while (world.getBlockState(pos.down(a)).isAir()) {
+                    boolean bl = false;
+                    while (world.getBlockState(pos.down(a)).isAir()||bl) {
                         world.setBlockState(pos.add(i, j - a, k), blockState, 1);
                         ++a;
+                        if(a==4) bl = true;
                     }
                 }
             }
