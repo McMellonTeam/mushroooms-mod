@@ -33,8 +33,8 @@ public class AmbreBlock extends Block {
                 double y = ((double) Random.create().nextBetween(110, 150) / 100) * randomDirection();
                 double z = ((double) Random.create().nextBetween(110, 150) / 100) * randomDirection();
                 Vec3d vec3d = new Vec3d(pos.getX() + x, pos.getY() + y, pos.getZ() + z);
-                world.addParticle(ParticleTypes.COMPOSTER,
-                        vec3d.x, vec3d.y, vec3d.z, 0.0D, 0.0D, 0.0D);
+                world.spawnParticles(ParticleTypes.COMPOSTER,
+                        vec3d.x, vec3d.y, vec3d.z, 0,0.0D, 0.0D, 0.0D, 0.0001f);
             }
         }
     }
