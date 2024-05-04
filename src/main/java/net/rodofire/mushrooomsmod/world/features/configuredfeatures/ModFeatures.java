@@ -12,6 +12,7 @@ import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.Simpl
 import net.rodofire.mushrooomsmod.world.mushrooms.HugeBlueMushroom.HugeBlueMushroomFeature;
 import net.rodofire.mushrooomsmod.world.mushrooms.codemushrooms.*;
 import net.rodofire.mushrooomsmod.world.mushrooms.structuremushrooms.CustomGreenSecondMushroomFeature;
+import net.rodofire.mushrooomsmod.world.mushrooms.structuremushrooms.CustomRedFertileMushroom;
 import net.rodofire.mushrooomsmod.world.mushrooms.structuremushrooms.CustomRedHugeMushroomFeature;
 
 public abstract class ModFeatures<FC extends FeatureConfig> {
@@ -27,6 +28,7 @@ public abstract class ModFeatures<FC extends FeatureConfig> {
     public static Feature<ModMushroomFeatureConfig> HUGE_BIG_RED_MUSHROOM;
     public static Feature<HugeMushroomFeatureConfig> HUGE_BIG_ORANGE_MUSHROOM;
     public static Feature<HugeMushroomFeatureConfig> HUGE_BIG_YELLOW_MUSHROOM;
+    public static Feature<DefaultFeatureConfig> FERTILE_RED_MUSHROOM;
 
     //Vines Features;
     public static Feature<TwistingVinesFeatureConfig> BLUE_LUMINESCENT_VINES;
@@ -47,6 +49,7 @@ public abstract class ModFeatures<FC extends FeatureConfig> {
         HUGE_BIG_RED_MUSHROOM = registercustomfeature("huge_red_red_mushroom_feature", new CustomRedHugeMushroomFeature(ModMushroomFeatureConfig.CODEC));
         HUGE_BIG_ORANGE_MUSHROOM = registercustomfeature("huge_orange_mushroom_feature", new CustomOrangeMushroomFeature(HugeMushroomFeatureConfig.CODEC));
         HUGE_BIG_YELLOW_MUSHROOM = registercustomfeature("huge_yellow_mushroom_feature", new CustomYellowMushroomFeature(HugeMushroomFeatureConfig.CODEC));
+        FERTILE_RED_MUSHROOM = registercustomfeature("mushroom_fertile_red", new CustomRedFertileMushroom(DefaultFeatureConfig.CODEC));
 
         BLUE_LUMINESCENT_VINES = registercustomfeature("blue_luminescent_vines_feature", new BlueLuminescentVinesFeature(TwistingVinesFeatureConfig.CODEC));
         SIMPLE_VINES = registercustomfeature("simple_vines", new SimpleVinesFeature(DirectionConfig.CODEC));

@@ -1,4 +1,4 @@
-package net.rodofire.mushrooomsmod.world.biome.surface;
+package net.rodofire.mushrooomsmod.world.biome.rules;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
@@ -35,7 +35,10 @@ public class ModMaterialsRules {
 
         //Dirt Related
         MaterialRules.MaterialRule dirt = MaterialRules.condition(MaterialRules.stoneDepth(0, true, 3, VerticalSurfaceType.FLOOR), DIRT);
+
         MaterialRules.MaterialRule mycelium = MaterialRules.condition(MaterialRules.STONE_DEPTH_FLOOR, MYCELIUM);
+        MaterialRules.MaterialRule coarse_dirt = MaterialRules.condition(MaterialRules.STONE_DEPTH_FLOOR, COARSE_DIRT);
+        MaterialRules.MaterialRule rooted_dirt = MaterialRules.condition(MaterialRules.STONE_DEPTH_FLOOR, ROOTED_DIRT);
 
 
         //Stone Related
@@ -49,7 +52,9 @@ public class ModMaterialsRules {
 
                         //Vanilla Cave
                         MaterialRules.sequence(MaterialRules.condition(MaterialRules.biome(ModOverworldBiomes.VANILLA_SHROOM_CAVE),
-                                MaterialRules.sequence(MaterialRules.condition(belowtop, MaterialRules.sequence(MaterialRules.condition(stonecavelevel, mycelium), MaterialRules.condition(stonecavelevel, dirt))))))
+                                MaterialRules.sequence(MaterialRules.condition(belowtop, MaterialRules.sequence(MaterialRules.condition(stonecavelevel, MaterialRules.sequence(
+                                        MaterialRules.condition(noiseAbove(1.7d), rooted_dirt), MaterialRules.condition(noiseAbove(1d), coarse_dirt), mycelium)), dirt)))))
+                                        //mycelium)))))))
 
                 ));
     }
@@ -59,6 +64,6 @@ public class ModMaterialsRules {
     }
 
     public static MaterialRules.MaterialCondition noiseAbove(double min) {
-        return MaterialRules.noiseThreshold(NoiseParametersKeys.SURFACE, min);
+        return MaterialRules.noiseThreshold(NoiseParametersKeys.SURFACE, min/8.5d, Double.MAX_VALUE);
     }
 }

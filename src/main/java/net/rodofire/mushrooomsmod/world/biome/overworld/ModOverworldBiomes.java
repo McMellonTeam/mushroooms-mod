@@ -17,7 +17,8 @@ import net.minecraft.world.gen.feature.VegetationPlacedFeatures;
 import net.rodofire.mushrooomsmod.MushrooomsMod;
 import net.rodofire.mushrooomsmod.world.biome.ModBiomeFeatures;
 
-public class ModOverworldBiomes {
+public class
+ModOverworldBiomes {
     public static final RegistryKey<Biome> SHROOM_ISLAND = RegistryKey.of(RegistryKeys.BIOME, new Identifier(MushrooomsMod.MOD_ID, "shroom_island"));
     public static final RegistryKey<Biome> BLUE_LUMINESCENT_SHROOM_CAVE = RegistryKey.of(RegistryKeys.BIOME, new Identifier(MushrooomsMod.MOD_ID, "blue_luminescent_shroom_cave"));
     public static final RegistryKey<Biome> PURPLE_SHROOM_CAVE = RegistryKey.of(RegistryKeys.BIOME, new Identifier(MushrooomsMod.MOD_ID, "purple_luminescent_shroom_cave"));

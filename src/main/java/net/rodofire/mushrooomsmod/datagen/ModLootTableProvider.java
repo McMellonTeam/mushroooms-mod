@@ -88,6 +88,8 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.BLUE_MUSHROOM);
         addDrop(ModBlocks.BLUE_LUMINESCENT_MUSHROOM);
         addDrop(ModBlocks.LUMINESCENT_PINK_MUSHROOM);
+        addDrop(ModBlocks.FERTILE_RED_MUSHROOM);
+
         addDrop(ModBlocks.TRANSPARENT_MUSHROOM_STEM);
         addDrop(ModBlocks.GREEN_MUSHROOM_STEM);
         addDrop(ModBlocks.MUSHROOM_FLOWERS);

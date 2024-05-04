@@ -151,6 +151,7 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.LUMINESCENT_PINK_MUSHROOM)
                 .add(Blocks.RED_MUSHROOM)
                 .add(Blocks.BROWN_MUSHROOM)
+                .add(ModBlocks.FERTILE_RED_MUSHROOM)
 
                 .add(ModBlocks.STERILE_BLUE_MUSHROOM)
                 .add(ModBlocks.MUSHROOM_SMALL_BROWN)
@@ -173,6 +174,7 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.LUMINESCENT_PINK_MUSHROOM)
                 .add(Blocks.RED_MUSHROOM)
                 .add(Blocks.BROWN_MUSHROOM)
+                .add(ModBlocks.FERTILE_RED_MUSHROOM)
 
                 .add(ModBlocks.STERILE_BLUE_MUSHROOM)
                 .add(ModBlocks.MUSHROOM_SMALL_BROWN)
