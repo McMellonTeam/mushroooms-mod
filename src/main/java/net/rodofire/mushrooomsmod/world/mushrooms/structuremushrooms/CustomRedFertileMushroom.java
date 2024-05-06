@@ -29,11 +29,9 @@ public class CustomRedFertileMushroom extends Feature<DefaultFeatureConfig> {
         for (int i = a; i <= large + a; ++i) {
             for (int j = 0; j < height; ++j) {
                 for (int k = b; k <= large + b; ++k) {
-                    System.out.println(pos.add(i, j, k));
                     BlockState blockState = world.getBlockState(pos.add(i, j, k));
                     if (blockState.isAir() || blockState.isIn(BlockTags.LEAVES) || blockState.isIn(BlockTags.FLOWERS))
                         continue;
-                    System.out.println("banana");
                     return false;
                 }
             }
@@ -58,6 +56,7 @@ public class CustomRedFertileMushroom extends Feature<DefaultFeatureConfig> {
         return true;
     }
 
+    //return the large of the structure
     public int getLarge(int mushroom) {
         return switch (mushroom) {
             case 1, 2, 3, 4 -> 3;
@@ -68,6 +67,7 @@ public class CustomRedFertileMushroom extends Feature<DefaultFeatureConfig> {
         };
     }
 
+    //return offset due to random rotation
     public Vec3i getOffset(int mushroom, BlockRotation rotation) {
         return switch (rotation) {
             case NONE -> switch (mushroom) {
@@ -109,7 +109,7 @@ public class CustomRedFertileMushroom extends Feature<DefaultFeatureConfig> {
         };
     }
 
-    public int getHeight(int mushroom) {
+        public int getHeight(int mushroom) {
         return switch (mushroom) {
             case 1 -> 3;
             case 2, 3 -> 5;
@@ -121,6 +121,7 @@ public class CustomRedFertileMushroom extends Feature<DefaultFeatureConfig> {
         };
     }
 
+    //return wich mushroom wiil be placed
     public int getMushroom() {
         int rand = Random.create().nextBetween(0, 100);
         if (rand < 14) return 0;
@@ -143,6 +144,7 @@ public class CustomRedFertileMushroom extends Feature<DefaultFeatureConfig> {
         }
     }
 
+    //return random rotation
     public BlockRotation getBlockRotation() {
         return switch (Random.create().nextBetween(0, 3)) {
             case 1 -> BlockRotation.CLOCKWISE_90;
