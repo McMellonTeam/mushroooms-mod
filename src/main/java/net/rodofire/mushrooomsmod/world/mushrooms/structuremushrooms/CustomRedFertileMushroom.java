@@ -7,6 +7,7 @@ import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.util.BlockRotation;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Vec3i;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.StructureWorldAccess;
 import net.minecraft.world.gen.feature.DefaultFeatureConfig;
@@ -20,12 +21,19 @@ public class CustomRedFertileMushroom extends Feature<DefaultFeatureConfig> {
         super(configCodec);
     }
 
-    public boolean canGenerate(StructureWorldAccess world, Random random, BlockPos pos, int large, int height) {
-        for (int i = 0; i < large; ++i) {
+    public boolean canGenerate(StructureWorldAccess world, BlockPos pos, int large, int height, BlockRotation rotation) {
+        int a = 0;
+        int b = 0;
+        if (rotation == BlockRotation.NONE || rotation == BlockRotation.CLOCKWISE_90) b = -large;
+        if (rotation == BlockRotation.COUNTERCLOCKWISE_90 || rotation == BlockRotation.CLOCKWISE_180) a = -large;
+        for (int i = a; i <= large + a; ++i) {
             for (int j = 0; j < height; ++j) {
-                for (int k = 0; k < large; ++k) {
-                    BlockState blockState = world.getBlockState(pos.add(k, j, k));
-                    if (blockState.isAir() || blockState.isIn(BlockTags.LEAVES)) continue;
+                for (int k = b; k <= large + b; ++k) {
+                    System.out.println(pos.add(i, j, k));
+                    BlockState blockState = world.getBlockState(pos.add(i, j, k));
+                    if (blockState.isAir() || blockState.isIn(BlockTags.LEAVES) || blockState.isIn(BlockTags.FLOWERS))
+                        continue;
+                    System.out.println("banana");
                     return false;
                 }
             }
@@ -37,14 +45,17 @@ public class CustomRedFertileMushroom extends Feature<DefaultFeatureConfig> {
     public boolean generate(FeatureContext<DefaultFeatureConfig> context) {
         StructureWorldAccess world = context.getWorld();
         BlockPos pos = context.getOrigin();
-        Random random = context.getRandom();
         int mushroom = getMushroom();
         int large = getLarge(mushroom);
         int height = getHeight(mushroom);
-        if (!world.getBlockState(pos.add(-large/2,-1,-large/2)).isOpaqueFullCube(world, pos.down())) return false;
-        if (!canGenerate(world, random, pos.add(-large / 2, 0, -large / 2), large, height)) return false;
-        placeMushroom(world, random, pos.add(-large / 2, 0, -large / 2), mushroom);
-        return false;
+        BlockRotation rotation = getBlockRotation();
+        Vec3i offset = getOffset(mushroom, rotation);
+        if (!world.getBlockState(pos.down()).isOpaqueFullCube(world, pos.down())) {
+            return false;
+        }
+        if (!canGenerate(world, pos.add(offset), large, height, rotation)) return false;
+        placeMushroom(world, pos.add(offset), mushroom, rotation);
+        return true;
     }
 
     public int getLarge(int mushroom) {
@@ -54,6 +65,47 @@ public class CustomRedFertileMushroom extends Feature<DefaultFeatureConfig> {
             case 8 -> 5;
             case 9, 10 -> 7;
             default -> 2;
+        };
+    }
+
+    public Vec3i getOffset(int mushroom, BlockRotation rotation) {
+        return switch (rotation) {
+            case NONE -> switch (mushroom) {
+                case 1, 2, 3, 5 -> new Vec3i(-1, 0, -1);
+                case 4, 6 -> new Vec3i(-2, 0, -1);
+                case 7 -> new Vec3i(-2, 0, -2);
+                case 8 -> new Vec3i(-3, 0, -1);
+                case 9 -> new Vec3i(-4, 0, -2);
+                case 10 -> new Vec3i(-3, 0, -3);
+                default -> new Vec3i(0, 0, 0);
+            };
+            case CLOCKWISE_90 -> switch (mushroom) {
+                case 1, 2, 3, 5 -> new Vec3i(1, 0, -1);
+                case 4, 6 -> new Vec3i(1, 0, -2);
+                case 7 -> new Vec3i(1, 0, -2);
+                case 8 -> new Vec3i(1, 0, -3);
+                case 9 -> new Vec3i(2, 0, -4);
+                case 10 -> new Vec3i(3, 0, -3);
+                default -> new Vec3i(0, 0, 0);
+            };
+            case CLOCKWISE_180 -> switch (mushroom) {
+                case 1, 2, 3, 5 -> new Vec3i(1, 0, 1);
+                case 4, 6 -> new Vec3i(2, 0, 1);
+                case 7 -> new Vec3i(3, 0, 1);
+                case 8 -> new Vec3i(3, 0, 1);
+                case 9 -> new Vec3i(4, 0, 2);
+                case 10 -> new Vec3i(3, 0, 3);
+                default -> new Vec3i(0, 0, 0);
+            };
+            default -> switch (mushroom) {
+                case 1, 2, 3, 5 -> new Vec3i(-1, 0, 1);
+                case 4, 6 -> new Vec3i(-1, 0, 2);
+                case 7 -> new Vec3i(-1, 0, 2);
+                case 8 -> new Vec3i(-1, 0, 3);
+                case 9 -> new Vec3i(-2, 0, 4);
+                case 10 -> new Vec3i(-3, 0, 3);
+                default -> new Vec3i(0, 0, 0);
+            };
         };
     }
 
@@ -84,9 +136,9 @@ public class CustomRedFertileMushroom extends Feature<DefaultFeatureConfig> {
         return 10;
     }
 
-    public void placeMushroom(StructureWorldAccess world, Random random, BlockPos pos, int mushroom) {
+    public void placeMushroom(StructureWorldAccess world, BlockPos pos, int mushroom, BlockRotation rotation) {
         if (!world.isClient()) {
-            StructurePlacerAPI structuremushroom = new StructurePlacerAPI(world, new Identifier(MushrooomsMod.MOD_ID, "red_mushroom/red_mushroom_" + mushroom), pos, getBlockRotation());
+            StructurePlacerAPI structuremushroom = new StructurePlacerAPI(world, new Identifier(MushrooomsMod.MOD_ID, "red_mushroom/red_mushroom_" + mushroom), pos, rotation);
             structuremushroom.loadStructure();
         }
     }
