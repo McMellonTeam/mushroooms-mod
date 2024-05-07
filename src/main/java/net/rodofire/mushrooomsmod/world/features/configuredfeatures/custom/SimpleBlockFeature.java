@@ -8,7 +8,6 @@ import net.minecraft.world.StructureWorldAccess;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.SimpleBlockFeatureConfig;
 import net.minecraft.world.gen.feature.util.FeatureContext;
-import net.minecraft.world.gen.stateprovider.BlockStateProvider;
 
 public class SimpleBlockFeature extends Feature<SimpleBlockFeatureConfig> {
     public SimpleBlockFeature(Codec<SimpleBlockFeatureConfig> configCodec) {

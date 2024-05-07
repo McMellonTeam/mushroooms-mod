@@ -36,10 +36,6 @@ public class ModMaterialsRules {
         //Dirt Related
         MaterialRules.MaterialRule dirt = MaterialRules.condition(MaterialRules.stoneDepth(0, true, 3, VerticalSurfaceType.FLOOR), DIRT);
 
-        MaterialRules.MaterialRule mycelium = MaterialRules.condition(MaterialRules.STONE_DEPTH_FLOOR, MYCELIUM);
-        MaterialRules.MaterialRule coarse_dirt = MaterialRules.condition(MaterialRules.STONE_DEPTH_FLOOR, COARSE_DIRT);
-        MaterialRules.MaterialRule rooted_dirt = MaterialRules.condition(MaterialRules.STONE_DEPTH_FLOOR, ROOTED_DIRT);
-
 
         //Stone Related
         MaterialRules.MaterialRule bluedeepslate = MaterialRules.sequence(MaterialRules.condition(MaterialRules.STONE_DEPTH_FLOOR, BLUE_LUMINESCENT_DEEPSLATE), DEEPSLATE);
@@ -47,16 +43,17 @@ public class ModMaterialsRules {
 
         return MaterialRules.sequence(
                 //Blue Luminescent Cave
-                MaterialRules.sequence(MaterialRules.condition(MaterialRules.biome(ModOverworldBiomes.BLUE_LUMINESCENT_SHROOM_CAVE),
-                                MaterialRules.condition(deepslatelevel, bluedeepslate)),
+                MaterialRules.condition(MaterialRules.biome(ModOverworldBiomes.BLUE_LUMINESCENT_SHROOM_CAVE),
+                        MaterialRules.condition(deepslatelevel, bluedeepslate)),
 
-                        //Vanilla Cave
-                        MaterialRules.sequence(MaterialRules.condition(MaterialRules.biome(ModOverworldBiomes.VANILLA_SHROOM_CAVE),
-                                MaterialRules.sequence(MaterialRules.condition(belowtop, MaterialRules.sequence(MaterialRules.condition(stonecavelevel, MaterialRules.sequence(
-                                        MaterialRules.condition(noiseAbove(1.7d), rooted_dirt), MaterialRules.condition(noiseAbove(1d), coarse_dirt), mycelium)), dirt)))))
-                                        //mycelium)))))))
+                //Vanilla Cave
+                MaterialRules.sequence(MaterialRules.condition(MaterialRules.biome(ModOverworldBiomes.VANILLA_SHROOM_CAVE),
+                        MaterialRules.sequence(MaterialRules.condition(belowtop, MaterialRules.sequence(MaterialRules.condition(stonecavelevel, MaterialRules.sequence(
+                                MaterialRules.condition(MaterialRules.STONE_DEPTH_FLOOR,
+                                        MaterialRules.sequence(MaterialRules.condition(noiseAbove(2d), ROOTED_DIRT), MaterialRules.condition(noiseAbove(0.9d), COARSE_DIRT), MYCELIUM)) ))))))
 
-                ));
+
+        ));
     }
 
     private static MaterialRules.MaterialRule makeStateRule(Block block) {
@@ -64,6 +61,6 @@ public class ModMaterialsRules {
     }
 
     public static MaterialRules.MaterialCondition noiseAbove(double min) {
-        return MaterialRules.noiseThreshold(NoiseParametersKeys.SURFACE, min/8.5d, Double.MAX_VALUE);
+        return MaterialRules.noiseThreshold(NoiseParametersKeys.SURFACE, min / 8.5d, Double.MAX_VALUE);
     }
 }
