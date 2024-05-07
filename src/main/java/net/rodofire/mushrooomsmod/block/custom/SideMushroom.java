@@ -57,7 +57,7 @@ public class SideMushroom extends Block {
     @Override
     public boolean canPlaceAt(BlockState state, WorldView world, BlockPos pos) {
         Direction direction = (Direction) state.get(FACING);
-        return this.canPlaceOn(world, pos.offset(direction.getOpposite()), direction);
+        return this.canPlaceOn(world, pos.offset(direction.getOpposite()), direction) && (world.getBlockState(pos).isAir() || world.getBlockState(pos).getBlock() == this);
     }
 
     @Override

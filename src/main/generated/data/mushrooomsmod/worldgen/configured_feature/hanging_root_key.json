@@ -4,9 +4,9 @@
     "to_place": {
       "type": "minecraft:simple_state_provider",
       "state": {
-        "Name": "mushrooomsmod:mushroom_side_blue_luminescent",
+        "Name": "minecraft:hanging_roots",
         "Properties": {
-          "facing": "north"
+          "waterlogged": "false"
         }
       }
     }
