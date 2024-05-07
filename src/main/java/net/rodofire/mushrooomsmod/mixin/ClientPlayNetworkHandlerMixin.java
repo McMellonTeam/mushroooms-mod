@@ -16,7 +16,6 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-@Environment(EnvType.CLIENT)
 @Mixin(ClientPlayNetworkHandler.class)
 public abstract class ClientPlayNetworkHandlerMixin {
 
@@ -32,6 +31,9 @@ public abstract class ClientPlayNetworkHandlerMixin {
         if (client.player == null) {
             return;
         }
+        assert client.world != null;
+        if (!client.world.isClient) {return;}
+
         if (client.player.getWorld().isClient()) {
             MutableText gitissues =  Text.literal("GithubIssues")
                     .styled(style -> style.withClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, "https://github.com/RodoFire/mushroooms-mod-source-1.20.1/issues")))
