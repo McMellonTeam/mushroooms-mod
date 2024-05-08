@@ -156,6 +156,7 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.STERILE_BLUE_MUSHROOM)
                 .add(ModBlocks.MUSHROOM_SMALL_BROWN)
                 .add(ModBlocks.MUSHROOM_SMALL_RED)
+                .add(ModBlocks.MUSHROOM_DEATH_TRUMPET)
                 .add(ModBlocks.SIDE_MUSHROOM_BLUE_LUMINESCENT)
 
                 .add(ModBlocks.PREHISTO_BLUE_SCHROOM)
@@ -179,6 +180,7 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.STERILE_BLUE_MUSHROOM)
                 .add(ModBlocks.MUSHROOM_SMALL_BROWN)
                 .add(ModBlocks.MUSHROOM_SMALL_RED)
+                .add(ModBlocks.MUSHROOM_DEATH_TRUMPET)
                 .add(ModBlocks.SIDE_MUSHROOM_BLUE_LUMINESCENT)
 
                 .add(ModBlocks.PREHISTO_BLUE_SCHROOM)

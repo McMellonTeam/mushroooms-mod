@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "mushrooomsmod:block/sterile_blue_mushroom"
+    "layer0": "mushrooomsmod:block/mushroom_small_blue"
   }
 }

@@ -8,7 +8,7 @@
           "to_place": {
             "type": "minecraft:simple_state_provider",
             "state": {
-              "Name": "mushrooomsmod:sterile_blue_mushroom"
+              "Name": "mushrooomsmod:mushroom_small_blue"
             }
           }
         }

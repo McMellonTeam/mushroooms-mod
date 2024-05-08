@@ -1,7 +1,7 @@
 {
   "type": "minecraft:simple_block_feature",
   "config": {
-    "to_place": {
+    "blockprovider": {
       "type": "minecraft:simple_state_provider",
       "state": {
         "Name": "minecraft:hanging_roots",
