@@ -79,7 +79,7 @@ public class ModBlocks {
     public static final Block BLUE_LUMINESCENT_DEGRADATED_MUSHROOM_BLOCK = registerBlock("mushroom_block_degradated_blue_luminescent", new FermentedTransparentMushroomBlock(() -> ModBlocks.BLUE_LUMINESCENT_FERMENTED_MUSHROOM_BLOCK, false, FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM_BLOCK).nonOpaque().luminance(8)));
     public static final Block PINK_LUMINESCENT_DEGRADATED_MUSHROOM_BLOCK = registerBlock("mushroom_block_degradated_pink_luminescent", new FermentedTransparentMushroomBlock(() -> ModBlocks.PINK_LUMINESCENT_FERMENTED_MUSHROOM_BLOCK, false, FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM_BLOCK).nonOpaque().luminance(8)));
     public static final Block RED_DEGRADATED_MUSHROOM_BLOCK = registerBlock("mushroom_block_degradated_red", new FermentedMushroomBlock(() -> ModBlocks.RED_FERMENTED_MUSHROOM_BLOCK, false, FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM_BLOCK)));
-    public static final Block BROWN_DEGRADATED_MUSHROOM_BLOCK = registerBlock("mushroom_block_degradated_brow", new FermentedMushroomBlock(() -> ModBlocks.BROWN_FERMENTED_MUSHROOM_BLOCK, false, FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM_BLOCK)));
+    public static final Block BROWN_DEGRADATED_MUSHROOM_BLOCK = registerBlock("mushroom_block_degradated_brown", new FermentedMushroomBlock(() -> ModBlocks.BROWN_FERMENTED_MUSHROOM_BLOCK, false, FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM_BLOCK)));
 
     //Fermented Mushrooms
     public static final Block PURPLE_FERMENTED_MUSHROOM_BLOCK = registerBlock("mushroom_block_fermented_purple", new FermentedMushroomBlock(() -> ModBlocks.PURPLE_MUSHROOM_BLOCK, true, FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM_BLOCK)));
@@ -185,8 +185,8 @@ public class ModBlocks {
 
 
     //Grass
-    public static final Block TINY_GRASS = registerBlock("tiny_grass", new GrassBlock(FabricBlockSettings.copyOf(Blocks.GRASS)));
-    public static final Block BLUE_LUMINESCENT_GRASS = registerBlock("grass_blue_luminescent", new GrassBlock(FabricBlockSettings.copyOf(Blocks.GRASS).luminance(9)));
+    public static final Block TINY_GRASS = registerBlock("tiny_grass", new PlantBlock(FabricBlockSettings.copyOf(Blocks.GRASS)));
+    public static final Block BLUE_LUMINESCENT_GRASS = registerBlock("grass_blue_luminescent", new PlantBlock(FabricBlockSettings.copyOf(Blocks.GRASS).luminance(9)));
     public static final Block BLUE_LUMINESCENT_TALL_GRASS = registerBlock("grass_tall_blue_luminescent", new TallPlantBlock(FabricBlockSettings.copyOf(Blocks.TALL_GRASS).luminance(11)));
 
     //Vines

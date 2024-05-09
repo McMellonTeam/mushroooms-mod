@@ -27,7 +27,7 @@ public class CustomRedFertileMushroom extends Feature<DefaultFeatureConfig> {
         if (rotation == BlockRotation.NONE || rotation == BlockRotation.CLOCKWISE_90) b = -large;
         if (rotation == BlockRotation.COUNTERCLOCKWISE_90 || rotation == BlockRotation.CLOCKWISE_180) a = -large;
         for (int i = a; i <= large + a; ++i) {
-            for (int j = 0; j < height; ++j) {
+            for (int j = 1; j < height; ++j) {
                 for (int k = b; k <= large + b; ++k) {
                     BlockState blockState = world.getBlockState(pos.add(i, j, k));
                     if (blockState.isAir() || blockState.isIn(BlockTags.LEAVES) || blockState.isIn(BlockTags.FLOWERS))

@@ -56,10 +56,10 @@ public class ModOverworldRegion extends Region {
         new ParameterUtils.ParameterPointListBuilder()
                 .temperature(ParameterUtils.Temperature.span(ParameterUtils.Temperature.COOL, ParameterUtils.Temperature.NEUTRAL))
                 .humidity(ParameterUtils.Humidity.span(ParameterUtils.Humidity.NEUTRAL, ParameterUtils.Humidity.HUMID))
-                .continentalness(ParameterUtils.Continentalness.INLAND)
-                .erosion( ParameterUtils.Erosion.EROSION_4, ParameterUtils.Erosion.EROSION_5)
+                .continentalness(MultiNoiseUtil.ParameterRange.of(0.03f, 0.55f))
+                .erosion( ParameterUtils.Erosion.EROSION_0, ParameterUtils.Erosion.EROSION_1)
                 .depth(ParameterUtils.Depth.UNDERGROUND)
-                .weirdness(ParameterUtils.Weirdness.HIGH_SLICE_NORMAL_DESCENDING, ParameterUtils.Weirdness.MID_SLICE_NORMAL_ASCENDING, ParameterUtils.Weirdness.PEAK_NORMAL)
+                .weirdness(MultiNoiseUtil.ParameterRange.of(-0.7f,1.0f))
                 .build().forEach(point -> builder.add(point, ModOverworldBiomes.VANILLA_SHROOM_CAVE));
 
         //Magical Plain

@@ -53,10 +53,6 @@
     [
       "minecraft:glow_lichen",
       "minecraft:trees_plains",
-      "minecraft:brown_mushroom_normal",
-      "minecraft:red_mushroom_normal",
-      "minecraft:patch_sugar_cane",
-      "minecraft:patch_pumpkin",
       "mushrooomsmod:blue_luminescent_mushroom_tree_underground_placed_key",
       "mushrooomsmod:blue_luminescent_mushroom_underground_placed_key",
       "mushrooomsmod:blue_luminescent_vines_underground_placed_key",
@@ -69,8 +65,7 @@
       "mushrooomsmod:blue_luminescent_vines_down_underground_placed_key",
       "mushrooomsmod:mushroom_side_blue_luminescent_underground_placed_key",
       "mushrooomsmod:grass_blue_luminescent_underground_placed_key",
-      "mushrooomsmod:tall_grass_blue_luminescent_underground_placed_key",
-      "mushrooomsmod:mushroom_side_blue_luminescent_underground_placed_key"
+      "mushrooomsmod:tall_grass_blue_luminescent_underground_placed_key"
     ],
     [
       "minecraft:freeze_top_layer"

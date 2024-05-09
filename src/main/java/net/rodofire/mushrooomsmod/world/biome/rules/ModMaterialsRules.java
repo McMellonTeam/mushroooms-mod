@@ -8,6 +8,7 @@ import net.minecraft.world.gen.noise.NoiseParametersKeys;
 import net.minecraft.world.gen.surfacebuilder.MaterialRules;
 import net.rodofire.mushrooomsmod.block.ModBlocks;
 import net.rodofire.mushrooomsmod.world.biome.overworld.ModOverworldBiomes;
+import net.rodofire.mushrooomsmod.world.noises.ModNoises;
 
 public class ModMaterialsRules {
     //Dirt Related
@@ -30,37 +31,52 @@ public class ModMaterialsRules {
         MaterialRules.MaterialCondition deepslatelevel = MaterialRules.verticalGradient("deepslate", YOffset.fixed(0), YOffset.fixed(8));
         MaterialRules.MaterialCondition stonecavelevel = MaterialRules.aboveY(YOffset.fixed(0), 1);
         MaterialRules.MaterialCondition abovetop = MaterialRules.aboveY(YOffset.belowTop(-2), 0);
-        MaterialRules.MaterialCondition belowtop = MaterialRules.not(MaterialRules.aboveY(YOffset.belowTop(-6), 1));
+        MaterialRules.MaterialCondition belowtop = MaterialRules.not(MaterialRules.aboveY(YOffset.belowTop(10), 1));
 
 
         //Dirt Related
-        MaterialRules.MaterialRule dirt = MaterialRules.condition(MaterialRules.stoneDepth(0, true, 3, VerticalSurfaceType.FLOOR), DIRT);
+        MaterialRules.MaterialRule dirtfloor = MaterialRules.condition(MaterialRules.stoneDepth(0, true, 3, VerticalSurfaceType.FLOOR), DIRT);
 
 
         //Stone Related
         MaterialRules.MaterialRule bluedeepslate = MaterialRules.sequence(MaterialRules.condition(MaterialRules.STONE_DEPTH_FLOOR, BLUE_LUMINESCENT_DEEPSLATE), DEEPSLATE);
 
 
-        return MaterialRules.sequence(
+        return sequence(
                 //Blue Luminescent Cave
-                MaterialRules.condition(MaterialRules.biome(ModOverworldBiomes.BLUE_LUMINESCENT_SHROOM_CAVE),
-                        MaterialRules.condition(deepslatelevel, bluedeepslate)),
+                condition(MaterialRules.biome(ModOverworldBiomes.BLUE_LUMINESCENT_SHROOM_CAVE),
+                        condition(deepslatelevel, bluedeepslate)),
 
                 //Vanilla Cave
-                MaterialRules.sequence(MaterialRules.condition(MaterialRules.biome(ModOverworldBiomes.VANILLA_SHROOM_CAVE),
-                        MaterialRules.sequence(MaterialRules.condition(belowtop, MaterialRules.sequence(MaterialRules.condition(stonecavelevel, MaterialRules.sequence(
-                                MaterialRules.condition(MaterialRules.STONE_DEPTH_FLOOR,
-                                        MaterialRules.sequence(MaterialRules.condition(noiseAbove(2d), ROOTED_DIRT), MaterialRules.condition(noiseAbove(0.9d), COARSE_DIRT), MYCELIUM)) ))))))
+                sequence(condition(MaterialRules.biome(ModOverworldBiomes.VANILLA_SHROOM_CAVE),
+                        sequence(condition(belowtop, sequence(condition(stonecavelevel,
+                                sequence(condition(MaterialRules.STONE_DEPTH_FLOOR,
+                                                sequence(condition(emmentalNoiseAbove(0.25d), ROOTED_DIRT), condition(emmentalNoiseAbove(-0.25d), MYCELIUM), COARSE_DIRT)), dirtfloor,
+                                        sequence(condition(MaterialRules.STONE_DEPTH_CEILING,
+                                                sequence(condition(emmentalNoiseAbove(0d), DIRT), condition(emmentalNoiseAbove(-0.2d), ROOTED_DIRT), condition(emmentalNoiseAbove(-0.4d), COARSE_DIRT))))))))))
 
 
-        ));
+                        ));
     }
 
     private static MaterialRules.MaterialRule makeStateRule(Block block) {
         return MaterialRules.block(block.getDefaultState());
     }
 
-    public static MaterialRules.MaterialCondition noiseAbove(double min) {
+    public static MaterialRules.MaterialCondition surfaceNoiseAbove(double min) {
         return MaterialRules.noiseThreshold(NoiseParametersKeys.SURFACE, min / 8.5d, Double.MAX_VALUE);
+    }
+
+    public static MaterialRules.MaterialCondition emmentalNoiseAbove(double min) {
+        return MaterialRules.noiseThreshold(ModNoises.EMMENTAL_NOISE, min, Double.MAX_VALUE);
+    }
+
+    //Methods for better readability
+    public static MaterialRules.MaterialRule condition(MaterialRules.MaterialCondition condition, MaterialRules.MaterialRule rule) {
+        return MaterialRules.condition(condition, rule);
+    }
+
+    public static MaterialRules.MaterialRule sequence(MaterialRules.MaterialRule... rules) {
+        return MaterialRules.sequence(rules);
     }
 }

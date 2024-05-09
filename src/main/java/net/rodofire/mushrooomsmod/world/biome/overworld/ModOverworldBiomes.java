@@ -91,12 +91,6 @@ ModOverworldBiomes {
 
         biomeBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, VegetationPlacedFeatures.TREES_PLAINS);
 
-
-        DefaultBiomeFeatures.addDefaultMushrooms(biomeBuilder);
-
-
-        DefaultBiomeFeatures.addDefaultVegetation(biomeBuilder);
-
         ModBiomeFeatures.addBlueLuminescentCaveFlowers(biomeBuilder);
 
         return new Biome.Builder()
@@ -223,8 +217,8 @@ ModOverworldBiomes {
                         .waterColor(0x29A7FF)
                         .waterFogColor(0x066AAF)
                         .skyColor(0x18A4E6)
-                        .grassColor(0x54E618)
-                        .foliageColor(0x25B258)
+                        .grassColor(0x69D54D)
+                        .foliageColor(0x6CD152)
                         .fogColor(0x7BC5E8)
                         .moodSound(BiomeMoodSound.CAVE)
                         .build())

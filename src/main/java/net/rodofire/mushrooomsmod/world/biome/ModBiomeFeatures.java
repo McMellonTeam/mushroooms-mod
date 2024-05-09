@@ -32,7 +32,6 @@ public class ModBiomeFeatures {
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModUndergroundPlacedFeatures.MUSHROOM_SIDE_BLUE_LUMINESCENT_UNDERGROUND_PLACED_KEY);
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModUndergroundPlacedFeatures.GRASS_BLUE_LUMINESCENT_UNDERGROUND_PLACED_KEY);
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModUndergroundPlacedFeatures.TALL_GRASS_BLUE_LUMINESCENT_UNDERGROUND_PLACED_KEY);
-        builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModUndergroundPlacedFeatures.MUSHROOM_SIDE_BLUE_LUMINESCENT_UNDERGROUND_PLACED_KEY);
     }
 
     public static void addMushroomCaveFeatures(GenerationSettings.LookupBackedBuilder builder) {
