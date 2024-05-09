@@ -28,7 +28,7 @@ public class ModMushroomFeatureConfig implements FeatureConfig {
     public final BlockStateProvider stemProvider;
     public final int foliageRadius;
 
-    public ModMushroomFeatureConfig(BlockStateProvider capProvider, BlockStateProvider secondcapProvider , BlockStateProvider stemProvider, int foliageRadius) {
+    public ModMushroomFeatureConfig(BlockStateProvider capProvider, BlockStateProvider secondcapProvider, BlockStateProvider stemProvider, int foliageRadius) {
         this.capProvider = capProvider;
         this.stemProvider = stemProvider;
         this.foliageRadius = foliageRadius;

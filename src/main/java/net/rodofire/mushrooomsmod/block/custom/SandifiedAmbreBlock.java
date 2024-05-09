@@ -4,6 +4,7 @@ import net.minecraft.block.Block;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
+import net.minecraft.util.Formatting;
 import net.minecraft.world.BlockView;
 import org.jetbrains.annotations.Nullable;
 
@@ -17,7 +18,7 @@ public class SandifiedAmbreBlock extends BlockBrushableBlock {
 
     @Override
     public void appendTooltip(ItemStack stack, @Nullable BlockView world, List<Text> tooltip, TooltipContext options) {
-        tooltip.add(Text.translatable("tooltip.sandified_ambre"));
+        tooltip.add(Text.translatable("tooltip.mushrooomsmod.sandified_ambre").formatted(Formatting.GOLD));
         super.appendTooltip(stack, world, tooltip, options);
     }
 }

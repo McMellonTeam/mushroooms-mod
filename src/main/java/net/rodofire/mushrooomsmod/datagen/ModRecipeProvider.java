@@ -2,16 +2,16 @@ package net.rodofire.mushrooomsmod.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
-import net.minecraft.recipe.Ingredient;
-import net.rodofire.mushrooomsmod.block.ModBlocks;
-import net.rodofire.mushrooomsmod.datagen.recipe.ForgeRecipeBuilder;
-import net.rodofire.mushrooomsmod.item.ModItems;
 import net.minecraft.block.Blocks;
 import net.minecraft.data.server.recipe.RecipeJsonProvider;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
 import net.minecraft.item.Items;
+import net.minecraft.recipe.Ingredient;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.util.Identifier;
+import net.rodofire.mushrooomsmod.block.ModBlocks;
+import net.rodofire.mushrooomsmod.datagen.recipe.ForgeRecipeBuilder;
+import net.rodofire.mushrooomsmod.item.ModItems;
 
 import java.util.function.Consumer;
 
@@ -151,7 +151,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         offerSingleOutputShapelessRecipe(exporter, ModBlocks.BLUE_LUMINESCENT_BUTTON, ModBlocks.BLUE_LUMINESCENT_PLANKS, "button");
         createTrapdoorRecipe(ModBlocks.BLUE_LUMINESCENT_TRAPDOOR, Ingredient.ofItems(ModBlocks.BLUE_LUMINESCENT_PLANKS));
         createDoorRecipe(ModBlocks.BLUE_LUMINESCENT_DOOR, Ingredient.ofItems(ModBlocks.BLUE_LUMINESCENT_PLANKS));
-        createFenceGateRecipe(ModBlocks.BLUE_LUMINESCENT_FENCE_GATE,Ingredient.ofItems(ModBlocks.BLUE_LUMINESCENT_PLANKS));
+        createFenceGateRecipe(ModBlocks.BLUE_LUMINESCENT_FENCE_GATE, Ingredient.ofItems(ModBlocks.BLUE_LUMINESCENT_PLANKS));
         createFenceRecipe(ModBlocks.BLUE_LUMINESCENT_FENCE, Ingredient.ofItems(ModBlocks.BLUE_LUMINESCENT_PLANKS));
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.BLUE_LUMINESCENT_STRIPPED_WOOD, 3)
@@ -199,7 +199,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .offerTo(exporter, new Identifier("hammer_craft"));
 
         //Crystals
-        offerCompactingRecipe(exporter,RecipeCategory.BUILDING_BLOCKS,ModBlocks.AMBER_BLOCK,ModItems.AMBER_ITEM);
+        offerCompactingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.AMBER_BLOCK, ModItems.AMBER_ITEM);
 
 
         //Forge Recipe

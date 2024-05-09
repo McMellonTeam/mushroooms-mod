@@ -1,8 +1,8 @@
 package net.rodofire.mushrooomsmod.entity.client;
 
+import net.minecraft.util.Identifier;
 import net.rodofire.mushrooomsmod.MushrooomsMod;
 import net.rodofire.mushrooomsmod.entity.custom.BoleteCowEntity;
-import net.minecraft.util.Identifier;
 import software.bernie.geckolib.model.GeoModel;
 
 public class BoleteCowModel extends GeoModel<BoleteCowEntity> {
@@ -21,8 +21,6 @@ public class BoleteCowModel extends GeoModel<BoleteCowEntity> {
     public Identifier getAnimationResource(BoleteCowEntity animatable) {
         return new Identifier(MushrooomsMod.MOD_ID, "animations/bolete_cow.animation.json");
     }
-
-
 
 
 }

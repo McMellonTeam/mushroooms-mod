@@ -42,7 +42,6 @@ public class Crystal extends Block {
         BlockState blockState = world.getBlockState(pos);
         Direction direction = state.get(VERTICAL_DIRECTION);
         Direction direction2 = direction.getOpposite();
-        System.out.println(blockState);
         if (blockState.isOf(this)) direction2 = blockState.get(VERTICAL_DIRECTION);
         return blockState.equals(state) || direction2 == direction || blockState.isSideSolidFullSquare(world, pos, state.get(VERTICAL_DIRECTION));
     }
@@ -62,14 +61,12 @@ public class Crystal extends Block {
     @Override
     public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
         Direction direction2 = state.get(VERTICAL_DIRECTION);
-        if (!canPlace((World) world, pos.offset(direction2.getOpposite()), state)){
-            System.out.println("cant place");
+        if (!canPlace((World) world, pos.offset(direction2.getOpposite()), state)) {
             return Blocks.AIR.getDefaultState();
         }
-        if (world.getBlockState(pos.offset(direction)).isOf(this)){
+        if (world.getBlockState(pos.offset(direction)).isOf(this)) {
             return state;
         }
-        System.out.println("place stage 0");
         return super.getStateForNeighborUpdate(state, direction, neighborState, world, pos, neighborPos);
     }
 
@@ -86,12 +83,10 @@ public class Crystal extends Block {
         Direction direction = ctx.getVerticalPlayerLookDirection().getOpposite();
         BlockPos pos = ctx.getBlockPos();
         BlockState blockState = this.getDefaultState();
-        System.out.println("getPlacementState");
         if (canPlace(world, pos.offset(direction.getOpposite()), blockState.with(VERTICAL_DIRECTION, direction))) {
             updateState(world, pos, blockState, direction);
             return blockState.with(VERTICAL_DIRECTION, direction).with(STAGE, 0);
-        }
-        else if (canPlace(world, pos.offset(direction), blockState.with(VERTICAL_DIRECTION, direction.getOpposite()))) {
+        } else if (canPlace(world, pos.offset(direction), blockState.with(VERTICAL_DIRECTION, direction.getOpposite()))) {
             updateState(world, pos, blockState, direction.getOpposite());
             return blockState.with(VERTICAL_DIRECTION, direction.getOpposite()).with(STAGE, 0);
         }

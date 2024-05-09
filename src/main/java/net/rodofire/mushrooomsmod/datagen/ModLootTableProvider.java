@@ -3,12 +3,12 @@ package net.rodofire.mushrooomsmod.datagen;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
 import net.minecraft.block.Block;
-import net.rodofire.mushrooomsmod.block.ModBlocks;
-import net.rodofire.mushrooomsmod.block.custom.bigmushroom.BigMushroomPlant;
-import net.rodofire.mushrooomsmod.item.ModItems;
 import net.minecraft.block.Blocks;
 import net.minecraft.loot.condition.BlockStatePropertyLootCondition;
 import net.minecraft.predicate.StatePredicate;
+import net.rodofire.mushrooomsmod.block.ModBlocks;
+import net.rodofire.mushrooomsmod.block.custom.bigmushroom.BigMushroomPlant;
+import net.rodofire.mushrooomsmod.item.ModItems;
 
 public class ModLootTableProvider extends FabricBlockLootTableProvider {
     public ModLootTableProvider(FabricDataOutput dataOutput) {
@@ -88,6 +88,8 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.BLUE_MUSHROOM);
         addDrop(ModBlocks.BLUE_LUMINESCENT_MUSHROOM);
         addDrop(ModBlocks.LUMINESCENT_PINK_MUSHROOM);
+        addDrop(ModBlocks.FERTILE_RED_MUSHROOM);
+
         addDrop(ModBlocks.TRANSPARENT_MUSHROOM_STEM);
         addDrop(ModBlocks.GREEN_MUSHROOM_STEM);
         addDrop(ModBlocks.MUSHROOM_FLOWERS);
@@ -99,6 +101,8 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.STERILE_BLUE_MUSHROOM);
         addDrop(ModBlocks.MUSHROOM_SMALL_BROWN);
         addDrop(ModBlocks.MUSHROOM_SMALL_RED);
+        addDrop(ModBlocks.MUSHROOM_DEATH_TRUMPET);
+        addDrop(ModBlocks.SIDE_MUSHROOM_BLUE_LUMINESCENT);
 
         //Flowers
         addDrop(ModBlocks.MUSHROOM_FLOWERS);
@@ -147,6 +151,7 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.PINK_MUSHROOM_VINES, ModItems.PINK_MUSHROOM_VINES_ITEM);
         addDrop(ModBlocks.PINK_MUSHROOM_VINES_PLANT, ModItems.PINK_MUSHROOM_VINES_ITEM);
         addDrop(ModBlocks.CAERULEA_VOLUBILIS);
+        addDrop(ModBlocks.BLUE_LUMINESCENT_VINES);
 
         //Big Mushrooms
         addDrop(ModBlocks.TINY_PURPLE_MUSHROOM);
@@ -238,17 +243,17 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
 
 
         //Leaves
-        addDrop(ModBlocks.BLUE_LUMINESCENT_LEAVES, leavesDrops(ModBlocks.BLUE_LUMINESCENT_LEAVES, ModBlocks.BLUE_LUMINESCENT_SAPPLING,0.025f));
-        addDrop(ModBlocks.RED_COLORFUL_LEAVES, leavesDrops(ModBlocks.RED_COLORFUL_LEAVES, ModBlocks.BLUE_LUMINESCENT_SAPPLING,0.025f));
-        addDrop(ModBlocks.BLUE_COLORFUL_LEAVES, leavesDrops(ModBlocks.BLUE_COLORFUL_LEAVES, ModBlocks.BLUE_LUMINESCENT_SAPPLING,0.025f));
-        addDrop(ModBlocks.ORANGE_COLORFUL_LEAVES, leavesDrops(ModBlocks.ORANGE_COLORFUL_LEAVES, ModBlocks.BLUE_LUMINESCENT_SAPPLING,0.025f));
-        addDrop(ModBlocks.YELLOW_COLORFUL_LEAVES, leavesDrops(ModBlocks.YELLOW_COLORFUL_LEAVES, ModBlocks.BLUE_LUMINESCENT_SAPPLING,0.025f));
-        addDrop(ModBlocks.PURPLE_COLORFUL_LEAVES, leavesDrops(ModBlocks.PURPLE_COLORFUL_LEAVES, ModBlocks.BLUE_LUMINESCENT_SAPPLING,0.025f));
-        addDrop(ModBlocks.GREEN_COLORFUL_LEAVES, leavesDrops(ModBlocks.GREEN_COLORFUL_LEAVES, ModBlocks.BLUE_LUMINESCENT_SAPPLING,0.025f));
-        addDrop(ModBlocks.PINK_COLORFUL_LEAVES, leavesDrops(ModBlocks.PINK_COLORFUL_LEAVES, ModBlocks.BLUE_LUMINESCENT_SAPPLING,0.025f));
+        addDrop(ModBlocks.BLUE_LUMINESCENT_LEAVES, leavesDrops(ModBlocks.BLUE_LUMINESCENT_LEAVES, ModBlocks.BLUE_LUMINESCENT_SAPPLING, 0.025f));
+        addDrop(ModBlocks.RED_COLORFUL_LEAVES, leavesDrops(ModBlocks.RED_COLORFUL_LEAVES, ModBlocks.BLUE_LUMINESCENT_SAPPLING, 0.025f));
+        addDrop(ModBlocks.BLUE_COLORFUL_LEAVES, leavesDrops(ModBlocks.BLUE_COLORFUL_LEAVES, ModBlocks.BLUE_LUMINESCENT_SAPPLING, 0.025f));
+        addDrop(ModBlocks.ORANGE_COLORFUL_LEAVES, leavesDrops(ModBlocks.ORANGE_COLORFUL_LEAVES, ModBlocks.BLUE_LUMINESCENT_SAPPLING, 0.025f));
+        addDrop(ModBlocks.YELLOW_COLORFUL_LEAVES, leavesDrops(ModBlocks.YELLOW_COLORFUL_LEAVES, ModBlocks.BLUE_LUMINESCENT_SAPPLING, 0.025f));
+        addDrop(ModBlocks.PURPLE_COLORFUL_LEAVES, leavesDrops(ModBlocks.PURPLE_COLORFUL_LEAVES, ModBlocks.BLUE_LUMINESCENT_SAPPLING, 0.025f));
+        addDrop(ModBlocks.GREEN_COLORFUL_LEAVES, leavesDrops(ModBlocks.GREEN_COLORFUL_LEAVES, ModBlocks.BLUE_LUMINESCENT_SAPPLING, 0.025f));
+        addDrop(ModBlocks.PINK_COLORFUL_LEAVES, leavesDrops(ModBlocks.PINK_COLORFUL_LEAVES, ModBlocks.BLUE_LUMINESCENT_SAPPLING, 0.025f));
 
         //Crystals
-        addDropWithSilkTouch(Block.getBlockFromItem(ModItems.PINK_CRYSTAL_ITEM),ModBlocks.PINK_CRYSTAL );
+        addDropWithSilkTouch(Block.getBlockFromItem(ModItems.PINK_CRYSTAL_ITEM), ModBlocks.PINK_CRYSTAL);
         addDrop(ModBlocks.PINK_CRYSTAL_BLOCK);
         addDrop(ModBlocks.BLUE_CRYSTAL);
 

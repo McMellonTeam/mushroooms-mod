@@ -66,7 +66,14 @@
       "mushrooomsmod:huge_brown_mushroom_underground_placed_key",
       "mushrooomsmod:huge_red_mushroom_underground_placed_key",
       "mushrooomsmod:brown_mushroom_underground_placed_key",
-      "mushrooomsmod:red_mushroom_underground_placed_key"
+      "mushrooomsmod:red_mushroom_underground_placed_key",
+      "mushrooomsmod:mushroom_small_brown_underground_placed_key",
+      "mushrooomsmod:mushroom_small_red_underground_placed_key",
+      "mushrooomsmod:fertile_red_mushroom_underground_placed_key",
+      "mushrooomsmod:hanging_roots_underground_placed_key",
+      "mushrooomsmod:mushroom_death_trumpet_underground_placed_key",
+      "mushrooomsmod:grass_underground_placed_key",
+      "mushrooomsmod:tiny_grass_underground_placed_key"
     ],
     [
       "minecraft:freeze_top_layer"

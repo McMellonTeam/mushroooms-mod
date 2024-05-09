@@ -2,11 +2,11 @@ package net.rodofire.mushrooomsmod.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
-import net.rodofire.mushrooomsmod.block.ModBlocks;
-import net.rodofire.mushrooomsmod.util.ModTags;
 import net.minecraft.block.Blocks;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.BlockTags;
+import net.rodofire.mushrooomsmod.block.ModBlocks;
+import net.rodofire.mushrooomsmod.util.ModTags;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -151,10 +151,13 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.LUMINESCENT_PINK_MUSHROOM)
                 .add(Blocks.RED_MUSHROOM)
                 .add(Blocks.BROWN_MUSHROOM)
+                .add(ModBlocks.FERTILE_RED_MUSHROOM)
 
                 .add(ModBlocks.STERILE_BLUE_MUSHROOM)
                 .add(ModBlocks.MUSHROOM_SMALL_BROWN)
                 .add(ModBlocks.MUSHROOM_SMALL_RED)
+                .add(ModBlocks.MUSHROOM_DEATH_TRUMPET)
+                .add(ModBlocks.SIDE_MUSHROOM_BLUE_LUMINESCENT)
 
                 .add(ModBlocks.PREHISTO_BLUE_SCHROOM)
                 .add(ModBlocks.PREHISTO_GREEN_SCHROOM)
@@ -172,10 +175,13 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.LUMINESCENT_PINK_MUSHROOM)
                 .add(Blocks.RED_MUSHROOM)
                 .add(Blocks.BROWN_MUSHROOM)
+                .add(ModBlocks.FERTILE_RED_MUSHROOM)
 
                 .add(ModBlocks.STERILE_BLUE_MUSHROOM)
                 .add(ModBlocks.MUSHROOM_SMALL_BROWN)
                 .add(ModBlocks.MUSHROOM_SMALL_RED)
+                .add(ModBlocks.MUSHROOM_DEATH_TRUMPET)
+                .add(ModBlocks.SIDE_MUSHROOM_BLUE_LUMINESCENT)
 
                 .add(ModBlocks.PREHISTO_BLUE_SCHROOM)
                 .add(ModBlocks.PREHISTO_GREEN_SCHROOM)
@@ -221,11 +227,14 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.JACYNTHE)
                 .add(ModBlocks.ACONIT)
                 .add(ModBlocks.PERVENCHE)
+
+                //Vines
                 .add(ModBlocks.CAERULEA_VOLUBILIS)
                 .add(ModBlocks.PINK_MUSHROOM_VINES)
                 .add(ModBlocks.PINK_MUSHROOM_VINES_PLANT)
                 .add(ModBlocks.PINK_LUMINESCENT_BODY_VINES)
                 .add(ModBlocks.PINK_LUMINESCENT_HEAD_VINES)
+                .add(ModBlocks.BLUE_LUMINESCENT_VINES)
 
                 .add(ModBlocks.TINY_GREEN_MUSHROOM)
                 .add(ModBlocks.LITTLE_GREEN_MUSHROOM)
@@ -262,7 +271,8 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 
 
         getOrCreateTagBuilder(BlockTags.CLIMBABLE)
-                .add(ModBlocks.CAERULEA_VOLUBILIS);
+                .add(ModBlocks.CAERULEA_VOLUBILIS)
+                .add(ModBlocks.BLUE_LUMINESCENT_VINES);
 
 
         /*-------------------- Construction Blocks --------------------*/

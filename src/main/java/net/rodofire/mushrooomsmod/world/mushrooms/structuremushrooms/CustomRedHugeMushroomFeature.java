@@ -2,8 +2,6 @@ package net.rodofire.mushrooomsmod.world.mushrooms.structuremushrooms;
 
 import com.mojang.serialization.Codec;
 import me.emafire003.dev.structureplacerapi.StructurePlacerAPI;
-import net.rodofire.mushrooomsmod.MushrooomsMod;
-import net.rodofire.mushrooomsmod.world.features.config.ModMushroomFeatureConfig;
 import net.minecraft.block.BlockState;
 import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.server.world.ServerWorld;
@@ -13,6 +11,8 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.WorldAccess;
+import net.rodofire.mushrooomsmod.MushrooomsMod;
+import net.rodofire.mushrooomsmod.world.features.config.ModMushroomFeatureConfig;
 
 public class CustomRedHugeMushroomFeature extends CustomRedHugeMushroom {
     public CustomRedHugeMushroomFeature(Codec<ModMushroomFeatureConfig> configCodec) {
@@ -88,7 +88,6 @@ public class CustomRedHugeMushroomFeature extends CustomRedHugeMushroom {
                 break;
         }
         if (!world.isClient()) {
-            System.out.println("api");
             StructurePlacerAPI structure = new StructurePlacerAPI((ServerWorld) world, new Identifier(MushrooomsMod.MOD_ID, path), start, BlockMirror.NONE, blockRotation, true, 1f, new BlockPos(large, 0, large1));
             structure.loadStructure();
         }

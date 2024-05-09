@@ -1,6 +1,5 @@
 package net.rodofire.mushrooomsmod.block.custom.PinkMushroomBlock;
 
-import net.rodofire.mushrooomsmod.item.ModItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
@@ -15,6 +14,7 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.World;
 import net.minecraft.world.event.GameEvent;
+import net.rodofire.mushrooomsmod.item.ModItems;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.function.ToIntFunction;
@@ -29,7 +29,7 @@ public interface PinkMushroomVines {
             Block.dropStack(world, pos, new ItemStack(ModItems.PINK_MUSHROOM_VINES_ITEM, 1));
             float f = MathHelper.nextBetween(world.random, 0.8f, 1.2f);
             world.playSound(null, pos, SoundEvents.BLOCK_CAVE_VINES_PICK_BERRIES, SoundCategory.BLOCKS, 1.0f, f);
-            BlockState blockState = (BlockState)state.with(BERRIES, false);
+            BlockState blockState = (BlockState) state.with(BERRIES, false);
             world.setBlockState(pos, blockState, Block.NOTIFY_LISTENERS);
             world.emitGameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Emitter.of(picker, blockState));
             return ActionResult.success(world.isClient);

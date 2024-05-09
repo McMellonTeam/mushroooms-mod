@@ -1,6 +1,5 @@
 package net.rodofire.mushrooomsmod.entity.custom;
 
-import net.rodofire.mushrooomsmod.entity.ModEntities;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
@@ -11,6 +10,7 @@ import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.world.World;
+import net.rodofire.mushrooomsmod.entity.ModEntities;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.animatable.GeoEntity;
 import software.bernie.geckolib.core.animatable.GeoAnimatable;
@@ -21,6 +21,7 @@ import software.bernie.geckolib.core.object.PlayState;
 
 public class BoleteCowEntity extends CowEntity implements GeoEntity {
     private AnimatableInstanceCache cache = new SingletonAnimatableInstanceCache(this);
+
     public BoleteCowEntity(EntityType<? extends CowEntity> entityType, World world) {
         super(entityType, world);
     }
@@ -29,11 +30,13 @@ public class BoleteCowEntity extends CowEntity implements GeoEntity {
     public void registerControllers(AnimatableManager.ControllerRegistrar controllerRegistrar) {
         controllerRegistrar.add(new AnimationController<GeoAnimatable>(this, "controller", 0, this::predicate));
     }
+
     @Nullable
     @Override
     public CowEntity createChild(ServerWorld world, PassiveEntity entity) {
         return ModEntities.BOLETE_COW.create(world);
     }
+
     @Override
     protected void initGoals() {
         this.goalSelector.add(1, new SwimGoal(this));
@@ -42,6 +45,7 @@ public class BoleteCowEntity extends CowEntity implements GeoEntity {
         this.goalSelector.add(4, new LookAtEntityGoal(this, PlayerEntity.class, 6.0f));
         this.goalSelector.add(5, new LookAroundGoal(this));
     }
+
     public static DefaultAttributeContainer.Builder setAttributes() {
         return AnimalEntity.createMobAttributes()
                 .add(EntityAttributes.GENERIC_MAX_HEALTH, 20.0D)
@@ -54,9 +58,9 @@ public class BoleteCowEntity extends CowEntity implements GeoEntity {
     }
 
     private PlayState predicate(AnimationState<GeoAnimatable> geoAnimatableAnimationState) {
-        if (geoAnimatableAnimationState.isMoving()){
+        if (geoAnimatableAnimationState.isMoving()) {
             geoAnimatableAnimationState.getController().setAnimation(RawAnimation.begin().then("animation.bolete_cow.walk", Animation.LoopType.LOOP));
-        }else{
+        } else {
             geoAnimatableAnimationState.getController().setAnimation(RawAnimation.begin().then("animation.bolete_cow.idle", Animation.LoopType.LOOP));
         }
         return PlayState.CONTINUE;

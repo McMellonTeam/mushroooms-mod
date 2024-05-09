@@ -1,8 +1,9 @@
 package net.rodofire.mushrooomsmod.block.custom.bigmushroom;
 
-import net.rodofire.mushrooomsmod.block.ModBlocks;
-import net.rodofire.mushrooomsmod.item.ModItems;
-import net.minecraft.block.*;
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.CropBlock;
+import net.minecraft.block.Fertilizable;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.ItemStack;
@@ -20,15 +21,16 @@ import net.minecraft.util.math.random.Random;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldView;
+import net.rodofire.mushrooomsmod.block.ModBlocks;
+import net.rodofire.mushrooomsmod.item.ModItems;
 
 public class BigMushroomPlant extends CropBlock implements Fertilizable {
-    public static  int MAX_AGE = 3;
+    public static int MAX_AGE = 3;
     public static Block stage0;
     public static Block stage1;
     public static Block stage2;
     public static Block stage3;
     public static final IntProperty AGE = Properties.AGE_3;
-
 
 
     public void applyGrowth(World world, BlockPos pos, BlockState state) {
@@ -39,6 +41,7 @@ public class BigMushroomPlant extends CropBlock implements Fertilizable {
         }
         world.setBlockState(pos, this.withAge(i), Block.NOTIFY_LISTENERS);
     }
+
     protected int getGrowthAmount(World world) {
         return MathHelper.nextInt(world.random, 1, 1);
     }
@@ -46,8 +49,8 @@ public class BigMushroomPlant extends CropBlock implements Fertilizable {
     @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
         ItemStack itemStack = player.getStackInHand(hand);
-         if (itemStack.getItem() == ModItems.PURPLE_MUSHROOM_POWDER) {
-             world.setBlockState(pos, getAgeToBlockstate(this.getAge(state)), Block.NOTIFY_LISTENERS);
+        if (itemStack.getItem() == ModItems.PURPLE_MUSHROOM_POWDER) {
+            world.setBlockState(pos, getAgeToBlockstate(this.getAge(state)), Block.NOTIFY_LISTENERS);
             return ActionResult.SUCCESS;
         }
         return ActionResult.PASS;
@@ -55,20 +58,21 @@ public class BigMushroomPlant extends CropBlock implements Fertilizable {
 
     public BigMushroomPlant(Settings settings, Block stage0, Block stage1, Block stage2, Block stage3) {
         super(settings);
-        this.stage0=stage0;
-        this.stage1=stage1;
-        this.stage2=stage2;
-        this.stage3=stage3;
+        this.stage0 = stage0;
+        this.stage1 = stage1;
+        this.stage2 = stage2;
+        this.stage3 = stage3;
 
     }
-    public static BlockState getAgeToBlockstate(int age){
-        if (age==0){
+
+    public static BlockState getAgeToBlockstate(int age) {
+        if (age == 0) {
             return stage0.getDefaultState();
-        } else if (age==1) {
+        } else if (age == 1) {
             return stage1.getDefaultState();
-        } else if (age==2) {
+        } else if (age == 2) {
             return stage2.getDefaultState();
-        } else{
+        } else {
             return stage3.getDefaultState();
         }
     }
@@ -87,26 +91,32 @@ public class BigMushroomPlant extends CropBlock implements Fertilizable {
     public void grow(ServerWorld world, Random random, BlockPos pos, BlockState state) {
         this.applyGrowth(world, pos, state);
     }
+
     @Override
-    public ItemConvertible getSeedsItem(){
+    public ItemConvertible getSeedsItem() {
         return ModItems.BIG_PURPLE_MUSHROOM_SEED;
     }
+
     @Override
-    public IntProperty getAgeProperty(){
+    public IntProperty getAgeProperty() {
         return AGE;
     }
+
     @Override
-    public int getMaxAge(){
+    public int getMaxAge() {
         return MAX_AGE;
     }
+
     @Override
-    protected void appendProperties(StateManager.Builder<Block, BlockState> builder){
+    protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
         builder.add(AGE);
     }
+
     @Override
     protected boolean canPlantOnTop(BlockState floor, BlockView world, BlockPos pos) {
         return floor.isOpaqueFullCube(world, pos);
     }
+
     @Override
     public boolean canPlaceAt(BlockState state, WorldView world, BlockPos pos) {
         BlockPos blockPos = pos.down();

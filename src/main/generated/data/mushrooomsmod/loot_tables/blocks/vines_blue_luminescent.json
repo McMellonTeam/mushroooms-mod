@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "mushrooomsmod:mushroom_block_degradated_brow"
+          "name": "minecraft:air"
         }
       ],
       "rolls": 1.0

@@ -85,7 +85,7 @@ public class HammerItem extends ToolItem {
                     inventory.setStack(1, result);
                 }
 
-                world.playSound(miner, pos, SoundEvents.BLOCK_ANVIL_PLACE, SoundCategory.BLOCKS, 1f, 1f);
+                world.playSound(null, pos, SoundEvents.BLOCK_ANVIL_PLACE, SoundCategory.BLOCKS, 1f, 1.0f / (world.getRandom().nextFloat() * 0.5f + 1.0f) + 0.2f);
             }
             return false;
         }

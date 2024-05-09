@@ -161,10 +161,10 @@ public class CustomPurpleSecondMushroompFeature extends CustomPurpleSecondMushro
             mutable.set(pos, capcoordinates.get(i));
             world.setBlockState(mutable, blockState);
         }
-         blockState = config.stemProvider.get(random, pos);
+        blockState = config.stemProvider.get(random, pos);
         for (int i = 0; i < trunkcoordinates.size(); i++) {
             mutable.set(pos, trunkcoordinates.get(i));
-            if (world.getBlockState(mutable).isOf(ModBlocks.PURPLE_MUSHROOM_BLOCK)){
+            if (world.getBlockState(mutable).isOf(ModBlocks.PURPLE_MUSHROOM_BLOCK)) {
                 world.setBlockState(mutable.move(Direction.EAST), Blocks.AIR.getDefaultState());
                 world.setBlockState(mutable.move(Direction.NORTH), Blocks.AIR.getDefaultState());
                 world.setBlockState(mutable.move(Direction.WEST), Blocks.AIR.getDefaultState());

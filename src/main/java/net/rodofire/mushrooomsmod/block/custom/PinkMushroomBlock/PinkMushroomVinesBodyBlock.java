@@ -1,7 +1,5 @@
 package net.rodofire.mushrooomsmod.block.custom.PinkMushroomBlock;
 
-import net.rodofire.mushrooomsmod.block.ModBlocks;
-import net.rodofire.mushrooomsmod.item.ModItems;
 import net.minecraft.block.*;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
@@ -16,6 +14,8 @@ import net.minecraft.util.math.random.Random;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldView;
+import net.rodofire.mushrooomsmod.block.ModBlocks;
+import net.rodofire.mushrooomsmod.item.ModItems;
 
 public class PinkMushroomVinesBodyBlock extends AbstractPlantBlock
         implements Fertilizable,

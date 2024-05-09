@@ -23,11 +23,11 @@ public abstract class CustomHugeBlueMushroomFeature extends Feature<HugeMushroom
             mutablePos.set(pos).move(Direction.UP, i);
             if (world.getBlockState(mutablePos).isOpaqueFullCube(world, mutablePos)) continue;
             this.setBlockState(world, mutablePos, config.stemProvider.get(random, pos));
-            if (i == height-3){
+            if (i == height - 3) {
                 mutable.set(start, 0, i, -1);
                 this.setBlockState(world, mutable, config.stemProvider.get(random, pos));
             }
-            if(i== height - 2){
+            if (i == height - 2) {
                 mutable.set(start, 0, i, -1);
                 this.setBlockState(world, mutable, config.stemProvider.get(random, pos));
                 mutable.set(start, -1, i, 0);
@@ -35,7 +35,7 @@ public abstract class CustomHugeBlueMushroomFeature extends Feature<HugeMushroom
                 mutable.set(start, 1, i, 0);
                 this.setBlockState(world, mutable, config.stemProvider.get(random, pos));
             }
-            if (i == height-1){
+            if (i == height - 1) {
                 mutable.set(start, 0, i, 1);
                 this.setBlockState(world, mutable, config.stemProvider.get(random, pos));
                 mutable.set(start, -1, i, 0);
@@ -94,16 +94,18 @@ public abstract class CustomHugeBlueMushroomFeature extends Feature<HugeMushroom
             return false;
         }
         int z = hugeMushroomFeatureConfig.foliageRadius;
-        this.generateBottomCap(structureWorldAccess, random, blockPos, i-1, mutable, hugeMushroomFeatureConfig, z+3);
-        this.generateSecondCap(structureWorldAccess, random, blockPos, i, mutable, hugeMushroomFeatureConfig, z+1);
-        this.generateCap(structureWorldAccess, random, blockPos, i+1, mutable, hugeMushroomFeatureConfig, z-1);
-        this.generateStem(structureWorldAccess, random, blockPos, blockPos,  hugeMushroomFeatureConfig, i, mutable, mutable);
+        this.generateBottomCap(structureWorldAccess, random, blockPos, i - 1, mutable, hugeMushroomFeatureConfig, z + 3);
+        this.generateSecondCap(structureWorldAccess, random, blockPos, i, mutable, hugeMushroomFeatureConfig, z + 1);
+        this.generateCap(structureWorldAccess, random, blockPos, i + 1, mutable, hugeMushroomFeatureConfig, z - 1);
+        this.generateStem(structureWorldAccess, random, blockPos, blockPos, hugeMushroomFeatureConfig, i, mutable, mutable);
         return true;
     }
 
     protected abstract int getCapSize(int var1, int var2, int var3, int var4);
 
     protected abstract void generateCap(WorldAccess var1, Random var2, BlockPos var3, int var4, BlockPos.Mutable var5, HugeMushroomFeatureConfig var6, int var7);
+
     protected abstract void generateSecondCap(WorldAccess var1, Random var2, BlockPos var3, int var4, BlockPos.Mutable var5, HugeMushroomFeatureConfig var6, int var7);
+
     protected abstract void generateBottomCap(WorldAccess var1, Random var2, BlockPos var3, int var4, BlockPos.Mutable var5, HugeMushroomFeatureConfig var6, int var7);
 }

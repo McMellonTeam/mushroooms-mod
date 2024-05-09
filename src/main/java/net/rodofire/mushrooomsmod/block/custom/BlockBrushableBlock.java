@@ -1,10 +1,11 @@
 package net.rodofire.mushrooomsmod.block.custom;
 
-import net.minecraft.block.*;
+import net.minecraft.block.Block;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
+//I had absolutely no idea on how to name this class
 public class BlockBrushableBlock extends Block {
     //Brushabe block that return block without returning an item
     public Block block;
@@ -15,8 +16,7 @@ public class BlockBrushableBlock extends Block {
     }
 
     public boolean brush(long worldTime, PlayerEntity player, BlockPos pos, int i) {
-        System.out.println("hello");
-        if (i !=200) return false;
+        if (i <= 120) return false;
         finishBrushing(player, pos);
         return true;
     }

@@ -20,12 +20,15 @@ import java.util.Optional;
 
 public class LittleGreenMushroom extends BigMushroom implements Fertilizable {
     private final RegistryKey<ConfiguredFeature<?, ?>> featureKey;
-    public LittleGreenMushroom(Settings settings,  RegistryKey<ConfiguredFeature<?, ?>> featureKey) {
+
+    public LittleGreenMushroom(Settings settings, RegistryKey<ConfiguredFeature<?, ?>> featureKey) {
         super(settings);
-        this.featureKey=featureKey;
+        this.featureKey = featureKey;
     }
-    public static final VoxelShape SHAPE = Block.createCuboidShape(0f,0f,0f,16f,10f,16f);
-    public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context){
+
+    public static final VoxelShape SHAPE = Block.createCuboidShape(0f, 0f, 0f, 16f, 10f, 16f);
+
+    public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
         return SHAPE;
     }
 
@@ -42,13 +45,14 @@ public class LittleGreenMushroom extends BigMushroom implements Fertilizable {
     public void grow(ServerWorld world, Random random, BlockPos pos, BlockState state) {
         this.trySpawningBigMushroom(world, pos, state, random);
     }
+
     public boolean trySpawningBigMushroom(ServerWorld world, BlockPos pos, BlockState state, Random random) {
         Optional<RegistryEntry.Reference<ConfiguredFeature<?, ?>>> optional = world.getRegistryManager().get(RegistryKeys.CONFIGURED_FEATURE).getEntry(this.featureKey);
         if (optional.isEmpty()) {
             return false;
         }
         world.removeBlock(pos, false);
-        if (((ConfiguredFeature)((RegistryEntry)optional.get()).value()).generate(world, world.getChunkManager().getChunkGenerator(), random, pos)) {
+        if (((ConfiguredFeature) ((RegistryEntry) optional.get()).value()).generate(world, world.getChunkManager().getChunkGenerator(), random, pos)) {
             return true;
         }
         world.setBlockState(pos, state, Block.NOTIFY_ALL);

@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cross",
   "textures": {
-    "cross": "mushrooomsmod:block/sterile_blue_mushroom"
+    "cross": "mushrooomsmod:block/vines_blue_luminescent"
   }
 }

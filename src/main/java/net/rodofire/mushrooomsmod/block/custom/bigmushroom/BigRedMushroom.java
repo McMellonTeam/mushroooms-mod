@@ -17,9 +17,10 @@ import java.util.Optional;
 
 public class BigRedMushroom extends BigMushroom implements Fertilizable {
     private final RegistryKey<ConfiguredFeature<?, ?>> featureKey;
-    public BigRedMushroom(Settings settings,  RegistryKey<ConfiguredFeature<?, ?>> featureKey) {
+
+    public BigRedMushroom(Settings settings, RegistryKey<ConfiguredFeature<?, ?>> featureKey) {
         super(settings);
-        this.featureKey=featureKey;
+        this.featureKey = featureKey;
     }
 
     @Override
@@ -35,6 +36,7 @@ public class BigRedMushroom extends BigMushroom implements Fertilizable {
     public void grow(ServerWorld world, Random random, BlockPos pos, BlockState state) {
         this.trySpawningBigMushroom(world, pos, state, random);
     }
+
     public boolean trySpawningBigMushroom(ServerWorld world, BlockPos pos, BlockState state, Random random) {
         System.out.println("try");
         Optional<RegistryEntry.Reference<ConfiguredFeature<?, ?>>> optional = world.getRegistryManager().get(RegistryKeys.CONFIGURED_FEATURE).getEntry(this.featureKey);
@@ -42,7 +44,7 @@ public class BigRedMushroom extends BigMushroom implements Fertilizable {
             return false;
         }
         world.removeBlock(pos, false);
-        if (((ConfiguredFeature)((RegistryEntry)optional.get()).value()).generate(world, world.getChunkManager().getChunkGenerator(), random, pos)) {
+        if (((ConfiguredFeature) ((RegistryEntry) optional.get()).value()).generate(world, world.getChunkManager().getChunkGenerator(), random, pos)) {
             return true;
         }
         world.setBlockState(pos, state, Block.NOTIFY_ALL);

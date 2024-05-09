@@ -29,7 +29,7 @@ public class ForgeRecipeBuilder implements CraftingRecipeJsonBuilder {
 
     public ForgeRecipeBuilder(ItemConvertible ingredient, ItemConvertible result, int count) {
         this.result = result.asItem();
-        this.ingredient  = Ingredient.ofItems(ingredient);
+        this.ingredient = Ingredient.ofItems(ingredient);
         this.count = count;
     }
 
@@ -57,7 +57,7 @@ public class ForgeRecipeBuilder implements CraftingRecipeJsonBuilder {
                 .rewards(AdvancementRewards.Builder.recipe(recipeId));
 
         exporter.accept(new JsonBuilder(recipeId, this.result, this.count, this.ingredient, this.advancement,
-                new Identifier(recipeId.getNamespace(), "recipe/"+ recipeId.getPath())));
+                new Identifier(recipeId.getNamespace(), "recipe/" + recipeId.getPath())));
     }
 
     public static class JsonBuilder implements RecipeJsonProvider {

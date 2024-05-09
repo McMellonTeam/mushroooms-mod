@@ -34,6 +34,18 @@
   "block.mushrooomsmod.mushroom_block_degradated_pink_luminescent": "Pink Luminescent Degradated Mushroom Block",
   "block.mushrooomsmod.mushroom_block_altered_pink_luminescent": "Pink Luminescent Altered Mushroom Block",
 
+  "block.mushrooomsmod.mushroom_block_altered_red": "Red Altered Mushroom Block",
+  "block.mushrooomsmod.mushroom_block_degradated_red": "Red Degradated Mushroom Block",
+  "block.mushrooomsmod.mushroom_block_fermented_red": "Red Fermented Mushroom Block",
+
+  "block.mushrooomsmod.leaves_blue_luminescent" : "Blue Luminescent Leaves",
+  "block.mushrooomsmod.leaves_colorful_red" : "Colorful Red Leaves",
+  "block.mushrooomsmod.leaves_colorful_yellow" : "Colorful Yellow Leaves",
+  "block.mushrooomsmod.leaves_colorful_green" : "Colorful Green Leaves",
+  "block.mushrooomsmod.leaves_colorful_orange" : "Colorful Orange Leaves",
+  "block.mushrooomsmod.leaves_colorful_purple" : "Colorful Purple Leaves",
+  "block.mushrooomsmod.leaves_colorful_pink" : "Colorful Pink Leaves",
+  "block.mushrooomsmod.leaves_colorful_blue" : "Colorful Blue Leaves",
 
   "block.mushrooomsmod.mushroom_stem_blue_luminescent" : "Blue Luminescent Mushroom Stem",
   "block.mushrooomsmod.mushroom_stem_transparent" : "Transparent Mushroom Stem",
@@ -59,7 +71,6 @@
   "block.mushrooomsmod.planks_blue_luminescent" : "Blue Luminescent Planks",
   "block.mushrooomsmod.trapdoor_blue_luminescent" : "Blue Luminescent Trapdoor",
   "block.mushrooomsmod.door_blue_luminescent" : "Blue Luminescent door",
-  "block.mushrooomsmod.leaves_blue_luminescent" : "Blue Luminescent Leaves",
   "block.mushrooomsmod.button_blue_luminescent" : "Blue Luminescent Button",
   "block.mushrooomsmod.pressure_plate_blue_luminescent" : "Blue Luminescent Pressure Plate",
   "block.mushrooomsmod.fence_blue_luminescent" : "Blue Luminescent Fence",
@@ -82,6 +93,8 @@
   "block.mushrooomsmod.sterile_blue_mushroom" : "Blue Sterile Mushroom",
   "block.mushrooomsmod.mushroom_small_brown" : "Small Brown Mushroom",
   "block.mushrooomsmod.mushroom_small_red" : "Small Red Mushroom",
+  "block.mushrooomsmod.mushroom_death_trumpet" : "Death Trumpet",
+  "block.mushrooomsmod.mushroom_side_blue_luminescent" : "Blue Luminescent Mushroom Side",
 
 
   "block.mushrooomsmod.prehisto_pink_schroom" : "Prehisto Pink Schroom",
@@ -134,7 +147,6 @@
   "block.mushrooomsmod.grass_tall.blue_luminescent": "Tall Blue Luminescent Grass",
 
 
-
   "block.mushrooomsmod.mushroom_tiny_purple": "Tiny Purple Mushroom",
   "block.mushrooomsmod.mushroom_little_purple": "Little Purple Mushroom",
   "block.mushrooomsmod.mushroom_medium_purple": "Medium Purple Mushroom",
@@ -145,6 +157,12 @@
   "block.mushrooomsmod.mushroom_medium_green": "Medium Green Mushroom",
   "block.mushrooomsmod.mushroom_big_green": "Big Green Mushroom",
 
+
+  "block.mushrooomsmod.amber_block" : "Amber Block",
+  "tooltip.mushrooomsmod.ambre_block" : "Don't put it on sand",
+  "block.mushrooomsmod.amber_block_sandified" : "Sandified Amber Block",
+  "tooltip.mushrooomsmod.sandified_ambre" : "Use a brush to make it beatiful again",
+  "block.mushrooomsmod.amber_ore" : "Amber Ore",
 
   "block.mushrooomsmod.lantern_red": "Red Lantern",
   "block.mushrooomsmod.lantern_green": "Green Lantern",
@@ -175,12 +193,13 @@
 
   "item.mushrooomsmod.crushed_diamond" : "Crushed Diamonds",
   "item.mushrooomsmod.crystal_pink_item" : "Pink Crystal",
+  "item.mushrooomsmod.crystal_blue_item" : "Blue Crystal",
 
   "item.mushrooomsmod.iron_hammer" : "Iron Hammer",
   "tooltip.mushrooomsmod.hammer.attack_damage" : "Attack Damage ",
   "tooltip.mushrooomsmod.hammer.usage" : "Use Left Click on a Forge With an Item to Crush it ",
 
-  "items.mushrooomsmod.luminescent_schroom_soup" : "Luminescent Schroom Soup",
+  "item.mushrooomsmod.luminescent_schroom_soup" : "Luminescent Schroom Soup",
   "tooltip.mushrooomsmod.schroom_soup.description" : "Drink this soup in a Blue Luminescent Cave to get ???",
 
   "biome.mushrooomsmod.blue_luminescent_schroom_cave" : "Blue Luminescent Schroom Cave",

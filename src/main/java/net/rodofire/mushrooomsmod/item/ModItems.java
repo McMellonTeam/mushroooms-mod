@@ -3,6 +3,13 @@ package net.rodofire.mushrooomsmod.item;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.block.Blocks;
+import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.item.*;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
+import net.minecraft.text.Text;
+import net.minecraft.util.Identifier;
+import net.minecraft.util.math.Direction;
 import net.rodofire.mushrooomsmod.MushrooomsMod;
 import net.rodofire.mushrooomsmod.block.ModBlocks;
 import net.rodofire.mushrooomsmod.effect.ModStatusEffects;
@@ -11,13 +18,6 @@ import net.rodofire.mushrooomsmod.item.Custom.HammerItem;
 import net.rodofire.mushrooomsmod.item.Custom.SchroomSoup;
 import net.rodofire.mushrooomsmod.sound.ModSounds;
 import net.rodofire.mushrooomsmod.world.biome.overworld.ModOverworldBiomes;
-import net.minecraft.entity.effect.StatusEffectInstance;
-import net.minecraft.item.*;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
-import net.minecraft.text.Text;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.math.Direction;
 
 public class ModItems {
     public static final ItemGroup MUSHROOM_GROUP = Registry.register(Registries.ITEM_GROUP,
@@ -98,9 +98,9 @@ public class ModItems {
                         entries.add(ModBlocks.PINK_LUMINESCENT_FERMENTED_MUSHROOM_BLOCK);
 
                         entries.add(Blocks.BROWN_MUSHROOM_BLOCK);
-                /*entries.add(ModBlocks.BROWN_ALTERED_MUSHROOM_BLOCK);
-                entries.add(ModBlocks.BROWN_DEGRADATED_MUSHROOM_BLOCK);
-                entries.add(ModBlocks.BROWN_FERMENTED_MUSHROOM_BLOCK);*/
+                        entries.add(ModBlocks.BROWN_ALTERED_MUSHROOM_BLOCK);
+                        entries.add(ModBlocks.BROWN_DEGRADATED_MUSHROOM_BLOCK);
+                        entries.add(ModBlocks.BROWN_FERMENTED_MUSHROOM_BLOCK);
 
                         entries.add(ModBlocks.BLUE_LUMINESCENT_MUSHROOM_STEM);
                         entries.add(ModBlocks.TRANSPARENT_MUSHROOM_STEM);
@@ -122,20 +122,23 @@ public class ModItems {
                         entries.add(ModBlocks.BLUE_LUMINESCENT_LEAVES);
                         entries.add(ModBlocks.BLUE_COLORFUL_LEAVES);
                         entries.add(ModBlocks.PURPLE_COLORFUL_LEAVES);
-                        entries.add(ModBlocks.PINK_COLORFUL_LEAVES);
-                        entries.add(ModBlocks.RED_COLORFUL_LEAVES);
-                        entries.add(ModBlocks.ORANGE_COLORFUL_LEAVES);
-                        entries.add(ModBlocks.YELLOW_COLORFUL_LEAVES);
                         entries.add(ModBlocks.GREEN_COLORFUL_LEAVES);
+                        entries.add(ModBlocks.YELLOW_COLORFUL_LEAVES);
+                        entries.add(ModBlocks.ORANGE_COLORFUL_LEAVES);
+                        entries.add(ModBlocks.RED_COLORFUL_LEAVES);
+                        entries.add(ModBlocks.PINK_COLORFUL_LEAVES);
 
                         //Mushrooms
-                        entries.add(ModBlocks.GREEN_MUSHROOM);
+                        entries.add(ModBlocks.BLUE_LUMINESCENT_MUSHROOM);
                         entries.add(ModBlocks.BLUE_MUSHROOM);
                         entries.add(ModBlocks.PURPLE_MUSHROOM);
-                        entries.add(ModBlocks.BLUE_LUMINESCENT_MUSHROOM);
-                        entries.add(ModBlocks.LUMINESCENT_PINK_MUSHROOM);
-                        entries.add(ModBlocks.ORANGE_MUSHROOM);
+                        entries.add(ModBlocks.GREEN_MUSHROOM);
                         entries.add(ModBlocks.YELLOW_MUSHROOM);
+                        entries.add(ModBlocks.ORANGE_MUSHROOM);
+                        entries.add(Blocks.RED_MUSHROOM);
+                        entries.add(ModBlocks.FERTILE_RED_MUSHROOM);
+                        entries.add(ModBlocks.LUMINESCENT_PINK_MUSHROOM);
+                        entries.add(Blocks.BROWN_MUSHROOM);
 
                         //Sapling
                         entries.add(ModBlocks.BLUE_LUMINESCENT_SAPPLING);
@@ -144,6 +147,10 @@ public class ModItems {
                         entries.add(ModBlocks.STERILE_BLUE_MUSHROOM);
                         entries.add(ModBlocks.MUSHROOM_SMALL_BROWN);
                         entries.add(ModBlocks.MUSHROOM_SMALL_RED);
+                        entries.add(ModBlocks.MUSHROOM_DEATH_TRUMPET);
+
+                        //Side Mushrooms
+                        entries.add(ModBlocks.SIDE_MUSHROOM_BLUE_LUMINESCENT);
 
                         //Flowers
                         entries.add(ModBlocks.PREHISTO_PINK_SCHROOM);
@@ -197,6 +204,7 @@ public class ModItems {
                         //Vines
                         entries.add(ModItems.CAERULEA_VOLUBILIS_ITEM);
                         entries.add(ModItems.PINK_MUSHROOM_VINES_ITEM);
+                        //entries.add(ModBlocks.BLUE_LUMINESCENT_VINES);
 
                         //Big Mushrooms
                         entries.add(ModItems.BIG_PURPLE_MUSHROOM_SEED);

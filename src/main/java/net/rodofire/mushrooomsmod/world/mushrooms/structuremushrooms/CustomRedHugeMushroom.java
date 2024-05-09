@@ -1,13 +1,13 @@
 package net.rodofire.mushrooomsmod.world.mushrooms.structuremushrooms;
 
 import com.mojang.serialization.Codec;
-import net.rodofire.mushrooomsmod.world.features.config.ModMushroomFeatureConfig;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.StructureWorldAccess;
 import net.minecraft.world.WorldAccess;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.util.FeatureContext;
+import net.rodofire.mushrooomsmod.world.features.config.ModMushroomFeatureConfig;
 
 public abstract class CustomRedHugeMushroom extends Feature<ModMushroomFeatureConfig> {
     public CustomRedHugeMushroom(Codec<ModMushroomFeatureConfig> configCodec) {

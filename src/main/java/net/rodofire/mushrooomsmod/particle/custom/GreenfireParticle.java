@@ -8,7 +8,7 @@ import net.minecraft.particle.DefaultParticleType;
 
 public class GreenfireParticle extends SpriteBillboardParticle {
     protected GreenfireParticle(ClientWorld level, double xCoord, double yCoord, double zCoord,
-                              SpriteProvider spriteSet, double xd, double yd, double zd) {
+                                SpriteProvider spriteSet, double xd, double yd, double zd) {
         super(level, xCoord, yCoord, zCoord, xd, yd, zd);
 
         this.velocityMultiplier = 0F;
@@ -31,7 +31,7 @@ public class GreenfireParticle extends SpriteBillboardParticle {
     }
 
     private void fadeOut() {
-        this.alpha = (-(1/(float)maxAge) * (float)age/2 + 1);
+        this.alpha = (-(1 / (float) maxAge) * (float) age / 2 + 1);
     }
 
     @Override

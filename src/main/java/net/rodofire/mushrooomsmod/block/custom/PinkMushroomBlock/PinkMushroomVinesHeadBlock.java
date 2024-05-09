@@ -1,7 +1,5 @@
 package net.rodofire.mushrooomsmod.block.custom.PinkMushroomBlock;
 
-import net.rodofire.mushrooomsmod.block.ModBlocks;
-import net.rodofire.mushrooomsmod.item.ModItems;
 import net.minecraft.block.*;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
@@ -16,15 +14,17 @@ import net.minecraft.util.math.random.Random;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldView;
+import net.rodofire.mushrooomsmod.block.ModBlocks;
+import net.rodofire.mushrooomsmod.item.ModItems;
 
 public class PinkMushroomVinesHeadBlock extends AbstractPlantStemBlock
         implements Fertilizable,
-        PinkMushroomVines{
+        PinkMushroomVines {
     private static final float GROW_CHANCE = 0.11f;
 
     public PinkMushroomVinesHeadBlock(AbstractBlock.Settings settings) {
         super(settings, Direction.DOWN, SHAPE, false, 0.1);
-        this.setDefaultState((BlockState)((BlockState)((BlockState)this.stateManager.getDefaultState()).with(AGE, 0)).with(BERRIES, false));
+        this.setDefaultState((BlockState) ((BlockState) ((BlockState) this.stateManager.getDefaultState()).with(AGE, 0)).with(BERRIES, false));
     }
 
     @Override
@@ -44,12 +44,12 @@ public class PinkMushroomVinesHeadBlock extends AbstractPlantStemBlock
 
     @Override
     protected BlockState copyState(BlockState from, BlockState to) {
-        return (BlockState)to.with(BERRIES, from.get(BERRIES));
+        return (BlockState) to.with(BERRIES, from.get(BERRIES));
     }
 
     @Override
     protected BlockState age(BlockState state, Random random) {
-        return (BlockState)super.age(state, random).with(BERRIES, random.nextFloat() < 0.11f);
+        return (BlockState) super.age(state, random).with(BERRIES, random.nextFloat() < 0.11f);
     }
 
     @Override
@@ -80,7 +80,7 @@ public class PinkMushroomVinesHeadBlock extends AbstractPlantStemBlock
 
     @Override
     public void grow(ServerWorld world, Random random, BlockPos pos, BlockState state) {
-        world.setBlockState(pos, (BlockState)state.with(BERRIES, true), Block.NOTIFY_LISTENERS);
+        world.setBlockState(pos, (BlockState) state.with(BERRIES, true), Block.NOTIFY_LISTENERS);
     }
 
 }

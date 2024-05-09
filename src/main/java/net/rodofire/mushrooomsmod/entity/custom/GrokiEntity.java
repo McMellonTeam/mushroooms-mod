@@ -1,10 +1,9 @@
 package net.rodofire.mushrooomsmod.entity.custom;
 
-import net.rodofire.mushrooomsmod.entity.ModEntities;
-import net.rodofire.mushrooomsmod.item.ModItems;
-import net.rodofire.mushrooomsmod.util.ModTags;
 import net.minecraft.entity.EntityType;
-import net.minecraft.entity.ai.goal.*;
+import net.minecraft.entity.ai.goal.LookAroundGoal;
+import net.minecraft.entity.ai.goal.SwimGoal;
+import net.minecraft.entity.ai.goal.WanderAroundFarGoal;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.passive.AnimalEntity;
@@ -15,6 +14,9 @@ import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.world.World;
+import net.rodofire.mushrooomsmod.entity.ModEntities;
+import net.rodofire.mushrooomsmod.item.ModItems;
+import net.rodofire.mushrooomsmod.util.ModTags;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.animatable.GeoEntity;
 import software.bernie.geckolib.core.animatable.GeoAnimatable;
@@ -36,6 +38,7 @@ public class GrokiEntity extends AnimalEntity implements GeoEntity {
     public PassiveEntity createChild(ServerWorld world, PassiveEntity entity) {
         return ModEntities.GROKI.create(world);
     }
+
     public static DefaultAttributeContainer.Builder setAttributes() {
         return AnimalEntity.createMobAttributes()
                 .add(EntityAttributes.GENERIC_MAX_HEALTH, 10.0D)
@@ -55,9 +58,9 @@ public class GrokiEntity extends AnimalEntity implements GeoEntity {
     }
 
     private PlayState predicate(AnimationState<GeoAnimatable> geoAnimatableAnimationState) {
-        if (geoAnimatableAnimationState.isMoving()){
+        if (geoAnimatableAnimationState.isMoving()) {
             geoAnimatableAnimationState.getController().setAnimation(RawAnimation.begin().then("animation.groki.walk", Animation.LoopType.LOOP));
-        }else{
+        } else {
             geoAnimatableAnimationState.getController().setAnimation(RawAnimation.begin().then("animation.groki.idle", Animation.LoopType.LOOP));
         }
 
@@ -75,7 +78,7 @@ public class GrokiEntity extends AnimalEntity implements GeoEntity {
     public ActionResult interactMob(PlayerEntity player, Hand hand) {
         ItemStack itemStack = player.getStackInHand(hand);
         System.out.println(itemStack);
-        if(itemStack.isIn(ModTags.Items.DIAMOND_ITEMS)){
+        if (itemStack.isIn(ModTags.Items.DIAMOND_ITEMS)) {
             System.out.println("ok");
             itemStack.decrement(-1);
             this.dropItem(ModItems.CRUSHED_DIAMOND, 1);

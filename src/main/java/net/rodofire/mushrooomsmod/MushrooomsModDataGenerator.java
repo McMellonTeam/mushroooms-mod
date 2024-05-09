@@ -2,13 +2,14 @@ package net.rodofire.mushrooomsmod;
 
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
-import net.rodofire.mushrooomsmod.datagen.*;
-import net.rodofire.mushrooomsmod.world.features.configuredfeatures.ModConfiguredFeatures;
-import net.rodofire.mushrooomsmod.world.features.placedfeatures.ModSurfacePlacedFeatures;
-import net.rodofire.mushrooomsmod.world.biome.overworld.ModOverworldBiomes;
 import net.minecraft.registry.RegistryBuilder;
 import net.minecraft.registry.RegistryKeys;
+import net.rodofire.mushrooomsmod.datagen.*;
+import net.rodofire.mushrooomsmod.world.biome.overworld.ModOverworldBiomes;
+import net.rodofire.mushrooomsmod.world.features.configuredfeatures.ModConfiguredFeatures;
+import net.rodofire.mushrooomsmod.world.features.placedfeatures.ModSurfacePlacedFeatures;
 import net.rodofire.mushrooomsmod.world.features.placedfeatures.ModUndergroundPlacedFeatures;
+import net.rodofire.mushrooomsmod.world.noises.ModNoises;
 
 public class MushrooomsModDataGenerator implements DataGeneratorEntrypoint {
     @Override
@@ -30,5 +31,6 @@ public class MushrooomsModDataGenerator implements DataGeneratorEntrypoint {
         registryBuilder.addRegistry(RegistryKeys.PLACED_FEATURE, ModSurfacePlacedFeatures::bootstrap);
         registryBuilder.addRegistry(RegistryKeys.PLACED_FEATURE, ModUndergroundPlacedFeatures::bootstrap);
         registryBuilder.addRegistry(RegistryKeys.BIOME, ModOverworldBiomes::bootstrap);
+        registryBuilder.addRegistry(RegistryKeys.NOISE_PARAMETERS, ModNoises::bootstrap);
     }
 }

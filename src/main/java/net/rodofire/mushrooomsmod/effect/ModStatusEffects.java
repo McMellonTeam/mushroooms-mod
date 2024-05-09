@@ -8,13 +8,13 @@ import net.minecraft.util.Identifier;
 import net.rodofire.mushrooomsmod.MushrooomsMod;
 
 public class ModStatusEffects {
-    public static final StatusEffect FLICKERING = registerStatusEffect("flickering", new FlickeringStatusEffect(StatusEffectCategory.BENEFICIAL,3523212 ));
+    public static final StatusEffect FLICKERING = registerStatusEffect("flickering", new FlickeringStatusEffect(StatusEffectCategory.BENEFICIAL, 3523212));
 
     public static StatusEffect registerStatusEffect(String name, StatusEffect entry) {
         return Registry.register(Registries.STATUS_EFFECT, new Identifier(MushrooomsMod.MOD_ID, name), entry);
     }
 
-    public static void registerEffects(){
+    public static void registerEffects() {
         MushrooomsMod.LOGGER.info("Starting Effects");
     }
 }

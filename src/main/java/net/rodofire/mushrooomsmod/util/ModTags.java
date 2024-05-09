@@ -1,11 +1,11 @@
 package net.rodofire.mushrooomsmod.util;
 
-import net.rodofire.mushrooomsmod.MushrooomsMod;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
+import net.rodofire.mushrooomsmod.MushrooomsMod;
 
 public class ModTags {
     public static class Blocks {
