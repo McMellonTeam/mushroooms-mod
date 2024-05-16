@@ -27,5 +27,4 @@ public class BoleteCowRenderer extends GeoEntityRenderer<BoleteCowEntity> {
 
         super.render(entity, entityYaw, partialTick, poseStack, bufferSource, packedLight);
     }
-
 }

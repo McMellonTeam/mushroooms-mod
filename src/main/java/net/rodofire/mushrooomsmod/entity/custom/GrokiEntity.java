@@ -77,9 +77,7 @@ public class GrokiEntity extends AnimalEntity implements GeoEntity {
     @Override
     public ActionResult interactMob(PlayerEntity player, Hand hand) {
         ItemStack itemStack = player.getStackInHand(hand);
-        System.out.println(itemStack);
         if (itemStack.isIn(ModTags.Items.DIAMOND_ITEMS)) {
-            System.out.println("ok");
             itemStack.decrement(-1);
             this.dropItem(ModItems.CRUSHED_DIAMOND, 1);
             return ActionResult.SUCCESS;
