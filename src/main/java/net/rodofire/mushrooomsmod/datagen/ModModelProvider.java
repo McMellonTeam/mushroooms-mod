@@ -2,10 +2,11 @@ package net.rodofire.mushrooomsmod.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
-import net.minecraft.data.client.BlockStateModelGenerator;
-import net.minecraft.data.client.ItemModelGenerator;
-import net.minecraft.data.client.ModelIds;
-import net.minecraft.data.client.Models;
+import net.minecraft.data.client.*;
+import net.minecraft.state.property.Properties;
+import net.minecraft.util.Identifier;
+import net.minecraft.util.math.Direction;
+import net.rodofire.mushrooomsmod.MushrooomsMod;
 import net.rodofire.mushrooomsmod.block.ModBlocks;
 import net.rodofire.mushrooomsmod.item.ModItems;
 
@@ -174,9 +175,7 @@ public class ModModelProvider extends FabricModelProvider {
         generator.registerDoor(ModBlocks.BLUE_LUMINESCENT_DOOR);
         generator.registerTrapdoor(ModBlocks.BLUE_LUMINESCENT_TRAPDOOR);
 
-        //Spawn Eggs
-        generator.registerParentedItemModel(ModItems.GROKI_SPAWN_EGG, ModelIds.getMinecraftNamespacedItem("template_spawn_egg"));
-        generator.registerParentedItemModel(ModItems.BOLETE_COW_SPAWN_EGG, ModelIds.getMinecraftNamespacedItem("template_spawn_egg"));
+
 
         //Crystals
         generator.registerSimpleCubeAll(ModBlocks.PINK_CRYSTAL_BLOCK);
@@ -187,34 +186,48 @@ public class ModModelProvider extends FabricModelProvider {
         //Idk
         generator.registerSimpleCubeAll(ModBlocks.CLOUD_BLOCK);
 
-        /*generator.blockStateCollector.accept(VariantsBlockStateSupplier.create(ModBlocks.BLUE_CRYSTAL)
-                .coordinate(BlockStateVariantMap.create(Properties.AGE_1, Properties.VERTICAL_DIRECTION)
-                        .register(0, Direction.UP, BlockStateVariant.create().put(VariantSettings.MODEL, new Identifier(MushrooomsMod.MOD_ID, "crystal_blue_up_top")))
-                        .register(0, Direction.DOWN, BlockStateVariant.create().put(VariantSettings.MODEL, new Identifier(MushrooomsMod.MOD_ID, "crystal_blue_down_top")))
-                        .register(1, Direction.UP, BlockStateVariant.create().put(VariantSettings.MODEL, new Identifier(MushrooomsMod.MOD_ID, "crystal_blue_up_bottom")))
-                        .register(1, Direction.DOWN, BlockStateVariant.create().put(VariantSettings.MODEL, new Identifier(MushrooomsMod.MOD_ID, "crystal_blue_down_bottom"))))
-        );*/
+        //Spawn Eggs
+        generator.registerParentedItemModel(ModItems.GROKI_SPAWN_EGG, ModelIds.getMinecraftNamespacedItem("template_spawn_egg"));
+        generator.registerParentedItemModel(ModItems.BOLETE_COW_SPAWN_EGG, ModelIds.getMinecraftNamespacedItem("template_spawn_egg"));
+        generator.registerParentedItemModel(ModItems.PLOTI_SPAWN_EGG, ModelIds.getMinecraftNamespacedItem("template_spawn_egg"));
 
-        //generator.modelCollector.accept(new Identifier(MushrooomsMod.MOD_ID, "crystal_blue_up_top"), gen);
+        generator.blockStateCollector.accept(VariantsBlockStateSupplier.create(ModBlocks.BLUE_CRYSTAL)
+                .coordinate(BlockStateVariantMap.create(Properties.AGE_1, Properties.VERTICAL_DIRECTION)
+                        .register(0, Direction.UP, BlockStateVariant.create().put(VariantSettings.MODEL, new Identifier(MushrooomsMod.MOD_ID, "block/crystal_blue_up_top")))
+                        .register(0, Direction.DOWN, BlockStateVariant.create().put(VariantSettings.MODEL, new Identifier(MushrooomsMod.MOD_ID, "block/crystal_blue_down_top")))
+                        .register(1, Direction.UP, BlockStateVariant.create().put(VariantSettings.MODEL, new Identifier(MushrooomsMod.MOD_ID, "block/crystal_blue_up_bottom")))
+                        .register(1, Direction.DOWN, BlockStateVariant.create().put(VariantSettings.MODEL, new Identifier(MushrooomsMod.MOD_ID, "block/crystal_blue_down_bottom"))))
+        );
+
+        generator.blockStateCollector.accept(VariantsBlockStateSupplier.create(ModBlocks.RED_CRYSTAL)
+                .coordinate(BlockStateVariantMap.create(Properties.AGE_1, Properties.VERTICAL_DIRECTION)
+                        .register(0, Direction.UP, BlockStateVariant.create().put(VariantSettings.MODEL, new Identifier(MushrooomsMod.MOD_ID, "block/crystal_red_up_top")))
+                        .register(0, Direction.DOWN, BlockStateVariant.create().put(VariantSettings.MODEL, new Identifier(MushrooomsMod.MOD_ID, "block/crystal_red_down_top")))
+                        .register(1, Direction.UP, BlockStateVariant.create().put(VariantSettings.MODEL, new Identifier(MushrooomsMod.MOD_ID, "block/crystal_red_up_bottom")))
+                        .register(1, Direction.DOWN, BlockStateVariant.create().put(VariantSettings.MODEL, new Identifier(MushrooomsMod.MOD_ID, "block/crystal_red_down_bottom"))))
+        );
     }
 
     @Override
-    public void generateItemModels(ItemModelGenerator itemModelGenerator) {
-        itemModelGenerator.register(ModItems.BAGUETTE, Models.GENERATED);
-        itemModelGenerator.register(ModItems.BIG_GREEN_MUSHROOM_SEED, Models.GENERATED);
-        itemModelGenerator.register(ModItems.BIG_PURPLE_MUSHROOM_SEED, Models.GENERATED);
-        itemModelGenerator.register(ModItems.CAERULEA_VOLUBILIS_ITEM, Models.GENERATED);
-        itemModelGenerator.register(ModItems.HYMNE_URSS_MUSIC_DISC, Models.GENERATED);
-        itemModelGenerator.register(ModItems.HYMNE_FRANCAIS_MUSIC_DISC, Models.GENERATED);
-        itemModelGenerator.register(ModItems.PINK_MUSHROOM_VINES_ITEM, Models.GENERATED);
+    public void generateItemModels(ItemModelGenerator generator) {
+        generator.register(ModItems.BAGUETTE, Models.GENERATED);
+        generator.register(ModItems.BIG_GREEN_MUSHROOM_SEED, Models.GENERATED);
+        generator.register(ModItems.BIG_PURPLE_MUSHROOM_SEED, Models.GENERATED);
+        generator.register(ModItems.CAERULEA_VOLUBILIS_ITEM, Models.GENERATED);
+        generator.register(ModItems.HYMNE_URSS_MUSIC_DISC, Models.GENERATED);
+        generator.register(ModItems.HYMNE_FRANCAIS_MUSIC_DISC, Models.GENERATED);
+        generator.register(ModItems.PINK_MUSHROOM_VINES_ITEM, Models.GENERATED);
 
-        itemModelGenerator.register(ModItems.PINK_CRYSTAL_ITEM, Models.GENERATED);
-        itemModelGenerator.register(ModItems.BLUE_CRYSTAL_ITEM, Models.GENERATED);
-        itemModelGenerator.register(ModItems.AMBER_ITEM, Models.GENERATED);
+        generator.register(ModItems.PINK_CRYSTAL_ITEM, Models.GENERATED);
+        generator.register(ModItems.BLUE_CRYSTAL_ITEM, Models.GENERATED);
+        generator.register(ModItems.RED_CRYSTAL_ITEM, Models.GENERATED);
+        generator.register(ModItems.AMBER_ITEM, Models.GENERATED);
 
-        itemModelGenerator.register(ModItems.CRUSHED_DIAMOND, Models.GENERATED);
-        itemModelGenerator.register(ModItems.LUMINESCENT_SCHROOM_SOUP, Models.GENERATED);
-        itemModelGenerator.register(ModItems.PURPLE_MUSHROOM_POWDER, Models.GENERATED);
+        generator.register(ModItems.CRUSHED_DIAMOND, Models.GENERATED);
+        generator.register(ModItems.LUMINESCENT_SCHROOM_SOUP, Models.GENERATED);
+        generator.register(ModItems.PURPLE_MUSHROOM_POWDER, Models.GENERATED);
+
+
     }
 
 }

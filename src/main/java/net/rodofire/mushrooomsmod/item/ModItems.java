@@ -233,14 +233,17 @@ public class ModItems {
 
                         entries.add(ModItems.GROKI_SPAWN_EGG);
                         entries.add(ModItems.BOLETE_COW_SPAWN_EGG);
+                        entries.add(ModItems.PLOTI_SPAWN_EGG);
 
                         //crystal
                         entries.add(ModItems.PINK_CRYSTAL_ITEM);
                         entries.add(ModBlocks.PINK_CRYSTAL_BLOCK);
 
                         entries.add(ModItems.BLUE_CRYSTAL_ITEM);
+                        entries.add(ModItems.RED_CRYSTAL_ITEM);
 
                         entries.add(ModItems.CRUSHED_DIAMOND);
+                        entries.add(ModItems.AMBER_ITEM);
 
                         //Utils
                         entries.add(ModBlocks.FORGE_BLOCK);
@@ -281,11 +284,13 @@ public class ModItems {
     //Egg
     public static final Item GROKI_SPAWN_EGG = registerItem("groki_spawn_egg", new SpawnEggItem(ModEntities.GROKI, 0x765A34, 0x1BC2CF, new FabricItemSettings()));
     public static final Item BOLETE_COW_SPAWN_EGG = registerItem("bolete_cow_spawn_egg", new SpawnEggItem(ModEntities.BOLETE_COW, 0xBF28DD, 0xF4DBF9, new FabricItemSettings()));
+    public static final Item PLOTI_SPAWN_EGG = registerItem("ploti_spawn_egg", new SpawnEggItem(ModEntities.PLOTI, 0x674f35, 0x4e361c, new FabricItemSettings()));
 
     //Crystals related
     public static final Item CRUSHED_DIAMOND = registerItem("crushed_diamond", new Item(new FabricItemSettings()));
     public static final Item PINK_CRYSTAL_ITEM = registerItem("crystal_pink_item", new AliasedBlockItem(ModBlocks.PINK_CRYSTAL, new FabricItemSettings()));
     public static final Item BLUE_CRYSTAL_ITEM = registerItem("crystal_blue_item", new AliasedBlockItem(ModBlocks.BLUE_CRYSTAL, new FabricItemSettings()));
+    public static final Item RED_CRYSTAL_ITEM = registerItem("crystal_red_item", new AliasedBlockItem(ModBlocks.RED_CRYSTAL, new FabricItemSettings()));
     public static final Item AMBER_ITEM = registerItem("amber_item", new Item(new FabricItemSettings()));
     //Tools
     public static final Item IRON_HAMMER = registerItem("iron_hammer", new HammerItem(ToolMaterials.IRON, 40, -3.7f, 4, new FabricItemSettings()));

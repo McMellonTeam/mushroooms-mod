@@ -10,8 +10,9 @@ import net.rodofire.mushrooomsmod.block.ModBlockEntities;
 import net.rodofire.mushrooomsmod.block.ModBlocks;
 import net.rodofire.mushrooomsmod.block.entity.renderer.ForgeBlockEntityRenderer;
 import net.rodofire.mushrooomsmod.entity.ModEntities;
-import net.rodofire.mushrooomsmod.entity.client.BoleteCowRenderer;
-import net.rodofire.mushrooomsmod.entity.client.GrokiRenderer;
+import net.rodofire.mushrooomsmod.entity.client.renderer.BoleteCowRenderer;
+import net.rodofire.mushrooomsmod.entity.client.renderer.GrokiRenderer;
+import net.rodofire.mushrooomsmod.entity.client.renderer.PlotiRenderer;
 import net.rodofire.mushrooomsmod.particle.ModParticles;
 import net.rodofire.mushrooomsmod.particle.custom.GreenfireParticle;
 
@@ -197,10 +198,12 @@ public class MushrooomsModClient implements ClientModInitializer {
 
         //Crystal
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.BLUE_CRYSTAL, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.RED_CRYSTAL, RenderLayer.getCutout());
 
         //Entity
         EntityRendererRegistry.register(ModEntities.GROKI, GrokiRenderer::new);
         EntityRendererRegistry.register(ModEntities.BOLETE_COW, BoleteCowRenderer::new);
+        EntityRendererRegistry.register(ModEntities.PLOTI, PlotiRenderer::new);
 
         //Block Entity
         BlockEntityRendererFactories.register(ModBlockEntities.FORGE_BLOCK_ENTITY, ForgeBlockEntityRenderer::new);
