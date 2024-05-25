@@ -13,10 +13,11 @@ import net.minecraft.world.gen.foliage.BlobFoliagePlacer;
 import net.minecraft.world.gen.stateprovider.BlockStateProvider;
 import net.rodofire.mushrooomsmod.MushrooomsMod;
 import net.rodofire.mushrooomsmod.block.ModBlocks;
+import net.rodofire.mushrooomsmod.world.features.config.CrystalConfig;
 import net.rodofire.mushrooomsmod.world.features.config.DirectionConfig;
 import net.rodofire.mushrooomsmod.world.features.config.ModMushroomFeatureConfig;
 import net.rodofire.mushrooomsmod.world.features.config.ModSimpleBlockFeatureConfig;
-import net.rodofire.mushrooomsmod.world.tree.codetree.BlueLuminescentTrunkPlacer;
+import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.tree.codetree.BlueLuminescentTrunkPlacer;
 
 public class ModConfiguredFeatures<FC extends FeatureConfig> {
     //Tree
@@ -112,6 +113,12 @@ public class ModConfiguredFeatures<FC extends FeatureConfig> {
     //Bush
     public static final RegistryKey<ConfiguredFeature<?, ?>> BUSH_KEY = registerKey("bush_key");
     public static final RegistryKey<ConfiguredFeature<?, ?>> COLORFUL_BUSH_KEY = registerKey("colorful_bush_key");
+
+    //Crystal
+    public static final RegistryKey<ConfiguredFeature<?,?>> RED_CRYSTAL_KEY = registerKey("red_crystal_key");
+    public static final RegistryKey<ConfiguredFeature<?,?>> BLUE_CRYSTAL_KEY = registerKey("blue_crystal_key");
+    public static final RegistryKey<ConfiguredFeature<?,?>> BLUE_CRYSTAL_PILLAR_KEY = registerKey("blue_crystal_pillar_key");
+    public static final RegistryKey<ConfiguredFeature<?,?>> RED_CRYSTAL_PILLAR_KEY = registerKey("red_crystal_pillar_key");
 
 
     public static void bootstrap(Registerable<ConfiguredFeature<?, ?>> context) {
@@ -212,6 +219,12 @@ public class ModConfiguredFeatures<FC extends FeatureConfig> {
         //Bush
         register(context, BUSH_KEY, ModFeatures.BUSH, new DefaultFeatureConfig());
         register(context, COLORFUL_BUSH_KEY, ModFeatures.COLORFUL_BUSH, new DefaultFeatureConfig());
+
+        //Crystal
+        register(context, RED_CRYSTAL_KEY, ModFeatures.CRYSTAL, new CrystalConfig(15,9,BlockStateProvider.of(ModBlocks.RED_CRYSTAL)));
+        register(context, BLUE_CRYSTAL_KEY, ModFeatures.CRYSTAL, new CrystalConfig(15, 9, BlockStateProvider.of(ModBlocks.BLUE_CRYSTAL)));
+        register(context, BLUE_CRYSTAL_PILLAR_KEY, ModFeatures.CRYSTAL_PILLAR, new ModSimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.BLUE_CRYSTAL_BLOCK)));
+        register(context, RED_CRYSTAL_PILLAR_KEY, ModFeatures.CRYSTAL_PILLAR, new ModSimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.RED_CRYSTAL_BLOCK)));
     }
 
     public static RegistryKey<ConfiguredFeature<?, ?>> registerKey(String name) {
