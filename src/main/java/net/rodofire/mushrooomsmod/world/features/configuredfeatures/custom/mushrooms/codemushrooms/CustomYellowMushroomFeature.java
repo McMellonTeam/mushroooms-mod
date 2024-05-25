@@ -133,7 +133,7 @@ public class CustomYellowMushroomFeature extends CustomYellowMushroom {
         BlockState blockState2 = Blocks.AIR.getDefaultState();
         int randomx = coordinates[0];
         int randomz = coordinates[1];
-
+        BlockState blockState1 = config.stemProvider.get(random, pos);
         System.out.println(randomx + "  " + randomz);
         for (float secondlarge = 0; secondlarge <= large; secondlarge = secondlarge + 0.25f) {
             for (double i = -Math.PI / (3 * large); i <= Math.PI / 2; i = i + Math.PI / (6 * large)) {
@@ -142,7 +142,7 @@ public class CustomYellowMushroomFeature extends CustomYellowMushroom {
                     double z = secondlarge * 1.5 * Math.cos(i) * Math.sin(j);
                     double y = secondlarge * Math.sin(i);
                     mutable.set(pos, (int) x + randomx, (int) (y + height - large + 4), (int) z + randomz);
-                    if (!world.getBlockState(mutable).isOf(config.stemProvider.get(random, pos).getBlock()))
+                    if (!world.getBlockState(mutable).isOf(blockState1.getBlock()))
                         this.setBlockState(world, mutable, blockState);
                 }
             }
@@ -165,6 +165,7 @@ public class CustomYellowMushroomFeature extends CustomYellowMushroom {
     @Override
     protected boolean generateFlatterCap(WorldAccess world, Random random, BlockPos pos, int height, BlockPos.Mutable mutable, HugeMushroomFeatureConfig config, int large, Integer[] coordinates) {
         BlockState blockState = config.capProvider.get(random, pos);
+        BlockState blockState1 = config.stemProvider.get(random, pos);
         BlockState blockState2 = Blocks.AIR.getDefaultState();
         int randomx = coordinates[0];
         int randomz = coordinates[1];
@@ -177,7 +178,7 @@ public class CustomYellowMushroomFeature extends CustomYellowMushroom {
                     double z = secondlarge * 2 * Math.cos(i) * Math.sin(j);
                     double y = secondlarge * Math.sin(i);
                     mutable.set(pos, (int) x + randomx, (int) (y + height - large + 4), (int) z + randomz);
-                    if (!world.getBlockState(mutable).isOf(config.stemProvider.get(random, pos).getBlock()))
+                    if (!world.getBlockState(mutable).isOf(blockState1.getBlock()))
                         this.setBlockState(world, mutable, blockState);
                 }
             }

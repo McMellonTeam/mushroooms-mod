@@ -1,7 +1,6 @@
 package net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom;
 
 import com.mojang.serialization.Codec;
-import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
@@ -12,7 +11,6 @@ import net.minecraft.world.gen.feature.util.FeatureContext;
 import net.rodofire.mushrooomsmod.block.custom.Crystal;
 import net.rodofire.mushrooomsmod.world.features.config.CrystalConfig;
 
-import java.util.Properties;
 
 public class CrystalFeature extends Feature<CrystalConfig> {
     public CrystalFeature(Codec<CrystalConfig> configCodec) {
@@ -45,8 +43,9 @@ public class CrystalFeature extends Feature<CrystalConfig> {
     }
 
     public Direction getDirection(StructureWorldAccess world, BlockPos pos) {
-        if (world.getBlockState(pos.down()).isOpaqueFullCube(world, pos.down()) && world.getBlockState(pos).isAir()) return Direction.UP;
-        if (world.getBlockState(pos.up()).isOpaqueFullCube(world, pos.up()) && world.getBlockState(pos).isAir()) return Direction.DOWN;
+        BlockState state = world.getBlockState(pos);
+        if (world.getBlockState(pos.down()).isOpaqueFullCube(world, pos.down()) && state.isAir()) return Direction.UP;
+        if (world.getBlockState(pos.up()).isOpaqueFullCube(world, pos.up()) && state.isAir()) return Direction.DOWN;
         return null;
     }
 

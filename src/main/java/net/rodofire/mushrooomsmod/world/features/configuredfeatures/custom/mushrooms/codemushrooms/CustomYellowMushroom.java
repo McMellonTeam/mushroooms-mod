@@ -1,6 +1,7 @@
 package net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.mushrooms.codemushrooms;
 
 import com.mojang.serialization.Codec;
+import net.minecraft.block.BlockState;
 import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
@@ -32,7 +33,8 @@ public abstract class CustomYellowMushroom extends Feature<HugeMushroomFeatureCo
             for (int j = -1; j <= 1; ++j) {
                 for (int k = -1; k <= 1; ++k) {
                     mutablePos.set(pos, j + (randomx / height) * i, i, k + (randomz / height) * i);
-                    if (!world.getBlockState(mutablePos).isIn(BlockTags.LEAVES) && !world.getBlockState(mutablePos).isAir() && !world.getBlockState(mutablePos).isIn(BlockTags.FLOWERS))
+                    BlockState blockState = world.getBlockState(mutablePos);
+                    if (!blockState.isIn(BlockTags.LEAVES) && !blockState.isAir() && !blockState.isIn(BlockTags.FLOWERS))
                         return false;
                 }
             }

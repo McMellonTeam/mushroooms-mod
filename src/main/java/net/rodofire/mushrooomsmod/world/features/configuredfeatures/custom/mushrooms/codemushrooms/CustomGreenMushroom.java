@@ -1,6 +1,7 @@
 package net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.mushrooms.codemushrooms;
 
 import com.mojang.serialization.Codec;
+import net.minecraft.block.BlockState;
 import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
@@ -18,14 +19,16 @@ public abstract class CustomGreenMushroom extends Feature<ModMushroomFeatureConf
     protected boolean canGenerate(WorldAccess world, BlockPos pos, int height, BlockPos.Mutable mutablePos, int large) {
         for (int i = 0; i <= height + 1; ++i) {
             mutablePos.set(pos, 0, i, 0);
-            if (!world.getBlockState(mutablePos).isIn(BlockTags.LEAVES) && !world.getBlockState(mutablePos).isAir() && !world.getBlockState(mutablePos).isIn(BlockTags.FLOWERS))
+            BlockState state = world.getBlockState(mutablePos);
+            if (!state.isIn(BlockTags.LEAVES) && !state.isAir() && !state.isIn(BlockTags.FLOWERS))
                 return false;
         }
         for (int i = height - 1; i <= height + 1; ++i) {
             for (int j = -large; j <= large; ++j) {
                 for (int k = -large; k <= large; ++k) {
                     mutablePos.set(pos, j, i, k);
-                    if (!world.getBlockState(mutablePos).isIn(BlockTags.LEAVES) && !world.getBlockState(mutablePos).isAir() && !world.getBlockState(mutablePos).isIn(BlockTags.FLOWERS))
+                    BlockState state = world.getBlockState(mutablePos);
+                    if (!state.isIn(BlockTags.LEAVES) && !state.isAir() && !state.isIn(BlockTags.FLOWERS))
                         return false;
                 }
             }

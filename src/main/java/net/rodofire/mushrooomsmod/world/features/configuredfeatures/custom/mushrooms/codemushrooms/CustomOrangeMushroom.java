@@ -1,6 +1,7 @@
 package net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.mushrooms.codemushrooms;
 
 import com.mojang.serialization.Codec;
+import net.minecraft.block.BlockState;
 import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
@@ -20,7 +21,8 @@ public abstract class CustomOrangeMushroom extends Feature<HugeMushroomFeatureCo
         for (int i = -1; i <= 1; ++i) {
             for (int k = -1; k <= 1; ++k) {
                 for (int j = 1; j <= height; ++j) {
-                    if (!world.getBlockState(mutablePos.set(pos, i, j, k)).isIn(BlockTags.LEAVES) && !world.getBlockState(mutablePos.set(pos, i, j, k)).isAir())
+                    BlockState blockState = world.getBlockState(pos.add(i, j,k));
+                    if (!blockState.isIn(BlockTags.LEAVES) && !blockState.isAir())
                         return false;
                 }
             }
@@ -28,7 +30,8 @@ public abstract class CustomOrangeMushroom extends Feature<HugeMushroomFeatureCo
         for (int i = -large; i <= large; i++) {
             for (int j = -large; j <= large; ++j) {
                 for (int k = (int) (height - 2.4 * large); k <= height + 3; ++k) {
-                    if (!world.getBlockState(mutablePos.set(pos, i, k, j)).isIn(BlockTags.LEAVES) && !world.getBlockState(mutablePos.set(pos, i, k, j)).isAir())
+                    BlockState blockState = world.getBlockState(pos.add(i, k, j));
+                    if (!blockState.isIn(BlockTags.LEAVES) && !blockState.isAir())
                         return false;
                 }
             }

@@ -34,7 +34,8 @@ public abstract class CustomGreenSecondMushroom extends Feature<HugeMushroomFeat
             randomz = coordinates.get(2 * a + 1);
             for (int i = intheight; i <= maxheight; ++i) {
                 mutable.set(pos, randomx, i, randomz);
-                if (!world.getBlockState(mutable).isIn(BlockTags.LEAVES) && !world.getBlockState(mutable).isAir() && !world.getBlockState(mutable).isIn(BlockTags.FLOWERS))
+                BlockState state = world.getBlockState(mutable);
+                if (!state.isIn(BlockTags.LEAVES) && !state.isAir() && !state.isIn(BlockTags.FLOWERS))
                     return false;
             }
             ++a;
@@ -42,7 +43,8 @@ public abstract class CustomGreenSecondMushroom extends Feature<HugeMushroomFeat
         for (int i = -large; i <= large; ++i) {
             for (int j = -large; j <= large; ++j) {
                 mutable.set(pos, i + coordinates.get(coordinates.size() - 2), height, j + coordinates.get(coordinates.size() - 1));
-                if (!world.getBlockState(mutable).isIn(BlockTags.LEAVES) && !world.getBlockState(mutable).isAir() && !world.getBlockState(mutable).isIn(BlockTags.FLOWERS))
+                BlockState state = world.getBlockState(mutable);
+                if (!state.isIn(BlockTags.LEAVES) && !state.isAir() && !state.isIn(BlockTags.FLOWERS))
                     return false;
 
             }
@@ -50,7 +52,8 @@ public abstract class CustomGreenSecondMushroom extends Feature<HugeMushroomFeat
         for (int i = -large - 1; i <= large + 1; ++i) {
             for (int j = -large - 1; j <= large + 1; ++j) {
                 mutable.set(pos, i + coordinates.get(coordinates.size() - 2), height - 1, j + coordinates.get(coordinates.size() - 1));
-                if (!world.getBlockState(mutable).isIn(BlockTags.LEAVES) && !world.getBlockState(mutable).isAir() && !world.getBlockState(mutable).isIn(BlockTags.FLOWERS))
+                BlockState state = world.getBlockState(mutable);
+                if (!state.isIn(BlockTags.LEAVES) && !state.isAir() && !state.isIn(BlockTags.FLOWERS))
                     return false;
 
             }
@@ -59,7 +62,8 @@ public abstract class CustomGreenSecondMushroom extends Feature<HugeMushroomFeat
             for (int i = -large + 1; i <= large - 1; ++i) {
                 for (int j = -large - 1; j <= large + 1; ++j) {
                     mutable.set(pos, i + coordinates.get(coordinates.size() - 2), height + 1, j + coordinates.get(coordinates.size() - 1));
-                    if (!world.getBlockState(mutable).isIn(BlockTags.LEAVES) && !world.getBlockState(mutable).isAir() && !world.getBlockState(mutable).isIn(BlockTags.FLOWERS))
+                    BlockState state = world.getBlockState(mutable);
+                    if (!state.isIn(BlockTags.LEAVES) && !state.isAir() && !state.isIn(BlockTags.FLOWERS))
                         return false;
                 }
             }
