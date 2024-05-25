@@ -182,6 +182,8 @@ public class ModModelProvider extends FabricModelProvider {
         generator.registerSimpleCubeAll(ModBlocks.AMBER_ORE);
         generator.registerSimpleCubeAll(ModBlocks.AMBER_BLOCK);
         generator.registerSimpleCubeAll(ModBlocks.AMBER_BLOCK_SANDIFIED);
+        generator.registerSimpleCubeAll(ModBlocks.BLUE_CRYSTAL_BLOCK);
+        generator.registerSimpleCubeAll(ModBlocks.RED_CRYSTAL_BLOCK);
 
         //Idk
         generator.registerSimpleCubeAll(ModBlocks.CLOUD_BLOCK);

@@ -41,6 +41,7 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
 
         getOrCreateTagBuilder(ItemTags.PLANKS)
                 .add(ModBlocks.BLUE_LUMINESCENT_PLANKS.asItem());
+
         getOrCreateTagBuilder(ItemTags.LOGS_THAT_BURN)
                 .add(ModBlocks.BLUE_LUMINESCENT_LOG.asItem())
                 .add(ModBlocks.BLUE_LUMINESCENT_STRIPPED_LOG.asItem())

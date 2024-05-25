@@ -200,6 +200,8 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
         //Crystals
         offerCompactingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.AMBER_BLOCK, ModItems.AMBER_ITEM);
+        offerCompactingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.BLUE_CRYSTAL_BLOCK, ModItems.BLUE_CRYSTAL_ITEM);
+        offerCompactingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.RED_CRYSTAL_BLOCK, ModItems.RED_CRYSTAL_ITEM);
 
 
         //Forge Recipe
