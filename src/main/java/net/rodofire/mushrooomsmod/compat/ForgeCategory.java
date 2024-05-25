@@ -24,7 +24,7 @@ public class ForgeCategory implements DisplayCategory<BasicDisplay> {
             CategoryIdentifier.of(MushrooomsMod.MOD_ID, "forge_empowering");
 
     @Override
-    public CategoryIdentifier getCategoryIdentifier() {
+    public CategoryIdentifier<? extends BasicDisplay> getCategoryIdentifier() {
         return FORGE_EMPOWERING;
     }
 
