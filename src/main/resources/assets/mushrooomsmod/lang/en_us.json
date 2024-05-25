@@ -112,6 +112,7 @@
   "block.mushrooomsmod.noctulica": "Noctulica",
   "block.mushrooomsmod.turquosum_stilus": "Turquosum Stilus",
   "item.mushrooomsmod.caerulea_volubilis_item": "Caerulea Volubilis",
+  "block.mushrooomsmod.vines_blue_luminescent": "Blue Luminescent Vines",
   "block.mushrooomsmod.saphira_florens": "Saphira Florens",
   "block.mushrooomsmod.prehistoric_rose": "Prehistoric Rose",
   "block.mushrooomsmod.perennial_orange": "Orange Perennial",
@@ -194,6 +195,7 @@
   "item.mushrooomsmod.crushed_diamond" : "Crushed Diamonds",
   "item.mushrooomsmod.crystal_pink_item" : "Pink Crystal",
   "item.mushrooomsmod.crystal_blue_item" : "Blue Crystal",
+  "item.mushrooomsmod.amber_item" : "Blue Crystal",
 
   "item.mushrooomsmod.iron_hammer" : "Iron Hammer",
   "tooltip.mushrooomsmod.hammer.attack_damage" : "Attack Damage ",
@@ -204,7 +206,12 @@
 
   "biome.mushrooomsmod.blue_luminescent_schroom_cave" : "Blue Luminescent Schroom Cave",
 
-
+  "tooltip.mushrooomsmod.crushable_items" : "Item that can be crushed in a Forge",
+  "tooltip.mushrooomsmod.fermented_mushroom_block" : "Use mushroom powder to degradate the mushroom block.",
+  "tooltip.mushrooomsmod.fermented_mushroom_block_axe" : "For the fermented variant, use an axe to clean the mushroom block",
+  "tooltip.mushrooomsmod.flower_mushroom" : "Use Bone meal to make it grow",
+  "tooltip.mushrooomsmod.forge_block" : "Use a Hammer to crush item on it",
+  "tooltip.mushrooomsmod.shift" : "Use §eShift§r to get more info ",
 
   "itemgroup.mushroooms" : "Mushroooms",
 
