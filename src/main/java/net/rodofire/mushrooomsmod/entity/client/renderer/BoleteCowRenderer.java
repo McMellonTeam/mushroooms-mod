@@ -1,10 +1,11 @@
-package net.rodofire.mushrooomsmod.entity.client;
+package net.rodofire.mushrooomsmod.entity.client.renderer;
 
 import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.util.Identifier;
 import net.rodofire.mushrooomsmod.MushrooomsMod;
+import net.rodofire.mushrooomsmod.entity.client.model.BoleteCowModel;
 import net.rodofire.mushrooomsmod.entity.custom.BoleteCowEntity;
 import software.bernie.geckolib.renderer.GeoEntityRenderer;
 

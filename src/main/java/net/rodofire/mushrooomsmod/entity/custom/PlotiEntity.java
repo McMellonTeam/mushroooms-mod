@@ -2,14 +2,16 @@ package net.rodofire.mushrooomsmod.entity.custom;
 
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ai.goal.*;
+import net.minecraft.entity.attribute.DefaultAttributeContainer;
+import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.data.DataTracker;
 import net.minecraft.entity.data.TrackedData;
 import net.minecraft.entity.data.TrackedDataHandlerRegistry;
-import net.minecraft.entity.mob.PathAwareEntity;
 import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
 import net.rodofire.mushrooomsmod.entity.ModEntities;
 import org.jetbrains.annotations.Nullable;
@@ -23,13 +25,19 @@ import software.bernie.geckolib.core.object.PlayState;
 public class PlotiEntity extends AnimalEntity implements GeoEntity {
 
     private AnimatableInstanceCache cache = new SingletonAnimatableInstanceCache(this);
-    protected static final TrackedData<Byte> SIT_FLAGS = DataTracker.registerData(PlotiEntity.class, TrackedDataHandlerRegistry.BYTE);
+    protected static final TrackedData<Boolean> SIT_FLAGS = DataTracker.registerData(PlotiEntity.class, TrackedDataHandlerRegistry.BOOLEAN);
     private boolean sitting;
-    public int sittingtime;
-    public int unsittingtime;
+    public int sittingtime = 0;
+    public int unsittingtime = 0;
 
     public PlotiEntity(EntityType<? extends AnimalEntity> entityType, World world) {
         super(entityType, world);
+    }
+
+    public static DefaultAttributeContainer.Builder setAttributes() {
+        return AnimalEntity.createMobAttributes()
+                .add(EntityAttributes.GENERIC_MAX_HEALTH, 10.0D)
+                .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.25f);
     }
 
     @Override
@@ -40,7 +48,7 @@ public class PlotiEntity extends AnimalEntity implements GeoEntity {
         this.goalSelector.add(4, new LookAroundGoal(this));
     }
 
-    public Goal escapeDanger(double speed){
+    public Goal escapeDanger(double speed) {
         if (this.sitting) {
             this.setSit(false);
         }
@@ -65,23 +73,22 @@ public class PlotiEntity extends AnimalEntity implements GeoEntity {
 
     @Override
     protected void initDataTracker() {
-        this.dataTracker.startTracking(SIT_FLAGS, (byte)0);
+        super.initDataTracker();
+        this.dataTracker.startTracking(SIT_FLAGS, true);
     }
 
     private PlayState predicate(AnimationState<GeoAnimatable> geoAnimatableAnimationState) {
-        if (!this.isSit()&&geoAnimatableAnimationState.isMoving()) {
+        if (!this.isSit() && geoAnimatableAnimationState.isMoving()) {
             geoAnimatableAnimationState.getController().setAnimation(RawAnimation.begin().then("animation.ploti.walk", Animation.LoopType.LOOP));
-        } else if (this.isSit() && geoAnimatableAnimationState.isMoving()) {
+        } else if (!this.isSit() && geoAnimatableAnimationState.isMoving()) {
             geoAnimatableAnimationState.getController().setAnimation(RawAnimation.begin().then("animation.ploti.side_walking", Animation.LoopType.LOOP));
         } else if (this.isSitting()) {
             geoAnimatableAnimationState.getController().setAnimation(RawAnimation.begin().then("animation.ploti.sit", Animation.LoopType.HOLD_ON_LAST_FRAME));
         } else if (this.isUnsitting()) {
             geoAnimatableAnimationState.getController().setAnimation(RawAnimation.begin().then("animation.ploti.unsit", Animation.LoopType.HOLD_ON_LAST_FRAME));
         } else {
-            geoAnimatableAnimationState.getController().setAnimation(RawAnimation.begin().then("animation.groki.idle", Animation.LoopType.LOOP));
+            geoAnimatableAnimationState.getController().setAnimation(RawAnimation.begin().then("animation.ploti.idle", Animation.LoopType.LOOP));
         }
-
-
         return PlayState.CONTINUE;
     }
 
@@ -94,36 +101,49 @@ public class PlotiEntity extends AnimalEntity implements GeoEntity {
     @Override
     public void readCustomDataFromNbt(NbtCompound nbt) {
         super.readCustomDataFromNbt(nbt);
-        sitting = nbt.getBoolean("sitting");
+        this.sitting = nbt.getBoolean("sitting");
     }
 
-    //return if the entity is sit
-    public boolean isSit(){
+    //return if the entity is sat
+    public boolean isSit() {
         return this.sitting;
     }
-    public void setSit(boolean sit){
-        this.sitting = sit;
+
+    public void setSit(boolean sit) {
+        if (sit) {
+            this.sittingtime = 10;
+        }
+        this.unsittingtime = 10;
     }
 
     @Override
     public void tick() {
+        if (this.sittingtime != 0) {
+            if (this.sittingtime == 1) {
+                this.sittingtime = 0;
+                setSit(true);
+            }
+            this.sittingtime--;
+        }
+        if (this.unsittingtime != 0) {
+            if (this.unsittingtime == 1) {
+                this.unsittingtime = 0;
+                setSit(false);
+            }
+            this.unsittingtime--;
+        }
+        if (Random.create().nextBetween(0,400)==0 && !this.moveControl.isMoving()){
+            this.setSit(!this.sitting);
+        }
         super.tick();
     }
 
     //return if the entity
-    public boolean isSitting(){
-        if (this.sittingtime!=0){
-            this.sittingtime--;
-            return true;
-        }
-        return false;
+    public boolean isSitting() {
+        return this.sittingtime != 0;
     }
 
-    public boolean isUnsitting(){
-        if (this.unsittingtime!=0){
-            this.unsittingtime--;
-            return true;
-        }
-        return false;
+    public boolean isUnsitting() {
+        return this.unsittingtime != 0;
     }
 }

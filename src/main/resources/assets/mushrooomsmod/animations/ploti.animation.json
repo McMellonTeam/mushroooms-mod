@@ -1,0 +1,352 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.ploti.walk": {
+			"loop": true,
+			"animation_length": 0.3333,
+			"bones": {
+				"head": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.0833": {
+							"vector": [-7.5, 0, 0]
+						},
+						"0.25": {
+							"vector": [5, 0, 0]
+						},
+						"0.3333": {
+							"vector": [0, 0, 0]
+						}
+					}
+				},
+				"right_leg": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.0833": {
+							"vector": [0, 0, -22.5],
+							"easing": "easeInOutCirc"
+						},
+						"0.25": {
+							"vector": [0, 0, 22.5],
+							"easing": "easeInOutCirc"
+						},
+						"0.3333": {
+							"vector": [0, 0, 0]
+						}
+					}
+				},
+				"left_leg": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.0833": {
+							"vector": [0, 0, 22.5],
+							"easing": "easeInOutCirc"
+						},
+						"0.25": {
+							"vector": [0, 0, -22.5],
+							"easing": "easeInOutCirc"
+						},
+						"0.3333": {
+							"vector": [0, 0, 0]
+						}
+					}
+				}
+			}
+		},
+		"animation.ploti.sitting": {
+			"loop": "hold_on_last_frame",
+			"animation_length": 0.25,
+			"bones": {
+				"head": {
+					"position": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.125": {
+							"vector": [0, -0.5, 0]
+						}
+					}
+				},
+				"left_leg": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.125": {
+							"vector": [-90, 0, 0]
+						}
+					},
+					"position": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.125": {
+							"vector": [0, -2, 0]
+						}
+					}
+				},
+				"right_leg": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.125": {
+							"vector": [90, 0, 0]
+						}
+					},
+					"position": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.125": {
+							"vector": [0, -2, 0]
+						}
+					}
+				}
+			}
+		},
+		"animation.ploti.side_walking": {
+			"loop": true,
+			"animation_length": 2.875,
+			"bones": {
+				"head": {
+					"position": {
+						"vector": [0, -0.5, 0]
+					}
+				},
+				"left_leg": {
+					"rotation": {
+						"vector": [-90, 0, 0]
+					},
+					"position": {
+						"vector": [0, -2, 0]
+					}
+				},
+				"right_leg": {
+					"rotation": {
+						"vector": [90, 0, 0]
+					},
+					"position": {
+						"vector": [0, -2, 0]
+					}
+				},
+				"corpse": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.6667": {
+							"vector": [90, 0, 0],
+							"easing": "easeInOutBack"
+						},
+						"1.375": {
+							"vector": [180, 0, 0],
+							"easing": "easeInOutBack"
+						},
+						"2.0833": {
+							"vector": [270, 0, 0],
+							"easing": "easeInOutBack"
+						},
+						"2.7917": {
+							"vector": [360, 0, 0],
+							"easing": "easeInOutBack"
+						}
+					},
+					"position": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.0833": {
+							"vector": [0, 0.07, 0]
+						},
+						"0.1667": {
+							"vector": [0, 0.34, 0]
+						},
+						"0.25": {
+							"vector": [0, 0.6, 0]
+						},
+						"0.3333": {
+							"vector": [0, 0.62, 0]
+						},
+						"0.4167": {
+							"vector": [0, 0.3, 0]
+						},
+						"0.5": {
+							"vector": [0, -0.2, 0]
+						},
+						"0.5833": {
+							"vector": [0, -0.39, 0]
+						},
+						"0.6667": {
+							"vector": [0, -0.5, 0]
+						},
+						"0.7917": {
+							"vector": [0, -0.35, 0]
+						},
+						"0.875": {
+							"vector": [0, -0.44, 0]
+						},
+						"0.9583": {
+							"vector": [0, 0.2, 0]
+						},
+						"1.0417": {
+							"vector": [0, 0.79, 0]
+						},
+						"1.125": {
+							"vector": [0, 0.2, 0]
+						},
+						"1.2083": {
+							"vector": [0, 0.2, 0]
+						},
+						"1.2917": {
+							"vector": [0, 0.12, 0]
+						},
+						"1.375": {
+							"vector": [0, 0, 0]
+						},
+						"1.5": {
+							"vector": [0, 0.07, 0]
+						},
+						"1.5833": {
+							"vector": [0, 0.34, 0]
+						},
+						"1.6667": {
+							"vector": [0, 0.6, 0]
+						},
+						"1.75": {
+							"vector": [0, 0.62, 0]
+						},
+						"1.8333": {
+							"vector": [0, 0.3, 0]
+						},
+						"1.9167": {
+							"vector": [0, -0.2, 0]
+						},
+						"2.0": {
+							"vector": [0, -0.39, 0]
+						},
+						"2.0833": {
+							"vector": [0, -0.5, 0]
+						},
+						"2.2083": {
+							"vector": [0, -0.35, 0]
+						},
+						"2.2917": {
+							"vector": [0, -0.44, 0]
+						},
+						"2.375": {
+							"vector": [0, 0.2, 0]
+						},
+						"2.4583": {
+							"vector": [0, 0.79, 0]
+						},
+						"2.5417": {
+							"vector": [0, 0.2, 0]
+						},
+						"2.625": {
+							"vector": [0, 0.2, 0]
+						},
+						"2.7083": {
+							"vector": [0, 0.12, 0]
+						},
+						"2.7917": {
+							"vector": [0, 0, 0]
+						}
+					}
+				}
+			}
+		},
+		"animation.ploti.unsitting": {
+			"loop": "hold_on_last_frame",
+			"animation_length": 2.3333,
+			"bones": {
+				"head": {
+					"position": {
+						"0.0": {
+							"vector": [0, -0.5, 0]
+						},
+						"0.1667": {
+							"vector": [0, 0, 0]
+						}
+					}
+				},
+				"left_leg": {
+					"rotation": {
+						"0.0": {
+							"vector": [-90, 0, 0]
+						},
+						"0.1667": {
+							"vector": [0, 0, 0]
+						}
+					},
+					"position": {
+						"0.0": {
+							"vector": [0, -2, 0]
+						},
+						"0.1667": {
+							"vector": [0, 0, 0]
+						}
+					}
+				},
+				"right_leg": {
+					"rotation": {
+						"0.0": {
+							"vector": [90, 0, 0]
+						},
+						"0.1667": {
+							"vector": [0, 0, 0]
+						}
+					},
+					"position": {
+						"0.0": {
+							"vector": [0, -2, 0]
+						},
+						"0.1667": {
+							"vector": [0, 0, 0]
+						}
+					}
+				}
+			}
+		},
+		"animation.ploti.idle": {
+			"loop": true,
+			"animation_length": 1.375,
+			"bones": {
+				"head": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.25": {
+							"vector": [0, 10, 0]
+						},
+						"0.75": {
+							"vector": [0, -10, 0]
+						},
+						"1.0": {
+							"vector": [0, 0, 0]
+						}
+					},
+					"scale": {
+						"0.0": {
+							"vector": [1, 1, 1]
+						},
+						"0.5": {
+							"vector": [1.05, 1.05, 1.05]
+						},
+						"1.0": {
+							"vector": [1, 1, 1]
+						}
+					}
+				}
+			}
+		}
+	},
+	"geckolib_format_version": 2
+}
