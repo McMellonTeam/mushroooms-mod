@@ -3,19 +3,17 @@ package net.rodofire.mushrooomsmod.world.features.configuredfeatures;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.world.gen.feature.*;
+import net.rodofire.mushrooomsmod.world.features.config.CrystalConfig;
 import net.rodofire.mushrooomsmod.world.features.config.DirectionConfig;
 import net.rodofire.mushrooomsmod.world.features.config.ModMushroomFeatureConfig;
 import net.rodofire.mushrooomsmod.world.features.config.ModSimpleBlockFeatureConfig;
-import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.BlueLuminescentVinesFeature;
-import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.BushFeature;
-import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.ColorfulBushFeature;
+import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.*;
 import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.SimpleBlockFeature;
-import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.SimpleVinesFeature;
-import net.rodofire.mushrooomsmod.world.mushrooms.HugeBlueMushroom.HugeBlueMushroomFeature;
-import net.rodofire.mushrooomsmod.world.mushrooms.codemushrooms.*;
-import net.rodofire.mushrooomsmod.world.mushrooms.structuremushrooms.CustomGreenSecondMushroomFeature;
-import net.rodofire.mushrooomsmod.world.mushrooms.structuremushrooms.CustomRedFertileMushroom;
-import net.rodofire.mushrooomsmod.world.mushrooms.structuremushrooms.CustomRedHugeMushroomFeature;
+import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.mushrooms.HugeBlueMushroom.HugeBlueMushroomFeature;
+import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.mushrooms.codemushrooms.*;
+import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.mushrooms.structuremushrooms.CustomGreenSecondMushroomFeature;
+import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.mushrooms.structuremushrooms.CustomRedFertileMushroom;
+import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.mushrooms.structuremushrooms.CustomRedHugeMushroomFeature;
 
 public abstract class ModFeatures<FC extends FeatureConfig> {
 
@@ -35,6 +33,10 @@ public abstract class ModFeatures<FC extends FeatureConfig> {
     //Vines Features;
     public static Feature<TwistingVinesFeatureConfig> BLUE_LUMINESCENT_VINES;
     public static Feature<DirectionConfig> SIMPLE_VINES;
+
+    //Crystal
+    public static Feature<CrystalConfig> CRYSTAL;
+    public static Feature<ModSimpleBlockFeatureConfig> CRYSTAL_PILLAR;
 
     //Bush;
     public static Feature<DefaultFeatureConfig> BUSH;
@@ -58,6 +60,9 @@ public abstract class ModFeatures<FC extends FeatureConfig> {
 
         BLUE_LUMINESCENT_VINES = registercustomfeature("blue_luminescent_vines_feature", new BlueLuminescentVinesFeature(TwistingVinesFeatureConfig.CODEC));
         SIMPLE_VINES = registercustomfeature("simple_vines", new SimpleVinesFeature(DirectionConfig.CODEC));
+
+        CRYSTAL = registercustomfeature("crystal", new CrystalFeature(CrystalConfig.CODEC));
+        CRYSTAL_PILLAR = registercustomfeature("crystal_pillar", new BigCrystal(ModSimpleBlockFeatureConfig.CODEC));
 
         BUSH = registercustomfeature("bush_feature", new BushFeature(DefaultFeatureConfig.CODEC));
         COLORFUL_BUSH = registercustomfeature("colorful_bush_feature", new ColorfulBushFeature(DefaultFeatureConfig.CODEC));

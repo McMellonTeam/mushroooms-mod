@@ -204,7 +204,7 @@ public class ModItems {
                         //Vines
                         entries.add(ModItems.CAERULEA_VOLUBILIS_ITEM);
                         entries.add(ModItems.PINK_MUSHROOM_VINES_ITEM);
-                        //entries.add(ModBlocks.BLUE_LUMINESCENT_VINES);
+                        entries.add(ModBlocks.BLUE_LUMINESCENT_VINES);
 
                         //Big Mushrooms
                         entries.add(ModItems.BIG_PURPLE_MUSHROOM_SEED);
@@ -233,14 +233,16 @@ public class ModItems {
 
                         entries.add(ModItems.GROKI_SPAWN_EGG);
                         entries.add(ModItems.BOLETE_COW_SPAWN_EGG);
-                        entries.add(ModItems.PLOTI_SPAWN_EGG);
+                        //entries.add(ModItems.PLOTI_SPAWN_EGG);
 
                         //crystal
                         entries.add(ModItems.PINK_CRYSTAL_ITEM);
                         entries.add(ModBlocks.PINK_CRYSTAL_BLOCK);
 
                         entries.add(ModItems.BLUE_CRYSTAL_ITEM);
+                        /*entries.add(ModBlocks.BLUE_CRYSTAL_BLOCK);
                         entries.add(ModItems.RED_CRYSTAL_ITEM);
+                        entries.add(ModBlocks.RED_CRYSTAL_BLOCK);*/
 
                         entries.add(ModItems.CRUSHED_DIAMOND);
                         entries.add(ModItems.AMBER_ITEM);
