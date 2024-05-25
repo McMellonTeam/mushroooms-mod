@@ -1,4 +1,4 @@
-package net.rodofire.mushrooomsmod.world.mushrooms.codemushrooms;
+package net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.mushrooms.HugeBlueMushroom;
 
 import com.mojang.serialization.Codec;
 import net.minecraft.block.BlockState;
@@ -13,8 +13,8 @@ import net.minecraft.world.gen.feature.HugeMushroomFeature;
 import net.minecraft.world.gen.feature.HugeMushroomFeatureConfig;
 import net.minecraft.world.gen.feature.util.FeatureContext;
 
-public abstract class CustomLuminescentPinkMushroom extends Feature<HugeMushroomFeatureConfig> {
-    public CustomLuminescentPinkMushroom(Codec<HugeMushroomFeatureConfig> codec) {
+public abstract class CustomHugeBlueMushroomFeature extends Feature<HugeMushroomFeatureConfig> {
+    public CustomHugeBlueMushroomFeature(Codec<HugeMushroomFeatureConfig> codec) {
         super(codec);
     }
 

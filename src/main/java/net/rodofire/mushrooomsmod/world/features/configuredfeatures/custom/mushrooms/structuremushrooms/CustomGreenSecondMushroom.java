@@ -1,4 +1,4 @@
-package net.rodofire.mushrooomsmod.world.mushrooms.structuremushrooms;
+package net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.mushrooms.structuremushrooms;
 
 import com.mojang.serialization.Codec;
 import net.minecraft.block.BlockState;

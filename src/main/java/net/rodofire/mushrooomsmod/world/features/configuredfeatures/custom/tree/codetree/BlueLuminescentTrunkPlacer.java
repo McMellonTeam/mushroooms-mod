@@ -1,4 +1,4 @@
-package net.rodofire.mushrooomsmod.world.tree.codetree;
+package net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.tree.codetree;
 
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
@@ -10,7 +10,7 @@ import net.minecraft.world.gen.feature.TreeFeatureConfig;
 import net.minecraft.world.gen.foliage.FoliagePlacer;
 import net.minecraft.world.gen.trunk.TrunkPlacer;
 import net.minecraft.world.gen.trunk.TrunkPlacerType;
-import net.rodofire.mushrooomsmod.world.tree.ModTrunkPlacerTypes;
+import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.tree.ModTrunkPlacerTypes;
 
 import java.util.ArrayList;
 import java.util.List;

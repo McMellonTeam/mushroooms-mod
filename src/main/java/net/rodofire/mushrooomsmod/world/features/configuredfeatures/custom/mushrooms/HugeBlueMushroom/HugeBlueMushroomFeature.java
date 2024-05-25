@@ -1,4 +1,4 @@
-package net.rodofire.mushrooomsmod.world.mushrooms.HugeBlueMushroom;
+package net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.mushrooms.HugeBlueMushroom;
 
 import com.mojang.serialization.Codec;
 import net.minecraft.block.BlockState;

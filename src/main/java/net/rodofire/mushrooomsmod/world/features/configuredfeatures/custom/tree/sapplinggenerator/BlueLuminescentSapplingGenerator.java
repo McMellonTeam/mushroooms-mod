@@ -1,4 +1,4 @@
-package net.rodofire.mushrooomsmod.world.tree.sapplinggenerator;
+package net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.tree.sapplinggenerator;
 
 import net.minecraft.block.sapling.SaplingGenerator;
 import net.minecraft.registry.RegistryKey;
