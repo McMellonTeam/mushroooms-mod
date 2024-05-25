@@ -105,8 +105,6 @@ public class HammerItem extends ToolItem {
 
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
-        //tooltip.add((int) attackDamage,Text.translatable("tooltip.mushrooomsmod.hammer.attack_damage"));
-        tooltip.add(Text.translatable("tooltip.mushrooomsmod.hammer.attack_damage : " + (int) attackSpeed));
         tooltip.add(Text.translatable("tooltip.mushrooomsmod.hammer.usage").formatted(Formatting.AQUA));
         super.appendTooltip(stack, world, tooltip, context);
     }
