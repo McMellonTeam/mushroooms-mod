@@ -9,6 +9,7 @@ import net.rodofire.mushrooomsmod.effect.ModStatusEffects;
 import net.rodofire.mushrooomsmod.entity.ModEntities;
 import net.rodofire.mushrooomsmod.entity.custom.BoleteCowEntity;
 import net.rodofire.mushrooomsmod.entity.custom.GrokiEntity;
+import net.rodofire.mushrooomsmod.entity.custom.PlotiEntity;
 import net.rodofire.mushrooomsmod.item.ModItems;
 import net.rodofire.mushrooomsmod.particle.ModParticles;
 import net.rodofire.mushrooomsmod.recipe.ModRecipes;
@@ -16,7 +17,7 @@ import net.rodofire.mushrooomsmod.sound.ModSounds;
 import net.rodofire.mushrooomsmod.util.ModLootTableModifier;
 import net.rodofire.mushrooomsmod.world.features.configuredfeatures.ModFeatures;
 import net.rodofire.mushrooomsmod.world.gen.ModWorldGeneration;
-import net.rodofire.mushrooomsmod.world.tree.ModTrunkPlacerTypes;
+import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.tree.ModTrunkPlacerTypes;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -52,6 +53,7 @@ public class MushrooomsMod implements ModInitializer {
 
         FabricDefaultAttributeRegistry.register(ModEntities.GROKI, GrokiEntity.setAttributes());
         FabricDefaultAttributeRegistry.register(ModEntities.BOLETE_COW, BoleteCowEntity.setAttributes());
+        FabricDefaultAttributeRegistry.register(ModEntities.PLOTI, PlotiEntity.setAttributes());
         LOGGER.info("Starting MushrooomsMod!");
 
     }
