@@ -6,10 +6,11 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.StructureWorldAccess;
 import net.minecraft.world.gen.feature.Feature;
+import net.minecraft.world.gen.feature.FeatureConfig;
 import net.minecraft.world.gen.feature.util.FeatureContext;
 import net.rodofire.mushrooomsmod.world.features.config.ModSimpleBlockFeatureConfig;
 
-public class SimpleBlockFeature extends Feature<ModSimpleBlockFeatureConfig> {
+public class SimpleBlockFeature extends Feature<ModSimpleBlockFeatureConfig> implements FeatureConfig {
     public SimpleBlockFeature(Codec<ModSimpleBlockFeatureConfig> configCodec) {
         super(configCodec);
     }

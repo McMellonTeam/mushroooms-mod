@@ -53,6 +53,10 @@ public class ModUndergroundPlacedFeatures {
     public static final RegistryKey<PlacedFeature> BLUE_LUMINESCENT_VINES_DOWN_UNDERGROUND_PLACED_KEY = registerKey("blue_luminescent_vines_down_underground_placed_key");
     public static final RegistryKey<PlacedFeature> HANGING_ROOTS_UNDERGROUND_PLACED_KEY = registerKey("hanging_roots_underground_placed_key");
 
+    //Crystal
+    public static final RegistryKey<PlacedFeature> RED_CRYSTAL_UNDERGROUND_PLACED_KEY = registerKey("red_crystal_underground_placed_key");
+    public static final RegistryKey<PlacedFeature> BLUE_CRYSTAL_UNDERGROUND_PLACED_KEY = registerKey("blue_crystal_underground_placed_key");
+
     public static void bootstrap(Registerable<PlacedFeature> context) {
         var configuredFeatureRegistryEntryLookup = context.getRegistryLookup(RegistryKeys.CONFIGURED_FEATURE);
         //Mushrooms
@@ -88,6 +92,10 @@ public class ModUndergroundPlacedFeatures {
         register(context, HUGE_BROWN_MUSHROOM_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(TreeConfiguredFeatures.HUGE_BROWN_MUSHROOM), CountPlacementModifier.of(165), SquarePlacementModifier.of(), ModPlacedFeatures.STONE_LEVEL, BiomePlacementModifier.of());
         register(context, HUGE_RED_MUSHROOM_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(TreeConfiguredFeatures.HUGE_RED_MUSHROOM), CountPlacementModifier.of(170), SquarePlacementModifier.of(), ModPlacedFeatures.STONE_LEVEL, BiomePlacementModifier.of());
         register(context, FERTILE_RED_MUSHROOM_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.FERTILE_RED_MUSHROOM_KEY), CountPlacementModifier.of(240), SquarePlacementModifier.of(), ModPlacedFeatures.STONE_LEVEL, BiomePlacementModifier.of());
+
+        //Crystal
+        register(context, RED_CRYSTAL_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.RED_CRYSTAL_KEY), CountPlacementModifier.of(7), SquarePlacementModifier.of(), ModPlacedFeatures.CAVE_LEVEL, BiomePlacementModifier.of());
+        register(context, BLUE_CRYSTAL_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.BLUE_CRYSTAL_KEY), CountPlacementModifier.of(7), SquarePlacementModifier.of(), ModPlacedFeatures.CAVE_LEVEL, BiomePlacementModifier.of());
     }
 
     public static RegistryKey<PlacedFeature> registerKey(String name) {

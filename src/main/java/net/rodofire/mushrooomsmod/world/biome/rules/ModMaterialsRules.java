@@ -57,6 +57,7 @@ public class ModMaterialsRules {
 
 
                         ));
+
     }
 
     private static MaterialRules.MaterialRule makeStateRule(Block block) {
