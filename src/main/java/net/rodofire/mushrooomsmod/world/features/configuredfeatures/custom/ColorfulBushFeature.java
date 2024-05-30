@@ -1,6 +1,7 @@
 package net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom;
 
 import com.mojang.serialization.Codec;
+import me.emafire003.dev.structureplacerapi.StructurePlacerAPI;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -17,7 +18,6 @@ import net.minecraft.world.gen.feature.util.FeatureContext;
 import net.rodofire.mushrooomsmod.MushrooomsMod;
 import net.rodofire.mushrooomsmod.block.ModBlocks;
 import net.rodofire.mushrooomsmod.util.ModTags;
-import net.rodofire.mushrooomsmod.util.StructurePlacer;
 
 public class ColorfulBushFeature extends Feature<DefaultFeatureConfig> {
     public ColorfulBushFeature(Codec<DefaultFeatureConfig> configCodec) {
@@ -53,7 +53,7 @@ public class ColorfulBushFeature extends Feature<DefaultFeatureConfig> {
         BlockRotation rotation = getRanodomBlockRotation();
 
         if (!canGenerate(world, pos, 3, 2, rotation)) return false;
-        StructurePlacer bush = new StructurePlacer(world, new Identifier(MushrooomsMod.MOD_ID, "bush/bush_" + capnumber), pos, rotation);
+        StructurePlacerAPI bush = new StructurePlacerAPI(world, new Identifier(MushrooomsMod.MOD_ID, "bush/bush_" + capnumber), pos, rotation);
         bush.loadStructure();
         BlockState blockState = getLeaveBlock().getDefaultState().with(LeavesBlock.PERSISTENT, true);
         int a = 0;
@@ -104,5 +104,4 @@ public class ColorfulBushFeature extends Feature<DefaultFeatureConfig> {
         };
     }
 
-    ;
 }
