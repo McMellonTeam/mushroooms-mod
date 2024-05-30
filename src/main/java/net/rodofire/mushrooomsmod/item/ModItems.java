@@ -116,6 +116,7 @@ public class ModItems {
                         entries.add(ModBlocks.BLUE_LUMINESCENT_SCHROOM_DEEPSLATE);
                         entries.add(ModBlocks.GREEN_STONY_SCHROOM_DEPOT);
                         entries.add(ModBlocks.RHYOLITE);
+                        entries.add(ModBlocks.RHYOLITE_TILES);
 
                         /*-------------------- Natural Blocks --------------------*/
                         //Leaves
@@ -240,9 +241,9 @@ public class ModItems {
                         entries.add(ModBlocks.PINK_CRYSTAL_BLOCK);
 
                         entries.add(ModItems.BLUE_CRYSTAL_ITEM);
-                        /*entries.add(ModBlocks.BLUE_CRYSTAL_BLOCK);
+                        entries.add(ModBlocks.BLUE_CRYSTAL_BLOCK);
                         entries.add(ModItems.RED_CRYSTAL_ITEM);
-                        entries.add(ModBlocks.RED_CRYSTAL_BLOCK);*/
+                        entries.add(ModBlocks.RED_CRYSTAL_BLOCK);
 
                         entries.add(ModItems.CRUSHED_DIAMOND);
                         entries.add(ModItems.AMBER_ITEM);
@@ -295,7 +296,7 @@ public class ModItems {
     public static final Item RED_CRYSTAL_ITEM = registerItem("crystal_red_item", new AliasedBlockItem(ModBlocks.RED_CRYSTAL, new FabricItemSettings()));
     public static final Item AMBER_ITEM = registerItem("amber_item", new Item(new FabricItemSettings()));
     //Tools
-    public static final Item IRON_HAMMER = registerItem("iron_hammer", new HammerItem(ToolMaterials.IRON, 40, -3.7f, 4, new FabricItemSettings()));
+    public static final Item IRON_HAMMER = registerItem("iron_hammer", new HammerItem(ToolMaterials.IRON, 30, -3.7f, 4, new FabricItemSettings()));
 
 
     private static Item registerItem(String name, Item item) {

@@ -143,6 +143,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
         offerPressurePlateRecipe(exporter, ModBlocks.LAVA_BLACKSTONE_MEDIUM_BRICKS, ModBlocks.LAVA_BLACKSTONE_BRICKS);
         offerPressurePlateRecipe(exporter, ModBlocks.LAVA_BLACKSTONE_TINY_BRICKS, ModBlocks.LAVA_BLACKSTONE_MEDIUM_BRICKS);
+        offer2x2CompactingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.RHYOLITE_TILES, ModBlocks.RHYOLITE);
 
         //Wood
         offerPressurePlateRecipe(exporter, ModBlocks.BLUE_LUMINESCENT_PRESSURE_PLATE, ModBlocks.BLUE_LUMINESCENT_PLANKS);

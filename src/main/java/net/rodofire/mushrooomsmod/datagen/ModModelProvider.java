@@ -74,6 +74,7 @@ public class ModModelProvider extends FabricModelProvider {
 
         //Hard Blocks
         generator.registerSimpleCubeAll(ModBlocks.RHYOLITE);
+        generator.registerSimpleCubeAll(ModBlocks.RHYOLITE_TILES);
         generator.registerSimpleCubeAll(ModBlocks.LAVA_BLACKSTONE);
 
         //Potted Flowers

@@ -78,6 +78,7 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.BLUE_LUMINESCENT_SCHROOM_DEEPSLATE, oreDrops(ModBlocks.BLUE_LUMINESCENT_SCHROOM_DEEPSLATE, Blocks.DEEPSLATE.asItem()));
         addDrop(ModBlocks.GREEN_STONY_SCHROOM_DEPOT, oreDrops(ModBlocks.GREEN_STONY_SCHROOM_DEPOT, Blocks.STONE.asItem()));
         addDrop(ModBlocks.RHYOLITE);
+        addDrop(ModBlocks.RHYOLITE_TILES);
         addDrop(ModBlocks.LAVA_BLACKSTONE);
 
         //Mushrooms
