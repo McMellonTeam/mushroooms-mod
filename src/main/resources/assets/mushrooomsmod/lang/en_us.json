@@ -160,7 +160,7 @@
 
 
   "block.mushrooomsmod.amber_block" : "Amber Block",
-  "tooltip.mushrooomsmod.ambre_block" : "Don't put it on sand",
+  "tooltip.mushrooomsmod.ambre_block" : "Don't put it on sand !",
   "block.mushrooomsmod.amber_block_sandified" : "Sandified Amber Block",
   "tooltip.mushrooomsmod.sandified_ambre" : "Use a brush to make it beatiful again",
   "block.mushrooomsmod.amber_ore" : "Amber Ore",
@@ -195,7 +195,7 @@
   "item.mushrooomsmod.crushed_diamond" : "Crushed Diamonds",
   "item.mushrooomsmod.crystal_pink_item" : "Pink Crystal",
   "item.mushrooomsmod.crystal_blue_item" : "Blue Crystal",
-  "item.mushrooomsmod.amber_item" : "Blue Crystal",
+  "item.mushrooomsmod.amber_item" : "Amber",
 
   "item.mushrooomsmod.iron_hammer" : "Iron Hammer",
   "tooltip.mushrooomsmod.hammer.attack_damage" : "Attack Damage ",
