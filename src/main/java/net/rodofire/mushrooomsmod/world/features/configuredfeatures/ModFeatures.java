@@ -71,6 +71,6 @@ public abstract class ModFeatures<FC extends FeatureConfig> {
     }
 
     private static <C extends FeatureConfig, F extends Feature<C>> F registercustomfeature(String name, F feature) {
-        return (F) Registry.register(Registries.FEATURE, name, feature);
+        return Registry.register(Registries.FEATURE, name, feature);
     }
 }

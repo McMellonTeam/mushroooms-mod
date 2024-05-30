@@ -36,6 +36,7 @@ public class CrystalFeature extends Feature<CrystalConfig> {
             Direction direction = getDirection(world, mutable);
             if (direction == null) continue;
             maxheight = getHeight(world, mutable, direction, maxheight);
+            if (maxheight <= 0) continue;
             int height = Random.create().nextBetween(1, maxheight);
             generateColumn(world, mutable, direction, height, blockState);
         }
