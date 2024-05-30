@@ -20,25 +20,32 @@ public class BigCrystal extends Feature<ModSimpleBlockFeatureConfig> {
     @Override
     public boolean generate(FeatureContext<ModSimpleBlockFeatureConfig> context) {
         BlockPos pos = context.getOrigin();
-        BlockPos secondpos = pos.add(Random.create().nextBetween(1, 20) * randomOpposite(), Random.create().nextBetween(1, 30) * randomOpposite(), Random.create().nextBetween(1, 20) * randomOpposite());
+        BlockPos secondpos = pos.add(Random.create().nextBetween(1, 20) * randomOpposite(), Random.create().nextBetween(6, 30) * randomOpposite(), Random.create().nextBetween(1, 20) * randomOpposite());
+
         ModSimpleBlockFeatureConfig config = context.getConfig();
         Random random = context.getRandom();
         StructureWorldAccess world = context.getWorld();
         BlockState state = config.blockprovider.get(random, pos);
         BlockPos.Mutable mutable = new BlockPos.Mutable();
 
+        mutable.set(pos);
+
+        BlockPos middlestate = new BlockPos((secondpos.getX() + pos.getX()) / 2 , (secondpos.getY() + pos.getY()) / 2,( secondpos.getZ() + pos.getZ()) / 2);
+        BlockState state1 = world.getBlockState(pos);
+        BlockState state2 = world.getBlockState(middlestate);
+        if (!state2.isAir()) return false;
+        if (state1.isAir() && world.getBlockState(mutable.down()).isAir() && world.getBlockState(mutable.up()).isAir()) return false;
         //create a round base
-        int baselarge = Random.create().nextBetween(2,5);
+        int baselarge = Random.create().nextBetween(2, 5);
         for (int i = 1; i < baselarge; i++) {
-            for (float j = (float) -Math.PI; j < Math.PI; j += (float) (Math.PI / (8 * i))) {
-                int x = (int) (i * Math.cos(j));
-                int z = (int) (i * Math.sin(j));
+            for (float j = (float) -Math.PI; j < Math.PI; j += (float) (Math.PI / (6 * i))) {
+                int x = (int) ((i) * Math.cos(j));
+                int z = (int) ((i) * Math.sin(j));
                 mutable.set(pos, x, 0, z);
 
                 drawLine(world, mutable, secondpos, state);
             }
         }
-
         return true;
     }
 
