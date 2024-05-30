@@ -59,7 +59,6 @@ public class ForgeBlock extends BlockWithEntity implements BlockEntityProvider {
         ItemStack putItemStack = itemStack.getItem().getDefaultStack();
         int itemfirstslot = inventory.getStack(0).getCount();
         putItemStack.setCount(itemfirstslot + 1);
-        System.out.println(inventory.getStack(0) +"  "+inventory.getStack(1));
         if (!inventory.isEmpty()) {
             //code to give the inventory to the player
             if (itemStack.isEmpty() || !itemStack.isIn(ModTags.Items.FORGEABLE_ITEMS)) {
@@ -68,9 +67,11 @@ public class ForgeBlock extends BlockWithEntity implements BlockEntityProvider {
                     if (inventory.getStack(1).isEmpty()) {
                         player.giveItemStack(inventory.getStack(0));
                         inventory.removeStack(0);
+                        inventory.setStack(0, ItemStack.EMPTY);
                     } else {
                         player.giveItemStack(inventory.getStack(1));
                         inventory.removeStack(1);
+                        inventory.setStack(0, ItemStack.EMPTY);
                     }
                     return ActionResult.SUCCESS;
                 } else {
@@ -78,9 +79,11 @@ public class ForgeBlock extends BlockWithEntity implements BlockEntityProvider {
                     if (inventory.getStack(1).isEmpty()) {
                         dropStack(world, pos.up(), inventory.getStack(0));
                         inventory.removeStack(0);
+                        inventory.setStack(0, ItemStack.EMPTY);
                     } else {
                         dropStack(world, pos.up(), inventory.getStack(1));
                         inventory.removeStack(1);
+                        inventory.setStack(0, ItemStack.EMPTY);
                     }
                     return ActionResult.SUCCESS;
                 }

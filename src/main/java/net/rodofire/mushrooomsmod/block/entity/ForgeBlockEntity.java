@@ -53,7 +53,6 @@ public class ForgeBlockEntity extends BlockEntity implements ImplementedInventor
 
     public ArrayList<ItemStack> getRenderStack() {
         ArrayList<ItemStack> itemStacks = new ArrayList<>();
-        //System.out.println(inventory.get(0) + "   " + inventory.get(1));
         if (inventory.get(0).getCount() == 0 && inventory.get(1).getCount() == 0) itemStacks.add(ItemStack.EMPTY);
         else if (inventory.get(0).getCount() != 0 && inventory.get(1).getCount() == 0) itemStacks.add(inventory.get(0));
         else if (inventory.get(1).getCount() != 0 && inventory.get(0).getCount() == 0) itemStacks.add(inventory.get(1));
