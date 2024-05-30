@@ -59,5 +59,12 @@ public class ModBiomeFeatures {
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModSurfacePlacedFeatures.YELLOW_PERENNIAL_PLACED_KEY);
     }
 
+    public static void addCrystalCaveFeatures(GenerationSettings.LookupBackedBuilder builder) {
+        builder.feature(GenerationStep.Feature.UNDERGROUND_DECORATION, ModUndergroundPlacedFeatures.RED_CRYSTAL_UNDERGROUND_PLACED_KEY);
+        builder.feature(GenerationStep.Feature.UNDERGROUND_DECORATION, ModUndergroundPlacedFeatures.RED_CRYSTAL_PILLAR_UNDERGROUND_PLACED_KEY);
+        builder.feature(GenerationStep.Feature.UNDERGROUND_DECORATION, ModUndergroundPlacedFeatures.BLUE_CRYSTAL_UNDERGROUND_PLACED_KEY);
+        builder.feature(GenerationStep.Feature.UNDERGROUND_DECORATION, ModUndergroundPlacedFeatures.BLUE_CRYSTAL_PILLAR_UNDERGROUND_PLACED_KEY);
+    }
+
 
 }

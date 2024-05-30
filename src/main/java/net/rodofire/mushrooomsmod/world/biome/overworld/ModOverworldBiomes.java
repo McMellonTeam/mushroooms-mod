@@ -25,6 +25,7 @@ ModOverworldBiomes {
     public static final RegistryKey<Biome> VANILLA_SHROOM_CAVE = RegistryKey.of(RegistryKeys.BIOME, new Identifier(MushrooomsMod.MOD_ID, "vanilla_schroom_cave"));
     public static final RegistryKey<Biome> MAGICAL_PLAIN = RegistryKey.of(RegistryKeys.BIOME, new Identifier(MushrooomsMod.MOD_ID, "magical_plain"));
     public static final RegistryKey<Biome> COLORFUL_PLAINS = RegistryKey.of(RegistryKeys.BIOME, new Identifier(MushrooomsMod.MOD_ID, "colorful_plain"));
+    public static final RegistryKey<Biome> CRYSTAL_CAVE = RegistryKey.of(RegistryKeys.BIOME, new Identifier(MushrooomsMod.MOD_ID, "crystal_cave"));
 
     public static void bootstrap(Registerable<Biome> context) {
         context.register(SHROOM_ISLAND, shroomIsland(context));
@@ -33,6 +34,7 @@ ModOverworldBiomes {
         context.register(VANILLA_SHROOM_CAVE, vanillaSchroomCave(context));
         context.register(MAGICAL_PLAIN, magicalPlains(context));
         context.register(COLORFUL_PLAINS, colorfulPlains(context));
+        context.register(CRYSTAL_CAVE, crystalCave(context));
     }
 
     public static Biome shroomIsland(Registerable<Biome> context) {
@@ -250,6 +252,39 @@ ModOverworldBiomes {
                         .waterFogColor(329011)
                         .skyColor(0x18A4E6)
                         .fogColor(0x7BC5E8)
+                        .build())
+                .build();
+    }
+
+    public static Biome crystalCave(Registerable<Biome> context) {
+        SpawnSettings.Builder spawnBuilder = new SpawnSettings.Builder();
+
+
+        DefaultBiomeFeatures.addFarmAnimals(spawnBuilder);
+        DefaultBiomeFeatures.addBatsAndMonsters(spawnBuilder);
+
+        GenerationSettings.LookupBackedBuilder biomeBuilder =
+                new GenerationSettings.LookupBackedBuilder(context.getRegistryLookup(RegistryKeys.PLACED_FEATURE),
+                        context.getRegistryLookup(RegistryKeys.CONFIGURED_CARVER));
+
+        ModBiomeFeatures.globalOverworldGeneration(biomeBuilder);
+        ModBiomeFeatures.addCrystalCaveFeatures(biomeBuilder);
+
+        biomeBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, VegetationPlacedFeatures.TREES_PLAINS);
+
+
+        return new Biome.Builder()
+                .precipitation(true)
+                .downfall(0.4f)
+                .temperature(0.7f)
+                .generationSettings(biomeBuilder.build())
+                .spawnSettings(spawnBuilder.build())
+                .effects((new BiomeEffects.Builder())
+                        .waterColor(4159204)
+                        .waterFogColor(329011)
+                        .skyColor(0x30c918)
+                        .fogColor(12638463)
+                        .moodSound(BiomeMoodSound.CAVE)
                         .build())
                 .build();
     }

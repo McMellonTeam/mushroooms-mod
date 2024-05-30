@@ -57,9 +57,9 @@ public class ModOverworldRegion extends Region {
                 .temperature(ParameterUtils.Temperature.span(ParameterUtils.Temperature.COOL, ParameterUtils.Temperature.NEUTRAL))
                 .humidity(ParameterUtils.Humidity.span(ParameterUtils.Humidity.NEUTRAL, ParameterUtils.Humidity.HUMID))
                 .continentalness(MultiNoiseUtil.ParameterRange.of(0.03f, 0.55f))
-                .erosion( ParameterUtils.Erosion.EROSION_0, ParameterUtils.Erosion.EROSION_1)
+                .erosion(ParameterUtils.Erosion.EROSION_0, ParameterUtils.Erosion.EROSION_1)
                 .depth(ParameterUtils.Depth.UNDERGROUND)
-                .weirdness(MultiNoiseUtil.ParameterRange.of(-0.7f,1.0f))
+                .weirdness(MultiNoiseUtil.ParameterRange.of(-0.7f, 1.0f))
                 .build().forEach(point -> builder.add(point, ModOverworldBiomes.VANILLA_SHROOM_CAVE));
 
         //Magical Plain
@@ -71,6 +71,16 @@ public class ModOverworldRegion extends Region {
                                 .depth(ParameterUtils.Depth.SURFACE)
                                     .weirdness(ParameterUtils.Weirdness.MID_SLICE_NORMAL_ASCENDING, ParameterUtils.Weirdness.MID_SLICE_NORMAL_DESCENDING)
                                         .build().forEach(point -> builder.add(point, ModOverworldBiomes.MAGICAL_PLAIN));*/
+
+        //Crystal Cave
+        new ParameterUtils.ParameterPointListBuilder()
+                .temperature(ParameterUtils.Temperature.HOT)
+                .humidity(ParameterUtils.Humidity.NEUTRAL)
+                .continentalness(ParameterUtils.Continentalness.MID_INLAND)
+                .erosion(ParameterUtils.Erosion.EROSION_3)
+                .depth(ParameterUtils.Depth.UNDERGROUND)
+                .weirdness(MultiNoiseUtil.ParameterRange.of(0.03f, 0.55f))
+                .build().forEach(point -> builder.add(point, ModOverworldBiomes.CRYSTAL_CAVE));
 
 
         builder.build().forEach(mapper);

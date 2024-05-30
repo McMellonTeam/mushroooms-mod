@@ -1,9 +1,9 @@
 {
-  "feature": "mushrooomsmod:red_crystal_key",
+  "feature": "mushrooomsmod:blue_crystal_pillar_key",
   "placement": [
     {
       "type": "minecraft:count",
-      "count": 61
+      "count": 19
     },
     {
       "type": "minecraft:in_square"
