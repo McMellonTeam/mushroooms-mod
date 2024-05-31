@@ -18,12 +18,12 @@ import net.minecraft.world.WorldAccess;
 import net.minecraft.world.WorldView;
 import org.jetbrains.annotations.Nullable;
 
-public class Crystal extends Block {
+public class StraightCrystal extends Block {
     public static final VoxelShape SHAPE = Block.createCuboidShape(3, 0, 3, 13, 16, 13);
     public static final DirectionProperty VERTICAL_DIRECTION = Properties.VERTICAL_DIRECTION;
     public static final IntProperty STAGE = Properties.AGE_1;
 
-    public Crystal(Settings settings) {
+    public StraightCrystal(Settings settings) {
         super(settings);
     }
 
