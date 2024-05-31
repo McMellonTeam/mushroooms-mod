@@ -1,7 +1,7 @@
-// 1.20.1	2024-05-25T22:59:06.421615	Mushroooms Mod/Tags for minecraft:block
+// 1.20.1	2024-05-31T12:09:19.5144964	Mushroooms Mod/Tags for minecraft:block
 0ad9a4e26d521a10f127cdb4bfc33a5fced618a6 data\minecraft\tags\blocks\mineable\shovel.json
 951490fd884bef88dcd4a65b9791edf9b311bca6 data\minecraft\tags\blocks\mineable\axe.json
-de2dd24f7cea4cc294ce0291330ec643e940bbd0 data\minecraft\tags\blocks\mineable\pickaxe.json
+f9505a4949a0bc167a46de7345b0e801d9f904a0 data\minecraft\tags\blocks\mineable\pickaxe.json
 9680deed45f80f5d20e65b9f09a3e45729c43fef data\minecraft\tags\blocks\fence_gates.json
 a486af8ceb1090644c88ea73b05f367275d4a920 data\minecraft\tags\blocks\fences.json
 2e5e36c8f7ac84bff3477b4695efc45e7ef9822a data\minecraft\tags\blocks\climbable.json
