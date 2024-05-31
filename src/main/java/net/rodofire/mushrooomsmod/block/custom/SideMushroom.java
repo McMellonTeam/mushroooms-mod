@@ -36,14 +36,13 @@ public class SideMushroom extends Block {
 
     @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
-        switch ((Direction) state.get(FACING)) {
+        switch (state.get(FACING)) {
             case NORTH:
                 return NORTH_SHAPE;
             case SOUTH:
                 return SOUTH_SHAPE;
             case WEST:
                 return WEST_SHAPE;
-            case EAST:
             default:
                 return EAST_SHAPE;
         }
@@ -56,7 +55,7 @@ public class SideMushroom extends Block {
 
     @Override
     public boolean canPlaceAt(BlockState state, WorldView world, BlockPos pos) {
-        Direction direction = (Direction) state.get(FACING);
+        Direction direction = state.get(FACING);
         return this.canPlaceOn(world, pos.offset(direction.getOpposite()), direction) && (world.getBlockState(pos).isAir() || world.getBlockState(pos).getBlock() == this);
     }
 
