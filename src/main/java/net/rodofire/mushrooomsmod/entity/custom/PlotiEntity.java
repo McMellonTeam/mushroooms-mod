@@ -24,7 +24,7 @@ import software.bernie.geckolib.core.object.PlayState;
 
 public class PlotiEntity extends AnimalEntity implements GeoEntity {
 
-    private AnimatableInstanceCache cache = new SingletonAnimatableInstanceCache(this);
+    private final AnimatableInstanceCache cache = new SingletonAnimatableInstanceCache(this);
     protected static final TrackedData<Boolean> SIT_FLAGS = DataTracker.registerData(PlotiEntity.class, TrackedDataHandlerRegistry.BOOLEAN);
     private boolean sitting;
     public int sittingtime = 0;
@@ -80,7 +80,7 @@ public class PlotiEntity extends AnimalEntity implements GeoEntity {
     private PlayState predicate(AnimationState<GeoAnimatable> geoAnimatableAnimationState) {
         if (!this.isSit() && geoAnimatableAnimationState.isMoving()) {
             geoAnimatableAnimationState.getController().setAnimation(RawAnimation.begin().then("animation.ploti.walk", Animation.LoopType.LOOP));
-        } else if (!this.isSit() && geoAnimatableAnimationState.isMoving()) {
+        } else if (this.isSit() && geoAnimatableAnimationState.isMoving()) {
             geoAnimatableAnimationState.getController().setAnimation(RawAnimation.begin().then("animation.ploti.side_walking", Animation.LoopType.LOOP));
         } else if (this.isSitting()) {
             geoAnimatableAnimationState.getController().setAnimation(RawAnimation.begin().then("animation.ploti.sit", Animation.LoopType.HOLD_ON_LAST_FRAME));

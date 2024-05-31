@@ -20,7 +20,7 @@ import software.bernie.geckolib.core.animation.*;
 import software.bernie.geckolib.core.object.PlayState;
 
 public class BoleteCowEntity extends CowEntity implements GeoEntity {
-    private AnimatableInstanceCache cache = new SingletonAnimatableInstanceCache(this);
+    private final AnimatableInstanceCache cache = new SingletonAnimatableInstanceCache(this);
 
     public BoleteCowEntity(EntityType<? extends CowEntity> entityType, World world) {
         super(entityType, world);
