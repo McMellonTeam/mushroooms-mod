@@ -117,8 +117,10 @@ public class ModConfiguredFeatures<FC extends FeatureConfig> {
     //Crystal
     public static final RegistryKey<ConfiguredFeature<?,?>> RED_CRYSTAL_KEY = registerKey("red_crystal_key");
     public static final RegistryKey<ConfiguredFeature<?,?>> BLUE_CRYSTAL_KEY = registerKey("blue_crystal_key");
+    public static final RegistryKey<ConfiguredFeature<?,?>> WHITE_CRYSTAL_KEY = registerKey("white_crystal_key");
     public static final RegistryKey<ConfiguredFeature<?,?>> BLUE_CRYSTAL_PILLAR_KEY = registerKey("blue_crystal_pillar_key");
     public static final RegistryKey<ConfiguredFeature<?,?>> RED_CRYSTAL_PILLAR_KEY = registerKey("red_crystal_pillar_key");
+    public static final RegistryKey<ConfiguredFeature<?,?>> WHITE_CRYSTAL_PILLAR_KEY = registerKey("white_crystal_pillar_key");
 
 
     public static void bootstrap(Registerable<ConfiguredFeature<?, ?>> context) {
@@ -223,8 +225,10 @@ public class ModConfiguredFeatures<FC extends FeatureConfig> {
         //Crystal
         register(context, RED_CRYSTAL_KEY, ModFeatures.CRYSTAL, new CrystalConfig(15,9,BlockStateProvider.of(ModBlocks.RED_CRYSTAL)));
         register(context, BLUE_CRYSTAL_KEY, ModFeatures.CRYSTAL, new CrystalConfig(15, 9, BlockStateProvider.of(ModBlocks.BLUE_CRYSTAL)));
+        register(context, WHITE_CRYSTAL_KEY, Feature.FLOWER, new RandomPatchFeatureConfig(33, 9, 3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.WHITE_CRYSTAL)))));
         register(context, BLUE_CRYSTAL_PILLAR_KEY, ModFeatures.CRYSTAL_PILLAR, new ModSimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.BLUE_CRYSTAL_BLOCK)));
         register(context, RED_CRYSTAL_PILLAR_KEY, ModFeatures.CRYSTAL_PILLAR, new ModSimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.RED_CRYSTAL_BLOCK)));
+        register(context, WHITE_CRYSTAL_PILLAR_KEY, ModFeatures.CRYSTAL_PILLAR, new ModSimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.WHITE_CRYSTAL_BLOCK)));
     }
 
     public static RegistryKey<ConfiguredFeature<?, ?>> registerKey(String name) {

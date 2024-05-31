@@ -244,6 +244,8 @@ public class ModItems {
                         entries.add(ModBlocks.BLUE_CRYSTAL_BLOCK);
                         entries.add(ModItems.RED_CRYSTAL_ITEM);
                         entries.add(ModBlocks.RED_CRYSTAL_BLOCK);
+                        entries.add(ModBlocks.WHITE_CRYSTAL);
+                        entries.add(ModBlocks.WHITE_CRYSTAL_BLOCK);
 
                         entries.add(ModItems.CRUSHED_DIAMOND);
                         entries.add(ModItems.AMBER_ITEM);

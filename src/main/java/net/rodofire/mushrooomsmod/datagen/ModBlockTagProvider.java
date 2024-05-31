@@ -40,7 +40,9 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.BLUE_CRYSTAL)
                 .add(ModBlocks.BLUE_CRYSTAL_BLOCK)
                 .add(ModBlocks.RED_CRYSTAL)
-                .add(ModBlocks.RED_CRYSTAL_BLOCK);
+                .add(ModBlocks.RED_CRYSTAL_BLOCK)
+                .add(ModBlocks.WHITE_CRYSTAL_BLOCK)
+                .add(ModBlocks.WHITE_CRYSTAL);
 
         //Shovel
         getOrCreateTagBuilder(BlockTags.SHOVEL_MINEABLE)

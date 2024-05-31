@@ -56,8 +56,10 @@ public class ModUndergroundPlacedFeatures {
     //Crystal
     public static final RegistryKey<PlacedFeature> RED_CRYSTAL_UNDERGROUND_PLACED_KEY = registerKey("red_crystal_underground_placed_key");
     public static final RegistryKey<PlacedFeature> BLUE_CRYSTAL_UNDERGROUND_PLACED_KEY = registerKey("blue_crystal_underground_placed_key");
+    public static final RegistryKey<PlacedFeature> WHITE_CRYSTAL_UNDERGROUND_PLACED_KEY = registerKey("white_crystal_underground_placed_key");
     public static final RegistryKey<PlacedFeature> RED_CRYSTAL_PILLAR_UNDERGROUND_PLACED_KEY = registerKey("red_crystal_pillar_underground_placed_key");
     public static final RegistryKey<PlacedFeature> BLUE_CRYSTAL_PILLAR_UNDERGROUND_PLACED_KEY = registerKey("blue_crystal_pillar_underground_placed_key");
+    public static final RegistryKey<PlacedFeature> WHITE_CRYSTAL_PILLAR_UNDERGROUND_PLACED_KEY = registerKey("white_crystal_pillar_underground_placed_key");
 
     public static void bootstrap(Registerable<PlacedFeature> context) {
         var configuredFeatureRegistryEntryLookup = context.getRegistryLookup(RegistryKeys.CONFIGURED_FEATURE);
@@ -98,8 +100,10 @@ public class ModUndergroundPlacedFeatures {
         //Crystal
         register(context, RED_CRYSTAL_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.RED_CRYSTAL_KEY), CountPlacementModifier.of(61), SquarePlacementModifier.of(), ModPlacedFeatures.CAVE_LEVEL, BiomePlacementModifier.of());
         register(context, BLUE_CRYSTAL_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.BLUE_CRYSTAL_KEY), CountPlacementModifier.of(61), SquarePlacementModifier.of(), ModPlacedFeatures.CAVE_LEVEL, BiomePlacementModifier.of());
+        register(context, WHITE_CRYSTAL_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.WHITE_CRYSTAL_KEY), CountPlacementModifier.of(61), SquarePlacementModifier.of(), ModPlacedFeatures.CAVE_LEVEL, BiomePlacementModifier.of());
         register(context, RED_CRYSTAL_PILLAR_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.RED_CRYSTAL_PILLAR_KEY), CountPlacementModifier.of(19), SquarePlacementModifier.of(), ModPlacedFeatures.CAVE_LEVEL, BiomePlacementModifier.of());
         register(context, BLUE_CRYSTAL_PILLAR_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.BLUE_CRYSTAL_PILLAR_KEY), CountPlacementModifier.of(19), SquarePlacementModifier.of(), ModPlacedFeatures.CAVE_LEVEL, BiomePlacementModifier.of());
+        register(context, WHITE_CRYSTAL_PILLAR_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.WHITE_CRYSTAL_PILLAR_KEY), CountPlacementModifier.of(19), SquarePlacementModifier.of(), ModPlacedFeatures.CAVE_LEVEL, BiomePlacementModifier.of());
     }
 
     public static RegistryKey<PlacedFeature> registerKey(String name) {
