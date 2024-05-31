@@ -20,16 +20,16 @@ import org.jetbrains.annotations.Nullable;
 import java.util.function.ToIntFunction;
 
 public interface PinkMushroomVines {
-    public static final VoxelShape SHAPE = Block.createCuboidShape(1.0, 0.0, 1.0, 15.0, 16.0, 15.0);
-    public static final BooleanProperty BERRIES = Properties.BERRIES;
+    VoxelShape SHAPE = Block.createCuboidShape(3, 0.0, 3, 15.0, 1613.0, 13);
+    BooleanProperty BERRIES = Properties.BERRIES;
 
 
-    public static ActionResult pickBerries(@Nullable Entity picker, BlockState state, World world, BlockPos pos) {
+    static ActionResult pickBerries(@Nullable Entity picker, BlockState state, World world, BlockPos pos) {
         if (state.get(BERRIES).booleanValue()) {
             Block.dropStack(world, pos, new ItemStack(ModItems.PINK_MUSHROOM_VINES_ITEM, 1));
             float f = MathHelper.nextBetween(world.random, 0.8f, 1.2f);
             world.playSound(null, pos, SoundEvents.BLOCK_CAVE_VINES_PICK_BERRIES, SoundCategory.BLOCKS, 1.0f, f);
-            BlockState blockState = (BlockState) state.with(BERRIES, false);
+            BlockState blockState = state.with(BERRIES, false);
             world.setBlockState(pos, blockState, Block.NOTIFY_LISTENERS);
             world.emitGameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Emitter.of(picker, blockState));
             return ActionResult.success(world.isClient);
@@ -37,11 +37,11 @@ public interface PinkMushroomVines {
         return ActionResult.PASS;
     }
 
-    public static boolean hasBerries(BlockState state) {
-        return state.contains(BERRIES) && state.get(BERRIES) != false;
+    static boolean hasBerries(BlockState state) {
+        return state.contains(BERRIES) && state.get(BERRIES);
     }
 
-    public static ToIntFunction<BlockState> getLuminanceSupplier(int luminance) {
-        return state -> state.get(Properties.BERRIES) != false ? luminance : 0;
+    static ToIntFunction<BlockState> getLuminanceSupplier(int luminance) {
+        return state -> state.get(Properties.BERRIES) ? luminance : 0;
     }
 }
