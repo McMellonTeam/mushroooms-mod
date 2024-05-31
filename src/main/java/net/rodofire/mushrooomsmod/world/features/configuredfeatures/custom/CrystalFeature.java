@@ -8,7 +8,7 @@ import net.minecraft.util.math.random.Random;
 import net.minecraft.world.StructureWorldAccess;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.util.FeatureContext;
-import net.rodofire.mushrooomsmod.block.custom.Crystal;
+import net.rodofire.mushrooomsmod.block.custom.StraightCrystal;
 import net.rodofire.mushrooomsmod.world.features.config.CrystalConfig;
 
 
@@ -60,8 +60,8 @@ public class CrystalFeature extends Feature<CrystalConfig> {
 
     public void generateColumn(StructureWorldAccess world, BlockPos pos, Direction direction, int maxheight, BlockState state) {
         for (int i = 0 ; i<maxheight;++i){
-            world.setBlockState(pos.offset(direction, i), state.with(Crystal.VERTICAL_DIRECTION, direction).with(Crystal.STAGE, 1), 2);
+            world.setBlockState(pos.offset(direction, i), state.with(StraightCrystal.VERTICAL_DIRECTION, direction).with(StraightCrystal.STAGE, 1), 2);
         }
-        world.setBlockState(pos.offset(direction, maxheight), state.with(Crystal.VERTICAL_DIRECTION, direction).with(Crystal.STAGE, 0), 2);
+        world.setBlockState(pos.offset(direction, maxheight), state.with(StraightCrystal.VERTICAL_DIRECTION, direction).with(StraightCrystal.STAGE, 0), 2);
     }
 }
