@@ -292,8 +292,7 @@ public class CustomGreenSecondMushroomFeature extends CustomGreenSecondMushroom 
 
             mutable.set(pos, x, height - 2, z);
 
-            boolean blockontop = false;
-            if (world.getBlockState(mutable.up()).isOf(blockstate.getBlock())) blockontop = true;
+            boolean blockontop = world.getBlockState(mutable.up()).isOf(blockstate.getBlock());
 
             while (!blockontop) {
 

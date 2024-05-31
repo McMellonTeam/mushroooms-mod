@@ -11,7 +11,7 @@ public class DelicateLavaBlackstone extends Block {
 
     public DelicateLavaBlackstone(Settings settings, int maxboom) {
         super(settings);
-        this.maxboom = maxboom;
+        DelicateLavaBlackstone.maxboom = maxboom;
     }
 
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
