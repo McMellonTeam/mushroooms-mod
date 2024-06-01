@@ -92,4 +92,16 @@ public class StraightCrystal extends Block {
         }
         return null;
     }
+
+    public static void generateStraightCrystal(World world, BlockPos pos, BlockState state, int height) {
+        for (int i = 0; i < height; i++) {
+            if (world.getBlockState(pos.up(i+1)).isAir()) {
+                world.setBlockState(pos.up(i), state.with(VERTICAL_DIRECTION, Direction.UP).with(STAGE, 1));
+                continue;
+            }
+            world.setBlockState(pos.up(i), state.with(VERTICAL_DIRECTION, Direction.UP).with(STAGE, 0));
+            return;
+        }
+        world.setBlockState(pos.up(height), state.with(VERTICAL_DIRECTION, Direction.UP).with(STAGE, 0));
+    }
 }
