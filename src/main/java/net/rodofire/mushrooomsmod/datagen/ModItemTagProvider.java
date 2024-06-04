@@ -48,5 +48,8 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(ModBlocks.BLUE_LUMINESCENT_STRIPPED_WOOD.asItem())
                 .add(ModBlocks.BLUE_LUMINESCENT_WOOD.asItem());
 
+        getOrCreateTagBuilder(ModTags.Items.HAMMERS)
+                .add(ModItems.IRON_HAMMER);
+
     }
 }
