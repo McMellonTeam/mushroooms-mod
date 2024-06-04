@@ -20,7 +20,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.function.ToIntFunction;
 
 public interface PinkMushroomVines {
-    VoxelShape SHAPE = Block.createCuboidShape(3, 0.0, 3, 15.0, 1613.0, 13);
+    VoxelShape SHAPE = Block.createCuboidShape(4, 0, 4, 12.0, 16, 12);
     BooleanProperty BERRIES = Properties.BERRIES;
 
 
