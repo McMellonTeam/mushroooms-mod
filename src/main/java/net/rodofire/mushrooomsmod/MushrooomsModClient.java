@@ -4,16 +4,19 @@ import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
+import net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.render.block.entity.BlockEntityRendererFactories;
 import net.rodofire.mushrooomsmod.block.ModBlockEntities;
 import net.rodofire.mushrooomsmod.block.ModBlocks;
 import net.rodofire.mushrooomsmod.block.entity.renderer.ForgeBlockEntityRenderer;
+import net.rodofire.mushrooomsmod.client.HammerHUDOverlay;
 import net.rodofire.mushrooomsmod.entity.ModEntities;
 import net.rodofire.mushrooomsmod.entity.client.renderer.BoleteCowRenderer;
 import net.rodofire.mushrooomsmod.entity.client.renderer.CrystalCreeperRenderer;
 import net.rodofire.mushrooomsmod.entity.client.renderer.GrokiRenderer;
 import net.rodofire.mushrooomsmod.entity.client.renderer.PlotiRenderer;
+import net.rodofire.mushrooomsmod.networking.ModNetwork;
 import net.rodofire.mushrooomsmod.particle.ModParticles;
 import net.rodofire.mushrooomsmod.particle.custom.GreenfireParticle;
 
@@ -21,6 +24,12 @@ public class MushrooomsModClient implements ClientModInitializer {
 
     @Override
     public void onInitializeClient() {
+        ModNetwork.registerS2CPackets();
+
+
+        HudRenderCallback.EVENT.register(new HammerHUDOverlay());
+
+
         //Blocks
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.BLUE_LUMINESCENT_MUSHROOM_BLOCK, RenderLayer.getTranslucent());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.PINK_LUMINESCENT_MUSHROOM_BLOCK, RenderLayer.getTranslucent());

@@ -33,7 +33,7 @@ public class HammerItem extends ToolItem {
     double attackDamage;
     double attackSpeed;
     int maxcrushableblocks;
-    public int hammeruse = 0;
+    private int hammeruse = 0;
     private final Multimap<EntityAttribute, EntityAttributeModifier> attributeModifiers;
 
     public HammerItem(ToolMaterial material, int attackDamage, float attackSpeed, int maxcrushableblocks, Settings settings) {
@@ -52,18 +52,22 @@ public class HammerItem extends ToolItem {
 
     @Override
     public boolean canMine(BlockState state, World world, BlockPos pos, PlayerEntity miner) {
-        if (hammeruse != 0 || world.isClient()) return mine(world, pos);
+        if (hammeruse!=0) return mine(world, pos);
+        if (world.isClient()) {
+            if (mine(world, pos)) {
+                return true;
+            }
+            return false;
+        }
         return use(world, pos, miner);
     }
 
     public boolean use(World world, BlockPos pos, PlayerEntity miner) {
         Block targetedblock = world.getBlockState(pos).getBlock();
         if (targetedblock.equals(ModBlocks.FORGE_BLOCK)) {
-
-            hammeruse = 100;
             BlockEntity blockEntity = world.getBlockEntity(pos);
             Inventory inventory = (Inventory) blockEntity;
-
+            hammeruse = 200;
             if (inventory.getStack(0).getCount() == 0) return false;
             else {
 
@@ -130,5 +134,9 @@ public class HammerItem extends ToolItem {
             stack.damage(2, miner, e -> e.sendEquipmentBreakStatus(EquipmentSlot.MAINHAND));
         }
         return true;
+    }
+
+    public int getHammerUse() {
+        return this.hammeruse;
     }
 }
