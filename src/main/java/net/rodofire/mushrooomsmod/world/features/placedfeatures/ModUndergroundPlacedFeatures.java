@@ -21,6 +21,8 @@ public class ModUndergroundPlacedFeatures {
     public static final RegistryKey<PlacedFeature> BROWN_MUSHROOM_UNDERGROUNG_PLACED_KEY = registerKey("brown_mushroom_underground_placed_key");
     public static final RegistryKey<PlacedFeature> RED_MUSHROOM_UNDERGROUND_PLACED_KEY = registerKey("red_mushroom_underground_placed_key");
     public static final RegistryKey<PlacedFeature> FERTILE_RED_MUSHROOM_UNDERGROUND_PLACED_KEY = registerKey("fertile_red_mushroom_underground_placed_key");
+    public static final RegistryKey<PlacedFeature> RED_LUMERIA_UNDERGROUND_PLACED_KEY = registerKey("red_lumeria_underground_placed_key");
+    public static final RegistryKey<PlacedFeature> MUSHROOM_FLOWERS_UNDERGROUND_PLACED_KEY = registerKey("mushroom_flowers_underground_placed_key");
 
     //Mushrooms Flowers
     public static final RegistryKey<PlacedFeature> MUSHROOM_SIDE_BLUE_LUMINESCENT_UNDERGROUND_PLACED_KEY = registerKey("mushroom_side_blue_luminescent_underground_placed_key");
@@ -71,6 +73,8 @@ public class ModUndergroundPlacedFeatures {
         register(context, BROWN_MUSHROOM_UNDERGROUNG_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.BROWN_MUSHROOM_KEY), CountPlacementModifier.of(33), SquarePlacementModifier.of(), ModPlacedFeatures.STONE_LEVEL, BiomePlacementModifier.of());
         register(context, RED_MUSHROOM_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.RED_MUSHROOM_KEY), CountPlacementModifier.of(33), SquarePlacementModifier.of(), ModPlacedFeatures.STONE_LEVEL, BiomePlacementModifier.of());
         register(context, MUSHROOM_SIDE_BLUE_LUMINESCENT_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.MUSHROOM_SIDE_BLUE_LUMINESCENT_KEY), CountPlacementModifier.of(33), SquarePlacementModifier.of(), ModPlacedFeatures.DEEPSLATE_LEVEL, BiomePlacementModifier.of());
+        register(context, RED_LUMERIA_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.RED_LUMERIA_KEY), CountPlacementModifier.of(20), SquarePlacementModifier.of(), ModPlacedFeatures.STONE_LEVEL, BiomePlacementModifier.of());
+        register(context, MUSHROOM_FLOWERS_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.MUSHROOM_FLOWERS_KEY), CountPlacementModifier.of(18), SquarePlacementModifier.of(), ModPlacedFeatures.STONE_LEVEL, BiomePlacementModifier.of());
 
         //Flowers
         register(context, TURQUOSUM_STILUS_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.TURQUOSUM_STILUS_KEY), CountPlacementModifier.of(11), SquarePlacementModifier.of(), ModPlacedFeatures.DEEPSLATE_LEVEL, BiomePlacementModifier.of());

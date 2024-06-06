@@ -49,7 +49,9 @@
       "mushrooomsmod:red_crystal_underground_placed_key",
       "mushrooomsmod:red_crystal_pillar_underground_placed_key",
       "mushrooomsmod:blue_crystal_underground_placed_key",
-      "mushrooomsmod:blue_crystal_pillar_underground_placed_key"
+      "mushrooomsmod:blue_crystal_pillar_underground_placed_key",
+      "mushrooomsmod:white_crystal_underground_placed_key",
+      "mushrooomsmod:white_crystal_pillar_underground_placed_key"
     ],
     [
       "minecraft:spring_water",

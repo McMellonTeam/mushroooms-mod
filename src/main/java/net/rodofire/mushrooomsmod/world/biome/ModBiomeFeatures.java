@@ -47,6 +47,8 @@ public class ModBiomeFeatures {
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModUndergroundPlacedFeatures.MUSHROOM_DEATH_TRUMPET_UNDERGROUND_PLACED_KEY);
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModUndergroundPlacedFeatures.GRASS_UNDERGROUND_PLACED_KEY);
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModUndergroundPlacedFeatures.TINY_GRASS_UNDERGROUND_PLACED_KEY);
+        builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModUndergroundPlacedFeatures.RED_LUMERIA_UNDERGROUND_PLACED_KEY);
+        builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModUndergroundPlacedFeatures.MUSHROOM_FLOWERS_UNDERGROUND_PLACED_KEY);
     }
 
     public static void addColorfulPlainsFeatures(GenerationSettings.LookupBackedBuilder builder) {
@@ -64,6 +66,8 @@ public class ModBiomeFeatures {
         builder.feature(GenerationStep.Feature.UNDERGROUND_DECORATION, ModUndergroundPlacedFeatures.RED_CRYSTAL_PILLAR_UNDERGROUND_PLACED_KEY);
         builder.feature(GenerationStep.Feature.UNDERGROUND_DECORATION, ModUndergroundPlacedFeatures.BLUE_CRYSTAL_UNDERGROUND_PLACED_KEY);
         builder.feature(GenerationStep.Feature.UNDERGROUND_DECORATION, ModUndergroundPlacedFeatures.BLUE_CRYSTAL_PILLAR_UNDERGROUND_PLACED_KEY);
+        builder.feature(GenerationStep.Feature.UNDERGROUND_DECORATION, ModUndergroundPlacedFeatures.WHITE_CRYSTAL_UNDERGROUND_PLACED_KEY);
+        builder.feature(GenerationStep.Feature.UNDERGROUND_DECORATION, ModUndergroundPlacedFeatures.WHITE_CRYSTAL_PILLAR_UNDERGROUND_PLACED_KEY);
     }
 
 
