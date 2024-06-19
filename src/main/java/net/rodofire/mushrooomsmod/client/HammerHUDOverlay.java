@@ -34,12 +34,11 @@ public class HammerHUDOverlay implements HudRenderCallback {
             HitResult hit = player.raycast(5, tickDelta, false);
 
             if (item.getItem() instanceof HammerItem && hit.getType() == HitResult.Type.BLOCK) {
-
                 Direction direction = player.getHorizontalFacing();
                 Direction direction1 = player.getMovementDirection();
                 World world = player.getWorld();
-                Vec3d seconpos = hit.getPos().offset(direction,0.1);
-                Vec3d seconpos1 = hit.getPos().offset(direction1,1.1);
+                Vec3d seconpos = hit.getPos().offset(direction, 0.1);
+                Vec3d seconpos1 = hit.getPos().offset(direction1, 1.1);
 
                 BlockPos.Mutable mutable = new BlockPos.Mutable();
                 BlockPos.Mutable mutable1 = new BlockPos.Mutable();
@@ -58,8 +57,8 @@ public class HammerHUDOverlay implements HudRenderCallback {
                     RenderSystem.setShaderTexture(0, HAMMER);
 
 
-                    int progress =  ((HammerItem) item.getItem()).getHammerUse();
-                    float proportion = 1- ((float) progress /200);
+                    int progress = ((HammerItem) item.getItem()).getHammerUse();
+                    float proportion = 1 - ((float) progress / 200);
                     int filled = (int) (16 * proportion);
 
                     drawContext.drawTexture(HAMMER, x, y, 0, 0, 16, 16, 16, 16);
