@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "vertical_direction=down": {
+      "model": "mushrooomsmod:block/crystal_floor_blue_stone_down"
+    },
+    "vertical_direction=up": {
+      "model": "mushrooomsmod:block/crystal_floor_blue_stone_up"
+    }
+  }
+}
