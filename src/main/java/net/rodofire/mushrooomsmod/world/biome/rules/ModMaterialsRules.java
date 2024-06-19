@@ -26,7 +26,6 @@ public class ModMaterialsRules {
     private static final MaterialRules.MaterialRule BLUE_LUMINESCENT_DEEPSLATE = makeStateRule(ModBlocks.BLUE_LUMINESCENT_SCHROOM_DEEPSLATE);
     private static final MaterialRules.MaterialRule PURPLE_SCHROOM_DEEPSLATE = makeStateRule(ModBlocks.PURPLE_SCHROOM_DEESLATE);
 
-
     public static MaterialRules.MaterialRule makeRules() {
         MaterialRules.MaterialCondition deepslatelevel = MaterialRules.verticalGradient("deepslate", YOffset.fixed(0), YOffset.fixed(8));
         MaterialRules.MaterialCondition stonecavelevel = MaterialRules.aboveY(YOffset.fixed(0), 1);
@@ -49,12 +48,11 @@ public class ModMaterialsRules {
 
                 //Vanilla Cave
                 sequence(condition(MaterialRules.biome(ModOverworldBiomes.VANILLA_SHROOM_CAVE),
-                        sequence(condition(belowtop, sequence(condition(stonecavelevel,
-                                sequence(condition(MaterialRules.STONE_DEPTH_FLOOR,
-                                                sequence(condition(emmentalNoiseAbove(0.25d), ROOTED_DIRT), condition(emmentalNoiseAbove(-0.25d), MYCELIUM), COARSE_DIRT)), dirtfloor,
-                                        sequence(condition(MaterialRules.STONE_DEPTH_CEILING,
-                                                sequence(condition(emmentalNoiseAbove(0d), DIRT), condition(emmentalNoiseAbove(-0.2d), ROOTED_DIRT), condition(emmentalNoiseAbove(-0.4d), COARSE_DIRT))))))))))
-
+                                sequence(condition(belowtop, sequence(condition(stonecavelevel,
+                                        sequence(condition(MaterialRules.STONE_DEPTH_FLOOR,
+                                                        sequence(condition(emmentalNoiseAbove(0.25d), ROOTED_DIRT), condition(emmentalNoiseAbove(-0.25d), MYCELIUM), COARSE_DIRT)), dirtfloor,
+                                                sequence(condition(MaterialRules.STONE_DEPTH_CEILING,
+                                                        sequence(condition(emmentalNoiseAbove(0d), DIRT), condition(emmentalNoiseAbove(-0.2d), ROOTED_DIRT), condition(emmentalNoiseAbove(-0.4d), COARSE_DIRT))))))))))
 
                         ));
 
@@ -70,6 +68,10 @@ public class ModMaterialsRules {
 
     public static MaterialRules.MaterialCondition emmentalNoiseAbove(double min) {
         return MaterialRules.noiseThreshold(ModNoises.EMMENTAL_NOISE, min, Double.MAX_VALUE);
+    }
+
+    public static MaterialRules.MaterialCondition patchNoiseAbove(double min) {
+        return MaterialRules.noiseThreshold(ModNoises.PATCH_NOISE, min, Double.MAX_VALUE);
     }
 
     //Methods for better readability
