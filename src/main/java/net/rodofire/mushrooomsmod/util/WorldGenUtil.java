@@ -218,5 +218,15 @@ public class WorldGenUtil {
         }
     }
 
+    public static int getSign(int a){
+        return (a<0) ? -1 : 1;
+    }
+    public static int getSign(double a){
+        return (a<0) ? -1 : 1;
+    }
+    public static int getSign(float a){
+        return (a<0) ? -1 : 1;
+    }
+
 
 }
