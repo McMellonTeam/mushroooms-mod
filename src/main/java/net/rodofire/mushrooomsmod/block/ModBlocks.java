@@ -139,13 +139,13 @@ public class ModBlocks {
     public static final Block COMPRESSED_DIRT = registerBlock("dirt_compressed", new Block(FabricBlockSettings.copyOf(Blocks.DIRT)));
     public static final Block LIGHT_COMPRESSED_DIRT = registerBlock("dirt_compressed_light", new Block(FabricBlockSettings.copyOf(Blocks.DIRT)));
 
+    /*-----------Stone Related-----------*/
     //Hard Blocks
     public static final Block PURPLE_SCHROOM_DEESLATE = registerBlock("deepslate_mushroom_purple", new Block(FabricBlockSettings.copyOf(Blocks.DEEPSLATE).requiresTool().instrument(Instrument.BASEDRUM)));
     public static final Block BLUE_LUMINESCENT_SCHROOM_DEEPSLATE = registerBlock("deepslate_mushroom_blue_luminescent", new GrassBlock(FabricBlockSettings.copyOf(Blocks.DEEPSLATE).requiresTool().instrument(Instrument.BASEDRUM)));
     public static final Block GREEN_STONY_SCHROOM_DEPOT = registerBlock("stone_mushroom_green", new Block(FabricBlockSettings.copyOf(Blocks.STONE).requiresTool().instrument(Instrument.BASEDRUM)));
     public static final Block RHYOLITE = registerBlock("rhyolite", new Block(FabricBlockSettings.copyOf(Blocks.STONE).requiresTool().instrument(Instrument.BASEDRUM)));
     public static final Block LAVA_BLACKSTONE = registerBlock("blackstone_lava", new Block(FabricBlockSettings.copyOf(Blocks.BLACKSTONE).luminance(8)));
-
 
     /*-----------Flower Related-----------*/
     //Flowers
@@ -308,6 +308,8 @@ public class ModBlocks {
     public static final Block PINK_CRYSTAL_BLOCK = registerBlock("crystal_block_pink", new AmethystBlock(FabricBlockSettings.copyOf(Blocks.AMETHYST_BLOCK).sounds(ModBlockSoundGroup.PINK_CRYSTAL)));
     public static final Block WHITE_CRYSTAL = registerBlock("crystal_white", new SimpleCystal(FabricBlockSettings.copyOf(Blocks.AMETHYST_CLUSTER)));
     public static final Block WHITE_CRYSTAL_BLOCK = registerBlock("crystal_block_white", new GlassBlock(FabricBlockSettings.copyOf(ModBlocks.RED_CRYSTAL_BLOCK)));
+
+    public static final Block BLUE_CRYSTAL_CLUSTER = registerBlock("crystal_blue_1", new TallBlock(FabricBlockSettings.copyOf(Blocks.AMETHYST_CLUSTER).luminance(11)));
 
     public static final Block AMBER_BLOCK = registerBlock("amber_block", new AmbreBlock(FabricBlockSettings.copyOf(Blocks.EMERALD_BLOCK)));
     public static final Block AMBER_BLOCK_SANDIFIED = registerBlock("amber_block_sandified", new SandifiedAmbreBlock(FabricBlockSettings.copyOf(Blocks.SANDSTONE), ModBlocks.AMBER_BLOCK));

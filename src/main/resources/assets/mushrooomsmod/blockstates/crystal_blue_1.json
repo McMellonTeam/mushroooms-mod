@@ -1,0 +1,11 @@
+{
+  "variants": {
+    "":
+      [
+        {"model" : "mushrooomsmod:block/crystal_blue_1", "weight" : 1},
+        {"model" : "mushrooomsmod:block/crystal_blue_2", "weight" : 1},
+        {"model" : "mushrooomsmod:block/crystal_blue_3", "weight" : 1}
+      ]
+
+  }
+}
