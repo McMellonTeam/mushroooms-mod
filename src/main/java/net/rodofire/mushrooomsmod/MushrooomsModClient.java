@@ -12,10 +12,7 @@ import net.rodofire.mushrooomsmod.block.ModBlocks;
 import net.rodofire.mushrooomsmod.block.entity.renderer.ForgeBlockEntityRenderer;
 import net.rodofire.mushrooomsmod.client.HammerHUDOverlay;
 import net.rodofire.mushrooomsmod.entity.ModEntities;
-import net.rodofire.mushrooomsmod.entity.client.renderer.BoleteCowRenderer;
-import net.rodofire.mushrooomsmod.entity.client.renderer.CrystalCreeperRenderer;
-import net.rodofire.mushrooomsmod.entity.client.renderer.GrokiRenderer;
-import net.rodofire.mushrooomsmod.entity.client.renderer.PlotiRenderer;
+import net.rodofire.mushrooomsmod.entity.client.renderer.*;
 import net.rodofire.mushrooomsmod.networking.ModNetwork;
 import net.rodofire.mushrooomsmod.particle.ModParticles;
 import net.rodofire.mushrooomsmod.particle.custom.GreenfireParticle;
@@ -219,6 +216,7 @@ public class MushrooomsModClient implements ClientModInitializer {
         EntityRendererRegistry.register(ModEntities.BOLETE_COW, BoleteCowRenderer::new);
         EntityRendererRegistry.register(ModEntities.PLOTI, PlotiRenderer::new);
         EntityRendererRegistry.register(ModEntities.CRYSTAL_CREEPER, CrystalCreeperRenderer::new);
+        EntityRendererRegistry.register(ModEntities.CRYSTAL_GOLEM, CrystalGolemRenderer::new);
 
         //Block Entity
         BlockEntityRendererFactories.register(ModBlockEntities.FORGE_BLOCK_ENTITY, ForgeBlockEntityRenderer::new);

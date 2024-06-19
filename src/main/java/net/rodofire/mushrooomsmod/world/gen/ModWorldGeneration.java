@@ -5,6 +5,7 @@ public class ModWorldGeneration {
         ModPlantsGeneration.generateFlowers();
         ModTreeGeneration.generateTrees();
         ModPlantsGeneration.generateVines();
+        ModEntityGeneration.addSpawn();
         System.out.println("registering worldgeneration");
     }
 }

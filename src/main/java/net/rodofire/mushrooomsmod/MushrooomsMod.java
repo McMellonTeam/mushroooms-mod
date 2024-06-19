@@ -8,10 +8,7 @@ import net.rodofire.mushrooomsmod.block.ModBlockEntities;
 import net.rodofire.mushrooomsmod.block.ModBlocks;
 import net.rodofire.mushrooomsmod.effect.ModStatusEffects;
 import net.rodofire.mushrooomsmod.entity.ModEntities;
-import net.rodofire.mushrooomsmod.entity.custom.BoleteCowEntity;
-import net.rodofire.mushrooomsmod.entity.custom.CustomCreeperEntity;
-import net.rodofire.mushrooomsmod.entity.custom.GrokiEntity;
-import net.rodofire.mushrooomsmod.entity.custom.PlotiEntity;
+import net.rodofire.mushrooomsmod.entity.custom.*;
 import net.rodofire.mushrooomsmod.event.PlayerTickHandler;
 import net.rodofire.mushrooomsmod.item.ModItems;
 import net.rodofire.mushrooomsmod.networking.ModNetwork;
@@ -62,6 +59,7 @@ public class MushrooomsMod implements ModInitializer {
         FabricDefaultAttributeRegistry.register(ModEntities.BOLETE_COW, BoleteCowEntity.setAttributes());
         FabricDefaultAttributeRegistry.register(ModEntities.PLOTI, PlotiEntity.setAttributes());
         FabricDefaultAttributeRegistry.register(ModEntities.CRYSTAL_CREEPER, CustomCreeperEntity.createCreeperAttributes());
+        FabricDefaultAttributeRegistry.register(ModEntities.CRYSTAL_GOLEM, CrystalGolemEntity.createCrystalGolemAttributes());
         LOGGER.info("Starting MushrooomsMod!");
 
     }
