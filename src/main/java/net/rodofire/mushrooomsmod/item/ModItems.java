@@ -114,6 +114,7 @@ public class ModItems {
                         //Hard Blocks
                         entries.add(ModBlocks.PURPLE_SCHROOM_DEESLATE);
                         entries.add(ModBlocks.BLUE_LUMINESCENT_SCHROOM_DEEPSLATE);
+                        entries.add(ModBlocks.BLUE_CRYSTAL_CLUSTER);
                         entries.add(ModBlocks.GREEN_STONY_SCHROOM_DEPOT);
                         entries.add(ModBlocks.RHYOLITE);
                         entries.add(ModBlocks.RHYOLITE_TILES);
@@ -236,6 +237,7 @@ public class ModItems {
                         entries.add(ModItems.BOLETE_COW_SPAWN_EGG);
                         entries.add(ModItems.PLOTI_SPAWN_EGG);
                         entries.add(ModItems.CRYSTAL_CREEPER_SPAWN_EGG);
+                        entries.add(ModItems.CRYSTAL_GOLEM_SPAWN_EGG);
 
                         //crystal
                         entries.add(ModItems.PINK_CRYSTAL_ITEM);
@@ -292,6 +294,7 @@ public class ModItems {
     public static final Item BOLETE_COW_SPAWN_EGG = registerItem("bolete_cow_spawn_egg", new SpawnEggItem(ModEntities.BOLETE_COW, 0xBF28DD, 0xF4DBF9, new FabricItemSettings()));
     public static final Item PLOTI_SPAWN_EGG = registerItem("ploti_spawn_egg", new SpawnEggItem(ModEntities.PLOTI, 0x674f35, 0x4e361c, new FabricItemSettings()));
     public static final Item CRYSTAL_CREEPER_SPAWN_EGG = registerItem("crystal_creeper_spawn_egg", new SpawnEggItem(ModEntities.CRYSTAL_CREEPER, 0x50D122, 0xDE310F, new FabricItemSettings()));
+    public static final Item CRYSTAL_GOLEM_SPAWN_EGG = registerItem("crystal_golem_spawn_egg", new SpawnEggItem(ModEntities.CRYSTAL_GOLEM, 0x9A9A9A, 0xE57FF3, new FabricItemSettings()));
 
     //Crystals related
     public static final Item CRUSHED_DIAMOND = registerItem("crushed_diamond", new Item(new FabricItemSettings()));

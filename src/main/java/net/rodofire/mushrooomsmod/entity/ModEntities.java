@@ -8,10 +8,7 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import net.rodofire.mushrooomsmod.MushrooomsMod;
-import net.rodofire.mushrooomsmod.entity.custom.CrystalCreeperEntity;
-import net.rodofire.mushrooomsmod.entity.custom.GrokiEntity;
-import net.rodofire.mushrooomsmod.entity.custom.BoleteCowEntity;
-import net.rodofire.mushrooomsmod.entity.custom.PlotiEntity;
+import net.rodofire.mushrooomsmod.entity.custom.*;
 
 public class ModEntities {
     public static final EntityType<GrokiEntity> GROKI = Registry.register(Registries.ENTITY_TYPE,
@@ -29,5 +26,9 @@ public class ModEntities {
     public static final EntityType<CrystalCreeperEntity> CRYSTAL_CREEPER = Registry.register(Registries.ENTITY_TYPE,
             new Identifier(MushrooomsMod.MOD_ID, "crystal_creeper"), FabricEntityTypeBuilder.create(SpawnGroup.MONSTER, CrystalCreeperEntity::new)
                     .dimensions(EntityDimensions.fixed(0.6f, 1.7f)).build());
+
+    public static final EntityType<CrystalGolemEntity> CRYSTAL_GOLEM = Registry.register(Registries.ENTITY_TYPE,
+            new Identifier(MushrooomsMod.MOD_ID, "crystal_golem"), FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, CrystalGolemEntity::new)
+                    .dimensions(EntityDimensions.fixed(1.2f,2.8f)).build());
 
 }
