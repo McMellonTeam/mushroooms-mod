@@ -10,14 +10,13 @@ import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.data.DataTracker;
 import net.minecraft.entity.data.TrackedData;
 import net.minecraft.entity.data.TrackedDataHandlerRegistry;
-import net.minecraft.entity.mob.*;
+import net.minecraft.entity.mob.Angerable;
+import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.passive.GolemEntity;
-import net.minecraft.entity.passive.IronGolemEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
-import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.TimeHelper;
 import net.minecraft.util.math.Box;
 import net.minecraft.util.math.Vec3d;
@@ -104,7 +103,9 @@ public class CrystalGolemEntity extends GolemEntity implements Angerable, GeoEnt
     public void tickMovement() {
 
         if (!this.getWorld().isClient) {
+
             this.tickAngerLogic((ServerWorld) this.getWorld(), true);
+
             if (this.attackTicksLeft > 0) {
                 --this.attackTicksLeft;
                 if (this.attackTicksLeft == 76) {
@@ -121,10 +122,14 @@ public class CrystalGolemEntity extends GolemEntity implements Angerable, GeoEnt
         super.tickMovement();
     }
 
+    //TODO
+    //make the golem invulnerable to arrows
+
     private boolean attack() {
         Box boundingBox = this.getBoundingBox().expand(5);
         List<LivingEntity> entitiesInRadius = this.getWorld().getEntitiesByClass(LivingEntity.class, boundingBox, x -> true);
         int i =0;
+
         //apply knockback and damages to entites around the golem
         for (LivingEntity entity : entitiesInRadius) {
             if (entity == this) continue;
