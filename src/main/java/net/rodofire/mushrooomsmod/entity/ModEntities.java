@@ -31,6 +31,12 @@ public class ModEntities {
             new Identifier(MushrooomsMod.MOD_ID, "crystal_golem"), FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, CrystalGolemEntity::new)
                     .dimensions(EntityDimensions.fixed(1.2f,2.8f)).build());
 
+    public static final EntityType<SchroomStickEntity> SCHROOM_STICK = Registry.register(Registries.ENTITY_TYPE,
+            new Identifier(MushrooomsMod.MOD_ID, "schroom_stick"), FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, SchroomStickEntity::new)
+                    .dimensions(EntityDimensions.fixed(0.3f,1.6f)).build());
+
+
+
     public static void registerModENtities(){
         MushrooomsMod.LOGGER.info("Registering Mod Entities For Mushrooomsmod");
     }
