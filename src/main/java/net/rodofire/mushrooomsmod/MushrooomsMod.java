@@ -38,6 +38,8 @@ public class MushrooomsMod implements ModInitializer {
 
         ModItems.registerModItems();
 
+        ModEntities.registerModENtities();
+
         ModFeatures.addFeatures();
 
         ModParticles.registerParticles();

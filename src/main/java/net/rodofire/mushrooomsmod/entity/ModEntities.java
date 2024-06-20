@@ -31,4 +31,8 @@ public class ModEntities {
             new Identifier(MushrooomsMod.MOD_ID, "crystal_golem"), FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, CrystalGolemEntity::new)
                     .dimensions(EntityDimensions.fixed(1.2f,2.8f)).build());
 
+    public static void registerModENtities(){
+        MushrooomsMod.LOGGER.info("Registering Mod Entities For Mushrooomsmod");
+    }
+
 }
