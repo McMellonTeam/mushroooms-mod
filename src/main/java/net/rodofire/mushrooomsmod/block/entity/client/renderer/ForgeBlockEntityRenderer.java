@@ -1,4 +1,4 @@
-package net.rodofire.mushrooomsmod.block.entity.renderer;
+package net.rodofire.mushrooomsmod.block.entity.client.renderer;
 
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.render.LightmapTextureManager;

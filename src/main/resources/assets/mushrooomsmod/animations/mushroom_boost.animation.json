@@ -1,0 +1,47 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.mushroom_boost.idle": {
+			"loop": true,
+			"animation_length": 7,
+			"bones": {
+				"cap": {
+					"scale": {
+						"0.0": {
+							"vector": [1, 1, 1]
+						},
+						"0.25": {
+							"vector": [1, 3.4, 1],
+							"easing": "easeOutSine"
+						},
+						"0.5": {
+							"vector": [1, 1, 1],
+							"easing": "easeOutSine"
+						}
+					}
+				}
+			}
+		},
+		"animation.mushroom_boost.boost": {
+			"animation_length": 0.3333,
+			"bones": {
+				"cap": {
+					"scale": {
+						"0.0": {
+							"vector": [1, 1, 1]
+						},
+						"0.1667": {
+							"vector": [1, 3.2, 1],
+							"easing": "easeOutQuad"
+						},
+						"0.3333": {
+							"vector": [1, 1, 1],
+							"easing": "easeOutQuad"
+						}
+					}
+				}
+			}
+		}
+	},
+	"geckolib_format_version": 2
+}

@@ -21,6 +21,7 @@ import net.rodofire.mushrooomsmod.world.gen.ModWorldGeneration;
 import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.tree.ModTrunkPlacerTypes;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import software.bernie.geckolib.GeckoLib;
 
 public class MushrooomsMod implements ModInitializer {
 
@@ -53,6 +54,8 @@ public class MushrooomsMod implements ModInitializer {
         ModLootTableModifier.modifyLootTable();
 
         ModRecipes.registerRecipes();
+
+        GeckoLib.initialize();
 
         ModNetwork.registerC2SPackets();
         ServerTickEvents.START_SERVER_TICK.register(new PlayerTickHandler());
