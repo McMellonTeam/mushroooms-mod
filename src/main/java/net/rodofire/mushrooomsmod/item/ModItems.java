@@ -221,6 +221,7 @@ public class ModItems {
                         entries.add(ModBlocks.MEDIUM_GREEN_MUSHROOM);
                         entries.add(ModBlocks.BIG_GREEN_MUSHROOM);
                         entries.add(ModItems.BOOST_MUSHROOM_ITEM);
+                        entries.add(ModItems.DANGEROUS_BOOST_MUSHROOM_ITEM);
 
 
                         //Light Blocks
@@ -280,6 +281,7 @@ public class ModItems {
     public static final Item BIG_PURPLE_MUSHROOM_SEED = registerItem("mushroom_big_purple_seed", new AliasedBlockItem(ModBlocks.BIG_PURPLE_MUSHROOM_PLANT, new FabricItemSettings()));
     public static final Item BIG_GREEN_MUSHROOM_SEED = registerItem("mushroom_big_green_seed", new AliasedBlockItem(ModBlocks.BIG_GREEN_MUSHROOM_PLANT, new FabricItemSettings()));
     public static final Item BOOST_MUSHROOM_ITEM = registerItem("mushroom_boost_item", new AliasedBlockItem(ModBlocks.MUSHROOM_BOOSTING,new FabricItemSettings()));
+    public static final Item DANGEROUS_BOOST_MUSHROOM_ITEM = registerItem("mushroom_boost_dangerous_item", new AliasedBlockItem(ModBlocks.DANGEROUS_MUSHROOM_BOOSTING,new FabricItemSettings()));
 
     //food
     public static final Item BAGUETTE = registerItem("baguette", new Item(new FabricItemSettings().food(ModFoodComponents.BAGUETTE)));
