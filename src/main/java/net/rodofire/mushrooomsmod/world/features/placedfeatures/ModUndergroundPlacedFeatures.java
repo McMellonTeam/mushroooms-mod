@@ -27,6 +27,7 @@ public class ModUndergroundPlacedFeatures {
     public static final RegistryKey<PlacedFeature> MUSHROOM_SMALL_RED_UNDERGROUND_PLACED_KEY = registerKey("mushroom_small_red_underground_placed_key");
     public static final RegistryKey<PlacedFeature> MUSHROOM_SMALL_BROWN_UNDERGROUND_PLACED_KEY = registerKey("mushroom_small_brown_underground_placed_key");
     public static final RegistryKey<PlacedFeature> MUSHROOM_DEATH_TRUMPET_UNDERGROUND_PLACED_KEY = registerKey("mushroom_death_trumpet_underground_placed_key");
+    public static final RegistryKey<PlacedFeature> MUSHROOM_FERTILE_RED_FLOWER_UNDERGROUND_PLACED_KEY = registerKey("mushroom_fertile_red_flower_underground_placed_key");
 
     //Huge Mushrooms
     public static final RegistryKey<PlacedFeature> HUGE_RED_MUSHROOM_UNDERGROUND_PLACED_KEY = registerKey("huge_red_mushroom_underground_placed_key");
@@ -76,6 +77,7 @@ public class ModUndergroundPlacedFeatures {
         register(context, MUSHROOM_SIDE_BLUE_LUMINESCENT_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.MUSHROOM_SIDE_BLUE_LUMINESCENT_KEY), CountPlacementModifier.of(33), SquarePlacementModifier.of(), ModPlacedFeatures.DEEPSLATE_LEVEL, BiomePlacementModifier.of());
         register(context, RED_LUMERIA_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.RED_LUMERIA_KEY), CountPlacementModifier.of(20), SquarePlacementModifier.of(), ModPlacedFeatures.STONE_LEVEL, BiomePlacementModifier.of());
         register(context, MUSHROOM_FLOWERS_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.MUSHROOM_FLOWERS_KEY), CountPlacementModifier.of(18), SquarePlacementModifier.of(), ModPlacedFeatures.STONE_LEVEL, BiomePlacementModifier.of());
+        register(context, MUSHROOM_FERTILE_RED_FLOWER_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.MUSHROOM_RED_FERTILE_FLOWER_KEY), CountPlacementModifier.of(12), SquarePlacementModifier.of(), ModPlacedFeatures.STONE_LEVEL, BiomePlacementModifier.of());
 
         //Flowers
         register(context, TURQUOSUM_STILUS_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.TURQUOSUM_STILUS_KEY), CountPlacementModifier.of(11), SquarePlacementModifier.of(), ModPlacedFeatures.DEEPSLATE_LEVEL, BiomePlacementModifier.of());

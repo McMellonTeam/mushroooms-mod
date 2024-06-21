@@ -49,6 +49,7 @@ public class ModBiomeFeatures {
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModUndergroundPlacedFeatures.TINY_GRASS_UNDERGROUND_PLACED_KEY);
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModUndergroundPlacedFeatures.RED_LUMERIA_UNDERGROUND_PLACED_KEY);
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModUndergroundPlacedFeatures.MUSHROOM_FLOWERS_UNDERGROUND_PLACED_KEY);
+        builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModUndergroundPlacedFeatures.MUSHROOM_FERTILE_RED_FLOWER_UNDERGROUND_PLACED_KEY);
     }
 
     public static void addColorfulPlainsFeatures(GenerationSettings.LookupBackedBuilder builder) {

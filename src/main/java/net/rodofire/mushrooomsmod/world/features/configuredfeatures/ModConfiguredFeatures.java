@@ -59,6 +59,7 @@ public class ModConfiguredFeatures<FC extends FeatureConfig> {
     public static final RegistryKey<ConfiguredFeature<?, ?>> MUSHROOM_SMALL_RED_KEY = registerKey("mushroom_small_red_key");
     public static final RegistryKey<ConfiguredFeature<?, ?>> MUSHROOM_DEATH_TRUMPET_KEY = registerKey("mushroom_death_trumpet_key");
     public static final RegistryKey<ConfiguredFeature<?, ?>> MUSHROOM_SIDE_BLUE_LUMINESCENT_KEY = registerKey("mushroom_side_blue_luminescent_key");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> MUSHROOM_RED_FERTILE_FLOWER_KEY = registerKey("mushroom_red_fertile_flower_key");
 
 
     //flowers
@@ -169,6 +170,7 @@ public class ModConfiguredFeatures<FC extends FeatureConfig> {
         register(context, MUSHROOM_SMALL_RED_KEY, Feature.FLOWER, new RandomPatchFeatureConfig(40, 6, 2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.MUSHROOM_DEATH_TRUMPET)))));
         register(context, MUSHROOM_DEATH_TRUMPET_KEY, Feature.FLOWER, new RandomPatchFeatureConfig(50, 6, 2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.MUSHROOM_SMALL_RED)))));
         register(context, MUSHROOM_SIDE_BLUE_LUMINESCENT_KEY, ModFeatures.SIMPLE_BLOCK, new ModSimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.SIDE_MUSHROOM_BLUE_LUMINESCENT)));
+        register(context, MUSHROOM_RED_FERTILE_FLOWER_KEY, Feature.FLOWER, new RandomPatchFeatureConfig(50, 6, 2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.FERTILE_RED_MUSHROOM)))));
 
         //flowers
         register(context, FUTIALI_KEY, Feature.FLOWER, new RandomPatchFeatureConfig(42, 14, 5, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.FUTIALI)))));

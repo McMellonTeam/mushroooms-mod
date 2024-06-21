@@ -1,5 +1,7 @@
 package net.rodofire.mushrooomsmod.world.gen;
 
+import net.rodofire.mushrooomsmod.MushrooomsMod;
+
 public class ModWorldGeneration {
     public static void generateModWorldGen() {
         ModPlantsGeneration.generateFlowers();
@@ -9,6 +11,7 @@ public class ModWorldGeneration {
         ModEntityGeneration.addSpawn();
 
         ModOreGeneration.generateOres();
-        System.out.println("registering worldgeneration");
+
+        MushrooomsMod.LOGGER.info("Generating Mod World Generation");
     }
 }
