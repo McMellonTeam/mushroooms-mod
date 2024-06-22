@@ -52,12 +52,12 @@ public class ForgeRecipeBuilder implements CraftingRecipeJsonBuilder {
 
     @Override
     public void offerTo(Consumer<RecipeJsonProvider> exporter, Identifier recipeId) {
-        this.advancement.parent(new Identifier("recipe/root"))
+        this.advancement.parent(new Identifier("recipes/root"))
                 .criterion("has_the_recipe", RecipeUnlockedCriterion.create(recipeId))
                 .rewards(AdvancementRewards.Builder.recipe(recipeId));
 
         exporter.accept(new JsonBuilder(recipeId, this.result, this.count, this.ingredient, this.advancement,
-                new Identifier(recipeId.getNamespace(), "recipe/" + recipeId.getPath())));
+                new Identifier(recipeId.getNamespace(), "recipes/" + recipeId.getPath())));
     }
 
     public static class JsonBuilder implements RecipeJsonProvider {
