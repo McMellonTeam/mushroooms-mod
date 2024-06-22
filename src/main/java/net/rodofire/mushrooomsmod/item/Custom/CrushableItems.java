@@ -14,16 +14,15 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 
 public class CrushableItems extends Item {
-    Item crushed;
 
-    public CrushableItems(Item crushed, Settings settings) {
+    public CrushableItems(Settings settings) {
         super(settings);
-        this.crushed = crushed;
     }
 
     public static ItemStack getCrushed(ItemStack stack) {
         Item item = stack.getItem();
         if (stack.getItem().equals(Items.DIAMOND)) return ModItems.CRUSHED_DIAMOND.asItem().getDefaultStack();
+        if (stack.getItem().equals(ModItems.AMBER_ITEM)) return ModItems.CRUSHED_AMBER_ITEM.asItem().getDefaultStack();
         return null;
     }
 

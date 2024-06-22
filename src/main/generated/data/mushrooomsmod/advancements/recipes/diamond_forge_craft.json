@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_amber_crushed_item": {
+    "has_diamond": {
       "conditions": {
         "items": [
           {
             "items": [
-              "mushrooomsmod:amber_crushed_item"
+              "minecraft:diamond"
             ]
           }
         ]
@@ -15,21 +15,23 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:amber_block"
+        "recipe": "minecraft:diamond_forge_craft"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_amber_crushed_item",
+      "has_diamond"
+    ],
+    [
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:amber_block"
+      "minecraft:diamond_forge_craft"
     ]
   },
-  "sends_telemetry_event": false
+  "sends_telemetry_event": true
 }

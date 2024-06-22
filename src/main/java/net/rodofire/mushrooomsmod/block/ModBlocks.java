@@ -313,6 +313,7 @@ public class ModBlocks {
 
     public static final Block BLUE_CRYSTAL_CLUSTER = registerBlock("crystal_blue_1", new TallBlock(FabricBlockSettings.copyOf(Blocks.AMETHYST_CLUSTER).luminance(11)));
 
+    public static final Block RAW_AMBER_BLOCK = registerBlock("amber_block_raw", new Block(FabricBlockSettings.copyOf(Blocks.RAW_GOLD_BLOCK)));
     public static final Block AMBER_BLOCK = registerBlock("amber_block", new AmbreBlock(FabricBlockSettings.copyOf(Blocks.EMERALD_BLOCK)));
     public static final Block AMBER_BLOCK_SANDIFIED = registerBlock("amber_block_sandified", new SandifiedAmbreBlock(FabricBlockSettings.copyOf(Blocks.SANDSTONE), ModBlocks.AMBER_BLOCK));
     public static final Block AMBER_ORE = registerBlock("amber_ore", new Block(FabricBlockSettings.copyOf(Blocks.NETHER_GOLD_ORE)));

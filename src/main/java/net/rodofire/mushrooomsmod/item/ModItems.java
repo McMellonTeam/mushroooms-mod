@@ -14,6 +14,7 @@ import net.rodofire.mushrooomsmod.MushrooomsMod;
 import net.rodofire.mushrooomsmod.block.ModBlocks;
 import net.rodofire.mushrooomsmod.effect.ModStatusEffects;
 import net.rodofire.mushrooomsmod.entity.ModEntities;
+import net.rodofire.mushrooomsmod.item.Custom.CrushableItems;
 import net.rodofire.mushrooomsmod.item.Custom.HammerItem;
 import net.rodofire.mushrooomsmod.item.Custom.SchroomSoup;
 import net.rodofire.mushrooomsmod.sound.ModSounds;
@@ -47,6 +48,7 @@ public class ModItems {
                         entries.add(ModBlocks.LAVA_BLACKSTONE_TINY_BRICKS);
 
                         //Crystal related
+                        entries.add(ModBlocks.RAW_AMBER_BLOCK);
                         entries.add(ModBlocks.AMBER_BLOCK);
                         entries.add(ModBlocks.AMBER_BLOCK_SANDIFIED);
                         entries.add(ModBlocks.AMBER_ORE);
@@ -255,6 +257,7 @@ public class ModItems {
 
                         entries.add(ModItems.CRUSHED_DIAMOND);
                         entries.add(ModItems.AMBER_ITEM);
+                        entries.add(ModItems.CRUSHED_AMBER_ITEM);
 
                         //Utils
                         entries.add(ModBlocks.FORGE_BLOCK);
@@ -280,8 +283,8 @@ public class ModItems {
     //Big Mushrooms
     public static final Item BIG_PURPLE_MUSHROOM_SEED = registerItem("mushroom_big_purple_seed", new AliasedBlockItem(ModBlocks.BIG_PURPLE_MUSHROOM_PLANT, new FabricItemSettings()));
     public static final Item BIG_GREEN_MUSHROOM_SEED = registerItem("mushroom_big_green_seed", new AliasedBlockItem(ModBlocks.BIG_GREEN_MUSHROOM_PLANT, new FabricItemSettings()));
-    public static final Item BOOST_MUSHROOM_ITEM = registerItem("mushroom_boost_item", new AliasedBlockItem(ModBlocks.MUSHROOM_BOOSTING,new FabricItemSettings()));
-    public static final Item DANGEROUS_BOOST_MUSHROOM_ITEM = registerItem("mushroom_boost_dangerous_item", new AliasedBlockItem(ModBlocks.DANGEROUS_MUSHROOM_BOOSTING,new FabricItemSettings()));
+    public static final Item BOOST_MUSHROOM_ITEM = registerItem("mushroom_boost_item", new AliasedBlockItem(ModBlocks.MUSHROOM_BOOSTING, new FabricItemSettings()));
+    public static final Item DANGEROUS_BOOST_MUSHROOM_ITEM = registerItem("mushroom_boost_dangerous_item", new AliasedBlockItem(ModBlocks.DANGEROUS_MUSHROOM_BOOSTING, new FabricItemSettings()));
 
     //food
     public static final Item BAGUETTE = registerItem("baguette", new Item(new FabricItemSettings().food(ModFoodComponents.BAGUETTE)));
@@ -307,7 +310,8 @@ public class ModItems {
     public static final Item PINK_CRYSTAL_ITEM = registerItem("crystal_pink_item", new AliasedBlockItem(ModBlocks.PINK_CRYSTAL, new FabricItemSettings()));
     public static final Item BLUE_CRYSTAL_ITEM = registerItem("crystal_blue_item", new AliasedBlockItem(ModBlocks.BLUE_CRYSTAL, new FabricItemSettings()));
     public static final Item RED_CRYSTAL_ITEM = registerItem("crystal_red_item", new AliasedBlockItem(ModBlocks.RED_CRYSTAL, new FabricItemSettings()));
-    public static final Item AMBER_ITEM = registerItem("amber_item", new Item(new FabricItemSettings()));
+    public static final Item AMBER_ITEM = registerItem("amber_item", new CrushableItems(new FabricItemSettings()));
+    public static final Item CRUSHED_AMBER_ITEM = registerItem("amber_crushed_item", new Item(new FabricItemSettings()));
     //Tools
     public static final Item IRON_HAMMER = registerItem("iron_hammer", new HammerItem(ToolMaterials.IRON, 30, -3.7f, 4, new FabricItemSettings()));
 

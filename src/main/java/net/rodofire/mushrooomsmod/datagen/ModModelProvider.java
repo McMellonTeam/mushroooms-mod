@@ -181,6 +181,7 @@ public class ModModelProvider extends FabricModelProvider {
         //Crystals
         generator.registerSimpleCubeAll(ModBlocks.PINK_CRYSTAL_BLOCK);
         generator.registerSimpleCubeAll(ModBlocks.AMBER_ORE);
+        generator.registerSimpleCubeAll(ModBlocks.RAW_AMBER_BLOCK);
         generator.registerSimpleCubeAll(ModBlocks.AMBER_BLOCK);
         generator.registerSimpleCubeAll(ModBlocks.AMBER_BLOCK_SANDIFIED);
         generator.registerSimpleCubeAll(ModBlocks.BLUE_CRYSTAL_BLOCK);
@@ -263,6 +264,7 @@ public class ModModelProvider extends FabricModelProvider {
         generator.register(ModItems.BLUE_CRYSTAL_ITEM, Models.GENERATED);
         generator.register(ModItems.RED_CRYSTAL_ITEM, Models.GENERATED);
         generator.register(ModItems.AMBER_ITEM, Models.GENERATED);
+        generator.register(ModItems.CRUSHED_AMBER_ITEM, Models.GENERATED);
 
         generator.register(ModItems.CRUSHED_DIAMOND, Models.GENERATED);
         generator.register(ModItems.LUMINESCENT_SCHROOM_SOUP, Models.GENERATED);

@@ -200,7 +200,9 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .offerTo(exporter, new Identifier("hammer_craft"));
 
         //Crystals
-        offerCompactingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.AMBER_BLOCK, ModItems.AMBER_ITEM);
+        //offerCompactingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.AMBER_BLOCK, ModItems.CRUSHED_AMBER_ITEM);
+        offerReversibleCompactingRecipes(exporter, RecipeCategory.BUILDING_BLOCKS, ModItems.CRUSHED_AMBER_ITEM,RecipeCategory.BUILDING_BLOCKS, ModBlocks.AMBER_BLOCK);
+        offerReversibleCompactingRecipes(exporter, RecipeCategory.BUILDING_BLOCKS, ModItems.AMBER_ITEM,RecipeCategory.BUILDING_BLOCKS, ModBlocks.RAW_AMBER_BLOCK);
         offerCompactingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.BLUE_CRYSTAL_BLOCK, ModItems.BLUE_CRYSTAL_ITEM);
         offerCompactingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.RED_CRYSTAL_BLOCK, ModItems.RED_CRYSTAL_ITEM);
 
@@ -208,6 +210,10 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         //Forge Recipe
         new ForgeRecipeBuilder(Items.DIAMOND, ModItems.CRUSHED_DIAMOND, 1)
                 .criterion(hasItem(Items.DIAMOND), conditionsFromItem(Items.DIAMOND))
-                .offerTo(exporter);
+                .offerTo(exporter, new Identifier("diamond_forge_craft"));
+
+        new ForgeRecipeBuilder(ModItems.AMBER_ITEM, ModItems.CRUSHED_AMBER_ITEM, 1)
+                .criterion(hasItem(ModItems.AMBER_ITEM), conditionsFromItem(Items.AIR))
+                .offerTo(exporter, new Identifier("amber_forge_craft"));
     }
 }

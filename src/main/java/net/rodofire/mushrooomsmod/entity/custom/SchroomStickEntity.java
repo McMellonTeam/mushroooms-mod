@@ -5,6 +5,7 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
+import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.data.DataTracker;
 import net.minecraft.entity.data.TrackedData;
 import net.minecraft.entity.data.TrackedDataHandlerRegistry;
@@ -62,38 +63,42 @@ public class SchroomStickEntity extends AnimalEntity implements GeoEntity {
 
     @Override
     public void tick() {
-        if (this.giveup >= 0) {
-            --giveup;
-            this.setVelocity(0, 0, 0);
-        } else if (this.jump != 0) {
-            --this.jump;
-            double jumprad = 0.5f * Math.cos(this.jump * 4 * Math.PI / 65) - 0.2f * Math.sin(this.jump * Math.PI / 65);
-            System.out.println(jumprad+"  "+this.jump+"  "+Math.cos(this.jump * 4 * Math.PI / 65)+ "  "+Math.sin(this.jump * Math.PI / 65));
-            this.setVelocity(0.2f, jumprad, 0.2f);
-
-            if (this.jump == 0) {
-                this.setJump(false);
-            }
-        } else if (this.getWorld().getBlockState(this.getBlockPos()).getBlock() != Blocks.WATER) {
-
-            if (Random.create().nextBetween(0, 400) == 0 && !this.gaveUp()) {
-                this.giveup = 200;
-                this.setGiveup(true);
-            }
-
-            else if (Random.create().nextBetween(0, 200) == 0 && this.gaveUp()) {
-                this.giveup = 200;
-                this.setGiveup(false);
-            }
-
-            else if (Random.create().nextBetween(0, 200) == 0 && !this.gaveUp()) {
-                this.jump = 65;
-                double jumprad = Math.cos(4 * Math.PI ) - Math.sin(Math.PI );
+        if(!this.getWorld().isClient) {
+            if (this.giveup >= 0) {
+                --giveup;
+                this.setVelocity(0, 0, 0);
+            } else if (this.jump != 0) {
+                --this.jump;
+                double jumprad = 0.5f * Math.cos(this.jump * 4 * Math.PI / 65) - 0.2f * Math.sin(this.jump * Math.PI / 65);
                 this.setVelocity(0.2f, jumprad, 0.2f);
-                this.setJump(true);
+                this.velocityModified = true;
+
+                if (this.jump == 0) {
+                    this.setJump(false);
+                }
+            } else if (this.getWorld().getBlockState(this.getBlockPos()).getBlock() != Blocks.WATER) {
+
+                if (Random.create().nextBetween(0, 400) == 0 && !this.gaveUp()) {
+                    this.giveup = 200;
+                    this.setGiveup(true);
+                } else if (Random.create().nextBetween(0, 200) == 0 && this.gaveUp()) {
+                    this.giveup = 200;
+                    this.setGiveup(false);
+                } else if (Random.create().nextBetween(0, 200) == 0 && !this.gaveUp()) {
+                    this.jump = 65;
+                    double jumprad = Math.cos(4 * Math.PI) - Math.sin(Math.PI);
+                    this.setVelocity(0.2f, jumprad, 0.2f);
+                    this.velocityModified = true;
+                    this.setJump(true);
+                }
             }
         }
         super.tick();
+    }
+
+    @Override
+    public boolean damage(DamageSource source, float amount) {
+        return super.damage(source, amount);
     }
 
     @Override

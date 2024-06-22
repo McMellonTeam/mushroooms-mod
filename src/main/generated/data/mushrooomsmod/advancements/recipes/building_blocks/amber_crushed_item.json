@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_amber_crushed_item": {
+    "has_amber_block": {
       "conditions": {
         "items": [
           {
             "items": [
-              "mushrooomsmod:amber_crushed_item"
+              "mushrooomsmod:amber_block"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:amber_block"
+        "recipe": "minecraft:amber_crushed_item"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_amber_crushed_item",
+      "has_amber_block",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:amber_block"
+      "minecraft:amber_crushed_item"
     ]
   },
   "sends_telemetry_event": false

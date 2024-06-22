@@ -3,7 +3,7 @@
   "category": "building",
   "key": {
     "#": {
-      "item": "mushrooomsmod:amber_crushed_item"
+      "item": "mushrooomsmod:amber_item"
     }
   },
   "pattern": [
@@ -12,7 +12,7 @@
     "###"
   ],
   "result": {
-    "item": "mushrooomsmod:amber_block"
+    "item": "mushrooomsmod:amber_block_raw"
   },
   "show_notification": true
 }
