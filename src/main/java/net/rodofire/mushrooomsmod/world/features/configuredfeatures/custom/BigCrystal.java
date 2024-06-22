@@ -2,14 +2,15 @@ package net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom;
 
 import com.mojang.serialization.Codec;
 import net.minecraft.block.BlockState;
-import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.StructureWorldAccess;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.util.FeatureContext;
-import net.rodofire.mushrooomsmod.util.WorldGenUtil;
+import net.rodofire.mushrooomsmod.worldgenutil.GenLines;
+import net.rodofire.mushrooomsmod.worldgenutil.GenSpheres;
+import net.rodofire.mushrooomsmod.worldgenutil.WorldGenUtil;
 import net.rodofire.mushrooomsmod.world.features.config.ModSimpleBlockFeatureConfig;
 
 public class BigCrystal extends Feature<ModSimpleBlockFeatureConfig> {
@@ -80,10 +81,10 @@ public class BigCrystal extends Feature<ModSimpleBlockFeatureConfig> {
                 mutable.set(pos, x, 0, z);
                 world.setBlockState(mutable, state, 2);
 
-                WorldGenUtil.drawLine(world, mutable, secondpos, state);
+                GenLines.drawLine(world, mutable, secondpos, state);
             }
         }
-        WorldGenUtil.generateHalfSphere(world, random, baselarge, pos, direction, state);
+        GenSpheres.generateHalfSphere(world, random, baselarge, pos, direction, state);
         return true;
     }
 
