@@ -28,11 +28,14 @@ public class SchroomStickEntity extends AnimalEntity implements GeoEntity {
 
 
     private int giveup;
+    private int ungavingeup;
     private int jump;
 
     private static final TrackedData<Boolean> GAVING_UP =
             DataTracker.registerData(SchroomStickEntity.class, TrackedDataHandlerRegistry.BOOLEAN);
     private static final TrackedData<Boolean> JUMPING =
+            DataTracker.registerData(SchroomStickEntity.class, TrackedDataHandlerRegistry.BOOLEAN);
+    private static final TrackedData<Boolean> UNGAVING_UP =
             DataTracker.registerData(SchroomStickEntity.class, TrackedDataHandlerRegistry.BOOLEAN);
 
 
@@ -63,18 +66,23 @@ public class SchroomStickEntity extends AnimalEntity implements GeoEntity {
 
     @Override
     public void tick() {
-        if(!this.getWorld().isClient) {
+        if (!this.getWorld().isClient) {
             if (this.giveup >= 0) {
                 --giveup;
                 this.setVelocity(0, 0, 0);
             } else if (this.jump != 0) {
                 --this.jump;
-                double jumprad = 0.5f * Math.cos(this.jump * 4 * Math.PI / 65) - 0.2f * Math.sin(this.jump * Math.PI / 65);
-                this.setVelocity(0.2f, jumprad, 0.2f);
+                double jumprad = 0.25f*Math.sin(this.jump * 3 * Math.PI / 65) - 0.005f*Math.sin(this.jump*Math.PI / 65);
+                this.setVelocity(0.05f, jumprad, 0.05f);
                 this.velocityModified = true;
 
                 if (this.jump == 0) {
                     this.setJump(false);
+                }
+            } else if (this.ungavingeup != 0) {
+                --this.ungavingeup;
+                if (this.ungavingeup == 0) {
+                    this.setUngavingUp(false);
                 }
             } else if (this.getWorld().getBlockState(this.getBlockPos()).getBlock() != Blocks.WATER) {
 
@@ -82,12 +90,13 @@ public class SchroomStickEntity extends AnimalEntity implements GeoEntity {
                     this.giveup = 200;
                     this.setGiveup(true);
                 } else if (Random.create().nextBetween(0, 200) == 0 && this.gaveUp()) {
-                    this.giveup = 200;
+                    this.ungavingeup = 200;
                     this.setGiveup(false);
+                    this.setUngavingUp(true);
                 } else if (Random.create().nextBetween(0, 200) == 0 && !this.gaveUp()) {
                     this.jump = 65;
                     double jumprad = Math.cos(4 * Math.PI) - Math.sin(Math.PI);
-                    this.setVelocity(0.2f, jumprad, 0.2f);
+                    this.setVelocity(0.05f, jumprad, 0.05f);
                     this.velocityModified = true;
                     this.setJump(true);
                 }
@@ -96,8 +105,13 @@ public class SchroomStickEntity extends AnimalEntity implements GeoEntity {
         super.tick();
     }
 
+
+
     @Override
     public boolean damage(DamageSource source, float amount) {
+        if(this.isJumping()){
+            return false;
+        }
         return super.damage(source, amount);
     }
 
@@ -106,6 +120,7 @@ public class SchroomStickEntity extends AnimalEntity implements GeoEntity {
         super.initDataTracker();
         this.dataTracker.startTracking(JUMPING, false);
         this.dataTracker.startTracking(GAVING_UP, false);
+        this.dataTracker.startTracking(UNGAVING_UP, false);
     }
 
     public void setJump(boolean jump) {
@@ -116,12 +131,20 @@ public class SchroomStickEntity extends AnimalEntity implements GeoEntity {
         this.dataTracker.set(GAVING_UP, giveup);
     }
 
+    public void setUngavingUp(boolean ungavingUp) {
+        this.dataTracker.set(UNGAVING_UP, ungavingUp);
+    }
+
     public boolean isJumping() {
         return this.dataTracker.get(JUMPING);
     }
 
     public boolean gaveUp() {
         return this.dataTracker.get(GAVING_UP);
+    }
+
+    public boolean isUnGavingUp() {
+        return this.dataTracker.get(UNGAVING_UP);
     }
 
     @Override
@@ -131,11 +154,11 @@ public class SchroomStickEntity extends AnimalEntity implements GeoEntity {
 
     private PlayState predicate(AnimationState<GeoAnimatable> geoAnimatableAnimationState) {
         if (this.gaveUp()) {
-            System.out.println("1");
             geoAnimatableAnimationState.getController().setAnimation(RawAnimation.begin().then("animation.schroom_stick.give_up", Animation.LoopType.HOLD_ON_LAST_FRAME));
         } else if (this.isJumping()) {
-            System.out.println("2");
             geoAnimatableAnimationState.getController().setAnimation(RawAnimation.begin().then("animation.schroom_stick.jump", Animation.LoopType.PLAY_ONCE));
+        } else if (this.isUnGavingUp()) {
+            geoAnimatableAnimationState.getController().setAnimation(RawAnimation.begin().then("animation.schroom_stick.un_gaving_up", Animation.LoopType.HOLD_ON_LAST_FRAME));
         } else if (geoAnimatableAnimationState.isMoving()) {
             geoAnimatableAnimationState.getController().setAnimation(RawAnimation.begin().then("animation.schroom_stick.walk", Animation.LoopType.LOOP));
         } else {
@@ -148,4 +171,18 @@ public class SchroomStickEntity extends AnimalEntity implements GeoEntity {
     public AnimatableInstanceCache getAnimatableInstanceCache() {
         return cache;
     }
+
+    static class GiveUpGoal extends Goal {
+        private final SchroomStickEntity schroomStickEntity;
+        public GiveUpGoal(SchroomStickEntity schroomStickEntity) {
+            this.schroomStickEntity = schroomStickEntity;
+        }
+
+        @Override
+        public boolean canStart() {
+            return !this.schroomStickEntity.isJumping();
+        }
+    }
+
+
 }
