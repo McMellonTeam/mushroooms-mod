@@ -8,58 +8,55 @@ import net.minecraft.world.StructureWorldAccess;
 
 public class GenSpheres {
     public static void generateHalfSphere(StructureWorldAccess world, Random random, int largex, BlockPos pos, Direction direction, BlockState state) {
-        double pi = Math.PI;
         if (direction == Direction.UP) {
-            generateElipsoid(world, random, largex, largex, largex, pos, state, false, 0, pi / 2, -pi, pi, 0);
+            generateFullSphere(world, random, largex, largex, largex, pos, state, false, -largex, largex, 0, largex, -largex, largex);
             return;
         }
         if (direction == Direction.DOWN) {
-            generateElipsoid(world, random, largex, largex, largex, pos, state, false, pi / 2, 0, -pi, pi, 0);
+            generateFullSphere(world, random, largex, largex, largex, pos, state, false, -largex, largex, 0, largex, -largex, largex);
             return;
         }
         if (direction == Direction.WEST) {
-            generateElipsoid(world, random, largex, largex, largex, pos, state, false, pi / 2, pi / 2, pi / 2, (3 * pi) / 2, 0);
+            generateFullSphere(world, random, largex, largex, largex, pos, state, false, 0, largex, -largex, largex, -largex, largex);
             return;
         }
         if (direction == Direction.EAST) {
-            generateElipsoid(world, random, largex, largex, largex, pos, state, false, pi / 2, pi / 2, -pi / 2, pi / 2, 0);
+            generateFullSphere(world, random, largex, largex, largex, pos, state, false, -largex, 0, -largex, largex, -largex, largex);
             return;
         }
         if (direction == Direction.NORTH) {
-            generateElipsoid(world, random, largex, largex, largex, pos, state, false, pi / 2, pi / 2, -pi, 0, 0);
+            generateFullSphere(world, random, largex, largex, largex, pos, state, false, -largex, largex, -largex, largex, -largex, 0);
             return;
         }
 
-        generateElipsoid(world, random, largex, largex, largex, pos, state, false, pi / 2, pi / 2, 0, pi, 0);
+        generateFullSphere(world, random, largex, largex, largex, pos, state, false, -largex, largex, 0, largex, 0, largex);
     }
 
     public static void generateSphere(StructureWorldAccess world, Random random, int largex, BlockPos pos, BlockState state) {
-        generateElipsoid(world, random, largex, largex, largex, pos, state, false, Math.PI / 2, Math.PI / 2, -Math.PI, Math.PI, 0);
+        generateFullSphere(world, random, largex, largex, largex, pos, state, false, -largex, largex, -largex, largex, -largex, largex);
     }
 
     public static void generateSphere(StructureWorldAccess world, Random random, int largex, BlockPos pos, BlockState state, boolean force) {
-        generateElipsoid(world, random, largex, largex, largex, pos, state, force, Math.PI / 2, Math.PI / 2, -Math.PI, Math.PI, 0);
+        generateFullSphere(world, random, largex, largex, largex, pos, state, force, -largex, largex, -largex, largex, -largex, largex);
     }
 
-    public static void generateElipsoid(StructureWorldAccess world, Random random, int largex, int largey, int largez, BlockPos pos, BlockState state, boolean force, double height, double height2, double large1, double large2, int full) {
-        int large = Math.max(largez, Math.max(largex, largey));
+    //Using carthesian coordinates beacause it have better performance than using trigonometry
+    public static void generateFullSphere(StructureWorldAccess world, Random random, int largex, int largey, int largez, BlockPos pos, BlockState state, boolean force, int minx, int maxx, int miny, int maxy, int minz, int maxz) {
         BlockPos.Mutable mutable = new BlockPos.Mutable();
-        for (int i = full; i <= large; ++i) {
-            for (double j = large1; j <= large2; j += Math.PI / (4 * i)) {
-                for (double k = -height; k <= height2; k += Math.PI / (4 * i)) {
-                    //polar coordinates
-                    double x = largex * ((double) i / large) * Math.cos(j) * Math.cos(k);
-                    double z = largez * ((double) i / large) * Math.sin(j) * Math.cos(k);
-                    double y = largey * ((double) i / large) * Math.sin(k);
+        for (int x = minx; x <= maxx; x++) {
+            for (int y = miny; y <= maxy; y++) {
+                for (int z = minz; z <= maxz; z++) {
 
-                    mutable.set(pos, (int) x, (int) y, (int) z);
-                    if (!force) {
-                        if (world.getBlockState(mutable).isAir()) {
+                    if (x * x / (largex * largex) + y * y / (largey * largey) + z * z / (largez * largez) <= 1) {
+                        mutable.set(pos, x, y, z);
+                        if (!force) {
+                            if (world.getBlockState(mutable).isAir()) {
+                                world.setBlockState(mutable, state, 2);
+                            }
+                        } else {
                             world.setBlockState(mutable, state, 2);
                         }
-                        continue;
                     }
-                    world.setBlockState(mutable, state, 2);
                 }
             }
         }
