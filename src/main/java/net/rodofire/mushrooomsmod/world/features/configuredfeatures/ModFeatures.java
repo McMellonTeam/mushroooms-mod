@@ -3,6 +3,7 @@ package net.rodofire.mushrooomsmod.world.features.configuredfeatures;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.world.gen.feature.*;
+import net.rodofire.mushrooomsmod.block.custom.FeatureTester;
 import net.rodofire.mushrooomsmod.world.features.config.CrystalConfig;
 import net.rodofire.mushrooomsmod.world.features.config.DirectionConfig;
 import net.rodofire.mushrooomsmod.world.features.config.ModMushroomFeatureConfig;
@@ -45,6 +46,9 @@ public abstract class ModFeatures<FC extends FeatureConfig> {
     //SimpleBlock
     public static Feature<ModSimpleBlockFeatureConfig> SIMPLE_BLOCK;
 
+    //dev
+    public static Feature<ModSimpleBlockFeatureConfig> FEATURE_TESTER;
+
     public static void addFeatures() {
         HUGE_BLUE_MUSHROOM = registercustomfeature("huge_blue_mushroom", new HugeBlueMushroomFeature(HugeMushroomFeatureConfig.CODEC));
         HUGE_PURPLE_MUSHROOM = registercustomfeature("huge_purple_mushroom", new CustomPurpleMushroomFeature(HugeMushroomFeatureConfig.CODEC));
@@ -68,6 +72,8 @@ public abstract class ModFeatures<FC extends FeatureConfig> {
         COLORFUL_BUSH = registercustomfeature("colorful_bush_feature", new ColorfulBushFeature(DefaultFeatureConfig.CODEC));
 
         SIMPLE_BLOCK = registercustomfeature("simple_block_feature", new SimpleBlockFeature(ModSimpleBlockFeatureConfig.CODEC));
+
+        FEATURE_TESTER = registercustomfeature("feature_tester", new DevFeature(ModSimpleBlockFeatureConfig.CODEC));
     }
 
     private static <C extends FeatureConfig, F extends Feature<C>> F registercustomfeature(String name, F feature) {

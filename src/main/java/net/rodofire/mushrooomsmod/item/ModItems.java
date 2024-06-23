@@ -269,6 +269,9 @@ public class ModItems {
                         entries.add(ModItems.BAGUETTE);
                         entries.add(ModItems.LUMINESCENT_SCHROOM_SOUP);
 
+                        //dev
+                        entries.add(ModBlocks.FEATURE_TESTER);
+
 
                     }).build());
 
