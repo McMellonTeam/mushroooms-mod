@@ -11,6 +11,13 @@ public class GenLines {
     }
 
     public static void drawLine(StructureWorldAccess world, BlockPos start, BlockPos end, BlockState state, boolean force) {
+        if(!force){
+            if(world.getBlockState(start).isAir()){
+                world.setBlockState(start, state, 2);
+            }
+        }else {
+            world.setBlockState(start, state, 2);
+        }
         int x1 = start.getX();
         int y1 = start.getY();
         int z1 = start.getZ();

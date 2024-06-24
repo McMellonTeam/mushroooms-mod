@@ -6,7 +6,6 @@ import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.StructureWorldAccess;
-import net.minecraft.world.WorldAccess;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.util.FeatureContext;
 import net.rodofire.mushrooomsmod.world.features.config.ModMushroomFeatureConfig;
@@ -16,7 +15,7 @@ public abstract class CustomGreenMushroom extends Feature<ModMushroomFeatureConf
         super(configCodec);
     }
 
-    protected boolean canGenerate(WorldAccess world, BlockPos pos, int height, BlockPos.Mutable mutablePos, int large) {
+    protected boolean canGenerate(StructureWorldAccess world, BlockPos pos, int height, BlockPos.Mutable mutablePos, int large) {
         for (int i = 0; i <= height + 1; ++i) {
             mutablePos.set(pos, 0, i, 0);
             BlockState state = world.getBlockState(mutablePos);
@@ -58,8 +57,8 @@ public abstract class CustomGreenMushroom extends Feature<ModMushroomFeatureConf
         return true;
     }
 
-    protected abstract void trunkPlace(BlockPos start, BlockPos.Mutable mutable, WorldAccess world, ModMushroomFeatureConfig config, int height, Random random);
+    protected abstract void trunkPlace(BlockPos start, BlockPos.Mutable mutable, StructureWorldAccess world, ModMushroomFeatureConfig config, int height, Random random);
 
-    protected abstract void capPlacer(BlockPos start, BlockPos.Mutable mutable, WorldAccess world, ModMushroomFeatureConfig config, int large, int height, Random random, boolean bigcap);
+    protected abstract void capPlacer(BlockPos start, BlockPos.Mutable mutable, StructureWorldAccess world, ModMushroomFeatureConfig config, int large, int height, Random random, boolean bigcap);
 
 }

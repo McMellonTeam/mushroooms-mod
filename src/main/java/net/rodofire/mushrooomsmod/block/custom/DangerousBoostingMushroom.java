@@ -18,7 +18,6 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
 import net.minecraft.world.WorldView;
-import net.rodofire.mushrooomsmod.block.entity.BoostingMushroomBlockEntity;
 import net.rodofire.mushrooomsmod.block.entity.DangerousBoostingMushroomBlockEntity;
 import org.jetbrains.annotations.Nullable;
 

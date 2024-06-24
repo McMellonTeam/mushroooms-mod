@@ -22,10 +22,10 @@ public class BigCrystal extends Feature<ModSimpleBlockFeatureConfig> {
 
     @Override
     public boolean generate(FeatureContext<ModSimpleBlockFeatureConfig> context) {
-        if (Random.create().nextBetween(0,4) == 0) {
+        if (Random.create().nextBetween(0, 4) == 0) {
             BlockPos pos = context.getOrigin();
             BlockPos secondpos = pos.add(Random.create().nextBetween(1, 16) * WorldGenUtil.getRandomOpposite(), Random.create().nextBetween(6, 30) * WorldGenUtil.getRandomOpposite(), Random.create().nextBetween(1, 16) * WorldGenUtil.getRandomOpposite());
-            BlockPos thirdpos = pos.add(Random.create().nextBetween(1,16) * WorldGenUtil.getRandomOpposite(), Random.create().nextBetween(6,30) * WorldGenUtil.getSign(secondpos.getY()), Random.create().nextBetween(1, 16) * WorldGenUtil.getRandomOpposite());
+            BlockPos thirdpos = pos.add(Random.create().nextBetween(1, 16) * WorldGenUtil.getRandomOpposite(), Random.create().nextBetween(6, 30) * WorldGenUtil.getSign(secondpos.getY()), Random.create().nextBetween(1, 16) * WorldGenUtil.getRandomOpposite());
 
             ModSimpleBlockFeatureConfig config = context.getConfig();
             Random random = context.getRandom();
@@ -41,10 +41,9 @@ public class BigCrystal extends Feature<ModSimpleBlockFeatureConfig> {
             BlockState state2 = world.getBlockState(middlestate);
             BlockState state3 = world.getBlockState(secondmiddlestate);
 
-            if(!generatePillar(secondpos, pos, state2, state1, world, mutable, state, random)) return false;
+            if (!generatePillar(secondpos, pos, state2, state1, world, mutable, state, random)) return false;
             return generatePillar(thirdpos, pos, state3, state1, world, mutable, state, random);
-        }
-        else {
+        } else {
             BlockPos pos = context.getOrigin();
             BlockPos secondpos = pos.add(Random.create().nextBetween(1, 16) * WorldGenUtil.getRandomOpposite(), Random.create().nextBetween(6, 30) * WorldGenUtil.getRandomOpposite(), Random.create().nextBetween(1, 16) * WorldGenUtil.getRandomOpposite());
 
@@ -65,7 +64,7 @@ public class BigCrystal extends Feature<ModSimpleBlockFeatureConfig> {
 
     private boolean generatePillar(BlockPos secondpos, BlockPos pos, BlockState state2, BlockState state1, StructureWorldAccess world, BlockPos.Mutable mutable, BlockState state, Random random) {
         Direction direction;
-        if(secondpos.getY() - pos.getY() > 0) direction = Direction.DOWN;
+        if (secondpos.getY() - pos.getY() > 0) direction = Direction.DOWN;
         else direction = Direction.UP;
 
         if (!state2.isAir()) return false;
@@ -84,7 +83,7 @@ public class BigCrystal extends Feature<ModSimpleBlockFeatureConfig> {
                 GenLines.drawLine(world, mutable, secondpos, state);
             }
         }
-        GenSpheres.generateHalfSphere(world, random, baselarge, pos, direction, state);
+        GenSpheres.generateHalfSphere(world, baselarge, pos, direction, state);
         return true;
     }
 

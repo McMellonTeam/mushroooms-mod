@@ -2,31 +2,30 @@ package net.rodofire.mushrooomsmod.worldgenutil;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.random.Random;
 import net.minecraft.world.StructureWorldAccess;
 
 public class GenCircles {
     //Validate
-    public static void generateCircle(StructureWorldAccess world, Random random, int largex, BlockState state, BlockPos pos) {
+    public static void generateCircle(StructureWorldAccess world,  int largex, BlockState state, BlockPos pos) {
         int x = pos.getX();
         int y = pos.getY();
         int z = pos.getZ();
-        generateOval(world, random, largex, largex, state, x, z, y, false, false);
+        generateOval(world,  largex, largex, state, x, z, y, false, false);
     }
-    public static void generateFullCircle(StructureWorldAccess world, Random random, int largex, BlockState state, BlockPos pos) {
+    public static void generateFullCircle(StructureWorldAccess world,  int largex, BlockState state, BlockPos pos) {
         int x = pos.getX();
         int y = pos.getY();
         int z = pos.getZ();
-        generateOval(world, random, largex, largex, state, x, z, y, false, true);
+        generateOval(world,  largex, largex, state, x, z, y, false, true);
     }
-    public static void generateFullCircle(StructureWorldAccess world, Random random, int largex, BlockState state, BlockPos pos,boolean force) {
+    public static void generateFullCircle(StructureWorldAccess world,  int largex, BlockState state, BlockPos pos,boolean force) {
         int x = pos.getX();
         int y = pos.getY();
         int z = pos.getZ();
-        generateOval(world, random, largex, largex, state, x, z, y, force, true);
+        generateOval(world,  largex, largex, state, x, z, y, force, true);
     }
 
-    public static void generateOval(StructureWorldAccess world, Random random, int radiusX, int radiusZ, BlockState blockState, int centerX, int centerZ, int y, boolean force, boolean full) {
+    public static void generateOval(StructureWorldAccess world, int radiusX, int radiusZ, BlockState blockState, int centerX, int centerZ, int y, boolean force, boolean full) {
         int x = 0;
         int z = radiusZ;
         int twoASquare = 2 * radiusX * radiusX;

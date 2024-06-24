@@ -18,9 +18,19 @@ public class GenSpiral {
 
             mutable.set(pos, x, y, z);
             if (!force) {
-                if (world.getBlockState(mutable).isAir()) continue;
+                if (!world.getBlockState(mutable).isAir()) continue;
             }
             world.setBlockState(mutable, blockState, 2);
+        }
+    }
+
+    public static void generateFullSpiral(int radius, int height, int turn, BlockState blockState, StructureWorldAccess world, BlockPos pos) {
+        generateFullSpiral(radius, height, turn, blockState, world, pos, false);
+    }
+
+    public static void generateFullSpiral(int radius, int height, int turn, BlockState blockState, StructureWorldAccess world, BlockPos pos, boolean force) {
+        for (int i = 0; i < radius; i++) {
+            generateSpiral(1, i, height, turn, blockState, world, pos, force);
         }
     }
 }
