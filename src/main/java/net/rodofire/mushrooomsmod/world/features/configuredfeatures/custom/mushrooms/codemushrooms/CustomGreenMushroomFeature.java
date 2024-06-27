@@ -32,7 +32,6 @@ public class CustomGreenMushroomFeature extends CustomGreenMushroom {
         placecaps(start, mutable, world, large, height, blockState);
 
         if (bigcap) {
-            System.out.println(large+"  "+(int)(0.7*large));
             placecaps(start, mutable, world, (int)(0.7*large), height + 1, blockState);
             placecaps(start, mutable, world, (int)(0.7*large), height - 1, blockState);
         }

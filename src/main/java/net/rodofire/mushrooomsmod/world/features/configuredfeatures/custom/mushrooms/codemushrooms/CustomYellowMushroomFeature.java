@@ -134,7 +134,6 @@ public class CustomYellowMushroomFeature extends CustomYellowMushroom {
         int randomx = coordinates[0];
         int randomz = coordinates[1];
         BlockState blockState1 = config.stemProvider.get(random, pos);
-        System.out.println(randomx + "  " + randomz);
         for (float secondlarge = 0; secondlarge <= large; secondlarge = secondlarge + 0.25f) {
             for (double i = -Math.PI / (3 * large); i <= Math.PI / 2; i = i + Math.PI / (6 * large)) {
                 for (double j = -Math.PI; j <= Math.PI; j = j + Math.PI / (6 * large)) {
@@ -170,7 +169,6 @@ public class CustomYellowMushroomFeature extends CustomYellowMushroom {
         int randomx = coordinates[0];
         int randomz = coordinates[1];
 
-        System.out.println(randomx + "  " + randomz);
         for (float secondlarge = 0; secondlarge <= large; secondlarge = secondlarge + 0.25f) {
             for (double i = -Math.PI / (3 * large); i <= Math.PI / 2; i = i + Math.PI / (8 * large)) {
                 for (double j = -Math.PI; j <= Math.PI; j = j + Math.PI / (8 * large)) {

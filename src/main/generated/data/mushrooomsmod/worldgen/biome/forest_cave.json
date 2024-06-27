@@ -6,20 +6,12 @@
       "minecraft:canyon"
     ]
   },
-  "downfall": 0.4,
+  "downfall": 0.3,
   "effects": {
     "fog_color": 8111592,
-    "foliage_color": 7131474,
-    "grass_color": 6935885,
-    "mood_sound": {
-      "block_search_extent": 8,
-      "offset": 2.0,
-      "sound": "minecraft:ambient.cave",
-      "tick_delay": 6000
-    },
     "sky_color": 1615078,
-    "water_color": 2729983,
-    "water_fog_color": 420527
+    "water_color": 4159204,
+    "water_fog_color": 329011
   },
   "features": [
     [],
@@ -63,22 +55,17 @@
       "minecraft:ore_copper",
       "minecraft:underwater_magma"
     ],
-    [],
+    [
+      "mushrooomsmod:oak_tree_underground_placed_key",
+      "mushrooomsmod:alazea_tree_underground_placed_key"
+    ],
     [
       "minecraft:spring_water",
       "minecraft:spring_lava"
     ],
     [
       "minecraft:glow_lichen",
-      "minecraft:trees_plains",
-      "minecraft:patch_grass_plain",
-      "mushrooomsmod:colorful_bush_surface_placed_key",
-      "mushrooomsmod:purple_perennial_surface_placed_key",
-      "mushrooomsmod:pink_perennial_surface_placed_key",
-      "mushrooomsmod:green_perennial_surface_placed_key",
-      "mushrooomsmod:orange_perennial_surface_placed_key",
-      "mushrooomsmod:luminescent_perennial_surface_placed_key",
-      "mushrooomsmod:yellow_perennial_surface_placed_key"
+      "mushrooomsmod:grass_underground_placed_key"
     ],
     [
       "minecraft:freeze_top_layer"
@@ -87,14 +74,7 @@
   "has_precipitation": true,
   "spawn_costs": {},
   "spawners": {
-    "ambient": [
-      {
-        "type": "minecraft:bat",
-        "maxCount": 8,
-        "minCount": 8,
-        "weight": 10
-      }
-    ],
+    "ambient": [],
     "axolotls": [],
     "creature": [
       {
@@ -123,66 +103,10 @@
       }
     ],
     "misc": [],
-    "monster": [
-      {
-        "type": "minecraft:spider",
-        "maxCount": 4,
-        "minCount": 4,
-        "weight": 100
-      },
-      {
-        "type": "minecraft:zombie",
-        "maxCount": 4,
-        "minCount": 4,
-        "weight": 95
-      },
-      {
-        "type": "minecraft:zombie_villager",
-        "maxCount": 1,
-        "minCount": 1,
-        "weight": 5
-      },
-      {
-        "type": "minecraft:skeleton",
-        "maxCount": 4,
-        "minCount": 4,
-        "weight": 100
-      },
-      {
-        "type": "minecraft:creeper",
-        "maxCount": 4,
-        "minCount": 4,
-        "weight": 100
-      },
-      {
-        "type": "minecraft:slime",
-        "maxCount": 4,
-        "minCount": 4,
-        "weight": 100
-      },
-      {
-        "type": "minecraft:enderman",
-        "maxCount": 4,
-        "minCount": 1,
-        "weight": 10
-      },
-      {
-        "type": "minecraft:witch",
-        "maxCount": 1,
-        "minCount": 1,
-        "weight": 5
-      }
-    ],
-    "underground_water_creature": [
-      {
-        "type": "minecraft:glow_squid",
-        "maxCount": 6,
-        "minCount": 4,
-        "weight": 10
-      }
-    ],
+    "monster": [],
+    "underground_water_creature": [],
     "water_ambient": [],
     "water_creature": []
   },
-  "temperature": 0.7
+  "temperature": 0.5
 }

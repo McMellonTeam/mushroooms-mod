@@ -46,10 +46,8 @@ public class PinkLuminescentHeadVinesBlock extends Block {
     }
 
     public static int getluminancesupplier(int luminance, World world, BlockPos pos) {
-        System.out.println("on initialise");
         BlockState blocAuDessus = world.getBlockState(pos.up());
         if (blocAuDessus.getBlock() == ModBlocks.PINK_LUMINESCENT_MUSHROOM_BLOCK || blocAuDessus.getBlock() == ModBlocks.PINK_LUMINESCENT_BODY_VINES) {
-            System.out.println("true");
             return luminance;
         }
         return 0;

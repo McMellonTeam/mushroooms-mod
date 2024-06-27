@@ -17,12 +17,10 @@ public class CustomOrangeMushroomFeature extends CustomOrangeMushroom {
 
     @Override
     protected void generateGiantTrunk(WorldAccess world, Random random, BlockPos pos, BlockPos.Mutable mutable, int height, HugeMushroomFeatureConfig config) {
-        System.out.println("on entre");
         BlockState blockState = config.stemProvider.get(random, pos);
         int firstlarge = Random.create().nextBetween(2, 4);
         int lastlarge = 1;
 
-        System.out.println(firstlarge + "  " + lastlarge);
         for (int i = 0; i <= height; ++i) {
             mutable.set(pos, 0, i, 0);
             this.setBlockState(world, mutable, blockState);
@@ -114,7 +112,6 @@ public class CustomOrangeMushroomFeature extends CustomOrangeMushroom {
         int firstlarge = Random.create().nextBetween(2, 4);
         int lastlarge = 1;
 
-        System.out.println(firstlarge + "  " + lastlarge);
         for (int i = 0; i <= height; ++i) {
             mutable.set(pos, 0, i, 0);
             this.setBlockState(world, mutable, blockState);

@@ -109,6 +109,7 @@ public class ModConfiguredFeatures<FC extends FeatureConfig> {
     //Grass
     public static final RegistryKey<ConfiguredFeature<?, ?>> TINY_GRASSS_KEY = registerKey("tiny_grass_key");
     public static final RegistryKey<ConfiguredFeature<?, ?>> GRASS_KEY = registerKey("grass_key");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> DENSE_GRASS_KEY = registerKey("dense_grass_key");
     public static final RegistryKey<ConfiguredFeature<?, ?>> GRASS_BLUE_LUMINESCENT_KEY = registerKey("grass_blue_luminescent_key");
     public static final RegistryKey<ConfiguredFeature<?, ?>> TALL_GRASS_BLUE_LUMINESCENT_KEY = registerKey("grass_tall_blue_luminescent_key");
 
@@ -227,7 +228,8 @@ public class ModConfiguredFeatures<FC extends FeatureConfig> {
         register(context, TINY_GRASSS_KEY, Feature.FLOWER, new RandomPatchFeatureConfig(32, 6, 2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.TINY_GRASS)))));
         register(context, GRASS_BLUE_LUMINESCENT_KEY, Feature.FLOWER, new RandomPatchFeatureConfig(43, 12, 3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.BLUE_LUMINESCENT_GRASS)))));
         register(context, TALL_GRASS_BLUE_LUMINESCENT_KEY, Feature.FLOWER, new RandomPatchFeatureConfig(43, 12, 3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.BLUE_LUMINESCENT_TALL_GRASS)))));
-        register(context, GRASS_KEY, Feature.FLOWER, new RandomPatchFeatureConfig(43, 12, 3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(Blocks.GRASS)))));
+        register(context, GRASS_KEY, Feature.FLOWER, new RandomPatchFeatureConfig(40, 12, 3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(Blocks.GRASS)))));
+        register(context, DENSE_GRASS_KEY, Feature.FLOWER, new RandomPatchFeatureConfig(80, 12, 3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(Blocks.GRASS)))));
 
         //vines
         register(context, BLUE_LUMINESCENT_VINES_UP_KEY, ModFeatures.BLUE_LUMINESCENT_VINES, new TwistingVinesFeatureConfig(8, 1, 20));

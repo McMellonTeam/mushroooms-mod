@@ -22,6 +22,10 @@ public class ModUndergroundPlacedFeatures {
     public static final RegistryKey<PlacedFeature> RED_LUMERIA_UNDERGROUND_PLACED_KEY = registerKey("red_lumeria_underground_placed_key");
     public static final RegistryKey<PlacedFeature> MUSHROOM_FLOWERS_UNDERGROUND_PLACED_KEY = registerKey("mushroom_flowers_underground_placed_key");
 
+    //Tree
+    public static final RegistryKey<PlacedFeature> OAK_TREE_UNDERGROUND_PLACED_KEY = registerKey("oak_tree_underground_placed_key");
+    public static final RegistryKey<PlacedFeature> AZALEA_TREE_UNDERGROUND_PLACED_KEY = registerKey("alazea_tree_underground_placed_key");
+
     //Mushrooms Flowers
     public static final RegistryKey<PlacedFeature> MUSHROOM_SIDE_BLUE_LUMINESCENT_UNDERGROUND_PLACED_KEY = registerKey("mushroom_side_blue_luminescent_underground_placed_key");
     public static final RegistryKey<PlacedFeature> MUSHROOM_SMALL_RED_UNDERGROUND_PLACED_KEY = registerKey("mushroom_small_red_underground_placed_key");
@@ -103,6 +107,11 @@ public class ModUndergroundPlacedFeatures {
         register(context, HUGE_BROWN_MUSHROOM_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(TreeConfiguredFeatures.HUGE_BROWN_MUSHROOM), CountPlacementModifier.of(165), SquarePlacementModifier.of(), ModPlacedFeatures.STONE_LEVEL, BiomePlacementModifier.of());
         register(context, HUGE_RED_MUSHROOM_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(TreeConfiguredFeatures.HUGE_RED_MUSHROOM), CountPlacementModifier.of(170), SquarePlacementModifier.of(), ModPlacedFeatures.STONE_LEVEL, BiomePlacementModifier.of());
         register(context, FERTILE_RED_MUSHROOM_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.FERTILE_RED_MUSHROOM_KEY), CountPlacementModifier.of(240), SquarePlacementModifier.of(), ModPlacedFeatures.STONE_LEVEL, BiomePlacementModifier.of());
+
+        //Tree
+        register(context, OAK_TREE_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(TreeConfiguredFeatures.OAK), CountPlacementModifier.of(15), SquarePlacementModifier.of(), ModPlacedFeatures.STONE_LEVEL, BiomePlacementModifier.of());
+        register(context, AZALEA_TREE_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(TreeConfiguredFeatures.AZALEA_TREE), CountPlacementModifier.of(15), SquarePlacementModifier.of(), ModPlacedFeatures.STONE_LEVEL, BiomePlacementModifier.of());
+
 
         //Crystal
         register(context, RED_CRYSTAL_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.RED_CRYSTAL_KEY), CountPlacementModifier.of(61), SquarePlacementModifier.of(), ModPlacedFeatures.CAVE_LEVEL, BiomePlacementModifier.of());
