@@ -72,6 +72,16 @@ public class ModOverworldRegion extends Region {
                 .weirdness(MultiNoiseUtil.ParameterRange.of(0.03f, 0.55f))
                 .build().forEach(point -> builder.add(point, ModOverworldBiomes.CRYSTAL_CAVE));
 
+        //Forest Cave
+        new ParameterUtils.ParameterPointListBuilder()
+                .temperature(ParameterUtils.Temperature.HOT)
+                .humidity(ParameterUtils.Humidity.DRY)
+                .continentalness(ParameterUtils.Continentalness.FAR_INLAND)
+                .erosion(ParameterUtils.Erosion.EROSION_0)
+                .depth(ParameterUtils.Depth.UNDERGROUND)
+                .weirdness(MultiNoiseUtil.ParameterRange.of(-1f, 0.05f))
+                .build().forEach(point -> builder.add(point, ModOverworldBiomes.FOREST_CAVE));
+
 
         builder.build().forEach(mapper);
     }
