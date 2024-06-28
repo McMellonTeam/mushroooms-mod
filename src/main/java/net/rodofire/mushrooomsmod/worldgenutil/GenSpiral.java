@@ -3,6 +3,7 @@ package net.rodofire.mushrooomsmod.worldgenutil;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.StructureWorldAccess;
+import net.rodofire.mushrooomsmod.util.MathsUtil;
 
 public class GenSpiral {
     public static void generateSpiral(int large, int radius, int height, int turn, BlockState blockState, StructureWorldAccess world, BlockPos pos) {
@@ -12,8 +13,8 @@ public class GenSpiral {
     public static void generateSpiral(int radius, int height, int turn, BlockState blockState, StructureWorldAccess world, BlockPos pos, boolean force, double k) {
         BlockPos.Mutable mutable = new BlockPos.Mutable();
         for (double i = 0; i < radius * height * turn; i++) {
-            int x = (int) (radius * Math.cos(i + k));
-            int z = (int) (radius * Math.sin(i + k));
+            int x = (int) (radius * MathsUtil.getFastCos(i + k));
+            int z = (int) (radius * MathsUtil.getFastSin(i + k));
             int y = (int) (i / radius * turn);
 
             mutable.set(pos, x, y, z);

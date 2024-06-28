@@ -5,7 +5,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
-import net.minecraft.world.WorldAccess;
+import net.minecraft.world.StructureWorldAccess;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.HugeMushroomFeatureConfig;
 import net.minecraft.world.gen.feature.util.FeatureContext;
@@ -19,7 +19,7 @@ public abstract class CustomYellowMushroom extends Feature<HugeMushroomFeatureCo
         super(configCodec);
     }
 
-    protected boolean canGenerate(WorldAccess world, BlockPos pos, int height, int large, BlockPos.Mutable mutablePos, HugeMushroomFeatureConfig config, int randomx, int randomz, double phi, double theta, float multiplier) {
+    protected boolean canGenerate(StructureWorldAccess world, BlockPos pos, int height, int large, BlockPos.Mutable mutablePos, HugeMushroomFeatureConfig config, int randomx, int randomz, double phi, double theta, float multiplier) {
         for (int i = -large + randomx; i <= large + randomx; ++i) {
             for (int j = -large + randomz; j <= large + randomz; ++j) {
                 for (int k = height - large + 4; k <= large + height; k++) {
@@ -46,7 +46,7 @@ public abstract class CustomYellowMushroom extends Feature<HugeMushroomFeatureCo
     public boolean generate(FeatureContext<HugeMushroomFeatureConfig> context) {
         BlockPos.Mutable mutable;
         BlockPos blockPos = context.getOrigin();
-        WorldAccess world = context.getWorld();
+        StructureWorldAccess world = context.getWorld();
         Random random = context.getRandom();
         HugeMushroomFeatureConfig hugeMushroomFeatureConfig = context.getConfig();
         mutable = new BlockPos.Mutable();
@@ -103,14 +103,14 @@ public abstract class CustomYellowMushroom extends Feature<HugeMushroomFeatureCo
         return this.generateCap(world, random, blockPos, height, mutable, hugeMushroomFeatureConfig, large, coordinates);
     }
 
-    protected abstract Integer[] generateHugeTrunk(WorldAccess world, Random random, BlockPos pos, BlockPos.Mutable mutable, int height, HugeMushroomFeatureConfig config, int randomx, int randomz, double phi, double theta);
+    protected abstract Integer[] generateHugeTrunk(StructureWorldAccess world, Random random, BlockPos pos, BlockPos.Mutable mutable, int height, HugeMushroomFeatureConfig config, int randomx, int randomz, double phi, double theta);
 
-    protected abstract Integer[] generateTrunk(WorldAccess world, Random random, BlockPos pos, BlockPos.Mutable mutable, int height, HugeMushroomFeatureConfig config, int randomx, int randomz, double phi, double theta);
+    protected abstract Integer[] generateTrunk(StructureWorldAccess world, Random random, BlockPos pos, BlockPos.Mutable mutable, int height, HugeMushroomFeatureConfig config, int randomx, int randomz, double phi, double theta);
 
-    protected abstract boolean generateCap(WorldAccess var1, Random var2, BlockPos var3, int var4, BlockPos.Mutable var5, HugeMushroomFeatureConfig var6, int large, Integer[] coordinates);
+    protected abstract boolean generateCap(StructureWorldAccess var1, Random var2, BlockPos var3, int var4, BlockPos.Mutable var5, HugeMushroomFeatureConfig var6, int large, Integer[] coordinates);
 
-    protected abstract boolean generateFlatterCap(WorldAccess var1, Random var2, BlockPos var3, int var4, BlockPos.Mutable var5, HugeMushroomFeatureConfig var6, int large, Integer[] coordinates);
+    protected abstract boolean generateFlatterCap(StructureWorldAccess var1, Random var2, BlockPos var3, int var4, BlockPos.Mutable var5, HugeMushroomFeatureConfig var6, int large, Integer[] coordinates);
 
-    protected abstract ArrayList<Double> direction(WorldAccess world, Random random, BlockPos pos, int height, BlockPos.Mutable mutable, HugeMushroomFeatureConfig config);
+    protected abstract ArrayList<Double> direction(StructureWorldAccess world, Random random, BlockPos pos, int height, BlockPos.Mutable mutable, HugeMushroomFeatureConfig config);
 
 }

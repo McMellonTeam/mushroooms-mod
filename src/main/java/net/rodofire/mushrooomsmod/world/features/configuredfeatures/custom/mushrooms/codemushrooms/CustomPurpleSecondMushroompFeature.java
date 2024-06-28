@@ -9,6 +9,7 @@ import net.minecraft.util.math.Vec3i;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
 import net.rodofire.mushrooomsmod.block.ModBlocks;
+import net.rodofire.mushrooomsmod.util.MathsUtil;
 import net.rodofire.mushrooomsmod.world.features.config.ModMushroomFeatureConfig;
 
 import java.util.ArrayList;
@@ -189,10 +190,10 @@ public class CustomPurpleSecondMushroompFeature extends CustomPurpleSecondMushro
         //Generates coordinates in function of the direction
         int x;
         int z;
-        double xddirection = 10 * Math.sin(direction * Math.PI / 4);
+        double xddirection = 10 * MathsUtil.getFastSin(direction * 45);
         int xidirection = (int) (xddirection / Math.abs(xddirection));
 
-        double zddirection = 10 * Math.cos(direction * Math.PI / 4);
+        double zddirection = 10 * MathsUtil.getFastCos(direction * 45);
         int zidirection = (int) (zddirection / Math.abs(zddirection));
 
 

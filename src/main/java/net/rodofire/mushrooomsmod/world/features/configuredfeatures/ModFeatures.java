@@ -3,14 +3,12 @@ package net.rodofire.mushrooomsmod.world.features.configuredfeatures;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.world.gen.feature.*;
-import net.rodofire.mushrooomsmod.block.custom.FeatureTester;
 import net.rodofire.mushrooomsmod.world.features.config.CrystalConfig;
 import net.rodofire.mushrooomsmod.world.features.config.DirectionConfig;
 import net.rodofire.mushrooomsmod.world.features.config.ModMushroomFeatureConfig;
 import net.rodofire.mushrooomsmod.world.features.config.ModSimpleBlockFeatureConfig;
-import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.*;
 import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.SimpleBlockFeature;
-import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.mushrooms.HugeBlueMushroom.HugeBlueMushroomFeature;
+import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.*;
 import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.mushrooms.codemushrooms.*;
 import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.mushrooms.structuremushrooms.CustomGreenSecondMushroomFeature;
 import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.mushrooms.structuremushrooms.CustomRedFertileMushroom;
@@ -19,7 +17,7 @@ import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.mushr
 public abstract class ModFeatures<FC extends FeatureConfig> {
 
     //Huge mushroom features
-    public static Feature<HugeMushroomFeatureConfig> HUGE_BLUE_MUSHROOM;
+    public static Feature<ModMushroomFeatureConfig> HUGE_BLUE_MUSHROOM;
     public static Feature<HugeMushroomFeatureConfig> HUGE_PURPLE_MUSHROOM;
     public static Feature<ModMushroomFeatureConfig> HUGE_GREEN_MUSHROOM;
     public static Feature<HugeMushroomFeatureConfig> HUGE_BLUE_LUMINESCENT_MUSHROOM;
@@ -50,7 +48,7 @@ public abstract class ModFeatures<FC extends FeatureConfig> {
     public static Feature<ModSimpleBlockFeatureConfig> FEATURE_TESTER;
 
     public static void addFeatures() {
-        HUGE_BLUE_MUSHROOM = registercustomfeature("huge_blue_mushroom", new HugeBlueMushroomFeature(HugeMushroomFeatureConfig.CODEC));
+        HUGE_BLUE_MUSHROOM = registercustomfeature("huge_blue_mushroom", new CustomBuleMushroomFeature(ModMushroomFeatureConfig.CODEC));
         HUGE_PURPLE_MUSHROOM = registercustomfeature("huge_purple_mushroom", new CustomPurpleMushroomFeature(HugeMushroomFeatureConfig.CODEC));
         HUGE_GREEN_MUSHROOM = registercustomfeature("huge_green_mushroom", new CustomGreenMushroomFeature(ModMushroomFeatureConfig.CODEC));
         HUGE_BLUE_LUMINESCENT_MUSHROOM = registercustomfeature("huge_blue_luminescent_mushroom", new CustomLuminescentBlueMushroomFeature(HugeMushroomFeatureConfig.CODEC));

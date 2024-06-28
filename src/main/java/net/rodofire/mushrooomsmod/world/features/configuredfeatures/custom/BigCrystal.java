@@ -8,10 +8,11 @@ import net.minecraft.util.math.random.Random;
 import net.minecraft.world.StructureWorldAccess;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.util.FeatureContext;
+import net.rodofire.mushrooomsmod.util.MathsUtil;
+import net.rodofire.mushrooomsmod.world.features.config.ModSimpleBlockFeatureConfig;
 import net.rodofire.mushrooomsmod.worldgenutil.GenLines;
 import net.rodofire.mushrooomsmod.worldgenutil.GenSpheres;
 import net.rodofire.mushrooomsmod.worldgenutil.WorldGenUtil;
-import net.rodofire.mushrooomsmod.world.features.config.ModSimpleBlockFeatureConfig;
 
 public class BigCrystal extends Feature<ModSimpleBlockFeatureConfig> {
 
@@ -75,15 +76,15 @@ public class BigCrystal extends Feature<ModSimpleBlockFeatureConfig> {
         int baselarge = Random.create().nextBetween(2, 5);
         for (int i = 1; i <= baselarge; i++) {
             for (float j = (float) -Math.PI; j < Math.PI; j += (float) (Math.PI / (4 * i))) {
-                int x = (int) ((i) * Math.cos(j));
-                int z = (int) ((i) * Math.sin(j));
+                int x = (int) ((i) * MathsUtil.getFastCos(j));
+                int z = (int) ((i) * MathsUtil.getFastSin(j));
                 mutable.set(pos, x, 0, z);
                 world.setBlockState(mutable, state, 2);
 
                 GenLines.drawLine(world, mutable, secondpos, state);
             }
         }
-        GenSpheres.generateHalfSphere(world, baselarge, pos, direction, state);
+        GenSpheres.generateHalfFullSphere(world, baselarge, pos, direction, state);
         return true;
     }
 

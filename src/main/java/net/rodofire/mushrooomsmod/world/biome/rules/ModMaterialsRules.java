@@ -48,13 +48,18 @@ public class ModMaterialsRules {
 
                 //Vanilla Cave
                 sequence(condition(MaterialRules.biome(ModOverworldBiomes.VANILLA_SHROOM_CAVE),
-                                sequence(condition(belowtop, sequence(condition(stonecavelevel,
-                                        sequence(condition(MaterialRules.STONE_DEPTH_FLOOR,
-                                                        sequence(condition(emmentalNoiseAbove(0.25d), ROOTED_DIRT), condition(emmentalNoiseAbove(-0.25d), MYCELIUM), COARSE_DIRT)), dirtfloor,
-                                                sequence(condition(MaterialRules.STONE_DEPTH_CEILING,
-                                                        sequence(condition(emmentalNoiseAbove(0d), DIRT), condition(emmentalNoiseAbove(-0.2d), ROOTED_DIRT), condition(emmentalNoiseAbove(-0.4d), COARSE_DIRT))))))))))
+                        sequence(condition(belowtop, sequence(condition(stonecavelevel,
+                                sequence(condition(MaterialRules.STONE_DEPTH_FLOOR,
+                                                sequence(condition(emmentalNoiseAbove(0.25d), ROOTED_DIRT), condition(emmentalNoiseAbove(-0.25d), MYCELIUM), COARSE_DIRT)), dirtfloor,
+                                        sequence(condition(MaterialRules.STONE_DEPTH_CEILING,
+                                                sequence(condition(emmentalNoiseAbove(0d), DIRT), condition(emmentalNoiseAbove(-0.2d), ROOTED_DIRT), condition(emmentalNoiseAbove(-0.4d), COARSE_DIRT))))))))))),
 
-                        ));
+                //Forest Cave
+                condition(MaterialRules.biome(ModOverworldBiomes.FOREST_CAVE),
+                        condition(belowtop, condition(stonecavelevel, sequence(condition(MaterialRules.STONE_DEPTH_FLOOR, GRASS_BLOCK),
+                                condition(MaterialRules.STONE_DEPTH_FLOOR_WITH_SURFACE_DEPTH_RANGE_6, DIRT)))))
+        );
+
 
     }
 

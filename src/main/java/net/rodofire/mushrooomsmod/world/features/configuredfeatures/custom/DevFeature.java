@@ -3,12 +3,13 @@ package net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom;
 import com.mojang.serialization.Codec;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.StructureWorldAccess;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.util.FeatureContext;
 import net.rodofire.mushrooomsmod.world.features.config.ModSimpleBlockFeatureConfig;
-import net.rodofire.mushrooomsmod.worldgenutil.GenCircles;
+import net.rodofire.mushrooomsmod.worldgenutil.GenSpheres;
 
 public class DevFeature extends Feature<ModSimpleBlockFeatureConfig> {
     public DevFeature(Codec<ModSimpleBlockFeatureConfig> configCodec) {
@@ -23,11 +24,10 @@ public class DevFeature extends Feature<ModSimpleBlockFeatureConfig> {
         BlockPos pos = context.getOrigin();
         BlockState state = context.getConfig().blockprovider.get(random, pos);
         long startTimeCartesian = System.nanoTime();
-        GenCircles.generateCircle(world,6,state,pos.up());
-        GenCircles.generateFullCircle(world,6,state,pos);
+        GenSpheres.generateHalfFullSphere(world, 10, pos, Direction.UP, state);
         //GenSpheres.generateSphere(world, random, 50,pos, state,false);
         long endTimeCartesian = System.nanoTime();
-        long durationCartesian = (endTimeCartesian - startTimeCartesian) / 1000000;;
+        long durationCartesian = (endTimeCartesian - startTimeCartesian) / 1000000;
         System.out.println("duretion : " + durationCartesian + " ms");
         return true;
     }

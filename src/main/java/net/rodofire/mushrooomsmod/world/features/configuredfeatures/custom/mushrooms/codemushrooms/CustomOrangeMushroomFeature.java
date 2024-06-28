@@ -5,8 +5,10 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
+import net.minecraft.world.StructureWorldAccess;
 import net.minecraft.world.WorldAccess;
 import net.minecraft.world.gen.feature.HugeMushroomFeatureConfig;
+import net.rodofire.mushrooomsmod.worldgenutil.GenSpheres;
 
 import java.util.ArrayList;
 
@@ -16,7 +18,7 @@ public class CustomOrangeMushroomFeature extends CustomOrangeMushroom {
     }
 
     @Override
-    protected void generateGiantTrunk(WorldAccess world, Random random, BlockPos pos, BlockPos.Mutable mutable, int height, HugeMushroomFeatureConfig config) {
+    protected void generateGiantTrunk(StructureWorldAccess world, Random random, BlockPos pos, BlockPos.Mutable mutable, int height, HugeMushroomFeatureConfig config) {
         BlockState blockState = config.stemProvider.get(random, pos);
         int firstlarge = Random.create().nextBetween(2, 4);
         int lastlarge = 1;
@@ -76,11 +78,13 @@ public class CustomOrangeMushroomFeature extends CustomOrangeMushroom {
     }
 
     @Override
-    protected void generateGiantCap(WorldAccess world, Random random, BlockPos pos, int height, BlockPos.Mutable mutable, HugeMushroomFeatureConfig config, int large) {
+    protected void generateGiantCap(StructureWorldAccess world, Random random, BlockPos pos, int height, BlockPos.Mutable mutable, HugeMushroomFeatureConfig config, int large) {
         BlockState blockState = config.capProvider.get(random, pos);
         BlockState blockState2 = Blocks.AIR.getDefaultState();
 
-        for (float secondlarge = large - 2; secondlarge <= large; secondlarge = secondlarge + 0.25f) {
+        GenSpheres.generateFullElipsoid(world, (int) (large * 0.9f), (int) (large * 2.4f), (int) (large * 0.9f), pos.add(0, (int) (height - 2.4 * large + 4), 0), blockState);
+        GenSpheres.generateFullElipsoid(world, (int) ((large - 1) * 0.9f), (int) ((large - 1) * 2.4f), (int) ((large - 1) * 0.9f), pos.add(0, (int) (height - 2.4 * large + 4), 0), blockState);
+        /*for (float secondlarge = large - 2; secondlarge <= large; secondlarge = secondlarge + 0.25f) {
             for (double i = -Math.PI / (3 * large); i <= Math.PI / 2; i = i + Math.PI / (8 * large)) {
                 for (double j = -Math.PI; j <= Math.PI; j = j + Math.PI / (7 * large)) {
                     double x = secondlarge * 0.9 * Math.cos(i) * Math.cos(j);
@@ -103,11 +107,11 @@ public class CustomOrangeMushroomFeature extends CustomOrangeMushroom {
                         this.setBlockState(world, mutable, blockState2);
                 }
             }
-        }
+        }*/
     }
 
     @Override
-    protected void generateTrunk(WorldAccess world, Random random, BlockPos pos, BlockPos.Mutable mutable, int height, HugeMushroomFeatureConfig config) {
+    protected void generateTrunk(StructureWorldAccess world, Random random, BlockPos pos, BlockPos.Mutable mutable, int height, HugeMushroomFeatureConfig config) {
         BlockState blockState = config.stemProvider.get(random, pos);
         int firstlarge = Random.create().nextBetween(2, 4);
         int lastlarge = 1;
@@ -151,7 +155,7 @@ public class CustomOrangeMushroomFeature extends CustomOrangeMushroom {
 
     }
 
-    protected void placeBase(WorldAccess world, BlockPos.Mutable mutable, BlockPos pos, BlockState blockState, int x, int z, int height) {
+    protected void placeBase(StructureWorldAccess world, BlockPos.Mutable mutable, BlockPos pos, BlockState blockState, int x, int z, int height) {
         for (int j = 0; j <= height; ++j) {
             mutable.set(pos, x, j, z);
             this.setBlockState(world, mutable, blockState);
@@ -167,11 +171,13 @@ public class CustomOrangeMushroomFeature extends CustomOrangeMushroom {
 
 
     @Override
-    protected void generateCap(WorldAccess world, Random random, BlockPos pos, int height, BlockPos.Mutable mutable, HugeMushroomFeatureConfig config, int large) {
+    protected void generateCap(StructureWorldAccess world, Random random, BlockPos pos, int height, BlockPos.Mutable mutable, HugeMushroomFeatureConfig config, int large) {
         BlockState blockState = config.capProvider.get(random, pos);
         BlockState blockState2 = Blocks.AIR.getDefaultState();
 
-        for (float secondlarge = large - 2; secondlarge <= large; secondlarge = secondlarge + 0.25f) {
+        GenSpheres.generateFullElipsoid(world, large, (int) (2.4 * large), large, pos.add(0, height - large + 3, 0), blockState, true);
+        GenSpheres.generateFullElipsoid(world, large - 1, (int) (2.4 * (large - 1)), large - 1, pos.add(0, height - large - 1, 0), blockState2, true);
+        /*for (float secondlarge = large - 2; secondlarge <= large; secondlarge = secondlarge + 0.25f) {
             for (double i = -Math.PI / (3 * large); i <= Math.PI / 2; i = i + Math.PI / (7 * large)) {
                 for (double j = -Math.PI; j <= Math.PI; j = j + Math.PI / (6 * large)) {
                     double x = secondlarge * Math.cos(i) * Math.cos(j);
@@ -182,8 +188,8 @@ public class CustomOrangeMushroomFeature extends CustomOrangeMushroom {
                         this.setBlockState(world, mutable, blockState);
                 }
             }
-        }
-        for (float secondlarge = 0; secondlarge < large - 0.75f; secondlarge = secondlarge + 0.25f) {
+        }*/
+        /*for (float secondlarge = 0; secondlarge < large - 0.75f; secondlarge = secondlarge + 0.25f) {
             for (double i = 0; i <= Math.PI / 2; i = i + Math.PI / (4 * large)) {
                 for (double j = -Math.PI; j <= Math.PI; j = j + Math.PI / (4 * large)) {
                     double x = secondlarge * Math.cos(i) * Math.cos(j);
@@ -194,7 +200,7 @@ public class CustomOrangeMushroomFeature extends CustomOrangeMushroom {
                         this.setBlockState(world, mutable, blockState2);
                 }
             }
-        }
+        }*/
     }
 
 
