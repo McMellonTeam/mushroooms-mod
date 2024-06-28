@@ -24,11 +24,13 @@ public class MathsUtil {
     }
 
     public static double getFastSin(double x) {
-        return sinfastTable[((int) x) % FAST_TABLE_SIZE];
+        x = x % 360;
+        return sinfastTable[((int) x + 360) % FAST_TABLE_SIZE];
     }
 
     public static double getFastCos(double x) {
-        return cosfastTable[((int) x) % FAST_TABLE_SIZE];
+        x = x % 360;
+        return cosfastTable[((int) x + 360) % FAST_TABLE_SIZE];
     }
 
     public static double getPreciseSin(double x) {

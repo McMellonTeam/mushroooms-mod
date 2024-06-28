@@ -3,7 +3,6 @@ package net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom;
 import com.mojang.serialization.Codec;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.StructureWorldAccess;
 import net.minecraft.world.gen.feature.Feature;
@@ -24,11 +23,10 @@ public class DevFeature extends Feature<ModSimpleBlockFeatureConfig> {
         BlockPos pos = context.getOrigin();
         BlockState state = context.getConfig().blockprovider.get(random, pos);
         long startTimeCartesian = System.nanoTime();
-        GenSpheres.generateHalfFullSphere(world, 10, pos, Direction.UP, state);
-        //GenSpheres.generateSphere(world, random, 50,pos, state,false);
-        long endTimeCartesian = System.nanoTime();
+        GenSpheres.generateFullElipsoid(world, 50, 50, 50, pos, state);
+        long endTimeCartesian = (System.nanoTime());
         long durationCartesian = (endTimeCartesian - startTimeCartesian) / 1000000;
-        System.out.println("duretion : " + durationCartesian + " ms");
+        System.out.println("duration : " + durationCartesian + " ms");
         return true;
     }
 }

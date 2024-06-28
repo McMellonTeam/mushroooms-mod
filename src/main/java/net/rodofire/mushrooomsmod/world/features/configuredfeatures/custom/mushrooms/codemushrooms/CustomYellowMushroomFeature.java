@@ -112,13 +112,13 @@ public class CustomYellowMushroomFeature extends CustomYellowMushroom {
 
         for (int i = 0; i <= height; i++) {
             double x = i * MathsUtil.getFastCos(theta) * MathsUtil.getFastCos(phi);
-            double z = i * Math.sin(theta) * MathsUtil.getFastCos(phi);
+            double z = i * MathsUtil.getFastSin(theta) * MathsUtil.getFastCos(phi);
             mutable.set(pos, (int) x, i, (int) z);
             this.setBlockState(world, mutable, blockState);
         }
 
         double x = height * MathsUtil.getFastCos(theta) * MathsUtil.getFastCos(phi);
-        double z = height * Math.sin(theta) * MathsUtil.getFastCos(phi);
+        double z = height * MathsUtil.getFastSin(theta) * MathsUtil.getFastCos(phi);
 
 
         Integer[] coordinates = new Integer[2];
@@ -137,7 +137,7 @@ public class CustomYellowMushroomFeature extends CustomYellowMushroom {
         int randomz = coordinates[1];
         BlockState blockState1 = config.stemProvider.get(random, pos);
         GenSpheres.generateFullElipsoid(world, (int) (1.5 * large), large, (int) (1.5 * large), pos.add(randomx, height - large + 4, randomz), blockState);
-        GenSpheres.generateFullElipsoid(world, (int) (1.4 * large), large, (int) (1.4 * large), pos.add(randomx, height - large, randomz), blockState2);
+        GenSpheres.generateFullElipsoid(world, (int) (1.5 * (large - 1)), large, (int) (1.5 * (large - 1)), pos.add(randomx, height - large, randomz), blockState2);
         /*for (float secondlarge = 0; secondlarge <= large; secondlarge = secondlarge + 0.25f) {
             for (double i = -Math.PI / (3 * large); i <= Math.PI / 2; i = i + Math.PI / (6 * large)) {
                 for (double j = -Math.PI; j <= Math.PI; j = j + Math.PI / (6 * large)) {
