@@ -57,7 +57,7 @@ public class ModMaterialsRules {
                 //Forest Cave
                 condition(MaterialRules.biome(ModOverworldBiomes.FOREST_CAVE),
                         condition(belowtop, condition(stonecavelevel, sequence(condition(MaterialRules.STONE_DEPTH_FLOOR, GRASS_BLOCK),
-                                condition(MaterialRules.STONE_DEPTH_FLOOR_WITH_SURFACE_DEPTH_RANGE_6, DIRT)))))
+                                condition(MaterialRules.STONE_DEPTH_FLOOR_WITH_SURFACE_DEPTH_RANGE_6, DIRT), condition(MaterialRules.STONE_DEPTH_CEILING, DIRT)))))
         );
 
 

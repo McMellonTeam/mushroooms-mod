@@ -77,7 +77,7 @@ public class ModOverworldRegion extends Region {
                 .temperature(ParameterUtils.Temperature.HOT)
                 .humidity(ParameterUtils.Humidity.DRY)
                 .continentalness(ParameterUtils.Continentalness.FAR_INLAND)
-                .erosion(ParameterUtils.Erosion.EROSION_0)
+                .erosion(MultiNoiseUtil.ParameterRange.of(-1f, 0f))
                 .depth(ParameterUtils.Depth.UNDERGROUND)
                 .weirdness(MultiNoiseUtil.ParameterRange.of(-1f, 0.05f))
                 .build().forEach(point -> builder.add(point, ModOverworldBiomes.FOREST_CAVE));
@@ -86,7 +86,7 @@ public class ModOverworldRegion extends Region {
         new ParameterUtils.ParameterPointListBuilder()
                 .temperature(ParameterUtils.Temperature.HOT)
                 .humidity(ParameterUtils.Humidity.DRY)
-                .continentalness(ParameterUtils.Continentalness.MUSHROOM_FIELDS)
+                .continentalness(ParameterUtils.Continentalness.MUSHROOM_FIELDS, ParameterUtils.Continentalness.NEAR_INLAND)
                 .erosion(ParameterUtils.Erosion.EROSION_0)
                 .depth(ParameterUtils.Depth.UNDERGROUND)
                 .weirdness(MultiNoiseUtil.ParameterRange.of(-1f, 0f))
@@ -96,11 +96,11 @@ public class ModOverworldRegion extends Region {
         new ParameterUtils.ParameterPointListBuilder()
                 .temperature(ParameterUtils.Temperature.HOT)
                 .humidity(ParameterUtils.Humidity.DRY)
-                .continentalness(ParameterUtils.Continentalness.MUSHROOM_FIELDS)
+                .continentalness(ParameterUtils.Continentalness.MUSHROOM_FIELDS, ParameterUtils.Continentalness.NEAR_INLAND)
                 .erosion(ParameterUtils.Erosion.EROSION_0)
                 .depth(ParameterUtils.Depth.UNDERGROUND)
                 .weirdness(MultiNoiseUtil.ParameterRange.of(0f, 1f))
-                .build().forEach(point -> builder.add(point, ModOverworldBiomes.SHROOM_ISLAND1));
+                .build().forEach(point -> builder.add(point, ModOverworldBiomes.SHROOM_ISLAND2));
 
         builder.build().forEach(mapper);
     }

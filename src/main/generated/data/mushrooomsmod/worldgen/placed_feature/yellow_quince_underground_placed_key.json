@@ -1,9 +1,9 @@
 {
-  "feature": "minecraft:azalea_tree",
+  "feature": "mushrooomsmod:yellow_quince_key",
   "placement": [
     {
       "type": "minecraft:count",
-      "count": 35
+      "count": 29
     },
     {
       "type": "minecraft:in_square"

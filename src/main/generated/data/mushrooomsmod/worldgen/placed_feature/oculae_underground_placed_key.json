@@ -1,9 +1,9 @@
 {
-  "feature": "minecraft:azalea_tree",
+  "feature": "mushrooomsmod:oculae_key",
   "placement": [
     {
       "type": "minecraft:count",
-      "count": 35
+      "count": 29
     },
     {
       "type": "minecraft:in_square"

@@ -66,8 +66,11 @@
       "mushrooomsmod:alazea_tree_underground_placed_key",
       "mushrooomsmod:grass_underground_placed_key",
       "minecraft:classic_vines_cave_feature",
-      "minecraft:cave_vines",
-      "minecraft:lush_caves_ceiling_vegetation"
+      "mushrooomsmod:oculae_underground_placed_key",
+      "mushrooomsmod:cycas_underground_placed_key",
+      "mushrooomsmod:pink_heater_underground_placed_key",
+      "mushrooomsmod:red_quince_underground_placed_key",
+      "mushrooomsmod:yellow_quince_underground_placed_key"
     ],
     [
       "minecraft:freeze_top_layer"
