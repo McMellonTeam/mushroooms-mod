@@ -75,7 +75,7 @@ public class BigCrystal extends Feature<ModSimpleBlockFeatureConfig> {
         //create a round base
         int baselarge = Random.create().nextBetween(2, 5);
         for (int i = 1; i <= baselarge; i++) {
-            for (float j = (float) -Math.PI; j < Math.PI; j += (float) (Math.PI / (4 * i))) {
+            for (float j = (float) 0; j < 360; j += (float) 45 / i) {
                 int x = (int) ((i) * MathsUtil.getFastCos(j));
                 int z = (int) ((i) * MathsUtil.getFastSin(j));
                 mutable.set(pos, x, 0, z);
