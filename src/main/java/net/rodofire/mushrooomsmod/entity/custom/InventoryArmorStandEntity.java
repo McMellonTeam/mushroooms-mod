@@ -31,6 +31,7 @@ public class InventoryArmorStandEntity extends LivingEntity implements GeoEntity
     private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(36, ItemStack.EMPTY);
     private int lefttickusage;
 
+
     public InventoryArmorStandEntity(EntityType<? extends LivingEntity> entityType, World world) {
         super(entityType, world);
     }
@@ -96,13 +97,14 @@ public class InventoryArmorStandEntity extends LivingEntity implements GeoEntity
             this.armorItems.set(i, stack);
             player.getInventory().setStack(i + 36, stack2);
         }
-        ItemStack stack = player.getInventory().getStack(0);
-        ItemStack stack2 = player.getInventory().getStack(40);
-        ItemStack stack1 = this.heldItems.get(0);
-        this.heldItems.set(0, stack);
-        player.getInventory().setStack(0, stack1);
-        this.heldItems.set(1, stack2);
-        player.getInventory().setStack(40, stack2);
+        ItemStack pstack = player.getInventory().getStack(0);
+        ItemStack pstack2 = player.getInventory().getStack(40);
+        ItemStack istack = this.heldItems.get(0);
+        ItemStack istack2 = this.heldItems.get(1);
+        this.heldItems.set(0, pstack);
+        this.heldItems.set(1, pstack2);
+        player.getInventory().setStack(0, istack);
+        player.getInventory().setStack(40, istack2);
         this.setUse(false);
         this.lefttickusage = 160;
     }
@@ -220,5 +222,9 @@ public class InventoryArmorStandEntity extends LivingEntity implements GeoEntity
             this.dropStack(itemStack);
         }
         super.onDeath(damageSource);
+    }
+
+    @Override
+    public void takeKnockback(double strength, double x, double z) {
     }
 }
