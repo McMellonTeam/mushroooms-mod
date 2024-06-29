@@ -1,0 +1,36 @@
+package net.rodofire.mushrooomsmod.item.Custom;
+
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.SpawnReason;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.ItemUsageContext;
+import net.minecraft.server.world.ServerWorld;
+import net.minecraft.util.ActionResult;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
+import net.rodofire.mushrooomsmod.entity.ModEntities;
+import net.rodofire.mushrooomsmod.entity.custom.InventoryArmorStandEntity;
+
+import java.util.function.Consumer;
+
+public class InventoryArmorStandItem extends Item {
+    public InventoryArmorStandItem(Settings settings) {
+        super(settings);
+    }
+
+    @Override
+    public ActionResult useOnBlock(ItemUsageContext context) {
+        World world = context.getWorld();
+        BlockPos pos = context.getBlockPos();
+        ItemStack itemStack = context.getStack();
+        if (!world.isClient) {
+            ServerWorld worldServer = (ServerWorld) world;
+            Consumer<InventoryArmorStandEntity> consumer = EntityType.copier(worldServer, itemStack, context.getPlayer());
+            InventoryArmorStandEntity entity = ModEntities.INVENTORY_ARMOR_STAND_ENTITY.create(worldServer, itemStack.getNbt(), consumer, pos, SpawnReason.SPAWN_EGG, true, true);
+            worldServer.spawnEntityAndPassengers(entity);
+            return ActionResult.SUCCESS;
+        }
+        return ActionResult.PASS;
+    }
+}

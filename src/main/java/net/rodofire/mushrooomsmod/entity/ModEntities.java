@@ -35,6 +35,10 @@ public class ModEntities {
             new Identifier(MushrooomsMod.MOD_ID, "schroom_stick"), FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, SchroomStickEntity::new)
                     .dimensions(EntityDimensions.fixed(0.3f,1.6f)).build());
 
+    public static final EntityType<InventoryArmorStandEntity> INVENTORY_ARMOR_STAND_ENTITY = Registry.register(Registries.ENTITY_TYPE,
+            new Identifier(MushrooomsMod.MOD_ID, "inventory_armor_stand"), FabricEntityTypeBuilder.create(SpawnGroup.MISC, InventoryArmorStandEntity::new)
+                    .dimensions(EntityDimensions.fixed(0.9f, 1.8f)).build());
+
 
 
     public static void registerModENtities(){

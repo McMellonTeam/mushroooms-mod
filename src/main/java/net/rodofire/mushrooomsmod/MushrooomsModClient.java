@@ -220,6 +220,7 @@ public class MushrooomsModClient implements ClientModInitializer {
         EntityRendererRegistry.register(ModEntities.CRYSTAL_CREEPER, CrystalCreeperRenderer::new);
         EntityRendererRegistry.register(ModEntities.CRYSTAL_GOLEM, CrystalGolemRenderer::new);
         EntityRendererRegistry.register(ModEntities.SCHROOM_STICK, SchroomStickRenderer::new);
+        EntityRendererRegistry.register(ModEntities.INVENTORY_ARMOR_STAND_ENTITY, InventoryArmorStandRenderer::new);
 
         //Block Entity
         BlockEntityRendererFactories.register(ModBlockEntities.FORGE_BLOCK_ENTITY, ForgeBlockEntityRenderer::new);

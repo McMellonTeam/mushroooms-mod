@@ -1,0 +1,512 @@
+{
+  "format_version": "1.12.0",
+  "minecraft:geometry": [
+    {
+      "description": {
+        "identifier": "geometry.unknown",
+        "texture_width": 64,
+        "texture_height": 64,
+        "visible_bounds_width": 2,
+        "visible_bounds_height": 3.5,
+        "visible_bounds_offset": [
+          0,
+          1.25,
+          0
+        ]
+      },
+      "bones": [
+        {
+          "name": "entity",
+          "pivot": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "bottom",
+          "parent": "entity",
+          "pivot": [
+            0,
+            0,
+            0
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -8,
+                0,
+                -8
+              ],
+              "size": [
+                16,
+                2,
+                16
+              ],
+              "uv": [
+                0,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "name": "chargingball",
+          "parent": "entity",
+          "pivot": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "bar",
+          "parent": "chargingball",
+          "pivot": [
+            0,
+            0,
+            0
+          ],
+          "cubes": [
+            {
+              "origin": [
+                5,
+                2,
+                -7
+              ],
+              "size": [
+                2,
+                10,
+                2
+              ],
+              "uv": [
+                22,
+                34
+              ]
+            }
+          ]
+        },
+        {
+          "name": "ball",
+          "parent": "chargingball",
+          "pivot": [
+            6,
+            14,
+            -8
+          ],
+          "cubes": [
+            {
+              "origin": [
+                4,
+                12,
+                -8
+              ],
+              "size": [
+                4,
+                4,
+                4
+              ],
+              "uv": [
+                20,
+                22
+              ]
+            }
+          ]
+        },
+        {
+          "name": "armor_hanging",
+          "parent": "entity",
+          "pivot": [
+            7,
+            16,
+            -7
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -1,
+                2,
+                5
+              ],
+              "size": [
+                2,
+                30,
+                2
+              ],
+              "uv": [
+                0,
+                18
+              ]
+            }
+          ]
+        },
+        {
+          "name": "boots",
+          "parent": "armor_hanging",
+          "pivot": [
+            7,
+            16,
+            -7
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -1,
+                6,
+                -1
+              ],
+              "size": [
+                2,
+                2,
+                6
+              ],
+              "uv": [
+                8,
+                18
+              ]
+            },
+            {
+              "origin": [
+                -1,
+                17,
+                -1
+              ],
+              "size": [
+                2,
+                2,
+                6
+              ],
+              "uv": [
+                0,
+                8
+              ]
+            },
+            {
+              "origin": [
+                -1,
+                27,
+                -1
+              ],
+              "size": [
+                2,
+                2,
+                6
+              ],
+              "uv": [
+                0,
+                0
+              ]
+            },
+            {
+              "origin": [
+                -3,
+                6,
+                -1
+              ],
+              "size": [
+                6,
+                2,
+                2
+              ],
+              "uv": [
+                8,
+                32
+              ]
+            },
+            {
+              "origin": [
+                -3,
+                15,
+                -1
+              ],
+              "size": [
+                6,
+                2,
+                2
+              ],
+              "uv": [
+                22,
+                30
+              ]
+            },
+            {
+              "origin": [
+                -3,
+                19,
+                -1
+              ],
+              "size": [
+                6,
+                2,
+                2
+              ],
+              "uv": [
+                18,
+                18
+              ]
+            },
+            {
+              "origin": [
+                -2,
+                28,
+                -2
+              ],
+              "size": [
+                4,
+                2,
+                4
+              ],
+              "uv": [
+                8,
+                26
+              ]
+            }
+          ]
+        },
+        {
+          "name": "armorBipedHead",
+          "parent": "entity",
+          "pivot": [
+            0,
+            25,
+            0
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -3,
+                29,
+                -3
+              ],
+              "size": [
+                6,
+                6,
+                6
+              ],
+              "uv": [
+                23,
+                52
+              ]
+            }
+          ]
+        },
+        {
+          "name": "body",
+          "parent": "entity",
+          "pivot": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "armorBipedBody",
+          "parent": "body",
+          "pivot": [
+            0,
+            0,
+            0
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -3,
+                18,
+                -3
+              ],
+              "size": [
+                6,
+                9,
+                4
+              ],
+              "uv": [
+                42,
+                51
+              ]
+            }
+          ]
+        },
+        {
+          "name": "armorBipedRightArm",
+          "parent": "body",
+          "pivot": [
+            0,
+            0,
+            0
+          ],
+          "cubes": [
+            {
+              "origin": [
+                3,
+                18,
+                -2
+              ],
+              "size": [
+                4,
+                9,
+                4
+              ],
+              "uv": [
+                48,
+                51
+              ]
+            }
+          ]
+        },
+        {
+          "name": "armorBipedleftArm",
+          "parent": "body",
+          "pivot": [
+            0,
+            0,
+            0
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -7,
+                18,
+                -2
+              ],
+              "size": [
+                4,
+                9,
+                4
+              ],
+              "uv": [
+                48,
+                51
+              ]
+            }
+          ]
+        },
+        {
+          "name": "armorBipedLeg",
+          "parent": "entity",
+          "pivot": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "left_leg",
+          "parent": "armorBipedLeg",
+          "pivot": [
+            2,
+            10,
+            -2
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -1,
+                10,
+                -3
+              ],
+              "size": [
+                4,
+                8,
+                4
+              ],
+              "uv": [
+                44,
+                51
+              ]
+            }
+          ]
+        },
+        {
+          "name": "right_leg",
+          "parent": "armorBipedLeg",
+          "pivot": [
+            -1,
+            10,
+            -2
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -3,
+                10,
+                -3
+              ],
+              "size": [
+                4,
+                8,
+                4
+              ],
+              "uv": [
+                44,
+                51
+              ]
+            }
+          ]
+        },
+        {
+          "name": "feet",
+          "parent": "entity",
+          "pivot": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "armorBipedLeftFoot",
+          "parent": "feet",
+          "pivot": [
+            0,
+            0,
+            0
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -3,
+                7,
+                -2
+              ],
+              "size": [
+                4,
+                3,
+                4
+              ],
+              "uv": [
+                50,
+                57
+              ]
+            }
+          ]
+        },
+        {
+          "name": "armorBipedRightFoot",
+          "parent": "feet",
+          "pivot": [
+            0,
+            0,
+            0
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -1,
+                7,
+                -2
+              ],
+              "size": [
+                4,
+                3,
+                4
+              ],
+              "uv": [
+                50,
+                57
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
