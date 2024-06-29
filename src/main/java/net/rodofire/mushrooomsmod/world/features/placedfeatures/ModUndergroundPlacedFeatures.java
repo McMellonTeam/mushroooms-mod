@@ -1,5 +1,6 @@
 package net.rodofire.mushrooomsmod.world.features.placedfeatures;
 
+import net.minecraft.block.Blocks;
 import net.minecraft.registry.Registerable;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
@@ -70,6 +71,7 @@ public class ModUndergroundPlacedFeatures {
     public static final RegistryKey<PlacedFeature> RED_CRYSTAL_PILLAR_UNDERGROUND_PLACED_KEY = registerKey("red_crystal_pillar_underground_placed_key");
     public static final RegistryKey<PlacedFeature> BLUE_CRYSTAL_PILLAR_UNDERGROUND_PLACED_KEY = registerKey("blue_crystal_pillar_underground_placed_key");
     public static final RegistryKey<PlacedFeature> WHITE_CRYSTAL_PILLAR_UNDERGROUND_PLACED_KEY = registerKey("white_crystal_pillar_underground_placed_key");
+    public static final RegistryKey<PlacedFeature> CRYSTAL_BLUE_UNDERGROUND_PLACED_KEY = registerKey("crystal_blue_underground_placed_key");
 
     //Ore
     public static final RegistryKey<PlacedFeature> RHYOLITE_UNDERGROUND_PLACED_KEY = registerKey("rhyolite_underground_placed_key");
@@ -119,8 +121,8 @@ public class ModUndergroundPlacedFeatures {
         register(context, FERTILE_RED_MUSHROOM_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.FERTILE_RED_MUSHROOM_KEY), CountPlacementModifier.of(240), SquarePlacementModifier.of(), ModPlacedFeatures.STONE_LEVEL, BiomePlacementModifier.of());
 
         //Tree
-        register(context, OAK_TREE_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(TreeConfiguredFeatures.OAK), CountPlacementModifier.of(35), SquarePlacementModifier.of(), ModPlacedFeatures.STONE_LEVEL, BiomePlacementModifier.of());
-        register(context, AZALEA_TREE_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(TreeConfiguredFeatures.AZALEA_TREE), CountPlacementModifier.of(35), SquarePlacementModifier.of(), ModPlacedFeatures.STONE_LEVEL, BiomePlacementModifier.of());
+        register(context, OAK_TREE_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(TreeConfiguredFeatures.OAK), ModPlacedFeatures.undergroundTreeModifiersWithWouldSurvive(PlacedFeatures.createCountExtraModifier(24, 1f, 2), Blocks.OAK_SAPLING));
+        register(context, AZALEA_TREE_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(TreeConfiguredFeatures.AZALEA_TREE), ModPlacedFeatures.undergroundTreeModifiersWithWouldSurvive(PlacedFeatures.createCountExtraModifier(56, 1f, 2), Blocks.AZALEA));
 
 
         //Crystal
@@ -130,6 +132,7 @@ public class ModUndergroundPlacedFeatures {
         register(context, RED_CRYSTAL_PILLAR_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.RED_CRYSTAL_PILLAR_KEY), CountPlacementModifier.of(19), SquarePlacementModifier.of(), ModPlacedFeatures.CAVE_LEVEL, BiomePlacementModifier.of());
         register(context, BLUE_CRYSTAL_PILLAR_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.BLUE_CRYSTAL_PILLAR_KEY), CountPlacementModifier.of(19), SquarePlacementModifier.of(), ModPlacedFeatures.CAVE_LEVEL, BiomePlacementModifier.of());
         register(context, WHITE_CRYSTAL_PILLAR_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.WHITE_CRYSTAL_PILLAR_KEY), CountPlacementModifier.of(19), SquarePlacementModifier.of(), ModPlacedFeatures.CAVE_LEVEL, BiomePlacementModifier.of());
+        register(context, CRYSTAL_BLUE_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.CRYSTAL_BLUE_KEY), CountPlacementModifier.of(26), SquarePlacementModifier.of(), ModPlacedFeatures.CAVE_LEVEL, BiomePlacementModifier.of());
 
         //Ore
         register(context, RHYOLITE_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.RHYOLITE_KEY),
@@ -151,4 +154,6 @@ public class ModUndergroundPlacedFeatures {
                                                                                    PlacementModifier... modifiers) {
         register(context, key, configuration, List.of(modifiers));
     }
+
+
 }

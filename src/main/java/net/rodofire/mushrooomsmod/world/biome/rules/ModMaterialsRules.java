@@ -31,6 +31,7 @@ public class ModMaterialsRules {
         MaterialRules.MaterialCondition stonecavelevel = MaterialRules.aboveY(YOffset.fixed(0), 1);
         MaterialRules.MaterialCondition abovetop = MaterialRules.aboveY(YOffset.belowTop(-2), 0);
         MaterialRules.MaterialCondition belowtop = MaterialRules.not(MaterialRules.aboveY(YOffset.belowTop(10), 1));
+        MaterialRules.MaterialCondition aboveWater = MaterialRules.aboveY(YOffset.fixed(60), 0);
 
 
         //Dirt Related
@@ -57,7 +58,13 @@ public class ModMaterialsRules {
                 //Forest Cave
                 condition(MaterialRules.biome(ModOverworldBiomes.FOREST_CAVE),
                         condition(belowtop, condition(stonecavelevel, sequence(condition(MaterialRules.STONE_DEPTH_FLOOR, GRASS_BLOCK),
-                                condition(MaterialRules.STONE_DEPTH_FLOOR_WITH_SURFACE_DEPTH_RANGE_6, DIRT), condition(MaterialRules.STONE_DEPTH_CEILING, DIRT)))))
+                                condition(MaterialRules.STONE_DEPTH_FLOOR_WITH_SURFACE_DEPTH_RANGE_6, DIRT), condition(MaterialRules.STONE_DEPTH_CEILING, DIRT))))),
+
+                //Schroom Island
+                condition(MaterialRules.biome(ModOverworldBiomes.SHROOM_ISLAND1),
+                        condition(aboveWater, sequence(condition(MaterialRules.STONE_DEPTH_FLOOR, MYCELIUM), condition(MaterialRules.STONE_DEPTH_FLOOR_WITH_SURFACE_DEPTH_RANGE_6, DIRT)))),
+                condition(MaterialRules.biome(ModOverworldBiomes.SHROOM_ISLAND2),
+                        condition(aboveWater, sequence(condition(MaterialRules.STONE_DEPTH_FLOOR, MYCELIUM), condition(MaterialRules.STONE_DEPTH_FLOOR_WITH_SURFACE_DEPTH_RANGE_6, DIRT))))
         );
 
 
