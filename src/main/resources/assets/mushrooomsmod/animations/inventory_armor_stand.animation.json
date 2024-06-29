@@ -49,7 +49,7 @@
       }
     },
     "animation.inventory_armor_stand.entity_collision": {
-      "animation_length": 20.0833,
+      "animation_length": 8,
       "bones": {
         "bar": {
           "scale": {
@@ -96,14 +96,14 @@
                 1
               ]
             },
-            "12.3333": {
+            "5.2083": {
               "vector": [
                 1,
                 0.4585,
                 1
               ]
             },
-            "20.0833": {
+            "8.0": {
               "vector": [
                 1,
                 0.2,
@@ -151,7 +151,7 @@
                 0
               ]
             },
-            "20.0": {
+            "8.0": {
               "vector": [
                 0,
                 -10,

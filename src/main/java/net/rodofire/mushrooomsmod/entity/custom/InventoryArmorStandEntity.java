@@ -1,14 +1,17 @@
 package net.rodofire.mushrooomsmod.entity.custom;
 
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.data.DataTracker;
 import net.minecraft.entity.data.TrackedData;
 import net.minecraft.entity.data.TrackedDataHandlerRegistry;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
+import net.minecraft.nbt.NbtElement;
 import net.minecraft.nbt.NbtList;
 import net.minecraft.util.Arm;
 import net.minecraft.util.collection.DefaultedList;
@@ -76,10 +79,11 @@ public class InventoryArmorStandEntity extends LivingEntity implements GeoEntity
 
     @Override
     public void onPlayerCollision(PlayerEntity player) {
+        if (player.getBlockPos().getX() != this.getBlockPos().getX() || player.getBlockPos().getY() != this.getBlockPos().getY() || player.getBlockPos().getZ() != this.getBlockPos().getZ())
+            return;
         if (!this.canUse()) return;
-        System.out.println(player.getInventory().getStack(0) + "  " + player.getInventory().getStack(35) + "  " + player.getInventory().getStack(36));
         //Get player inventory and store it and give the previous inventory to the player
-        for (int i = 0; i < 36; i++) {
+        for (int i = 1; i < 36; i++) {
             ItemStack stack = player.getInventory().getStack(i);
             ItemStack stack2 = this.inventory.get(i);
             this.inventory.set(i, stack);
@@ -92,18 +96,15 @@ public class InventoryArmorStandEntity extends LivingEntity implements GeoEntity
             this.armorItems.set(i, stack);
             player.getInventory().setStack(i + 36, stack2);
         }
-        /*ItemStack stack = player.getInventory().getStack(45);
-        ItemStack stack2 = player.getInventory().getStack(45);
+        ItemStack stack = player.getInventory().getStack(0);
+        ItemStack stack2 = player.getInventory().getStack(40);
         ItemStack stack1 = this.heldItems.get(0);
         this.heldItems.set(0, stack);
-        player.getInventory().setStack(45, stack1);
+        player.getInventory().setStack(0, stack1);
         this.heldItems.set(1, stack2);
-        player.getInventory().setStack(9, stack2);*/
-        System.out.println(this.heldItems);
-        System.out.println(this.armorItems);
-        System.out.println(this.inventory);
+        player.getInventory().setStack(40, stack2);
         this.setUse(false);
-        this.lefttickusage = 400;
+        this.lefttickusage = 160;
     }
 
     @Override
@@ -115,6 +116,10 @@ public class InventoryArmorStandEntity extends LivingEntity implements GeoEntity
             }
         }
         super.tick();
+    }
+
+    @Override
+    protected void pushAway(Entity entity) {
     }
 
     public boolean canUse() {
@@ -151,14 +156,69 @@ public class InventoryArmorStandEntity extends LivingEntity implements GeoEntity
     }
 
     @Override
-    public NbtCompound writeNbt(NbtCompound nbt) {
-        return super.writeNbt(nbt);
+    public void writeCustomDataToNbt(NbtCompound nbt) {
+        super.writeCustomDataToNbt(nbt);
+        NbtList nbtList = new NbtList();
+        NbtList nbtList2 = new NbtList();
+        NbtList nbtList3 = new NbtList();
+        for (ItemStack itemStack : this.armorItems) {
+            NbtCompound nbtCompound = new NbtCompound();
+            itemStack.writeNbt(nbtCompound);
+            nbtList.add(nbtCompound);
+        }
+        nbt.put("ArmorItems", nbtList);
 
+        for (ItemStack itemStack : this.heldItems) {
+            NbtCompound nbtCompound2 = new NbtCompound();
+            itemStack.writeNbt(nbtCompound2);
+            nbtList2.add(nbtCompound2);
+        }
+        nbt.put("HeldItem", nbtList2);
+
+        for (ItemStack itemStack : this.inventory) {
+            NbtCompound nbtCompound3 = new NbtCompound();
+            itemStack.writeNbt(nbtCompound3);
+            nbtList3.add(nbtCompound3);
+        }
+        nbt.put("Inventory", nbtList3);
     }
 
     @Override
-    public void readNbt(NbtCompound nbt) {
-        super.readNbt(nbt);
-        NbtList nbtList = new NbtList();
+    public void readCustomDataFromNbt(NbtCompound nbt) {
+        super.readCustomDataFromNbt(nbt);
+        if (nbt.contains("ArmorItems", NbtElement.LIST_TYPE)) {
+            NbtList nbtList = nbt.getList("ArmorItems", NbtElement.COMPOUND_TYPE);
+            for (int i = 0; i < this.armorItems.size(); ++i) {
+                this.armorItems.set(i, ItemStack.fromNbt(nbtList.getCompound(i)));
+            }
+        }
+        if (nbt.contains("HeldItem", NbtElement.LIST_TYPE)) {
+            NbtList nbtList = nbt.getList("HeldItem", NbtElement.COMPOUND_TYPE);
+            for (int i = 0; i < this.heldItems.size(); ++i) {
+                this.heldItems.set(i, ItemStack.fromNbt(nbtList.getCompound(i)));
+            }
+        }
+        if (nbt.contains("Inventory", NbtElement.LIST_TYPE)) {
+            NbtList nbtList = nbt.getList("Inventory", NbtElement.COMPOUND_TYPE);
+            for (int i = 0; i < this.inventory.size(); ++i) {
+                this.inventory.set(i, ItemStack.fromNbt(nbtList.getCompound(i)));
+            }
+        }
+    }
+
+    @Override
+    public void onDeath(DamageSource damageSource) {
+        World world = this.getWorld();
+        if (world.isClient) return;
+        for (ItemStack itemStack : this.inventory) {
+            this.dropStack(itemStack);
+        }
+        for (ItemStack itemStack : this.armorItems) {
+            this.dropStack(itemStack);
+        }
+        for (ItemStack itemStack : this.heldItems) {
+            this.dropStack(itemStack);
+        }
+        super.onDeath(damageSource);
     }
 }
