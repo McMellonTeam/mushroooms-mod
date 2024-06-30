@@ -11,6 +11,7 @@ import net.rodofire.mushrooomsmod.effect.ModStatusEffects;
 import net.rodofire.mushrooomsmod.entity.ModEntities;
 import net.rodofire.mushrooomsmod.entity.custom.*;
 import net.rodofire.mushrooomsmod.event.PlayerTickHandler;
+import net.rodofire.mushrooomsmod.item.ModItemGroup;
 import net.rodofire.mushrooomsmod.item.ModItems;
 import net.rodofire.mushrooomsmod.networking.ModNetwork;
 import net.rodofire.mushrooomsmod.particle.ModParticles;
@@ -40,6 +41,7 @@ public class MushrooomsMod implements ModInitializer {
         BlockUtils.registerFlammable();
 
         ModItems.registerModItems();
+        ModItemGroup.registerItemGroup();
 
         ModEntities.registerModENtities();
 
