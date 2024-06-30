@@ -107,7 +107,6 @@ public class ModItemGroup {
                         //Hard Blocks
                         entries.add(ModBlocks.PURPLE_SCHROOM_DEESLATE);
                         entries.add(ModBlocks.BLUE_LUMINESCENT_SCHROOM_DEEPSLATE);
-                        entries.add(ModBlocks.BLUE_CRYSTAL_CLUSTER);
                         entries.add(ModBlocks.GREEN_STONY_SCHROOM_DEPOT);
                         entries.add(ModBlocks.RHYOLITE);
                         entries.add(ModBlocks.RHYOLITE_TILES);
@@ -233,8 +232,7 @@ public class ModItemGroup {
                         entries.add(ModItems.PLOTI_SPAWN_EGG);
                         entries.add(ModItems.CRYSTAL_CREEPER_SPAWN_EGG);
                         entries.add(ModItems.CRYSTAL_GOLEM_SPAWN_EGG);
-                        entries.add(ModItems.SCHROOM_STICK_SPAWN_EGG);
-                        entries.add(ModItems.INVENTORY_ARMOR_STAND);
+                        //entries.add(ModItems.SCHROOM_STICK_SPAWN_EGG);
 
                         //crystal
                         entries.add(ModItems.PINK_CRYSTAL_ITEM);
@@ -246,6 +244,7 @@ public class ModItemGroup {
                         entries.add(ModBlocks.RED_CRYSTAL_BLOCK);
                         entries.add(ModBlocks.WHITE_CRYSTAL);
                         entries.add(ModBlocks.WHITE_CRYSTAL_BLOCK);
+                        entries.add(ModBlocks.BLUE_CRYSTAL_CLUSTER);
 
                         entries.add(ModItems.CRUSHED_DIAMOND);
                         entries.add(ModItems.AMBER_ITEM);
@@ -253,6 +252,7 @@ public class ModItemGroup {
 
                         //Utils
                         entries.add(ModBlocks.FORGE_BLOCK);
+                        entries.add(ModItems.INVENTORY_ARMOR_STAND);
 
                         //Tools
                         entries.add(ModItems.IRON_HAMMER);
@@ -262,7 +262,7 @@ public class ModItemGroup {
                         entries.add(ModItems.LUMINESCENT_SCHROOM_SOUP);
 
                         //dev
-                        entries.add(ModBlocks.FEATURE_TESTER);
+                        //entries.add(ModBlocks.FEATURE_TESTER);
 
 
                     }).build());
