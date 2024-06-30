@@ -80,6 +80,7 @@
   "block.mushrooomsmod.sappling_blue_luminescent" : "Blue Luminescent Sappling",
 
   "block.mushrooomsmod.rhyolite" : "Rhyolite",
+  "block.mushrooomsmod.rhyolite_tiles": "Rhyolite Tiles",
 
 
   "block.mushrooomsmod.mushroom_green": "Green Mushroom",
@@ -91,10 +92,16 @@
   "block.mushrooomsmod.mushroom_yellow" : "Yellow Mushroom",
 
   "block.mushrooomsmod.sterile_blue_mushroom" : "Blue Sterile Mushroom",
+  "block.mushrooomsmod.mushroom_fertile_red": "Red Fertile Mushroom",
+  "block.mushrooomsmod.mushroom_small_blue": "Small Blue Mushroom",
   "block.mushrooomsmod.mushroom_small_brown" : "Small Brown Mushroom",
   "block.mushrooomsmod.mushroom_small_red" : "Small Red Mushroom",
   "block.mushrooomsmod.mushroom_death_trumpet" : "Death Trumpet",
   "block.mushrooomsmod.mushroom_side_blue_luminescent" : "Blue Luminescent Mushroom Side",
+  "item.mushrooomsmod.mushroom_boost_dangerous_item": "Boosting Mushroom",
+  "item.mushrooomsmod.mushroom_boost_item": "Boosting Mushroom",
+  "tooltip.mushrooomsmod.dangerous_boosting_mushroom": "Be careful when stepping next to it",
+  "tooltip.mushrooomsmod.boosting_mushroom": "Be careful when stepping next to it",
 
 
   "block.mushrooomsmod.prehisto_pink_schroom" : "Prehisto Pink Schroom",
@@ -113,6 +120,7 @@
   "block.mushrooomsmod.turquosum_stilus": "Turquosum Stilus",
   "item.mushrooomsmod.caerulea_volubilis_item": "Caerulea Volubilis",
   "block.mushrooomsmod.vines_blue_luminescent": "Blue Luminescent Vines",
+  "item.mushrooomsmod.mushroom_vines_pink_item": "Pink Mushroom Vines",
   "block.mushrooomsmod.saphira_florens": "Saphira Florens",
   "block.mushrooomsmod.prehistoric_rose": "Prehistoric Rose",
   "block.mushrooomsmod.perennial_orange": "Orange Perennial",
@@ -171,6 +179,14 @@
   "block.mushrooomsmod.torch_green" : "Green Torch",
 
   "block.mushrooomsmod.crystal_block_pink" : "Pink Crystal Block",
+  "block.mushrooomsmod.crystal_block_blue": "Blue Crystal Block",
+  "block.mushrooomsmod.crystal_blue_1": "Blue Crystal Pile",
+  "block.mushrooomsmod.crystal_block_red": "Red Crystal Block",
+  "block.mushrooomsmod.crystal_block_white": "White Crystal Block",
+  "item.mushrooomsmod.crystal_red_item": "Red Crystal",
+  "block.mushrooomsmod.crystal_white": "White Crystal",
+  "block.mushrooomsmod.amber_block_raw": "Raw Amber Block",
+
 
   "block.mushrooomsmod.forge_block" : "Forge",
 
@@ -185,21 +201,27 @@
 
   "item.mushrooomsmod.bolete_cow_spawn_egg": "Bolete Cow Spawn Egg",
   "item.mushrooomsmod.groki_spawn_egg": "Groki Spawn Egg",
+  "item.mushrooomsmod.ploti_spawn_egg": "Ploti Spawn Egg",
+  "item.mushrooomsmod.crystal_creeper_spawn_egg": "Crystal Creeper Spawn Egg",
+  "item.mushrooomsmod.crystal_golem_spawn_egg": "Crystal Golem Spawn Egg",
 
 
   "item.mushrooomsmod.hymne_francais_music_disc" : "French Anthem",
   "item.mushrooomsmod.hymne_francais_music_disc.desc" : "La Marseillaise",
   "item.mushrooomsmod.hymne_urss_music_disc.desc" : "Guimn Sovietskogo Soïouza",
   "item.mushrooomsmod.hymne_urss_music_disc" : "USSR Anthem",
-
-  "item.mushrooomsmod.crushed_diamond" : "Crushed Diamonds",
+  "item.mushrooomsmod.crushed_diamond": "Crushed Diamond",
   "item.mushrooomsmod.crystal_pink_item" : "Pink Crystal",
   "item.mushrooomsmod.crystal_blue_item" : "Blue Crystal",
   "item.mushrooomsmod.amber_item" : "Amber",
+  "item.mushrooomsmod.amber_crushed_item": "Crushed Amber",
 
   "item.mushrooomsmod.iron_hammer" : "Iron Hammer",
   "tooltip.mushrooomsmod.hammer.attack_damage" : "Attack Damage ",
   "tooltip.mushrooomsmod.hammer.usage" : "Use Left Click on a Forge With an Item to Crush it ",
+  "item.mushrooomsmod.inventory_armor_stand_item": "Inventory Armor Stand",
+  "tooltip.mushrooomsmod.inventory_armor_stand_usage": "Armor Stand that can store your entire inventory and give it back",
+  "tooltip.mushrooomsmod.inventory_armor_stand_use": "Step on it and the inventory will be changed",
 
   "item.mushrooomsmod.luminescent_schroom_soup" : "Luminescent Schroom Soup",
   "tooltip.mushrooomsmod.schroom_soup.description" : "Drink this soup in a Blue Luminescent Cave to get ???",
