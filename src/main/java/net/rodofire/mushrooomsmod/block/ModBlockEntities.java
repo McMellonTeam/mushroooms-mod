@@ -9,6 +9,7 @@ import net.rodofire.mushrooomsmod.MushrooomsMod;
 import net.rodofire.mushrooomsmod.block.entity.BoostingMushroomBlockEntity;
 import net.rodofire.mushrooomsmod.block.entity.DangerousBoostingMushroomBlockEntity;
 import net.rodofire.mushrooomsmod.block.entity.ForgeBlockEntity;
+import net.rodofire.mushrooomsmod.block.entity.RapangeFlowersBlockEntity;
 
 public class ModBlockEntities {
     public static final BlockEntityType<ForgeBlockEntity> FORGE_BLOCK_ENTITY = Registry.register(Registries.BLOCK_ENTITY_TYPE, new Identifier(MushrooomsMod.MOD_ID, "forge_be")
@@ -20,6 +21,8 @@ public class ModBlockEntities {
     public static final BlockEntityType<DangerousBoostingMushroomBlockEntity> DANGEROUS_BOOSTING_MUSHROOM_ENTITY = Registry.register(Registries.BLOCK_ENTITY_TYPE, new Identifier(MushrooomsMod.MOD_ID, "dangerous_boosting_mushroom_be")
             , FabricBlockEntityTypeBuilder.create(DangerousBoostingMushroomBlockEntity::new, ModBlocks.DANGEROUS_MUSHROOM_BOOSTING).build());
 
+    public static final BlockEntityType<RapangeFlowersBlockEntity> RAPANGE_FLOWERS_BLOCK_ENTITY = Registry.register(Registries.BLOCK_ENTITY_TYPE, new Identifier(MushrooomsMod.MOD_ID, "rapange_flowers_be")
+            , FabricBlockEntityTypeBuilder.create(RapangeFlowersBlockEntity::new, ModBlocks.RAPANGE_FLOWERS).build());
 
     public static void registerBlockEntities() {
         MushrooomsMod.LOGGER.info("Registering Block Entities");

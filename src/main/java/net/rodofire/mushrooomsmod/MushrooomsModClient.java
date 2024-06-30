@@ -12,6 +12,7 @@ import net.rodofire.mushrooomsmod.block.ModBlocks;
 import net.rodofire.mushrooomsmod.block.entity.client.renderer.BoostingMushroomRenderer;
 import net.rodofire.mushrooomsmod.block.entity.client.renderer.DangerousBoostingMushroomRenderer;
 import net.rodofire.mushrooomsmod.block.entity.client.renderer.ForgeBlockEntityRenderer;
+import net.rodofire.mushrooomsmod.block.entity.client.renderer.RapangeFlowerRenderer;
 import net.rodofire.mushrooomsmod.client.HammerHUDOverlay;
 import net.rodofire.mushrooomsmod.entity.ModEntities;
 import net.rodofire.mushrooomsmod.entity.client.renderer.*;
@@ -227,6 +228,7 @@ public class MushrooomsModClient implements ClientModInitializer {
 
         BlockEntityRendererFactories.register(ModBlockEntities.BOOSTING_MUSHROOM_ENTITY, BoostingMushroomRenderer::new);
         BlockEntityRendererFactories.register(ModBlockEntities.DANGEROUS_BOOSTING_MUSHROOM_ENTITY, DangerousBoostingMushroomRenderer::new);
+        BlockEntityRendererFactories.register(ModBlockEntities.RAPANGE_FLOWERS_BLOCK_ENTITY, RapangeFlowerRenderer::new);
 
 
         //Particle
