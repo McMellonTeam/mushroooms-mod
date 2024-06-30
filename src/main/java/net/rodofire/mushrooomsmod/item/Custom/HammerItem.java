@@ -44,7 +44,6 @@ public class HammerItem extends ToolItem {
         ImmutableMultimap.Builder<EntityAttribute, EntityAttributeModifier> builder = ImmutableMultimap.builder();
         builder.put(EntityAttributes.GENERIC_ATTACK_DAMAGE, new EntityAttributeModifier(ATTACK_DAMAGE_MODIFIER_ID, "Weapon modifier", attackDamage1, EntityAttributeModifier.Operation.ADDITION));
         builder.put(EntityAttributes.GENERIC_ATTACK_SPEED, new EntityAttributeModifier(ATTACK_SPEED_MODIFIER_ID, "Weapon modifier", attackSpeed, EntityAttributeModifier.Operation.ADDITION));
-        builder.put(EntityAttributes.GENERIC_ATTACK_SPEED, new EntityAttributeModifier(ATTACK_SPEED_MODIFIER_ID, "Weapon modifier", attackSpeed, EntityAttributeModifier.Operation.ADDITION));
         this.attributeModifiers = builder.build();
         this.maxcrushableblocks = maxcrushableblocks;
     }
@@ -54,10 +53,7 @@ public class HammerItem extends ToolItem {
     public boolean canMine(BlockState state, World world, BlockPos pos, PlayerEntity miner) {
         if (hammeruse!=0) return mine(world, pos);
         if (world.isClient()) {
-            if (mine(world, pos)) {
-                return true;
-            }
-            return false;
+            return mine(world, pos);
         }
         return use(world, pos, miner);
     }
