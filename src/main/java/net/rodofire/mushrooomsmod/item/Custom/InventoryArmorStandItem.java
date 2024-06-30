@@ -1,18 +1,24 @@
 package net.rodofire.mushrooomsmod.item.Custom;
 
+import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnReason;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUsageContext;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
+import net.minecraft.util.Formatting;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 import net.rodofire.mushrooomsmod.entity.ModEntities;
 import net.rodofire.mushrooomsmod.entity.custom.InventoryArmorStandEntity;
+import org.jetbrains.annotations.Nullable;
 
+import java.util.List;
 import java.util.function.Consumer;
 
 public class InventoryArmorStandItem extends Item {
@@ -38,5 +44,16 @@ public class InventoryArmorStandItem extends Item {
             return ActionResult.SUCCESS;
         }
         return ActionResult.PASS;
+    }
+
+    @Override
+    public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
+        super.appendTooltip(stack, world, tooltip, context);
+        if (Screen.hasShiftDown()) {
+            tooltip.add(Text.translatable("tooltip.mushrooomsmod.inventory_armor_stand_usage").formatted(Formatting.BLUE));
+            tooltip.add(Text.translatable("tooltip.mushrooomsmod.inventory_armor_stand_use").formatted(Formatting.BLUE));
+        } else {
+            tooltip.add(Text.translatable("tooltip.mushrooomsmod.shift"));
+        }
     }
 }
