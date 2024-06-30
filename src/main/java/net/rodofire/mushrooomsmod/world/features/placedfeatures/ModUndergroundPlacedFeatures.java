@@ -121,8 +121,8 @@ public class ModUndergroundPlacedFeatures {
         register(context, FERTILE_RED_MUSHROOM_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.FERTILE_RED_MUSHROOM_KEY), CountPlacementModifier.of(240), SquarePlacementModifier.of(), ModPlacedFeatures.STONE_LEVEL, BiomePlacementModifier.of());
 
         //Tree
-        register(context, OAK_TREE_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(TreeConfiguredFeatures.OAK), ModPlacedFeatures.undergroundTreeModifiersWithWouldSurvive(PlacedFeatures.createCountExtraModifier(24, 1f, 2), Blocks.OAK_SAPLING));
-        register(context, AZALEA_TREE_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(TreeConfiguredFeatures.AZALEA_TREE), ModPlacedFeatures.undergroundTreeModifiersWithWouldSurvive(PlacedFeatures.createCountExtraModifier(56, 1f, 2), Blocks.AZALEA));
+        register(context, OAK_TREE_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(TreeConfiguredFeatures.OAK), ModPlacedFeatures.undergroundTreeModifiersWithWouldSurvive(PlacedFeatures.createCountExtraModifier(64, 1f, 2), Blocks.OAK_SAPLING));
+        register(context, AZALEA_TREE_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(TreeConfiguredFeatures.AZALEA_TREE), ModPlacedFeatures.undergroundTreeModifiersWithWouldSurvive(PlacedFeatures.createCountExtraModifier(64, 1f, 2), Blocks.AZALEA));
 
 
         //Crystal
