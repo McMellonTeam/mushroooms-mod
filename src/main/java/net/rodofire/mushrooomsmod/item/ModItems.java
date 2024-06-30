@@ -63,7 +63,7 @@ public class ModItems {
     public static final Item AMBER_ITEM = registerItem("amber_item", new CrushableItems(new FabricItemSettings()));
     public static final Item CRUSHED_AMBER_ITEM = registerItem("amber_crushed_item", new Item(new FabricItemSettings()));
     //Tools
-    public static final Item IRON_HAMMER = registerItem("iron_hammer", new HammerItem(ToolMaterials.IRON, 30, -3.7f, 4, new FabricItemSettings()));
+    public static final Item IRON_HAMMER = registerItem("iron_hammer", new HammerItem(ToolMaterials.IRON, 27, -3.8f, 4, new FabricItemSettings()));
 
 
     private static Item registerItem(String name, Item item) {
