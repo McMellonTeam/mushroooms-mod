@@ -252,10 +252,10 @@ public class ModItemGroup {
 
                         //Utils
                         entries.add(ModBlocks.FORGE_BLOCK);
-                        entries.add(ModItems.INVENTORY_ARMOR_STAND);
 
                         //Tools
                         entries.add(ModItems.IRON_HAMMER);
+                        entries.add(ModItems.INVENTORY_ARMOR_STAND);
 
                         //Food
                         entries.add(ModItems.BAGUETTE);
