@@ -29,6 +29,9 @@ public abstract class ModFeatures<FC extends FeatureConfig> {
     public static Feature<HugeMushroomFeatureConfig> HUGE_BIG_YELLOW_MUSHROOM;
     public static Feature<DefaultFeatureConfig> FERTILE_RED_MUSHROOM;
 
+    //Flowers
+    public static Feature<DefaultFeatureConfig> FLEUR_BERRIES;
+
     //Vines Features;
     public static Feature<TwistingVinesFeatureConfig> BLUE_LUMINESCENT_VINES;
     public static Feature<DirectionConfig> SIMPLE_VINES;
@@ -59,6 +62,8 @@ public abstract class ModFeatures<FC extends FeatureConfig> {
         HUGE_BIG_ORANGE_MUSHROOM = registercustomfeature("huge_orange_mushroom_feature", new CustomOrangeMushroomFeature(HugeMushroomFeatureConfig.CODEC));
         HUGE_BIG_YELLOW_MUSHROOM = registercustomfeature("huge_yellow_mushroom_feature", new CustomYellowMushroomFeature(HugeMushroomFeatureConfig.CODEC));
         FERTILE_RED_MUSHROOM = registercustomfeature("mushroom_fertile_red", new CustomRedFertileMushroom(DefaultFeatureConfig.CODEC));
+
+        FLEUR_BERRIES = registercustomfeature("fleur_berries_feature", new FleurBerriesFeature(DefaultFeatureConfig.CODEC));
 
         BLUE_LUMINESCENT_VINES = registercustomfeature("blue_luminescent_vines_feature", new BlueLuminescentVinesFeature(TwistingVinesFeatureConfig.CODEC));
         SIMPLE_VINES = registercustomfeature("simple_vines", new SimpleVinesFeature(DirectionConfig.CODEC));
