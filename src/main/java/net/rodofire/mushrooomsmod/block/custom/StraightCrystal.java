@@ -38,7 +38,7 @@ public class StraightCrystal extends Block {
         builder.add(STAGE, VERTICAL_DIRECTION);
     }
 
-    public boolean canPlace(World world, BlockPos pos, BlockState state) {
+    public boolean canPlace(WorldView world, BlockPos pos, BlockState state) {
         BlockState blockState = world.getBlockState(pos);
         Direction direction = state.get(VERTICAL_DIRECTION);
         Direction direction2 = direction.getOpposite();
@@ -46,7 +46,7 @@ public class StraightCrystal extends Block {
         return blockState.equals(state) || direction2 == direction || blockState.isSideSolidFullSquare(world, pos, state.get(VERTICAL_DIRECTION));
     }
 
-    public Direction getDirection(BlockState state, World world, BlockPos pos) {
+    public Direction getDirection(BlockState state, WorldView world, BlockPos pos) {
         if (canPlace(world, pos.down(), state)) return Direction.UP;
         else if (canPlace(world, pos.up(), state)) return Direction.DOWN;
         return null;
@@ -54,14 +54,14 @@ public class StraightCrystal extends Block {
 
     @Override
     public boolean canPlaceAt(BlockState state, WorldView world, BlockPos pos) {
-        Direction direction = getDirection(state, (World) world, pos);
+        Direction direction = getDirection(state, world, pos);
         return direction == Direction.UP || direction == Direction.DOWN;
     }
 
     @Override
     public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
         Direction direction2 = state.get(VERTICAL_DIRECTION);
-        if (!canPlace((World) world, pos.offset(direction2.getOpposite()), state)) {
+        if (!canPlace(world, pos.offset(direction2.getOpposite()), state)) {
             return Blocks.AIR.getDefaultState();
         }
         if (world.getBlockState(pos.offset(direction)).isOf(this)) {
