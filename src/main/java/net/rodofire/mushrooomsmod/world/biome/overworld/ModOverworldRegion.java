@@ -75,7 +75,7 @@ public class ModOverworldRegion extends Region {
         //Forest Cave
         new ParameterUtils.ParameterPointListBuilder()
                 .temperature(ParameterUtils.Temperature.HOT)
-                .humidity(ParameterUtils.Humidity.DRY)
+                .humidity(ParameterUtils.Humidity.DRY, ParameterUtils.Humidity.NEUTRAL)
                 .continentalness(ParameterUtils.Continentalness.FAR_INLAND)
                 .erosion(MultiNoiseUtil.ParameterRange.of(-1f, 0f))
                 .depth(ParameterUtils.Depth.UNDERGROUND)

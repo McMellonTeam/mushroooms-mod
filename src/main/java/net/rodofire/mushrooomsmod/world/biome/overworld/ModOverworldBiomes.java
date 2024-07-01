@@ -17,8 +17,7 @@ import net.minecraft.world.gen.feature.VegetationPlacedFeatures;
 import net.rodofire.mushrooomsmod.MushrooomsMod;
 import net.rodofire.mushrooomsmod.world.biome.ModBiomeFeatures;
 
-public class
-ModOverworldBiomes {
+public class ModOverworldBiomes {
     /*----------Surface----------*/
     public static final RegistryKey<Biome> SHROOM_ISLAND1 = RegistryKey.of(RegistryKeys.BIOME, new Identifier(MushrooomsMod.MOD_ID, "shroom_island1"));
     //Schroom island with different mushrooms than the first biome
