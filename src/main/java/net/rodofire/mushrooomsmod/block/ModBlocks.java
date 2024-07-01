@@ -14,6 +14,7 @@ import net.minecraft.item.ItemGroups;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
+import net.minecraft.state.property.Properties;
 import net.minecraft.util.Identifier;
 import net.rodofire.mushrooomsmod.MushrooomsMod;
 import net.rodofire.mushrooomsmod.block.custom.*;
@@ -27,6 +28,7 @@ import net.rodofire.mushrooomsmod.particle.ModParticles;
 import net.rodofire.mushrooomsmod.sound.ModBlockSoundGroup;
 import net.rodofire.mushrooomsmod.world.features.configuredfeatures.ModConfiguredFeatures;
 import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.tree.sapplinggenerator.BlueLuminescentSapplingGenerator;
+
 
 public class ModBlocks {
     private static void addItemstoNaturalGroup(FabricItemGroupEntries entries) {
@@ -193,6 +195,7 @@ public class ModBlocks {
     public static final Block PERVENCHE = registerBlock("pervenche", new TallFlowerBlock(FabricBlockSettings.copyOf(Blocks.ROSE_BUSH).nonOpaque().noCollision()));
     public static final Block ACONIT = registerBlock("aconit", new TallFlowerBlock(FabricBlockSettings.copyOf(Blocks.ROSE_BUSH).nonOpaque().noCollision()));
     public static final Block RAPANGE_FLOWERS = registerBlock("rapange_flowers", new RapangeFlowers(FabricBlockSettings.copyOf(Blocks.ROSE_BUSH).nonOpaque().noCollision().luminance(RapangeFlowers.getLuminanceSupplier())));
+    public static final Block FLEUR_BERRIES = registerHiddenBlock("berries_fleur", new FleurBerries(FabricBlockSettings.copyOf(Blocks.ROSE_BUSH).nonOpaque().luminance(state -> state.get(Properties.AGE_3) * 4)));
 
     /*-----------Potted Blocks-----------*/
     //Potted Mushrooms

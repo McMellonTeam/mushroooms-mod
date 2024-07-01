@@ -5,6 +5,7 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.block.Blocks;
 import net.minecraft.data.server.recipe.RecipeJsonProvider;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
+import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.recipe.book.RecipeCategory;
@@ -13,9 +14,12 @@ import net.rodofire.mushrooomsmod.block.ModBlocks;
 import net.rodofire.mushrooomsmod.datagen.recipe.ForgeRecipeBuilder;
 import net.rodofire.mushrooomsmod.item.ModItems;
 
+import java.util.List;
 import java.util.function.Consumer;
 
 public class ModRecipeProvider extends FabricRecipeProvider {
+    private static final List<ItemConvertible> YELLOW_BERRIES = List.of(ModItems.YELLOW_BERRIES);
+
     public ModRecipeProvider(FabricDataOutput output) {
         super(output);
     }
@@ -201,8 +205,8 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
         //Crystals
         //offerCompactingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.AMBER_BLOCK, ModItems.CRUSHED_AMBER_ITEM);
-        offerReversibleCompactingRecipes(exporter, RecipeCategory.BUILDING_BLOCKS, ModItems.CRUSHED_AMBER_ITEM,RecipeCategory.BUILDING_BLOCKS, ModBlocks.AMBER_BLOCK);
-        offerReversibleCompactingRecipes(exporter, RecipeCategory.BUILDING_BLOCKS, ModItems.AMBER_ITEM,RecipeCategory.BUILDING_BLOCKS, ModBlocks.RAW_AMBER_BLOCK);
+        offerReversibleCompactingRecipes(exporter, RecipeCategory.BUILDING_BLOCKS, ModItems.CRUSHED_AMBER_ITEM, RecipeCategory.BUILDING_BLOCKS, ModBlocks.AMBER_BLOCK);
+        offerReversibleCompactingRecipes(exporter, RecipeCategory.BUILDING_BLOCKS, ModItems.AMBER_ITEM, RecipeCategory.BUILDING_BLOCKS, ModBlocks.RAW_AMBER_BLOCK);
         offerCompactingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.BLUE_CRYSTAL_BLOCK, ModItems.BLUE_CRYSTAL_ITEM);
         offerCompactingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.RED_CRYSTAL_BLOCK, ModItems.RED_CRYSTAL_ITEM);
 
@@ -215,5 +219,9 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         new ForgeRecipeBuilder(ModItems.AMBER_ITEM, ModItems.CRUSHED_AMBER_ITEM, 1)
                 .criterion(hasItem(ModItems.AMBER_ITEM), conditionsFromItem(Items.AIR))
                 .offerTo(exporter, new Identifier("amber_forge_craft"));
+
+        offerSmelting(exporter, YELLOW_BERRIES, RecipeCategory.FOOD, ModItems.COOKED_YELLOW_BERRIES, 0.3f, 100, "yellow_berries");
+        offerBlasting(exporter, YELLOW_BERRIES, RecipeCategory.FOOD, ModItems.COOKED_YELLOW_BERRIES, 0.3f, 50, "yellow_berries");
+
     }
 }

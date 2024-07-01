@@ -189,6 +189,7 @@ public class ModItemGroup {
                         entries.add(ModBlocks.JACYNTHE);
                         entries.add(ModBlocks.ACONIT);
                         entries.add(ModBlocks.PERVENCHE);
+                        entries.add(ModItems.FLEUR_BERRIES_ITEM);
 
                         //Grass
                         entries.add(ModBlocks.TINY_GRASS);
@@ -260,6 +261,8 @@ public class ModItemGroup {
                         //Food
                         entries.add(ModItems.BAGUETTE);
                         entries.add(ModItems.LUMINESCENT_SCHROOM_SOUP);
+                        entries.add(ModItems.YELLOW_BERRIES);
+                        entries.add(ModItems.COOKED_YELLOW_BERRIES);
 
                         //dev
                         //entries.add(ModBlocks.FEATURE_TESTER);
