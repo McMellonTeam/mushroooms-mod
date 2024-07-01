@@ -9,9 +9,10 @@
   ],
   "contact": {
     "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/RodoFire/mushroooms-mod-source-1.20.1"
+    "sources": "https://github.com/RodoFire/mushroooms-mod"
   },
-  "license": "MIT",
+  "license": "MIT with aditions",
+  "license link": "https://github.com/RodoFire/mushroooms-mod/blob/main/LICENSE",
   "icon": "assets/mushrooomsmod/icon.png",
   "environment": "*",
   "entrypoints": {
@@ -35,7 +36,7 @@
     "mushrooomsmod.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=0.14.22",
+    "fabricloader": ">=0.15.6",
     "minecraft": "~1.20.1",
     "java": ">=17",
     "geckolib": ">=4.2.2",
