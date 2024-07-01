@@ -22,7 +22,8 @@ import org.jetbrains.annotations.Nullable;
 import java.util.function.ToIntFunction;
 
 public class RapangeFlowers extends BlockWithEntity {
-    private static final VoxelShape SHAPE = Block.createCuboidShape(4d, 0d, 4d, 12d, 16d, 12d);
+    private static final VoxelShape SHAPEUP = Block.createCuboidShape(4d, 0d, 4d, 12d, 16d, 12d);
+    private static final VoxelShape SHAPEDOWN = Block.createCuboidShape(4d, 0d, 4d, 12d, 4, 12d);
     public static BooleanProperty UP = Properties.UP;
     private int time;
 
@@ -36,7 +37,7 @@ public class RapangeFlowers extends BlockWithEntity {
 
     @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
-        return SHAPE;
+        return state.get(UP) ? SHAPEUP : SHAPEDOWN;
     }
 
     @Override
