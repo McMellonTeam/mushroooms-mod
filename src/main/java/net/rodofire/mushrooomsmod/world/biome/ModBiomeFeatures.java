@@ -103,6 +103,7 @@ public class ModBiomeFeatures {
             builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModUndergroundPlacedFeatures.RED_QUINCE_UNDERGROUND_PLACED_KEY);
             builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModUndergroundPlacedFeatures.YELLOW_QUINCE_UNDERGROUND_PLACED_KEY);
             builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModUndergroundPlacedFeatures.RAPANGE_FLOWERS_UNDERGROUND_PLACED_KEY);
+            builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModUndergroundPlacedFeatures.FLEUR_BERRIES_UNDERGROUND_PLACED_KEY);
         }
 
     }
