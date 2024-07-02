@@ -142,8 +142,10 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.JACYNTHE);
         addDrop(ModBlocks.ACONIT);
         addDrop(ModBlocks.PERVENCHE);
+        addDrop(ModBlocks.OCULAE);
 
         addDrop(ModBlocks.RAPANGE_FLOWERS);
+        addDrop(ModBlocks.FLEUR_BERRIES);
 
         //Grass
         addDrop(ModBlocks.TINY_GRASS);

@@ -3,12 +3,17 @@ package net.rodofire.mushrooomsmod.block.custom;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemPlacementContext;
+import net.minecraft.item.Items;
 import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.Properties;
+import net.minecraft.util.ActionResult;
+import net.minecraft.util.Hand;
+import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.random.Random;
@@ -92,5 +97,17 @@ public class RapangeFlowers extends BlockWithEntity {
             world.setBlockState(pos, state.with(UP, true), 2);
         } else if (this.time != 0) this.time--;
         super.randomTick(state, world, pos, random);
+    }
+
+    @Override
+    public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
+        if (world.isClient) return ActionResult.PASS;
+        if (player.getMainHandStack().getItem() == Items.BONE_MEAL) {
+            player.getMainHandStack().decrement(1);
+            if (player.isCreative()) player.getMainHandStack().decrement(-1);
+            Block.dropStacks(state, world, pos);
+            return ActionResult.SUCCESS;
+        }
+        return ActionResult.PASS;
     }
 }

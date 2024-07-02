@@ -16,4 +16,10 @@ public class ModColor {
                 , ModBlocks.OAK_BERRIES_LEAVES);
 
     }
+
+    public static void createItemColors() {
+        ColorProviderRegistry.ITEM.register((stack, tintIndex) -> FoliageColors.getDefaultColor()
+                , ModBlocks.OAK_BERRIES_LEAVES.asItem());
+
+    }
 }

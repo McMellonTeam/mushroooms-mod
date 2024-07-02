@@ -56,6 +56,7 @@ public class ModUndergroundPlacedFeatures {
     public static final RegistryKey<PlacedFeature> CYCAS_UNDERGROUND_PLACED_KEY = registerKey("cycas_underground_placed_key");
     public static final RegistryKey<PlacedFeature> RAPANGE_FLOWERS_UNDERGROUND_PLACED_KEY = registerKey("rapange_flowers_underground_placed_key");
     public static final RegistryKey<PlacedFeature> FLEUR_BERRIES_UNDERGROUND_PLACED_KEY = registerKey("fleur_berries_underground_placed_key");
+    public static final RegistryKey<PlacedFeature> YELICE_UNDERGROUND_PLACED_KEY = registerKey("yelice_underground_placed_key");
 
     //Grass
     public static final RegistryKey<PlacedFeature> TINY_GRASS_UNDERGROUND_PLACED_KEY = registerKey("tiny_grass_underground_placed_key");
@@ -108,6 +109,7 @@ public class ModUndergroundPlacedFeatures {
         register(context, CYCAS_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.CYCAS_KEY), CountPlacementModifier.of(29), SquarePlacementModifier.of(), ModPlacedFeatures.STONE_LEVEL, BiomePlacementModifier.of());
         register(context, RAPANGE_FLOWERS_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.RAPANGE_FLOWERS_KEY), CountPlacementModifier.of(24), SquarePlacementModifier.of(), ModPlacedFeatures.STONE_LEVEL, BiomePlacementModifier.of());
         register(context, FLEUR_BERRIES_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.FLEUR_BERRIES_KEY), CountPlacementModifier.of(14), SquarePlacementModifier.of(), ModPlacedFeatures.STONE_LEVEL, BiomePlacementModifier.of());
+        register(context, YELICE_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.YELICE_KEY), CountPlacementModifier.of(25), SquarePlacementModifier.of(), ModPlacedFeatures.STONE_LEVEL, BiomePlacementModifier.of());
 
         //Grass
         register(context, GRASS_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.GRASS_KEY), CountPlacementModifier.of(45), SquarePlacementModifier.of(), ModPlacedFeatures.STONE_LEVEL, BiomePlacementModifier.of());

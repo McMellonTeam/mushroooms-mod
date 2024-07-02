@@ -46,6 +46,7 @@
   "block.mushrooomsmod.leaves_colorful_purple" : "Colorful Purple Leaves",
   "block.mushrooomsmod.leaves_colorful_pink" : "Colorful Pink Leaves",
   "block.mushrooomsmod.leaves_colorful_blue" : "Colorful Blue Leaves",
+  "block.mushrooomsmod.leaves_oak_berries": "Oak Berries Leaves",
 
   "block.mushrooomsmod.mushroom_stem_blue_luminescent" : "Blue Luminescent Mushroom Stem",
   "block.mushrooomsmod.mushroom_stem_transparent" : "Transparent Mushroom Stem",
@@ -54,6 +55,7 @@
   "block.mushrooomsmod.mushroom_compressed_purple" : "Purple Compressed Mushroom",
   "block.mushrooomsmod.dirt_compressed" : "Compressed Dirt",
   "block.mushrooomsmod.dirt_compressed_light" : "Light Compressed Dirt",
+  "block.mushrooomsmod.cloud_block": "Cloud Block",
 
   "block.mushrooomsmod.deepslate_mushroom_purple" : "Purple Mushroom Deepslate",
   "block.mushrooomsmod.deepslate_mushroom_blue_luminescent" : "Blue Luminescent Mushroom Deepslate",
@@ -78,6 +80,7 @@
   "block.mushrooomsmod.stairs_blue_luminescent" : "Blue Luminescent Stairs",
   "block.mushrooomsmod.slab_blue_luminescent" : "Blue Luminescent Slab",
   "block.mushrooomsmod.sappling_blue_luminescent" : "Blue Luminescent Sappling",
+  "block.mushrooomsmod.sapling_oak_berries": "Oak Berries Sapling",
 
   "block.mushrooomsmod.rhyolite" : "Rhyolite",
   "block.mushrooomsmod.rhyolite_tiles": "Rhyolite Tiles",
@@ -150,10 +153,12 @@
   "block.mushrooomsmod.jacynthe": "Jacynthe",
   "block.mushrooomsmod.aconit": "Aconit",
   "block.mushrooomsmod.pervenche": "Pervenche",
+  "block.mushrooomsmod.rapange_flowers": "Rapange Flowers",
+  "item.mushrooomsmod.fleur_berries_item": "Fleur Berries",
 
   "block.mushrooomsmod.tiny_grass": "Tiny Grass",
   "block.mushrooomsmod.grass_blue_luminescent": "Blue Luminescent Grass",
-  "block.mushrooomsmod.grass_tall.blue_luminescent": "Tall Blue Luminescent Grass",
+  "block.mushrooomsmod.grass_tall_blue_luminescent": "Tall Blue Luminescent Grass",
 
 
   "block.mushrooomsmod.mushroom_tiny_purple": "Tiny Purple Mushroom",
@@ -225,6 +230,10 @@
 
   "item.mushrooomsmod.luminescent_schroom_soup" : "Luminescent Schroom Soup",
   "tooltip.mushrooomsmod.schroom_soup.description" : "Drink this soup in a Blue Luminescent Cave to get ???",
+  "item.mushrooomsmod.berries_yellow": "Yellow Berries",
+  "item.mushrooomsmod.berries_cooked_yellow": "Yellow Cooked Berries",
+
+
 
   "biome.mushrooomsmod.blue_luminescent_schroom_cave" : "Blue Luminescent Schroom Cave",
 
