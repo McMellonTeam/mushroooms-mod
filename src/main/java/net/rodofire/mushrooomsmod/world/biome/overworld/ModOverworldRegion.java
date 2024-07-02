@@ -83,7 +83,7 @@ public class ModOverworldRegion extends Region {
                 .build().forEach(point -> builder.add(point, ModOverworldBiomes.FOREST_CAVE));
 
         //Shroom Island
-        new ParameterUtils.ParameterPointListBuilder()
+        /*new ParameterUtils.ParameterPointListBuilder()
                 .temperature(ParameterUtils.Temperature.HOT)
                 .humidity(ParameterUtils.Humidity.DRY)
                 .continentalness(ParameterUtils.Continentalness.MUSHROOM_FIELDS, ParameterUtils.Continentalness.NEAR_INLAND)
@@ -100,7 +100,7 @@ public class ModOverworldRegion extends Region {
                 .erosion(ParameterUtils.Erosion.EROSION_0)
                 .depth(ParameterUtils.Depth.UNDERGROUND)
                 .weirdness(MultiNoiseUtil.ParameterRange.of(0f, 1f))
-                .build().forEach(point -> builder.add(point, ModOverworldBiomes.SHROOM_ISLAND2));
+                .build().forEach(point -> builder.add(point, ModOverworldBiomes.SHROOM_ISLAND2));*/
 
         builder.build().forEach(mapper);
     }
