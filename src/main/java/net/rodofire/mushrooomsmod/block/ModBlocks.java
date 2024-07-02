@@ -252,7 +252,7 @@ public class ModBlocks {
     public static final Block POTTED_ANEMONE = Registry.register(Registries.BLOCK, new Identifier(MushrooomsMod.MOD_ID, "potted_anemone"), new FlowerPotBlock(ANEMONE, FabricBlockSettings.copyOf(Blocks.POTTED_RED_MUSHROOM).nonOpaque()));
     public static final Block POTTED_JACYNTHE = Registry.register(Registries.BLOCK, new Identifier(MushrooomsMod.MOD_ID, "potted_jacynthe"), new FlowerPotBlock(JACYNTHE, FabricBlockSettings.copyOf(Blocks.POTTED_RED_MUSHROOM).nonOpaque()));
     public static final Block POTTED_BLUE_LUMINESCENT_SAPPLING = Registry.register(Registries.BLOCK, new Identifier(MushrooomsMod.MOD_ID, "potted_blue_luminescent_sappling"), new FlowerPotBlock(ModBlocks.BLUE_LUMINESCENT_SAPPLING, FabricBlockSettings.copyOf(Blocks.POTTED_RED_MUSHROOM).nonOpaque()));
-    public static final Block OAK_BERRIES_LEAVES = registerBlock("leaves_oak_berries", new LeavesBlock(FabricBlockSettings.copyOf(Blocks.OAK_LEAVES).nonOpaque().mapColor(MapColor.DARK_GREEN).strength(0.2f).ticksRandomly().sounds(BlockSoundGroup.GRASS).nonOpaque().allowsSpawning(Blocks::canSpawnOnLeaves).suffocates(Blocks::never).blockVision(Blocks::never).burnable().pistonBehavior(PistonBehavior.DESTROY).solidBlock(Blocks::never)));
+    public static final Block OAK_BERRIES_LEAVES = registerBlock("leaves_oak_berries", new BerriesLeaves(FabricBlockSettings.copyOf(Blocks.OAK_LEAVES).nonOpaque().mapColor(MapColor.DARK_GREEN).strength(0.2f).ticksRandomly().sounds(BlockSoundGroup.GRASS).nonOpaque().allowsSpawning(Blocks::canSpawnOnLeaves).suffocates(Blocks::never).blockVision(Blocks::never).burnable().pistonBehavior(PistonBehavior.DESTROY).solidBlock(Blocks::never).luminance(BerriesLeaves.getLuminanceSupplier())));
 
 
     //Grass

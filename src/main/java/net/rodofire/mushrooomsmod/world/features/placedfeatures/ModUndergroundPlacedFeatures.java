@@ -127,9 +127,9 @@ public class ModUndergroundPlacedFeatures {
         register(context, FERTILE_RED_MUSHROOM_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.FERTILE_RED_MUSHROOM_KEY), CountPlacementModifier.of(240), SquarePlacementModifier.of(), ModPlacedFeatures.STONE_LEVEL, BiomePlacementModifier.of());
 
         //Tree
-        register(context, OAK_TREE_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(TreeConfiguredFeatures.OAK), ModPlacedFeatures.undergroundTreeModifiersWithWouldSurvive(PlacedFeatures.createCountExtraModifier(90, 3f, 45), Blocks.OAK_SAPLING));
-        register(context, OAK_BERRIES_TREE_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(TreeConfiguredFeatures.OAK), ModPlacedFeatures.undergroundTreeModifiersWithWouldSurvive(PlacedFeatures.createCountExtraModifier(245, 3f, 45), ModBlocks.OAK_BERRIES_SAPLING));
-        register(context, AZALEA_TREE_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(TreeConfiguredFeatures.AZALEA_TREE), ModPlacedFeatures.undergroundTreeModifiersWithWouldSurvive(PlacedFeatures.createCountExtraModifier(230, 3f, 6), Blocks.AZALEA));
+        register(context, OAK_TREE_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(TreeConfiguredFeatures.OAK), ModPlacedFeatures.undergroundTreeModifiersWithWouldSurvive(PlacedFeatures.createCountExtraModifier(90, 1f, 45), Blocks.OAK_SAPLING));
+        register(context, OAK_BERRIES_TREE_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.OAK_BERRIES_TREE_KEY), ModPlacedFeatures.undergroundTreeModifiersWithWouldSurvive(PlacedFeatures.createCountExtraModifier(240, 1f, 10), ModBlocks.OAK_BERRIES_SAPLING));
+        register(context, AZALEA_TREE_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(TreeConfiguredFeatures.AZALEA_TREE), ModPlacedFeatures.undergroundTreeModifiersWithWouldSurvive(PlacedFeatures.createCountExtraModifier(230, 1f, 6), Blocks.AZALEA));
 
 
         //Crystal

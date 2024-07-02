@@ -5,6 +5,7 @@ import net.minecraft.registry.Registerable;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.tag.BlockTags;
+import net.minecraft.state.property.Properties;
 import net.minecraft.structure.rule.BlockMatchRuleTest;
 import net.minecraft.structure.rule.RuleTest;
 import net.minecraft.structure.rule.TagMatchRuleTest;
@@ -23,7 +24,9 @@ import net.rodofire.mushrooomsmod.world.features.config.DirectionConfig;
 import net.rodofire.mushrooomsmod.world.features.config.ModMushroomFeatureConfig;
 import net.rodofire.mushrooomsmod.world.features.config.ModSimpleBlockFeatureConfig;
 import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.tree.codetree.BlueLuminescentTrunkPlacer;
+import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.tree.decorator.OakBerriesTreeDecorator;
 
+import java.util.Collections;
 import java.util.List;
 
 public class ModConfiguredFeatures<FC extends FeatureConfig> {
@@ -153,8 +156,8 @@ public class ModConfiguredFeatures<FC extends FeatureConfig> {
 
         register(context, OAK_BERRIES_TREE_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
                 BlockStateProvider.of(Blocks.OAK_LOG), new StraightTrunkPlacer(4, 2, 0),
-                BlockStateProvider.of(ModBlocks.OAK_BERRIES_LEAVES), new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 3),
-                new TwoLayersFeatureSize(1, 0, 1)).build());
+                BlockStateProvider.of(ModBlocks.OAK_BERRIES_LEAVES.getDefaultState().with(Properties.BERRIES, false)), new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 3),
+                new TwoLayersFeatureSize(1, 0, 1)).decorators(Collections.singletonList(OakBerriesTreeDecorator.INSTANCE)).build());
         //huge mushrooms
         register(context, BLUE_MUSHROOM_TREE_KEY, ModFeatures.HUGE_BLUE_MUSHROOM, new ModMushroomFeatureConfig(BlockStateProvider.of(ModBlocks.BLUE_MUSHROOM_BLOCK), BlockStateProvider.of(Blocks.MUSHROOM_STEM), BlockStateProvider.of(Blocks.MUSHROOM_STEM), 4));
         register(context, PURPLE_MUSHROOM_TREE_KEY, ModFeatures.HUGE_PURPLE_MUSHROOM, new HugeMushroomFeatureConfig(BlockStateProvider.of(ModBlocks.PURPLE_MUSHROOM_BLOCK), BlockStateProvider.of(Blocks.MUSHROOM_STEM), 5));

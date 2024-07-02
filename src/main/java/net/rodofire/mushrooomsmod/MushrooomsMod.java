@@ -20,6 +20,7 @@ import net.rodofire.mushrooomsmod.sound.ModSounds;
 import net.rodofire.mushrooomsmod.util.MathsUtil;
 import net.rodofire.mushrooomsmod.util.ModLootTableModifier;
 import net.rodofire.mushrooomsmod.world.features.configuredfeatures.ModFeatures;
+import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.tree.ModDecoratorTypes;
 import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.tree.ModTrunkPlacerTypes;
 import net.rodofire.mushrooomsmod.world.gen.ModWorldGeneration;
 import org.slf4j.Logger;
@@ -52,6 +53,7 @@ public class MushrooomsMod implements ModInitializer {
 
         ModSounds.registerModSound();
 
+        ModDecoratorTypes.registerDecorators();
         ModTrunkPlacerTypes.register();
 
         ModWorldGeneration.generateModWorldGen();

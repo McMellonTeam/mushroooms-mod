@@ -137,6 +137,7 @@ public class ModItemGroup {
 
                         //Sapling
                         entries.add(ModBlocks.BLUE_LUMINESCENT_SAPPLING);
+                        entries.add(ModBlocks.OAK_BERRIES_SAPLING);
 
                         //Flowers Mushrooms
                         entries.add(ModBlocks.STERILE_BLUE_MUSHROOM);

@@ -142,10 +142,10 @@ public class CustomOrangeMushroomFeature extends CustomOrangeMushroom {
 
 
         ArrayList<Integer> topcoordinates = new ArrayList<>();
-        topcoordinates.add(Random.create().nextBetween(2, height / 4));
-        topcoordinates.add(Random.create().nextBetween(2, height / 4));
-        topcoordinates.add(Random.create().nextBetween(2, height / 4));
-        topcoordinates.add(Random.create().nextBetween(2, height / 4));
+        topcoordinates.add(Random.create().nextBetween(2, height / 4 + 1));
+        topcoordinates.add(Random.create().nextBetween(2, height / 4 + 1));
+        topcoordinates.add(Random.create().nextBetween(2, height / 4 + 1));
+        topcoordinates.add(Random.create().nextBetween(2, height / 4 + 1));
 
         placeTop(world, mutable, pos, blockState, 1, 0, height, topcoordinates.get(0));
         placeTop(world, mutable, pos, blockState, 0, 1, height, topcoordinates.get(1));

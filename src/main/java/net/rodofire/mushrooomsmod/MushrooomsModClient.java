@@ -14,6 +14,7 @@ import net.rodofire.mushrooomsmod.block.entity.client.renderer.DangerousBoosting
 import net.rodofire.mushrooomsmod.block.entity.client.renderer.ForgeBlockEntityRenderer;
 import net.rodofire.mushrooomsmod.block.entity.client.renderer.RapangeFlowerRenderer;
 import net.rodofire.mushrooomsmod.client.HammerHUDOverlay;
+import net.rodofire.mushrooomsmod.client.ModColor;
 import net.rodofire.mushrooomsmod.entity.ModEntities;
 import net.rodofire.mushrooomsmod.entity.client.renderer.*;
 import net.rodofire.mushrooomsmod.networking.ModNetwork;
@@ -27,7 +28,10 @@ public class MushrooomsModClient implements ClientModInitializer {
         ModNetwork.registerS2CPackets();
 
 
+        ModColor.createBlockColors();
+
         HudRenderCallback.EVENT.register(new HammerHUDOverlay());
+
 
 
         //Blocks
@@ -53,6 +57,9 @@ public class MushrooomsModClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.ORANGE_MUSHROOM, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.YELLOW_MUSHROOM, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.FERTILE_RED_MUSHROOM, RenderLayer.getCutout());
+
+
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.OAK_BERRIES_LEAVES, RenderLayer.getCutoutMipped());
 
         //Flowers Mushrooms
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.STERILE_BLUE_MUSHROOM, RenderLayer.getCutout());
@@ -182,6 +189,7 @@ public class MushrooomsModClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.POTTED_ANEMONE, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.POTTED_JACYNTHE, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.POTTED_BLUE_LUMINESCENT_SAPPLING, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.OAK_BERRIES_SAPLING, RenderLayer.getCutout());
 
         //Leaves
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.BLUE_LUMINESCENT_LEAVES, RenderLayer.getCutout());
@@ -192,6 +200,7 @@ public class MushrooomsModClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.BLUE_COLORFUL_LEAVES, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.PINK_COLORFUL_LEAVES, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.ORANGE_COLORFUL_LEAVES, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.OAK_BERRIES_LEAVES, RenderLayer.getCutout());
 
         //Wood
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.BLUE_LUMINESCENT_TRAPDOOR, RenderLayer.getCutout());
