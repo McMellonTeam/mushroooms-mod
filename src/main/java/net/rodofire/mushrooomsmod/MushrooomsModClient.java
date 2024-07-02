@@ -29,6 +29,7 @@ public class MushrooomsModClient implements ClientModInitializer {
 
 
         ModColor.createBlockColors();
+        ModColor.createItemColors();
 
         HudRenderCallback.EVENT.register(new HammerHUDOverlay());
 
