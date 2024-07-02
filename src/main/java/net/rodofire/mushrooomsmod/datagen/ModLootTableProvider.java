@@ -241,6 +241,7 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.BLUE_LUMINESCENT_FENCE);
         addDrop(ModBlocks.BLUE_LUMINESCENT_FENCE_GATE);
         addDrop(ModBlocks.BLUE_LUMINESCENT_SAPPLING);
+        addDrop(ModBlocks.OAK_BERRIES_SAPLING);
 
 
         //Leaves
@@ -252,6 +253,7 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.PURPLE_COLORFUL_LEAVES, leavesDrops(ModBlocks.PURPLE_COLORFUL_LEAVES, ModBlocks.BLUE_LUMINESCENT_SAPPLING, 0.025f));
         addDrop(ModBlocks.GREEN_COLORFUL_LEAVES, leavesDrops(ModBlocks.GREEN_COLORFUL_LEAVES, ModBlocks.BLUE_LUMINESCENT_SAPPLING, 0.025f));
         addDrop(ModBlocks.PINK_COLORFUL_LEAVES, leavesDrops(ModBlocks.PINK_COLORFUL_LEAVES, ModBlocks.BLUE_LUMINESCENT_SAPPLING, 0.025f));
+        addDrop(ModBlocks.OAK_BERRIES_LEAVES, leavesDrops(ModBlocks.OAK_BERRIES_LEAVES, ModBlocks.OAK_BERRIES_SAPLING, 0.025f));
 
         //Crystals
         addDropWithSilkTouch(Block.getBlockFromItem(ModItems.PINK_CRYSTAL_ITEM), ModBlocks.PINK_CRYSTAL);

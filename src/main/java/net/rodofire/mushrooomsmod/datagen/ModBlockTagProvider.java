@@ -132,6 +132,7 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.PURPLE_COLORFUL_LEAVES)
                 .add(ModBlocks.ORANGE_COLORFUL_LEAVES)
                 .add(ModBlocks.GREEN_COLORFUL_LEAVES)
+                .add(ModBlocks.OAK_BERRIES_LEAVES)
                 .add(ModBlocks.PINK_COLORFUL_LEAVES);
 
 
@@ -145,6 +146,7 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.PURPLE_COLORFUL_LEAVES)
                 .add(ModBlocks.ORANGE_COLORFUL_LEAVES)
                 .add(ModBlocks.GREEN_COLORFUL_LEAVES)
+                .add(ModBlocks.OAK_BERRIES_LEAVES)
                 .add(ModBlocks.PINK_COLORFUL_LEAVES);
 
         //Mushroom Plant

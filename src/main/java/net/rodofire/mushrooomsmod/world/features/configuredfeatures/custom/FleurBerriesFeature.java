@@ -24,7 +24,7 @@ public class FleurBerriesFeature extends Feature<DefaultFeatureConfig> {
         BlockPos.Mutable mutable = new BlockPos.Mutable();
         for (int a = 0; a <= 55; a++) {
             mutable.set(pos, Random.create().nextBetween(-9, 9), Random.create().nextBetween(-3, 3), Random.create().nextBetween(-9, 9));
-            if (state.canPlaceAt(world, mutable.down()) && world.getBlockState(mutable).isAir() && world.getBlockState(mutable.up()).isAir()) {
+            if (state.canPlaceAt(world, mutable) && world.getBlockState(mutable).isAir() && world.getBlockState(mutable.up()).isAir()) {
                 world.setBlockState(mutable, state.with(Properties.AGE_3, Random.create().nextBetween(0, 3)), 2);
             }
         }

@@ -121,6 +121,7 @@ public class ModItemGroup {
                         entries.add(ModBlocks.ORANGE_COLORFUL_LEAVES);
                         entries.add(ModBlocks.RED_COLORFUL_LEAVES);
                         entries.add(ModBlocks.PINK_COLORFUL_LEAVES);
+                        entries.add(ModBlocks.OAK_BERRIES_LEAVES);
 
                         //Mushrooms
                         entries.add(ModBlocks.BLUE_LUMINESCENT_MUSHROOM);

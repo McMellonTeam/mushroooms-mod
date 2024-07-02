@@ -10,6 +10,7 @@ import net.minecraft.world.gen.YOffset;
 import net.minecraft.world.gen.feature.*;
 import net.minecraft.world.gen.placementmodifier.*;
 import net.rodofire.mushrooomsmod.MushrooomsMod;
+import net.rodofire.mushrooomsmod.block.ModBlocks;
 import net.rodofire.mushrooomsmod.world.features.configuredfeatures.ModConfiguredFeatures;
 
 import java.util.List;
@@ -26,6 +27,7 @@ public class ModUndergroundPlacedFeatures {
     //Tree
     public static final RegistryKey<PlacedFeature> OAK_TREE_UNDERGROUND_PLACED_KEY = registerKey("oak_tree_underground_placed_key");
     public static final RegistryKey<PlacedFeature> AZALEA_TREE_UNDERGROUND_PLACED_KEY = registerKey("alazea_tree_underground_placed_key");
+    public static final RegistryKey<PlacedFeature> OAK_BERRIES_TREE_UNDERGROUND_PLACED_KEY = registerKey("oak_berries_tree_underground_placed_key");
 
     //Mushrooms Flowers
     public static final RegistryKey<PlacedFeature> MUSHROOM_SIDE_BLUE_LUMINESCENT_UNDERGROUND_PLACED_KEY = registerKey("mushroom_side_blue_luminescent_underground_placed_key");
@@ -125,7 +127,8 @@ public class ModUndergroundPlacedFeatures {
         register(context, FERTILE_RED_MUSHROOM_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.FERTILE_RED_MUSHROOM_KEY), CountPlacementModifier.of(240), SquarePlacementModifier.of(), ModPlacedFeatures.STONE_LEVEL, BiomePlacementModifier.of());
 
         //Tree
-        register(context, OAK_TREE_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(TreeConfiguredFeatures.OAK), ModPlacedFeatures.undergroundTreeModifiersWithWouldSurvive(PlacedFeatures.createCountExtraModifier(245, 3f, 45), Blocks.OAK_SAPLING));
+        register(context, OAK_TREE_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(TreeConfiguredFeatures.OAK), ModPlacedFeatures.undergroundTreeModifiersWithWouldSurvive(PlacedFeatures.createCountExtraModifier(90, 3f, 45), Blocks.OAK_SAPLING));
+        register(context, OAK_BERRIES_TREE_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(TreeConfiguredFeatures.OAK), ModPlacedFeatures.undergroundTreeModifiersWithWouldSurvive(PlacedFeatures.createCountExtraModifier(245, 3f, 45), ModBlocks.OAK_BERRIES_SAPLING));
         register(context, AZALEA_TREE_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(TreeConfiguredFeatures.AZALEA_TREE), ModPlacedFeatures.undergroundTreeModifiersWithWouldSurvive(PlacedFeatures.createCountExtraModifier(230, 3f, 6), Blocks.AZALEA));
 
 

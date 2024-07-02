@@ -7,10 +7,10 @@ import net.minecraft.world.gen.feature.ConfiguredFeature;
 import net.rodofire.mushrooomsmod.world.features.configuredfeatures.ModConfiguredFeatures;
 import org.jetbrains.annotations.Nullable;
 
-public class BlueLuminescentSapplingGenerator extends SaplingGenerator {
+public class OakBerriesSaplingGenerator extends SaplingGenerator {
     @Nullable
     @Override
     protected RegistryKey<ConfiguredFeature<?, ?>> getTreeFeature(Random random, boolean bees) {
-        return ModConfiguredFeatures.BLUE_LUMINESCENT_TREE_KEY;
+        return ModConfiguredFeatures.OAK_BERRIES_TREE_KEY;
     }
 }
