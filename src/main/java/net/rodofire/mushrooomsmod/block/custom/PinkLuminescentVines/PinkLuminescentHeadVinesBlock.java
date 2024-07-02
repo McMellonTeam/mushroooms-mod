@@ -36,20 +36,18 @@ public class PinkLuminescentHeadVinesBlock extends Block {
 
         BlockState blocAuDessus = world.getBlockState(pos.up());
         if (blocAuDessus.getBlock() == ModBlocks.PINK_LUMINESCENT_MUSHROOM_BLOCK || blocAuDessus.getBlock() == ModBlocks.PINK_LUMINESCENT_BODY_VINES) {
-            BlockState blockState = (BlockState) state.with(MANY_VINES, true);
+            BlockState blockState = state.with(MANY_VINES, true);
             world.setBlockState(pos, blockState, Block.NOTIFY_LISTENERS);
             return ActionResult.SUCCESS;
         }
-        BlockState blockState = (BlockState) state.with(MANY_VINES, false);
+        BlockState blockState = state.with(MANY_VINES, false);
         world.setBlockState(pos, blockState, Block.NOTIFY_LISTENERS);
         return ActionResult.SUCCESS;
     }
 
     public static int getluminancesupplier(int luminance, World world, BlockPos pos) {
-        System.out.println("on initialise");
         BlockState blocAuDessus = world.getBlockState(pos.up());
         if (blocAuDessus.getBlock() == ModBlocks.PINK_LUMINESCENT_MUSHROOM_BLOCK || blocAuDessus.getBlock() == ModBlocks.PINK_LUMINESCENT_BODY_VINES) {
-            System.out.println("true");
             return luminance;
         }
         return 0;
@@ -61,7 +59,7 @@ public class PinkLuminescentHeadVinesBlock extends Block {
     }
 
     public static ToIntFunction<BlockState> getLuminanceSupplier(int luminance) {
-        return state -> state.get(ModProperties.MANY_VINES) != false ? luminance : 0;
+        return state -> state.get(ModProperties.MANY_VINES) ? luminance : 0;
     }
 
 }

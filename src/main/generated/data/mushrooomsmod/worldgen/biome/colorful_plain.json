@@ -72,13 +72,13 @@
       "minecraft:glow_lichen",
       "minecraft:trees_plains",
       "minecraft:patch_grass_plain",
-      "mushrooomsmod:colorful_bush_placed_key",
-      "mushrooomsmod:purple_perennial_placed_key",
-      "mushrooomsmod:pink_perennial_placed_key",
-      "mushrooomsmod:green_perennial_placed_key",
-      "mushrooomsmod:orange_perennial_placed_key",
-      "mushrooomsmod:luminescent_perennial_placed_key",
-      "mushrooomsmod:yellow_perennial_placed_key"
+      "mushrooomsmod:colorful_bush_surface_placed_key",
+      "mushrooomsmod:purple_perennial_surface_placed_key",
+      "mushrooomsmod:pink_perennial_surface_placed_key",
+      "mushrooomsmod:green_perennial_surface_placed_key",
+      "mushrooomsmod:orange_perennial_surface_placed_key",
+      "mushrooomsmod:luminescent_perennial_surface_placed_key",
+      "mushrooomsmod:yellow_perennial_surface_placed_key"
     ],
     [
       "minecraft:freeze_top_layer"

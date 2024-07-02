@@ -61,10 +61,8 @@ public class BigPurpleMushroomPlant extends CropBlock implements Fertilizable {
 
     public static BlockState getAgeToBlockstate(int age) {
         if (age == 0) {
-            System.out.println("satge0");
             return ModBlocks.TINY_PURPLE_MUSHROOM.getDefaultState();
         } else if (age == 1) {
-            System.out.println("stage1");
             return ModBlocks.LITTLE_PURPLE_MUSHROOM.getDefaultState();
         } else if (age == 2) {
             return ModBlocks.MEDIUM_PURPLE_MUSHROOM.getDefaultState();

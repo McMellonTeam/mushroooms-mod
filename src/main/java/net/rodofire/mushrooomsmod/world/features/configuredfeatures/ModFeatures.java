@@ -3,24 +3,21 @@ package net.rodofire.mushrooomsmod.world.features.configuredfeatures;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.world.gen.feature.*;
+import net.rodofire.mushrooomsmod.world.features.config.CrystalConfig;
 import net.rodofire.mushrooomsmod.world.features.config.DirectionConfig;
 import net.rodofire.mushrooomsmod.world.features.config.ModMushroomFeatureConfig;
 import net.rodofire.mushrooomsmod.world.features.config.ModSimpleBlockFeatureConfig;
-import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.BlueLuminescentVinesFeature;
-import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.BushFeature;
-import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.ColorfulBushFeature;
 import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.SimpleBlockFeature;
-import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.SimpleVinesFeature;
-import net.rodofire.mushrooomsmod.world.mushrooms.HugeBlueMushroom.HugeBlueMushroomFeature;
-import net.rodofire.mushrooomsmod.world.mushrooms.codemushrooms.*;
-import net.rodofire.mushrooomsmod.world.mushrooms.structuremushrooms.CustomGreenSecondMushroomFeature;
-import net.rodofire.mushrooomsmod.world.mushrooms.structuremushrooms.CustomRedFertileMushroom;
-import net.rodofire.mushrooomsmod.world.mushrooms.structuremushrooms.CustomRedHugeMushroomFeature;
+import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.*;
+import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.mushrooms.codemushrooms.*;
+import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.mushrooms.structuremushrooms.CustomGreenSecondMushroomFeature;
+import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.mushrooms.structuremushrooms.CustomRedFertileMushroom;
+import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.mushrooms.structuremushrooms.CustomRedHugeMushroomFeature;
 
 public abstract class ModFeatures<FC extends FeatureConfig> {
 
     //Huge mushroom features
-    public static Feature<HugeMushroomFeatureConfig> HUGE_BLUE_MUSHROOM;
+    public static Feature<ModMushroomFeatureConfig> HUGE_BLUE_MUSHROOM;
     public static Feature<HugeMushroomFeatureConfig> HUGE_PURPLE_MUSHROOM;
     public static Feature<ModMushroomFeatureConfig> HUGE_GREEN_MUSHROOM;
     public static Feature<HugeMushroomFeatureConfig> HUGE_BLUE_LUMINESCENT_MUSHROOM;
@@ -32,9 +29,16 @@ public abstract class ModFeatures<FC extends FeatureConfig> {
     public static Feature<HugeMushroomFeatureConfig> HUGE_BIG_YELLOW_MUSHROOM;
     public static Feature<DefaultFeatureConfig> FERTILE_RED_MUSHROOM;
 
+    //Flowers
+    public static Feature<DefaultFeatureConfig> FLEUR_BERRIES;
+
     //Vines Features;
     public static Feature<TwistingVinesFeatureConfig> BLUE_LUMINESCENT_VINES;
     public static Feature<DirectionConfig> SIMPLE_VINES;
+
+    //Crystal
+    public static Feature<CrystalConfig> CRYSTAL;
+    public static Feature<ModSimpleBlockFeatureConfig> CRYSTAL_PILLAR;
 
     //Bush;
     public static Feature<DefaultFeatureConfig> BUSH;
@@ -43,8 +47,11 @@ public abstract class ModFeatures<FC extends FeatureConfig> {
     //SimpleBlock
     public static Feature<ModSimpleBlockFeatureConfig> SIMPLE_BLOCK;
 
+    //dev
+    public static Feature<ModSimpleBlockFeatureConfig> FEATURE_TESTER;
+
     public static void addFeatures() {
-        HUGE_BLUE_MUSHROOM = registercustomfeature("huge_blue_mushroom", new HugeBlueMushroomFeature(HugeMushroomFeatureConfig.CODEC));
+        HUGE_BLUE_MUSHROOM = registercustomfeature("huge_blue_mushroom", new CustomBuleMushroomFeature(ModMushroomFeatureConfig.CODEC));
         HUGE_PURPLE_MUSHROOM = registercustomfeature("huge_purple_mushroom", new CustomPurpleMushroomFeature(HugeMushroomFeatureConfig.CODEC));
         HUGE_GREEN_MUSHROOM = registercustomfeature("huge_green_mushroom", new CustomGreenMushroomFeature(ModMushroomFeatureConfig.CODEC));
         HUGE_BLUE_LUMINESCENT_MUSHROOM = registercustomfeature("huge_blue_luminescent_mushroom", new CustomLuminescentBlueMushroomFeature(HugeMushroomFeatureConfig.CODEC));
@@ -56,16 +63,23 @@ public abstract class ModFeatures<FC extends FeatureConfig> {
         HUGE_BIG_YELLOW_MUSHROOM = registercustomfeature("huge_yellow_mushroom_feature", new CustomYellowMushroomFeature(HugeMushroomFeatureConfig.CODEC));
         FERTILE_RED_MUSHROOM = registercustomfeature("mushroom_fertile_red", new CustomRedFertileMushroom(DefaultFeatureConfig.CODEC));
 
+        FLEUR_BERRIES = registercustomfeature("fleur_berries_feature", new FleurBerriesFeature(DefaultFeatureConfig.CODEC));
+
         BLUE_LUMINESCENT_VINES = registercustomfeature("blue_luminescent_vines_feature", new BlueLuminescentVinesFeature(TwistingVinesFeatureConfig.CODEC));
         SIMPLE_VINES = registercustomfeature("simple_vines", new SimpleVinesFeature(DirectionConfig.CODEC));
+
+        CRYSTAL = registercustomfeature("crystal", new CrystalFeature(CrystalConfig.CODEC));
+        CRYSTAL_PILLAR = registercustomfeature("crystal_pillar", new BigCrystal(ModSimpleBlockFeatureConfig.CODEC));
 
         BUSH = registercustomfeature("bush_feature", new BushFeature(DefaultFeatureConfig.CODEC));
         COLORFUL_BUSH = registercustomfeature("colorful_bush_feature", new ColorfulBushFeature(DefaultFeatureConfig.CODEC));
 
         SIMPLE_BLOCK = registercustomfeature("simple_block_feature", new SimpleBlockFeature(ModSimpleBlockFeatureConfig.CODEC));
+
+        FEATURE_TESTER = registercustomfeature("feature_tester", new DevFeature(ModSimpleBlockFeatureConfig.CODEC));
     }
 
     private static <C extends FeatureConfig, F extends Feature<C>> F registercustomfeature(String name, F feature) {
-        return (F) Registry.register(Registries.FEATURE, name, feature);
+        return Registry.register(Registries.FEATURE, name, feature);
     }
 }

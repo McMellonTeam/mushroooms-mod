@@ -8,8 +8,10 @@ import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.entity.passive.CowEntity;
 import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.world.World;
+import net.rodofire.mushrooomsmod.block.ModBlocks;
 import net.rodofire.mushrooomsmod.entity.ModEntities;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.animatable.GeoEntity;
@@ -20,7 +22,7 @@ import software.bernie.geckolib.core.animation.*;
 import software.bernie.geckolib.core.object.PlayState;
 
 public class BoleteCowEntity extends CowEntity implements GeoEntity {
-    private AnimatableInstanceCache cache = new SingletonAnimatableInstanceCache(this);
+    private final AnimatableInstanceCache cache = new SingletonAnimatableInstanceCache(this);
 
     public BoleteCowEntity(EntityType<? extends CowEntity> entityType, World world) {
         super(entityType, world);
@@ -40,7 +42,7 @@ public class BoleteCowEntity extends CowEntity implements GeoEntity {
     @Override
     protected void initGoals() {
         this.goalSelector.add(1, new SwimGoal(this));
-        this.goalSelector.add(2, new EscapeDangerGoal(this, 2.0));
+        this.goalSelector.add(2, new EscapeDangerGoal(this, 1.0f));
         this.goalSelector.add(3, new WanderAroundFarGoal(this, 0.6f, 1));
         this.goalSelector.add(4, new LookAtEntityGoal(this, PlayerEntity.class, 6.0f));
         this.goalSelector.add(5, new LookAroundGoal(this));
@@ -64,5 +66,10 @@ public class BoleteCowEntity extends CowEntity implements GeoEntity {
             geoAnimatableAnimationState.getController().setAnimation(RawAnimation.begin().then("animation.bolete_cow.idle", Animation.LoopType.LOOP));
         }
         return PlayState.CONTINUE;
+    }
+
+    @Override
+    public boolean isBreedingItem(ItemStack stack) {
+        return stack.isOf(ModBlocks.PURPLE_MUSHROOM.asItem());
     }
 }

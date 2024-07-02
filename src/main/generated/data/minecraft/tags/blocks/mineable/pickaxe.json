@@ -8,6 +8,7 @@
     "mushrooomsmod:lantern_green",
     "mushrooomsmod:campfire_green",
     "mushrooomsmod:rhyolite",
+    "mushrooomsmod:rhyolite_tiles",
     "mushrooomsmod:blackstone_lava_bricks",
     "mushrooomsmod:blackstone_lava",
     "mushrooomsmod:blackstone_lava_tiny_bricks",
@@ -15,8 +16,14 @@
     "mushrooomsmod:crystal_pink",
     "mushrooomsmod:crystal_block_pink",
     "mushrooomsmod:amber_block",
+    "mushrooomsmod:amber_block_raw",
     "mushrooomsmod:amber_ore",
     "mushrooomsmod:amber_block_sandified",
-    "mushrooomsmod:crystal_blue"
+    "mushrooomsmod:crystal_blue",
+    "mushrooomsmod:crystal_block_blue",
+    "mushrooomsmod:crystal_red",
+    "mushrooomsmod:crystal_block_red",
+    "mushrooomsmod:crystal_block_white",
+    "mushrooomsmod:crystal_white"
   ]
 }

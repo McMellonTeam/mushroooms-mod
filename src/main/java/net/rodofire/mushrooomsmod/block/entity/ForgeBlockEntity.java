@@ -30,8 +30,8 @@ public class ForgeBlockEntity extends BlockEntity implements ImplementedInventor
 
     @Override
     public void readNbt(NbtCompound nbt) {
-        inventory.clear();
         super.readNbt(nbt);
+        inventory.clear();
         Inventories.readNbt(nbt, inventory);
     }
 
@@ -47,8 +47,8 @@ public class ForgeBlockEntity extends BlockEntity implements ImplementedInventor
 
     @Override
     public void markDirty() {
-        super.markDirty();
         world.updateListeners(pos, getCachedState(), getCachedState(), 3);
+        super.markDirty();
     }
 
     public ArrayList<ItemStack> getRenderStack() {
@@ -73,6 +73,4 @@ public class ForgeBlockEntity extends BlockEntity implements ImplementedInventor
     public NbtCompound toInitialChunkDataNbt() {
         return createNbt();
     }
-
-
 }

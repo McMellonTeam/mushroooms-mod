@@ -17,8 +17,6 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
 
     @Override
     public void generate() {
-
-
         //Blocks
         //Mushroom
         addDrop(ModBlocks.PURPLE_MUSHROOM_BLOCK);
@@ -76,10 +74,11 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.LIGHT_COMPRESSED_DIRT);
 
         //Hard Blocks
-        addDropWithSilkTouch(ModBlocks.PURPLE_SCHROOM_DEESLATE, Blocks.DEEPSLATE);
-        addDropWithSilkTouch(ModBlocks.BLUE_LUMINESCENT_SCHROOM_DEEPSLATE, Blocks.DEEPSLATE);
-        addDropWithSilkTouch(ModBlocks.GREEN_STONY_SCHROOM_DEPOT, Blocks.STONE);
+        addDrop(ModBlocks.PURPLE_SCHROOM_DEESLATE, oreDrops(ModBlocks.PURPLE_SCHROOM_DEESLATE, Blocks.DEEPSLATE.asItem()));
+        addDrop(ModBlocks.BLUE_LUMINESCENT_SCHROOM_DEEPSLATE, oreDrops(ModBlocks.BLUE_LUMINESCENT_SCHROOM_DEEPSLATE, Blocks.DEEPSLATE.asItem()));
+        addDrop(ModBlocks.GREEN_STONY_SCHROOM_DEPOT, oreDrops(ModBlocks.GREEN_STONY_SCHROOM_DEPOT, Blocks.STONE.asItem()));
         addDrop(ModBlocks.RHYOLITE);
+        addDrop(ModBlocks.RHYOLITE_TILES);
         addDrop(ModBlocks.LAVA_BLACKSTONE);
 
         //Mushrooms
@@ -143,6 +142,10 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.JACYNTHE);
         addDrop(ModBlocks.ACONIT);
         addDrop(ModBlocks.PERVENCHE);
+        addDrop(ModBlocks.OCULAE);
+
+        addDrop(ModBlocks.RAPANGE_FLOWERS);
+        addDrop(ModBlocks.FLEUR_BERRIES);
 
         //Grass
         addDrop(ModBlocks.TINY_GRASS);
@@ -240,6 +243,7 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.BLUE_LUMINESCENT_FENCE);
         addDrop(ModBlocks.BLUE_LUMINESCENT_FENCE_GATE);
         addDrop(ModBlocks.BLUE_LUMINESCENT_SAPPLING);
+        addDrop(ModBlocks.OAK_BERRIES_SAPLING);
 
 
         //Leaves
@@ -251,15 +255,22 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.PURPLE_COLORFUL_LEAVES, leavesDrops(ModBlocks.PURPLE_COLORFUL_LEAVES, ModBlocks.BLUE_LUMINESCENT_SAPPLING, 0.025f));
         addDrop(ModBlocks.GREEN_COLORFUL_LEAVES, leavesDrops(ModBlocks.GREEN_COLORFUL_LEAVES, ModBlocks.BLUE_LUMINESCENT_SAPPLING, 0.025f));
         addDrop(ModBlocks.PINK_COLORFUL_LEAVES, leavesDrops(ModBlocks.PINK_COLORFUL_LEAVES, ModBlocks.BLUE_LUMINESCENT_SAPPLING, 0.025f));
+        addDrop(ModBlocks.OAK_BERRIES_LEAVES, leavesDrops(ModBlocks.OAK_BERRIES_LEAVES, ModBlocks.OAK_BERRIES_SAPLING, 0.025f));
 
         //Crystals
         addDropWithSilkTouch(Block.getBlockFromItem(ModItems.PINK_CRYSTAL_ITEM), ModBlocks.PINK_CRYSTAL);
         addDrop(ModBlocks.PINK_CRYSTAL_BLOCK);
         addDrop(ModBlocks.BLUE_CRYSTAL);
+        addDrop(ModBlocks.RED_CRYSTAL);
+        addDrop(ModBlocks.RED_CRYSTAL_BLOCK);
+        addDrop(ModBlocks.BLUE_CRYSTAL_BLOCK);
+        addDrop(ModBlocks.WHITE_CRYSTAL_BLOCK);
+        addDrop(ModBlocks.WHITE_CRYSTAL);
 
         addDrop(ModBlocks.AMBER_BLOCK);
+        addDrop(ModBlocks.RAW_AMBER_BLOCK);
         addDrop(ModBlocks.AMBER_BLOCK_SANDIFIED);
-        addDropWithSilkTouch(ModBlocks.AMBER_ORE, Block.getBlockFromItem(ModItems.AMBER_ITEM));
+        addDrop(ModBlocks.AMBER_ORE, oreDrops(ModBlocks.AMBER_ORE, ModItems.AMBER_ITEM));
 
         //Utils
         addDrop(ModBlocks.FORGE_BLOCK);

@@ -26,12 +26,12 @@ public class ModMaterialsRules {
     private static final MaterialRules.MaterialRule BLUE_LUMINESCENT_DEEPSLATE = makeStateRule(ModBlocks.BLUE_LUMINESCENT_SCHROOM_DEEPSLATE);
     private static final MaterialRules.MaterialRule PURPLE_SCHROOM_DEEPSLATE = makeStateRule(ModBlocks.PURPLE_SCHROOM_DEESLATE);
 
-
     public static MaterialRules.MaterialRule makeRules() {
         MaterialRules.MaterialCondition deepslatelevel = MaterialRules.verticalGradient("deepslate", YOffset.fixed(0), YOffset.fixed(8));
         MaterialRules.MaterialCondition stonecavelevel = MaterialRules.aboveY(YOffset.fixed(0), 1);
         MaterialRules.MaterialCondition abovetop = MaterialRules.aboveY(YOffset.belowTop(-2), 0);
         MaterialRules.MaterialCondition belowtop = MaterialRules.not(MaterialRules.aboveY(YOffset.belowTop(10), 1));
+        MaterialRules.MaterialCondition aboveWater = MaterialRules.aboveY(YOffset.fixed(60), 0);
 
 
         //Dirt Related
@@ -53,10 +53,21 @@ public class ModMaterialsRules {
                                 sequence(condition(MaterialRules.STONE_DEPTH_FLOOR,
                                                 sequence(condition(emmentalNoiseAbove(0.25d), ROOTED_DIRT), condition(emmentalNoiseAbove(-0.25d), MYCELIUM), COARSE_DIRT)), dirtfloor,
                                         sequence(condition(MaterialRules.STONE_DEPTH_CEILING,
-                                                sequence(condition(emmentalNoiseAbove(0d), DIRT), condition(emmentalNoiseAbove(-0.2d), ROOTED_DIRT), condition(emmentalNoiseAbove(-0.4d), COARSE_DIRT))))))))))
+                                                sequence(condition(emmentalNoiseAbove(0d), DIRT), condition(emmentalNoiseAbove(-0.2d), ROOTED_DIRT), condition(emmentalNoiseAbove(-0.4d), COARSE_DIRT))))))))))),
+
+                //Forest Cave
+                condition(MaterialRules.biome(ModOverworldBiomes.FOREST_CAVE),
+                        condition(belowtop, condition(stonecavelevel, sequence(condition(MaterialRules.STONE_DEPTH_FLOOR, GRASS_BLOCK),
+                                condition(MaterialRules.STONE_DEPTH_FLOOR_WITH_SURFACE_DEPTH_RANGE_6, DIRT), condition(MaterialRules.STONE_DEPTH_CEILING, DIRT))))),
+
+                //Schroom Island
+                condition(MaterialRules.biome(ModOverworldBiomes.SHROOM_ISLAND1),
+                        condition(aboveWater, sequence(condition(MaterialRules.STONE_DEPTH_FLOOR, MYCELIUM), condition(MaterialRules.STONE_DEPTH_FLOOR_WITH_SURFACE_DEPTH_RANGE_6, DIRT)))),
+                condition(MaterialRules.biome(ModOverworldBiomes.SHROOM_ISLAND2),
+                        condition(aboveWater, sequence(condition(MaterialRules.STONE_DEPTH_FLOOR, MYCELIUM), condition(MaterialRules.STONE_DEPTH_FLOOR_WITH_SURFACE_DEPTH_RANGE_6, DIRT))))
+        );
 
 
-                        ));
     }
 
     private static MaterialRules.MaterialRule makeStateRule(Block block) {
@@ -69,6 +80,10 @@ public class ModMaterialsRules {
 
     public static MaterialRules.MaterialCondition emmentalNoiseAbove(double min) {
         return MaterialRules.noiseThreshold(ModNoises.EMMENTAL_NOISE, min, Double.MAX_VALUE);
+    }
+
+    public static MaterialRules.MaterialCondition patchNoiseAbove(double min) {
+        return MaterialRules.noiseThreshold(ModNoises.PATCH_NOISE, min, Double.MAX_VALUE);
     }
 
     //Methods for better readability

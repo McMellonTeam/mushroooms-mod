@@ -4,10 +4,13 @@ import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityTicker;
 import net.minecraft.block.entity.BlockEntityType;
+import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.item.ItemStack;
+import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
+import net.minecraft.util.Formatting;
 import net.minecraft.util.Hand;
 import net.minecraft.util.ItemScatterer;
 import net.minecraft.util.hit.BlockHitResult;
@@ -18,6 +21,8 @@ import net.minecraft.world.World;
 import net.rodofire.mushrooomsmod.block.entity.ForgeBlockEntity;
 import net.rodofire.mushrooomsmod.util.ModTags;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.List;
 
 public class ForgeBlock extends BlockWithEntity implements BlockEntityProvider {
     private static final VoxelShape SHAPE = Block.createCuboidShape(0, 0, 0, 16, 16, 16);
@@ -53,30 +58,34 @@ public class ForgeBlock extends BlockWithEntity implements BlockEntityProvider {
         int itemfirstslot = inventory.getStack(0).getCount();
         putItemStack.setCount(itemfirstslot + 1);
         if (!inventory.isEmpty()) {
-            //code to get the inventory
+            //code to give the inventory to the player
             if (itemStack.isEmpty() || !itemStack.isIn(ModTags.Items.FORGEABLE_ITEMS)) {
                 if (itemStack.isEmpty()) {
+                    //give it to the slot
                     if (inventory.getStack(1).isEmpty()) {
                         player.giveItemStack(inventory.getStack(0));
                         inventory.removeStack(0);
+                        inventory.setStack(0, ItemStack.EMPTY);
                     } else {
                         player.giveItemStack(inventory.getStack(1));
                         inventory.removeStack(1);
+                        inventory.setStack(0, ItemStack.EMPTY);
                     }
                     return ActionResult.SUCCESS;
                 } else {
+                    //drop the item
                     if (inventory.getStack(1).isEmpty()) {
                         dropStack(world, pos.up(), inventory.getStack(0));
                         inventory.removeStack(0);
+                        inventory.setStack(0, ItemStack.EMPTY);
                     } else {
                         dropStack(world, pos.up(), inventory.getStack(1));
-                        inventory.removeStack(0);
+                        inventory.removeStack(1);
+                        inventory.setStack(0, ItemStack.EMPTY);
                     }
                     return ActionResult.SUCCESS;
-
                 }
             }
-
             //put stuff
             if (inventory.getStack(0).getCount() != 64) {
                 if (itemStack.isIn(ModTags.Items.FORGEABLE_ITEMS)) {
@@ -102,7 +111,6 @@ public class ForgeBlock extends BlockWithEntity implements BlockEntityProvider {
             }
             return ActionResult.SUCCESS;
         }
-
         return ActionResult.PASS;
     }
 
@@ -124,5 +132,9 @@ public class ForgeBlock extends BlockWithEntity implements BlockEntityProvider {
         }
     }
 
-
+    @Override
+    public void appendTooltip(ItemStack stack, @Nullable BlockView world, List<Text> tooltip, TooltipContext options) {
+        tooltip.add(Text.translatable("tooltip.mushrooomsmod.forge_block").formatted(Formatting.BLUE));
+        super.appendTooltip(stack, world, tooltip, options);
+    }
 }

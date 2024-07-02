@@ -27,6 +27,7 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.GREEN_LANTERN)
                 .add(ModBlocks.GREEN_CAMPFIRE)
                 .add(ModBlocks.RHYOLITE)
+                .add(ModBlocks.RHYOLITE_TILES)
                 .add(ModBlocks.LAVA_BLACKSTONE_BRICKS)
                 .add(ModBlocks.LAVA_BLACKSTONE)
                 .add(ModBlocks.LAVA_BLACKSTONE_TINY_BRICKS)
@@ -34,9 +35,15 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.PINK_CRYSTAL)
                 .add(ModBlocks.PINK_CRYSTAL_BLOCK)
                 .add(ModBlocks.AMBER_BLOCK)
+                .add(ModBlocks.RAW_AMBER_BLOCK)
                 .add(ModBlocks.AMBER_ORE)
                 .add(ModBlocks.AMBER_BLOCK_SANDIFIED)
-                .add(ModBlocks.BLUE_CRYSTAL);
+                .add(ModBlocks.BLUE_CRYSTAL)
+                .add(ModBlocks.BLUE_CRYSTAL_BLOCK)
+                .add(ModBlocks.RED_CRYSTAL)
+                .add(ModBlocks.RED_CRYSTAL_BLOCK)
+                .add(ModBlocks.WHITE_CRYSTAL_BLOCK)
+                .add(ModBlocks.WHITE_CRYSTAL);
 
         //Shovel
         getOrCreateTagBuilder(BlockTags.SHOVEL_MINEABLE)
@@ -125,6 +132,7 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.PURPLE_COLORFUL_LEAVES)
                 .add(ModBlocks.ORANGE_COLORFUL_LEAVES)
                 .add(ModBlocks.GREEN_COLORFUL_LEAVES)
+                .add(ModBlocks.OAK_BERRIES_LEAVES)
                 .add(ModBlocks.PINK_COLORFUL_LEAVES);
 
 
@@ -138,6 +146,7 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.PURPLE_COLORFUL_LEAVES)
                 .add(ModBlocks.ORANGE_COLORFUL_LEAVES)
                 .add(ModBlocks.GREEN_COLORFUL_LEAVES)
+                .add(ModBlocks.OAK_BERRIES_LEAVES)
                 .add(ModBlocks.PINK_COLORFUL_LEAVES);
 
         //Mushroom Plant

@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "berries=false": {
+      "model": "block/oak_leaves"
+    },
+    "berries=true": {
+      "model": "mushrooomsmod:block/leaves_oak_berries"
+    }
+  }
+}

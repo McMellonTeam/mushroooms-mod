@@ -26,8 +26,9 @@ import software.bernie.geckolib.core.animation.*;
 import software.bernie.geckolib.core.object.PlayState;
 
 public class GrokiEntity extends AnimalEntity implements GeoEntity {
-    private AnimatableInstanceCache cache = new SingletonAnimatableInstanceCache(this);
-
+    private final AnimatableInstanceCache cache = new SingletonAnimatableInstanceCache(this);
+    private int interact;
+    private boolean trading;
 
     public GrokiEntity(EntityType<? extends AnimalEntity> entityType, World world) {
         super(entityType, world);
@@ -60,11 +61,11 @@ public class GrokiEntity extends AnimalEntity implements GeoEntity {
     private PlayState predicate(AnimationState<GeoAnimatable> geoAnimatableAnimationState) {
         if (geoAnimatableAnimationState.isMoving()) {
             geoAnimatableAnimationState.getController().setAnimation(RawAnimation.begin().then("animation.groki.walk", Animation.LoopType.LOOP));
+        } else if (this.trading) {
+
         } else {
             geoAnimatableAnimationState.getController().setAnimation(RawAnimation.begin().then("animation.groki.idle", Animation.LoopType.LOOP));
         }
-
-
         return PlayState.CONTINUE;
     }
 
@@ -76,12 +77,17 @@ public class GrokiEntity extends AnimalEntity implements GeoEntity {
 
     @Override
     public ActionResult interactMob(PlayerEntity player, Hand hand) {
+        if (this.interact != 0) {
+            if (this.interact == 1) {
+                this.dropItem(ModItems.CRUSHED_DIAMOND,1);
+                this.trading = false;
+            }
+            return ActionResult.PASS;
+        }
         ItemStack itemStack = player.getStackInHand(hand);
-        System.out.println(itemStack);
         if (itemStack.isIn(ModTags.Items.DIAMOND_ITEMS)) {
-            System.out.println("ok");
             itemStack.decrement(-1);
-            this.dropItem(ModItems.CRUSHED_DIAMOND, 1);
+            this.trading=true;
             return ActionResult.SUCCESS;
         }
         return ActionResult.PASS;
@@ -89,6 +95,9 @@ public class GrokiEntity extends AnimalEntity implements GeoEntity {
 
     @Override
     public void tick() {
+        if(this.interact !=0){
+            this.interact--;
+        }
         super.tick();
     }
 }

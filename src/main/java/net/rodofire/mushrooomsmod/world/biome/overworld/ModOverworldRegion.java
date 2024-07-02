@@ -22,16 +22,6 @@ public class ModOverworldRegion extends Region {
     @Override
     public void addBiomes(Registry<Biome> registry, Consumer<Pair<MultiNoiseUtil.NoiseHypercube, RegistryKey<Biome>>> mapper) {
         VanillaParameterOverlayBuilder builder = new VanillaParameterOverlayBuilder();
-        //Schroom Island
-        /*new ParameterUtils.ParameterPointListBuilder()
-                .temperature(ParameterUtils.Temperature.span(ParameterUtils.Temperature.COOL, ParameterUtils.Temperature.FROZEN))
-                    .humidity(ParameterUtils.Humidity.span(ParameterUtils.Humidity.ARID, ParameterUtils.Humidity.DRY))
-                        .continentalness(ParameterUtils.Continentalness.INLAND)
-                            .erosion(ParameterUtils.Erosion.EROSION_0, ParameterUtils.Erosion.EROSION_1)
-                                .depth(ParameterUtils.Depth.SURFACE, ParameterUtils.Depth.SURFACE)
-                                    .weirdness(ParameterUtils.Weirdness.MID_SLICE_NORMAL_ASCENDING, ParameterUtils.Weirdness.MID_SLICE_NORMAL_DESCENDING)
-                                        .build().forEach(point -> builder.add(point, ModOverworldBiomes.SHROOM_ISLAND));*/
-
         //Blue Luminescent Schroom Cave
         new ParameterUtils.ParameterPointListBuilder()
                 .temperature(ParameterUtils.Temperature.span(ParameterUtils.Temperature.ICY, ParameterUtils.Temperature.FROZEN))
@@ -57,9 +47,9 @@ public class ModOverworldRegion extends Region {
                 .temperature(ParameterUtils.Temperature.span(ParameterUtils.Temperature.COOL, ParameterUtils.Temperature.NEUTRAL))
                 .humidity(ParameterUtils.Humidity.span(ParameterUtils.Humidity.NEUTRAL, ParameterUtils.Humidity.HUMID))
                 .continentalness(MultiNoiseUtil.ParameterRange.of(0.03f, 0.55f))
-                .erosion( ParameterUtils.Erosion.EROSION_0, ParameterUtils.Erosion.EROSION_1)
+                .erosion(ParameterUtils.Erosion.EROSION_0, ParameterUtils.Erosion.EROSION_1)
                 .depth(ParameterUtils.Depth.UNDERGROUND)
-                .weirdness(MultiNoiseUtil.ParameterRange.of(-0.7f,1.0f))
+                .weirdness(MultiNoiseUtil.ParameterRange.of(-0.7f, 1.0f))
                 .build().forEach(point -> builder.add(point, ModOverworldBiomes.VANILLA_SHROOM_CAVE));
 
         //Magical Plain
@@ -72,6 +62,45 @@ public class ModOverworldRegion extends Region {
                                     .weirdness(ParameterUtils.Weirdness.MID_SLICE_NORMAL_ASCENDING, ParameterUtils.Weirdness.MID_SLICE_NORMAL_DESCENDING)
                                         .build().forEach(point -> builder.add(point, ModOverworldBiomes.MAGICAL_PLAIN));*/
 
+        //Crystal Cave
+        new ParameterUtils.ParameterPointListBuilder()
+                .temperature(ParameterUtils.Temperature.HOT)
+                .humidity(ParameterUtils.Humidity.NEUTRAL)
+                .continentalness(ParameterUtils.Continentalness.MID_INLAND)
+                .erosion(ParameterUtils.Erosion.EROSION_3)
+                .depth(ParameterUtils.Depth.UNDERGROUND)
+                .weirdness(MultiNoiseUtil.ParameterRange.of(0.03f, 0.55f))
+                .build().forEach(point -> builder.add(point, ModOverworldBiomes.CRYSTAL_CAVE));
+
+        //Forest Cave
+        new ParameterUtils.ParameterPointListBuilder()
+                .temperature(ParameterUtils.Temperature.HOT)
+                .humidity(ParameterUtils.Humidity.DRY, ParameterUtils.Humidity.NEUTRAL)
+                .continentalness(ParameterUtils.Continentalness.FAR_INLAND)
+                .erosion(MultiNoiseUtil.ParameterRange.of(-1f, 0f))
+                .depth(ParameterUtils.Depth.UNDERGROUND)
+                .weirdness(MultiNoiseUtil.ParameterRange.of(-1f, 0.05f))
+                .build().forEach(point -> builder.add(point, ModOverworldBiomes.FOREST_CAVE));
+
+        //Shroom Island
+        /*new ParameterUtils.ParameterPointListBuilder()
+                .temperature(ParameterUtils.Temperature.HOT)
+                .humidity(ParameterUtils.Humidity.DRY)
+                .continentalness(ParameterUtils.Continentalness.MUSHROOM_FIELDS, ParameterUtils.Continentalness.NEAR_INLAND)
+                .erosion(ParameterUtils.Erosion.EROSION_0)
+                .depth(ParameterUtils.Depth.UNDERGROUND)
+                .weirdness(MultiNoiseUtil.ParameterRange.of(-1f, 0f))
+                .build().forEach(point -> builder.add(point, ModOverworldBiomes.SHROOM_ISLAND1));
+
+        //Shroom Island 2
+        new ParameterUtils.ParameterPointListBuilder()
+                .temperature(ParameterUtils.Temperature.HOT)
+                .humidity(ParameterUtils.Humidity.DRY)
+                .continentalness(ParameterUtils.Continentalness.MUSHROOM_FIELDS, ParameterUtils.Continentalness.NEAR_INLAND)
+                .erosion(ParameterUtils.Erosion.EROSION_0)
+                .depth(ParameterUtils.Depth.UNDERGROUND)
+                .weirdness(MultiNoiseUtil.ParameterRange.of(0f, 1f))
+                .build().forEach(point -> builder.add(point, ModOverworldBiomes.SHROOM_ISLAND2));*/
 
         builder.build().forEach(mapper);
     }

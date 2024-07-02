@@ -36,7 +36,7 @@ public class PinkLuminescentBodyVinesBlock extends Block implements Fertilizable
         BlockState blocAuDessus = world.getBlockState(pos.up());
         if ((blocAuDessus.getBlock() == ModBlocks.PINK_LUMINESCENT_MUSHROOM_BLOCK || blocAuDessus.getBlock() == ModBlocks.PINK_LUMINESCENT_BODY_VINES) && state.get(MANY_VINES)) {
 
-            BlockState blockState = (BlockState) state.with(MANY_VINES, false);
+            BlockState blockState = state.with(MANY_VINES, false);
             world.setBlockState(pos, blockState, Block.NOTIFY_LISTENERS);
 
         }

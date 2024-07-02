@@ -22,7 +22,7 @@ public class PinkMushroomVinesBodyBlock extends AbstractPlantBlock
         PinkMushroomVines {
     public PinkMushroomVinesBodyBlock(AbstractBlock.Settings settings) {
         super(settings, Direction.DOWN, SHAPE, false);
-        this.setDefaultState((BlockState) ((BlockState) this.stateManager.getDefaultState()).with(BERRIES, false));
+        this.setDefaultState(this.stateManager.getDefaultState().with(BERRIES, false));
     }
 
     @Override
@@ -32,7 +32,7 @@ public class PinkMushroomVinesBodyBlock extends AbstractPlantBlock
 
     @Override
     protected BlockState copyState(BlockState from, BlockState to) {
-        return (BlockState) to.with(BERRIES, from.get(BERRIES));
+        return to.with(BERRIES, from.get(BERRIES));
     }
 
     @Override
@@ -52,7 +52,7 @@ public class PinkMushroomVinesBodyBlock extends AbstractPlantBlock
 
     @Override
     public boolean isFertilizable(WorldView world, BlockPos pos, BlockState state, boolean isClient) {
-        return state.get(BERRIES) == false;
+        return !state.get(BERRIES);
     }
 
     @Override
@@ -62,7 +62,7 @@ public class PinkMushroomVinesBodyBlock extends AbstractPlantBlock
 
     @Override
     public void grow(ServerWorld world, Random random, BlockPos pos, BlockState state) {
-        world.setBlockState(pos, (BlockState) state.with(BERRIES, true), Block.NOTIFY_LISTENERS);
+        world.setBlockState(pos, state.with(BERRIES, true), Block.NOTIFY_LISTENERS);
     }
 
 }

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "mushrooomsmod:block/crystal_red_up_bottom"
+  }
+}

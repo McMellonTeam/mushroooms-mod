@@ -44,5 +44,11 @@
     "sounds" : [
       "mushrooomsmod:crystal_pink_step"
     ]
+  },
+  "stone_destroyed" : {
+    "subtitles" : "sounds.mushrooomsmod.stone_destroyed",
+    "sounds" : [
+      "mushrooomsmod:stone_destroyed"
+    ]
   }
 }

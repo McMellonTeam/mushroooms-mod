@@ -38,7 +38,6 @@ public class BigRedMushroom extends BigMushroom implements Fertilizable {
     }
 
     public boolean trySpawningBigMushroom(ServerWorld world, BlockPos pos, BlockState state, Random random) {
-        System.out.println("try");
         Optional<RegistryEntry.Reference<ConfiguredFeature<?, ?>>> optional = world.getRegistryManager().get(RegistryKeys.CONFIGURED_FEATURE).getEntry(this.featureKey);
         if (optional.isEmpty()) {
             return false;

@@ -1,6 +1,5 @@
 {
 	"credit": "Made with Blockbench",
-	"parent": "campi",
 	"textures": {
 		"0": "block/red_mushroom_block",
 		"1": "block/mushroom_stem",

@@ -58,10 +58,10 @@ public class BigMushroomPlant extends CropBlock implements Fertilizable {
 
     public BigMushroomPlant(Settings settings, Block stage0, Block stage1, Block stage2, Block stage3) {
         super(settings);
-        this.stage0 = stage0;
-        this.stage1 = stage1;
-        this.stage2 = stage2;
-        this.stage3 = stage3;
+        BigMushroomPlant.stage0 = stage0;
+        BigMushroomPlant.stage1 = stage1;
+        BigMushroomPlant.stage2 = stage2;
+        BigMushroomPlant.stage3 = stage3;
 
     }
 
