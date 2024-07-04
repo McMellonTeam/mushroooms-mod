@@ -1,5 +1,7 @@
 package net.rodofire.mushrooomsmod.block.custom;
 
+import com.mojang.serialization.MapCodec;
+import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.block.*;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.item.ItemStack;
@@ -23,10 +25,16 @@ import java.util.List;
 import java.util.Optional;
 
 public class FlowersMushroomBlock extends PlantBlock implements Fertilizable {
+    public static final MapCodec<FlowersMushroomBlock> CODEC = RecordCodecBuilder.mapCodec(instance -> {
+        return instance.group(RegistryKey.createCodec(RegistryKeys.CONFIGURED_FEATURE).fieldOf("feature").forGetter((block)-> {
+            return block.featureKey;
+        }), createSettingsCodec()).apply(instance, FlowersMushroomBlock::new);
+    });
+
     private final RegistryKey<ConfiguredFeature<?, ?>> featureKey;
     protected static final VoxelShape SHAPE = Block.createCuboidShape(0, 0, 0, 16, 10, 16);
 
-    public FlowersMushroomBlock(Settings settings, RegistryKey<ConfiguredFeature<?, ?>> featureKey) {
+    public FlowersMushroomBlock(RegistryKey<ConfiguredFeature<?, ?>> featureKey,Settings settings) {
         super(settings);
         this.featureKey = featureKey;
     }
@@ -34,6 +42,7 @@ public class FlowersMushroomBlock extends PlantBlock implements Fertilizable {
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
         return SHAPE;
     }
+
 
     @Override
     public void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
@@ -55,6 +64,11 @@ public class FlowersMushroomBlock extends PlantBlock implements Fertilizable {
                 world.setBlockState(blockPos2, state, Block.NOTIFY_LISTENERS);
             }
         }
+    }
+
+    @Override
+    protected MapCodec<? extends PlantBlock> getCodec() {
+        return CODEC;
     }
 
     @Override
@@ -86,7 +100,7 @@ public class FlowersMushroomBlock extends PlantBlock implements Fertilizable {
     }
 
     @Override
-    public boolean isFertilizable(WorldView world, BlockPos pos, BlockState state, boolean isClient) {
+    public boolean isFertilizable(WorldView world, BlockPos pos, BlockState state) {
         return true;
     }
 
@@ -106,6 +120,7 @@ public class FlowersMushroomBlock extends PlantBlock implements Fertilizable {
         super.appendTooltip(stack, world, tooltip, options);
     }
 }
+
 
 
 
