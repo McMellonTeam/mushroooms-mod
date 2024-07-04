@@ -69,12 +69,12 @@ public class ForgeRecipe implements Recipe<SimpleInventory> {
     public static class Type implements RecipeType<ForgeRecipe> {
         private Type() { }
         public static final Type INSTANCE = new Type();
-        public static final String ID = "forging";
+        public static final String ID = "forge_crafting";
     }
 
     public static class Serializer implements RecipeSerializer<ForgeRecipe> {
         public static final Serializer INSTANCE = new Serializer();
-        public static final String ID = "forging";
+        public static final String ID = "forge_crafting";
         // this is the name given in the json file
 
         public static final Codec<ForgeRecipe> CODEC = RecordCodecBuilder.create(in -> in.group(

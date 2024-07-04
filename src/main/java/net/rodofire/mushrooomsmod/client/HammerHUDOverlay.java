@@ -26,7 +26,6 @@ public class HammerHUDOverlay implements HudRenderCallback {
 
     @Override
     public void onHudRender(DrawContext drawContext, float tickDelta) {
-        System.out.println("HammerHUDOverlay.onHudRender");
         MinecraftClient client = MinecraftClient.getInstance();
         if (client == null) return;
         PlayerEntity player = client.player;
@@ -52,7 +51,6 @@ public class HammerHUDOverlay implements HudRenderCallback {
                 }
             }
         }
-        System.out.println("end");
     }
 
     private void drawTexture(MinecraftClient client, DrawContext drawContext, ItemStack item) {
