@@ -60,7 +60,7 @@ public class ModItems {
 
     //Crystals related
     public static final Item CRUSHED_DIAMOND = registerItem("crushed_diamond", new Item(new FabricItemSettings()));
-    public static final Item PINK_CRYSTAL_ITEM = registerItem("crystal_pink_item", new AliasedBlockItem(ModBlocks.PINK_CRYSTAL, new FabricItemSettings()));
+    //public static final Item PINK_CRYSTAL_ITEM = registerItem("crystal_pink_item", new AliasedBlockItem(ModBlocks.PINK_CRYSTAL, new FabricItemSettings()));
     public static final Item BLUE_CRYSTAL_ITEM = registerItem("crystal_blue_item", new AliasedBlockItem(ModBlocks.BLUE_CRYSTAL, new FabricItemSettings()));
     public static final Item RED_CRYSTAL_ITEM = registerItem("crystal_red_item", new AliasedBlockItem(ModBlocks.RED_CRYSTAL, new FabricItemSettings()));
     public static final Item AMBER_ITEM = registerItem("amber_item", new CrushableItems(new FabricItemSettings()));

@@ -239,7 +239,7 @@ public class ModItemGroup {
                         //entries.add(ModItems.SCHROOM_STICK_SPAWN_EGG);
 
                         //crystal
-                        entries.add(ModItems.PINK_CRYSTAL_ITEM);
+                        //entries.add(ModItems.PINK_CRYSTAL_ITEM);
                         entries.add(ModBlocks.PINK_CRYSTAL_BLOCK);
 
                         entries.add(ModItems.BLUE_CRYSTAL_ITEM);
