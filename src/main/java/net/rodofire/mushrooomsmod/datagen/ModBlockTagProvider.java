@@ -32,7 +32,7 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.LAVA_BLACKSTONE)
                 .add(ModBlocks.LAVA_BLACKSTONE_TINY_BRICKS)
                 .add(ModBlocks.LAVA_BLACKSTONE_MEDIUM_BRICKS)
-                .add(ModBlocks.PINK_CRYSTAL)
+                //.add(ModBlocks.PINK_CRYSTAL)
                 .add(ModBlocks.PINK_CRYSTAL_BLOCK)
                 .add(ModBlocks.AMBER_BLOCK)
                 .add(ModBlocks.RAW_AMBER_BLOCK)
@@ -257,7 +257,7 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.BIG_PURPLE_MUSHROOM_PLANT);
 
         getOrCreateTagBuilder(ModTags.Blocks.GRASS)
-                .add(Blocks.GRASS)
+                .add(Blocks.SHORT_GRASS)
                 .add(Blocks.TALL_GRASS)
                 .add(ModBlocks.TINY_GRASS)
                 .add(ModBlocks.BLUE_LUMINESCENT_GRASS)

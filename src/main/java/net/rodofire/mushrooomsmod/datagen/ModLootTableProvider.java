@@ -258,7 +258,7 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.OAK_BERRIES_LEAVES, leavesDrops(ModBlocks.OAK_BERRIES_LEAVES, ModBlocks.OAK_BERRIES_SAPLING, 0.025f));
 
         //Crystals
-        addDropWithSilkTouch(Block.getBlockFromItem(ModItems.PINK_CRYSTAL_ITEM), ModBlocks.PINK_CRYSTAL);
+        //addDropWithSilkTouch(Block.getBlockFromItem(ModItems.PINK_CRYSTAL_ITEM), ModBlocks.PINK_CRYSTAL);
         addDrop(ModBlocks.PINK_CRYSTAL_BLOCK);
         addDrop(ModBlocks.BLUE_CRYSTAL);
         addDrop(ModBlocks.RED_CRYSTAL);

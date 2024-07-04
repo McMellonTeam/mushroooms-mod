@@ -3,7 +3,7 @@ package net.rodofire.mushrooomsmod.datagen;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.block.Blocks;
-import net.minecraft.data.server.recipe.RecipeJsonProvider;
+import net.minecraft.data.server.recipe.RecipeExporter;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.Items;
@@ -25,7 +25,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
     }
 
     @Override
-    public void generate(Consumer<RecipeJsonProvider> exporter) {
+    public void generate(RecipeExporter exporter) {
         //Blocks
         ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.COMPRESSED_PURPLE_MUSHROOM, 1)
                 .pattern("RRR")
@@ -224,4 +224,5 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         offerBlasting(exporter, YELLOW_BERRIES, RecipeCategory.FOOD, ModItems.COOKED_YELLOW_BERRIES, 0.3f, 50, "yellow_berries");
 
     }
+
 }
