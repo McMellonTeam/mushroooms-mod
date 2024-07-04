@@ -1,5 +1,6 @@
 package net.rodofire.mushrooomsmod.block.custom.PinkMushroomBlock;
 
+import com.mojang.serialization.MapCodec;
 import net.minecraft.block.*;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
@@ -20,6 +21,7 @@ import net.rodofire.mushrooomsmod.item.ModItems;
 public class PinkMushroomVinesHeadBlock extends AbstractPlantStemBlock
         implements Fertilizable,
         PinkMushroomVines {
+    public static final MapCodec<PinkMushroomVinesHeadBlock> CODEC = PinkMushroomVinesBodyBlock.createCodec(PinkMushroomVinesHeadBlock::new);
     private static final float GROW_CHANCE = 0.11f;
 
     public PinkMushroomVinesHeadBlock(AbstractBlock.Settings settings) {
@@ -48,12 +50,19 @@ public class PinkMushroomVinesHeadBlock extends AbstractPlantStemBlock
     }
 
     @Override
+    protected MapCodec<? extends AbstractPlantStemBlock> getCodec() {
+        return CODEC;
+    }
+
+    @Override
     protected BlockState age(BlockState state, Random random) {
         return super.age(state, random).with(BERRIES, random.nextFloat() < 0.11f);
     }
 
+
+
     @Override
-    public ItemStack getPickStack(BlockView world, BlockPos pos, BlockState state) {
+    public ItemStack getPickStack(WorldView world, BlockPos pos, BlockState state) {
         return new ItemStack(ModItems.PINK_MUSHROOM_VINES_ITEM);
     }
 
@@ -69,7 +78,7 @@ public class PinkMushroomVinesHeadBlock extends AbstractPlantStemBlock
     }
 
     @Override
-    public boolean isFertilizable(WorldView world, BlockPos pos, BlockState state, boolean isClient) {
+    public boolean isFertilizable(WorldView world, BlockPos pos, BlockState state) {
         return !state.get(BERRIES);
     }
 

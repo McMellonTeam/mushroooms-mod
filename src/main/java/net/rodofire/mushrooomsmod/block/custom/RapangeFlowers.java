@@ -1,5 +1,6 @@
 package net.rodofire.mushrooomsmod.block.custom;
 
+import com.mojang.serialization.MapCodec;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.Entity;
@@ -28,6 +29,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.function.ToIntFunction;
 
 public class RapangeFlowers extends BlockWithEntity {
+    public static final MapCodec<RapangeFlowers> CODEC = RapangeFlowers.createCodec(RapangeFlowers::new);
     private static final VoxelShape SHAPEUP = Block.createCuboidShape(4d, 0d, 4d, 12d, 16d, 12d);
     private static final VoxelShape SHAPEDOWN = Block.createCuboidShape(4d, 0d, 4d, 12d, 4, 12d);
     public static BooleanProperty UP = Properties.UP;
@@ -35,6 +37,11 @@ public class RapangeFlowers extends BlockWithEntity {
 
     public RapangeFlowers(Settings settings) {
         super(settings);
+    }
+
+    @Override
+    protected MapCodec<? extends BlockWithEntity> getCodec() {
+        return null;
     }
 
     public static ToIntFunction<BlockState> getLuminanceSupplier() {

@@ -68,9 +68,8 @@ public class BigGreenMushroomPlant extends CropBlock implements Fertilizable {
             return ModBlocks.BIG_GREEN_MUSHROOM.getDefaultState();
         }
     }
-
     @Override
-    public boolean isFertilizable(WorldView world, BlockPos pos, BlockState state, boolean isClient) {
+    public boolean isFertilizable(WorldView world, BlockPos pos, BlockState state) {
         return true;
     }
 

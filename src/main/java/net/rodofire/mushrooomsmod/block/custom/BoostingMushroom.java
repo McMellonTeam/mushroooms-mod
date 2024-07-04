@@ -1,5 +1,6 @@
 package net.rodofire.mushrooomsmod.block.custom;
 
+import com.mojang.serialization.MapCodec;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.client.item.TooltipContext;
@@ -26,8 +27,14 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 
 public class BoostingMushroom extends BlockWithEntity {
+    public static final MapCodec<BoostingMushroom> CODEC = BoostingMushroom.createCodec(BoostingMushroom::new);
     public BoostingMushroom(Settings settings) {
         super(settings);
+    }
+
+    @Override
+    protected MapCodec<? extends BlockWithEntity> getCodec() {
+        return CODEC;
     }
 
     private static final VoxelShape SHAPE = Block.createCuboidShape(3, 0, 3, 13, 14, 13);

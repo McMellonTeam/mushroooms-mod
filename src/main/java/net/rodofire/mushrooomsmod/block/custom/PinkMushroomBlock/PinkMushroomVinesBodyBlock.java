@@ -1,5 +1,7 @@
 package net.rodofire.mushrooomsmod.block.custom.PinkMushroomBlock;
 
+import com.mojang.serialization.Codec;
+import com.mojang.serialization.MapCodec;
 import net.minecraft.block.*;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
@@ -20,6 +22,9 @@ import net.rodofire.mushrooomsmod.item.ModItems;
 public class PinkMushroomVinesBodyBlock extends AbstractPlantBlock
         implements Fertilizable,
         PinkMushroomVines {
+
+    public static final MapCodec<PinkMushroomVinesBodyBlock> CODEC = PinkMushroomVinesBodyBlock.createCodec(PinkMushroomVinesBodyBlock::new);
+
     public PinkMushroomVinesBodyBlock(AbstractBlock.Settings settings) {
         super(settings, Direction.DOWN, SHAPE, false);
         this.setDefaultState(this.stateManager.getDefaultState().with(BERRIES, false));
@@ -31,18 +36,24 @@ public class PinkMushroomVinesBodyBlock extends AbstractPlantBlock
     }
 
     @Override
+    protected MapCodec<? extends AbstractPlantBlock> getCodec() {
+        return null;
+    }
+
+    @Override
     protected BlockState copyState(BlockState from, BlockState to) {
         return to.with(BERRIES, from.get(BERRIES));
     }
 
-    @Override
-    public ItemStack getPickStack(BlockView world, BlockPos pos, BlockState state) {
-        return new ItemStack(ModItems.PINK_MUSHROOM_VINES_ITEM);
-    }
 
     @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
         return PinkMushroomVines.pickBerries(player, state, world, pos);
+    }
+
+    @Override
+    public ItemStack getPickStack(WorldView world, BlockPos pos, BlockState state) {
+        return new ItemStack(ModItems.PINK_MUSHROOM_VINES_ITEM);
     }
 
     @Override
@@ -51,7 +62,7 @@ public class PinkMushroomVinesBodyBlock extends AbstractPlantBlock
     }
 
     @Override
-    public boolean isFertilizable(WorldView world, BlockPos pos, BlockState state, boolean isClient) {
+    public boolean isFertilizable(WorldView world, BlockPos pos, BlockState state) {
         return !state.get(BERRIES);
     }
 

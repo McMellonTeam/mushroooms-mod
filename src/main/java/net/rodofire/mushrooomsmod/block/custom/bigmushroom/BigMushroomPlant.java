@@ -25,13 +25,34 @@ import net.rodofire.mushrooomsmod.block.ModBlocks;
 import net.rodofire.mushrooomsmod.item.ModItems;
 
 public class BigMushroomPlant extends CropBlock implements Fertilizable {
+    public static final IntProperty AGE = Properties.AGE_3;
     public static int MAX_AGE = 3;
     public static Block stage0;
     public static Block stage1;
     public static Block stage2;
     public static Block stage3;
-    public static final IntProperty AGE = Properties.AGE_3;
 
+
+    public BigMushroomPlant(Settings settings, Block stage0, Block stage1, Block stage2, Block stage3) {
+        super(settings);
+        BigMushroomPlant.stage0 = stage0;
+        BigMushroomPlant.stage1 = stage1;
+        BigMushroomPlant.stage2 = stage2;
+        BigMushroomPlant.stage3 = stage3;
+
+    }
+
+    public static BlockState getAgeToBlockstate(int age) {
+        if (age == 0) {
+            return stage0.getDefaultState();
+        } else if (age == 1) {
+            return stage1.getDefaultState();
+        } else if (age == 2) {
+            return stage2.getDefaultState();
+        } else {
+            return stage3.getDefaultState();
+        }
+    }
 
     public void applyGrowth(World world, BlockPos pos, BlockState state) {
         int j;
@@ -56,29 +77,8 @@ public class BigMushroomPlant extends CropBlock implements Fertilizable {
         return ActionResult.PASS;
     }
 
-    public BigMushroomPlant(Settings settings, Block stage0, Block stage1, Block stage2, Block stage3) {
-        super(settings);
-        BigMushroomPlant.stage0 = stage0;
-        BigMushroomPlant.stage1 = stage1;
-        BigMushroomPlant.stage2 = stage2;
-        BigMushroomPlant.stage3 = stage3;
-
-    }
-
-    public static BlockState getAgeToBlockstate(int age) {
-        if (age == 0) {
-            return stage0.getDefaultState();
-        } else if (age == 1) {
-            return stage1.getDefaultState();
-        } else if (age == 2) {
-            return stage2.getDefaultState();
-        } else {
-            return stage3.getDefaultState();
-        }
-    }
-
     @Override
-    public boolean isFertilizable(WorldView world, BlockPos pos, BlockState state, boolean isClient) {
+    public boolean isFertilizable(WorldView world, BlockPos pos, BlockState state) {
         return true;
     }
 

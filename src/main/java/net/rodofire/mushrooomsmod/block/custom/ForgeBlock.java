@@ -1,5 +1,6 @@
 package net.rodofire.mushrooomsmod.block.custom;
 
+import com.mojang.serialization.MapCodec;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityTicker;
@@ -25,10 +26,16 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 
 public class ForgeBlock extends BlockWithEntity implements BlockEntityProvider {
+    public static final MapCodec<ForgeBlock> CODEC = ForgeBlock.createCodec(ForgeBlock::new);
     private static final VoxelShape SHAPE = Block.createCuboidShape(0, 0, 0, 16, 16, 16);
 
     public ForgeBlock(Settings settings) {
         super(settings);
+    }
+
+    @Override
+    protected MapCodec<? extends BlockWithEntity> getCodec() {
+        return CODEC;
     }
 
     @Override
