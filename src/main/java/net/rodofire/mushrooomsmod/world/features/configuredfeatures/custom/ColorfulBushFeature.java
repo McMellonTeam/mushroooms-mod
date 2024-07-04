@@ -35,7 +35,7 @@ public class ColorfulBushFeature extends Feature<DefaultFeatureConfig> {
                     BlockState blockState = world.getBlockState(pos.add(i, j, k));
                     if (j == 0 && world.getBlockState(pos.add(i, -1, k)) == Blocks.WATER.getDefaultState())
                         return false;
-                    if (blockState.isAir() || blockState.isOf(Blocks.GRASS) || blockState.isOf(Blocks.TALL_GRASS))
+                    if (blockState.isAir() || blockState.isOf(Blocks.SHORT_GRASS) || blockState.isOf(Blocks.TALL_GRASS))
                         continue;
                     return false;
                 }

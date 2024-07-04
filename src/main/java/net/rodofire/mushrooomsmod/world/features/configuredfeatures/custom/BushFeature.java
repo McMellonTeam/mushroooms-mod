@@ -28,7 +28,7 @@ public class BushFeature extends Feature<DefaultFeatureConfig> {
             for (int j = 0; j < height; j++) {
                 for (int k = 0; k < large; k++) {
                     BlockState blockState = world.getBlockState(pos.add(i, j, k));
-                    if (blockState.isAir() || blockState.isOf(Blocks.GRASS) || blockState.isOf(Blocks.TALL_GRASS))
+                    if (blockState.isAir() || blockState.isOf(Blocks.SHORT_GRASS) || blockState.isOf(Blocks.TALL_GRASS))
                         continue;
                     return false;
                 }
