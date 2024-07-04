@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_log_blue_luminescent",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_log_blue_luminescent"
     ]
   ],
   "rewards": {
     "recipes": [
       "minecraft:blue_luminescent_wood_craft"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

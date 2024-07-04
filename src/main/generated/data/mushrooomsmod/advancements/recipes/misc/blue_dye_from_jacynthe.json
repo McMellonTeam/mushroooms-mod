@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_jacynthe",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_jacynthe"
     ]
   ],
   "rewards": {
     "recipes": [
       "minecraft:blue_dye_from_jacynthe"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

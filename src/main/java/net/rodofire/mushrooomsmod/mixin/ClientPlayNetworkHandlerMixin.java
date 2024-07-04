@@ -29,12 +29,14 @@ public abstract class ClientPlayNetworkHandlerMixin {
 
     @Inject(method = "onGameJoin", at = @At("TAIL"))
     private void mushroom_warning(GameJoinS2CPacket arg, CallbackInfo ci) {
+        System.out.println("Mushroom warning");
         if (client.player == null) {
             return;
         }
         assert client.world != null;
         if (!client.world.isClient) {return;}
 
+        System.out.println("Mushroom warning2");
         if (client.player.getWorld().isClient()) {
             MutableText gitissues =  Text.literal("GithubIssues")
                     .styled(style -> style.withClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, "https://github.com/RodoFire/mushroooms-mod-source-1.20.1/issues")))

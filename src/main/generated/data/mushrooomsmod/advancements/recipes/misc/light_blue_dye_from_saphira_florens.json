@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_saphira_florens",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_saphira_florens"
     ]
   ],
   "rewards": {
     "recipes": [
       "minecraft:light_blue_dye_from_saphira_florens"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

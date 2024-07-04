@@ -34,15 +34,14 @@
   },
   "requirements": [
     [
+      "has_the_recipe",
       "has_iron_nugget",
-      "has_redstone_torch",
-      "has_the_recipe"
+      "has_redstone_torch"
     ]
   ],
   "rewards": {
     "recipes": [
       "minecraft:red_lantern_craft"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

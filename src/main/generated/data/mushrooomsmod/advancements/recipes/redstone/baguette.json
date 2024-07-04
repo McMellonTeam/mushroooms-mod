@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_bread",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_bread"
     ]
   ],
   "rewards": {
     "recipes": [
       "mushrooomsmod:baguette"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

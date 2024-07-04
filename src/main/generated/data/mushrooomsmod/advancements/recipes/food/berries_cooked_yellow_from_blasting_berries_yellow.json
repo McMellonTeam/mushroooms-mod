@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_berries_yellow",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_berries_yellow"
     ]
   ],
   "rewards": {
     "recipes": [
       "minecraft:berries_cooked_yellow_from_blasting_berries_yellow"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_viperin",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_viperin"
     ]
   ],
   "rewards": {
     "recipes": [
       "minecraft:green_dye_from_viperin"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

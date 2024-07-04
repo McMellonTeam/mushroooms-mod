@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_amber_crushed_item",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_amber_crushed_item"
     ]
   ],
   "rewards": {
     "recipes": [
       "minecraft:amber_block"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

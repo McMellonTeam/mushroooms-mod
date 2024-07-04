@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_blackstone_lava",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_blackstone_lava"
     ]
   ],
   "rewards": {
     "recipes": [
       "minecraft:lava_blackstone_bricks_craft"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

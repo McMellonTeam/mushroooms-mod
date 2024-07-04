@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_rhyolite",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_rhyolite"
     ]
   ],
   "rewards": {
     "recipes": [
       "mushrooomsmod:rhyolite_tiles"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

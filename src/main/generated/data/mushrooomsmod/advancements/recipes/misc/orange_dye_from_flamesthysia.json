@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_flamesthysia",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_flamesthysia"
     ]
   ],
   "rewards": {
     "recipes": [
       "minecraft:orange_dye_from_flamesthysia"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

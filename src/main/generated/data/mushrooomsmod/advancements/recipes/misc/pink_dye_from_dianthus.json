@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_dianthus",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_dianthus"
     ]
   ],
   "rewards": {
     "recipes": [
       "minecraft:pink_dye_from_dianthus"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

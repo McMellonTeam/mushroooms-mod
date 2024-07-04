@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_perennial_purple",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_perennial_purple"
     ]
   ],
   "rewards": {
     "recipes": [
       "minecraft:purple_dye_from_perennial_purple"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

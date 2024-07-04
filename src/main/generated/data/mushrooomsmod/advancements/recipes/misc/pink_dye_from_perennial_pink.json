@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_perennial_pink",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_perennial_pink"
     ]
   ],
   "rewards": {
     "recipes": [
       "minecraft:pink_dye_from_perennial_pink"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

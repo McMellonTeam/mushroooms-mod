@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_blackstone_lava_medium_bricks",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_blackstone_lava_medium_bricks"
     ]
   ],
   "rewards": {
     "recipes": [
       "mushrooomsmod:blackstone_lava_tiny_bricks"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

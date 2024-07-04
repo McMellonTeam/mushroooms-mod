@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_yelice",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_yelice"
     ]
   ],
   "rewards": {
     "recipes": [
       "minecraft:yellow_dye_from_yelice"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }
