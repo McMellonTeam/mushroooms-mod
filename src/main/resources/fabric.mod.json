@@ -33,7 +33,11 @@
     ]
   },
   "mixins": [
-    "mushrooomsmod.mixins.json"
+    "mushrooomsmod.mixins.json",
+    {
+      "config": "mushrooomsmod.client.mixins.json",
+      "environment": "client"
+    }
   ],
   "depends": {
     "fabricloader": ">=0.15.6",
