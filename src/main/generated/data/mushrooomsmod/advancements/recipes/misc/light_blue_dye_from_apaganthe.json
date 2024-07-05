@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_apaganthe",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_apaganthe"
     ]
   ],
   "rewards": {
     "recipes": [
       "minecraft:light_blue_dye_from_apaganthe"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

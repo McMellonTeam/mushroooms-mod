@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_caerulea_volubilis_item",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_caerulea_volubilis_item"
     ]
   ],
   "rewards": {
     "recipes": [
       "minecraft:light_blue_dye_from_caerulea_volubilis_item"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

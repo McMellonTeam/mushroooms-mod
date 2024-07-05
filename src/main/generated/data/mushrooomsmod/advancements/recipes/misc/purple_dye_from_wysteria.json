@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_wysteria",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_wysteria"
     ]
   ],
   "rewards": {
     "recipes": [
       "minecraft:purple_dye_from_wysteria"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

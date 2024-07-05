@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_wheat",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_wheat"
     ]
   ],
   "rewards": {
     "recipes": [
       "minecraft:blue_luminescent_soup_craft"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

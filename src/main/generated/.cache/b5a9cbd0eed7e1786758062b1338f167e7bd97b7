@@ -1,15 +1,15 @@
-// 1.20.1	2024-07-02T15:16:29.5746508	Mushroooms Mod/Tags for minecraft:block
-0ad9a4e26d521a10f127cdb4bfc33a5fced618a6 data\minecraft\tags\blocks\mineable\shovel.json
-951490fd884bef88dcd4a65b9791edf9b311bca6 data\minecraft\tags\blocks\mineable\axe.json
-d7a4888efecb8938961e8e4f0b424a7a370f2c9c data\minecraft\tags\blocks\mineable\pickaxe.json
-9680deed45f80f5d20e65b9f09a3e45729c43fef data\minecraft\tags\blocks\fence_gates.json
-a486af8ceb1090644c88ea73b05f367275d4a920 data\minecraft\tags\blocks\fences.json
-2e5e36c8f7ac84bff3477b4695efc45e7ef9822a data\minecraft\tags\blocks\climbable.json
-a4ef4a3387fd3b8f1a094adb67bf36f27c9ad307 data\minecraft\tags\blocks\mushroom_grow_block.json
-a4ef4a3387fd3b8f1a094adb67bf36f27c9ad307 data\minecraft\tags\blocks\dirt.json
-a45b1438077ae0072ca339a22be97cfe691153cb data\minecraft\tags\blocks\leaves.json
+// 1.20.4	2024-07-04T18:41:48.190818	Mushroooms Mod/Tags for minecraft:block
 8b6ed5b0a7b21b9e758fd414a5f4fffbb19a8f92 data\minecraft\tags\blocks\saplings.json
-a45b1438077ae0072ca339a22be97cfe691153cb data\minecraft\tags\blocks\mineable\hoe.json
-a64ee6b0b74e7d50c86b1957082de9e110c7647f data\minecraft\tags\blocks\flowers.json
-ab56816aefdf79b14a4587d9e2a9924c32dea2cf data\mushrooomsmod\tags\blocks\mushroom_plant.json
+a45b1438077ae0072ca339a22be97cfe691153cb data\minecraft\tags\blocks\leaves.json
 533bdc92b699bcccd9aea012225d26c0fc0dee66 data\minecraft\tags\blocks\logs_that_burn.json
+951490fd884bef88dcd4a65b9791edf9b311bca6 data\minecraft\tags\blocks\mineable\axe.json
+a45b1438077ae0072ca339a22be97cfe691153cb data\minecraft\tags\blocks\mineable\hoe.json
+2e5e36c8f7ac84bff3477b4695efc45e7ef9822a data\minecraft\tags\blocks\climbable.json
+a486af8ceb1090644c88ea73b05f367275d4a920 data\minecraft\tags\blocks\fences.json
+6a174a9466d243cc2fee213a229e914270916245 data\minecraft\tags\blocks\mineable\pickaxe.json
+a4ef4a3387fd3b8f1a094adb67bf36f27c9ad307 data\minecraft\tags\blocks\dirt.json
+a64ee6b0b74e7d50c86b1957082de9e110c7647f data\minecraft\tags\blocks\flowers.json
+c64f72389fc6852dc1fff5e82be84b63bca16498 data\mushrooomsmod\tags\blocks\mushroom_plant.json
+a4ef4a3387fd3b8f1a094adb67bf36f27c9ad307 data\minecraft\tags\blocks\mushroom_grow_block.json
+9680deed45f80f5d20e65b9f09a3e45729c43fef data\minecraft\tags\blocks\fence_gates.json
+0ad9a4e26d521a10f127cdb4bfc33a5fced618a6 data\minecraft\tags\blocks\mineable\shovel.json

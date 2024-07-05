@@ -11,7 +11,6 @@ import net.minecraft.recipe.Ingredient;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.util.Identifier;
 import net.rodofire.mushrooomsmod.block.ModBlocks;
-import net.rodofire.mushrooomsmod.datagen.recipe.ForgeRecipeBuilder;
 import net.rodofire.mushrooomsmod.item.ModItems;
 
 import java.util.List;
@@ -212,13 +211,13 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
 
         //Forge Recipe
-        new ForgeRecipeBuilder(Items.DIAMOND, ModItems.CRUSHED_DIAMOND, 1)
+        /*new ForgeRecipeBuilder(Items.DIAMOND, ModItems.CRUSHED_DIAMOND, 1)
                 .criterion(hasItem(Items.DIAMOND), conditionsFromItem(Items.DIAMOND))
                 .offerTo(exporter, new Identifier("diamond_forge_craft"));
 
         new ForgeRecipeBuilder(ModItems.AMBER_ITEM, ModItems.CRUSHED_AMBER_ITEM, 1)
                 .criterion(hasItem(ModItems.AMBER_ITEM), conditionsFromItem(Items.AIR))
-                .offerTo(exporter, new Identifier("amber_forge_craft"));
+                .offerTo(exporter, new Identifier("amber_forge_craft"));*/
 
         offerSmelting(exporter, YELLOW_BERRIES, RecipeCategory.FOOD, ModItems.COOKED_YELLOW_BERRIES, 0.3f, 100, "yellow_berries");
         offerBlasting(exporter, YELLOW_BERRIES, RecipeCategory.FOOD, ModItems.COOKED_YELLOW_BERRIES, 0.3f, 50, "yellow_berries");

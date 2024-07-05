@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_aconit",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_aconit"
     ]
   ],
   "rewards": {
     "recipes": [
       "minecraft:purple_dye_from_aconit"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

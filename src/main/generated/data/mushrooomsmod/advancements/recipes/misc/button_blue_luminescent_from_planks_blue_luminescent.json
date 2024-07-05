@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_planks_blue_luminescent",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_planks_blue_luminescent"
     ]
   ],
   "rewards": {
     "recipes": [
       "minecraft:button_blue_luminescent_from_planks_blue_luminescent"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

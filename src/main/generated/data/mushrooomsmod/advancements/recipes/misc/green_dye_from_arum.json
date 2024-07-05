@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_arum",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_arum"
     ]
   ],
   "rewards": {
     "recipes": [
       "minecraft:green_dye_from_arum"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

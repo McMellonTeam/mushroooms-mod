@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_platum",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_platum"
     ]
   ],
   "rewards": {
     "recipes": [
       "minecraft:light_blue_dye_from_platum"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

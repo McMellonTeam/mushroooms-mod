@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_pervenche",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_pervenche"
     ]
   ],
   "rewards": {
     "recipes": [
       "minecraft:light_blue_dye_from_pervenche"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

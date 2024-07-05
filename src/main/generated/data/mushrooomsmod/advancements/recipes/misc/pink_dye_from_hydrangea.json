@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_hydrangea",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_hydrangea"
     ]
   ],
   "rewards": {
     "recipes": [
       "minecraft:pink_dye_from_hydrangea"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

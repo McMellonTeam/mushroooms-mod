@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_perennial_green",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_perennial_green"
     ]
   ],
   "rewards": {
     "recipes": [
       "minecraft:green_dye_from_perennial_green"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

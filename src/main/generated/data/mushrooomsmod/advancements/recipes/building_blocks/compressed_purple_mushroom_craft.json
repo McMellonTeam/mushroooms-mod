@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_mushroom_powder_purple",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_mushroom_powder_purple"
     ]
   ],
   "rewards": {
     "recipes": [
       "minecraft:compressed_purple_mushroom_craft"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

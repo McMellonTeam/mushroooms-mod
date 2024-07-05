@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_noctulica",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_noctulica"
     ]
   ],
   "rewards": {
     "recipes": [
       "minecraft:light_blue_dye_from_noctulica"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

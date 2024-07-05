@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_perennial_luminescent",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_perennial_luminescent"
     ]
   ],
   "rewards": {
     "recipes": [
       "minecraft:light_blue_dye_from_perennial_luminescent"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

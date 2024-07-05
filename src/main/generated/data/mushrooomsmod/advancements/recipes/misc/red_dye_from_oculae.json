@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_oculae",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_oculae"
     ]
   ],
   "rewards": {
     "recipes": [
       "minecraft:red_dye_from_oculae"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }
