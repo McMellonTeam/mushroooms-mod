@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_cyanea",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_cyanea"
     ]
   ],
   "rewards": {
     "recipes": [
       "minecraft:light_blue_dye_from_cyanea"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

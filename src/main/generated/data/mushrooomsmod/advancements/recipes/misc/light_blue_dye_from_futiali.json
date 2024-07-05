@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_futiali",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_futiali"
     ]
   ],
   "rewards": {
     "recipes": [
       "minecraft:light_blue_dye_from_futiali"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

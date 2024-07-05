@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_turquosum_stilus",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_turquosum_stilus"
     ]
   ],
   "rewards": {
     "recipes": [
       "minecraft:light_blue_dye_from_turquosum_stilus"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

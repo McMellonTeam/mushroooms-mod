@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_perennial_blue",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_perennial_blue"
     ]
   ],
   "rewards": {
     "recipes": [
       "minecraft:blue_dye_from_perennial_blue"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

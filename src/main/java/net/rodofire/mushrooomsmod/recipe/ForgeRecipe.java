@@ -1,41 +1,42 @@
 package net.rodofire.mushrooomsmod.recipe;
 
-import com.google.gson.JsonArray;
-import com.google.gson.JsonObject;
+import com.mojang.serialization.Codec;
+import com.mojang.serialization.DataResult;
+import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.PacketByteBuf;
-import net.minecraft.recipe.*;
+import net.minecraft.recipe.Ingredient;
+import net.minecraft.recipe.Recipe;
+import net.minecraft.recipe.RecipeSerializer;
+import net.minecraft.recipe.RecipeType;
 import net.minecraft.registry.DynamicRegistryManager;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.JsonHelper;
 import net.minecraft.util.collection.DefaultedList;
+import net.minecraft.util.dynamic.Codecs;
 import net.minecraft.world.World;
 
 import java.util.List;
-
 public class ForgeRecipe implements Recipe<SimpleInventory> {
-    private final Identifier id;
     private final ItemStack output;
     private final List<Ingredient> recipeItems;
 
-    public ForgeRecipe(Identifier id, List<Ingredient> input, ItemStack output) {
-        this.id = id;
+    public ForgeRecipe(List<Ingredient> recipeItems, ItemStack output) {
         this.output = output;
-        this.recipeItems = input;
+        this.recipeItems = recipeItems;
     }
 
     @Override
     public boolean matches(SimpleInventory inventory, World world) {
-        if (world.isClient()) {
+        if(world.isClient()) {
             return false;
         }
+
         return recipeItems.get(0).test(inventory.getStack(0));
     }
 
     @Override
     public ItemStack craft(SimpleInventory inventory, DynamicRegistryManager registryManager) {
-        return output;
+        return output.copy();
     }
 
     @Override
@@ -44,20 +45,8 @@ public class ForgeRecipe implements Recipe<SimpleInventory> {
     }
 
     @Override
-    public ItemStack getOutput(DynamicRegistryManager registryManager) {
-        return output.copy();
-    }
-
-    @Override
-    public Identifier getId() {
-        return id;
-    }
-
-    @Override
-    public DefaultedList<Ingredient> getIngredients() {
-        DefaultedList<Ingredient> list = DefaultedList.ofSize(this.recipeItems.size());
-        list.addAll(recipeItems);
-        return list;
+    public ItemStack getResult(DynamicRegistryManager registryManager) {
+        return output;
     }
 
     @Override
@@ -70,7 +59,15 @@ public class ForgeRecipe implements Recipe<SimpleInventory> {
         return Type.INSTANCE;
     }
 
+    @Override
+    public DefaultedList<Ingredient> getIngredients() {
+        DefaultedList list = DefaultedList.ofSize(this.recipeItems.size());
+        list.addAll(recipeItems);
+        return list;
+    }
+
     public static class Type implements RecipeType<ForgeRecipe> {
+        private Type() { }
         public static final Type INSTANCE = new Type();
         public static final String ID = "forge_crafting";
     }
@@ -78,23 +75,26 @@ public class ForgeRecipe implements Recipe<SimpleInventory> {
     public static class Serializer implements RecipeSerializer<ForgeRecipe> {
         public static final Serializer INSTANCE = new Serializer();
         public static final String ID = "forge_crafting";
+        // this is the name given in the json file
 
-        @Override
-        public ForgeRecipe read(Identifier id, JsonObject json) {
-            ItemStack output = ShapedRecipe.outputFromJson(JsonHelper.getObject(json, "output"));
+        public static final Codec<ForgeRecipe> CODEC = RecordCodecBuilder.create(in -> in.group(
+                validateAmount(Ingredient.DISALLOW_EMPTY_CODEC, 9).fieldOf("ingredients").forGetter(ForgeRecipe::getIngredients),
+                ItemStack.RECIPE_RESULT_CODEC.fieldOf("output").forGetter(r -> r.output)
+        ).apply(in, ForgeRecipe::new));
 
-            JsonArray ingredients = JsonHelper.getArray(json, "ingredients");
-            DefaultedList<Ingredient> inputs = DefaultedList.ofSize(1, Ingredient.EMPTY);
-
-            for (int i = 0; i < inputs.size(); i++) {
-                inputs.set(i, Ingredient.fromJson(ingredients.get(i)));
-            }
-
-            return new ForgeRecipe(id, inputs, output);
+        private static Codec<List<Ingredient>> validateAmount(Codec<Ingredient> delegate, int max) {
+            return Codecs.validate(Codecs.validate(
+                    delegate.listOf(), list -> list.size() > max ? DataResult.error(() -> "Recipe has too many ingredients!") : DataResult.success(list)
+            ), list -> list.isEmpty() ? DataResult.error(() -> "Recipe has no ingredients!") : DataResult.success(list));
         }
 
         @Override
-        public ForgeRecipe read(Identifier id, PacketByteBuf buf) {
+        public Codec<ForgeRecipe> codec() {
+            return CODEC;
+        }
+
+        @Override
+        public ForgeRecipe read(PacketByteBuf buf) {
             DefaultedList<Ingredient> inputs = DefaultedList.ofSize(buf.readInt(), Ingredient.EMPTY);
 
             for (int i = 0; i < inputs.size(); i++) {
@@ -102,7 +102,7 @@ public class ForgeRecipe implements Recipe<SimpleInventory> {
             }
 
             ItemStack output = buf.readItemStack();
-            return new ForgeRecipe(id, inputs, output);
+            return new ForgeRecipe(inputs, output);
         }
 
         @Override
@@ -111,7 +111,7 @@ public class ForgeRecipe implements Recipe<SimpleInventory> {
             for (Ingredient ing : recipe.getIngredients()) {
                 ing.write(buf);
             }
-            buf.writeItemStack(recipe.getOutput(null));
+            buf.writeItemStack(recipe.getResult(null));
         }
     }
 }

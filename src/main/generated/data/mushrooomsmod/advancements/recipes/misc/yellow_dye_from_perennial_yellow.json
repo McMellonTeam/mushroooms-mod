@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_perennial_yellow",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_perennial_yellow"
     ]
   ],
   "rewards": {
     "recipes": [
       "minecraft:yellow_dye_from_perennial_yellow"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

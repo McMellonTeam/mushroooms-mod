@@ -27,6 +27,7 @@ public class HammerHUDOverlay implements HudRenderCallback {
     @Override
     public void onHudRender(DrawContext drawContext, float tickDelta) {
         MinecraftClient client = MinecraftClient.getInstance();
+        if (client == null) return;
         PlayerEntity player = client.player;
         if (player != null) {
 

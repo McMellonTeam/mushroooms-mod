@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_prehistoric_rose",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_prehistoric_rose"
     ]
   ],
   "rewards": {
     "recipes": [
       "minecraft:red_dye_from_prehistoric_rose"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_cycas",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_cycas"
     ]
   ],
   "rewards": {
     "recipes": [
       "minecraft:pink_dye_from_cycas"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

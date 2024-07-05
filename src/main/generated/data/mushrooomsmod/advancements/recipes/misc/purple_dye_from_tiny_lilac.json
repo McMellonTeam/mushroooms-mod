@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_tiny_lilac",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_tiny_lilac"
     ]
   ],
   "rewards": {
     "recipes": [
       "minecraft:purple_dye_from_tiny_lilac"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

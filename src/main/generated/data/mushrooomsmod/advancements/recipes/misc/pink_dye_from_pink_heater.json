@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_pink_heater",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_pink_heater"
     ]
   ],
   "rewards": {
     "recipes": [
       "minecraft:pink_dye_from_pink_heater"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

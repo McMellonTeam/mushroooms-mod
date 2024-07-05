@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_sol_occidens",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_sol_occidens"
     ]
   ],
   "rewards": {
     "recipes": [
       "minecraft:orange_dye_from_sol_occidens"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

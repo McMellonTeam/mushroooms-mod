@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_planks_blue_luminescent",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_planks_blue_luminescent"
     ]
   ],
   "rewards": {
     "recipes": [
       "mushrooomsmod:pressure_plate_blue_luminescent"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }
