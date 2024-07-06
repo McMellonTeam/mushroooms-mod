@@ -61,8 +61,6 @@ public class MushrooomsMod implements ModInitializer {
 
         ModRecipes.registerRecipes();
 
-        GeckoLib.initialize();
-
         ModNetwork.registerC2SPackets();
 
         MathsUtil.registerMaths();
