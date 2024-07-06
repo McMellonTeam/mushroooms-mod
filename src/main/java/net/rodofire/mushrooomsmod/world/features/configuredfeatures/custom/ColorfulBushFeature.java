@@ -53,7 +53,7 @@ public class ColorfulBushFeature extends Feature<DefaultFeatureConfig> {
         BlockRotation rotation = getRanodomBlockRotation();
 
         if (!canGenerate(world, pos, 3, 2, rotation)) return false;
-        StructurePlacerAPI bush = new StructurePlacerAPI(world, new Identifier(MushrooomsMod.MOD_ID, "bush/bush_" + capnumber), pos, rotation);
+        StructurePlacerAPI bush = new StructurePlacerAPI(world, Identifier.of(MushrooomsMod.MOD_ID, "bush/bush_" + capnumber), pos, rotation);
         bush.loadStructure();
         BlockState blockState = getLeaveBlock().getDefaultState().with(LeavesBlock.PERSISTENT, true);
         int a = 0;
