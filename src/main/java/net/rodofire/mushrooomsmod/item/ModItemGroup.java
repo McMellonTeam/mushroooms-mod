@@ -13,7 +13,7 @@ import net.rodofire.mushrooomsmod.block.ModBlocks;
 
 public class ModItemGroup {
     public static final ItemGroup MUSHROOM_GROUP = Registry.register(Registries.ITEM_GROUP,
-            new Identifier(MushrooomsMod.MOD_ID, "luminescent_mushroom"),
+            Identifier.of(MushrooomsMod.MOD_ID, "luminescent_mushroom"),
             FabricItemGroup.builder().displayName(Text.translatable("itemgroup.mushroooms"))
                     .icon(() -> new ItemStack(ModBlocks.BLUE_LUMINESCENT_MUSHROOM)).entries((displayContext, entries) -> {
                         //Blocks
@@ -228,8 +228,8 @@ public class ModItemGroup {
 
 
                         //Music Disk
-                        entries.add(ModItems.HYMNE_FRANCAIS_MUSIC_DISC);
-                        entries.add(ModItems.HYMNE_URSS_MUSIC_DISC);
+                        //entries.add(ModItems.HYMNE_FRANCAIS_MUSIC_DISC);
+                        //entries.add(ModItems.HYMNE_URSS_MUSIC_DISC);
 
                         entries.add(ModItems.GROKI_SPAWN_EGG);
                         entries.add(ModItems.BOLETE_COW_SPAWN_EGG);
