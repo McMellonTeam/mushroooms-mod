@@ -37,6 +37,13 @@ public class ForgeScreenHandler extends ScreenHandler {
         addProperties(arrayPropertyDelegate);
     }
 
+    public ForgeScreenHandler(int i, PlayerInventory playerInventory, Object o, Inventory inventory, PropertyDelegate propertyDelegate, ForgeBlockEntity blockEntity) {
+        super(ModScreenHandlers.FORGE_SCREEN_HANDLER, i);
+        this.inventory = inventory;
+        this.propertyDelegate = propertyDelegate;
+        this.blockEntity = blockEntity;
+    }
+
     @Override
     public ItemStack quickMove(PlayerEntity player, int slot) {
         return null;
