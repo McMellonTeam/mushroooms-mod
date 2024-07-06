@@ -19,7 +19,7 @@ import java.util.List;
 
 public class ForgeCategory implements DisplayCategory<BasicDisplay> {
     public static final Identifier TEXTURE =
-            new Identifier(MushrooomsMod.MOD_ID, "textures/gui/forge_gui.png");
+            Identifier.of(MushrooomsMod.MOD_ID, "textures/gui/forge_gui.png");
     public static final CategoryIdentifier<ForgeDisplay> FORGE_EMPOWERING =
             CategoryIdentifier.of(MushrooomsMod.MOD_ID, "forge_empowering");
 
