@@ -18,10 +18,10 @@ public class ModPlacedFeatures {
     private static final PlacementModifier NOT_IN_SURFACE_WATER_MODIFIER = SurfaceWaterDepthFilterPlacementModifier.of(0);
 
     private static ImmutableList.Builder<PlacementModifier> undergorundTreeModifiersBuilder(PlacementModifier countModifier) {
-        return ((ImmutableList.Builder) ImmutableList.builder().add(countModifier)).add(SquarePlacementModifier.of()).add(NOT_IN_SURFACE_WATER_MODIFIER).add(STONE_LEVEL).add(BiomePlacementModifier.of());
+        return  (ImmutableList.Builder) ImmutableList.builder().add(countModifier).add(SquarePlacementModifier.of()).add(NOT_IN_SURFACE_WATER_MODIFIER).add(STONE_LEVEL).add(BiomePlacementModifier.of());
     }
 
     public static List<PlacementModifier> undergroundTreeModifiersWithWouldSurvive(PlacementModifier modifier, Block block) {
-        return ((ImmutableList.Builder) undergorundTreeModifiersBuilder(modifier).add(BlockFilterPlacementModifier.of(BlockPredicate.wouldSurvive(block.getDefaultState(), BlockPos.ORIGIN)))).build();
+        return undergorundTreeModifiersBuilder(modifier).add(BlockFilterPlacementModifier.of(BlockPredicate.wouldSurvive(block.getDefaultState(), BlockPos.ORIGIN))).build();
     }
 }
