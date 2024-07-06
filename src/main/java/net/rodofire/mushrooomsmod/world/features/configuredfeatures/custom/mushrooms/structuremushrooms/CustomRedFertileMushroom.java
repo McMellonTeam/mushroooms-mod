@@ -148,7 +148,7 @@ public class CustomRedFertileMushroom extends Feature<DefaultFeatureConfig> {
 
     public void placeMushroom(StructureWorldAccess world, BlockPos pos, int mushroom, BlockRotation rotation) {
         if (!world.isClient()) {
-            StructurePlacerAPI structuremushroom = new StructurePlacerAPI(world, new Identifier(MushrooomsMod.MOD_ID, "red_mushroom/red_mushroom_" + mushroom), pos, rotation);
+            StructurePlacerAPI structuremushroom = new StructurePlacerAPI(world, Identifier.of(MushrooomsMod.MOD_ID, "red_mushroom/red_mushroom_" + mushroom), pos, rotation);
             structuremushroom.loadStructure();
         }
     }
