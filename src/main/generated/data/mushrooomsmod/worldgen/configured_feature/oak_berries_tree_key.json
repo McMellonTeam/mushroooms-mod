@@ -3,7 +3,7 @@
   "config": {
     "decorators": [
       {
-        "type": "tutorial:rich_tree_decorator"
+        "type": "mushrooomsmod:rich_tree_decorator"
       }
     ],
     "dirt_provider": {
