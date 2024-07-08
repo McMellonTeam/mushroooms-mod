@@ -64,7 +64,7 @@ public class ModItems {
     public static final Item AMBER_ITEM = registerItem("amber_item", new CrushableItems(new Item.Settings()));
     public static final Item CRUSHED_AMBER_ITEM = registerItem("amber_crushed_item", new Item(new Item.Settings()));
     //Tools
-    public static final Item IRON_HAMMER = registerItem("iron_hammer", new HammerItem(ToolMaterials.IRON, 27, new Item.Settings().attributeModifiers(HammerItem.createAttributeModifiers(ToolMaterials.IRON, 4, -3.8f))));
+    public static final Item IRON_HAMMER = registerItem("iron_hammer", new HammerItem(ToolMaterials.IRON, 7, new Item.Settings().attributeModifiers(HammerItem.createAttributeModifiers(ToolMaterials.IRON, 33, -3.8f))));
 
 
     private static Item registerItem(String name, Item item) {
