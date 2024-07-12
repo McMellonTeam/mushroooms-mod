@@ -225,6 +225,17 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         offerSmelting(exporter, YELLOW_BERRIES, RecipeCategory.FOOD, ModItems.COOKED_YELLOW_BERRIES, 0.3f, 100, "yellow_berries");
         offerBlasting(exporter, YELLOW_BERRIES, RecipeCategory.FOOD, ModItems.COOKED_YELLOW_BERRIES, 0.3f, 50, "yellow_berries");
 
+        //inventory armor stand
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.INVENTORY_ARMOR_STAND)
+                .pattern("SSS")
+                .pattern(" C ")
+                .pattern("SPS")
+                .input(Character.valueOf('S'), Items.STICK)
+                .input(Character.valueOf('P'), Blocks.SMOOTH_STONE_SLAB)
+                .input(Character.valueOf('C'), Blocks.CHEST)
+                .criterion(hasItem(Items.STICK), conditionsFromItem(Blocks.CHEST))
+                .offerTo(exporter, Identifier.of("inventory_armor_stand_craft"));
+
     }
 
 }

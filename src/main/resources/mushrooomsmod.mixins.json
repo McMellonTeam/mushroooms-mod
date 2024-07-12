@@ -5,7 +5,8 @@
   "mixins": [
     "BrushItemMixin",
     "TreeDecoratorTypeInvoker",
-    "TrunkPlacerTypeInvoker"
+    "TrunkPlacerTypeInvoker",
+    "ClientPlayNetworkHandlerMixin"
   ],
   "injectors": {
     "defaultRequire": 1

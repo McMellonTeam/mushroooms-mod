@@ -36,6 +36,14 @@ public class InventoryArmorStandEntity extends LivingEntity implements GeoEntity
     }
 
     @Override
+    protected void initDataTracker(DataTracker.Builder builder) {
+        super.initDataTracker(builder);
+        builder.add(CAN_USE, true);
+    }
+
+
+
+    @Override
     public Iterable<ItemStack> getArmorItems() {
         return this.armorItems;
     }
@@ -107,6 +115,7 @@ public class InventoryArmorStandEntity extends LivingEntity implements GeoEntity
         this.setUse(false);
         this.lefttickusage = 160;
     }
+
 
     @Override
     public void tick() {
@@ -202,7 +211,7 @@ public class InventoryArmorStandEntity extends LivingEntity implements GeoEntity
             nbtList = nbt.getList("Inventory", NbtElement.COMPOUND_TYPE);
             for (i = 0; i < this.inventory.size(); ++i) {
                 nbtCompound = nbtList.getCompound(i);
-                this.heldItems.set(i, ItemStack.fromNbtOrEmpty(this.getRegistryManager(), nbtCompound));
+                this.inventory.set(i, ItemStack.fromNbtOrEmpty(this.getRegistryManager(), nbtCompound));
             }
         }
     }

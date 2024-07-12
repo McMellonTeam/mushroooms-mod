@@ -53,7 +53,7 @@ public class CrystalGolemEntity extends GolemEntity implements Angerable, GeoEnt
     @Override
     protected void initDataTracker(DataTracker.Builder builder) {
         super.initDataTracker(builder);
-        this.dataTracker.set(CRYSTAL_GOLEM_FLAGS, (byte) 0);
+        builder.add(CRYSTAL_GOLEM_FLAGS, (byte) 0);
     }
 
     public CrystalGolemEntity(EntityType<? extends GolemEntity> entityType, World world) {
