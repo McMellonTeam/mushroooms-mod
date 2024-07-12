@@ -2,7 +2,6 @@ package net.rodofire.mushrooomsmod.block.entity.client.model;
 
 import net.minecraft.util.Identifier;
 import net.rodofire.mushrooomsmod.MushrooomsMod;
-import net.rodofire.mushrooomsmod.block.entity.BoostingMushroomBlockEntity;
 import net.rodofire.mushrooomsmod.block.entity.DangerousBoostingMushroomBlockEntity;
 import software.bernie.geckolib.model.GeoModel;
 

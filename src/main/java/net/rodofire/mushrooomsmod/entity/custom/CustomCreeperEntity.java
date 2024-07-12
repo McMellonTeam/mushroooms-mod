@@ -50,7 +50,7 @@ public class CustomCreeperEntity
     public boolean explode = false;
 
     public CustomCreeperEntity(EntityType<? extends CustomCreeperEntity> entityType, World world) {
-        super((EntityType<? extends HostileEntity>)entityType, world);
+        super(entityType, world);
     }
 
     @Override
@@ -63,8 +63,8 @@ public class CustomCreeperEntity
         this.goalSelector.add(5, new WanderAroundFarGoal(this, 0.8));
         this.goalSelector.add(6, new LookAtEntityGoal(this, PlayerEntity.class, 8.0f));
         this.goalSelector.add(6, new LookAroundGoal(this));
-        this.targetSelector.add(1, new ActiveTargetGoal<PlayerEntity>((MobEntity)this, PlayerEntity.class, true));
-        this.targetSelector.add(2, new RevengeGoal(this, new Class[0]));
+        this.targetSelector.add(1, new ActiveTargetGoal<PlayerEntity>(this, PlayerEntity.class, true));
+        this.targetSelector.add(2, new RevengeGoal(this));
     }
 
     public static DefaultAttributeContainer.Builder createCreeperAttributes() {

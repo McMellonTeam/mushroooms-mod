@@ -3,13 +3,11 @@ package net.rodofire.mushrooomsmod.entity.client.renderer;
 import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.client.util.math.MatrixStack;
-import net.minecraft.entity.mob.CreeperEntity;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.MathHelper;
 import net.rodofire.mushrooomsmod.MushrooomsMod;
 import net.rodofire.mushrooomsmod.entity.client.model.CrystalCreeperModel;
 import net.rodofire.mushrooomsmod.entity.custom.CrystalCreeperEntity;
-import software.bernie.example.entity.ReplacedCreeperEntity;
 import software.bernie.geckolib.renderer.GeoEntityRenderer;
 
 public class CrystalCreeperRenderer extends GeoEntityRenderer<CrystalCreeperEntity> {

@@ -18,7 +18,7 @@ public class GrokiModel extends GeoModel<GrokiEntity> {
 
     @Override
     public Identifier getTextureResource(GrokiEntity animatable) {
-        return new Identifier(MushrooomsMod.MOD_ID, "textures/entity/groki");
+        return new Identifier(MushrooomsMod.MOD_ID, "textures/entity/groki.png");
     }
 
     @Override

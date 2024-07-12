@@ -13,7 +13,7 @@ import software.bernie.geckolib.core.object.PlayState;
 import software.bernie.geckolib.util.RenderUtils;
 
 public class DangerousBoostingMushroomBlockEntity extends BlockEntity implements GeoBlockEntity {
-    private AnimatableInstanceCache cache = new SingletonAnimatableInstanceCache(this);
+    private final AnimatableInstanceCache cache = new SingletonAnimatableInstanceCache(this);
     public DangerousBoostingMushroomBlockEntity(BlockPos pos, BlockState state) {
         super(ModBlockEntities.DANGEROUS_BOOSTING_MUSHROOM_ENTITY,pos, state);
     }

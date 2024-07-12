@@ -5,8 +5,6 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.text.Text;
-import net.minecraft.util.Formatting;
-import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.rodofire.mushrooomsmod.item.ModItems;
 import org.jetbrains.annotations.Nullable;

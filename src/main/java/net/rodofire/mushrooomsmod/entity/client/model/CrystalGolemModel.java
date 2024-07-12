@@ -3,7 +3,6 @@ package net.rodofire.mushrooomsmod.entity.client.model;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.MathHelper;
 import net.rodofire.mushrooomsmod.MushrooomsMod;
-import net.rodofire.mushrooomsmod.entity.custom.BoleteCowEntity;
 import net.rodofire.mushrooomsmod.entity.custom.CrystalGolemEntity;
 import software.bernie.geckolib.constant.DataTickets;
 import software.bernie.geckolib.core.animatable.model.CoreGeoBone;
@@ -19,7 +18,7 @@ public class CrystalGolemModel extends GeoModel<CrystalGolemEntity> {
 
     @Override
     public Identifier getTextureResource(CrystalGolemEntity animatable) {
-        return new Identifier(MushrooomsMod.MOD_ID, "textures/entity/crystal_golem");
+        return new Identifier(MushrooomsMod.MOD_ID, "textures/entity/crystal_golem.png");
     }
 
     @Override

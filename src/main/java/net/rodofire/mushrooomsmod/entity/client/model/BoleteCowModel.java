@@ -4,7 +4,6 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.math.MathHelper;
 import net.rodofire.mushrooomsmod.MushrooomsMod;
 import net.rodofire.mushrooomsmod.entity.custom.BoleteCowEntity;
-import net.rodofire.mushrooomsmod.entity.custom.PlotiEntity;
 import software.bernie.geckolib.constant.DataTickets;
 import software.bernie.geckolib.core.animatable.model.CoreGeoBone;
 import software.bernie.geckolib.core.animation.AnimationState;
@@ -20,7 +19,7 @@ public class BoleteCowModel extends GeoModel<BoleteCowEntity> {
 
     @Override
     public Identifier getTextureResource(BoleteCowEntity animatable) {
-        return new Identifier(MushrooomsMod.MOD_ID, "textures/entity/bolete_cow");
+        return new Identifier(MushrooomsMod.MOD_ID, "textures/entity/bolete_cow.png");
     }
 
     @Override
