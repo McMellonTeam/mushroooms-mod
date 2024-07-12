@@ -5,7 +5,7 @@
       "item": "mushrooomsmod:amber_item"
     }
   ],
-  "output": {
-    "item": "mushrooomsmod:amber_crushed_item"
+  "result": {
+    "id": "mushrooomsmod:amber_crushed_item"
   }
 }

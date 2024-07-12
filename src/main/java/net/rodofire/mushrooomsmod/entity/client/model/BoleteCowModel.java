@@ -19,7 +19,7 @@ public class BoleteCowModel extends GeoModel<BoleteCowEntity> {
 
     @Override
     public Identifier getTextureResource(BoleteCowEntity animatable) {
-        return Identifier.of(MushrooomsMod.MOD_ID, "textures/entity/bolete_cow");
+        return Identifier.of(MushrooomsMod.MOD_ID, "textures/entity/bolete_cow.png");
     }
 
     @Override

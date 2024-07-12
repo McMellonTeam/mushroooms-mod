@@ -51,7 +51,6 @@ public class ForgeRecipe implements Recipe<SingleStackRecipeInput> {
         return output;
     }
 
-
     @Override
     public RecipeSerializer<?> getSerializer() {
         return Serializer.INSTANCE;
