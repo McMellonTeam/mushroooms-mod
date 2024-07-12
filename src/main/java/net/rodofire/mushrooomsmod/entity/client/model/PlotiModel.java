@@ -14,7 +14,7 @@ public class PlotiModel extends GeoModel<PlotiEntity> {
 
     @Override
     public Identifier getTextureResource(PlotiEntity animatable) {
-        return Identifier.of(MushrooomsMod.MOD_ID, "textures/entity/ploti");
+        return Identifier.of(MushrooomsMod.MOD_ID, "textures/entity/ploti.png");
     }
 
     @Override
