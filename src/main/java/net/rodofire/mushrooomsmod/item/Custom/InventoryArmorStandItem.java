@@ -12,8 +12,10 @@ import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Box;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
+import net.minecraft.world.event.GameEvent;
 import net.rodofire.mushrooomsmod.entity.ModEntities;
 import net.rodofire.mushrooomsmod.entity.custom.InventoryArmorStandEntity;
 
@@ -30,6 +32,11 @@ public class InventoryArmorStandItem extends Item {
         World world = context.getWorld();
         BlockPos pos = context.getBlockPos();
         ItemStack itemStack = context.getStack();
+        Vec3d vec3d = Vec3d.ofBottomCenter(pos);
+        Box box = EntityType.ARMOR_STAND.getDimensions().getBoxAt(vec3d.getX(), vec3d.getY(), vec3d.getZ());
+        if (!world.getOtherEntities(null, box).isEmpty()) {
+            return ActionResult.FAIL;
+        }
         if (!world.isClient) {
             ServerWorld worldServer = (ServerWorld) world;
             Consumer<InventoryArmorStandEntity> consumer = EntityType.copier(worldServer, itemStack, context.getPlayer());
@@ -37,9 +44,9 @@ public class InventoryArmorStandItem extends Item {
             if (entity == null) {
                 return ActionResult.FAIL;
             }
-            float f = (float) MathHelper.floor((MathHelper.wrapDegrees(context.getPlayerYaw() - 180.0f) + 90.0f) / 45.0f) * 45.0f;
-            entity.refreshPositionAndAngles(entity.getX(), entity.getY(), entity.getZ(), f, 0.0f);
             worldServer.spawnEntityAndPassengers(entity);
+            entity.emitGameEvent(GameEvent.ENTITY_PLACE, context.getPlayer());
+            if (!context.getPlayer().isCreative()) itemStack.decrement(1);
             return ActionResult.SUCCESS;
         }
         return ActionResult.PASS;

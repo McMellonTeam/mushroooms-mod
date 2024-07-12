@@ -94,9 +94,9 @@ public class CustomCreeperEntity
     @Override
     protected void initDataTracker(DataTracker.Builder builder) {
         super.initDataTracker(builder);
-        this.dataTracker.set(FUSE_SPEED, -1);
-        this.dataTracker.set(CHARGED, false);
-        this.dataTracker.set(IGNITED, false);
+        builder.add(FUSE_SPEED, -1);
+        builder.add(CHARGED, false);
+        builder.add(IGNITED, false);
     }
 
     @Override
