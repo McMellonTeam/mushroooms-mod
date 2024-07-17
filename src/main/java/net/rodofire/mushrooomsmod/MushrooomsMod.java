@@ -17,7 +17,6 @@ import net.rodofire.mushrooomsmod.networking.ModNetwork;
 import net.rodofire.mushrooomsmod.particle.ModParticles;
 import net.rodofire.mushrooomsmod.recipe.ModRecipes;
 import net.rodofire.mushrooomsmod.sound.ModSounds;
-import net.rodofire.mushrooomsmod.util.MathsUtil;
 import net.rodofire.mushrooomsmod.util.ModLootTableModifier;
 import net.rodofire.mushrooomsmod.world.features.configuredfeatures.ModFeatures;
 import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.tree.ModDecoratorTypes;
@@ -65,7 +64,6 @@ public class MushrooomsMod implements ModInitializer {
 
         ModNetwork.registerC2SPackets();
 
-        MathsUtil.registerMaths();
         ServerTickEvents.START_SERVER_TICK.register(new PlayerTickHandler());
 
         FabricDefaultAttributeRegistry.register(ModEntities.GROKI, GrokiEntity.setAttributes());

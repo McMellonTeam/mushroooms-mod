@@ -7,8 +7,8 @@ import net.minecraft.util.math.random.Random;
 import net.minecraft.world.StructureWorldAccess;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.util.FeatureContext;
+import net.rodofire.easierworldcreator.worldgenutil.GenSpheres;
 import net.rodofire.mushrooomsmod.world.features.config.ModSimpleBlockFeatureConfig;
-import net.rodofire.mushrooomsmod.worldgenutil.GenSpheres;
 
 public class DevFeature extends Feature<ModSimpleBlockFeatureConfig> {
     public DevFeature(Codec<ModSimpleBlockFeatureConfig> configCodec) {
