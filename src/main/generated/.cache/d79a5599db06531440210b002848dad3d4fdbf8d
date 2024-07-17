@@ -1,4 +1,4 @@
-// 1.20.1	2024-07-02T15:16:29.5681124	Mushroooms Mod/Block Loot Tables
+// 1.20.1	2024-07-17T11:15:25.8732134	Mushroooms Mod/Block Loot Tables
 ad1fd82402950b4fff27147ddabadf17f5910c98 data\mushrooomsmod\loot_tables\blocks\deepslate_mushroom_purple.json
 ba33e34ea28ca8195882c8a782486908bd3655cb data\mushrooomsmod\loot_tables\blocks\sapling_oak_berries.json
 efc6b37f6f4c51784d52e44e4e296521eb8971e0 data\mushrooomsmod\loot_tables\blocks\rapange_flowers.json
@@ -162,8 +162,8 @@ d03d552bc3ed1618afe66d3f408639f5dc9006e7 data\mushrooomsmod\loot_tables\blocks\m
 95070a838a8718cf395536b606a1d6521940fa7e data\mushrooomsmod\loot_tables\blocks\mushroom_stem_transparent.json
 fa5dcddaa4e738be8cffb7eddb143dbc9e293ca9 data\mushrooomsmod\loot_tables\blocks\potted_prehistoric_rose.json
 b721e19a8ef623c1293204b59d1aa86852b735fd data\mushrooomsmod\loot_tables\blocks\door_blue_luminescent.json
-0d3a1da7bb49a83a4d524ac6f98cbc7897c9c76d data\mushrooomsmod\loot_tables\blocks\mushroom_block_degradated_brown.json
 9097ea13488e33b825475d9b36537e2e2634be60 data\mushrooomsmod\loot_tables\blocks\amber_block.json
+0d3a1da7bb49a83a4d524ac6f98cbc7897c9c76d data\mushrooomsmod\loot_tables\blocks\mushroom_block_degradated_brown.json
 87fff810590518ac56ff41ac09d6e14db8f7bfa7 data\mushrooomsmod\loot_tables\blocks\mushroom_block_degradated_yellow.json
 4d84eb056e15456efc7acbcd3f3bcab13cb326bb data\mushrooomsmod\loot_tables\blocks\potted_prehisturple_schroom.json
 9a68504b6b73d18f9e345dde34b84de2268a8b64 data\mushrooomsmod\loot_tables\blocks\perennial_green.json

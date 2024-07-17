@@ -20,6 +20,7 @@ import net.rodofire.mushrooomsmod.sound.ModSounds;
 import net.rodofire.mushrooomsmod.util.ModLootTableModifier;
 import net.rodofire.mushrooomsmod.world.features.configuredfeatures.ModFeatures;
 import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.tree.ModDecoratorTypes;
+import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.tree.ModFoliagePlacerTypes;
 import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.tree.ModTrunkPlacerTypes;
 import net.rodofire.mushrooomsmod.world.gen.ModWorldGeneration;
 import org.slf4j.Logger;
@@ -45,7 +46,6 @@ public class MushrooomsMod implements ModInitializer {
 
         ModEntities.registerModENtities();
 
-        ModFeatures.addFeatures();
 
         ModParticles.registerParticles();
         ModStatusEffects.registerEffects();
@@ -54,8 +54,12 @@ public class MushrooomsMod implements ModInitializer {
 
         ModDecoratorTypes.registerDecorators();
         ModTrunkPlacerTypes.register();
+        ModFoliagePlacerTypes.register();
 
         ModWorldGeneration.generateModWorldGen();
+        ModFeatures.addFeatures();
+
+
         ModLootTableModifier.modifyLootTable();
 
         ModRecipes.registerRecipes();
