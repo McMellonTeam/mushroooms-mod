@@ -17,11 +17,19 @@ public class ModPlacedFeatures {
 
     private static final PlacementModifier NOT_IN_SURFACE_WATER_MODIFIER = SurfaceWaterDepthFilterPlacementModifier.of(0);
 
-    private static ImmutableList.Builder<PlacementModifier> undergorundTreeModifiersBuilder(PlacementModifier countModifier) {
+    private static ImmutableList.Builder<PlacementModifier> undergroundStoneLevelTreeModifiersBuilder(PlacementModifier countModifier) {
         return ((ImmutableList.Builder) ImmutableList.builder().add(countModifier)).add(SquarePlacementModifier.of()).add(NOT_IN_SURFACE_WATER_MODIFIER).add(STONE_LEVEL).add(BiomePlacementModifier.of());
     }
 
-    public static List<PlacementModifier> undergroundTreeModifiersWithWouldSurvive(PlacementModifier modifier, Block block) {
-        return ((ImmutableList.Builder) undergorundTreeModifiersBuilder(modifier).add(BlockFilterPlacementModifier.of(BlockPredicate.wouldSurvive(block.getDefaultState(), BlockPos.ORIGIN)))).build();
+    private static ImmutableList.Builder<PlacementModifier> undergroundDeepslateLevelTreeModifiersBuilder(PlacementModifier countModifier) {
+        return ((ImmutableList.Builder) ImmutableList.builder().add(countModifier)).add(SquarePlacementModifier.of()).add(NOT_IN_SURFACE_WATER_MODIFIER).add(DEEPSLATE_LEVEL).add(BiomePlacementModifier.of());
+    }
+
+    public static List<PlacementModifier> undergroundStoneLevelTreeModifiersWithWouldSurvive(PlacementModifier modifier, Block block) {
+        return (undergroundStoneLevelTreeModifiersBuilder(modifier).add(BlockFilterPlacementModifier.of(BlockPredicate.wouldSurvive(block.getDefaultState(), BlockPos.ORIGIN)))).build();
+    }
+
+    public static List<PlacementModifier> undergroundDeepslateLevelTreeModifiersWithWouldSurvive(PlacementModifier modifier, Block block) {
+        return (undergroundDeepslateLevelTreeModifiersBuilder(modifier)).build();
     }
 }
