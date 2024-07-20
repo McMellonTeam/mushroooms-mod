@@ -20,13 +20,13 @@ public abstract class CustomBlueMushroom extends Feature<ModMushroomFeatureConfi
 
     @Override
     public boolean generate(FeatureContext<ModMushroomFeatureConfig> context) {
-        System.out.println("Generating Custom BlueMushroom");
+        long startTimeCartesian = System.nanoTime();
+
         StructureWorldAccess worldAccess = context.getWorld();
         BlockPos pos = context.getOrigin();
         Random random = context.getRandom();
         BlockState cap = context.getConfig().capProvider.get(random, pos);
         BlockState trunk = context.getConfig().stemProvider.get(random, pos);
-        // if (Random.create().nextBetween(0, 5) == 0) {
         int height = Random.create().nextBetween(10, 15);
         int secondheight = 0;
         if (Random.create().nextBoolean()) {
@@ -38,20 +38,17 @@ public abstract class CustomBlueMushroom extends Feature<ModMushroomFeatureConfi
         this.generateLargeCap(worldAccess, random, pos.add(0, height + secondheight, 0), maxlarge, cap);
         this.generateLargeTrunk(worldAccess, random, pos, trunk, false, height + secondheight, maxlarge, minlarge);
 
-        /*} else {
-            this.generateCap();
-            this.generateTrunk();
-        }*/
 
+        long endTimeCartesian = (System.nanoTime());
+        long durationCartesian = (endTimeCartesian - startTimeCartesian) / 1000000;
+        System.out.println("duration : " + durationCartesian + " ms");
 
         return true;
     }
 
-    public abstract void generateCap(StructureWorldAccess world, Random random, BlockPos pos, int maxlarge, BlockState state);
 
     public abstract void generateLargeCap(StructureWorldAccess world, Random random, BlockPos pos, int maxlarge, BlockState state);
 
-    public abstract void generateTrunk(StructureWorldAccess world, Random random, BlockPos pos, ModMushroomFeatureConfig config, BlockState trunk, boolean force);
 
     public abstract void generateLargeTrunk(StructureWorldAccess world, Random random, BlockPos pos, BlockState trunk, boolean force, int height, int maxlarge, int minlarge);
 }
