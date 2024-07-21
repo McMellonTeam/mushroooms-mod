@@ -245,9 +245,16 @@
   "tooltip.mushrooomsmod.shift" : "Use §eShift§r to get more info ",
 
   "itemgroup.mushroooms" : "Mushroooms",
+  "effect.mushrooomsmod.flickering": "Flickering",
+  "text.autoconfig.mushrooomsmod.category.server": "Server Config",
+  "text.autoconfig.mushrooomsmod.category.client": "Client Config",
+  "text.autoconfig.mushrooomsmod.title": "MushrooomsMod Options",
+  "text.autoconfig.mushrooomsmod.option.server.commonbiomespawnrate": "Common Biome SpawnRate",
+  "text.autoconfig.mushrooomsmod.option.server.commonbiomespawnrate.@Tooltip": "Cannot be <=0, default is 4",
+  "text.autoconfig.mushrooomsmod.option.client.betawarningmessage": "Beta Message Warning",
+  "text.autoconfig.mushrooomsmod.option.client.betawarningmessage.@Tooltip": "Send warning message upon world join"
 
 
-  "effect.mushrooomsmod.flickering" : "Flickering"
 
 
 
