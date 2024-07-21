@@ -1,5 +1,8 @@
 package net.rodofire.mushrooomsmod;
 
+import me.shedaniel.autoconfig.AutoConfig;
+import me.shedaniel.autoconfig.serializer.JanksonConfigSerializer;
+import me.shedaniel.autoconfig.serializer.PartitioningSerializer;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
@@ -7,6 +10,7 @@ import net.minecraft.entity.LivingEntity;
 import net.rodofire.mushrooomsmod.block.BlockUtils;
 import net.rodofire.mushrooomsmod.block.ModBlockEntities;
 import net.rodofire.mushrooomsmod.block.ModBlocks;
+import net.rodofire.mushrooomsmod.configs.ModConfig;
 import net.rodofire.mushrooomsmod.effect.ModStatusEffects;
 import net.rodofire.mushrooomsmod.entity.ModEntities;
 import net.rodofire.mushrooomsmod.entity.custom.*;
@@ -31,9 +35,12 @@ public class MushrooomsMod implements ModInitializer {
 
     public static final String MOD_ID = "mushrooomsmod";
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
+    public static ModConfig CONFIG;
 
     @Override
     public void onInitialize() {
+        AutoConfig.register(ModConfig.class, PartitioningSerializer.wrap(JanksonConfigSerializer::new));
+        CONFIG = AutoConfig.getConfigHolder(ModConfig.class).getConfig();
 
         ModBlocks.registerModBlocks();
         ModBlockEntities.registerBlockEntities();
@@ -69,6 +76,7 @@ public class MushrooomsMod implements ModInitializer {
         ModNetwork.registerC2SPackets();
 
         ServerTickEvents.START_SERVER_TICK.register(new PlayerTickHandler());
+
 
         FabricDefaultAttributeRegistry.register(ModEntities.GROKI, GrokiEntity.setAttributes());
         FabricDefaultAttributeRegistry.register(ModEntities.BOLETE_COW, BoleteCowEntity.setAttributes());
