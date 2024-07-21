@@ -119,7 +119,7 @@ public class ModUndergroundPlacedFeatures {
         register(context, TALL_GRASS_BLUE_LUMINESCENT_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.TALL_GRASS_BLUE_LUMINESCENT_KEY), CountPlacementModifier.of(7), SquarePlacementModifier.of(), ModPlacedFeatures.DEEPSLATE_LEVEL, BiomePlacementModifier.of());
 
         //Vines
-        register(context, BLUE_LUMINESCENT_VINES_UP_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.BLUE_LUMINESCENT_VINES_UP_KEY), CountPlacementModifier.of(11), SquarePlacementModifier.of(), ModPlacedFeatures.DEEPSLATE_LEVEL, BiomePlacementModifier.of());
+        register(context, BLUE_LUMINESCENT_VINES_UP_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.BLUE_LUMINESCENT_VINES_UP_KEY), CountPlacementModifier.of(9), SquarePlacementModifier.of(), ModPlacedFeatures.DEEPSLATE_LEVEL, BiomePlacementModifier.of());
         register(context, BLUE_LUMINESCENT_VINES_DOWN_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.BLUE_LUMINESCENT_VINES_DOWN_KEY), CountPlacementModifier.of(7), SquarePlacementModifier.of(), ModPlacedFeatures.DEEPSLATE_LEVEL, BiomePlacementModifier.of());
         register(context, HANGING_ROOTS_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.HANGING_ROOT_KEY), CountPlacementModifier.of(80), SquarePlacementModifier.of(), ModPlacedFeatures.STONE_LEVEL, BiomePlacementModifier.of());
 
@@ -133,7 +133,7 @@ public class ModUndergroundPlacedFeatures {
         register(context, OAK_TREE_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(TreeConfiguredFeatures.OAK), ModPlacedFeatures.undergroundStoneLevelTreeModifiersWithWouldSurvive(PlacedFeatures.createCountExtraModifier(90, 1f, 45), Blocks.OAK_SAPLING));
         register(context, OAK_BERRIES_TREE_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.OAK_BERRIES_TREE_KEY), ModPlacedFeatures.undergroundStoneLevelTreeModifiersWithWouldSurvive(PlacedFeatures.createCountExtraModifier(240, 1f, 10), ModBlocks.OAK_BERRIES_SAPLING));
         register(context, AZALEA_TREE_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(TreeConfiguredFeatures.AZALEA_TREE), ModPlacedFeatures.undergroundStoneLevelTreeModifiersWithWouldSurvive(PlacedFeatures.createCountExtraModifier(230, 1f, 6), Blocks.AZALEA));
-        register(context, BLUE_LUMINESCENT_TREE_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.BLUE_LUMINESCENT_TREE_KEY), ModPlacedFeatures.undergroundDeepslateLevelTreeModifiersWithWouldSurvive(PlacedFeatures.createCountExtraModifier(230, 1f, 6), ModBlocks.BLUE_LUMINESCENT_SAPPLING));
+        register(context, BLUE_LUMINESCENT_TREE_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.BLUE_LUMINESCENT_TREE_KEY), ModPlacedFeatures.undergroundDeepslateLevelTreeModifiersWithWouldSurvive(PlacedFeatures.createCountExtraModifier(150, 1f, 6), ModBlocks.BLUE_LUMINESCENT_SAPPLING));
 
 
         //Crystal

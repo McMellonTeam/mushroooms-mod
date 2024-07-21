@@ -40,7 +40,7 @@ public class BlueLuminescentTrunkPlacer extends TrunkPlacer {
             }
         }
         for (int i = 0; i <= Random.create().nextBetween(1, 4); ++i) {
-            list.add(new FoliagePlacer.TreeNode(startPos.add(Random.create().nextBetween(-4, 4), realheight + Random.create().nextBetween(0, 2), Random.create().nextBetween(-4, 4)), 0, false));
+            getAndSetState(world, replacer, random, startPos.add(Random.create().nextBetween(-3, 3), realheight + Random.create().nextBetween(0, 2), Random.create().nextBetween(-3, 3)), config);
         }
         return list;
     }

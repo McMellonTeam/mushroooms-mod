@@ -30,6 +30,6 @@ public class ModPlacedFeatures {
     }
 
     public static List<PlacementModifier> undergroundDeepslateLevelTreeModifiersWithWouldSurvive(PlacementModifier modifier, Block block) {
-        return (undergroundDeepslateLevelTreeModifiersBuilder(modifier)).build();
+        return (undergroundDeepslateLevelTreeModifiersBuilder(modifier)).add(BlockFilterPlacementModifier.of(BlockPredicate.wouldSurvive(block.getDefaultState(), BlockPos.ORIGIN))).build();
     }
 }
