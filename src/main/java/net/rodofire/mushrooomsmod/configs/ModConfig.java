@@ -30,5 +30,15 @@ public class ModConfig extends PartitioningSerializer.GlobalData {
         public int getCommonBiomeSpawnRate() {
             return Math.max(1, commonBiomeSpawnRate);
         }
+
+        @ConfigEntry.Gui.Tooltip()
+        @Comment("""
+                spawn rate of common biomes, cannot be <= 0
+                """)
+        boolean betaWarningMessage = true;
+
+        public boolean getWarningMessage() {
+            return betaWarningMessage;
+        }
     }
 }
