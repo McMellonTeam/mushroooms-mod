@@ -102,6 +102,16 @@ public class ModOverworldRegion extends Region {
                 .weirdness(MultiNoiseUtil.ParameterRange.of(0f, 1f))
                 .build().forEach(point -> builder.add(point, ModOverworldBiomes.SHROOM_ISLAND2));*/
 
+        //colorful plains
+        new ParameterUtils.ParameterPointListBuilder()
+                .temperature(ParameterUtils.Temperature.NEUTRAL)
+                .humidity(ParameterUtils.Humidity.WET)
+                .continentalness(ParameterUtils.Continentalness.INLAND)
+                .erosion(MultiNoiseUtil.ParameterRange.of(-1f, 0f))
+                .depth(ParameterUtils.Depth.SURFACE)
+                .weirdness(MultiNoiseUtil.ParameterRange.of(-1f, 0.05f))
+                .build().forEach(point -> builder.add(point, ModOverworldBiomes.COLORFUL_PLAINS));
+
         builder.build().forEach(mapper);
     }
 }
