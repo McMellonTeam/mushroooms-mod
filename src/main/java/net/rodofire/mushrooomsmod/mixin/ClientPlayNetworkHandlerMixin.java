@@ -34,7 +34,7 @@ public abstract class ClientPlayNetworkHandlerMixin {
         if (!client.world.isClient) {return;}
 
         if (client.player.getWorld().isClient()) {
-            if (MushrooomsMod.CONFIG.common.getWarningMessage()) {
+            if (MushrooomsMod.CONFIG.client.getWarningMessage()) {
             MutableText gitissues =  Text.literal("GithubIssues")
                     .styled(style -> style.withClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, "https://github.com/RodoFire/mushroooms-mod-source-1.20.1/issues")))
                     .styled(style -> style.withHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, Text.of("Click here to go to the GitHub"))))

@@ -15,30 +15,40 @@ import net.rodofire.mushrooomsmod.MushrooomsMod;
 @Config.Gui.Background("mushrooomsmod:textures/block/mushroom_block_blue_luminescent.png")
 public class ModConfig extends PartitioningSerializer.GlobalData {
 
-    @ConfigEntry.Category("common")
+    @ConfigEntry.Category("server")
     @ConfigEntry.Gui.TransitiveObject()
-    public Common common = new Common();
+    public ModServerConfig server = new ModServerConfig();
 
-    @Config(name = MushrooomsMod.MOD_ID + "-common")
-    public static final class Common implements ConfigData {
+
+    @ConfigEntry.Category("client")
+    @ConfigEntry.Gui.TransitiveObject()
+    public ModClientConfig client = new ModClientConfig();
+
+
+    @Config(name = MushrooomsMod.MOD_ID + "-server")
+    public static final class ModServerConfig implements ConfigData {
         @ConfigEntry.Gui.Tooltip()
         @Comment("""
                 spawn rate of common biomes, cannot be <= 0
                 """)
-        int commonBiomeSpawnRate = 4;
+        int commonbiomespawnrate = 4;
 
         public int getCommonBiomeSpawnRate() {
-            return Math.max(1, commonBiomeSpawnRate);
+            return Math.max(1, commonbiomespawnrate);
         }
+    }
+
+    @Config(name = MushrooomsMod.MOD_ID + "-client")
+    public static final class ModClientConfig implements ConfigData {
 
         @ConfigEntry.Gui.Tooltip()
         @Comment("""
-                spawn rate of common biomes, cannot be <= 0
+                send message to player when joigning game
                 """)
-        boolean betaWarningMessage = true;
+        boolean betawarningmessage = true;
 
         public boolean getWarningMessage() {
-            return betaWarningMessage;
+            return betawarningmessage;
         }
     }
 }
