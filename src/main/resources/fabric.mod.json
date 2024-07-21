@@ -8,11 +8,11 @@
     "RodoFire"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/RodoFire/mushroooms-mod"
+    "homepage": "https://modrinth.com/mod/mushroooms",
+    "sources": "https://github.com/RodoFire/mushroooms-mod",
+    "issues": "https://github.com/RodoFire/mushroooms-mod/issues"
   },
-  "license": "MIT with aditions",
-  "license link": "https://github.com/RodoFire/mushroooms-mod/blob/main/LICENSE",
+  "license": "https://github.com/RodoFire/mushroooms-mod/blob/main/LICENSE",
   "icon": "assets/mushrooomsmod/icon.png",
   "environment": "*",
   "entrypoints": {
@@ -30,6 +30,9 @@
     ],
     "rei_client": [
       "net.rodofire.mushrooomsmod.compat.MushrooomsModREIClientPlugin"
+    ],
+    "modmenu": [
+      "net.rodofire.mushrooomsmod.compat.ModMenuCompat"
     ]
   },
   "mixins": [
@@ -40,8 +43,9 @@
     "minecraft": "1.20.1",
     "java": ">=17",
     "geckolib": ">=4.2.2",
-    "terrablender" : ">=3.0.0.169",
-    "fabric-api": "*"
+    "terrablender": ">=3.0.0.169",
+    "fabric-api": "*",
+    "cloth-config": ">=11.1.118"
   },
   "suggests": {
     "another-mod": "*"
