@@ -13,7 +13,7 @@ public class ModTags {
         public static final TagKey<Block> GRASS = createTag("mushroom_plant");
 
         private static TagKey<Block> createTag(String name) {
-            return TagKey.of(RegistryKeys.BLOCK, new Identifier(MushrooomsMod.MOD_ID, name));
+            return TagKey.of(RegistryKeys.BLOCK, Identifier.of(MushrooomsMod.MOD_ID, name));
         }
     }
 
@@ -25,7 +25,7 @@ public class ModTags {
         public static final TagKey<Item> HAMMERS = createTag("hammers");
 
         private static TagKey<Item> createTag(String name) {
-            return TagKey.of(RegistryKeys.ITEM, new Identifier(MushrooomsMod.MOD_ID, name));
+            return TagKey.of(RegistryKeys.ITEM, Identifier.of(MushrooomsMod.MOD_ID, name));
         }
     }
 }

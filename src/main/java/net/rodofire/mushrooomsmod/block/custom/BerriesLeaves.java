@@ -64,7 +64,7 @@ public class BerriesLeaves extends LeavesBlock implements Fertilizable {
     }
 
     @Override
-    public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
+    public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, BlockHitResult hit) {
         if (!world.isClient) {
             if (state.get(BERRIES)) {
                 if (player.getMainHandStack().getItem() == ModBlocks.OAK_BERRIES_LEAVES.asItem())
@@ -90,7 +90,7 @@ public class BerriesLeaves extends LeavesBlock implements Fertilizable {
     }
 
     @Override
-    public boolean isFertilizable(WorldView world, BlockPos pos, BlockState state, boolean isClient) {
+    public boolean isFertilizable(WorldView world, BlockPos pos, BlockState state) {
         return true;
     }
 

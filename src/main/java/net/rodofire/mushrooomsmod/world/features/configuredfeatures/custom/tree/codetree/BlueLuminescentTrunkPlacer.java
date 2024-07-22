@@ -1,6 +1,7 @@
 package net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.tree.codetree;
 
 import com.mojang.serialization.Codec;
+import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;
@@ -11,16 +12,25 @@ import net.minecraft.world.gen.foliage.FoliagePlacer;
 import net.minecraft.world.gen.trunk.TrunkPlacer;
 import net.minecraft.world.gen.trunk.TrunkPlacerType;
 import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.tree.ModTrunkPlacerTypes;
+import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.tree.decorator.OakBerriesTreeDecorator;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.BiConsumer;
 
 public class BlueLuminescentTrunkPlacer extends TrunkPlacer {
-    public static final Codec<BlueLuminescentTrunkPlacer> codec = RecordCodecBuilder.create(objectInstance -> fillTrunkPlacerFields(objectInstance).apply(objectInstance, BlueLuminescentTrunkPlacer::new));
+    private int baseheight;
+    private int firstRandomHeight;
+    private int secondRandomHeight;
+
+    public static final BlueLuminescentTrunkPlacer INSTANCE = new BlueLuminescentTrunkPlacer(6,6,6);
+    public static final MapCodec<BlueLuminescentTrunkPlacer> CODEC = MapCodec.unit(() -> INSTANCE);
 
     public BlueLuminescentTrunkPlacer(int baseHeight, int firstRandomHeight, int secondRandomHeight) {
         super(baseHeight, firstRandomHeight, secondRandomHeight);
+        this.baseheight = baseHeight;
+        this.firstRandomHeight = firstRandomHeight;
+        this.secondRandomHeight = secondRandomHeight;
     }
 
     @Override

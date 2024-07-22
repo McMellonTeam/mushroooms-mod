@@ -54,7 +54,7 @@ public class FleurBerries extends Block implements Fertilizable {
 
 
     @Override
-    public boolean isFertilizable(WorldView world, BlockPos pos, BlockState state, boolean isClient) {
+    public boolean isFertilizable(WorldView world, BlockPos pos, BlockState state) {
         return true;
     }
 
@@ -77,7 +77,7 @@ public class FleurBerries extends Block implements Fertilizable {
     }
 
     @Override
-    public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
+    public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, BlockHitResult hit) {
         if (world.isClient) return ActionResult.PASS;
         if ((player.getMainHandStack().getItem() == Items.BONE_MEAL || player.getOffHandStack().getItem() == Items.BONE_MEAL)) {
             if (state.get(AGE) == 3) {

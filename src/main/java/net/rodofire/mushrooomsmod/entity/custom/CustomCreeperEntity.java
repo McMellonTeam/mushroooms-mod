@@ -1,6 +1,5 @@
 package net.rodofire.mushrooomsmod.entity.custom;
 
-import net.minecraft.client.render.entity.feature.SkinOverlayOwner;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
@@ -33,6 +32,8 @@ import net.rodofire.mushrooomsmod.entity.goal.CustomCreeperIgniteGoal;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Collection;
+import java.util.Set;
+import java.util.function.Predicate;
 
 
 //creeper that allow you to change explosion beacause the vanilla mob has a private method
@@ -42,15 +43,24 @@ public class CustomCreeperEntity
     private static final TrackedData<Integer> FUSE_SPEED = DataTracker.registerData(CustomCreeperEntity.class, TrackedDataHandlerRegistry.INTEGER);
     private static final TrackedData<Boolean> CHARGED = DataTracker.registerData(CustomCreeperEntity.class, TrackedDataHandlerRegistry.BOOLEAN);
     private static final TrackedData<Boolean> IGNITED = DataTracker.registerData(CustomCreeperEntity.class, TrackedDataHandlerRegistry.BOOLEAN);
+    public boolean explode = false;
     private int lastFuseTime;
     private int currentFuseTime;
     private int fuseTime = 30;
     private int explosionRadius = 3;
     private int headsDropped;
-    public boolean explode = false;
 
     public CustomCreeperEntity(EntityType<? extends CustomCreeperEntity> entityType, World world) {
-        super(entityType, world);
+
+        
+
+        super((EntityType<? extends HostileEntity>) entityType, world);
+    }
+
+    public static DefaultAttributeContainer.Builder createCreeperAttributes() {
+        return HostileEntity.createHostileAttributes().add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.25)
+                .add(EntityAttributes.GENERIC_MAX_HEALTH, 10.0D);
+
     }
 
     @Override
@@ -63,13 +73,10 @@ public class CustomCreeperEntity
         this.goalSelector.add(5, new WanderAroundFarGoal(this, 0.8));
         this.goalSelector.add(6, new LookAtEntityGoal(this, PlayerEntity.class, 8.0f));
         this.goalSelector.add(6, new LookAroundGoal(this));
-        this.targetSelector.add(1, new ActiveTargetGoal<PlayerEntity>(this, PlayerEntity.class, true));
-        this.targetSelector.add(2, new RevengeGoal(this));
-    }
 
-    public static DefaultAttributeContainer.Builder createCreeperAttributes() {
-        return HostileEntity.createHostileAttributes().add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.25)
-                .add(EntityAttributes.GENERIC_MAX_HEALTH, 10.0D);
+        this.targetSelector.add(1, new ActiveTargetGoal<PlayerEntity>((MobEntity) this, PlayerEntity.class, true));
+        this.targetSelector.add(2, new RevengeGoal(this, new Class[0]));
+
     }
 
     @Override
@@ -77,13 +84,13 @@ public class CustomCreeperEntity
         if (this.getTarget() == null) {
             return 3;
         }
-        return 3 + (int)(this.getHealth() - 1.0f);
+        return 3 + (int) (this.getHealth() - 1.0f);
     }
 
     @Override
     public boolean handleFallDamage(float fallDistance, float damageMultiplier, DamageSource damageSource) {
         boolean bl = super.handleFallDamage(fallDistance, damageMultiplier, damageSource);
-        this.currentFuseTime += (int)(fallDistance * 1.5f);
+        this.currentFuseTime += (int) (fallDistance * 1.5f);
         if (this.currentFuseTime > this.fuseTime - 5) {
             this.currentFuseTime = this.fuseTime - 5;
         }
@@ -91,11 +98,11 @@ public class CustomCreeperEntity
     }
 
     @Override
-    protected void initDataTracker() {
-        super.initDataTracker();
-        this.dataTracker.startTracking(FUSE_SPEED, -1);
-        this.dataTracker.startTracking(CHARGED, false);
-        this.dataTracker.startTracking(IGNITED, false);
+    protected void initDataTracker(DataTracker.Builder builder) {
+        super.initDataTracker(builder);
+        builder.add(FUSE_SPEED, -1);
+        builder.add(CHARGED, false);
+        builder.add(IGNITED, false);
     }
 
     @Override
@@ -104,8 +111,8 @@ public class CustomCreeperEntity
         if (this.dataTracker.get(CHARGED).booleanValue()) {
             nbt.putBoolean("powered", true);
         }
-        nbt.putShort("Fuse", (short)this.fuseTime);
-        nbt.putByte("ExplosionRadius", (byte)this.explosionRadius);
+        nbt.putShort("Fuse", (short) this.fuseTime);
+        nbt.putByte("ExplosionRadius", (byte) this.explosionRadius);
         nbt.putBoolean("ignited", this.isIgnited());
     }
 
@@ -167,11 +174,11 @@ public class CustomCreeperEntity
     }
 
     @Override
-    protected void dropEquipment(DamageSource source, int lootingMultiplier, boolean allowDrops) {
+    protected void dropEquipment(ServerWorld world, DamageSource source, boolean causedByPlayer) {
         CustomCreeperEntity creeperEntity;
-        super.dropEquipment(source, lootingMultiplier, allowDrops);
+        super.dropEquipment(world, source, causedByPlayer);
         Entity entity = source.getAttacker();
-        if (entity != this && entity instanceof CustomCreeperEntity && (creeperEntity = (CustomCreeperEntity)entity).shouldDropHead()) {
+        if (entity != this && entity instanceof CustomCreeperEntity && (creeperEntity = (CustomCreeperEntity) entity).shouldDropHead()) {
             creeperEntity.onHeadDropped();
             this.dropItem(Items.CREEPER_HEAD);
         }
@@ -188,7 +195,7 @@ public class CustomCreeperEntity
     }
 
     public float getClientFuseTime(float timeDelta) {
-        return MathHelper.lerp(timeDelta, (float)this.lastFuseTime, (float)this.currentFuseTime) / (float)(this.fuseTime - 2);
+        return MathHelper.lerp(timeDelta, (float) this.lastFuseTime, (float) this.currentFuseTime) / (float) (this.fuseTime - 2);
     }
 
     public int getFuseSpeed() {
@@ -216,7 +223,11 @@ public class CustomCreeperEntity
                 if (!itemStack.isDamageable()) {
                     itemStack.decrement(1);
                 } else {
-                    itemStack.damage(1, player, playerx -> playerx.sendToolBreakStatus(hand));
+                    if(player.getMainHandStack()==itemStack) {
+                        itemStack.damage(1, player, EquipmentSlot.MAINHAND);
+                    }else {
+                        itemStack.damage(1, player, EquipmentSlot.OFFHAND);
+                    }
                 }
             }
             return ActionResult.success(this.getWorld().isClient);
@@ -229,7 +240,7 @@ public class CustomCreeperEntity
             this.explode = true;
             float f = this.shouldRenderOverlay() ? 2.0f : 1.0f;
             this.dead = true;
-            this.getWorld().createExplosion(this, this.getX(), this.getY(), this.getZ(), (float)this.explosionRadius * f, World.ExplosionSourceType.MOB);
+            this.getWorld().createExplosion(this, this.getX(), this.getY(), this.getZ(), (float) this.explosionRadius * f, World.ExplosionSourceType.MOB);
             this.discard();
             this.spawnEffectsCloud();
         }
@@ -243,7 +254,7 @@ public class CustomCreeperEntity
             areaEffectCloudEntity.setRadiusOnUse(-0.5f);
             areaEffectCloudEntity.setWaitTime(10);
             areaEffectCloudEntity.setDuration(areaEffectCloudEntity.getDuration() / 2);
-            areaEffectCloudEntity.setRadiusGrowth(-areaEffectCloudEntity.getRadius() / (float)areaEffectCloudEntity.getDuration());
+            areaEffectCloudEntity.setRadiusGrowth(-areaEffectCloudEntity.getRadius() / (float) areaEffectCloudEntity.getDuration());
             for (StatusEffectInstance statusEffectInstance : collection) {
                 areaEffectCloudEntity.addEffect(new StatusEffectInstance(statusEffectInstance));
             }
@@ -267,7 +278,7 @@ public class CustomCreeperEntity
         ++this.headsDropped;
     }
 
-    public boolean isExploding(){
+    public boolean isExploding() {
         return this.explode;
     }
 }

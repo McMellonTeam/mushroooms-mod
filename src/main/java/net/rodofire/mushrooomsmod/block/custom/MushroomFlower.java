@@ -1,5 +1,6 @@
 package net.rodofire.mushrooomsmod.block.custom;
 
+import com.mojang.serialization.MapCodec;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Fertilizable;
@@ -14,8 +15,14 @@ import net.minecraft.world.World;
 import net.minecraft.world.WorldView;
 
 public class MushroomFlower extends PlantBlock implements Fertilizable {
+    public static final MapCodec<MushroomFlower> CODEC = MushroomFlower.createCodec(MushroomFlower::new);
     public MushroomFlower(Settings settings) {
         super(settings);
+    }
+
+    @Override
+    protected MapCodec<? extends PlantBlock> getCodec() {
+        return CODEC;
     }
 
     protected static final VoxelShape SHAPE = Block.createCuboidShape(5.0, 0.0, 5.0, 11.0, 6.0, 11.0);
@@ -36,7 +43,7 @@ public class MushroomFlower extends PlantBlock implements Fertilizable {
     }
 
     @Override
-    public boolean isFertilizable(WorldView world, BlockPos pos, BlockState state, boolean isClient) {
+    public boolean isFertilizable(WorldView world, BlockPos pos, BlockState state) {
         return false;
     }
 

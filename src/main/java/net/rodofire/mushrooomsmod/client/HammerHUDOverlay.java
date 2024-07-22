@@ -5,6 +5,7 @@ import net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.render.GameRenderer;
+import net.minecraft.client.render.RenderTickCounter;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Identifier;
@@ -18,38 +19,9 @@ import net.rodofire.mushrooomsmod.item.Custom.HammerItem;
 
 public class HammerHUDOverlay implements HudRenderCallback {
 
-    private static final Identifier HAMMER = new Identifier(MushrooomsMod.MOD_ID,
+    private static final Identifier HAMMER = Identifier.of(MushrooomsMod.MOD_ID,
             "textures/mushrooomsmodhud/hammeruse.png");
-    private static final Identifier HAMMER_FULL = new Identifier(MushrooomsMod.MOD_ID, "textures/mushrooomsmodhud/hammeruse_full.png");
-
-
-    @Override
-    public void onHudRender(DrawContext drawContext, float tickDelta) {
-        MinecraftClient client = MinecraftClient.getInstance();
-        PlayerEntity player = client.player;
-        if (player != null) {
-
-            ItemStack item = player.getMainHandStack();
-            HitResult hit = player.raycast(5, tickDelta, false);
-
-            if (item.getItem() instanceof HammerItem && hit.getType() == HitResult.Type.BLOCK) {
-                World world = player.getWorld();
-
-                Vec3d seconpos = client.crosshairTarget.getPos();
-
-                BlockPos.Mutable mutable = new BlockPos.Mutable();
-                mutable.set(seconpos.x, seconpos.y, seconpos.z);
-
-                //Had to do it like this beacause secondpos wasn't always accurate
-                if (world.getBlockState(mutable).getBlock() == ModBlocks.FORGE_BLOCK
-                        || world.getBlockState(mutable.up()).getBlock() == ModBlocks.FORGE_BLOCK || world.getBlockState(mutable.down()).getBlock() == ModBlocks.FORGE_BLOCK
-                        || world.getBlockState(mutable.north()).getBlock() == ModBlocks.FORGE_BLOCK || world.getBlockState(mutable.south()).getBlock() == ModBlocks.FORGE_BLOCK
-                        || world.getBlockState(mutable.east()).getBlock() == ModBlocks.FORGE_BLOCK || world.getBlockState(mutable.west()).getBlock() == ModBlocks.FORGE_BLOCK) {
-                    drawTexture(client, drawContext, item);
-                }
-            }
-        }
-    }
+    private static final Identifier HAMMER_FULL = Identifier.of(MushrooomsMod.MOD_ID, "textures/mushrooomsmodhud/hammeruse_full.png");
 
     private void drawTexture(MinecraftClient client, DrawContext drawContext, ItemStack item) {
         int width = client.getWindow().getScaledWidth();
@@ -70,5 +42,34 @@ public class HammerHUDOverlay implements HudRenderCallback {
         drawContext.drawTexture(HAMMER, x, y, 0, 0, 16, 16, 16, 16);
         RenderSystem.setShaderTexture(0, HAMMER_FULL);
         drawContext.drawTexture(HAMMER_FULL, x, y, 0, 0, filled, 16, 16, 16);
+    }
+
+    @Override
+    public void onHudRender(DrawContext drawContext, RenderTickCounter tickCounter) {
+        MinecraftClient client = MinecraftClient.getInstance();
+        if (client == null) return;
+        PlayerEntity player = client.player;
+        if (player != null) {
+
+            ItemStack item = player.getMainHandStack();
+            HitResult hit = player.raycast(5, tickCounter.getTickDelta(true), false);
+
+            if (item.getItem() instanceof HammerItem && hit.getType() == HitResult.Type.BLOCK) {
+                World world = player.getWorld();
+
+                Vec3d seconpos = client.crosshairTarget.getPos();
+
+                BlockPos.Mutable mutable = new BlockPos.Mutable();
+                mutable.set(seconpos.x, seconpos.y, seconpos.z);
+
+                //Had to do it like this beacause secondpos wasn't always accurate
+                if (world.getBlockState(mutable).getBlock() == ModBlocks.FORGE_BLOCK
+                        || world.getBlockState(mutable.up()).getBlock() == ModBlocks.FORGE_BLOCK || world.getBlockState(mutable.down()).getBlock() == ModBlocks.FORGE_BLOCK
+                        || world.getBlockState(mutable.north()).getBlock() == ModBlocks.FORGE_BLOCK || world.getBlockState(mutable.south()).getBlock() == ModBlocks.FORGE_BLOCK
+                        || world.getBlockState(mutable.east()).getBlock() == ModBlocks.FORGE_BLOCK || world.getBlockState(mutable.west()).getBlock() == ModBlocks.FORGE_BLOCK) {
+                    drawTexture(client, drawContext, item);
+                }
+            }
+        }
     }
 }

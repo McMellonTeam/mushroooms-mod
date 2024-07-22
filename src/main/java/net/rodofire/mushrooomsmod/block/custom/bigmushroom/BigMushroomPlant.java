@@ -25,36 +25,13 @@ import net.rodofire.mushrooomsmod.block.ModBlocks;
 import net.rodofire.mushrooomsmod.item.ModItems;
 
 public class BigMushroomPlant extends CropBlock implements Fertilizable {
+    public static final IntProperty AGE = Properties.AGE_3;
     public static int MAX_AGE = 3;
     public static Block stage0;
     public static Block stage1;
     public static Block stage2;
     public static Block stage3;
-    public static final IntProperty AGE = Properties.AGE_3;
 
-
-    public void applyGrowth(World world, BlockPos pos, BlockState state) {
-        int j;
-        int i = this.getAge(state) + this.getGrowthAmount(world);
-        if (i > (j = this.getMaxAge())) {
-            i = j;
-        }
-        world.setBlockState(pos, this.withAge(i), Block.NOTIFY_LISTENERS);
-    }
-
-    protected int getGrowthAmount(World world) {
-        return MathHelper.nextInt(world.random, 1, 1);
-    }
-
-    @Override
-    public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
-        ItemStack itemStack = player.getStackInHand(hand);
-        if (itemStack.getItem() == ModItems.PURPLE_MUSHROOM_POWDER) {
-            world.setBlockState(pos, getAgeToBlockstate(this.getAge(state)), Block.NOTIFY_LISTENERS);
-            return ActionResult.SUCCESS;
-        }
-        return ActionResult.PASS;
-    }
 
     public BigMushroomPlant(Settings settings, Block stage0, Block stage1, Block stage2, Block stage3) {
         super(settings);
@@ -77,8 +54,31 @@ public class BigMushroomPlant extends CropBlock implements Fertilizable {
         }
     }
 
+    public void applyGrowth(World world, BlockPos pos, BlockState state) {
+        int j;
+        int i = this.getAge(state) + this.getGrowthAmount(world);
+        if (i > (j = this.getMaxAge())) {
+            i = j;
+        }
+        world.setBlockState(pos, this.withAge(i), Block.NOTIFY_LISTENERS);
+    }
+
+    protected int getGrowthAmount(World world) {
+        return MathHelper.nextInt(world.random, 1, 1);
+    }
+
     @Override
-    public boolean isFertilizable(WorldView world, BlockPos pos, BlockState state, boolean isClient) {
+    public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, BlockHitResult hit) {
+        ItemStack itemStack = player.getMainHandStack();
+        if (itemStack.getItem() == ModItems.PURPLE_MUSHROOM_POWDER) {
+            world.setBlockState(pos, getAgeToBlockstate(this.getAge(state)), Block.NOTIFY_LISTENERS);
+            return ActionResult.SUCCESS;
+        }
+        return ActionResult.PASS;
+    }
+
+    @Override
+    public boolean isFertilizable(WorldView world, BlockPos pos, BlockState state) {
         return true;
     }
 

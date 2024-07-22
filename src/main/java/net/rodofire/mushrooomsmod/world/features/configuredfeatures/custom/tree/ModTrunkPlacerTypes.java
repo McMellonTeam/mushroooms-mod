@@ -6,7 +6,7 @@ import net.rodofire.mushrooomsmod.mixin.TrunkPlacerTypeInvoker;
 import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.tree.codetree.BlueLuminescentTrunkPlacer;
 
 public class ModTrunkPlacerTypes {
-    public static final TrunkPlacerType<?> BLUE_LUMINESCENT_TRUNK_PLACER = TrunkPlacerTypeInvoker.callRegister("blue_luminescent_trunk_placer", BlueLuminescentTrunkPlacer.codec);
+    public static final TrunkPlacerType<?> BLUE_LUMINESCENT_TRUNK_PLACER = TrunkPlacerTypeInvoker.callRegister("blue_luminescent_trunk_placer", BlueLuminescentTrunkPlacer.CODEC);
 
     public static void register() {
         MushrooomsMod.LOGGER.info("Registering Trunkplacers");

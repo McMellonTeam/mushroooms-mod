@@ -28,7 +28,7 @@ public class BushFeature extends Feature<DefaultFeatureConfig> {
             for (int j = 0; j < height; j++) {
                 for (int k = 0; k < large; k++) {
                     BlockState blockState = world.getBlockState(pos.add(i, j, k));
-                    if (blockState.isAir() || blockState.isOf(Blocks.GRASS) || blockState.isOf(Blocks.TALL_GRASS))
+                    if (blockState.isAir() || blockState.isOf(Blocks.SHORT_GRASS) || blockState.isOf(Blocks.TALL_GRASS))
                         continue;
                     return false;
                 }
@@ -45,7 +45,7 @@ public class BushFeature extends Feature<DefaultFeatureConfig> {
         BlockPos pos = context.getOrigin();
         int capnumber = Random.create().nextBetween(1, 4);
         if (!canGenerate(world, pos, 5, 3)) return false;
-        StructurePlacerAPI bush = new StructurePlacerAPI((ServerWorld) world, new Identifier(MushrooomsMod.MOD_ID, "bush_" + capnumber), pos);
+        StructurePlacerAPI bush = new StructurePlacerAPI((ServerWorld) world, Identifier.of(MushrooomsMod.MOD_ID, "bush_" + capnumber), pos);
         bush.loadStructure();
         BlockState blockState = Blocks.OAK_LEAVES.getDefaultState().with(LeavesBlock.PERSISTENT, true);
         for (int i = 0; i < 5; ++i) {

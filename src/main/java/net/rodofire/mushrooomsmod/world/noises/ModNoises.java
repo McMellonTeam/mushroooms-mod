@@ -19,7 +19,7 @@ public class ModNoises {
     }
 
     private static RegistryKey<DoublePerlinNoiseSampler.NoiseParameters> registerKey(String name){
-        return RegistryKey.of(RegistryKeys.NOISE_PARAMETERS, new Identifier(MushrooomsMod.MOD_ID, name));
+        return RegistryKey.of(RegistryKeys.NOISE_PARAMETERS, Identifier.of(MushrooomsMod.MOD_ID, name));
     }
 
     private static void register(Registerable<DoublePerlinNoiseSampler.NoiseParameters> context, RegistryKey<DoublePerlinNoiseSampler.NoiseParameters> key, int firstoctave, double firstamplitude, double... octaves){

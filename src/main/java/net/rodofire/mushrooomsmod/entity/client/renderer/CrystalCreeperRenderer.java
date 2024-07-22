@@ -18,7 +18,7 @@ public class CrystalCreeperRenderer extends GeoEntityRenderer<CrystalCreeperEnti
 
     @Override
     public Identifier getTextureLocation(CrystalCreeperEntity animatable) {
-        return new Identifier(MushrooomsMod.MOD_ID, "textures/entity/crystal_creeper.png");
+        return Identifier.of(MushrooomsMod.MOD_ID, "textures/entity/crystal_creeper.png");
     }
 
     @Override
@@ -38,8 +38,8 @@ public class CrystalCreeperRenderer extends GeoEntityRenderer<CrystalCreeperEnti
     }
 
     @Override
-    public int getPackedOverlay(CrystalCreeperEntity animatable, float u) {
-        return super.getPackedOverlay(animatable, getSwellOverlay(animatable, u));
+    public int getPackedOverlay(CrystalCreeperEntity animatable, float u, float partialTick) {
+        return super.getPackedOverlay(animatable, getSwellOverlay(animatable, u), partialTick);
     }
 
     protected float getSwellOverlay(CrystalCreeperEntity entity, float u) {

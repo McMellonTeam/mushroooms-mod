@@ -24,10 +24,11 @@ public class ModTerrablenderAPI implements TerraBlenderApi {
 
     @Override
     public void onTerraBlenderInitialized() {
+
         /*AutoConfig.register(ModConfig.class, PartitioningSerializer.wrap(JanksonConfigSerializer::new));
         MushrooomsMod.CONFIG = AutoConfig.getConfigHolder(ModConfig.class).getConfig();*/
         Regions.register(new ModOverworldRegion(new Identifier(MushrooomsMod.MOD_ID, "overworld"), getCommonBiomesSpawnRate()));
         Regions.register(new ModOverworldRegionSimplified(new Identifier(MushrooomsMod.MOD_ID, "overworld_simplified"), 4));
-        SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, MushrooomsMod.MOD_ID, ModMaterialsRules.makeRules());
+
     }
 }

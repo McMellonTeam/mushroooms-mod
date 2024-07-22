@@ -204,50 +204,50 @@ public class ModModelProvider extends FabricModelProvider {
 
         generator.blockStateCollector.accept(VariantsBlockStateSupplier.create(ModBlocks.BLUE_CRYSTAL)
                 .coordinate(BlockStateVariantMap.create(Properties.AGE_1, Properties.VERTICAL_DIRECTION)
-                        .register(0, Direction.UP, BlockStateVariant.create().put(VariantSettings.MODEL, new Identifier(MushrooomsMod.MOD_ID, "block/crystal_blue_up_top")))
-                        .register(0, Direction.DOWN, BlockStateVariant.create().put(VariantSettings.MODEL, new Identifier(MushrooomsMod.MOD_ID, "block/crystal_blue_down_top")))
-                        .register(1, Direction.UP, BlockStateVariant.create().put(VariantSettings.MODEL, new Identifier(MushrooomsMod.MOD_ID, "block/crystal_blue_up_bottom")))
-                        .register(1, Direction.DOWN, BlockStateVariant.create().put(VariantSettings.MODEL, new Identifier(MushrooomsMod.MOD_ID, "block/crystal_blue_down_bottom"))))
+                        .register(0, Direction.UP, BlockStateVariant.create().put(VariantSettings.MODEL, Identifier.of(MushrooomsMod.MOD_ID, "block/crystal_blue_up_top")))
+                        .register(0, Direction.DOWN, BlockStateVariant.create().put(VariantSettings.MODEL, Identifier.of(MushrooomsMod.MOD_ID, "block/crystal_blue_down_top")))
+                        .register(1, Direction.UP, BlockStateVariant.create().put(VariantSettings.MODEL, Identifier.of(MushrooomsMod.MOD_ID, "block/crystal_blue_up_bottom")))
+                        .register(1, Direction.DOWN, BlockStateVariant.create().put(VariantSettings.MODEL, Identifier.of(MushrooomsMod.MOD_ID, "block/crystal_blue_down_bottom"))))
         );
 
         generator.blockStateCollector.accept(VariantsBlockStateSupplier.create(ModBlocks.RED_CRYSTAL)
                 .coordinate(BlockStateVariantMap.create(Properties.AGE_1, Properties.VERTICAL_DIRECTION)
-                        .register(0, Direction.UP, BlockStateVariant.create().put(VariantSettings.MODEL, new Identifier(MushrooomsMod.MOD_ID, "block/crystal_red_up_top")))
-                        .register(0, Direction.DOWN, BlockStateVariant.create().put(VariantSettings.MODEL, new Identifier(MushrooomsMod.MOD_ID, "block/crystal_red_down_top")))
-                        .register(1, Direction.UP, BlockStateVariant.create().put(VariantSettings.MODEL, new Identifier(MushrooomsMod.MOD_ID, "block/crystal_red_up_bottom")))
-                        .register(1, Direction.DOWN, BlockStateVariant.create().put(VariantSettings.MODEL, new Identifier(MushrooomsMod.MOD_ID, "block/crystal_red_down_bottom"))))
+                        .register(0, Direction.UP, BlockStateVariant.create().put(VariantSettings.MODEL, Identifier.of(MushrooomsMod.MOD_ID, "block/crystal_red_up_top")))
+                        .register(0, Direction.DOWN, BlockStateVariant.create().put(VariantSettings.MODEL, Identifier.of(MushrooomsMod.MOD_ID, "block/crystal_red_down_top")))
+                        .register(1, Direction.UP, BlockStateVariant.create().put(VariantSettings.MODEL, Identifier.of(MushrooomsMod.MOD_ID, "block/crystal_red_up_bottom")))
+                        .register(1, Direction.DOWN, BlockStateVariant.create().put(VariantSettings.MODEL, Identifier.of(MushrooomsMod.MOD_ID, "block/crystal_red_down_bottom"))))
         );
 
         //deepslate crystal
         /*generator.blockStateCollector.accept(VariantsBlockStateSupplier.create(ModBlocks.WHITE_CRYSTAL_DEEPSLATE)
                 .coordinate(BlockStateVariantMap.create(Properties.VERTICAL_DIRECTION)
-                        .register(Direction.DOWN, BlockStateVariant.create().put(VariantSettings.MODEL, new Identifier(MushrooomsMod.MOD_ID, "block/crystal_floor_white_deepslate_down")))
-                        .register(Direction.UP, BlockStateVariant.create().put(VariantSettings.MODEL, new Identifier(MushrooomsMod.MOD_ID, "block/crystal_floor_white_deepslate_up"))))
+                        .register(Direction.DOWN, BlockStateVariant.create().put(VariantSettings.MODEL, Identifier.of(MushrooomsMod.MOD_ID, "block/crystal_floor_white_deepslate_down")))
+                        .register(Direction.UP, BlockStateVariant.create().put(VariantSettings.MODEL, Identifier.of(MushrooomsMod.MOD_ID, "block/crystal_floor_white_deepslate_up"))))
         );
         generator.blockStateCollector.accept(VariantsBlockStateSupplier.create(ModBlocks.RED_CRYSTAL_DEEPSLATE)
                 .coordinate(BlockStateVariantMap.create(Properties.VERTICAL_DIRECTION)
-                        .register(Direction.DOWN, BlockStateVariant.create().put(VariantSettings.MODEL, new Identifier(MushrooomsMod.MOD_ID, "block/crystal_floor_red_deepslate_down")))
-                        .register(Direction.UP, BlockStateVariant.create().put(VariantSettings.MODEL, new Identifier(MushrooomsMod.MOD_ID, "block/crystal_floor_red_deepslate_up"))))
+                        .register(Direction.DOWN, BlockStateVariant.create().put(VariantSettings.MODEL, Identifier.of(MushrooomsMod.MOD_ID, "block/crystal_floor_red_deepslate_down")))
+                        .register(Direction.UP, BlockStateVariant.create().put(VariantSettings.MODEL, Identifier.of(MushrooomsMod.MOD_ID, "block/crystal_floor_red_deepslate_up"))))
         );
         generator.blockStateCollector.accept(VariantsBlockStateSupplier.create(ModBlocks.BLUE_CRYSTAL_DEEPSLATE)
                 .coordinate(BlockStateVariantMap.create(Properties.VERTICAL_DIRECTION)
-                        .register(Direction.DOWN, BlockStateVariant.create().put(VariantSettings.MODEL, new Identifier(MushrooomsMod.MOD_ID, "block/crystal_floor_blue_deepslate_down")))
-                        .register(Direction.UP, BlockStateVariant.create().put(VariantSettings.MODEL, new Identifier(MushrooomsMod.MOD_ID, "block/crystal_floor_blue_deepslate_up"))))
+                        .register(Direction.DOWN, BlockStateVariant.create().put(VariantSettings.MODEL, Identifier.of(MushrooomsMod.MOD_ID, "block/crystal_floor_blue_deepslate_down")))
+                        .register(Direction.UP, BlockStateVariant.create().put(VariantSettings.MODEL, Identifier.of(MushrooomsMod.MOD_ID, "block/crystal_floor_blue_deepslate_up"))))
         );
         generator.blockStateCollector.accept(VariantsBlockStateSupplier.create(ModBlocks.WHITE_CRYSTAL_STONE)
                 .coordinate(BlockStateVariantMap.create(Properties.VERTICAL_DIRECTION)
-                        .register(Direction.DOWN, BlockStateVariant.create().put(VariantSettings.MODEL, new Identifier(MushrooomsMod.MOD_ID, "block/crystal_floor_white_stone_down")))
-                        .register(Direction.UP, BlockStateVariant.create().put(VariantSettings.MODEL, new Identifier(MushrooomsMod.MOD_ID, "block/crystal_floor_white_deepslate_up"))))
+                        .register(Direction.DOWN, BlockStateVariant.create().put(VariantSettings.MODEL, Identifier.of(MushrooomsMod.MOD_ID, "block/crystal_floor_white_stone_down")))
+                        .register(Direction.UP, BlockStateVariant.create().put(VariantSettings.MODEL, Identifier.of(MushrooomsMod.MOD_ID, "block/crystal_floor_white_deepslate_up"))))
         );
         generator.blockStateCollector.accept(VariantsBlockStateSupplier.create(ModBlocks.RED_CRYSTAL_STONE)
                 .coordinate(BlockStateVariantMap.create(Properties.VERTICAL_DIRECTION)
-                        .register(Direction.DOWN, BlockStateVariant.create().put(VariantSettings.MODEL, new Identifier(MushrooomsMod.MOD_ID, "block/crystal_floor_red_stone_down")))
-                        .register(Direction.UP, BlockStateVariant.create().put(VariantSettings.MODEL, new Identifier(MushrooomsMod.MOD_ID, "block/crystal_floor_red_stone_up"))))
+                        .register(Direction.DOWN, BlockStateVariant.create().put(VariantSettings.MODEL, Identifier.of(MushrooomsMod.MOD_ID, "block/crystal_floor_red_stone_down")))
+                        .register(Direction.UP, BlockStateVariant.create().put(VariantSettings.MODEL, Identifier.of(MushrooomsMod.MOD_ID, "block/crystal_floor_red_stone_up"))))
         );
         generator.blockStateCollector.accept(VariantsBlockStateSupplier.create(ModBlocks.BLUE_CRYSTAL_STONE)
                 .coordinate(BlockStateVariantMap.create(Properties.VERTICAL_DIRECTION)
-                        .register(Direction.DOWN, BlockStateVariant.create().put(VariantSettings.MODEL, new Identifier(MushrooomsMod.MOD_ID, "block/crystal_floor_blue_stone_down")))
-                        .register(Direction.UP, BlockStateVariant.create().put(VariantSettings.MODEL, new Identifier(MushrooomsMod.MOD_ID, "block/crystal_floor_blue_stone_up"))))
+                        .register(Direction.DOWN, BlockStateVariant.create().put(VariantSettings.MODEL, Identifier.of(MushrooomsMod.MOD_ID, "block/crystal_floor_blue_stone_down")))
+                        .register(Direction.UP, BlockStateVariant.create().put(VariantSettings.MODEL, Identifier.of(MushrooomsMod.MOD_ID, "block/crystal_floor_blue_stone_up"))))
         );*/
     }
 
@@ -257,11 +257,11 @@ public class ModModelProvider extends FabricModelProvider {
         generator.register(ModItems.BIG_GREEN_MUSHROOM_SEED, Models.GENERATED);
         generator.register(ModItems.BIG_PURPLE_MUSHROOM_SEED, Models.GENERATED);
         generator.register(ModItems.CAERULEA_VOLUBILIS_ITEM, Models.GENERATED);
-        generator.register(ModItems.HYMNE_URSS_MUSIC_DISC, Models.GENERATED);
-        generator.register(ModItems.HYMNE_FRANCAIS_MUSIC_DISC, Models.GENERATED);
+       //generator.register(ModItems.HYMNE_URSS_MUSIC_DISC, Models.GENERATED);
+       //generator.register(ModItems.HYMNE_FRANCAIS_MUSIC_DISC, Models.GENERATED);
         generator.register(ModItems.PINK_MUSHROOM_VINES_ITEM, Models.GENERATED);
 
-        generator.register(ModItems.PINK_CRYSTAL_ITEM, Models.GENERATED);
+        //generator.register(ModItems.PINK_CRYSTAL_ITEM, Models.GENERATED);
         generator.register(ModItems.BLUE_CRYSTAL_ITEM, Models.GENERATED);
         generator.register(ModItems.RED_CRYSTAL_ITEM, Models.GENERATED);
         generator.register(ModItems.AMBER_ITEM, Models.GENERATED);

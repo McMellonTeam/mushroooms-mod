@@ -1,13 +1,15 @@
 package net.rodofire.mushrooomsmod.block.custom;
 
+import com.mojang.serialization.MapCodec;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
-import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
@@ -28,8 +30,14 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 
 public class BoostingMushroom extends BlockWithEntity {
+    public static final MapCodec<BoostingMushroom> CODEC = BoostingMushroom.createCodec(BoostingMushroom::new);
     public BoostingMushroom(Settings settings) {
         super(settings);
+    }
+
+    @Override
+    protected MapCodec<? extends BlockWithEntity> getCodec() {
+        return CODEC;
     }
 
     private static final VoxelShape SHAPE = Block.createCuboidShape(3, 0, 3, 13, 14, 13);
@@ -78,10 +86,10 @@ public class BoostingMushroom extends BlockWithEntity {
         return BlockRenderType.ENTITYBLOCK_ANIMATED;
     }
 
-    @Override
-    public void appendTooltip(ItemStack stack, @Nullable BlockView world, List<Text> tooltip, TooltipContext options) {
-        tooltip.add(Text.translatable("tooltip.mushrooomsmod.boosting_mushroom").formatted(Formatting.BLUE));
 
-        super.appendTooltip(stack, world, tooltip, options);
+    @Override
+    public void appendTooltip(ItemStack stack, Item.TooltipContext context, List<Text> tooltip, TooltipType options) {
+        tooltip.add(Text.translatable("tooltip.mushrooomsmod.boosting_mushroom").formatted(Formatting.BLUE));
+        super.appendTooltip(stack, context, tooltip, options);
     }
 }

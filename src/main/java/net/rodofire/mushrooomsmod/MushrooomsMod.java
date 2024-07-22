@@ -17,6 +17,7 @@ import net.rodofire.mushrooomsmod.item.ModItems;
 import net.rodofire.mushrooomsmod.networking.ModNetwork;
 import net.rodofire.mushrooomsmod.particle.ModParticles;
 import net.rodofire.mushrooomsmod.recipe.ModRecipes;
+import net.rodofire.mushrooomsmod.screen.ModScreenHandlers;
 import net.rodofire.mushrooomsmod.sound.ModSounds;
 import net.rodofire.mushrooomsmod.util.ModLootTableModifier;
 import net.rodofire.mushrooomsmod.world.features.configuredfeatures.ModFeatures;
@@ -66,9 +67,8 @@ public class MushrooomsMod implements ModInitializer {
 
         ModRecipes.registerRecipes();
 
-        GeckoLib.initialize();
-
         ModNetwork.registerC2SPackets();
+
 
         ServerTickEvents.START_SERVER_TICK.register(new PlayerTickHandler());
 

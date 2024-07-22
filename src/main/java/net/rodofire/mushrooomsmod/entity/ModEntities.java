@@ -1,7 +1,5 @@
 package net.rodofire.mushrooomsmod.entity;
 
-import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
-import net.minecraft.entity.EntityDimensions;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
 import net.minecraft.registry.Registries;
@@ -12,36 +10,35 @@ import net.rodofire.mushrooomsmod.entity.custom.*;
 
 public class ModEntities {
     public static final EntityType<GrokiEntity> GROKI = Registry.register(Registries.ENTITY_TYPE,
-            new Identifier(MushrooomsMod.MOD_ID, "groki"), FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, GrokiEntity::new)
-                    .dimensions(EntityDimensions.fixed(0.9f, 1.45f)).build());
+            Identifier.of(MushrooomsMod.MOD_ID, "groki"), EntityType.Builder.create(GrokiEntity::new, SpawnGroup.CREATURE)
+                    .dimensions(0.9f, 1.45f).build());
 
     public static final EntityType<BoleteCowEntity> BOLETE_COW = Registry.register(Registries.ENTITY_TYPE,
-            new Identifier(MushrooomsMod.MOD_ID, "bolete_cow"), FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, BoleteCowEntity::new)
-                    .dimensions(EntityDimensions.fixed(1.3f, 1.8f)).build());
+            Identifier.of(MushrooomsMod.MOD_ID, "bolete_cow"), EntityType.Builder.create(BoleteCowEntity::new, SpawnGroup.CREATURE)
+                    .dimensions(1.3f, 1.8f).build());
 
     public static final EntityType<PlotiEntity> PLOTI = Registry.register(Registries.ENTITY_TYPE,
-            new Identifier(MushrooomsMod.MOD_ID, "ploti"), FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, PlotiEntity::new)
-                    .dimensions(EntityDimensions.fixed(0.25f, 0.3f)).build());
+            Identifier.of(MushrooomsMod.MOD_ID, "ploti"), EntityType.Builder.create(PlotiEntity::new, SpawnGroup.CREATURE)
+                    .dimensions(0.25f, 0.3f).build());
 
     public static final EntityType<CrystalCreeperEntity> CRYSTAL_CREEPER = Registry.register(Registries.ENTITY_TYPE,
-            new Identifier(MushrooomsMod.MOD_ID, "crystal_creeper"), FabricEntityTypeBuilder.create(SpawnGroup.MONSTER, CrystalCreeperEntity::new)
-                    .dimensions(EntityDimensions.fixed(0.6f, 1.7f)).build());
+            Identifier.of(MushrooomsMod.MOD_ID, "crystal_creeper"), EntityType.Builder.create(CrystalCreeperEntity::new, SpawnGroup.MONSTER)
+                    .dimensions(0.6f, 1.7f).build());
 
     public static final EntityType<CrystalGolemEntity> CRYSTAL_GOLEM = Registry.register(Registries.ENTITY_TYPE,
-            new Identifier(MushrooomsMod.MOD_ID, "crystal_golem"), FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, CrystalGolemEntity::new)
-                    .dimensions(EntityDimensions.fixed(1.2f,2.8f)).build());
+            Identifier.of(MushrooomsMod.MOD_ID, "crystal_golem"), EntityType.Builder.create(CrystalGolemEntity::new, SpawnGroup.CREATURE)
+                    .dimensions(1.2f, 2.8f).build());
 
     public static final EntityType<SchroomStickEntity> SCHROOM_STICK = Registry.register(Registries.ENTITY_TYPE,
-            new Identifier(MushrooomsMod.MOD_ID, "schroom_stick"), FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, SchroomStickEntity::new)
-                    .dimensions(EntityDimensions.fixed(0.3f,1.6f)).build());
+            Identifier.of(MushrooomsMod.MOD_ID, "schroom_stick"), EntityType.Builder.create(SchroomStickEntity::new, SpawnGroup.CREATURE)
+                    .dimensions(0.3f, 1.6f).build());
 
     public static final EntityType<InventoryArmorStandEntity> INVENTORY_ARMOR_STAND_ENTITY = Registry.register(Registries.ENTITY_TYPE,
-            new Identifier(MushrooomsMod.MOD_ID, "inventory_armor_stand"), FabricEntityTypeBuilder.create(SpawnGroup.MISC, InventoryArmorStandEntity::new)
-                    .dimensions(EntityDimensions.fixed(0.9f, 1.8f)).build());
+            Identifier.of(MushrooomsMod.MOD_ID, "inventory_armor_stand"), EntityType.Builder.create(InventoryArmorStandEntity::new, SpawnGroup.MISC)
+                    .dimensions(0.9f, 1.8f).build());
 
 
-
-    public static void registerModENtities(){
+    public static void registerModENtities() {
         MushrooomsMod.LOGGER.info("Registering Mod Entities For Mushrooomsmod");
     }
 

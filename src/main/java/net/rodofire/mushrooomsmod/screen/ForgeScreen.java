@@ -11,7 +11,7 @@ import net.rodofire.mushrooomsmod.MushrooomsMod;
 
 public class ForgeScreen extends HandledScreen<ForgeScreenHandler> {
     private static final Identifier TEXTURE =
-            new Identifier(MushrooomsMod.MOD_ID, "textures/gui/gem_empowering_station_gui.png");
+            Identifier.of(MushrooomsMod.MOD_ID, "textures/gui/forge_gui.png");
 
     public ForgeScreen(ForgeScreenHandler handler, PlayerInventory inventory, Text title) {
         super(handler, inventory, title);
@@ -38,7 +38,7 @@ public class ForgeScreen extends HandledScreen<ForgeScreenHandler> {
 
     @Override
     public void render(DrawContext context, int mouseX, int mouseY, float delta) {
-        renderBackground(context);
+        renderBackground(context, mouseX,mouseY,delta);
         super.render(context, mouseX, mouseY, delta);
         drawMouseoverTooltip(context, mouseX, mouseY);
     }
