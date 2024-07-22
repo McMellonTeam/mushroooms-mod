@@ -1,8 +1,5 @@
 package net.rodofire.mushrooomsmod;
 
-import me.shedaniel.autoconfig.AutoConfig;
-import me.shedaniel.autoconfig.serializer.JanksonConfigSerializer;
-import me.shedaniel.autoconfig.serializer.PartitioningSerializer;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
@@ -39,8 +36,6 @@ public class MushrooomsMod implements ModInitializer {
 
     @Override
     public void onInitialize() {
-        AutoConfig.register(ModConfig.class, PartitioningSerializer.wrap(JanksonConfigSerializer::new));
-        CONFIG = AutoConfig.getConfigHolder(ModConfig.class).getConfig();
 
         ModBlocks.registerModBlocks();
         ModBlockEntities.registerBlockEntities();

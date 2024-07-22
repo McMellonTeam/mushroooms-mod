@@ -43,7 +43,7 @@ public class ModConfig extends PartitioningSerializer.GlobalData {
 
         @ConfigEntry.Gui.Tooltip()
         @Comment("""
-                send message to player when joigning game
+                send message to player when joining game
                 """)
         boolean betawarningmessage = true;
 

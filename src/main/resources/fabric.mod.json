@@ -16,6 +16,9 @@
   "icon": "assets/mushrooomsmod/icon.png",
   "environment": "*",
   "entrypoints": {
+    "preLaunch": [
+      "net.rodofire.mushrooomsmod.MushrooomsModPreLaunch"
+    ],
     "main": [
       "net.rodofire.mushrooomsmod.MushrooomsMod"
     ],
