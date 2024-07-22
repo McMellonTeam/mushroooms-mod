@@ -3,7 +3,9 @@ package net.rodofire.mushrooomsmod.entity.client.model;
 import net.minecraft.util.Identifier;
 import net.rodofire.mushrooomsmod.MushrooomsMod;
 import net.rodofire.mushrooomsmod.entity.custom.PlotiEntity;
+
 import software.bernie.geckolib.animation.AnimationState;
+
 import software.bernie.geckolib.model.GeoModel;
 
 public class PlotiModel extends GeoModel<PlotiEntity> {
@@ -14,7 +16,9 @@ public class PlotiModel extends GeoModel<PlotiEntity> {
 
     @Override
     public Identifier getTextureResource(PlotiEntity animatable) {
+
         return Identifier.of(MushrooomsMod.MOD_ID, "textures/entity/ploti.png");
+
     }
 
     @Override

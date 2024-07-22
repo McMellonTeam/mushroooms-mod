@@ -49,6 +49,9 @@ public class BlueLuminescentTrunkPlacer extends TrunkPlacer {
                 list.add(generateColumn(world, replacer, random, startPos.add(Random.create().nextBetween(-1, 1), 0, Random.create().nextBetween(-1, 1)), config, realheight, i));
             }
         }
+        for (int i = 0; i <= Random.create().nextBetween(1, 4); ++i) {
+            getAndSetState(world, replacer, random, startPos.add(Random.create().nextBetween(-3, 3), realheight + Random.create().nextBetween(0, 2), Random.create().nextBetween(-3, 3)), config);
+        }
         return list;
     }
 

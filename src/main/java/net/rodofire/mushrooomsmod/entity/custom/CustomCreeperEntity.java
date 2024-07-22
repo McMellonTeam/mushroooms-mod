@@ -51,12 +51,16 @@ public class CustomCreeperEntity
     private int headsDropped;
 
     public CustomCreeperEntity(EntityType<? extends CustomCreeperEntity> entityType, World world) {
+
+        
+
         super((EntityType<? extends HostileEntity>) entityType, world);
     }
 
     public static DefaultAttributeContainer.Builder createCreeperAttributes() {
         return HostileEntity.createHostileAttributes().add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.25)
                 .add(EntityAttributes.GENERIC_MAX_HEALTH, 10.0D);
+
     }
 
     @Override
@@ -69,8 +73,10 @@ public class CustomCreeperEntity
         this.goalSelector.add(5, new WanderAroundFarGoal(this, 0.8));
         this.goalSelector.add(6, new LookAtEntityGoal(this, PlayerEntity.class, 8.0f));
         this.goalSelector.add(6, new LookAroundGoal(this));
+
         this.targetSelector.add(1, new ActiveTargetGoal<PlayerEntity>((MobEntity) this, PlayerEntity.class, true));
         this.targetSelector.add(2, new RevengeGoal(this, new Class[0]));
+
     }
 
     @Override

@@ -12,6 +12,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.sound.SoundCategory;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.math.BlockPos;
@@ -23,6 +24,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
 import net.minecraft.world.WorldView;
 import net.rodofire.mushrooomsmod.block.entity.BoostingMushroomBlockEntity;
+import net.rodofire.mushrooomsmod.sound.ModSounds;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
@@ -60,6 +62,7 @@ public class BoostingMushroom extends BlockWithEntity {
     @Override
     public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
         if (entity instanceof LivingEntity) {
+            world.playSound(null, pos, ModSounds.BOOST_MUSHROOM, SoundCategory.BLOCKS, 2f, (float) Random.create().nextBetween(1, 30) / 10);
             entity.addVelocity(0.0D, 2D, 0.0D);
             ((LivingEntity) entity).addStatusEffect(new StatusEffectInstance(StatusEffects.SLOW_FALLING, 120));
         }

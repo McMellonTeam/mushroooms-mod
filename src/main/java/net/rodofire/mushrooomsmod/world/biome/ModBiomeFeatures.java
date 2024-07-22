@@ -48,6 +48,7 @@ public class ModBiomeFeatures {
     public static class UndergroundBiome {
 
         public static void addBlueLuminescentCaveFlowers(GenerationSettings.LookupBackedBuilder builder) {
+            builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModUndergroundPlacedFeatures.BLUE_LUMINESCENT_TREE_UNDERGROUND_PLACED_KEY);
             builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModUndergroundPlacedFeatures.BLUE_LUMINESCENT_MUSHROOM_TREE_UNDERGROUND_PLACED_KEY);
             builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModUndergroundPlacedFeatures.BLUE_LUMINESCENT_MUSHROOM_UNDERGROUND_PLACED_KEY);
             builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModUndergroundPlacedFeatures.BLUE_LUMINESCENT_VINES_UP_UNDERGROUND_PLACED_KEY);

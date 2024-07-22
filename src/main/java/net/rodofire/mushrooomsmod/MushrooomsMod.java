@@ -7,6 +7,7 @@ import net.minecraft.entity.LivingEntity;
 import net.rodofire.mushrooomsmod.block.BlockUtils;
 import net.rodofire.mushrooomsmod.block.ModBlockEntities;
 import net.rodofire.mushrooomsmod.block.ModBlocks;
+import net.rodofire.mushrooomsmod.configs.ModConfig;
 import net.rodofire.mushrooomsmod.effect.ModStatusEffects;
 import net.rodofire.mushrooomsmod.entity.ModEntities;
 import net.rodofire.mushrooomsmod.entity.custom.*;
@@ -18,10 +19,10 @@ import net.rodofire.mushrooomsmod.particle.ModParticles;
 import net.rodofire.mushrooomsmod.recipe.ModRecipes;
 import net.rodofire.mushrooomsmod.screen.ModScreenHandlers;
 import net.rodofire.mushrooomsmod.sound.ModSounds;
-import net.rodofire.mushrooomsmod.util.MathsUtil;
 import net.rodofire.mushrooomsmod.util.ModLootTableModifier;
 import net.rodofire.mushrooomsmod.world.features.configuredfeatures.ModFeatures;
 import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.tree.ModDecoratorTypes;
+import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.tree.ModFoliagePlacerTypes;
 import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.tree.ModTrunkPlacerTypes;
 import net.rodofire.mushrooomsmod.world.gen.ModWorldGeneration;
 import org.slf4j.Logger;
@@ -32,6 +33,7 @@ public class MushrooomsMod implements ModInitializer {
 
     public static final String MOD_ID = "mushrooomsmod";
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
+    public static ModConfig CONFIG;
 
     @Override
     public void onInitialize() {
@@ -47,7 +49,6 @@ public class MushrooomsMod implements ModInitializer {
 
         ModEntities.registerModENtities();
 
-        ModFeatures.addFeatures();
 
         ModParticles.registerParticles();
         ModStatusEffects.registerEffects();
@@ -56,18 +57,21 @@ public class MushrooomsMod implements ModInitializer {
 
         ModDecoratorTypes.registerDecorators();
         ModTrunkPlacerTypes.register();
+        ModFoliagePlacerTypes.register();
 
         ModWorldGeneration.generateModWorldGen();
+        ModFeatures.addFeatures();
+
+
         ModLootTableModifier.modifyLootTable();
 
         ModRecipes.registerRecipes();
 
         ModNetwork.registerC2SPackets();
 
-        ModScreenHandlers.registerScreenHandler();
 
-        MathsUtil.registerMaths();
         ServerTickEvents.START_SERVER_TICK.register(new PlayerTickHandler());
+
 
         FabricDefaultAttributeRegistry.register(ModEntities.GROKI, GrokiEntity.setAttributes());
         FabricDefaultAttributeRegistry.register(ModEntities.BOLETE_COW, BoleteCowEntity.setAttributes());

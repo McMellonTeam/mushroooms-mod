@@ -18,7 +18,9 @@ public class CrystalGolemModel extends GeoModel<CrystalGolemEntity> {
 
     @Override
     public Identifier getTextureResource(CrystalGolemEntity animatable) {
+
         return Identifier.of(MushrooomsMod.MOD_ID, "textures/entity/crystal_golem.png");
+
     }
 
     @Override

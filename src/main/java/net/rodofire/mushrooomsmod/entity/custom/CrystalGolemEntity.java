@@ -65,7 +65,7 @@ public class CrystalGolemEntity extends GolemEntity implements Angerable, GeoEnt
         this.goalSelector.add(1, new MeleeAttackGoal(this, 1f, true));
         this.goalSelector.add(2, new WanderNearTargetGoal(this, 0.2f, 32.0f));
         this.goalSelector.add(3, new WanderAroundGoal(this, 0.2f));
-        this.targetSelector.add(4, new RevengeGoal(this, new Class[0]));
+        this.targetSelector.add(4, new RevengeGoal(this));
         this.goalSelector.add(5, new LookAtEntityGoal(this, PlayerEntity.class, 6.0f));
         this.targetSelector.add(3, new ActiveTargetGoal<PlayerEntity>(this, PlayerEntity.class, 10, true, false, this::shouldAngerAt));
         this.targetSelector.add(3, new ActiveTargetGoal<MobEntity>(this, MobEntity.class, 5, false, false, this::shouldAngerAt));

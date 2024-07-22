@@ -5,8 +5,8 @@ import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.StructureWorldAccess;
+import net.rodofire.easierworldcreator.worldgenutil.GenCircles;
 import net.rodofire.mushrooomsmod.world.features.config.ModMushroomFeatureConfig;
-import net.rodofire.mushrooomsmod.worldgenutil.GenCircles;
 
 
 public class CustomGreenMushroomFeature extends CustomGreenMushroom {
