@@ -88,7 +88,7 @@ public class CustomRedHugeMushroomFeature extends CustomRedHugeMushroom {
                 break;
         }
         if (!world.isClient()) {
-            StructurePlacerAPI structure = new StructurePlacerAPI((ServerWorld) world, new Identifier(MushrooomsMod.MOD_ID, path), start, BlockMirror.NONE, blockRotation, true, 1f, new BlockPos(large, 0, large1));
+            StructurePlacerAPI structure = new StructurePlacerAPI((ServerWorld) world, Identifier.of(MushrooomsMod.MOD_ID, path), start, BlockMirror.NONE, blockRotation, true, 1f, new BlockPos(large, 0, large1));
             structure.loadStructure();
         }
         return true;

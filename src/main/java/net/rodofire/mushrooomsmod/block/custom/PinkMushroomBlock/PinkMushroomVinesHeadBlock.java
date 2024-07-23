@@ -67,7 +67,7 @@ public class PinkMushroomVinesHeadBlock extends AbstractPlantStemBlock
     }
 
     @Override
-    public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
+    public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, BlockHitResult hit) {
         return PinkMushroomVines.pickBerries(player, state, world, pos);
     }
 

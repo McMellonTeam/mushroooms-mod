@@ -17,7 +17,7 @@ public class PlotiRenderer extends GeoEntityRenderer<PlotiEntity> {
 
     @Override
     public Identifier getTextureLocation(PlotiEntity animatable) {
-        return new Identifier(MushrooomsMod.MOD_ID, "textures/entity/ploti.png");
+        return Identifier.of(MushrooomsMod.MOD_ID, "textures/entity/ploti.png");
     }
 
     @Override

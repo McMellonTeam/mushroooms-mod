@@ -9,19 +9,22 @@ import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.recipe.book.RecipeCategory;
+import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.util.Identifier;
 import net.rodofire.mushrooomsmod.block.ModBlocks;
 import net.rodofire.mushrooomsmod.item.ModItems;
 
 import java.util.List;
+import java.util.concurrent.CompletableFuture;
 import java.util.function.Consumer;
 
 public class ModRecipeProvider extends FabricRecipeProvider {
     private static final List<ItemConvertible> YELLOW_BERRIES = List.of(ModItems.YELLOW_BERRIES);
 
-    public ModRecipeProvider(FabricDataOutput output) {
-        super(output);
+    public ModRecipeProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
+        super(output, registriesFuture);
     }
+
 
     @Override
     public void generate(RecipeExporter exporter) {
@@ -32,7 +35,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .pattern("RRR")
                 .input(Character.valueOf('R'), ModItems.PURPLE_MUSHROOM_POWDER)
                 .criterion(hasItem(ModItems.PURPLE_MUSHROOM_POWDER), conditionsFromItem(ModItems.PURPLE_MUSHROOM_POWDER))
-                .offerTo(exporter, new Identifier(("compressed_purple_mushroom_craft")));
+                .offerTo(exporter, Identifier.of(("compressed_purple_mushroom_craft")));
 
 
         //Food
@@ -42,7 +45,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .pattern("###")
                 .pattern("###")
                 .criterion(hasItem(Items.WHEAT), conditionsFromItem(Items.WHEAT))
-                .offerTo(exporter, new Identifier("baguettess_craft"));
+                .offerTo(exporter, Identifier.of("baguettess_craft"));
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.FOOD, ModItems.LUMINESCENT_SCHROOM_SOUP, 1)
                 .input(Character.valueOf('#'), ModBlocks.BLUE_LUMINESCENT_MUSHROOM)
@@ -50,7 +53,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .pattern(" # ")
                 .pattern("#C#")
                 .criterion(hasItem(Items.WHEAT), conditionsFromItem(Items.WHEAT))
-                .offerTo(exporter, new Identifier("blue_luminescent_soup_craft"));
+                .offerTo(exporter, Identifier.of("blue_luminescent_soup_craft"));
 
 
         //Lights
@@ -62,7 +65,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input(Character.valueOf('S'), ModBlocks.GREEN_TORCH)
                 .criterion(hasItem(Items.IRON_NUGGET), conditionsFromItem(Items.IRON_NUGGET))
                 .criterion(hasItem(ModBlocks.GREEN_TORCH), conditionsFromItem(ModBlocks.GREEN_TORCH))
-                .offerTo(exporter, new Identifier("green_lantern_craft"));
+                .offerTo(exporter, Identifier.of("green_lantern_craft"));
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.RED_LANTERN, 1)
                 .pattern("RRR")
@@ -72,7 +75,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input(Character.valueOf('S'), Blocks.REDSTONE_TORCH)
                 .criterion(hasItem(Items.IRON_NUGGET), conditionsFromItem(Items.IRON_NUGGET))
                 .criterion(hasItem(Blocks.REDSTONE_TORCH), conditionsFromItem(Blocks.REDSTONE_TORCH))
-                .offerTo(exporter, new Identifier("red_lantern_craft"));
+                .offerTo(exporter, Identifier.of("red_lantern_craft"));
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.GREEN_TORCH, 1)
                 .pattern("RS")
@@ -80,7 +83,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input(Character.valueOf('S'), Items.GREEN_DYE)
                 .criterion(hasItem(Blocks.TORCH), conditionsFromItem(Blocks.TORCH))
                 .criterion(hasItem(Items.GREEN_DYE), conditionsFromItem(Items.GREEN_DYE))
-                .offerTo(exporter, new Identifier("green_torch_craft"));
+                .offerTo(exporter, Identifier.of("green_torch_craft"));
 
         //dye
         //yellow
@@ -142,7 +145,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .pattern("RR")
                 .input(Character.valueOf('R'), ModBlocks.LAVA_BLACKSTONE)
                 .criterion(hasItem(ModBlocks.LAVA_BLACKSTONE), conditionsFromItem(ModBlocks.LAVA_BLACKSTONE))
-                .offerTo(exporter, new Identifier("lava_blackstone_bricks_craft"));
+                .offerTo(exporter, Identifier.of("lava_blackstone_bricks_craft"));
 
         offerPressurePlateRecipe(exporter, ModBlocks.LAVA_BLACKSTONE_MEDIUM_BRICKS, ModBlocks.LAVA_BLACKSTONE_BRICKS);
         offerPressurePlateRecipe(exporter, ModBlocks.LAVA_BLACKSTONE_TINY_BRICKS, ModBlocks.LAVA_BLACKSTONE_MEDIUM_BRICKS);
@@ -163,14 +166,14 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .pattern("RR")
                 .input(Character.valueOf('R'), ModBlocks.BLUE_LUMINESCENT_STRIPPED_LOG)
                 .criterion(hasItem(ModBlocks.BLUE_LUMINESCENT_STRIPPED_LOG), conditionsFromItem(ModBlocks.BLUE_LUMINESCENT_STRIPPED_LOG))
-                .offerTo(exporter, new Identifier("blue_luminescent_stripped_wood_craft"));
+                .offerTo(exporter, Identifier.of("blue_luminescent_stripped_wood_craft"));
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.BLUE_LUMINESCENT_WOOD, 4)
                 .pattern("RR")
                 .pattern("RR")
                 .input(Character.valueOf('R'), ModBlocks.BLUE_LUMINESCENT_LOG)
                 .criterion(hasItem(ModBlocks.BLUE_LUMINESCENT_LOG), conditionsFromItem(ModBlocks.BLUE_LUMINESCENT_LOG))
-                .offerTo(exporter, new Identifier("blue_luminescent_wood_craft"));
+                .offerTo(exporter, Identifier.of("blue_luminescent_wood_craft"));
 
 
         //utils
@@ -181,7 +184,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input(Character.valueOf('R'), Blocks.IRON_BLOCK)
                 .input(Character.valueOf('S'), Items.IRON_INGOT)
                 .criterion(hasItem(Items.IRON_INGOT), conditionsFromItem(Blocks.IRON_BLOCK))
-                .offerTo(exporter, new Identifier("forge_craft"));
+                .offerTo(exporter, Identifier.of("forge_craft"));
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModBlocks.FORGE_BLOCK)
                 .pattern("S S")
@@ -190,7 +193,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input(Character.valueOf('S'), Items.IRON_INGOT)
                 .input(Character.valueOf('R'), Blocks.ANVIL)
                 .criterion(hasItem(Items.IRON_INGOT), conditionsFromItem(Blocks.ANVIL))
-                .offerTo(exporter, new Identifier("forge_craft_with_anvil"));
+                .offerTo(exporter, Identifier.of("forge_craft_with_anvil"));
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.IRON_HAMMER)
                 .pattern("BBB")
@@ -200,7 +203,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input(Character.valueOf('B'), Blocks.IRON_BLOCK)
                 .input(Character.valueOf('I'), Items.IRON_INGOT)
                 .criterion(hasItem(Items.IRON_INGOT), conditionsFromItem(Blocks.IRON_BLOCK))
-                .offerTo(exporter, new Identifier("hammer_craft"));
+                .offerTo(exporter, Identifier.of("hammer_craft"));
 
         //Crystals
         //offerCompactingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.AMBER_BLOCK, ModItems.CRUSHED_AMBER_ITEM);
@@ -213,14 +216,25 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         //Forge Recipe
         /*new ForgeRecipeBuilder(Items.DIAMOND, ModItems.CRUSHED_DIAMOND, 1)
                 .criterion(hasItem(Items.DIAMOND), conditionsFromItem(Items.DIAMOND))
-                .offerTo(exporter, new Identifier("diamond_forge_craft"));
+                .offerTo(exporter, Identifier.of("diamond_forge_craft"));
 
         new ForgeRecipeBuilder(ModItems.AMBER_ITEM, ModItems.CRUSHED_AMBER_ITEM, 1)
                 .criterion(hasItem(ModItems.AMBER_ITEM), conditionsFromItem(Items.AIR))
-                .offerTo(exporter, new Identifier("amber_forge_craft"));*/
+                .offerTo(exporter, Identifier.of("amber_forge_craft"));*/
 
         offerSmelting(exporter, YELLOW_BERRIES, RecipeCategory.FOOD, ModItems.COOKED_YELLOW_BERRIES, 0.3f, 100, "yellow_berries");
         offerBlasting(exporter, YELLOW_BERRIES, RecipeCategory.FOOD, ModItems.COOKED_YELLOW_BERRIES, 0.3f, 50, "yellow_berries");
+
+        //inventory armor stand
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.INVENTORY_ARMOR_STAND)
+                .pattern("SSS")
+                .pattern(" C ")
+                .pattern("SPS")
+                .input(Character.valueOf('S'), Items.STICK)
+                .input(Character.valueOf('P'), Blocks.SMOOTH_STONE_SLAB)
+                .input(Character.valueOf('C'), Blocks.CHEST)
+                .criterion(hasItem(Items.STICK), conditionsFromItem(Blocks.CHEST))
+                .offerTo(exporter, Identifier.of("inventory_armor_stand_craft"));
 
     }
 

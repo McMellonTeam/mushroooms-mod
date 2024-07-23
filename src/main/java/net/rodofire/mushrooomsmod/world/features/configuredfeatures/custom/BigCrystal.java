@@ -8,11 +8,11 @@ import net.minecraft.util.math.random.Random;
 import net.minecraft.world.StructureWorldAccess;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.util.FeatureContext;
-import net.rodofire.mushrooomsmod.util.MathsUtil;
+import net.rodofire.easierworldcreator.util.FastMaths;
+import net.rodofire.easierworldcreator.worldgenutil.GenLines;
+import net.rodofire.easierworldcreator.worldgenutil.GenSpheres;
+import net.rodofire.easierworldcreator.worldgenutil.WorldGenUtil;
 import net.rodofire.mushrooomsmod.world.features.config.ModSimpleBlockFeatureConfig;
-import net.rodofire.mushrooomsmod.worldgenutil.GenLines;
-import net.rodofire.mushrooomsmod.worldgenutil.GenSpheres;
-import net.rodofire.mushrooomsmod.worldgenutil.WorldGenUtil;
 
 public class BigCrystal extends Feature<ModSimpleBlockFeatureConfig> {
 
@@ -76,8 +76,8 @@ public class BigCrystal extends Feature<ModSimpleBlockFeatureConfig> {
         int baselarge = Random.create().nextBetween(2, 5);
         for (int i = 1; i <= baselarge; i++) {
             for (float j = (float) 0; j < 360; j += (float) 45 / i) {
-                int x = (int) ((i) * MathsUtil.getFastCos(j));
-                int z = (int) ((i) * MathsUtil.getFastSin(j));
+                int x = (int) ((i) * FastMaths.getFastCos(j));
+                int z = (int) ((i) * FastMaths.getFastSin(j));
                 mutable.set(pos, x, 0, z);
                 world.setBlockState(mutable, state, 2);
 

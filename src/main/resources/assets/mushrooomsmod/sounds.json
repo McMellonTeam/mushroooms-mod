@@ -50,5 +50,11 @@
     "sounds" : [
       "mushrooomsmod:stone_destroyed"
     ]
+  },
+  "boost_mushroom": {
+    "subtitles": "sounds.mushrooomsmod.boost_mushroom",
+    "sounds": [
+      "mushrooomsmod:boost_mushroom"
+    ]
   }
 }

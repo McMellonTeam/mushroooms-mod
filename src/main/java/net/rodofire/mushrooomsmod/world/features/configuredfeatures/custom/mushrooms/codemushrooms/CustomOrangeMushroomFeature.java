@@ -8,7 +8,7 @@ import net.minecraft.util.math.random.Random;
 import net.minecraft.world.StructureWorldAccess;
 import net.minecraft.world.WorldAccess;
 import net.minecraft.world.gen.feature.HugeMushroomFeatureConfig;
-import net.rodofire.mushrooomsmod.worldgenutil.GenSpheres;
+import net.rodofire.easierworldcreator.worldgenutil.GenSpheres;
 
 import java.util.ArrayList;
 

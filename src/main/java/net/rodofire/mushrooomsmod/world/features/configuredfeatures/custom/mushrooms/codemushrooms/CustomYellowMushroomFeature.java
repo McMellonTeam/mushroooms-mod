@@ -7,8 +7,8 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.StructureWorldAccess;
 import net.minecraft.world.gen.feature.HugeMushroomFeatureConfig;
-import net.rodofire.mushrooomsmod.util.MathsUtil;
-import net.rodofire.mushrooomsmod.worldgenutil.GenSpheres;
+import net.rodofire.easierworldcreator.util.FastMaths;
+import net.rodofire.easierworldcreator.worldgenutil.GenSpheres;
 
 import java.util.ArrayList;
 
@@ -44,58 +44,58 @@ public class CustomYellowMushroomFeature extends CustomYellowMushroom {
 
 
         for (int i = 0; i <= height; i++) {
-            double x = i * MathsUtil.getFastCos(theta) * MathsUtil.getFastCos(phi);
-            double z = i * MathsUtil.getFastSin(theta) * MathsUtil.getFastCos(phi);
+            double x = i * FastMaths.getFastCos(theta) * FastMaths.getFastCos(phi);
+            double z = i * FastMaths.getFastSin(theta) * FastMaths.getFastCos(phi);
             mutable.set(pos, (int) x, i, (int) z);
             this.setBlockState(world, mutable, blockState);
 
             //cos
-            x = i * MathsUtil.getFastCos(theta) * MathsUtil.getFastCos(phi) + MathsUtil.getFastCos(theta);
+            x = i * FastMaths.getFastCos(theta) * FastMaths.getFastCos(phi) + FastMaths.getFastCos(theta);
             mutable.set(pos, (int) x, i + randomn1, (int) z);
             this.setBlockState(world, mutable, blockState);
 
 
-            x = i * MathsUtil.getFastCos(theta) * MathsUtil.getFastCos(phi) - MathsUtil.getFastCos(theta);
+            x = i * FastMaths.getFastCos(theta) * FastMaths.getFastCos(phi) - FastMaths.getFastCos(theta);
             mutable.set(pos, (int) x, i + randomn2, (int) z);
             this.setBlockState(world, mutable, blockState);
 
 
-            x = i * MathsUtil.getFastCos(theta) * MathsUtil.getFastCos(phi);
-            z = i * MathsUtil.getFastSin(theta) * MathsUtil.getFastCos(phi) - MathsUtil.getFastCos(theta);
+            x = i * FastMaths.getFastCos(theta) * FastMaths.getFastCos(phi);
+            z = i * FastMaths.getFastSin(theta) * FastMaths.getFastCos(phi) - FastMaths.getFastCos(theta);
             mutable.set(pos, (int) x, i + randomn3, (int) z);
             this.setBlockState(world, mutable, blockState);
 
 
-            z = i * MathsUtil.getFastSin(theta) * MathsUtil.getFastCos(phi) + MathsUtil.getFastCos(theta);
+            z = i * FastMaths.getFastSin(theta) * FastMaths.getFastCos(phi) + FastMaths.getFastCos(theta);
             mutable.set(pos, (int) x, i + randomn4, (int) z);
             this.setBlockState(world, mutable, blockState);
 
             //sin
 
-            z = i * MathsUtil.getFastSin(theta) * MathsUtil.getFastCos(phi);
-            x = i * MathsUtil.getFastCos(theta) * MathsUtil.getFastCos(phi) + MathsUtil.getFastSin(theta);
+            z = i * FastMaths.getFastSin(theta) * FastMaths.getFastCos(phi);
+            x = i * FastMaths.getFastCos(theta) * FastMaths.getFastCos(phi) + FastMaths.getFastSin(theta);
             mutable.set(pos, (int) x, i + randomn5, (int) z);
             this.setBlockState(world, mutable, blockState);
 
 
-            x = i * MathsUtil.getFastCos(theta) * MathsUtil.getFastCos(phi) - MathsUtil.getFastSin(theta);
+            x = i * FastMaths.getFastCos(theta) * FastMaths.getFastCos(phi) - FastMaths.getFastSin(theta);
             mutable.set(pos, (int) x, i + randomn6, (int) z);
             this.setBlockState(world, mutable, blockState);
 
 
-            x = i * MathsUtil.getFastCos(theta) * MathsUtil.getFastCos(phi);
-            z = i * MathsUtil.getFastSin(theta) * MathsUtil.getFastCos(phi) - MathsUtil.getFastSin(theta);
+            x = i * FastMaths.getFastCos(theta) * FastMaths.getFastCos(phi);
+            z = i * FastMaths.getFastSin(theta) * FastMaths.getFastCos(phi) - FastMaths.getFastSin(theta);
             mutable.set(pos, (int) x, i + randomn7, (int) z);
             this.setBlockState(world, mutable, blockState);
 
-            z = i * MathsUtil.getFastSin(theta) * MathsUtil.getFastCos(phi) + MathsUtil.getFastSin(theta);
+            z = i * FastMaths.getFastSin(theta) * FastMaths.getFastCos(phi) + FastMaths.getFastSin(theta);
             mutable.set(pos, (int) x, i + randomn8, (int) z);
             this.setBlockState(world, mutable, blockState);
 
 
         }
-        double x = height * MathsUtil.getFastCos(theta) * MathsUtil.getFastCos(phi);
-        double z = height * MathsUtil.getFastSin(theta) * MathsUtil.getFastCos(phi);
+        double x = height * FastMaths.getFastCos(theta) * FastMaths.getFastCos(phi);
+        double z = height * FastMaths.getFastSin(theta) * FastMaths.getFastCos(phi);
 
 
         Integer[] coordinates = new Integer[2];
@@ -111,14 +111,14 @@ public class CustomYellowMushroomFeature extends CustomYellowMushroom {
 
 
         for (int i = 0; i <= height; i++) {
-            double x = i * MathsUtil.getFastCos(theta) * MathsUtil.getFastCos(phi);
-            double z = i * MathsUtil.getFastSin(theta) * MathsUtil.getFastCos(phi);
+            double x = i * FastMaths.getFastCos(theta) * FastMaths.getFastCos(phi);
+            double z = i * FastMaths.getFastSin(theta) * FastMaths.getFastCos(phi);
             mutable.set(pos, (int) x, i, (int) z);
             this.setBlockState(world, mutable, blockState);
         }
 
-        double x = height * MathsUtil.getFastCos(theta) * MathsUtil.getFastCos(phi);
-        double z = height * MathsUtil.getFastSin(theta) * MathsUtil.getFastCos(phi);
+        double x = height * FastMaths.getFastCos(theta) * FastMaths.getFastCos(phi);
+        double z = height * FastMaths.getFastSin(theta) * FastMaths.getFastCos(phi);
 
 
         Integer[] coordinates = new Integer[2];
@@ -221,7 +221,7 @@ public class CustomYellowMushroomFeature extends CustomYellowMushroom {
             randomz = randomz + 2;
         }
 
-        double lenght = MathsUtil.getLength(randomx, randomz);
+        double lenght = FastMaths.getLength(randomx, randomz);
 
         if (randomx != 0) {
             theta = Math.atan((double) randomz / randomx);

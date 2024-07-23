@@ -145,7 +145,7 @@ public class CustomGreenSecondMushroomFeature extends CustomGreenSecondMushroom 
 
 
         if (!world.isClient()) {
-            StructurePlacerAPI firstcap = new StructurePlacerAPI((ServerWorld) world, new Identifier(MushrooomsMod.MOD_ID, path), mutable, BlockMirror.NONE, blockRotation, true, 1f, new BlockPos(large, 0, large1));
+            StructurePlacerAPI firstcap = new StructurePlacerAPI((ServerWorld) world, Identifier.of(MushrooomsMod.MOD_ID, path), mutable, BlockMirror.NONE, blockRotation, true, 1f, new BlockPos(large, 0, large1));
             firstcap.loadStructure();
         }
         return new Integer[]{rotation, cap};
@@ -167,7 +167,7 @@ public class CustomGreenSecondMushroomFeature extends CustomGreenSecondMushroom 
         large = coordinatesRotation[0];
         large1 = coordinatesRotation[1];
         if (!world.isClient()) {
-            StructurePlacerAPI secondcap = new StructurePlacerAPI((ServerWorld) world, new Identifier(MushrooomsMod.MOD_ID, path), mutable, BlockMirror.NONE, blockRotation, true, 1f, new BlockPos(large, 0, large1));
+            StructurePlacerAPI secondcap = new StructurePlacerAPI((ServerWorld) world, Identifier.of(MushrooomsMod.MOD_ID, path), mutable, BlockMirror.NONE, blockRotation, true, 1f, new BlockPos(large, 0, large1));
             secondcap.loadStructure();
         }
     }
@@ -189,7 +189,7 @@ public class CustomGreenSecondMushroomFeature extends CustomGreenSecondMushroom 
         large1 = coordinatesRotation[1];
 
         if (!world.isClient()) {
-            StructurePlacerAPI firstcap = new StructurePlacerAPI((ServerWorld) world, new Identifier(MushrooomsMod.MOD_ID, path), mutable, BlockMirror.NONE, blockRotation, true, 1f, new BlockPos(large, 0, large1));
+            StructurePlacerAPI firstcap = new StructurePlacerAPI((ServerWorld) world, Identifier.of(MushrooomsMod.MOD_ID, path), mutable, BlockMirror.NONE, blockRotation, true, 1f, new BlockPos(large, 0, large1));
             firstcap.loadStructure();
         }
     }

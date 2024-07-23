@@ -47,8 +47,8 @@ public class BigGreenMushroomPlant extends CropBlock implements Fertilizable {
     }
 
     @Override
-    public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
-        ItemStack itemStack = player.getStackInHand(hand);
+    public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, BlockHitResult hit) {
+        ItemStack itemStack = player.getMainHandStack();
         if (itemStack.getItem() == ModItems.PURPLE_MUSHROOM_POWDER) {
             world.setBlockState(pos, getAgeToBlockstate(getAge(state)), Block.NOTIFY_LISTENERS);
             return ActionResult.SUCCESS;

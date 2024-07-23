@@ -19,7 +19,7 @@ import java.util.List;
 
 public class ForgeCategory implements DisplayCategory<BasicDisplay> {
     public static final Identifier TEXTURE =
-            new Identifier(MushrooomsMod.MOD_ID, "textures/gui/forge_gui.png");
+            Identifier.of(MushrooomsMod.MOD_ID, "textures/gui/forge_gui.png");
     public static final CategoryIdentifier<ForgeDisplay> FORGE_EMPOWERING =
             CategoryIdentifier.of(MushrooomsMod.MOD_ID, "forge_empowering");
 
@@ -45,7 +45,6 @@ public class ForgeCategory implements DisplayCategory<BasicDisplay> {
 
     @Override
     public List<Widget> setupDisplay(BasicDisplay display, Rectangle bounds) {
-        System.out.println("rei");
         List<Widget> widgets = new LinkedList<>();
         Point startPoint = new Point(bounds.getCenterX() - 87, bounds.getCenterY() - 35);
         widgets.add(Widgets.createTexturedWidget(TEXTURE,
@@ -56,7 +55,6 @@ public class ForgeCategory implements DisplayCategory<BasicDisplay> {
 
         widgets.add(Widgets.createSlot(new Point(startPoint.x + 134, startPoint.y + 33))
                 .markOutput().entries(display.getOutputEntries().get(0)));
-        System.out.println("reiend");
         return widgets;
     }
 }

@@ -19,18 +19,18 @@ import net.rodofire.mushrooomsmod.world.biome.ModBiomeFeatures;
 
 public class ModOverworldBiomes {
     /*----------Surface----------*/
-    public static final RegistryKey<Biome> SHROOM_ISLAND1 = RegistryKey.of(RegistryKeys.BIOME, new Identifier(MushrooomsMod.MOD_ID, "shroom_island1"));
+    public static final RegistryKey<Biome> SHROOM_ISLAND1 = RegistryKey.of(RegistryKeys.BIOME, Identifier.of(MushrooomsMod.MOD_ID, "shroom_island1"));
     //Schroom island with different mushrooms than the first biome
-    public static final RegistryKey<Biome> SHROOM_ISLAND2 = RegistryKey.of(RegistryKeys.BIOME, new Identifier(MushrooomsMod.MOD_ID, "shroom_island2"));
-    public static final RegistryKey<Biome> MAGICAL_PLAIN = RegistryKey.of(RegistryKeys.BIOME, new Identifier(MushrooomsMod.MOD_ID, "magical_plain"));
-    public static final RegistryKey<Biome> COLORFUL_PLAINS = RegistryKey.of(RegistryKeys.BIOME, new Identifier(MushrooomsMod.MOD_ID, "colorful_plain"));
+    public static final RegistryKey<Biome> SHROOM_ISLAND2 = RegistryKey.of(RegistryKeys.BIOME, Identifier.of(MushrooomsMod.MOD_ID, "shroom_island2"));
+    public static final RegistryKey<Biome> MAGICAL_PLAIN = RegistryKey.of(RegistryKeys.BIOME, Identifier.of(MushrooomsMod.MOD_ID, "magical_plain"));
+    public static final RegistryKey<Biome> COLORFUL_PLAINS = RegistryKey.of(RegistryKeys.BIOME, Identifier.of(MushrooomsMod.MOD_ID, "colorful_plain"));
 
     /*----------Cave----------*/
-    public static final RegistryKey<Biome> PURPLE_SHROOM_CAVE = RegistryKey.of(RegistryKeys.BIOME, new Identifier(MushrooomsMod.MOD_ID, "purple_luminescent_shroom_cave"));
-    public static final RegistryKey<Biome> BLUE_LUMINESCENT_SHROOM_CAVE = RegistryKey.of(RegistryKeys.BIOME, new Identifier(MushrooomsMod.MOD_ID, "blue_luminescent_shroom_cave"));
-    public static final RegistryKey<Biome> VANILLA_SHROOM_CAVE = RegistryKey.of(RegistryKeys.BIOME, new Identifier(MushrooomsMod.MOD_ID, "vanilla_schroom_cave"));
-    public static final RegistryKey<Biome> CRYSTAL_CAVE = RegistryKey.of(RegistryKeys.BIOME, new Identifier(MushrooomsMod.MOD_ID, "crystal_cave"));
-    public static final RegistryKey<Biome> FOREST_CAVE = RegistryKey.of(RegistryKeys.BIOME, new Identifier(MushrooomsMod.MOD_ID, "forest_cave"));
+    public static final RegistryKey<Biome> PURPLE_SHROOM_CAVE = RegistryKey.of(RegistryKeys.BIOME, Identifier.of(MushrooomsMod.MOD_ID, "purple_luminescent_shroom_cave"));
+    public static final RegistryKey<Biome> BLUE_LUMINESCENT_SHROOM_CAVE = RegistryKey.of(RegistryKeys.BIOME, Identifier.of(MushrooomsMod.MOD_ID, "blue_luminescent_shroom_cave"));
+    public static final RegistryKey<Biome> VANILLA_SHROOM_CAVE = RegistryKey.of(RegistryKeys.BIOME, Identifier.of(MushrooomsMod.MOD_ID, "vanilla_schroom_cave"));
+    public static final RegistryKey<Biome> CRYSTAL_CAVE = RegistryKey.of(RegistryKeys.BIOME, Identifier.of(MushrooomsMod.MOD_ID, "crystal_cave"));
+    public static final RegistryKey<Biome> FOREST_CAVE = RegistryKey.of(RegistryKeys.BIOME, Identifier.of(MushrooomsMod.MOD_ID, "forest_cave"));
 
     public static void bootstrap(Registerable<Biome> context) {
         context.register(SHROOM_ISLAND1, shroomIsland1(context));

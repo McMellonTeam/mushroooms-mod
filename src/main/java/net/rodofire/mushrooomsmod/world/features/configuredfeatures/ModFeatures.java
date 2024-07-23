@@ -51,7 +51,7 @@ public abstract class ModFeatures<FC extends FeatureConfig> {
     public static Feature<ModSimpleBlockFeatureConfig> FEATURE_TESTER;
 
     public static void addFeatures() {
-        HUGE_BLUE_MUSHROOM = registercustomfeature("huge_blue_mushroom", new CustomBuleMushroomFeature(ModMushroomFeatureConfig.CODEC));
+        HUGE_BLUE_MUSHROOM = registercustomfeature("huge_blue_mushroom", new CustomBlueMushroomFeature(ModMushroomFeatureConfig.CODEC));
         HUGE_PURPLE_MUSHROOM = registercustomfeature("huge_purple_mushroom", new CustomPurpleMushroomFeature(HugeMushroomFeatureConfig.CODEC));
         HUGE_GREEN_MUSHROOM = registercustomfeature("huge_green_mushroom", new CustomGreenMushroomFeature(ModMushroomFeatureConfig.CODEC));
         HUGE_BLUE_LUMINESCENT_MUSHROOM = registercustomfeature("huge_blue_luminescent_mushroom", new CustomLuminescentBlueMushroomFeature(HugeMushroomFeatureConfig.CODEC));

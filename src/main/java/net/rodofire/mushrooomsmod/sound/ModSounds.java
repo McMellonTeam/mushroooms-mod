@@ -1,5 +1,6 @@
 package net.rodofire.mushrooomsmod.sound;
 
+import net.minecraft.block.jukebox.JukeboxSong;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.sound.SoundEvent;
@@ -19,8 +20,10 @@ public class ModSounds {
 
     public static SoundEvent STONE_DESTROYED = registerSoundEvent("stone_destroyed");
 
+    public static SoundEvent BOOST_MUSHROOM = registerSoundEvent("boost_mushroom");
+
     private static SoundEvent registerSoundEvent(String name) {
-        Identifier id = new Identifier(MushrooomsMod.MOD_ID, name);
+        Identifier id = Identifier.of(MushrooomsMod.MOD_ID, name);
         return Registry.register(Registries.SOUND_EVENT, id, SoundEvent.of(id));
     }
 
