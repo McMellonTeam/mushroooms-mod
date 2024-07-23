@@ -7,7 +7,6 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
-import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.data.DataTracker;
 import net.minecraft.entity.data.TrackedData;
 import net.minecraft.entity.data.TrackedDataHandlerRegistry;
@@ -25,11 +24,12 @@ import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.minecraft.world.World;
 import net.rodofire.mushrooomsmod.sound.ModSounds;
 import org.jetbrains.annotations.Nullable;
-import software.bernie.geckolib.animatable.GeoAnimatable;
 import software.bernie.geckolib.animatable.GeoEntity;
-import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
-import software.bernie.geckolib.animatable.instance.SingletonAnimatableInstanceCache;
-import software.bernie.geckolib.animation.*;
+import software.bernie.geckolib.core.animatable.GeoAnimatable;
+import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
+import software.bernie.geckolib.core.animatable.instance.SingletonAnimatableInstanceCache;
+import software.bernie.geckolib.core.animation.*;
+import software.bernie.geckolib.core.object.PlayState;
 
 import java.util.List;
 import java.util.UUID;
@@ -51,9 +51,9 @@ public class CrystalGolemEntity extends GolemEntity implements Angerable, GeoEnt
     protected static final TrackedData<Byte> CRYSTAL_GOLEM_FLAGS = DataTracker.registerData(CrystalGolemEntity.class, TrackedDataHandlerRegistry.BYTE);
 
     @Override
-    protected void initDataTracker(DataTracker.Builder builder) {
-        super.initDataTracker(builder);
-        builder.add(CRYSTAL_GOLEM_FLAGS, (byte) 0);
+    protected void initDataTracker() {
+        super.initDataTracker();
+        this.dataTracker.startTracking(CRYSTAL_GOLEM_FLAGS, (byte) 0);
     }
 
     public CrystalGolemEntity(EntityType<? extends GolemEntity> entityType, World world) {
@@ -65,7 +65,7 @@ public class CrystalGolemEntity extends GolemEntity implements Angerable, GeoEnt
         this.goalSelector.add(1, new MeleeAttackGoal(this, 1f, true));
         this.goalSelector.add(2, new WanderNearTargetGoal(this, 0.2f, 32.0f));
         this.goalSelector.add(3, new WanderAroundGoal(this, 0.2f));
-        this.targetSelector.add(4, new RevengeGoal(this));
+        this.targetSelector.add(4, new RevengeGoal(this, new Class[0]));
         this.goalSelector.add(5, new LookAtEntityGoal(this, PlayerEntity.class, 6.0f));
         this.targetSelector.add(3, new ActiveTargetGoal<PlayerEntity>(this, PlayerEntity.class, 10, true, false, this::shouldAngerAt));
         this.targetSelector.add(3, new ActiveTargetGoal<MobEntity>(this, MobEntity.class, 5, false, false, this::shouldAngerAt));
@@ -149,6 +149,8 @@ public class CrystalGolemEntity extends GolemEntity implements Angerable, GeoEnt
 
             double d = entity.getAttributeValue(EntityAttributes.GENERIC_KNOCKBACK_RESISTANCE);
             double e = Math.max(0.0, 1.0 - d);
+
+            this.applyDamageEffects(this, entity);
 
             entity.setVelocity(-pull.getX() * 0.5f * e, 0.5f * e, -pull.getZ() * 0.5f * e);
             entity.velocityModified = true;

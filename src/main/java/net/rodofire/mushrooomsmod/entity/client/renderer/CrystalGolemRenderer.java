@@ -16,7 +16,7 @@ public class CrystalGolemRenderer extends GeoEntityRenderer<CrystalGolemEntity> 
 
     @Override
     public Identifier getTextureLocation(CrystalGolemEntity animatable) {
-        return Identifier.of(MushrooomsMod.MOD_ID, "textures/entity/crystal_golem.png");
+        return new Identifier(MushrooomsMod.MOD_ID, "textures/entity/crystal_golem.png");
     }
 
     @Override

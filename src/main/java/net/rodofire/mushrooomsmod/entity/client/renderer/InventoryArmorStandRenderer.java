@@ -16,9 +16,9 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.cache.object.BakedGeoModel;
 import software.bernie.geckolib.cache.object.GeoBone;
+import software.bernie.geckolib.renderer.DynamicGeoEntityRenderer;
 import software.bernie.geckolib.renderer.layer.BlockAndItemGeoLayer;
 import software.bernie.geckolib.renderer.layer.ItemArmorGeoLayer;
-import software.bernie.geckolib.renderer.specialty.DynamicGeoEntityRenderer;
 
 
 public class InventoryArmorStandRenderer extends DynamicGeoEntityRenderer<InventoryArmorStandEntity> {
@@ -124,16 +124,15 @@ public class InventoryArmorStandRenderer extends DynamicGeoEntityRenderer<Invent
     }
 
     @Override
-    public void preRender(MatrixStack poseStack, InventoryArmorStandEntity animatable, BakedGeoModel model, @Nullable VertexConsumerProvider bufferSource, @Nullable VertexConsumer buffer, boolean isReRender, float partialTick, int packedLight, int packedOverlay, int colour) {
-        super.preRender(poseStack, animatable, model, bufferSource, buffer, isReRender, partialTick, packedLight, packedOverlay, colour);
-
-        mainHandItem = animatable.getMainHandStack();
-        offhandItem = animatable.getOffHandStack();
-
+    public boolean hasLabel(InventoryArmorStandEntity animatable) {
+        return animatable.hasCustomName();
     }
 
     @Override
-    public boolean hasLabel(InventoryArmorStandEntity animatable) {
-        return animatable.hasCustomName();
+    public void preRender(MatrixStack poseStack, InventoryArmorStandEntity animatable, BakedGeoModel model, VertexConsumerProvider bufferSource, VertexConsumer buffer, boolean isReRender, float partialTick, int packedLight, int packedOverlay, float red, float green, float blue, float alpha) {
+        super.preRender(poseStack, animatable, model, bufferSource, buffer, isReRender, partialTick, packedLight, packedOverlay, red, green, blue, alpha);
+
+        mainHandItem = animatable.getMainHandStack();
+        offhandItem = animatable.getOffHandStack();
     }
 }

@@ -77,7 +77,7 @@ public class FleurBerries extends Block implements Fertilizable {
     }
 
     @Override
-    public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, BlockHitResult hit) {
+    public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
         if (world.isClient) return ActionResult.PASS;
         if ((player.getMainHandStack().getItem() == Items.BONE_MEAL || player.getOffHandStack().getItem() == Items.BONE_MEAL)) {
             if (state.get(AGE) == 3) {

@@ -12,16 +12,16 @@ import net.minecraft.entity.data.TrackedDataHandlerRegistry;
 import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ItemStack;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
-import software.bernie.geckolib.animatable.GeoAnimatable;
 import software.bernie.geckolib.animatable.GeoEntity;
-import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
-import software.bernie.geckolib.animatable.instance.SingletonAnimatableInstanceCache;
-import software.bernie.geckolib.animation.*;
+import software.bernie.geckolib.core.animatable.GeoAnimatable;
+import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
+import software.bernie.geckolib.core.animatable.instance.SingletonAnimatableInstanceCache;
+import software.bernie.geckolib.core.animation.*;
+import software.bernie.geckolib.core.object.PlayState;
 
 public class SchroomStickEntity extends AnimalEntity implements GeoEntity {
     private final AnimatableInstanceCache cache = new SingletonAnimatableInstanceCache(this);
@@ -41,11 +41,6 @@ public class SchroomStickEntity extends AnimalEntity implements GeoEntity {
 
     public SchroomStickEntity(EntityType<? extends AnimalEntity> entityType, World world) {
         super(entityType, world);
-    }
-
-    @Override
-    public boolean isBreedingItem(ItemStack stack) {
-        return false;
     }
 
     @Nullable
@@ -121,11 +116,11 @@ public class SchroomStickEntity extends AnimalEntity implements GeoEntity {
     }
 
     @Override
-    protected void initDataTracker(DataTracker.Builder builder) {
-        super.initDataTracker(builder);
-        this.dataTracker.set(JUMPING, false);
-        this.dataTracker.set(GAVING_UP, false);
-        this.dataTracker.set(UNGAVING_UP, false);
+    protected void initDataTracker() {
+        super.initDataTracker();
+        this.dataTracker.startTracking(JUMPING, false);
+        this.dataTracker.startTracking(GAVING_UP, false);
+        this.dataTracker.startTracking(UNGAVING_UP, false);
     }
 
     public void setJump(boolean jump) {

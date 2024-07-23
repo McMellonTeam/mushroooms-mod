@@ -1,6 +1,5 @@
 package net.rodofire.mushrooomsmod.block.custom.PinkMushroomBlock;
 
-import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.block.*;
 import net.minecraft.entity.player.PlayerEntity;
@@ -13,7 +12,6 @@ import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.random.Random;
-import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldView;
 import net.rodofire.mushrooomsmod.block.ModBlocks;
@@ -25,7 +23,7 @@ public class PinkMushroomVinesBodyBlock extends AbstractPlantBlock
 
     public static final MapCodec<PinkMushroomVinesBodyBlock> CODEC = PinkMushroomVinesBodyBlock.createCodec(PinkMushroomVinesBodyBlock::new);
 
-    public PinkMushroomVinesBodyBlock(AbstractBlock.Settings settings) {
+    public PinkMushroomVinesBodyBlock(Settings settings) {
         super(settings, Direction.DOWN, SHAPE, false);
         this.setDefaultState(this.stateManager.getDefaultState().with(BERRIES, false));
     }
@@ -47,7 +45,7 @@ public class PinkMushroomVinesBodyBlock extends AbstractPlantBlock
 
 
     @Override
-    public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, BlockHitResult hit) {
+    public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
         return PinkMushroomVines.pickBerries(player, state, world, pos);
     }
 

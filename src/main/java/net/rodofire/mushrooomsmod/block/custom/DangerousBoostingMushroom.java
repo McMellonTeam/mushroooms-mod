@@ -3,14 +3,12 @@ package net.rodofire.mushrooomsmod.block.custom;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
+import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.server.world.ServerWorld;
-import net.minecraft.sound.SoundCategory;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.math.BlockPos;
@@ -22,7 +20,6 @@ import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
 import net.minecraft.world.WorldView;
 import net.rodofire.mushrooomsmod.block.entity.DangerousBoostingMushroomBlockEntity;
-import net.rodofire.mushrooomsmod.sound.ModSounds;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
@@ -60,7 +57,6 @@ public class DangerousBoostingMushroom extends BlockWithEntity {
     @Override
     public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
         if (entity instanceof LivingEntity) {
-            world.playSound(null, pos, ModSounds.BOOST_MUSHROOM, SoundCategory.BLOCKS, 2f, (float) Random.create().nextBetween(1, 30) / 10);
             entity.addVelocity(0.0D, 2D, 0.0D);
         }
     }
@@ -84,8 +80,9 @@ public class DangerousBoostingMushroom extends BlockWithEntity {
     }
 
     @Override
-    public void appendTooltip(ItemStack stack, Item.TooltipContext context, List<Text> tooltip, TooltipType options) {
+    public void appendTooltip(ItemStack stack, @Nullable BlockView world, List<Text> tooltip, TooltipContext options) {
         tooltip.add(Text.translatable("tooltip.mushrooomsmod.dangerous_boosting_mushroom").formatted(Formatting.BLUE));
-        super.appendTooltip(stack, context, tooltip, options);
+
+        super.appendTooltip(stack, world, tooltip, options);
     }
 }

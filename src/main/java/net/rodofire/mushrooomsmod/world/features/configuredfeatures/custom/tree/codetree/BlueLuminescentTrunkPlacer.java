@@ -24,7 +24,7 @@ public class BlueLuminescentTrunkPlacer extends TrunkPlacer {
     private int secondRandomHeight;
 
     public static final BlueLuminescentTrunkPlacer INSTANCE = new BlueLuminescentTrunkPlacer(6,6,6);
-    public static final MapCodec<BlueLuminescentTrunkPlacer> CODEC = MapCodec.unit(() -> INSTANCE);
+    public static final Codec<BlueLuminescentTrunkPlacer> CODEC = Codec.unit(() -> INSTANCE);
 
     public BlueLuminescentTrunkPlacer(int baseHeight, int firstRandomHeight, int secondRandomHeight) {
         super(baseHeight, firstRandomHeight, secondRandomHeight);

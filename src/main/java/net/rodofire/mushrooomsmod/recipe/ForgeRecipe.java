@@ -1,24 +1,22 @@
 package net.rodofire.mushrooomsmod.recipe;
 
-import com.mojang.datafixers.kinds.Applicative;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.DataResult;
-import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
+import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.ItemStack;
-import net.minecraft.network.RegistryByteBuf;
-import net.minecraft.network.codec.PacketCodec;
-import net.minecraft.recipe.*;
-import net.minecraft.recipe.book.CraftingRecipeCategory;
-import net.minecraft.recipe.input.SingleStackRecipeInput;
-import net.minecraft.registry.RegistryWrapper;
+import net.minecraft.network.PacketByteBuf;
+import net.minecraft.recipe.Ingredient;
+import net.minecraft.recipe.Recipe;
+import net.minecraft.recipe.RecipeSerializer;
+import net.minecraft.recipe.RecipeType;
+import net.minecraft.registry.DynamicRegistryManager;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.dynamic.Codecs;
 import net.minecraft.world.World;
 
 import java.util.List;
-
-public class ForgeRecipe implements Recipe<SingleStackRecipeInput> {
+public class ForgeRecipe implements Recipe<SimpleInventory> {
     private final ItemStack output;
     private final List<Ingredient> recipeItems;
 
@@ -28,16 +26,16 @@ public class ForgeRecipe implements Recipe<SingleStackRecipeInput> {
     }
 
     @Override
-    public boolean matches(SingleStackRecipeInput input, World world) {
-        if (world.isClient()) {
+    public boolean matches(SimpleInventory inventory, World world) {
+        if(world.isClient()) {
             return false;
         }
 
-        return recipeItems.get(0).test(input.item());
+        return recipeItems.get(0).test(inventory.getStack(0));
     }
 
     @Override
-    public ItemStack craft(SingleStackRecipeInput input, RegistryWrapper.WrapperLookup lookup) {
+    public ItemStack craft(SimpleInventory inventory, DynamicRegistryManager registryManager) {
         return output.copy();
     }
 
@@ -47,7 +45,7 @@ public class ForgeRecipe implements Recipe<SingleStackRecipeInput> {
     }
 
     @Override
-    public ItemStack getResult(RegistryWrapper.WrapperLookup registriesLookup) {
+    public ItemStack getResult(DynamicRegistryManager registryManager) {
         return output;
     }
 
@@ -63,80 +61,57 @@ public class ForgeRecipe implements Recipe<SingleStackRecipeInput> {
 
     @Override
     public DefaultedList<Ingredient> getIngredients() {
-        DefaultedList<Ingredient> list = DefaultedList.ofSize(this.recipeItems.size());
+        DefaultedList list = DefaultedList.ofSize(this.recipeItems.size());
         list.addAll(recipeItems);
         return list;
     }
 
-
     public static class Type implements RecipeType<ForgeRecipe> {
+        private Type() { }
         public static final Type INSTANCE = new Type();
         public static final String ID = "forge_crafting";
-
-        private Type() {
-        }
     }
-
 
     public static class Serializer implements RecipeSerializer<ForgeRecipe> {
         public static final Serializer INSTANCE = new Serializer();
         public static final String ID = "forge_crafting";
+        // this is the name given in the json file
 
-        /*public static final MapCodec<ForgeRecipe> CODEC = RecordCodecBuilder.mapCodec(in -> in.group(
+        public static final Codec<ForgeRecipe> CODEC = RecordCodecBuilder.create(in -> in.group(
                 validateAmount(Ingredient.DISALLOW_EMPTY_CODEC, 9).fieldOf("ingredients").forGetter(ForgeRecipe::getIngredients),
-                ItemStack.CODEC.fieldOf("output").forGetter(r -> r.output)
+                ItemStack.RECIPE_RESULT_CODEC.fieldOf("output").forGetter(r -> r.output)
         ).apply(in, ForgeRecipe::new));
-*/
-        private static final PacketCodec<RegistryByteBuf, ForgeRecipe> PACKET_CODEC = PacketCodec.ofStatic(Serializer::write, Serializer::read);
 
-        /*private static Codec<List<Ingredient>> validateAmount(Codec<Ingredient> delegate, int max) {
+        private static Codec<List<Ingredient>> validateAmount(Codec<Ingredient> delegate, int max) {
             return Codecs.validate(Codecs.validate(
                     delegate.listOf(), list -> list.size() > max ? DataResult.error(() -> "Recipe has too many ingredients!") : DataResult.success(list)
             ), list -> list.isEmpty() ? DataResult.error(() -> "Recipe has no ingredients!") : DataResult.success(list));
-        }*/
-
-
-        private static final MapCodec<ForgeRecipe> CODEC = RecordCodecBuilder.mapCodec( instance -> instance.group( (Ingredient.DISALLOW_EMPTY_CODEC.listOf().fieldOf("ingredients")).flatXmap(ingredients -> {
-            Ingredient[] ingredients2 = (Ingredient[])ingredients.stream().filter(ingredient -> !ingredient.isEmpty()).toArray(Ingredient[]::new);
-            if (ingredients2.length == 0) {
-                return DataResult.error(() -> "No ingredients for shapeless recipe");
-            }
-            if (ingredients2.length > 9) {
-                return DataResult.error(() -> "Too many ingredients for shapeless recipe");
-            }
-            return DataResult.success(DefaultedList.copyOf(Ingredient.EMPTY, ingredients2));
-        }, DataResult::success).forGetter(recipe -> recipe.getIngredients()),(ItemStack.VALIDATED_CODEC.fieldOf("result")).forGetter(recipe -> recipe.output)).apply(instance, ForgeRecipe::new));
+        }
 
         @Override
-        public MapCodec<ForgeRecipe> codec() {
+        public Codec<ForgeRecipe> codec() {
             return CODEC;
         }
 
         @Override
-        public PacketCodec<RegistryByteBuf, ForgeRecipe> packetCodec() {
-            return PACKET_CODEC;
-        }
-
-        public static ForgeRecipe read(RegistryByteBuf buf) {
+        public ForgeRecipe read(PacketByteBuf buf) {
             DefaultedList<Ingredient> inputs = DefaultedList.ofSize(buf.readInt(), Ingredient.EMPTY);
 
-            for(int i = 0; i < inputs.size(); i++) {
-                inputs.set(i, Ingredient.PACKET_CODEC.decode(buf));
+            for (int i = 0; i < inputs.size(); i++) {
+                inputs.set(i, Ingredient.fromPacket(buf));
             }
 
-            ItemStack output = ItemStack.PACKET_CODEC.decode(buf);
-
+            ItemStack output = buf.readItemStack();
             return new ForgeRecipe(inputs, output);
         }
 
-        public static void write(RegistryByteBuf buf, ForgeRecipe recipe) {
+        @Override
+        public void write(PacketByteBuf buf, ForgeRecipe recipe) {
             buf.writeInt(recipe.getIngredients().size());
-
-            for (Ingredient ingredient : recipe.getIngredients()) {
-                Ingredient.PACKET_CODEC.encode(buf, ingredient);
+            for (Ingredient ing : recipe.getIngredients()) {
+                ing.write(buf);
             }
-            ItemStack.PACKET_CODEC.encode(buf, recipe.getResult(null));
+            buf.writeItemStack(recipe.getResult(null));
         }
     }
 }
-

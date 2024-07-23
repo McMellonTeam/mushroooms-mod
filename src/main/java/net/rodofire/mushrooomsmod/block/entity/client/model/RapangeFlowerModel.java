@@ -8,16 +8,16 @@ import software.bernie.geckolib.model.GeoModel;
 public class RapangeFlowerModel extends GeoModel<RapangeFlowersBlockEntity> {
     @Override
     public Identifier getModelResource(RapangeFlowersBlockEntity animatable) {
-        return Identifier.of(MushrooomsMod.MOD_ID, "geo/rapange_flower.geo.json");
+        return new Identifier(MushrooomsMod.MOD_ID, "geo/rapange_flower.geo.json");
     }
 
     @Override
     public Identifier getTextureResource(RapangeFlowersBlockEntity animatable) {
-        return Identifier.of(MushrooomsMod.MOD_ID, "textures/block/rapange_flowers.png");
+        return new Identifier(MushrooomsMod.MOD_ID, "textures/block/rapange_flowers.png");
     }
 
     @Override
     public Identifier getAnimationResource(RapangeFlowersBlockEntity animatable) {
-        return Identifier.of(MushrooomsMod.MOD_ID, "animations/rapange_flower.animation.json");
+        return new Identifier(MushrooomsMod.MOD_ID, "animations/rapange_flower.animation.json");
     }
 }

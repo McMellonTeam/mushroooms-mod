@@ -13,7 +13,7 @@ import net.rodofire.mushrooomsmod.block.ModBlocks;
 
 public class ModItemGroup {
     public static final ItemGroup MUSHROOM_GROUP = Registry.register(Registries.ITEM_GROUP,
-            Identifier.of(MushrooomsMod.MOD_ID, "luminescent_mushroom"),
+            new Identifier(MushrooomsMod.MOD_ID, "luminescent_mushroom"),
             FabricItemGroup.builder().displayName(Text.translatable("itemgroup.mushroooms"))
                     .icon(() -> new ItemStack(ModBlocks.BLUE_LUMINESCENT_MUSHROOM)).entries((displayContext, entries) -> {
                         //Blocks

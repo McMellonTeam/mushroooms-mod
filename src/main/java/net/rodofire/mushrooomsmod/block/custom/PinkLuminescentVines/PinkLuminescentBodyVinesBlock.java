@@ -20,7 +20,7 @@ public class PinkLuminescentBodyVinesBlock extends Block implements Fertilizable
     public static BooleanProperty MANY_VINES = BooleanProperty.of("many_vines");
 
 
-    public PinkLuminescentBodyVinesBlock(Block.Settings settings) {
+    public PinkLuminescentBodyVinesBlock(Settings settings) {
         super(settings);
     }
 

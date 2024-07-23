@@ -16,7 +16,7 @@ public class BoleteCowRenderer extends GeoEntityRenderer<BoleteCowEntity> {
 
     @Override
     public Identifier getTextureLocation(BoleteCowEntity animatable) {
-        return Identifier.of(MushrooomsMod.MOD_ID, "textures/entity/bolete_cow.png");
+        return new Identifier(MushrooomsMod.MOD_ID, "textures/entity/bolete_cow.png");
     }
 
     @Override

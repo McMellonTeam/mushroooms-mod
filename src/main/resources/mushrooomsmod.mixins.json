@@ -5,7 +5,7 @@
   "mixins": [
     "BrushItemMixin",
 
-
+    "FoliagePlacerTypeInvoker",
     "TreeDecoratorTypeInvoker",
     "TrunkPlacerTypeInvoker",
     "ClientPlayNetworkHandlerMixin"

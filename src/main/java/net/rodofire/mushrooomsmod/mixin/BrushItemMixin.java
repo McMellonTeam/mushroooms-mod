@@ -14,6 +14,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.rodofire.mushrooomsmod.block.custom.BlockBrushableBlock;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
@@ -21,12 +22,12 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(BrushItem.class)
 public abstract class BrushItemMixin extends Item {
-
+    @Unique
     protected abstract HitResult getHitResult(LivingEntity user);
 
     @Inject(method = "usageTick", at = @At("TAIL"))
     public void amberBlock(World world, LivingEntity user, ItemStack stack, int remainingUseTicks, CallbackInfo ci) {
-        int i = this.getMaxUseTime(stack, user) - remainingUseTicks + 1;
+        int i = this.getMaxUseTime(stack) - remainingUseTicks + 1;
         boolean bl = i % 10 == 5;
         if (bl) {
             PlayerEntity playerEntity = (PlayerEntity) user;
@@ -38,7 +39,7 @@ public abstract class BrushItemMixin extends Item {
 
             if (!world.isClient && object instanceof BlockBrushableBlock && ((BlockBrushableBlock) object).brush(world.getTime(), playerEntity, blockPos, i)) {
                 EquipmentSlot equipmentSlot = stack.equals(playerEntity.getEquippedStack(EquipmentSlot.OFFHAND)) ? EquipmentSlot.OFFHAND : EquipmentSlot.MAINHAND;
-                stack.damage(1, user, equipmentSlot);
+                stack.damage(1, user, userx -> userx.sendEquipmentBreakStatus(equipmentSlot));
             }
         }
     }

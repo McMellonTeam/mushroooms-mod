@@ -16,7 +16,7 @@ public class SchroomStickRenderer extends GeoEntityRenderer<SchroomStickEntity> 
 
     @Override
     public Identifier getTextureLocation(SchroomStickEntity animatable) {
-        return Identifier.of(MushrooomsMod.MOD_ID, "textures/entity/schroom_stick.png");
+        return new Identifier(MushrooomsMod.MOD_ID, "textures/entity/schroom_stick.png");
     }
 
     @Override

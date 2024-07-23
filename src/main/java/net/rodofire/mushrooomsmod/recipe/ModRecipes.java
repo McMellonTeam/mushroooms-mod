@@ -7,10 +7,9 @@ import net.rodofire.mushrooomsmod.MushrooomsMod;
 
 public class ModRecipes {
     public static void registerRecipes() {
-        Registry.register(Registries.RECIPE_SERIALIZER, Identifier.of(MushrooomsMod.MOD_ID, ForgeRecipe.Serializer.ID),
+        Registry.register(Registries.RECIPE_SERIALIZER, new Identifier(MushrooomsMod.MOD_ID, ForgeRecipe.Serializer.ID),
                 ForgeRecipe.Serializer.INSTANCE);
-
-        Registry.register(Registries.RECIPE_TYPE, Identifier.of(MushrooomsMod.MOD_ID, ForgeRecipe.Type.ID),
+        Registry.register(Registries.RECIPE_TYPE, new Identifier(MushrooomsMod.MOD_ID, ForgeRecipe.Type.ID),
                 ForgeRecipe.Type.INSTANCE);
     }
 }

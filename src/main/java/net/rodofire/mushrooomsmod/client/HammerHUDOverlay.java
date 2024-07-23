@@ -45,14 +45,14 @@ public class HammerHUDOverlay implements HudRenderCallback {
     }
 
     @Override
-    public void onHudRender(DrawContext drawContext, RenderTickCounter tickCounter) {
+    public void onHudRender(DrawContext drawContext, float tickDelta) {
         MinecraftClient client = MinecraftClient.getInstance();
         if (client == null) return;
         PlayerEntity player = client.player;
         if (player != null) {
 
             ItemStack item = player.getMainHandStack();
-            HitResult hit = player.raycast(5, tickCounter.getTickDelta(true), false);
+            HitResult hit = player.raycast(5, tickDelta, false);
 
             if (item.getItem() instanceof HammerItem && hit.getType() == HitResult.Type.BLOCK) {
                 World world = player.getWorld();
@@ -73,3 +73,6 @@ public class HammerHUDOverlay implements HudRenderCallback {
         }
     }
 }
+
+
+
