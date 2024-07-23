@@ -38,8 +38,8 @@ public class CrystalCreeperRenderer extends GeoEntityRenderer<CrystalCreeperEnti
     }
 
     @Override
-    public int getPackedOverlay(CrystalCreeperEntity animatable, float u) {
-        return super.getPackedOverlay(animatable, getSwellOverlay(animatable, u));
+    public int getPackedOverlay(CrystalCreeperEntity animatable, float u, float partialTick) {
+        return super.getPackedOverlay(animatable, u, partialTick);
     }
 
     protected float getSwellOverlay(CrystalCreeperEntity entity, float u) {
