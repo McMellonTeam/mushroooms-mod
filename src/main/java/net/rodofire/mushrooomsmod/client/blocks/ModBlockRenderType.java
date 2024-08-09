@@ -1,4 +1,4 @@
-package net.rodofire.mushrooomsmod.client;
+package net.rodofire.mushrooomsmod.client.blocks;
 
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.minecraft.client.render.RenderLayer;
