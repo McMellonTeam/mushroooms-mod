@@ -20,10 +20,10 @@ import org.jetbrains.annotations.Nullable;
 
 public class LogMushroom extends Block {
     public static final DirectionProperty FACING = Properties.HORIZONTAL_FACING;
-    protected static final VoxelShape EAST_SHAPE = Block.createCuboidShape(0, 3, 4, 8, 13, 12);
-    protected static final VoxelShape WEST_SHAPE = Block.createCuboidShape(8, 3, 4, 16, 13, 12);
-    protected static final VoxelShape SOUTH_SHAPE = Block.createCuboidShape(4, 3, 0, 12, 13, 8);
-    protected static final VoxelShape NORTH_SHAPE = Block.createCuboidShape(4, 3, 8, 12, 13, 16);
+    protected static final VoxelShape EAST_SHAPE = Block.createCuboidShape(0, 3, 2, 4, 13, 14);
+    protected static final VoxelShape WEST_SHAPE = Block.createCuboidShape(12, 3, 2, 16, 13, 14);
+    protected static final VoxelShape SOUTH_SHAPE = Block.createCuboidShape(2, 3, 0, 14, 13, 4);
+    protected static final VoxelShape NORTH_SHAPE = Block.createCuboidShape(2, 3, 12, 14, 13, 16);
     public LogMushroom(Settings settings) {
         super(settings);
     }
