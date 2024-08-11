@@ -123,6 +123,7 @@ public class ModBlocks {
 
     //Side Mushrooms
     public static final Block SIDE_MUSHROOM_BLUE_LUMINESCENT = registerBlock("mushroom_side_blue_luminescent", new SideMushroom(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM).luminance(11)));
+    public static final Block LOG_MUSHROOM_BROWN = registerBlock("mushroom_log_brown", new LogMushroom(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM).nonOpaque()));
 
     //Flowers Mushroom
     public static final Block STERILE_BLUE_MUSHROOM = registerBlock("mushroom_small_blue", new MushroomFlower(FabricBlockSettings.copyOf(Blocks.ROSE_BUSH).nonOpaque().noCollision()));
@@ -322,6 +323,7 @@ public class ModBlocks {
     public static final Block BLUE_CRYSTAL_CLUSTER = registerBlock("crystal_blue_1", new TallBlock(FabricBlockSettings.copyOf(Blocks.AMETHYST_CLUSTER).luminance(11)));
 
     public static final Block RAW_AMBER_BLOCK = registerBlock("amber_block_raw", new Block(FabricBlockSettings.copyOf(Blocks.RAW_GOLD_BLOCK)));
+    public static final Block AMBER_MINERAL = registerBlock("amber_block_mineral", new GlassBlock(FabricBlockSettings.create().luminance(9).nonOpaque().strength(2.0f)));
     public static final Block AMBER_BLOCK = registerBlock("amber_block", new AmbreBlock(FabricBlockSettings.copyOf(Blocks.EMERALD_BLOCK)));
     public static final Block AMBER_BLOCK_SANDIFIED = registerBlock("amber_block_sandified", new SandifiedAmbreBlock(FabricBlockSettings.copyOf(Blocks.SANDSTONE), ModBlocks.AMBER_BLOCK));
     public static final Block AMBER_ORE = registerBlock("amber_ore", new Block(FabricBlockSettings.copyOf(Blocks.NETHER_GOLD_ORE)));

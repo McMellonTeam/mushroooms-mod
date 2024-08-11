@@ -1,206 +1,214 @@
 package net.rodofire.mushrooomsmod.client.blocks;
 
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
+import net.minecraft.block.Block;
 import net.minecraft.client.render.RenderLayer;
 import net.rodofire.mushrooomsmod.block.ModBlocks;
 
 public class ModBlockRenderType {
     public static void createTransludentBlocks() {
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.BLUE_LUMINESCENT_MUSHROOM_BLOCK, RenderLayer.getTranslucent());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.PINK_LUMINESCENT_MUSHROOM_BLOCK, RenderLayer.getTranslucent());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.BLUE_LUMINESCENT_MUSHROOM_STEM, RenderLayer.getTranslucent());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.TRANSPARENT_MUSHROOM_STEM, RenderLayer.getTranslucent());
+        getTransludent(ModBlocks.BLUE_LUMINESCENT_MUSHROOM_BLOCK);
+        getTransludent(ModBlocks.PINK_LUMINESCENT_MUSHROOM_BLOCK);
+        getTransludent(ModBlocks.BLUE_LUMINESCENT_MUSHROOM_STEM);
+        getTransludent(ModBlocks.TRANSPARENT_MUSHROOM_STEM);
 
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.BLUE_LUMINESCENT_ALTERED_MUSHROOM_BLOCK, RenderLayer.getTranslucent());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.BLUE_LUMINESCENT_FERMENTED_MUSHROOM_BLOCK, RenderLayer.getTranslucent());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.BLUE_LUMINESCENT_DEGRADATED_MUSHROOM_BLOCK, RenderLayer.getTranslucent());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.PINK_LUMINESCENT_ALTERED_MUSHROOM_BLOCK, RenderLayer.getTranslucent());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.PINK_LUMINESCENT_DEGRADATED_MUSHROOM_BLOCK, RenderLayer.getTranslucent());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.PINK_LUMINESCENT_FERMENTED_MUSHROOM_BLOCK, RenderLayer.getTranslucent());
-
-        //Vines
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.PINK_LUMINESCENT_BODY_VINES, RenderLayer.getTranslucent());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.PINK_LUMINESCENT_HEAD_VINES, RenderLayer.getTranslucent());
+        getTransludent(ModBlocks.BLUE_LUMINESCENT_ALTERED_MUSHROOM_BLOCK);
+        getTransludent(ModBlocks.BLUE_LUMINESCENT_FERMENTED_MUSHROOM_BLOCK);
+        getTransludent(ModBlocks.BLUE_LUMINESCENT_DEGRADATED_MUSHROOM_BLOCK);
+        getTransludent(ModBlocks.PINK_LUMINESCENT_ALTERED_MUSHROOM_BLOCK);
+        getTransludent(ModBlocks.PINK_LUMINESCENT_DEGRADATED_MUSHROOM_BLOCK);
+        getTransludent(ModBlocks.PINK_LUMINESCENT_FERMENTED_MUSHROOM_BLOCK);
 
 
-        //Big Mushrooms
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.BIG_PURPLE_MUSHROOM, RenderLayer.getTranslucent());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.BIG_GREEN_MUSHROOM, RenderLayer.getTranslucent());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.MEDIUM_GREEN_MUSHROOM, RenderLayer.getTranslucent());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.MEDIUM_PURPLE_MUSHROOM, RenderLayer.getTranslucent());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.LITTLE_GREEN_MUSHROOM, RenderLayer.getTranslucent());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.LITTLE_PURPLE_MUSHROOM, RenderLayer.getTranslucent());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.TINY_PURPLE_MUSHROOM, RenderLayer.getTranslucent());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.TINY_GREEN_MUSHROOM, RenderLayer.getTranslucent());
+        getTransludent(ModBlocks.PINK_LUMINESCENT_BODY_VINES);
+        getTransludent(ModBlocks.PINK_LUMINESCENT_HEAD_VINES);
 
-        //Crystal
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.RED_CRYSTAL_BLOCK, RenderLayer.getTranslucent());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.BLUE_CRYSTAL_BLOCK, RenderLayer.getTranslucent());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.WHITE_CRYSTAL_BLOCK, RenderLayer.getTranslucent());
+
+        getTransludent(ModBlocks.BIG_PURPLE_MUSHROOM);
+        getTransludent(ModBlocks.BIG_GREEN_MUSHROOM);
+        getTransludent(ModBlocks.MEDIUM_GREEN_MUSHROOM);
+        getTransludent(ModBlocks.MEDIUM_PURPLE_MUSHROOM);
+        getTransludent(ModBlocks.LITTLE_GREEN_MUSHROOM);
+        getTransludent(ModBlocks.LITTLE_PURPLE_MUSHROOM);
+        getTransludent(ModBlocks.TINY_PURPLE_MUSHROOM);
+        getTransludent(ModBlocks.TINY_GREEN_MUSHROOM);
+
+
+        getTransludent(ModBlocks.RED_CRYSTAL_BLOCK);
+        getTransludent(ModBlocks.BLUE_CRYSTAL_BLOCK);
+        getTransludent(ModBlocks.WHITE_CRYSTAL_BLOCK);
+        getTransludent(ModBlocks.AMBER_MINERAL);
     }
 
     public static void createCutoutBlocks() {
 
         //Mushrooms
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.BLUE_MUSHROOM, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.GREEN_MUSHROOM, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.BLUE_LUMINESCENT_MUSHROOM, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.PURPLE_MUSHROOM, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.LUMINESCENT_PINK_MUSHROOM, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.ORANGE_MUSHROOM, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.YELLOW_MUSHROOM, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.FERTILE_RED_MUSHROOM, RenderLayer.getCutout());
+        getCutout(ModBlocks.BLUE_MUSHROOM);
+        getCutout(ModBlocks.GREEN_MUSHROOM);
+        getCutout(ModBlocks.BLUE_LUMINESCENT_MUSHROOM);
+        getCutout(ModBlocks.PURPLE_MUSHROOM);
+        getCutout(ModBlocks.LUMINESCENT_PINK_MUSHROOM);
+        getCutout(ModBlocks.ORANGE_MUSHROOM);
+        getCutout(ModBlocks.YELLOW_MUSHROOM);
+        getCutout(ModBlocks.FERTILE_RED_MUSHROOM);
 
 
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.OAK_BERRIES_LEAVES, RenderLayer.getCutoutMipped());
 
-        //Flowers Mushrooms
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.STERILE_BLUE_MUSHROOM, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.MUSHROOM_SMALL_BROWN, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.MUSHROOM_SMALL_RED, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.MUSHROOM_DEATH_TRUMPET, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.SIDE_MUSHROOM_BLUE_LUMINESCENT, RenderLayer.getCutout());
+
+        getCutout(ModBlocks.STERILE_BLUE_MUSHROOM);
+        getCutout(ModBlocks.MUSHROOM_SMALL_BROWN);
+        getCutout(ModBlocks.MUSHROOM_SMALL_RED);
+        getCutout(ModBlocks.MUSHROOM_DEATH_TRUMPET);
+        getCutout(ModBlocks.SIDE_MUSHROOM_BLUE_LUMINESCENT);
+        getCutout(ModBlocks.LOG_MUSHROOM_BROWN);
 
 
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.POTTED_STERILE_BLUE_MUSHROOM, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.POTTED_MUSHROOM_SMALL_BROWN, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.POTTED_MUSHROOM_SMALL_RED, RenderLayer.getCutout());
-
-        //Flowers
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.MUSHROOM_FLOWERS, RenderLayer.getTranslucent());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.OCULAE, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.SOL_OCCIDENTIS, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.CYANUS_RUBENS, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.CYANEA, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.FUTIALI, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.NOCTULICA, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.TURQUOSUM_STILUS, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.SAPHIRA_FLORENS, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.CAERULEA_VOLUBILIS, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.PREHISTORIC_ROSE, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.PREHISTO_PINK_SCHROOM, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.PREHISTO_BLUE_SCHROOM, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.PREHISTURPLE_SCHROOM, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.PREHISTO_GREEN_SCHROOM, RenderLayer.getCutout());
-
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.BLUE_PERENNIAL, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.PINK_PERENNIAL, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.PURPLE_PERENNIAL, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.LUMINESCENT_PERENNIAL, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.YELLOW_PERENNIAL, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.GREEN_PERENNIAL, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.ORANGE_PERENNIAL, RenderLayer.getCutout());
-
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.RED_QUINCE, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.YELLOW_QUINCE, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.TINY_LILAC, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.YELICE, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.FLAMESTHYSIA, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.APAGANTHE, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.PINK_HEATER, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.WYSTERIA, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.BLUEBELL, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.VIPERIN, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.HIBISCUS, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.PLATUM, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.DIANTHUS, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.CYCAS, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.ARUM, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.HYDRANGEA, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.ANEMONE, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.JACYNTHE, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.PERVENCHE, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.ACONIT, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.FLEUR_BERRIES, RenderLayer.getCutout());
-
-        //Grass
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.TINY_GRASS, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.BLUE_LUMINESCENT_GRASS, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.BLUE_LUMINESCENT_TALL_GRASS, RenderLayer.getCutout());
+        getCutout(ModBlocks.POTTED_STERILE_BLUE_MUSHROOM);
+        getCutout(ModBlocks.POTTED_MUSHROOM_SMALL_BROWN);
+        getCutout(ModBlocks.POTTED_MUSHROOM_SMALL_RED);
 
 
-        //Vines
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.PINK_MUSHROOM_VINES, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.PINK_MUSHROOM_VINES_PLANT, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.BLUE_LUMINESCENT_VINES, RenderLayer.getCutout());
+        getCutout(ModBlocks.MUSHROOM_FLOWERS);
+        getCutout(ModBlocks.OCULAE);
+        getCutout(ModBlocks.SOL_OCCIDENTIS);
+        getCutout(ModBlocks.CYANUS_RUBENS);
+        getCutout(ModBlocks.CYANEA);
+        getCutout(ModBlocks.FUTIALI);
+        getCutout(ModBlocks.NOCTULICA);
+        getCutout(ModBlocks.TURQUOSUM_STILUS);
+        getCutout(ModBlocks.SAPHIRA_FLORENS);
+        getCutout(ModBlocks.CAERULEA_VOLUBILIS);
+        getCutout(ModBlocks.PREHISTORIC_ROSE);
+        getCutout(ModBlocks.PREHISTO_PINK_SCHROOM);
+        getCutout(ModBlocks.PREHISTO_BLUE_SCHROOM);
+        getCutout(ModBlocks.PREHISTURPLE_SCHROOM);
+        getCutout(ModBlocks.PREHISTO_GREEN_SCHROOM);
+
+        getCutout(ModBlocks.BLUE_PERENNIAL);
+        getCutout(ModBlocks.PINK_PERENNIAL);
+        getCutout(ModBlocks.PURPLE_PERENNIAL);
+        getCutout(ModBlocks.LUMINESCENT_PERENNIAL);
+        getCutout(ModBlocks.YELLOW_PERENNIAL);
+        getCutout(ModBlocks.GREEN_PERENNIAL);
+        getCutout(ModBlocks.ORANGE_PERENNIAL);
+
+        getCutout(ModBlocks.RED_QUINCE);
+        getCutout(ModBlocks.YELLOW_QUINCE);
+        getCutout(ModBlocks.TINY_LILAC);
+        getCutout(ModBlocks.YELICE);
+        getCutout(ModBlocks.FLAMESTHYSIA);
+        getCutout(ModBlocks.APAGANTHE);
+        getCutout(ModBlocks.PINK_HEATER);
+        getCutout(ModBlocks.WYSTERIA);
+        getCutout(ModBlocks.BLUEBELL);
+        getCutout(ModBlocks.VIPERIN);
+        getCutout(ModBlocks.HIBISCUS);
+        getCutout(ModBlocks.PLATUM);
+        getCutout(ModBlocks.DIANTHUS);
+        getCutout(ModBlocks.CYCAS);
+        getCutout(ModBlocks.ARUM);
+        getCutout(ModBlocks.HYDRANGEA);
+        getCutout(ModBlocks.ANEMONE);
+        getCutout(ModBlocks.JACYNTHE);
+        getCutout(ModBlocks.PERVENCHE);
+        getCutout(ModBlocks.ACONIT);
+        getCutout(ModBlocks.FLEUR_BERRIES);
 
 
-        //Potted Flowers
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.POTTED_BLUE_LUMINESCENT_MUSHROOM, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.POTTED_PURPLE_MUSHROOM, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.POTTED_GREEN_MUSHROOM, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.POTTED_BLUE_MUSHROOM, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.POTTED_LUMINESCENT_PINK_MUSHROOM, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.POTTED_FERTILE_RED_MUSHROOM, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.POTTED_MUSHROOM_DEATH_TRUMPET, RenderLayer.getCutout());
+        getCutout(ModBlocks.TINY_GRASS);
+        getCutout(ModBlocks.BLUE_LUMINESCENT_GRASS);
+        getCutout(ModBlocks.BLUE_LUMINESCENT_TALL_GRASS);
 
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.POTTED_CYANEA, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.POTTED_CYANUS_RUBENS, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.POTTED_SOL_OCCIDENTIS, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.POTTED_FUTIALI, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.POTTED_NOCTULICA, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.POTTED_OCULAE, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.POTTED_PREHISTORIC_ROSE, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.POTTED_PREHISTURPLE_SCHROOM, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.POTTED_PREHISTO_BLUE_SCHROOM, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.POTTED_PREHISTO_PINK_SCHROOM, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.POTTED_PREHISTO_GREEN_SCHROOM, RenderLayer.getCutout());
 
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.POTTED_BLUE_PERENNIAL, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.POTTED_GREEN_PERENNIAL, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.POTTED_PINK_PERENNIAL, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.POTTED_LUMINESCENT_PERENNIAL, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.POTTED_PURPLE_PERENNIAL, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.POTTED_YELLOW_PERENNIAL, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.POTTED_ORANGE_PERENNIAL, RenderLayer.getCutout());
+        getCutout(ModBlocks.PINK_MUSHROOM_VINES);
+        getCutout(ModBlocks.PINK_MUSHROOM_VINES_PLANT);
+        getCutout(ModBlocks.BLUE_LUMINESCENT_VINES);
 
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.POTTED_RED_QUINCE, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.POTTED_YELLOW_QUINCE, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.POTTED_YELICE, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.POTTED_FLAMESTHYSIA, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.POTTED_APAGANTHE, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.POTTED_WYSTERIA, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.POTTED_BLUEBELL, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.POTTED_VIPERIN, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.POTTED_HIBISCUS, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.POTTED_PLATUM, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.POTTED_DIANTHUS, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.POTTED_CYCAS, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.POTTED_ARUM, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.POTTED_HYDRANGEA, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.POTTED_ANEMONE, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.POTTED_JACYNTHE, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.POTTED_BLUE_LUMINESCENT_SAPPLING, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.OAK_BERRIES_SAPLING, RenderLayer.getCutout());
 
-        //Leaves
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.BLUE_LUMINESCENT_LEAVES, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.RED_COLORFUL_LEAVES, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.GREEN_COLORFUL_LEAVES, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.YELLOW_COLORFUL_LEAVES, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.PURPLE_COLORFUL_LEAVES, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.BLUE_COLORFUL_LEAVES, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.PINK_COLORFUL_LEAVES, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.ORANGE_COLORFUL_LEAVES, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.OAK_BERRIES_LEAVES, RenderLayer.getCutout());
+        getCutout(ModBlocks.POTTED_BLUE_LUMINESCENT_MUSHROOM);
+        getCutout(ModBlocks.POTTED_PURPLE_MUSHROOM);
+        getCutout(ModBlocks.POTTED_GREEN_MUSHROOM);
+        getCutout(ModBlocks.POTTED_BLUE_MUSHROOM);
+        getCutout(ModBlocks.POTTED_LUMINESCENT_PINK_MUSHROOM);
+        getCutout(ModBlocks.POTTED_FERTILE_RED_MUSHROOM);
+        getCutout(ModBlocks.POTTED_MUSHROOM_DEATH_TRUMPET);
 
-        //Wood
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.BLUE_LUMINESCENT_TRAPDOOR, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.BLUE_LUMINESCENT_DOOR, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.BLUE_LUMINESCENT_SAPPLING, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.BLUE_LUMINESCENT_SLAB, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.BLUE_LUMINESCENT_STAIRS, RenderLayer.getCutout());
+        getCutout(ModBlocks.POTTED_CYANEA);
+        getCutout(ModBlocks.POTTED_CYANUS_RUBENS);
+        getCutout(ModBlocks.POTTED_SOL_OCCIDENTIS);
+        getCutout(ModBlocks.POTTED_FUTIALI);
+        getCutout(ModBlocks.POTTED_NOCTULICA);
+        getCutout(ModBlocks.POTTED_OCULAE);
+        getCutout(ModBlocks.POTTED_PREHISTORIC_ROSE);
+        getCutout(ModBlocks.POTTED_PREHISTURPLE_SCHROOM);
+        getCutout(ModBlocks.POTTED_PREHISTO_BLUE_SCHROOM);
+        getCutout(ModBlocks.POTTED_PREHISTO_PINK_SCHROOM);
+        getCutout(ModBlocks.POTTED_PREHISTO_GREEN_SCHROOM);
 
-        //Lights
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.GREEN_LANTERN, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.RED_LANTERN, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.GREEN_TORCH, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.WALL_GREEN_TORCH, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.GREEN_CAMPFIRE, RenderLayer.getCutout());
+        getCutout(ModBlocks.POTTED_BLUE_PERENNIAL);
+        getCutout(ModBlocks.POTTED_GREEN_PERENNIAL);
+        getCutout(ModBlocks.POTTED_PINK_PERENNIAL);
+        getCutout(ModBlocks.POTTED_LUMINESCENT_PERENNIAL);
+        getCutout(ModBlocks.POTTED_PURPLE_PERENNIAL);
+        getCutout(ModBlocks.POTTED_YELLOW_PERENNIAL);
+        getCutout(ModBlocks.POTTED_ORANGE_PERENNIAL);
 
-        //Crystal
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.BLUE_CRYSTAL, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.RED_CRYSTAL, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.WHITE_CRYSTAL, RenderLayer.getCutout());
+        getCutout(ModBlocks.POTTED_RED_QUINCE);
+        getCutout(ModBlocks.POTTED_YELLOW_QUINCE);
+        getCutout(ModBlocks.POTTED_YELICE);
+        getCutout(ModBlocks.POTTED_FLAMESTHYSIA);
+        getCutout(ModBlocks.POTTED_APAGANTHE);
+        getCutout(ModBlocks.POTTED_WYSTERIA);
+        getCutout(ModBlocks.POTTED_BLUEBELL);
+        getCutout(ModBlocks.POTTED_VIPERIN);
+        getCutout(ModBlocks.POTTED_HIBISCUS);
+        getCutout(ModBlocks.POTTED_PLATUM);
+        getCutout(ModBlocks.POTTED_DIANTHUS);
+        getCutout(ModBlocks.POTTED_CYCAS);
+        getCutout(ModBlocks.POTTED_ARUM);
+        getCutout(ModBlocks.POTTED_HYDRANGEA);
+        getCutout(ModBlocks.POTTED_ANEMONE);
+        getCutout(ModBlocks.POTTED_JACYNTHE);
+        getCutout(ModBlocks.POTTED_BLUE_LUMINESCENT_SAPPLING);
+        getCutout(ModBlocks.OAK_BERRIES_SAPLING);
+
+
+        getCutout(ModBlocks.BLUE_LUMINESCENT_LEAVES);
+        getCutout(ModBlocks.RED_COLORFUL_LEAVES);
+        getCutout(ModBlocks.GREEN_COLORFUL_LEAVES);
+        getCutout(ModBlocks.YELLOW_COLORFUL_LEAVES);
+        getCutout(ModBlocks.PURPLE_COLORFUL_LEAVES);
+        getCutout(ModBlocks.BLUE_COLORFUL_LEAVES);
+        getCutout(ModBlocks.PINK_COLORFUL_LEAVES);
+        getCutout(ModBlocks.ORANGE_COLORFUL_LEAVES);
+        getCutout(ModBlocks.OAK_BERRIES_LEAVES);
+
+
+        getCutout(ModBlocks.BLUE_LUMINESCENT_TRAPDOOR);
+        getCutout(ModBlocks.BLUE_LUMINESCENT_DOOR);
+        getCutout(ModBlocks.BLUE_LUMINESCENT_SAPPLING);
+        getCutout(ModBlocks.BLUE_LUMINESCENT_SLAB);
+        getCutout(ModBlocks.BLUE_LUMINESCENT_STAIRS);
+
+
+        getCutout(ModBlocks.GREEN_LANTERN);
+        getCutout(ModBlocks.RED_LANTERN);
+        getCutout(ModBlocks.GREEN_TORCH);
+        getCutout(ModBlocks.WALL_GREEN_TORCH);
+        getCutout(ModBlocks.GREEN_CAMPFIRE);
+
+
+        getCutout(ModBlocks.BLUE_CRYSTAL);
+        getCutout(ModBlocks.RED_CRYSTAL);
+        getCutout(ModBlocks.WHITE_CRYSTAL);
+    }
+
+    public static void getCutout(Block block) {
+        BlockRenderLayerMap.INSTANCE.putBlock(block, RenderLayer.getCutout());
+    }
+
+    public static void getTransludent(Block block) {
+        BlockRenderLayerMap.INSTANCE.putBlock(block, RenderLayer.getTranslucent());
     }
 }

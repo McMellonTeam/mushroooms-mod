@@ -40,6 +40,7 @@ public class ModItemGroup {
 
                         //Crystal related
                         entries.add(ModBlocks.RAW_AMBER_BLOCK);
+                        entries.add(ModBlocks.AMBER_MINERAL);
                         entries.add(ModBlocks.AMBER_BLOCK);
                         entries.add(ModBlocks.AMBER_BLOCK_SANDIFIED);
                         entries.add(ModBlocks.AMBER_ORE);
@@ -147,6 +148,7 @@ public class ModItemGroup {
 
                         //Side Mushrooms
                         entries.add(ModBlocks.SIDE_MUSHROOM_BLUE_LUMINESCENT);
+                        entries.add(ModBlocks.LOG_MUSHROOM_BROWN);
 
                         //Flowers
                         entries.add(ModBlocks.PREHISTO_PINK_SCHROOM);
@@ -236,6 +238,7 @@ public class ModItemGroup {
                         entries.add(ModItems.PLOTI_SPAWN_EGG);
                         entries.add(ModItems.CRYSTAL_CREEPER_SPAWN_EGG);
                         entries.add(ModItems.CRYSTAL_GOLEM_SPAWN_EGG);
+                        entries.add(ModItems.MOSQUITO_SPAWN_EGG);
                         //entries.add(ModItems.SCHROOM_STICK_SPAWN_EGG);
 
                         //crystal
