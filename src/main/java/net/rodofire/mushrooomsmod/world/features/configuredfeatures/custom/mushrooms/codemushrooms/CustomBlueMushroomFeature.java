@@ -10,11 +10,11 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.StructureWorldAccess;
 import net.rodofire.easierworldcreator.util.FastMaths;
+import net.rodofire.easierworldcreator.worldgenutil.BlockPlaceUtil;
+import net.rodofire.easierworldcreator.worldgenutil.FastNoiseLite;
 import net.rodofire.easierworldcreator.worldgenutil.GenLines;
-import net.rodofire.easierworldcreator.worldgenutil.WorldGenUtil;
 import net.rodofire.mushrooomsmod.block.ModBlocks;
 import net.rodofire.mushrooomsmod.world.features.config.ModMushroomFeatureConfig;
-import net.rodofire.mushrooomsmod.world.noises.FastNoiseLite;
 
 import java.util.List;
 
@@ -50,7 +50,7 @@ public class CustomBlueMushroomFeature extends CustomBlueMushroom {
                 for (float y = -height; y <= height; ++y) {
                     if (x * x / (float) largexsquared + y * y / (float) largeysquared + z * z / (float) largexsquared <= 1.0F) {
                         mutable.set(pos, (int) x, (int) (y + a), (int) z);
-                        WorldGenUtil.verifyBlock(world, force, List.of(ModBlocks.BLUE_MUSHROOM_BLOCK), List.of(state), mutable);
+                        BlockPlaceUtil.setRandomBlockWithVerification(world, force, List.of(ModBlocks.BLUE_MUSHROOM_BLOCK), List.of(state), mutable);
                     }
                 }
             }
@@ -103,11 +103,11 @@ public class CustomBlueMushroomFeature extends CustomBlueMushroom {
                         GenLines.generateAxisLine(world, mutable, (int) (Math.abs(t * 4)), Direction.DOWN, trunk);
                     }
                     if (t < 1) {
-                        WorldGenUtil.verifyBlock(world, force, null, List.of(trunk), mutable.down());
+                        BlockPlaceUtil.setRandomBlockWithVerification(world, force, null, List.of(trunk), mutable.down());
                     } else {
-                        WorldGenUtil.verifyBlock(world, force, null, List.of(trunk), mutable);
+                        BlockPlaceUtil.setRandomBlockWithVerification(world, force, null, List.of(trunk), mutable);
                         if (t > 1) {
-                            WorldGenUtil.verifyBlock(world, force, null, List.of(trunk), mutable.up());
+                            BlockPlaceUtil.setRandomBlockWithVerification(world, force, null, List.of(trunk), mutable.up());
                         }
                     }
 

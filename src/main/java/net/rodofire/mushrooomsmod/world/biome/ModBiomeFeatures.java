@@ -42,6 +42,15 @@ public class ModBiomeFeatures {
             builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModSurfacePlacedFeatures.RED_MUSHROOM_TREE_SURFACE_PLACED_KEY);
             builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModSurfacePlacedFeatures.BROWN_MUSHROOM_TREE_SURFACE_PLACED_KEY);
         }
+
+        public static void addBlueMushroomForestFeatures(GenerationSettings.LookupBackedBuilder builder) {
+            builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModSurfacePlacedFeatures.BLUE_MUSHROOM_TREE_SURFACE_PLACED_KEY);
+            builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModSurfacePlacedFeatures.PERVENCHE_SURFACE_PLACED_KEY);
+        }
+
+        public static void addMagicalPlainsFeatures(GenerationSettings.LookupBackedBuilder builder) {
+
+        }
     }
 
 

@@ -112,6 +112,16 @@ public class ModOverworldRegion extends Region {
                 .weirdness(MultiNoiseUtil.ParameterRange.of(-1f, 0.05f))
                 .build().forEach(point -> builder.add(point, ModOverworldBiomes.COLORFUL_PLAINS));
 
+        //blue mushroom forest
+        new ParameterUtils.ParameterPointListBuilder()
+                .temperature(ParameterUtils.Temperature.NEUTRAL)
+                .humidity(ParameterUtils.Humidity.WET)
+                .continentalness(ParameterUtils.Continentalness.INLAND)
+                .erosion(ParameterUtils.Erosion.EROSION_5, ParameterUtils.Erosion.EROSION_6)
+                .depth(ParameterUtils.Depth.SURFACE)
+                .weirdness(MultiNoiseUtil.ParameterRange.of(-1f, 0.05f))
+                .build().forEach(point -> builder.add(point, ModOverworldBiomes.BLUE_MUSHROOM_FOREST));
+
         builder.build().forEach(mapper);
     }
 }
