@@ -41,6 +41,9 @@ public class ModUndergroundPlacedFeatures {
     public static final RegistryKey<PlacedFeature> HUGE_RED_MUSHROOM_UNDERGROUND_PLACED_KEY = registerKey("huge_red_mushroom_underground_placed_key");
     public static final RegistryKey<PlacedFeature> HUGE_BROWN_MUSHROOM_UNDERGROUND_PLACED_KEY = registerKey("huge_brown_mushroom_underground_placed_key");
     public static final RegistryKey<PlacedFeature> BLUE_LUMINESCENT_MUSHROOM_TREE_UNDERGROUND_PLACED_KEY = registerKey("blue_luminescent_mushroom_tree_underground_placed_key");
+    public static final RegistryKey<PlacedFeature> PURPLE_MUSHROOM_TREE_UNDERGROUND_PLACED_KEY = registerKey("purple_mushroom_tree_underground_placed_key");
+    public static final RegistryKey<PlacedFeature> HUGE_PURPLE_MUSHROOM_TREE_UNDERGROUND_PLACED_KEY = registerKey("huge_purple_mushroom_tree_underground_placed_key");
+    public static final RegistryKey<PlacedFeature> PINK_LUMINESCENT_MUSHROOM_TREE_UNDERGROUND_PLACED_KEY = registerKey("pink_luminescent_mushroom_tree_underground_placed_key");
 
 
     //Flowers
@@ -128,6 +131,9 @@ public class ModUndergroundPlacedFeatures {
         register(context, HUGE_BROWN_MUSHROOM_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(TreeConfiguredFeatures.HUGE_BROWN_MUSHROOM), CountPlacementModifier.of(165), SquarePlacementModifier.of(), ModPlacedFeatures.STONE_LEVEL, BiomePlacementModifier.of());
         register(context, HUGE_RED_MUSHROOM_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(TreeConfiguredFeatures.HUGE_RED_MUSHROOM), CountPlacementModifier.of(170), SquarePlacementModifier.of(), ModPlacedFeatures.STONE_LEVEL, BiomePlacementModifier.of());
         register(context, FERTILE_RED_MUSHROOM_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.FERTILE_RED_MUSHROOM_KEY), CountPlacementModifier.of(240), SquarePlacementModifier.of(), ModPlacedFeatures.STONE_LEVEL, BiomePlacementModifier.of());
+        register(context, PURPLE_MUSHROOM_TREE_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.PURPLE_MUSHROOM_TREE_KEY), CountPlacementModifier.of(240), SquarePlacementModifier.of(), ModPlacedFeatures.DEEPSLATE_LEVEL, BiomePlacementModifier.of());
+        register(context, HUGE_PURPLE_MUSHROOM_TREE_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.BIG_PURPLE_MUSHROOM_TREE_KEY), CountPlacementModifier.of(240), SquarePlacementModifier.of(), ModPlacedFeatures.DEEPSLATE_LEVEL, BiomePlacementModifier.of());
+        register(context, PINK_LUMINESCENT_MUSHROOM_TREE_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.PINK_LUMINESCENT_MUSHROOM_TREE_KEY), CountPlacementModifier.of(240), SquarePlacementModifier.of(), ModPlacedFeatures.DEEPSLATE_LEVEL, BiomePlacementModifier.of());
 
         //Tree
         register(context, OAK_TREE_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(TreeConfiguredFeatures.OAK), ModPlacedFeatures.undergroundStoneLevelTreeModifiersWithWouldSurvive(PlacedFeatures.createCountExtraModifier(90, 1f, 45), Blocks.OAK_SAPLING));

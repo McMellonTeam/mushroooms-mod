@@ -118,6 +118,12 @@ public class ModBiomeFeatures {
             builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModUndergroundPlacedFeatures.YELICE_UNDERGROUND_PLACED_KEY);
         }
 
+        public static void addPurpleSchroomCaveFeatures(GenerationSettings.LookupBackedBuilder builder) {
+            builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModUndergroundPlacedFeatures.PINK_LUMINESCENT_MUSHROOM_TREE_UNDERGROUND_PLACED_KEY);
+            builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModUndergroundPlacedFeatures.PURPLE_MUSHROOM_TREE_UNDERGROUND_PLACED_KEY);
+            builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModUndergroundPlacedFeatures.HUGE_PURPLE_MUSHROOM_TREE_UNDERGROUND_PLACED_KEY);
+        }
+
     }
 
 }

@@ -341,15 +341,7 @@ public class ModOverworldBiomeCreator {
                             context.getRegistryLookup(RegistryKeys.CONFIGURED_CARVER));
 
             ModBiomeFeatures.globalOverworldGeneration(biomeBuilder);
-            DefaultBiomeFeatures.addMossyRocks(biomeBuilder);
-            DefaultBiomeFeatures.addDefaultOres(biomeBuilder);
-
-            biomeBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, VegetationPlacedFeatures.TREES_PLAINS);
-            DefaultBiomeFeatures.addForestFlowers(biomeBuilder);
-            DefaultBiomeFeatures.addLargeFerns(biomeBuilder);
-
-            DefaultBiomeFeatures.addDefaultMushrooms(biomeBuilder);
-            DefaultBiomeFeatures.addDefaultVegetation(biomeBuilder);
+            ModBiomeFeatures.UndergroundBiome.addPurpleSchroomCaveFeatures(biomeBuilder);
 
             return new Biome.Builder()
                     .precipitation(true)
