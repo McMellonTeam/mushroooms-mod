@@ -2,6 +2,7 @@ package net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.mush
 
 import com.mojang.serialization.Codec;
 import net.minecraft.block.BlockState;
+import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.StructureWorldAccess;
@@ -34,6 +35,8 @@ public abstract class CustomBlueMushroom extends Feature<ModMushroomFeatureConfi
         }
         int minlarge = Random.create().nextBetween(2, 3);
         int maxlarge = Random.create().nextBetween(minlarge + 2, minlarge + 3);
+
+        if (!worldAccess.getBlockState(pos.down()).isIn(BlockTags.DIRT)) return false;
 
         this.generateLargeCap(worldAccess, random, pos.add(0, height + secondheight, 0), maxlarge, cap);
         this.generateLargeTrunk(worldAccess, random, pos, trunk, false, height + secondheight, maxlarge, minlarge);
