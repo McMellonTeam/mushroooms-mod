@@ -195,6 +195,7 @@ public class ModItemGroup {
                         entries.add(ModBlocks.PERVENCHE);
                         entries.add(ModBlocks.RAPANGE_FLOWERS);
                         entries.add(ModItems.FLEUR_BERRIES_ITEM);
+                        entries.add(ModBlocks.PICK_BLUE);
 
                         //Grass
                         entries.add(ModBlocks.TINY_GRASS);

@@ -237,6 +237,7 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.JACYNTHE)
                 .add(ModBlocks.ACONIT)
                 .add(ModBlocks.PERVENCHE)
+                .add(ModBlocks.PICK_BLUE)
 
                 //Vines
                 .add(ModBlocks.CAERULEA_VOLUBILIS)
