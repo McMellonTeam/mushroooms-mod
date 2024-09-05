@@ -19,10 +19,7 @@ import net.minecraft.world.gen.stateprovider.BlockStateProvider;
 import net.minecraft.world.gen.trunk.StraightTrunkPlacer;
 import net.rodofire.mushrooomsmod.MushrooomsMod;
 import net.rodofire.mushrooomsmod.block.ModBlocks;
-import net.rodofire.mushrooomsmod.world.features.config.CrystalConfig;
-import net.rodofire.mushrooomsmod.world.features.config.DirectionConfig;
-import net.rodofire.mushrooomsmod.world.features.config.ModMushroomFeatureConfig;
-import net.rodofire.mushrooomsmod.world.features.config.ModSimpleBlockFeatureConfig;
+import net.rodofire.mushrooomsmod.world.features.config.*;
 import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.tree.codetree.BlueLuminescentFoliagePlacer;
 import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.tree.codetree.BlueLuminescentTrunkPlacer;
 import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.tree.decorator.OakBerriesTreeDecorator;
@@ -113,6 +110,7 @@ public class ModConfiguredFeatures<FC extends FeatureConfig> {
     public static final RegistryKey<ConfiguredFeature<?, ?>> PERVENCHE_KEY = registerKey("pervenche_key");
     public static final RegistryKey<ConfiguredFeature<?, ?>> RAPANGE_FLOWERS_KEY = registerKey("rapange_flowers_key");
     public static final RegistryKey<ConfiguredFeature<?, ?>> FLEUR_BERRIES_KEY = registerKey("fleur_berries_key");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> PICK_BLUE_KEY = registerKey("pick_blue_key");
 
     //Grass
     public static final RegistryKey<ConfiguredFeature<?, ?>> TINY_GRASSS_KEY = registerKey("tiny_grass_key");
@@ -142,6 +140,10 @@ public class ModConfiguredFeatures<FC extends FeatureConfig> {
     //Ore
     public static final RegistryKey<ConfiguredFeature<?,?>> AMBER_ORE_KEY = registerKey("amber_ore_key");
     public static final RegistryKey<ConfiguredFeature<?,?>> RHYOLITE_KEY = registerKey("rhyolite_key");
+
+    //terrain
+    public static final RegistryKey<ConfiguredFeature<?, ?>> ARCH_KEY = registerKey("arch_key");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> SPIRAL_MUSHROOM_KEY = registerKey("spiral_mushroom_key");
 
     //Dev
     public static final RegistryKey<ConfiguredFeature<?,?>> FEATURE_TESTER_KEY = registerKey("feature_teste_key");
@@ -234,9 +236,10 @@ public class ModConfiguredFeatures<FC extends FeatureConfig> {
         register(context, ANEMONE_KEY, Feature.FLOWER, new RandomPatchFeatureConfig(32, 6, 2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.ANEMONE)))));
         register(context, JACYNTHE_KEY, Feature.FLOWER, new RandomPatchFeatureConfig(32, 6, 2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.JACYNTHE)))));
         register(context, ACONIT_KEY, Feature.FLOWER, new RandomPatchFeatureConfig(32, 14, 2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.ACONIT)))));
-        register(context, PERVENCHE_KEY, Feature.FLOWER, new RandomPatchFeatureConfig(32, 6, 2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.PERVENCHE)))));
+        register(context, PERVENCHE_KEY, Feature.FLOWER, new RandomPatchFeatureConfig(20, 6, 3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.PERVENCHE)))));
         register(context, ORANGE_MUSHROOM_KEY, Feature.FLOWER, new RandomPatchFeatureConfig(32, 6, 2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.ORANGE_MUSHROOM)))));
         register(context, YELLOW_MUSHROOM_KEY, Feature.FLOWER, new RandomPatchFeatureConfig(32, 6, 2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.YELLOW_MUSHROOM)))));
+        register(context, PICK_BLUE_KEY, Feature.FLOWER, new RandomPatchFeatureConfig(12, 6, 2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.YELLOW_MUSHROOM)))));
 
         register(context, RAPANGE_FLOWERS_KEY, Feature.FLOWER, new RandomPatchFeatureConfig(64, 7, 3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.RAPANGE_FLOWERS)))));
         register(context, FLEUR_BERRIES_KEY, ModFeatures.FLEUR_BERRIES, new DefaultFeatureConfig());
@@ -276,6 +279,10 @@ public class ModConfiguredFeatures<FC extends FeatureConfig> {
 
         List<OreFeatureConfig.Target> overworldRhyoliteOre = List.of(OreFeatureConfig.createTarget(stoneReplacables, ModBlocks.RHYOLITE.getDefaultState()));
         register(context, RHYOLITE_KEY, Feature.ORE, new OreFeatureConfig(overworldRhyoliteOre, 14));
+
+        //terrain
+        register(context, ARCH_KEY, ModFeatures.ARCH, new ArchConfig(10, 3, 60, 30, 30, 30, 30));
+        register(context, SPIRAL_MUSHROOM_KEY, ModFeatures.SPIRAL_MUSHROOM, new DefaultFeatureConfig());
 
         //Dev
         register(context, FEATURE_TESTER_KEY, ModFeatures.FEATURE_TESTER, new ModSimpleBlockFeatureConfig(BlockStateProvider.of(Blocks.REDSTONE_BLOCK)));

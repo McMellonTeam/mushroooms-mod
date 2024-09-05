@@ -3,10 +3,7 @@ package net.rodofire.mushrooomsmod.world.features.configuredfeatures;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.world.gen.feature.*;
-import net.rodofire.mushrooomsmod.world.features.config.CrystalConfig;
-import net.rodofire.mushrooomsmod.world.features.config.DirectionConfig;
-import net.rodofire.mushrooomsmod.world.features.config.ModMushroomFeatureConfig;
-import net.rodofire.mushrooomsmod.world.features.config.ModSimpleBlockFeatureConfig;
+import net.rodofire.mushrooomsmod.world.features.config.*;
 import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.SimpleBlockFeature;
 import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.*;
 import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.mushrooms.codemushrooms.*;
@@ -47,6 +44,10 @@ public abstract class ModFeatures<FC extends FeatureConfig> {
     //SimpleBlock
     public static Feature<ModSimpleBlockFeatureConfig> SIMPLE_BLOCK;
 
+    //terrain
+    public static Feature<ArchConfig> ARCH;
+    public static Feature<DefaultFeatureConfig> SPIRAL_MUSHROOM;
+
     //dev
     public static Feature<ModSimpleBlockFeatureConfig> FEATURE_TESTER;
 
@@ -75,6 +76,9 @@ public abstract class ModFeatures<FC extends FeatureConfig> {
         COLORFUL_BUSH = registercustomfeature("colorful_bush_feature", new ColorfulBushFeature(DefaultFeatureConfig.CODEC));
 
         SIMPLE_BLOCK = registercustomfeature("simple_block_feature", new SimpleBlockFeature(ModSimpleBlockFeatureConfig.CODEC));
+
+        ARCH = registercustomfeature("arch", new ArchFeature(ArchConfig.CODEC));
+        SPIRAL_MUSHROOM = registercustomfeature("spiral_mushroom", new SpiralMushroom(DefaultFeatureConfig.CODEC));
 
         FEATURE_TESTER = registercustomfeature("feature_tester", new DevFeature(ModSimpleBlockFeatureConfig.CODEC));
     }
