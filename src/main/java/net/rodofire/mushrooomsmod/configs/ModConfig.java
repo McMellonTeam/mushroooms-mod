@@ -33,8 +33,18 @@ public class ModConfig extends PartitioningSerializer.GlobalData {
                 """)
         int commonbiomespawnrate = 4;
 
+        @ConfigEntry.Gui.Tooltip()
+        @Comment("""
+                spawn rate of cave biomes, cannot be <= 0
+                """)
+        int cavebiomespawnrate = 4;
+
         public int getCommonBiomeSpawnRate() {
             return Math.max(1, commonbiomespawnrate);
+        }
+
+        public int getCaveBiomeSpawnRate() {
+            return Math.max(1, cavebiomespawnrate);
         }
     }
 
