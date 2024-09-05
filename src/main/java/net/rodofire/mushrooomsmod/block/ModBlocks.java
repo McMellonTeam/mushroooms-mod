@@ -199,7 +199,7 @@ public class ModBlocks {
     public static final Block RAPANGE_FLOWERS = registerBlock("rapange_flowers", new RapangeFlowers(FabricBlockSettings.copyOf(Blocks.ROSE_BUSH).nonOpaque().noCollision().luminance(RapangeFlowers.getLuminanceSupplier())));
     public static final Block FLEUR_BERRIES = registerHiddenBlock("berries_fleur", new FleurBerries(FabricBlockSettings.copyOf(Blocks.ROSE_BUSH).nonOpaque().luminance(state -> state.get(Properties.AGE_3) * 4)));
 
-    public static final Block PICK_BLUE = registerBlock("pick_blue", new Block(FabricBlockSettings.copyOf(Blocks.ROSE_BUSH).nonOpaque().luminance(11)));
+    public static final Block PICK_BLUE = registerBlock("pick_blue", new PickBlue(FabricBlockSettings.copyOf(Blocks.ROSE_BUSH).nonOpaque().luminance(11)));
 
     /*-----------Potted Blocks-----------*/
     //Potted Mushrooms
