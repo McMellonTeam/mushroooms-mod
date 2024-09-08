@@ -1,4 +1,4 @@
-package net.rodofire.mushrooomsmod.mixin;
+package net.rodofire.mushrooomsmod.mixin.client;
 
 import net.minecraft.client.gui.Drawable;
 import net.minecraft.client.gui.Element;

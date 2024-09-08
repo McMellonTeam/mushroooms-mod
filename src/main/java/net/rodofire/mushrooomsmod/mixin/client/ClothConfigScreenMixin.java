@@ -1,4 +1,4 @@
-package net.rodofire.mushrooomsmod.mixin;
+package net.rodofire.mushrooomsmod.mixin.client;
 
 import me.shedaniel.clothconfig2.gui.ClothConfigScreen;
 import net.minecraft.client.MinecraftClient;
@@ -47,7 +47,6 @@ public class ClothConfigScreenMixin {
 
     @Inject(method = "init", at = @At("HEAD"))
     private void addButtons(CallbackInfo ci) {
-        System.out.println(((Screen) (Object) this).getTitle().getString());
         if (((Screen) (Object) this).getTitle().getString().equals("MushrooomsMod Options")) {
             List<ImageButtonWidget> buttons = getButtons();
             for (ImageButtonWidget button : buttons) {
@@ -58,23 +57,29 @@ public class ClothConfigScreenMixin {
 
     @Unique
     public ImageButtonWidget createButton(String link, int yOffset, Identifier icon, Screen screen) {
+        int getIconSize = getIconSize();
         MinecraftClient client = MinecraftClient.getInstance();
         ImageButtonWidget discord = new ImageButtonWidget(
-                8, client.getWindow().getScaledHeight() / 2 + yOffset,
-                24, 24, icon,
+                8, client.getWindow().getScaledHeight() / 2 + (int) (yOffset * (getIconSize == 24 ? 1 : 0.75)),
+                getIconSize(), getIconSize(), icon,
                 button -> {
                     MinecraftClient.getInstance().setScreen(new ConfirmLinkScreen(
                             open -> {
                                 if (open) {
                                     Util.getOperatingSystem().open(link);
                                 }
-                                System.out.println("last :" + screen.toString());
                                 MinecraftClient.getInstance().setScreen(screen);
                             }, link, true)
                     );
                 }
         );
         return discord;
+    }
+
+    @Unique
+    public int getIconSize() {
+        int large = MinecraftClient.getInstance().getWindow().getScaledHeight();
+        return large < 300 ? 20 : 24;
     }
 
     @Unique
