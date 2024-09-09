@@ -140,6 +140,7 @@ public class ModConfiguredFeatures<FC extends FeatureConfig> {
     //Ore
     public static final RegistryKey<ConfiguredFeature<?,?>> AMBER_ORE_KEY = registerKey("amber_ore_key");
     public static final RegistryKey<ConfiguredFeature<?,?>> RHYOLITE_KEY = registerKey("rhyolite_key");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> AMBER_MINERAL_KEY = registerKey("amber_mineral_key");
 
     //terrain
     public static final RegistryKey<ConfiguredFeature<?, ?>> ARCH_KEY = registerKey("arch_key");
@@ -276,6 +277,7 @@ public class ModConfiguredFeatures<FC extends FeatureConfig> {
 
         List<OreFeatureConfig.Target> netherAmberOres = List.of(OreFeatureConfig.createTarget(netherReplacables, ModBlocks.AMBER_ORE.getDefaultState()));
         register(context, AMBER_ORE_KEY, Feature.ORE, new OreFeatureConfig(netherAmberOres, 14));
+        register(context, AMBER_MINERAL_KEY, ModFeatures.AMBER_MINERAL, new DefaultFeatureConfig());
 
         List<OreFeatureConfig.Target> overworldRhyoliteOre = List.of(OreFeatureConfig.createTarget(stoneReplacables, ModBlocks.RHYOLITE.getDefaultState()));
         register(context, RHYOLITE_KEY, Feature.ORE, new OreFeatureConfig(overworldRhyoliteOre, 14));

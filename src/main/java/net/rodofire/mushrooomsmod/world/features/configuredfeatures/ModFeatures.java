@@ -44,6 +44,9 @@ public abstract class ModFeatures<FC extends FeatureConfig> {
     //SimpleBlock
     public static Feature<ModSimpleBlockFeatureConfig> SIMPLE_BLOCK;
 
+    //Cave related
+    public static Feature<DefaultFeatureConfig> AMBER_MINERAL;
+
     //terrain
     public static Feature<ArchConfig> ARCH;
     public static Feature<DefaultFeatureConfig> SPIRAL_MUSHROOM;
@@ -76,6 +79,8 @@ public abstract class ModFeatures<FC extends FeatureConfig> {
         COLORFUL_BUSH = registercustomfeature("colorful_bush_feature", new ColorfulBushFeature(DefaultFeatureConfig.CODEC));
 
         SIMPLE_BLOCK = registercustomfeature("simple_block_feature", new SimpleBlockFeature(ModSimpleBlockFeatureConfig.CODEC));
+
+        AMBER_MINERAL = registercustomfeature("amber_mineral_feature", new AmberFeature(DefaultFeatureConfig.CODEC));
 
         ARCH = registercustomfeature("arch", new ArchFeature(ArchConfig.CODEC));
         SPIRAL_MUSHROOM = registercustomfeature("spiral_mushroom", new SpiralMushroom(DefaultFeatureConfig.CODEC));
