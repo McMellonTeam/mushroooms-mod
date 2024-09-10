@@ -264,6 +264,7 @@ public class ModItemGroup {
                         //Tools
                         entries.add(ModItems.IRON_HAMMER);
                         entries.add(ModItems.INVENTORY_ARMOR_STAND);
+                        entries.add(ModItems.KEY);
 
                         //Food
                         entries.add(ModItems.BAGUETTE);
