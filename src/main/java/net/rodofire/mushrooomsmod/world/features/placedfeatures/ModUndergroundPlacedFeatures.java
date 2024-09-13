@@ -84,7 +84,7 @@ public class ModUndergroundPlacedFeatures {
 
     //Ore
     public static final RegistryKey<PlacedFeature> RHYOLITE_UNDERGROUND_PLACED_KEY = registerKey("rhyolite_underground_placed_key");
-
+    public static final RegistryKey<PlacedFeature> AMBER_MINERAL_UNDERGROUND_PLACED_FEATURE = registerKey("amber_mineral_underground_placed_key");
     public static void bootstrap(Registerable<PlacedFeature> context) {
         var configuredFeatureRegistryEntryLookup = context.getRegistryLookup(RegistryKeys.CONFIGURED_FEATURE);
         //Mushrooms
@@ -155,6 +155,8 @@ public class ModUndergroundPlacedFeatures {
         register(context, RHYOLITE_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.RHYOLITE_KEY),
                 ModOrePlacement.modifiersWithCount(12, // Veins per Chunk
                         HeightRangePlacementModifier.uniform(YOffset.fixed(10), YOffset.fixed(80))));
+
+        register(context, AMBER_MINERAL_UNDERGROUND_PLACED_FEATURE, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.AMBER_MINERAL_KEY), RarityFilterPlacementModifier.of(20), SquarePlacementModifier.of(), ModPlacedFeatures.CAVE_LEVEL, BiomePlacementModifier.of());
     }
 
     public static RegistryKey<PlacedFeature> registerKey(String name) {

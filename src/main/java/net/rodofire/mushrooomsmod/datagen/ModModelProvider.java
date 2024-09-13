@@ -276,6 +276,7 @@ public class ModModelProvider extends FabricModelProvider {
         generator.register(ModItems.CRUSHED_DIAMOND, Models.GENERATED);
         generator.register(ModItems.LUMINESCENT_SCHROOM_SOUP, Models.GENERATED);
         generator.register(ModItems.PURPLE_MUSHROOM_POWDER, Models.GENERATED);
+        generator.register(ModItems.KEY, Models.GENERATED);
 
 
     }

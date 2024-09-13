@@ -195,6 +195,7 @@ public class ModItemGroup {
                         entries.add(ModBlocks.PERVENCHE);
                         entries.add(ModBlocks.RAPANGE_FLOWERS);
                         entries.add(ModItems.FLEUR_BERRIES_ITEM);
+                        entries.add(ModBlocks.PICK_BLUE);
 
                         //Grass
                         entries.add(ModBlocks.TINY_GRASS);
@@ -263,6 +264,7 @@ public class ModItemGroup {
                         //Tools
                         entries.add(ModItems.IRON_HAMMER);
                         entries.add(ModItems.INVENTORY_ARMOR_STAND);
+                        entries.add(ModItems.KEY);
 
                         //Food
                         entries.add(ModItems.BAGUETTE);

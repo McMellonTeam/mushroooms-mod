@@ -25,9 +25,8 @@ public class CustomBlueMushroomFeature extends CustomBlueMushroom {
 
 
     @Override
-    public void generateLargeCap(StructureWorldAccess world, Random random, BlockPos pos, int maxlarge, BlockState state) {
-        int large = Random.create().nextBetween(maxlarge + 3, maxlarge + 10);
-        int height = Random.create().nextBetween(3, maxlarge);
+    public void generateLargeCap(StructureWorldAccess world, Random random, BlockPos pos, int maxlarge, BlockState state, int large, int height) {
+
         BlockPos.Mutable mutable = new BlockPos.Mutable();
 
         int length = 0;
@@ -37,10 +36,8 @@ public class CustomBlueMushroomFeature extends CustomBlueMushroom {
         boolean force = true;
 
         FastNoiseLite noise = new FastNoiseLite((int) world.getSeed());
-        noise.SetFractalType(FastNoiseLite.FractalType.FBm);
         noise.SetNoiseType(FastNoiseLite.NoiseType.Perlin);
         noise.SetFrequency(0.06f);
-        noise.SetFractalOctaves(2);
 
         for (float x = -large; x <= large; ++x) {
             for (float z = -large; z <= large; ++z) {
@@ -62,7 +59,6 @@ public class CustomBlueMushroomFeature extends CustomBlueMushroom {
         BlockPos.Mutable mutable = new BlockPos.Mutable();
         Vec3d vect3d = pos.toCenterPos();
         Box box = Box.of(vect3d, maxlarge, 2, maxlarge);
-        System.out.println(vect3d + "   " + box);
         for (Entity entity : world.getOtherEntities(null, box)) {
             Vec3d vect = entity.getPos().subtract(pos.toCenterPos());
             double distance = FastMaths.getLength((float) vect.x, (float) vect.z, 0.005f);
@@ -99,7 +95,6 @@ public class CustomBlueMushroomFeature extends CustomBlueMushroom {
                     mutable.set(pos, x, u, z);
                     float t = 4 * noise.GetNoise(mutable.getX(), mutable.getZ());
                     if (u == 0) {
-                        System.out.println(t);
                         GenLines.generateAxisLine(world, mutable, (int) (Math.abs(t * 4)), Direction.DOWN, trunk);
                     }
                     if (t < 1) {

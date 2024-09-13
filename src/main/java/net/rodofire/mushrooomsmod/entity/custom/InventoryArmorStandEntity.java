@@ -26,15 +26,40 @@ import software.bernie.geckolib.core.object.PlayState;
 public class InventoryArmorStandEntity extends LivingEntity implements GeoEntity {
     protected static final TrackedData<Boolean> CAN_USE = DataTracker.registerData(InventoryArmorStandEntity.class, TrackedDataHandlerRegistry.BOOLEAN);
     private final AnimatableInstanceCache cache = new SingletonAnimatableInstanceCache(this);
-    private final DefaultedList<ItemStack> heldItems = DefaultedList.ofSize(2, ItemStack.EMPTY);
-    private final DefaultedList<ItemStack> armorItems = DefaultedList.ofSize(4, ItemStack.EMPTY);
-    private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(36, ItemStack.EMPTY);
+    protected final DefaultedList<ItemStack> heldItems = DefaultedList.ofSize(2, ItemStack.EMPTY);
+    protected final DefaultedList<ItemStack> armorItems = DefaultedList.ofSize(4, ItemStack.EMPTY);
+    protected final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(36, ItemStack.EMPTY);
     private int lefttickusage;
-
 
     public InventoryArmorStandEntity(EntityType<? extends LivingEntity> entityType, World world) {
         super(entityType, world);
     }
+
+    public DefaultedList<DefaultedList<ItemStack>> getInventory() {
+        DefaultedList<DefaultedList<ItemStack>> inventoryLists = DefaultedList.ofSize(3, DefaultedList.of());
+
+        inventoryLists.set(0, heldItems);
+        inventoryLists.set(1, armorItems);
+        inventoryLists.set(2, inventory);
+
+        return inventoryLists;
+    }
+
+    public void setInventory(DefaultedList<DefaultedList<ItemStack>> inventory) {
+        DefaultedList<ItemStack> held = inventory.get(0);
+        DefaultedList<ItemStack> armor = inventory.get(1);
+        DefaultedList<ItemStack> base = inventory.get(2);
+        for (int i = 0; i < held.size(); i++) {
+            heldItems.set(i, held.get(i));
+        }
+        for (int i = 0; i < armor.size(); i++) {
+            armorItems.set(i, armor.get(i));
+        }
+        for (int i = 0; i < base.size(); i++) {
+            this.inventory.set(i, base.get(i));
+        }
+    }
+
 
     @Override
     public Iterable<ItemStack> getArmorItems() {
@@ -83,6 +108,7 @@ public class InventoryArmorStandEntity extends LivingEntity implements GeoEntity
         if (player.getBlockPos().getX() != this.getBlockPos().getX() || player.getBlockPos().getY() != this.getBlockPos().getY() || player.getBlockPos().getZ() != this.getBlockPos().getZ())
             return;
         if (!this.canUse()) return;
+        if (!this.canPlayerUse(player)) return;
         //Get player inventory and store it and give the previous inventory to the player
         for (int i = 1; i < 36; i++) {
             ItemStack stack = player.getInventory().getStack(i);
@@ -107,6 +133,10 @@ public class InventoryArmorStandEntity extends LivingEntity implements GeoEntity
         player.getInventory().setStack(40, istack2);
         this.setUse(false);
         this.lefttickusage = 160;
+    }
+
+    public boolean canPlayerUse(PlayerEntity entity) {
+        return true;
     }
 
     @Override
@@ -157,9 +187,7 @@ public class InventoryArmorStandEntity extends LivingEntity implements GeoEntity
         return cache;
     }
 
-    @Override
-    public void writeCustomDataToNbt(NbtCompound nbt) {
-        super.writeCustomDataToNbt(nbt);
+    protected void writeCommonNbt(NbtCompound nbt) {
         NbtList nbtList = new NbtList();
         NbtList nbtList2 = new NbtList();
         NbtList nbtList3 = new NbtList();
@@ -185,9 +213,7 @@ public class InventoryArmorStandEntity extends LivingEntity implements GeoEntity
         nbt.put("Inventory", nbtList3);
     }
 
-    @Override
-    public void readCustomDataFromNbt(NbtCompound nbt) {
-        super.readCustomDataFromNbt(nbt);
+    protected void readCommonNbt(NbtCompound nbt) {
         if (nbt.contains("ArmorItems", NbtElement.LIST_TYPE)) {
             NbtList nbtList = nbt.getList("ArmorItems", NbtElement.COMPOUND_TYPE);
             for (int i = 0; i < this.armorItems.size(); ++i) {
@@ -206,6 +232,18 @@ public class InventoryArmorStandEntity extends LivingEntity implements GeoEntity
                 this.inventory.set(i, ItemStack.fromNbt(nbtList.getCompound(i)));
             }
         }
+    }
+
+    @Override
+    public void writeCustomDataToNbt(NbtCompound nbt) {
+        super.writeCustomDataToNbt(nbt);
+        writeCommonNbt(nbt);
+    }
+
+    @Override
+    public void readCustomDataFromNbt(NbtCompound nbt) {
+        super.readCustomDataFromNbt(nbt);
+        readCommonNbt(nbt);
     }
 
     @Override

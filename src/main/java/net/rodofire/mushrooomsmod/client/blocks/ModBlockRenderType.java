@@ -12,9 +12,11 @@ public class ModBlockRenderType {
         getTransludent(ModBlocks.BLUE_LUMINESCENT_MUSHROOM_STEM);
         getTransludent(ModBlocks.TRANSPARENT_MUSHROOM_STEM);
 
+
         getTransludent(ModBlocks.BLUE_LUMINESCENT_ALTERED_MUSHROOM_BLOCK);
         getTransludent(ModBlocks.BLUE_LUMINESCENT_FERMENTED_MUSHROOM_BLOCK);
         getTransludent(ModBlocks.BLUE_LUMINESCENT_DEGRADATED_MUSHROOM_BLOCK);
+
         getTransludent(ModBlocks.PINK_LUMINESCENT_ALTERED_MUSHROOM_BLOCK);
         getTransludent(ModBlocks.PINK_LUMINESCENT_DEGRADATED_MUSHROOM_BLOCK);
         getTransludent(ModBlocks.PINK_LUMINESCENT_FERMENTED_MUSHROOM_BLOCK);
@@ -114,6 +116,7 @@ public class ModBlockRenderType {
         getCutout(ModBlocks.PERVENCHE);
         getCutout(ModBlocks.ACONIT);
         getCutout(ModBlocks.FLEUR_BERRIES);
+        getCutout(ModBlocks.PICK_BLUE);
 
 
         getCutout(ModBlocks.TINY_GRASS);

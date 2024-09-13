@@ -1,4 +1,4 @@
-package net.rodofire.mushrooomsmod.mixin;
+package net.rodofire.mushrooomsmod.mixin.item;
 
 
 import net.minecraft.block.BlockState;
