@@ -15,6 +15,7 @@ import net.rodofire.mushrooomsmod.MushrooomsMod;
 @Config.Gui.Background("mushrooomsmod:textures/block/mushroom_block_blue_luminescent.png")
 public class ModConfig extends PartitioningSerializer.GlobalData {
 
+
     @ConfigEntry.Category("server")
     @ConfigEntry.Gui.TransitiveObject()
     public ModServerConfig server = new ModServerConfig();
@@ -27,14 +28,27 @@ public class ModConfig extends PartitioningSerializer.GlobalData {
 
     @Config(name = MushrooomsMod.MOD_ID + "-server")
     public static final class ModServerConfig implements ConfigData {
+        @ConfigEntry.Gui.RequiresRestart()
         @ConfigEntry.Gui.Tooltip()
         @Comment("""
                 spawn rate of common biomes, cannot be <= 0
                 """)
         int commonbiomespawnrate = 4;
 
+        @ConfigEntry.Gui.RequiresRestart()
+        @ConfigEntry.Gui.Tooltip()
+        @Comment("""
+                spawn rate of cave biomes, cannot be <= 0
+                """)
+        int cavebiomespawnrate = 4;
+
+
         public int getCommonBiomeSpawnRate() {
             return Math.max(1, commonbiomespawnrate);
+        }
+
+        public int getCaveBiomeSpawnRate() {
+            return Math.max(1, cavebiomespawnrate);
         }
     }
 

@@ -1,4 +1,4 @@
-package net.rodofire.mushrooomsmod.client;
+package net.rodofire.mushrooomsmod.client.colors;
 
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
 import net.minecraft.client.color.world.BiomeColors;

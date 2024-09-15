@@ -1,4 +1,4 @@
-package net.rodofire.mushrooomsmod.client;
+package net.rodofire.mushrooomsmod.client.hud;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback;

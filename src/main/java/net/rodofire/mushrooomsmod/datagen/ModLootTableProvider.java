@@ -107,6 +107,7 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.MUSHROOM_SMALL_RED);
         addDrop(ModBlocks.MUSHROOM_DEATH_TRUMPET);
         addDrop(ModBlocks.SIDE_MUSHROOM_BLUE_LUMINESCENT);
+        addDrop(ModBlocks.LOG_MUSHROOM_BROWN);
 
         //Flowers
         addDrop(ModBlocks.MUSHROOM_FLOWERS);
@@ -148,6 +149,7 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.ACONIT);
         addDrop(ModBlocks.PERVENCHE);
         addDrop(ModBlocks.OCULAE);
+        addDrop(ModBlocks.PICK_BLUE);
 
         addDrop(ModBlocks.RAPANGE_FLOWERS);
         addDrop(ModBlocks.FLEUR_BERRIES);
@@ -273,6 +275,7 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.WHITE_CRYSTAL);
 
         addDrop(ModBlocks.AMBER_BLOCK);
+        addDrop(ModBlocks.AMBER_MINERAL);
         addDrop(ModBlocks.RAW_AMBER_BLOCK);
         addDrop(ModBlocks.AMBER_BLOCK_SANDIFIED);
         addDrop(ModBlocks.AMBER_ORE, oreDrops(ModBlocks.AMBER_ORE, ModItems.AMBER_ITEM));

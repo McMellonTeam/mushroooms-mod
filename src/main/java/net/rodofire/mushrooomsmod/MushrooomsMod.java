@@ -2,15 +2,13 @@ package net.rodofire.mushrooomsmod;
 
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
-import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
-import net.minecraft.entity.LivingEntity;
 import net.rodofire.mushrooomsmod.block.BlockUtils;
 import net.rodofire.mushrooomsmod.block.ModBlockEntities;
 import net.rodofire.mushrooomsmod.block.ModBlocks;
 import net.rodofire.mushrooomsmod.configs.ModConfig;
 import net.rodofire.mushrooomsmod.effect.ModStatusEffects;
 import net.rodofire.mushrooomsmod.entity.ModEntities;
-import net.rodofire.mushrooomsmod.entity.custom.*;
+import net.rodofire.mushrooomsmod.entity.ModEntitiesAttribute;
 import net.rodofire.mushrooomsmod.event.PlayerTickHandler;
 import net.rodofire.mushrooomsmod.item.ModItemGroup;
 import net.rodofire.mushrooomsmod.item.ModItems;
@@ -48,6 +46,7 @@ public class MushrooomsMod implements ModInitializer {
         ModItemGroup.registerItemGroup();
 
         ModEntities.registerModENtities();
+        ModEntitiesAttribute.registerAttributes();
 
 
         ModParticles.registerParticles();
@@ -73,13 +72,6 @@ public class MushrooomsMod implements ModInitializer {
         ServerTickEvents.START_SERVER_TICK.register(new PlayerTickHandler());
 
 
-        FabricDefaultAttributeRegistry.register(ModEntities.GROKI, GrokiEntity.setAttributes());
-        FabricDefaultAttributeRegistry.register(ModEntities.BOLETE_COW, BoleteCowEntity.setAttributes());
-        FabricDefaultAttributeRegistry.register(ModEntities.PLOTI, PlotiEntity.setAttributes());
-        FabricDefaultAttributeRegistry.register(ModEntities.CRYSTAL_CREEPER, CustomCreeperEntity.createCreeperAttributes());
-        FabricDefaultAttributeRegistry.register(ModEntities.CRYSTAL_GOLEM, CrystalGolemEntity.createCrystalGolemAttributes());
-        FabricDefaultAttributeRegistry.register(ModEntities.SCHROOM_STICK, SchroomStickEntity.setAttributes());
-        FabricDefaultAttributeRegistry.register(ModEntities.INVENTORY_ARMOR_STAND_ENTITY, LivingEntity.createLivingAttributes());
         LOGGER.info("Starting MushrooomsMod!");
 
     }

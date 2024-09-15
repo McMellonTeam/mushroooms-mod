@@ -57,5 +57,13 @@
   },
   "suggests": {
     "another-mod": "*"
+  },
+  "custom": {
+    "modmenu": {
+      "links": {
+        "discord": "https://discord.gg/Y6Nye8U8"
+      },
+      "update_checker": true
+    }
   }
 }
