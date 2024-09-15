@@ -1,16 +1,16 @@
 {
-  "feature": "mushrooomsmod:jacynthe_key",
+  "feature": "mushrooomsmod:pick_blue_key",
   "placement": [
     {
       "type": "minecraft:count",
-      "count": 2
+      "count": 12
     },
     {
       "type": "minecraft:in_square"
     },
     {
       "type": "minecraft:heightmap",
-      "heightmap": "WORLD_SURFACE_WG"
+      "heightmap": "MOTION_BLOCKING"
     },
     {
       "type": "minecraft:biome"

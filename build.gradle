@@ -86,8 +86,8 @@ dependencies {
 	modApi "dev.architectury:architectury-fabric:11.0.8"
 
 
-	modImplementation 'maven.modrinth:ewc:1.1.5'
-	include "maven.modrinth:ewc:1.1.5"
+	modImplementation 'maven.modrinth:ewc:2.1.2-1.20.4'
+	include "maven.modrinth:ewc:2.1.2-1.20.4"
 
 	modApi "com.terraformersmc:modmenu:9.0.0"
 

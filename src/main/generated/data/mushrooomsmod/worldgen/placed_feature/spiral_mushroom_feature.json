@@ -1,9 +1,9 @@
 {
-  "feature": "mushrooomsmod:jacynthe_key",
+  "feature": "mushrooomsmod:spiral_mushroom_key",
   "placement": [
     {
       "type": "minecraft:count",
-      "count": 2
+      "count": 4
     },
     {
       "type": "minecraft:in_square"

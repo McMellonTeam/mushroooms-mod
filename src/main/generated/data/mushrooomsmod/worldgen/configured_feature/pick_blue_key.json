@@ -8,10 +8,7 @@
           "to_place": {
             "type": "minecraft:simple_state_provider",
             "state": {
-              "Name": "mushrooomsmod:pervenche",
-              "Properties": {
-                "half": "lower"
-              }
+              "Name": "mushrooomsmod:pick_blue"
             }
           }
         }
@@ -26,8 +23,8 @@
         }
       ]
     },
-    "tries": 20,
+    "tries": 12,
     "xz_spread": 6,
-    "y_spread": 3
+    "y_spread": 2
   }
 }

@@ -1,9 +1,9 @@
 {
-  "feature": "mushrooomsmod:jacynthe_key",
+  "feature": "mushrooomsmod:arch_key",
   "placement": [
     {
       "type": "minecraft:count",
-      "count": 2
+      "count": 1
     },
     {
       "type": "minecraft:in_square"
