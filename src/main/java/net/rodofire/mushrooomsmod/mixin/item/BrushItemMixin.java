@@ -5,6 +5,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.projectile.ProjectileUtil;
 import net.minecraft.item.BrushItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -22,16 +23,16 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(BrushItem.class)
 public abstract class BrushItemMixin extends Item {
-    @Unique
-    protected abstract HitResult getHitResult(LivingEntity user);
+    private HitResult getHitResult(PlayerEntity user) {
+        return ProjectileUtil.getCollision(user, entity -> !entity.isSpectator() && entity.canHit(), (double)PlayerEntity.getReachDistance(user.isCreative()));
+    }
 
     @Inject(method = "usageTick", at = @At("TAIL"))
     public void amberBlock(World world, LivingEntity user, ItemStack stack, int remainingUseTicks, CallbackInfo ci) {
         int i = this.getMaxUseTime(stack) - remainingUseTicks + 1;
         boolean bl = i % 10 == 5;
-        if (bl) {
-            PlayerEntity playerEntity = (PlayerEntity) user;
-            HitResult hitResult = this.getHitResult(user);
+        if (bl && user instanceof PlayerEntity playerEntity) {
+            HitResult hitResult = this.getHitResult(playerEntity);
             BlockHitResult blockHitResult = (BlockHitResult) hitResult;
             BlockPos blockPos = blockHitResult.getBlockPos();
             BlockState blockState = world.getBlockState(blockPos);
