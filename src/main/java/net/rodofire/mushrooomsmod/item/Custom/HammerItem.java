@@ -18,7 +18,10 @@ import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ToolItem;
 import net.minecraft.item.ToolMaterial;
+import net.minecraft.recipe.RecipeEntry;
 import net.minecraft.recipe.RecipeManager;
+import net.minecraft.recipe.RecipeType;
+import net.minecraft.recipe.SmeltingRecipe;
 import net.minecraft.registry.DynamicRegistryManager;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
@@ -57,8 +60,10 @@ public class HammerItem extends ToolItem {
     public static ItemStack getResult(World world, ItemStack stack) {
         RecipeManager recipeManager = world.getRecipeManager();
         DynamicRegistryManager registryManager = world.getRegistryManager();
-        Optional<ForgeRecipe> optionalRecipe = recipeManager.getFirstMatch(ForgeRecipe.Type.INSTANCE, new SimpleInventory(stack), world);
-        if (optionalRecipe.isPresent()) return optionalRecipe.get().getOutput(registryManager);
+        Optional<RecipeEntry<ForgeRecipe>> optional = world
+                .getRecipeManager()
+                .getFirstMatch(ForgeRecipe.Type.INSTANCE, new SimpleInventory(stack), world);
+        if (optional.isPresent()) return optional.get().value().getResult(registryManager);
         return ItemStack.EMPTY;
     }
 

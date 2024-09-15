@@ -27,8 +27,7 @@ import net.rodofire.mushrooomsmod.item.ModItems;
 import net.rodofire.mushrooomsmod.particle.ModParticles;
 import net.rodofire.mushrooomsmod.sound.ModBlockSoundGroup;
 import net.rodofire.mushrooomsmod.world.features.configuredfeatures.ModConfiguredFeatures;
-import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.tree.sapplinggenerator.BlueLuminescentSapplingGenerator;
-import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.tree.sapplinggenerator.OakBerriesSaplingGenerator;
+import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.tree.ModSaplings;
 
 
 public class ModBlocks {
@@ -99,14 +98,14 @@ public class ModBlocks {
     public static final Block BROWN_FERMENTED_MUSHROOM_BLOCK = registerBlock("mushroom_block_fermented_brown", new FermentedMushroomBlock(() -> Blocks.BROWN_MUSHROOM_BLOCK, true, FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM_BLOCK)));
 
     //mushrooms
-    public static final Block GREEN_MUSHROOM = registerBlock("mushroom_green", new MushroomPlantBlock(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM), ModConfiguredFeatures.GREEN_MUSHROOM_TREE_KEY));
-    public static final Block PURPLE_MUSHROOM = registerBlock("mushroom_purple", new MushroomPlantBlock(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM), ModConfiguredFeatures.PURPLE_MUSHROOM_TREE_KEY));
-    public static final Block BLUE_MUSHROOM = registerBlock("mushroom_blue", new MushroomPlantBlock(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM), ModConfiguredFeatures.BLUE_MUSHROOM_TREE_KEY));
-    public static final Block BLUE_LUMINESCENT_MUSHROOM = registerBlock("mushroom_blue_luminescent", new MushroomPlantBlock(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM).luminance(5), ModConfiguredFeatures.BLUE_LUMINESCENT_MUSHROOM_TREE_KEY));
-    public static final Block LUMINESCENT_PINK_MUSHROOM = registerBlock("mushroom_pink_luminescent", new MushroomPlantBlock(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM).luminance(5), ModConfiguredFeatures.PINK_LUMINESCENT_MUSHROOM_TREE_KEY));
-    public static final Block ORANGE_MUSHROOM = registerBlock("mushroom_orange", new MushroomPlantBlock(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM), ModConfiguredFeatures.ORANGE_MUSHROOM_TREE_KEY));
-    public static final Block YELLOW_MUSHROOM = registerBlock("mushroom_yellow", new MushroomPlantBlock(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM).luminance(5), ModConfiguredFeatures.YELLOW_MUSHROOM_TREE_KEY));
-    public static final Block FERTILE_RED_MUSHROOM = registerBlock("mushroom_fertile_red", new MushroomPlantBlock(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM), ModConfiguredFeatures.FERTILE_RED_MUSHROOM_KEY));
+    public static final Block GREEN_MUSHROOM = registerBlock("mushroom_green", new MushroomPlantBlock(ModConfiguredFeatures.GREEN_MUSHROOM_TREE_KEY, FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM)));
+    public static final Block PURPLE_MUSHROOM = registerBlock("mushroom_purple", new MushroomPlantBlock(ModConfiguredFeatures.PURPLE_MUSHROOM_TREE_KEY, FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM)));
+    public static final Block BLUE_MUSHROOM = registerBlock("mushroom_blue", new MushroomPlantBlock(ModConfiguredFeatures.BLUE_MUSHROOM_TREE_KEY, FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM)));
+    public static final Block BLUE_LUMINESCENT_MUSHROOM = registerBlock("mushroom_blue_luminescent", new MushroomPlantBlock(ModConfiguredFeatures.BLUE_LUMINESCENT_MUSHROOM_TREE_KEY, FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM).luminance(5)));
+    public static final Block LUMINESCENT_PINK_MUSHROOM = registerBlock("mushroom_pink_luminescent", new MushroomPlantBlock(ModConfiguredFeatures.PINK_LUMINESCENT_MUSHROOM_TREE_KEY, FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM).luminance(5)));
+    public static final Block ORANGE_MUSHROOM = registerBlock("mushroom_orange", new MushroomPlantBlock(ModConfiguredFeatures.ORANGE_MUSHROOM_TREE_KEY, FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM)));
+    public static final Block YELLOW_MUSHROOM = registerBlock("mushroom_yellow", new MushroomPlantBlock(ModConfiguredFeatures.YELLOW_MUSHROOM_TREE_KEY, FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM).luminance(5)));
+    public static final Block FERTILE_RED_MUSHROOM = registerBlock("mushroom_fertile_red", new MushroomPlantBlock(ModConfiguredFeatures.FERTILE_RED_MUSHROOM_KEY, FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM)));
 
     //Big Mushrooms
     public static final Block BIG_PURPLE_MUSHROOM_PLANT = registerHiddenBlock("mushroom_big_plant_purple", new BigPurpleMushroomPlant(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM).collidable(true), ModBlocks.TINY_PURPLE_MUSHROOM, ModBlocks.LITTLE_PURPLE_MUSHROOM, ModBlocks.MEDIUM_PURPLE_MUSHROOM, ModBlocks.BIG_PURPLE_MUSHROOM));
@@ -134,9 +133,9 @@ public class ModBlocks {
     public static final Block DANGEROUS_MUSHROOM_BOOSTING = registerHiddenBlock("dangerous_mushroom_boosting", new DangerousBoostingMushroom(FabricBlockSettings.copyOf(Blocks.ROSE_BUSH).nonOpaque().noCollision()));
 
     //Mushroom Stem
-    public static final Block TRANSPARENT_MUSHROOM_STEM = registerBlock("mushroom_stem_transparent", new GlassBlock(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM_BLOCK).nonOpaque().luminance(9)));
-    public static final Block BLUE_LUMINESCENT_MUSHROOM_STEM = registerBlock("mushroom_stem_blue_luminescent", new GlassBlock(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM_BLOCK).nonOpaque().luminance(9)));
-    public static final Block GREEN_MUSHROOM_STEM = registerBlock("mushroom_stem_green", new GlassBlock(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM_BLOCK).nonOpaque()));
+    public static final Block TRANSPARENT_MUSHROOM_STEM = registerBlock("mushroom_stem_transparent", new TransparentBlock(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM_BLOCK).nonOpaque().luminance(9)));
+    public static final Block BLUE_LUMINESCENT_MUSHROOM_STEM = registerBlock("mushroom_stem_blue_luminescent", new TransparentBlock(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM_BLOCK).nonOpaque().luminance(9)));
+    public static final Block GREEN_MUSHROOM_STEM = registerBlock("mushroom_stem_green", new TransparentBlock(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM_BLOCK).nonOpaque()));
 
     //Other Mushrooms Blocks
     public static final Block COMPRESSED_PURPLE_MUSHROOM = registerBlock("mushroom_compressed_purple", new MossBlock(FabricBlockSettings.copyOf(Blocks.MOSS_BLOCK)));
@@ -155,14 +154,14 @@ public class ModBlocks {
 
     /*-----------Flower Related-----------*/
     //Flowers
-    public static final Block OCULAE = registerBlock("oculae", new FlowerBlock(StatusEffects.DARKNESS, 1000, FabricBlockSettings.copyOf(Blocks.GRASS).nonOpaque().noCollision()));
-    public static final Block CYANUS_RUBENS = registerBlock("cyanus_rubens", new FlowerBlock(StatusEffects.DARKNESS, 1000, FabricBlockSettings.copyOf(Blocks.GRASS).nonOpaque().noCollision()));
-    public static final Block CYANEA = registerBlock("cyanea", new FlowerBlock(StatusEffects.DARKNESS, 1000, FabricBlockSettings.copyOf(Blocks.GRASS).luminance(12).nonOpaque().noCollision()));
-    public static final Block SOL_OCCIDENTIS = registerBlock("sol_occidens", new FlowerBlock(StatusEffects.DARKNESS, 1000, FabricBlockSettings.copyOf(Blocks.GRASS).nonOpaque().noCollision()));
-    public static final Block FUTIALI = registerBlock("futiali", new FlowerBlock(StatusEffects.DARKNESS, 1000, FabricBlockSettings.copyOf(Blocks.GRASS).nonOpaque().luminance(11).noCollision()));
-    public static final Block MUSHROOM_FLOWERS = registerBlock("mushroom_flowers", new FlowersMushroomBlock(FabricBlockSettings.copyOf(Blocks.TALL_GRASS).nonOpaque().noCollision(), ModConfiguredFeatures.BIG_PURPLE_MUSHROOM_TREE_KEY));
+    public static final Block OCULAE = registerBlock("oculae", new FlowerBlock(StatusEffects.DARKNESS, 1000, FabricBlockSettings.copyOf(Blocks.SHORT_GRASS).nonOpaque().noCollision()));
+    public static final Block CYANUS_RUBENS = registerBlock("cyanus_rubens", new FlowerBlock(StatusEffects.DARKNESS, 1000, FabricBlockSettings.copyOf(Blocks.SHORT_GRASS).nonOpaque().noCollision()));
+    public static final Block CYANEA = registerBlock("cyanea", new FlowerBlock(StatusEffects.DARKNESS, 1000, FabricBlockSettings.copyOf(Blocks.SHORT_GRASS).luminance(12).nonOpaque().noCollision()));
+    public static final Block SOL_OCCIDENTIS = registerBlock("sol_occidens", new FlowerBlock(StatusEffects.DARKNESS, 1000, FabricBlockSettings.copyOf(Blocks.SHORT_GRASS).nonOpaque().noCollision()));
+    public static final Block FUTIALI = registerBlock("futiali", new FlowerBlock(StatusEffects.DARKNESS, 1000, FabricBlockSettings.copyOf(Blocks.SHORT_GRASS).nonOpaque().luminance(11).noCollision()));
+    public static final Block MUSHROOM_FLOWERS = registerBlock("mushroom_flowers", new FlowersMushroomBlock(ModConfiguredFeatures.BIG_PURPLE_MUSHROOM_TREE_KEY, FabricBlockSettings.copyOf(Blocks.TALL_GRASS).nonOpaque().noCollision()));
     public static final Block TURQUOSUM_STILUS = registerBlock("turquosum_stilus", new TallFlowerBlock(FabricBlockSettings.copyOf(Blocks.ROSE_BUSH).luminance(11).nonOpaque().noCollision()));
-    public static final Block NOCTULICA = registerBlock("noctulica", new FlowerBlock(StatusEffects.DARKNESS, 1000, FabricBlockSettings.copyOf(Blocks.GRASS).luminance(12).nonOpaque().noCollision()));
+    public static final Block NOCTULICA = registerBlock("noctulica", new FlowerBlock(StatusEffects.DARKNESS, 1000, FabricBlockSettings.copyOf(Blocks.SHORT_GRASS).luminance(12).nonOpaque().noCollision()));
     public static final Block SAPHIRA_FLORENS = registerBlock("saphira_florens", new TallFlowerBlock(FabricBlockSettings.copyOf(Blocks.ROSE_BUSH).nonOpaque().luminance(11).noCollision()));
     public static final Block PREHISTORIC_ROSE = registerBlock("prehistoric_rose", new FlowerBlock(StatusEffects.GLOWING, 10, FabricBlockSettings.copyOf(Blocks.ROSE_BUSH).nonOpaque().noCollision()));
     public static final Block PREHISTO_PINK_SCHROOM = registerBlock("prehisto_pink_schroom", new FlowerBlock(StatusEffects.GLOWING, 10, FabricBlockSettings.copyOf(Blocks.ROSE_BUSH).nonOpaque().noCollision()));
@@ -259,8 +258,8 @@ public class ModBlocks {
 
 
     //Grass
-    public static final Block TINY_GRASS = registerBlock("tiny_grass", new PlantBlock(FabricBlockSettings.copyOf(Blocks.GRASS)));
-    public static final Block BLUE_LUMINESCENT_GRASS = registerBlock("grass_blue_luminescent", new PlantBlock(FabricBlockSettings.copyOf(Blocks.GRASS).luminance(9)));
+    public static final Block TINY_GRASS = registerBlock("tiny_grass", new GrassBlock(FabricBlockSettings.copyOf(Blocks.SHORT_GRASS)));
+    public static final Block BLUE_LUMINESCENT_GRASS = registerBlock("grass_blue_luminescent", new GrassBlock(FabricBlockSettings.copyOf(Blocks.SHORT_GRASS).luminance(9)));
     public static final Block BLUE_LUMINESCENT_TALL_GRASS = registerBlock("grass_tall_blue_luminescent", new TallPlantBlock(FabricBlockSettings.copyOf(Blocks.TALL_GRASS).luminance(11)));
 
     //Vines
@@ -285,8 +284,8 @@ public class ModBlocks {
     //Light Blocks
     public static final Block RED_LANTERN = registerBlock("lantern_red", new LanternBlock(FabricBlockSettings.copyOf(Blocks.LANTERN).luminance(15).nonOpaque()));
     public static final Block GREEN_LANTERN = registerBlock("lantern_green", new LanternBlock(FabricBlockSettings.copyOf(Blocks.LANTERN).luminance(13).nonOpaque()));
-    public static final Block GREEN_TORCH = registerHiddenBlock("torch_green", new TorchBlock(FabricBlockSettings.copyOf(Blocks.TORCH).luminance(12).nonOpaque(), ModParticles.GREENFIRE_PARTICLE));
-    public static final Block WALL_GREEN_TORCH = registerHiddenBlock("torch_wall_green", new WallTorchBlock(FabricBlockSettings.copyOf(Blocks.WALL_TORCH).luminance(12).nonOpaque(), ModParticles.GREENFIRE_PARTICLE));
+    public static final Block GREEN_TORCH = registerHiddenBlock("torch_green", new TorchBlock(ModParticles.GREENFIRE_PARTICLE, FabricBlockSettings.copyOf(Blocks.TORCH).luminance(12).nonOpaque()));
+    public static final Block WALL_GREEN_TORCH = registerHiddenBlock("torch_wall_green", new WallTorchBlock(ModParticles.GREENFIRE_PARTICLE, FabricBlockSettings.copyOf(Blocks.WALL_TORCH).luminance(12).nonOpaque()));
     public static final Block GREEN_CAMPFIRE = registerBlock("campfire_green", new CampfireBlock(true, 1, FabricBlockSettings.copyOf(Blocks.CAMPFIRE).luminance(13).nonOpaque()));
 
 
@@ -302,30 +301,30 @@ public class ModBlocks {
     public static final Block BLUE_LUMINESCENT_STRIPPED_WOOD = registerBlock("wood_stripped_blue_luminescent", new PillarBlock(FabricBlockSettings.copyOf(Blocks.STRIPPED_OAK_WOOD)));
     public static final Block BLUE_LUMINESCENT_WOOD = registerBlock("wood_blue_luminescent", new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_WOOD)));
     public static final Block BLUE_LUMINESCENT_PLANKS = registerBlock("planks_blue_luminescent", new Block(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)));
-    public static final Block BLUE_LUMINESCENT_TRAPDOOR = registerBlock("trapdoor_blue_luminescent", new TrapdoorBlock(FabricBlockSettings.copyOf(Blocks.OAK_TRAPDOOR), BlockSetType.OAK));
-    public static final Block BLUE_LUMINESCENT_DOOR = registerBlock("door_blue_luminescent", new DoorBlock(FabricBlockSettings.copyOf(Blocks.OAK_DOOR), BlockSetType.OAK));
-    public static final Block BLUE_LUMINESCENT_BUTTON = registerBlock("button_blue_luminescent", new ButtonBlock(FabricBlockSettings.copyOf(Blocks.OAK_BUTTON), BlockSetType.OAK, 20, true));
-    public static final Block BLUE_LUMINESCENT_PRESSURE_PLATE = registerBlock("pressure_plate_blue_luminescent", new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING, FabricBlockSettings.copyOf(Blocks.OAK_PRESSURE_PLATE), BlockSetType.OAK));
+    public static final Block BLUE_LUMINESCENT_TRAPDOOR = registerBlock("trapdoor_blue_luminescent", new TrapdoorBlock(BlockSetType.OAK,FabricBlockSettings.copyOf(Blocks.OAK_TRAPDOOR)));
+    public static final Block BLUE_LUMINESCENT_DOOR = registerBlock("door_blue_luminescent", new DoorBlock(BlockSetType.OAK,FabricBlockSettings.copyOf(Blocks.OAK_DOOR)));
+    public static final Block BLUE_LUMINESCENT_BUTTON = registerBlock("button_blue_luminescent", new ButtonBlock(BlockSetType.OAK, 20, FabricBlockSettings.copyOf(Blocks.OAK_BUTTON)));
+    public static final Block BLUE_LUMINESCENT_PRESSURE_PLATE = registerBlock("pressure_plate_blue_luminescent", new PressurePlateBlock(BlockSetType.OAK ,FabricBlockSettings.copyOf(Blocks.OAK_PRESSURE_PLATE)));
     public static final Block BLUE_LUMINESCENT_FENCE = registerBlock("fence_blue_luminescent", new FenceBlock(FabricBlockSettings.copyOf(Blocks.OAK_FENCE)));
-    public static final Block BLUE_LUMINESCENT_FENCE_GATE = registerBlock("fence_gate_blue_luminescent", new FenceGateBlock(FabricBlockSettings.copyOf(Blocks.OAK_FENCE_GATE), WoodType.OAK));
-    public static final Block BLUE_LUMINESCENT_SAPPLING = registerBlock("sappling_blue_luminescent", new SaplingBlock(new BlueLuminescentSapplingGenerator(), FabricBlockSettings.copyOf(Blocks.OAK_SAPLING)));
+    public static final Block BLUE_LUMINESCENT_FENCE_GATE = registerBlock("fence_gate_blue_luminescent", new FenceGateBlock(WoodType.OAK,FabricBlockSettings.copyOf(Blocks.OAK_FENCE_GATE)));
+    public static final Block BLUE_LUMINESCENT_SAPPLING = registerBlock("sappling_blue_luminescent", new SaplingBlock(ModSaplings.BLUE_LUMINESCENT_SAPLING, FabricBlockSettings.copyOf(Blocks.OAK_SAPLING)));
     public static final Block BLUE_LUMINESCENT_STAIRS = registerBlock("stairs_blue_luminescent", new StairsBlock(BLUE_LUMINESCENT_PLANKS.getDefaultState(), FabricBlockSettings.copyOf(Blocks.OAK_STAIRS).luminance(8)));
     public static final Block BLUE_LUMINESCENT_SLAB = registerBlock("slab_blue_luminescent", new SlabBlock(FabricBlockSettings.copyOf(Blocks.OAK_SLAB)));
-    public static final Block OAK_BERRIES_SAPLING = registerBlock("sapling_oak_berries", new SaplingBlock(new OakBerriesSaplingGenerator(), FabricBlockSettings.copyOf(Blocks.OAK_SAPLING).luminance(9)));
+    public static final Block OAK_BERRIES_SAPLING = registerBlock("sapling_oak_berries", new SaplingBlock(ModSaplings.OAK_BERRIES_SAPLING_GENERATOR, FabricBlockSettings.copyOf(Blocks.OAK_SAPLING).luminance(9)));
     //Crystal Blocks
-    public static final Block PINK_CRYSTAL = registerHiddenBlock("crystal_pink", new PinkCrystal(FabricBlockSettings.copyOf(Blocks.AMETHYST_CLUSTER)));
+    public static final Block PINK_CRYSTAL = registerHiddenBlock("crystal_pink", new Block(FabricBlockSettings.copyOf(Blocks.AMETHYST_CLUSTER)));
     public static final Block BLUE_CRYSTAL = registerHiddenBlock("crystal_blue", new StraightCrystal(FabricBlockSettings.create().solid().nonOpaque().sounds(BlockSoundGroup.AMETHYST_CLUSTER).strength(1.5f).pistonBehavior(PistonBehavior.DESTROY).luminance(8)));
     public static final Block RED_CRYSTAL = registerHiddenBlock("crystal_red", new StraightCrystal(FabricBlockSettings.create().solid().nonOpaque().sounds(BlockSoundGroup.AMETHYST_CLUSTER).strength(1.5f).pistonBehavior(PistonBehavior.DESTROY).luminance(8)));
-    public static final Block RED_CRYSTAL_BLOCK = registerBlock("crystal_block_red", new GlassBlock(FabricBlockSettings.create().solid().nonOpaque().sounds(ModBlockSoundGroup.PINK_CRYSTAL).luminance(12).strength(2.8f)));
-    public static final Block BLUE_CRYSTAL_BLOCK = registerBlock("crystal_block_blue", new GlassBlock(FabricBlockSettings.copyOf(ModBlocks.RED_CRYSTAL_BLOCK).luminance(12)));
+    public static final Block RED_CRYSTAL_BLOCK = registerBlock("crystal_block_red", new TransparentBlock(FabricBlockSettings.create().solid().nonOpaque().sounds(ModBlockSoundGroup.PINK_CRYSTAL).luminance(12).strength(2.8f)));
+    public static final Block BLUE_CRYSTAL_BLOCK = registerBlock("crystal_block_blue", new TransparentBlock(FabricBlockSettings.copyOf(ModBlocks.RED_CRYSTAL_BLOCK).luminance(12)));
     public static final Block PINK_CRYSTAL_BLOCK = registerBlock("crystal_block_pink", new AmethystBlock(FabricBlockSettings.copyOf(Blocks.AMETHYST_BLOCK).sounds(ModBlockSoundGroup.PINK_CRYSTAL)));
     public static final Block WHITE_CRYSTAL = registerBlock("crystal_white", new SimpleCystal(FabricBlockSettings.copyOf(Blocks.AMETHYST_CLUSTER)));
-    public static final Block WHITE_CRYSTAL_BLOCK = registerBlock("crystal_block_white", new GlassBlock(FabricBlockSettings.copyOf(ModBlocks.RED_CRYSTAL_BLOCK).luminance(12)));
+    public static final Block WHITE_CRYSTAL_BLOCK = registerBlock("crystal_block_white", new TransparentBlock(FabricBlockSettings.copyOf(ModBlocks.RED_CRYSTAL_BLOCK).luminance(12)));
 
     public static final Block BLUE_CRYSTAL_CLUSTER = registerBlock("crystal_blue_1", new TallBlock(FabricBlockSettings.copyOf(Blocks.AMETHYST_CLUSTER).luminance(11)));
 
     public static final Block RAW_AMBER_BLOCK = registerBlock("amber_block_raw", new Block(FabricBlockSettings.copyOf(Blocks.RAW_GOLD_BLOCK)));
-    public static final Block AMBER_MINERAL = registerBlock("amber_block_mineral", new GlassBlock(FabricBlockSettings.create().luminance(9).nonOpaque().strength(2.0f)));
+    public static final Block AMBER_MINERAL = registerBlock("amber_block_mineral", new TransparentBlock(FabricBlockSettings.create().luminance(9).nonOpaque().strength(2.0f)));
     public static final Block AMBER_BLOCK = registerBlock("amber_block", new AmbreBlock(FabricBlockSettings.copyOf(Blocks.EMERALD_BLOCK)));
     public static final Block AMBER_BLOCK_SANDIFIED = registerBlock("amber_block_sandified", new SandifiedAmbreBlock(FabricBlockSettings.copyOf(Blocks.SANDSTONE), ModBlocks.AMBER_BLOCK));
     public static final Block AMBER_ORE = registerBlock("amber_ore", new Block(FabricBlockSettings.copyOf(Blocks.NETHER_GOLD_ORE)));

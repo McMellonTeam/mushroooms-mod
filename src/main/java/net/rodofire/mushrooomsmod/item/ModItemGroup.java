@@ -239,7 +239,7 @@ public class ModItemGroup {
                         entries.add(ModItems.PLOTI_SPAWN_EGG);
                         entries.add(ModItems.CRYSTAL_CREEPER_SPAWN_EGG);
                         entries.add(ModItems.CRYSTAL_GOLEM_SPAWN_EGG);
-                        entries.add(ModItems.MOSQUITO_SPAWN_EGG);
+                        //entries.add(ModItems.MOSQUITO_SPAWN_EGG);
                         //entries.add(ModItems.SCHROOM_STICK_SPAWN_EGG);
 
                         //crystal
