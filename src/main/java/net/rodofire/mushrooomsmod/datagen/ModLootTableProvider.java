@@ -2,16 +2,12 @@ package net.rodofire.mushrooomsmod.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
-import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.loot.condition.BlockStatePropertyLootCondition;
 import net.minecraft.predicate.StatePredicate;
-import net.minecraft.registry.RegistryWrapper;
 import net.rodofire.mushrooomsmod.block.ModBlocks;
 import net.rodofire.mushrooomsmod.block.custom.bigmushroom.BigMushroomPlant;
 import net.rodofire.mushrooomsmod.item.ModItems;
-
-import java.util.concurrent.CompletableFuture;
 
 public class ModLootTableProvider extends FabricBlockLootTableProvider {
 
@@ -107,6 +103,7 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.MUSHROOM_SMALL_RED);
         addDrop(ModBlocks.MUSHROOM_DEATH_TRUMPET);
         addDrop(ModBlocks.SIDE_MUSHROOM_BLUE_LUMINESCENT);
+        addDrop(ModBlocks.LOG_MUSHROOM_BROWN);
 
         //Flowers
         addDrop(ModBlocks.MUSHROOM_FLOWERS);
@@ -148,6 +145,7 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.ACONIT);
         addDrop(ModBlocks.PERVENCHE);
         addDrop(ModBlocks.OCULAE);
+        addDrop(ModBlocks.PICK_BLUE);
 
         addDrop(ModBlocks.RAPANGE_FLOWERS);
         addDrop(ModBlocks.FLEUR_BERRIES);
@@ -273,6 +271,7 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.WHITE_CRYSTAL);
 
         addDrop(ModBlocks.AMBER_BLOCK);
+        addDrop(ModBlocks.AMBER_MINERAL);
         addDrop(ModBlocks.RAW_AMBER_BLOCK);
         addDrop(ModBlocks.AMBER_BLOCK_SANDIFIED);
         addDrop(ModBlocks.AMBER_ORE, oreDrops(ModBlocks.AMBER_ORE, ModItems.AMBER_ITEM));

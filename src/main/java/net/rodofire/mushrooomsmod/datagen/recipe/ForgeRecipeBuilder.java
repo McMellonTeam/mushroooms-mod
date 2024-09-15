@@ -1,4 +1,4 @@
-/*package net.rodofire.mushrooomsmod.datagen.recipe;
+package net.rodofire.mushrooomsmod.datagen.recipe;/*package net.rodofire.mushrooomsmod.datagen.recipe;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;

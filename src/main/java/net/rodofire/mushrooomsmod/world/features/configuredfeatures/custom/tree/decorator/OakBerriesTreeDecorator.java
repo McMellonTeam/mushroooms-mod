@@ -1,7 +1,6 @@
 package net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.tree.decorator;
 
 import com.mojang.serialization.Codec;
-import com.mojang.serialization.MapCodec;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.gen.treedecorator.TreeDecorator;
@@ -24,7 +23,7 @@ public class OakBerriesTreeDecorator extends TreeDecorator {
     }
 
     @Override
-    public void generate(TreeDecorator.Generator generator) {
+    public void generate(Generator generator) {
         // Iterate through block positions
         generator.getLeavesPositions().forEach(pos -> {
             Random random = generator.getRandom();

@@ -42,6 +42,18 @@ public class ModBiomeFeatures {
             builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModSurfacePlacedFeatures.RED_MUSHROOM_TREE_SURFACE_PLACED_KEY);
             builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModSurfacePlacedFeatures.BROWN_MUSHROOM_TREE_SURFACE_PLACED_KEY);
         }
+
+        public static void addBlueMushroomForestFeatures(GenerationSettings.LookupBackedBuilder builder) {
+            builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModSurfacePlacedFeatures.BLUE_MUSHROOM_TREE_SURFACE_PLACED_KEY);
+            builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModSurfacePlacedFeatures.SPIRAL_MUSHROOM_FEATURE);
+            builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModSurfacePlacedFeatures.PERVENCHE_SURFACE_PLACED_KEY);
+            builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModSurfacePlacedFeatures.PICK_BLUE_SURFACE_PLACED_KEY);
+            builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModSurfacePlacedFeatures.JACYNTHE_SURFACE_PLACED_KEY);
+        }
+
+        public static void addMagicalPlainsFeatures(GenerationSettings.LookupBackedBuilder builder) {
+
+        }
     }
 
 
@@ -107,6 +119,12 @@ public class ModBiomeFeatures {
             builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModUndergroundPlacedFeatures.RAPANGE_FLOWERS_UNDERGROUND_PLACED_KEY);
             builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModUndergroundPlacedFeatures.FLEUR_BERRIES_UNDERGROUND_PLACED_KEY);
             builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModUndergroundPlacedFeatures.YELICE_UNDERGROUND_PLACED_KEY);
+        }
+
+        public static void addPurpleSchroomCaveFeatures(GenerationSettings.LookupBackedBuilder builder) {
+            builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModUndergroundPlacedFeatures.PINK_LUMINESCENT_MUSHROOM_TREE_UNDERGROUND_PLACED_KEY);
+            builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModUndergroundPlacedFeatures.PURPLE_MUSHROOM_TREE_UNDERGROUND_PLACED_KEY);
+            builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModUndergroundPlacedFeatures.HUGE_PURPLE_MUSHROOM_TREE_UNDERGROUND_PLACED_KEY);
         }
 
     }

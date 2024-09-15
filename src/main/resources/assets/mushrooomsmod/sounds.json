@@ -1,20 +1,4 @@
 {
-  "la_marseillaise_disc" : {
-    "sounds" : [
-      {
-        "name" : "mushrooomsmod:la_marseillaise_disc",
-        "stream" : true
-      }
-    ]
-  },
-  "hymne_urss" : {
-    "sounds" : [
-      {
-        "name" : "mushrooomsmod:hymne_urss",
-        "stream" : true
-      }
-    ]
-  },
   "crystal_pink_break" : {
     "subtitles" : "sounds.mushrooomsmod.pink_crystal_break",
     "sounds" : [

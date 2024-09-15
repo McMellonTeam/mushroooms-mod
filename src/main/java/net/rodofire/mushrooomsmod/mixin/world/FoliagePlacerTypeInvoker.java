@@ -1,4 +1,4 @@
-package net.rodofire.mushrooomsmod.mixin;
+package net.rodofire.mushrooomsmod.mixin.world;
 
 import com.mojang.serialization.Codec;
 import net.minecraft.world.gen.foliage.FoliagePlacer;

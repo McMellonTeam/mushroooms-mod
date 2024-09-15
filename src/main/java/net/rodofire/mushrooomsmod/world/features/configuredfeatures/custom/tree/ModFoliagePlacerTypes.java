@@ -2,7 +2,7 @@ package net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.tree
 
 import net.minecraft.world.gen.foliage.FoliagePlacerType;
 import net.rodofire.mushrooomsmod.MushrooomsMod;
-import net.rodofire.mushrooomsmod.mixin.FoliagePlacerTypeInvoker;
+import net.rodofire.mushrooomsmod.mixin.world.FoliagePlacerTypeInvoker;
 import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.tree.codetree.BlueLuminescentFoliagePlacer;
 
 public class ModFoliagePlacerTypes {

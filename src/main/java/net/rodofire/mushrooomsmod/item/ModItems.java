@@ -11,11 +11,7 @@ import net.rodofire.mushrooomsmod.MushrooomsMod;
 import net.rodofire.mushrooomsmod.block.ModBlocks;
 import net.rodofire.mushrooomsmod.effect.ModStatusEffects;
 import net.rodofire.mushrooomsmod.entity.ModEntities;
-import net.rodofire.mushrooomsmod.item.Custom.CrushableItems;
-import net.rodofire.mushrooomsmod.item.Custom.HammerItem;
-import net.rodofire.mushrooomsmod.item.Custom.InventoryArmorStandItem;
-import net.rodofire.mushrooomsmod.item.Custom.SchroomSoup;
-import net.rodofire.mushrooomsmod.sound.ModSounds;
+import net.rodofire.mushrooomsmod.item.Custom.*;
 import net.rodofire.mushrooomsmod.world.biome.overworld.ModOverworldBiomes;
 
 public class ModItems {
@@ -56,6 +52,7 @@ public class ModItems {
     public static final Item CRYSTAL_CREEPER_SPAWN_EGG = registerItem("crystal_creeper_spawn_egg", new SpawnEggItem(ModEntities.CRYSTAL_CREEPER, 0x50D122, 0xDE310F, new FabricItemSettings()));
     public static final Item CRYSTAL_GOLEM_SPAWN_EGG = registerItem("crystal_golem_spawn_egg", new SpawnEggItem(ModEntities.CRYSTAL_GOLEM, 0x9A9A9A, 0xE57FF3, new FabricItemSettings()));
     public static final Item SCHROOM_STICK_SPAWN_EGG = registerItem("schroom_stick_spawn_egg", new SpawnEggItem(ModEntities.SCHROOM_STICK, 0xd3ccc4, 0xd81a1a, new FabricItemSettings()));
+    //public static final Item MOSQUITO_SPAWN_EGG = registerItem("mosquito_spawn_egg", new SpawnEggItem(ModEntities.MOSQUITO_ENTITY, 0x897540, 0x222221, new FabricItemSettings()));
 
 
     //Crystals related
@@ -67,6 +64,7 @@ public class ModItems {
     public static final Item CRUSHED_AMBER_ITEM = registerItem("amber_crushed_item", new Item(new FabricItemSettings()));
     //Tools
     public static final Item IRON_HAMMER = registerItem("iron_hammer", new HammerItem(ToolMaterials.IRON, 27, -3.8f, 4, new FabricItemSettings()));
+    public static final Item KEY = registerItem("key", new KeyItem(new FabricItemSettings().maxCount(1)));
 
 
     private static Item registerItem(String name, Item item) {
