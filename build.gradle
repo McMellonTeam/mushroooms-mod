@@ -34,7 +34,7 @@ repositories {
 }
 
 loom {
-    runs {
+	runs {
 		// This adds a new gradle task that runs the datagen API: "gradlew runDatagen"
 		datagen {
 			inherit server
@@ -42,7 +42,7 @@ loom {
 			vmArg "-Dfabric-api.datagen"
 			vmArg "-Dfabric-api.datagen.output-dir=${file("src/main/generated")}"
 			vmArg "-Dfabric-api.datagen.modid=mushrooomsmod"
- 
+
 			runDir "build/datagen"
 		}
 	}
@@ -63,10 +63,10 @@ dependencies {
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
 	mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
-	modImplementation 'com.github.glitchfiend:TerraBlender-fabric:1.20.4-3.3.0.12'
+	modImplementation 'com.github.glitchfiend:TerraBlender-fabric:1.21-4.0.0.1'
 
-	modImplementation 'maven.modrinth:structureplacerapi:1.1.4'
-	include "maven.modrinth:structureplacerapi:1.1.4"
+	modImplementation 'maven.modrinth:structureplacerapi:1.1.5'
+	include "maven.modrinth:structureplacerapi:1.1.5"
 
 	// Fabric API. This is technically optional, but you probably want it anyway.
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
@@ -75,20 +75,22 @@ dependencies {
 	// These are included in the Fabric API production distribution and allow you to update your mod to the latest modules at a later more convenient time.
 
 	// modImplementation "net.fabricmc.fabric-api:fabric-api-deprecated:${project.fabric_version}"
-	modImplementation 'software.bernie.geckolib:geckolib-fabric-1.20.4:4.4.4'
+	modImplementation 'software.bernie.geckolib:geckolib-fabric-1.21:4.5.6'
 
-	modCompileOnly "me.shedaniel:RoughlyEnoughItems-api-fabric:14.1.727"
-	modRuntimeOnly "me.shedaniel:RoughlyEnoughItems-fabric:14.1.727"
+	modCompileOnly "me.shedaniel:RoughlyEnoughItems-api-fabric:16.0.729"
+	modRuntimeOnly "me.shedaniel:RoughlyEnoughItems-fabric:16.0.729"
 
-	modApi("me.shedaniel.cloth:cloth-config-fabric:13.0.114"){
+	modApi("me.shedaniel.cloth:cloth-config-fabric:15.0.127"){
 		exclude(group: "net.fabricmc.fabric-api")
 	}
-	modApi "dev.architectury:architectury-fabric:11.0.8"
+	modApi "dev.architectury:architectury-fabric:13.0.3"
 
 
-	modImplementation 'maven.modrinth:ewc:2.1.2-1.20.4'
+	modImplementation 'maven.modrinth:ewc:2.1.2-1.21'
+	include "maven.modrinth:ewc:2.1.2-1.21"
 
-	modApi "com.terraformersmc:modmenu:9.0.0"
+
+	modApi "com.terraformersmc:modmenu:11.0.1"
 
 }
 
@@ -101,7 +103,7 @@ processResources {
 }
 
 tasks.withType(JavaCompile).configureEach {
-	it.options.release = 17
+	it.options.release = 21
 }
 
 java {
@@ -110,8 +112,8 @@ java {
 	// If you remove this line, sources will not be generated.
 	withSourcesJar()
 
-	sourceCompatibility = JavaVersion.VERSION_17
-	targetCompatibility = JavaVersion.VERSION_17
+	sourceCompatibility = JavaVersion.VERSION_21
+	targetCompatibility = JavaVersion.VERSION_21
 }
 
 jar {

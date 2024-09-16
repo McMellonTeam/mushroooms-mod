@@ -2,7 +2,7 @@ package net.rodofire.mushrooomsmod.client.colors;
 
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
 import net.minecraft.client.color.world.BiomeColors;
-import net.minecraft.client.color.world.FoliageColors;
+import net.minecraft.world.biome.FoliageColors;
 import net.rodofire.mushrooomsmod.block.ModBlocks;
 
 public class ModColor {

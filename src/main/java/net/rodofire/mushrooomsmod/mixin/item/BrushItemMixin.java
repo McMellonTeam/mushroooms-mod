@@ -2,6 +2,7 @@ package net.rodofire.mushrooomsmod.mixin.item;
 
 
 import net.minecraft.block.BlockState;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -24,14 +25,15 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(BrushItem.class)
 public abstract class BrushItemMixin extends Item {
     private HitResult getHitResult(PlayerEntity user) {
-        return ProjectileUtil.getCollision(user, entity -> !entity.isSpectator() && entity.canHit(), (double)PlayerEntity.getReachDistance(user.isCreative()));
+        return ProjectileUtil.getCollision((Entity)user, entity -> !entity.isSpectator() && entity.canHit(), user.getBlockInteractionRange());
     }
 
     @Inject(method = "usageTick", at = @At("TAIL"))
     public void amberBlock(World world, LivingEntity user, ItemStack stack, int remainingUseTicks, CallbackInfo ci) {
-        int i = this.getMaxUseTime(stack) - remainingUseTicks + 1;
+        int i = this.getMaxUseTime(stack, user) - remainingUseTicks + 1;
         boolean bl = i % 10 == 5;
-        if (bl && user instanceof PlayerEntity playerEntity) {
+        if (bl) {
+            PlayerEntity playerEntity = (PlayerEntity) user;
             HitResult hitResult = this.getHitResult(playerEntity);
             BlockHitResult blockHitResult = (BlockHitResult) hitResult;
             BlockPos blockPos = blockHitResult.getBlockPos();
@@ -40,7 +42,7 @@ public abstract class BrushItemMixin extends Item {
 
             if (!world.isClient && object instanceof BlockBrushableBlock && ((BlockBrushableBlock) object).brush(world.getTime(), playerEntity, blockPos, i)) {
                 EquipmentSlot equipmentSlot = stack.equals(playerEntity.getEquippedStack(EquipmentSlot.OFFHAND)) ? EquipmentSlot.OFFHAND : EquipmentSlot.MAINHAND;
-                stack.damage(1, user, userx -> userx.sendEquipmentBreakStatus(equipmentSlot));
+                stack.damage(1, user, equipmentSlot);
             }
         }
     }

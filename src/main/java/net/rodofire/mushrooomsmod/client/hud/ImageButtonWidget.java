@@ -12,7 +12,7 @@ import net.minecraft.util.math.MathHelper;
 public class ImageButtonWidget extends ButtonWidget {
     private final Identifier image;
     private static final ButtonTextures TEXTURES = new ButtonTextures(
-            new Identifier("widget/button"), new Identifier("widget/button_disabled"), new Identifier("widget/button_highlighted")
+            Identifier.of("widget/button"), Identifier.of("widget/button_disabled"), Identifier.of("widget/button_highlighted")
     );
 
     public ImageButtonWidget(int x, int y, int width, int height, Identifier image, PressAction onPress) {

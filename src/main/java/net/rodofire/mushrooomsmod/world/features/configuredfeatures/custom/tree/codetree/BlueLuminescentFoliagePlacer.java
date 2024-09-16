@@ -1,8 +1,8 @@
 package net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.tree.codetree;
 
-import com.mojang.serialization.Codec;
-import com.mojang.serialization.codecs.RecordCodecBuilder;
+import com.mojang.serialization.MapCodec;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.intprovider.ConstantIntProvider;
 import net.minecraft.util.math.intprovider.IntProvider;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.TestableWorld;
@@ -13,9 +13,13 @@ import net.rodofire.easierworldcreator.worldgenutil.FastNoiseLite;
 import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.tree.ModFoliagePlacerTypes;
 
 public class BlueLuminescentFoliagePlacer extends FoliagePlacer {
-    public static final Codec<BlueLuminescentFoliagePlacer> CODEC = RecordCodecBuilder.create(chestnutFoliagePlacerInstance ->
+    /*public static final MapCodec<BlueLuminescentFoliagePlacer> CODEC = RecordCodecBuilder.create(chestnutFoliagePlacerInstance ->
             fillFoliagePlacerFields(chestnutFoliagePlacerInstance).and(Codec.intRange(0, 12).fieldOf("height")
-                    .forGetter(instance -> instance.height)).apply(chestnutFoliagePlacerInstance, BlueLuminescentFoliagePlacer::new));
+                    .forGetter(instance -> instance.height)).apply(chestnutFoliagePlacerInstance, BlueLuminescentFoliagePlacer::new));*/
+
+
+    public static final BlueLuminescentFoliagePlacer INSTANCE = new BlueLuminescentFoliagePlacer(ConstantIntProvider.create(4), ConstantIntProvider.create(1), 3);
+    public static final MapCodec<BlueLuminescentFoliagePlacer> CODEC = MapCodec.unit(() -> INSTANCE);
     private final int height;
 
     public BlueLuminescentFoliagePlacer(IntProvider radius, IntProvider offset, int height) {

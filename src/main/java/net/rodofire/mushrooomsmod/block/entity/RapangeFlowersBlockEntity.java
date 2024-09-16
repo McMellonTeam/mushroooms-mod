@@ -7,12 +7,12 @@ import net.minecraft.util.math.BlockPos;
 import net.rodofire.mushrooomsmod.block.ModBlockEntities;
 import net.rodofire.mushrooomsmod.block.ModBlocks;
 import software.bernie.geckolib.animatable.GeoBlockEntity;
-import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
-import software.bernie.geckolib.core.animatable.instance.SingletonAnimatableInstanceCache;
-import software.bernie.geckolib.core.animation.AnimatableManager;
-import software.bernie.geckolib.core.animation.Animation;
-import software.bernie.geckolib.core.animation.AnimationController;
-import software.bernie.geckolib.core.animation.RawAnimation;
+import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
+import software.bernie.geckolib.animatable.instance.SingletonAnimatableInstanceCache;
+import software.bernie.geckolib.animation.AnimatableManager;
+import software.bernie.geckolib.animation.Animation;
+import software.bernie.geckolib.animation.AnimationController;
+import software.bernie.geckolib.animation.RawAnimation;
 
 public class RapangeFlowersBlockEntity extends BlockEntity implements GeoBlockEntity {
     private static final RawAnimation DOWN = RawAnimation.begin().then("animation.rapange_flowers.down", Animation.LoopType.HOLD_ON_LAST_FRAME);

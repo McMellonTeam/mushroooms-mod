@@ -10,7 +10,6 @@ import net.minecraft.state.StateManager;
 import net.minecraft.state.property.IntProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.ActionResult;
-import net.minecraft.util.Hand;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
@@ -47,8 +46,8 @@ public class BigGreenMushroomPlant extends CropBlock implements Fertilizable {
     }
 
     @Override
-    public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
-        ItemStack itemStack = player.getStackInHand(hand);
+    public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, BlockHitResult hit) {
+        ItemStack itemStack = player.getMainHandStack();
         if (itemStack.getItem() == ModItems.PURPLE_MUSHROOM_POWDER) {
             world.setBlockState(pos, getAgeToBlockstate(getAge(state)), Block.NOTIFY_LISTENERS);
             return ActionResult.SUCCESS;

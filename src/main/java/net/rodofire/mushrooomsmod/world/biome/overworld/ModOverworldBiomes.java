@@ -40,6 +40,6 @@ public class ModOverworldBiomes {
     }
 
     public static RegistryKey<Biome> registerBiome(String id) {
-        return RegistryKey.of(RegistryKeys.BIOME, new Identifier(MushrooomsMod.MOD_ID, id));
+        return RegistryKey.of(RegistryKeys.BIOME,Identifier.of(MushrooomsMod.MOD_ID, id));
     }
 }

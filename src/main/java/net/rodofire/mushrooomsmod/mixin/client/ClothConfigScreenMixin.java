@@ -21,15 +21,15 @@ import java.util.List;
 public class ClothConfigScreenMixin {
     //*/icons
     @Unique
-    private static final Identifier DISCORD_ICON = new Identifier(MushrooomsMod.MOD_ID, "textures/gui/discord.png");
+    private static final Identifier DISCORD_ICON = Identifier.of(MushrooomsMod.MOD_ID, "textures/gui/discord.png");
     @Unique
-    private static final Identifier GITHUB_ICON = new Identifier(MushrooomsMod.MOD_ID, "textures/gui/github.png");
+    private static final Identifier GITHUB_ICON = Identifier.of(MushrooomsMod.MOD_ID, "textures/gui/github.png");
     @Unique
-    private static final Identifier KOFI_ICON = new Identifier(MushrooomsMod.MOD_ID, "textures/gui/kofi.png");
+    private static final Identifier KOFI_ICON = Identifier.of(MushrooomsMod.MOD_ID, "textures/gui/kofi.png");
     @Unique
-    private static final Identifier CURSEFORGE_ICON = new Identifier(MushrooomsMod.MOD_ID, "textures/gui/curseforge.png");
+    private static final Identifier CURSEFORGE_ICON = Identifier.of(MushrooomsMod.MOD_ID, "textures/gui/curseforge.png");
     @Unique
-    private static final Identifier MODRINTH_ICON = new Identifier(MushrooomsMod.MOD_ID, "textures/gui/modrinth.png");
+    private static final Identifier MODRINTH_ICON = Identifier.of(MushrooomsMod.MOD_ID, "textures/gui/modrinth.png");
 
 
     //links

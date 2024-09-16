@@ -64,13 +64,13 @@ public class CustomBlueMushroomFeature extends CustomBlueMushroom {
             double distance = FastMaths.getLength((float) vect.x, (float) vect.z, 0.005f);
             if (distance == 0) {
                 int x = 5 + pos.getX();
-                entity.teleport(x, pos.getY(), pos.getZ());
+                entity.requestTeleport( x, pos.getY(), pos.getZ());
             } else {
                 int x = (int) ((maxlarge * vect.x / distance) + pos.getX());
                 int y = pos.getY();
                 int z = (int) ((maxlarge * vect.z / distance) + pos.getZ());
 
-                entity.teleport(x, y, z);
+                entity.requestTeleport(x, y, z);
             }
         }
 

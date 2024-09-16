@@ -5,7 +5,8 @@ import com.google.common.collect.Multimap;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
-import net.minecraft.client.item.TooltipContext;
+import net.minecraft.component.type.AttributeModifierSlot;
+import net.minecraft.component.type.AttributeModifiersComponent;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
@@ -18,10 +19,12 @@ import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ToolItem;
 import net.minecraft.item.ToolMaterial;
+import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.recipe.RecipeEntry;
 import net.minecraft.recipe.RecipeManager;
 import net.minecraft.recipe.RecipeType;
 import net.minecraft.recipe.SmeltingRecipe;
+import net.minecraft.recipe.input.SingleStackRecipeInput;
 import net.minecraft.registry.DynamicRegistryManager;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
@@ -42,18 +45,14 @@ public class HammerItem extends ToolItem {
     double attackSpeed;
     int maxcrushableblocks;
     private int hammeruse = 0;
-    private final Multimap<EntityAttribute, EntityAttributeModifier> attributeModifiers;
 
-    public HammerItem(ToolMaterial material, int attackDamage, float attackSpeed, int maxcrushableblocks, Settings settings) {
+    public HammerItem(ToolMaterial material, int maxcrushableblocks, Settings settings) {
         super(material, settings);
-        this.attackDamage = attackDamage;
-        double attackDamage1 = attackDamage + (float) Random.create().nextBetween(0, 2) / 2;
-        this.attackSpeed = attackSpeed;
-        ImmutableMultimap.Builder<EntityAttribute, EntityAttributeModifier> builder = ImmutableMultimap.builder();
-        builder.put(EntityAttributes.GENERIC_ATTACK_DAMAGE, new EntityAttributeModifier(ATTACK_DAMAGE_MODIFIER_ID, "Weapon modifier", attackDamage1, EntityAttributeModifier.Operation.ADDITION));
-        builder.put(EntityAttributes.GENERIC_ATTACK_SPEED, new EntityAttributeModifier(ATTACK_SPEED_MODIFIER_ID, "Weapon modifier", attackSpeed, EntityAttributeModifier.Operation.ADDITION));
-        this.attributeModifiers = builder.build();
         this.maxcrushableblocks = maxcrushableblocks;
+    }
+
+    public static AttributeModifiersComponent createAttributeModifiers(ToolMaterial material, int baseAttackDamage, float attackSpeed) {
+        return AttributeModifiersComponent.builder().add(EntityAttributes.GENERIC_ATTACK_DAMAGE, new EntityAttributeModifier(BASE_ATTACK_DAMAGE_MODIFIER_ID, (float)baseAttackDamage + material.getAttackDamage(), EntityAttributeModifier.Operation.ADD_VALUE), AttributeModifierSlot.MAINHAND).add(EntityAttributes.GENERIC_ATTACK_SPEED, new EntityAttributeModifier(BASE_ATTACK_SPEED_MODIFIER_ID, attackSpeed, EntityAttributeModifier.Operation.ADD_VALUE), AttributeModifierSlot.MAINHAND).build();
     }
 
 
@@ -62,7 +61,7 @@ public class HammerItem extends ToolItem {
         DynamicRegistryManager registryManager = world.getRegistryManager();
         Optional<RecipeEntry<ForgeRecipe>> optional = world
                 .getRecipeManager()
-                .getFirstMatch(ForgeRecipe.Type.INSTANCE, new SimpleInventory(stack), world);
+                .getFirstMatch(ForgeRecipe.Type.INSTANCE, new SingleStackRecipeInput(stack), world);
         if (optional.isPresent()) return optional.get().value().getResult(registryManager);
         return ItemStack.EMPTY;
     }
@@ -88,31 +87,9 @@ public class HammerItem extends ToolItem {
     }
 
     @Override
-    public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
+    public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
         tooltip.add(Text.translatable("tooltip.mushrooomsmod.hammer.usage").formatted(Formatting.AQUA));
-        super.appendTooltip(stack, world, tooltip, context);
-    }
-
-    @Override
-    public Multimap<EntityAttribute, EntityAttributeModifier> getAttributeModifiers(EquipmentSlot slot) {
-        if (slot == EquipmentSlot.MAINHAND) {
-            return this.attributeModifiers;
-        }
-        return super.getAttributeModifiers(slot);
-    }
-
-    @Override
-    public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-        stack.damage(1, attacker, e -> e.sendEquipmentBreakStatus(EquipmentSlot.MAINHAND));
-        return true;
-    }
-
-    @Override
-    public boolean postMine(ItemStack stack, World world, BlockState state, BlockPos pos, LivingEntity miner) {
-        if (state.getHardness(world, pos) != 0.0f) {
-            stack.damage(2, miner, e -> e.sendEquipmentBreakStatus(EquipmentSlot.MAINHAND));
-        }
-        return true;
+        super.appendTooltip(stack, context, tooltip, type);
     }
 
     public int getHammerUse() {

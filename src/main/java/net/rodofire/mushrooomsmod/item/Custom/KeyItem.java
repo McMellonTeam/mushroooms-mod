@@ -1,7 +1,7 @@
 package net.rodofire.mushrooomsmod.item.Custom;
 
 import net.minecraft.client.gui.screen.Screen;
-import net.minecraft.client.item.TooltipContext;
+import net.minecraft.component.DataComponentTypes;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
@@ -9,6 +9,7 @@ import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.text.Text;
@@ -37,8 +38,13 @@ public class KeyItem extends Item {
         World world = entity.getEntityWorld();
         if (world.isClient) return ActionResult.PASS;
         ServerWorld worldServer = (ServerWorld) world;
+        NbtCompound nbt;
+        @Nullable var data = stack.get(DataComponentTypes.CUSTOM_DATA);
 
-        NbtCompound nbt = stack.getOrCreateNbt();
+        if (data == null) return ActionResult.PASS;
+        nbt = data.copyNbt();
+        System.out.println(data+"  "+nbt );
+
         //0e2a8643-40df-3a07-bffe-aa9fb0809920
 
         if (!nbt.contains(("uuid"))) nbt.putUuid("uuid", UUID.randomUUID());
@@ -61,7 +67,7 @@ public class KeyItem extends Item {
                 float f = entity.getBodyYaw();
                 entity.remove(Entity.RemovalReason.DISCARDED);
                 Consumer<LockedInventoryArmorStand> consumer = EntityType.copier(worldServer, stack, user);
-                LockedInventoryArmorStand newEntity = ModEntities.LOCKED_INVENTORY_ARMOR_STAND.create(worldServer, nbt, consumer, pos, SpawnReason.SPAWN_EGG, true, true);
+                LockedInventoryArmorStand newEntity = ModEntities.LOCKED_INVENTORY_ARMOR_STAND.create(worldServer, consumer, pos, SpawnReason.SPAWN_EGG, true, true);
                 if (newEntity == null) {
                     return ActionResult.FAIL;
                 }
@@ -78,8 +84,8 @@ public class KeyItem extends Item {
     }
 
     @Override
-    public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
-        super.appendTooltip(stack, world, tooltip, context);
+    public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
+        super.appendTooltip(stack, context, tooltip, type);
         if (Screen.hasShiftDown()) {
             tooltip.add(Text.translatable("tooltip.mushrooomsmod.keyItem").formatted(Formatting.BLUE));
             tooltip.add(Text.translatable("tooltip.mushrooomsmod.keyItem1").formatted(Formatting.BLUE));
