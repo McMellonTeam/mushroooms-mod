@@ -16,7 +16,7 @@ public class GrokiRenderer extends GeoEntityRenderer<GrokiEntity> {
 
     @Override
     public Identifier getTextureLocation(GrokiEntity animatable) {
-        return Identifier.of(MushrooomsMod.MOD_ID, "textures/entity/groki.png");
+        return new Identifier(MushrooomsMod.MOD_ID, "textures/entity/groki.png");
     }
 
     @Override

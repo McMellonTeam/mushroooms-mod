@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "mushrooomsmod:mushroom_blue_luminescent"
+    },
+    "C": {
+      "item": "minecraft:bowl"
+    }
+  },
+  "pattern": [
+    " # ",
+    "#C#"
+  ],
+  "result": {
+    "item": "mushrooomsmod:luminescent_schroom_soup"
+  }
+}

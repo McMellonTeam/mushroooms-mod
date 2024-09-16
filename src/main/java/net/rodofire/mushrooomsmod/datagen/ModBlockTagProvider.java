@@ -37,6 +37,7 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.AMBER_BLOCK)
                 .add(ModBlocks.RAW_AMBER_BLOCK)
                 .add(ModBlocks.AMBER_ORE)
+                .add(ModBlocks.AMBER_MINERAL)
                 .add(ModBlocks.AMBER_BLOCK_SANDIFIED)
                 .add(ModBlocks.BLUE_CRYSTAL)
                 .add(ModBlocks.BLUE_CRYSTAL_BLOCK)
@@ -236,6 +237,7 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.JACYNTHE)
                 .add(ModBlocks.ACONIT)
                 .add(ModBlocks.PERVENCHE)
+                .add(ModBlocks.PICK_BLUE)
 
                 //Vines
                 .add(ModBlocks.CAERULEA_VOLUBILIS)

@@ -1,6 +1,5 @@
 package net.rodofire.mushrooomsmod.block.custom.PinkLuminescentVines;
 
-import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.ShapeContext;
@@ -23,7 +22,7 @@ public class PinkLuminescentHeadVinesBlock extends Block {
     public static final VoxelShape SHAPE = Block.createCuboidShape(7.0, 11.0, 7.0, 8.0, 15.0, 8.0);
     public static final BooleanProperty MANY_VINES = ModProperties.MANY_VINES;
 
-    public PinkLuminescentHeadVinesBlock(AbstractBlock.Settings settings) {
+    public PinkLuminescentHeadVinesBlock(Settings settings) {
         super(settings);
     }
 

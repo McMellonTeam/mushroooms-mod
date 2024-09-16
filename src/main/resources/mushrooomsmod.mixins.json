@@ -3,12 +3,18 @@
   "package": "net.rodofire.mushrooomsmod.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
-    "BrushItemMixin",
-    "TreeDecoratorTypeInvoker",
-    "TrunkPlacerTypeInvoker",
-    "ClientPlayNetworkHandlerMixin"
+    "client.ClientPlayNetworkHandlerMixin",
+    "item.BrushItemMixin",
+    "world.FoliagePlacerTypeInvoker",
+    "world.TreeDecoratorTypeInvoker",
+    "world.TrunkPlacerTypeInvoker"
   ],
   "injectors": {
     "defaultRequire": 1
-	}
+  },
+  "client": [
+    "client.ClothConfigScreenMixin",
+    "client.ScreenMixin",
+    "client.ClothConfigScreenMixin"
+  ]
 }

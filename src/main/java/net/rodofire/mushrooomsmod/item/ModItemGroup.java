@@ -13,7 +13,7 @@ import net.rodofire.mushrooomsmod.block.ModBlocks;
 
 public class ModItemGroup {
     public static final ItemGroup MUSHROOM_GROUP = Registry.register(Registries.ITEM_GROUP,
-            Identifier.of(MushrooomsMod.MOD_ID, "luminescent_mushroom"),
+            new Identifier(MushrooomsMod.MOD_ID, "luminescent_mushroom"),
             FabricItemGroup.builder().displayName(Text.translatable("itemgroup.mushroooms"))
                     .icon(() -> new ItemStack(ModBlocks.BLUE_LUMINESCENT_MUSHROOM)).entries((displayContext, entries) -> {
                         //Blocks
@@ -40,6 +40,7 @@ public class ModItemGroup {
 
                         //Crystal related
                         entries.add(ModBlocks.RAW_AMBER_BLOCK);
+                        entries.add(ModBlocks.AMBER_MINERAL);
                         entries.add(ModBlocks.AMBER_BLOCK);
                         entries.add(ModBlocks.AMBER_BLOCK_SANDIFIED);
                         entries.add(ModBlocks.AMBER_ORE);
@@ -147,6 +148,7 @@ public class ModItemGroup {
 
                         //Side Mushrooms
                         entries.add(ModBlocks.SIDE_MUSHROOM_BLUE_LUMINESCENT);
+                        entries.add(ModBlocks.LOG_MUSHROOM_BROWN);
 
                         //Flowers
                         entries.add(ModBlocks.PREHISTO_PINK_SCHROOM);
@@ -193,6 +195,7 @@ public class ModItemGroup {
                         entries.add(ModBlocks.PERVENCHE);
                         entries.add(ModBlocks.RAPANGE_FLOWERS);
                         entries.add(ModItems.FLEUR_BERRIES_ITEM);
+                        entries.add(ModBlocks.PICK_BLUE);
 
                         //Grass
                         entries.add(ModBlocks.TINY_GRASS);
@@ -236,6 +239,7 @@ public class ModItemGroup {
                         entries.add(ModItems.PLOTI_SPAWN_EGG);
                         entries.add(ModItems.CRYSTAL_CREEPER_SPAWN_EGG);
                         entries.add(ModItems.CRYSTAL_GOLEM_SPAWN_EGG);
+                        //entries.add(ModItems.MOSQUITO_SPAWN_EGG);
                         //entries.add(ModItems.SCHROOM_STICK_SPAWN_EGG);
 
                         //crystal
@@ -260,6 +264,7 @@ public class ModItemGroup {
                         //Tools
                         entries.add(ModItems.IRON_HAMMER);
                         entries.add(ModItems.INVENTORY_ARMOR_STAND);
+                        entries.add(ModItems.KEY);
 
                         //Food
                         entries.add(ModItems.BAGUETTE);

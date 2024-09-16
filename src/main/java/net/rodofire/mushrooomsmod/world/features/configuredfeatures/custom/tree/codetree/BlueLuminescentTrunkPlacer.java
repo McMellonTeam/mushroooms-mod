@@ -24,7 +24,7 @@ public class BlueLuminescentTrunkPlacer extends TrunkPlacer {
     private int secondRandomHeight;
 
     public static final BlueLuminescentTrunkPlacer INSTANCE = new BlueLuminescentTrunkPlacer(6,6,6);
-    public static final MapCodec<BlueLuminescentTrunkPlacer> CODEC = MapCodec.unit(() -> INSTANCE);
+    public static final Codec<BlueLuminescentTrunkPlacer> CODEC = Codec.unit(() -> INSTANCE);
 
     public BlueLuminescentTrunkPlacer(int baseHeight, int firstRandomHeight, int secondRandomHeight) {
         super(baseHeight, firstRandomHeight, secondRandomHeight);
@@ -48,6 +48,9 @@ public class BlueLuminescentTrunkPlacer extends TrunkPlacer {
             if (Random.create().nextBetween(0, realheight / 4) == 0) {
                 list.add(generateColumn(world, replacer, random, startPos.add(Random.create().nextBetween(-1, 1), 0, Random.create().nextBetween(-1, 1)), config, realheight, i));
             }
+        }
+        for (int i = 0; i <= Random.create().nextBetween(1, 4); ++i) {
+            getAndSetState(world, replacer, random, startPos.add(Random.create().nextBetween(-3, 3), realheight + Random.create().nextBetween(0, 2), Random.create().nextBetween(-3, 3)), config);
         }
         return list;
     }

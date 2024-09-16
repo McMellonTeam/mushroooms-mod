@@ -40,12 +40,17 @@ public class ModMaterialsRules {
 
         //Stone Related
         MaterialRules.MaterialRule bluedeepslate = MaterialRules.sequence(MaterialRules.condition(MaterialRules.STONE_DEPTH_FLOOR, BLUE_LUMINESCENT_DEEPSLATE), DEEPSLATE);
+        MaterialRules.MaterialRule purpledeepslate = MaterialRules.sequence(MaterialRules.condition(MaterialRules.STONE_DEPTH_FLOOR, PURPLE_SCHROOM_DEEPSLATE), DEEPSLATE);
 
 
         return sequence(
                 //Blue Luminescent Cave
                 condition(MaterialRules.biome(ModOverworldBiomes.BLUE_LUMINESCENT_SHROOM_CAVE),
                         condition(deepslatelevel, bluedeepslate)),
+
+                //Purple Schroom Cave
+                condition(MaterialRules.biome(ModOverworldBiomes.BLUE_LUMINESCENT_SHROOM_CAVE),
+                        condition(deepslatelevel, purpledeepslate)),
 
                 //Vanilla Cave
                 sequence(condition(MaterialRules.biome(ModOverworldBiomes.VANILLA_SHROOM_CAVE),

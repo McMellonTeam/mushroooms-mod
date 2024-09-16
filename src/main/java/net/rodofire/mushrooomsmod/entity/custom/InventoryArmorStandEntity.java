@@ -16,32 +16,55 @@ import net.minecraft.nbt.NbtList;
 import net.minecraft.util.Arm;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.world.World;
-import software.bernie.geckolib.animatable.GeoAnimatable;
 import software.bernie.geckolib.animatable.GeoEntity;
-import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
-import software.bernie.geckolib.animatable.instance.SingletonAnimatableInstanceCache;
-import software.bernie.geckolib.animation.*;
+import software.bernie.geckolib.core.animatable.GeoAnimatable;
+import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
+import software.bernie.geckolib.core.animatable.instance.SingletonAnimatableInstanceCache;
+import software.bernie.geckolib.core.animation.*;
+import software.bernie.geckolib.core.object.PlayState;
 
 public class InventoryArmorStandEntity extends LivingEntity implements GeoEntity {
     protected static final TrackedData<Boolean> CAN_USE = DataTracker.registerData(InventoryArmorStandEntity.class, TrackedDataHandlerRegistry.BOOLEAN);
     private final AnimatableInstanceCache cache = new SingletonAnimatableInstanceCache(this);
-    private final DefaultedList<ItemStack> heldItems = DefaultedList.ofSize(2, ItemStack.EMPTY);
-    private final DefaultedList<ItemStack> armorItems = DefaultedList.ofSize(4, ItemStack.EMPTY);
-    private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(36, ItemStack.EMPTY);
+    protected final DefaultedList<ItemStack> heldItems = DefaultedList.ofSize(2, ItemStack.EMPTY);
+    protected final DefaultedList<ItemStack> armorItems = DefaultedList.ofSize(4, ItemStack.EMPTY);
+    protected final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(36, ItemStack.EMPTY);
     private int lefttickusage;
-
 
     public InventoryArmorStandEntity(EntityType<? extends LivingEntity> entityType, World world) {
         super(entityType, world);
     }
 
-    @Override
-    protected void initDataTracker(DataTracker.Builder builder) {
-        super.initDataTracker(builder);
-        builder.add(CAN_USE, true);
+    public DefaultedList<DefaultedList<ItemStack>> getInventory() {
+        DefaultedList<DefaultedList<ItemStack>> inventoryLists = DefaultedList.ofSize(3, DefaultedList.of());
+
+        inventoryLists.set(0, heldItems);
+        inventoryLists.set(1, armorItems);
+        inventoryLists.set(2, inventory);
+
+        return inventoryLists;
+    }
+
+    public void setInventory(DefaultedList<DefaultedList<ItemStack>> inventory) {
+        DefaultedList<ItemStack> held = inventory.get(0);
+        DefaultedList<ItemStack> armor = inventory.get(1);
+        DefaultedList<ItemStack> base = inventory.get(2);
+        for (int i = 0; i < held.size(); i++) {
+            heldItems.set(i, held.get(i));
+        }
+        for (int i = 0; i < armor.size(); i++) {
+            armorItems.set(i, armor.get(i));
+        }
+        for (int i = 0; i < base.size(); i++) {
+            this.inventory.set(i, base.get(i));
+        }
     }
 
 
+    @Override
+    public boolean shouldRenderName() {
+        return false;
+    }
 
     @Override
     public Iterable<ItemStack> getArmorItems() {
@@ -54,7 +77,7 @@ public class InventoryArmorStandEntity extends LivingEntity implements GeoEntity
             case HAND: {
                 return this.heldItems.get(slot.getEntitySlotId());
             }
-            case HUMANOID_ARMOR: {
+            case ARMOR: {
                 return this.armorItems.get(slot.getEntitySlotId());
             }
         }
@@ -69,7 +92,7 @@ public class InventoryArmorStandEntity extends LivingEntity implements GeoEntity
                 this.onEquipStack(slot, this.heldItems.set(slot.getEntitySlotId(), stack), stack);
                 break;
             }
-            case HUMANOID_ARMOR: {
+            case ARMOR: {
                 this.onEquipStack(slot, this.armorItems.set(slot.getEntitySlotId(), stack), stack);
             }
         }
@@ -90,6 +113,7 @@ public class InventoryArmorStandEntity extends LivingEntity implements GeoEntity
         if (player.getBlockPos().getX() != this.getBlockPos().getX() || player.getBlockPos().getY() != this.getBlockPos().getY() || player.getBlockPos().getZ() != this.getBlockPos().getZ())
             return;
         if (!this.canUse()) return;
+        if (!this.canPlayerUse(player)) return;
         //Get player inventory and store it and give the previous inventory to the player
         for (int i = 1; i < 36; i++) {
             ItemStack stack = player.getInventory().getStack(i);
@@ -116,6 +140,9 @@ public class InventoryArmorStandEntity extends LivingEntity implements GeoEntity
         this.lefttickusage = 160;
     }
 
+    public boolean canPlayerUse(PlayerEntity entity) {
+        return true;
+    }
 
     @Override
     public void tick() {
@@ -140,7 +167,11 @@ public class InventoryArmorStandEntity extends LivingEntity implements GeoEntity
         this.dataTracker.set(CAN_USE, bl);
     }
 
-
+    @Override
+    protected void initDataTracker() {
+        super.initDataTracker();
+        this.dataTracker.startTracking(CAN_USE, true);
+    }
 
     @Override
     public void registerControllers(AnimatableManager.ControllerRegistrar controllerRegistrar) {
@@ -156,64 +187,68 @@ public class InventoryArmorStandEntity extends LivingEntity implements GeoEntity
         return PlayState.CONTINUE;
     }
 
-
     @Override
     public AnimatableInstanceCache getAnimatableInstanceCache() {
         return cache;
     }
 
-    @Override
-    public void writeCustomDataToNbt(NbtCompound nbt) {
-        super.writeCustomDataToNbt(nbt);
+    protected void writeCommonNbt(NbtCompound nbt) {
         NbtList nbtList = new NbtList();
         NbtList nbtList2 = new NbtList();
         NbtList nbtList3 = new NbtList();
         for (ItemStack itemStack : this.armorItems) {
-            nbtList.add(itemStack.encodeAllowEmpty(this.getRegistryManager()));
+            NbtCompound nbtCompound = new NbtCompound();
+            itemStack.writeNbt(nbtCompound);
+            nbtList.add(nbtCompound);
         }
         nbt.put("ArmorItems", nbtList);
 
-        for (ItemStack itemStack2 : this.heldItems) {
-            nbtList2.add(itemStack2.encodeAllowEmpty(this.getRegistryManager()));
+        for (ItemStack itemStack : this.heldItems) {
+            NbtCompound nbtCompound2 = new NbtCompound();
+            itemStack.writeNbt(nbtCompound2);
+            nbtList2.add(nbtCompound2);
         }
-        nbt.put("HandItems", nbtList2);
+        nbt.put("HeldItem", nbtList2);
 
-        for(ItemStack itemStack : this.inventory) {
-            nbtList3.add(itemStack.encodeAllowEmpty(this.getRegistryManager()));
+        for (ItemStack itemStack : this.inventory) {
+            NbtCompound nbtCompound3 = new NbtCompound();
+            itemStack.writeNbt(nbtCompound3);
+            nbtList3.add(nbtCompound3);
         }
         nbt.put("Inventory", nbtList3);
+    }
+
+    protected void readCommonNbt(NbtCompound nbt) {
+        if (nbt.contains("ArmorItems", NbtElement.LIST_TYPE)) {
+            NbtList nbtList = nbt.getList("ArmorItems", NbtElement.COMPOUND_TYPE);
+            for (int i = 0; i < this.armorItems.size(); ++i) {
+                this.armorItems.set(i, ItemStack.fromNbt(nbtList.getCompound(i)));
+            }
+        }
+        if (nbt.contains("HeldItem", NbtElement.LIST_TYPE)) {
+            NbtList nbtList = nbt.getList("HeldItem", NbtElement.COMPOUND_TYPE);
+            for (int i = 0; i < this.heldItems.size(); ++i) {
+                this.heldItems.set(i, ItemStack.fromNbt(nbtList.getCompound(i)));
+            }
+        }
+        if (nbt.contains("Inventory", NbtElement.LIST_TYPE)) {
+            NbtList nbtList = nbt.getList("Inventory", NbtElement.COMPOUND_TYPE);
+            for (int i = 0; i < this.inventory.size(); ++i) {
+                this.inventory.set(i, ItemStack.fromNbt(nbtList.getCompound(i)));
+            }
+        }
+    }
+
+    @Override
+    public void writeCustomDataToNbt(NbtCompound nbt) {
+        super.writeCustomDataToNbt(nbt);
+        writeCommonNbt(nbt);
     }
 
     @Override
     public void readCustomDataFromNbt(NbtCompound nbt) {
         super.readCustomDataFromNbt(nbt);
-        int i;
-        NbtCompound nbtCompound;
-        NbtList nbtList;
-
-        if (nbt.contains("ArmorItems", NbtElement.LIST_TYPE)) {
-            nbtList = nbt.getList("ArmorItems", NbtElement.COMPOUND_TYPE);
-            for (i = 0; i < this.armorItems.size(); ++i) {
-                nbtCompound = nbtList.getCompound(i);
-                this.armorItems.set(i, ItemStack.fromNbtOrEmpty(this.getRegistryManager(), nbtCompound));
-            }
-        }
-
-        if (nbt.contains("HandItems", NbtElement.LIST_TYPE)) {
-            nbtList = nbt.getList("HandItems", NbtElement.COMPOUND_TYPE);
-            for (i = 0; i < this.heldItems.size(); ++i) {
-                nbtCompound = nbtList.getCompound(i);
-                this.heldItems.set(i, ItemStack.fromNbtOrEmpty(this.getRegistryManager(), nbtCompound));
-            }
-        }
-
-        if (nbt.contains("Inventory", NbtElement.LIST_TYPE)) {
-            nbtList = nbt.getList("Inventory", NbtElement.COMPOUND_TYPE);
-            for (i = 0; i < this.inventory.size(); ++i) {
-                nbtCompound = nbtList.getCompound(i);
-                this.inventory.set(i, ItemStack.fromNbtOrEmpty(this.getRegistryManager(), nbtCompound));
-            }
-        }
+        readCommonNbt(nbt);
     }
 
     @Override

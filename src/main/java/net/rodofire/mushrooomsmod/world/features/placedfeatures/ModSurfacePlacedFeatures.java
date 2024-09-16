@@ -75,6 +75,7 @@ public class ModSurfacePlacedFeatures {
     public static final RegistryKey<PlacedFeature> JACYNTHE_SURFACE_PLACED_KEY = registerKey("jacynthe_surface_placed_key");
     public static final RegistryKey<PlacedFeature> ACONIT_SURFACE_PLACED_KEY = registerKey("aconit_surface_placed_key");
     public static final RegistryKey<PlacedFeature> PERVENCHE_SURFACE_PLACED_KEY = registerKey("pervenche_surface_placed_key");
+    public static final RegistryKey<PlacedFeature> PICK_BLUE_SURFACE_PLACED_KEY = registerKey("pick_blue_surface_placed_key");
 
     //Grass
     public static final RegistryKey<PlacedFeature> TINY_GRASS_SURFACE_PLACED_KEY = registerKey("tiny_grass_surface_placed_key");
@@ -84,12 +85,16 @@ public class ModSurfacePlacedFeatures {
     public static final RegistryKey<PlacedFeature> BUSH_SURFACE_SURFACE_PLACED_KEY = registerKey("bush_surface_surface_placed_key");
     public static final RegistryKey<PlacedFeature> COLORFUL_BUSH_SURFACE_PLACED_KEY = registerKey("colorful_bush_surface_placed_key");
 
+    //terrain
+    public static final RegistryKey<PlacedFeature> ARCH_SURFACE_PLACED_KEY = registerKey("arch_surface_placed_key");
+    public static final RegistryKey<PlacedFeature> SPIRAL_MUSHROOM_FEATURE = registerKey("spiral_mushroom_feature");
+
 
     public static void bootstrap(Registerable<PlacedFeature> context) {
         var configuredFeatureRegistryEntryLookup = context.getRegistryLookup(RegistryKeys.CONFIGURED_FEATURE);
         //Mushrooms
         register(context, PINK_LUMINESCENT_MUSHROOM_TREE_SURFACE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.PINK_LUMINESCENT_MUSHROOM_TREE_KEY), VegetationPlacedFeatures.treeModifiersWithWouldSurvive(PlacedFeatures.createCountExtraModifier(1, 0.1f, 2), ModBlocks.LUMINESCENT_PINK_MUSHROOM));
-        register(context, BLUE_MUSHROOM_TREE_SURFACE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.BLUE_MUSHROOM_TREE_KEY), CountPlacementModifier.of(10), SquarePlacementModifier.of(), PlacedFeatures.WORLD_SURFACE_WG_HEIGHTMAP, BiomePlacementModifier.of());
+        register(context, BLUE_MUSHROOM_TREE_SURFACE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.BLUE_MUSHROOM_TREE_KEY), VegetationPlacedFeatures.treeModifiersWithWouldSurvive(PlacedFeatures.createCountExtraModifier(6, 0.2f, 3), ModBlocks.BLUE_MUSHROOM));
         register(context, GREEN_MUSHROOM_TREE_SURFACE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.GREEN_MUSHROOM_TREE_KEY), CountPlacementModifier.of(10), SquarePlacementModifier.of(), PlacedFeatures.WORLD_SURFACE_WG_HEIGHTMAP, BiomePlacementModifier.of());
         register(context, PURPLE_MUSHROOM_SURFACE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.PURPLE_MUSHROOM_TREE_KEY), CountPlacementModifier.of(10), SquarePlacementModifier.of(), PlacedFeatures.WORLD_SURFACE_WG_HEIGHTMAP, BiomePlacementModifier.of());
         register(context, ORANGE_MUSHROOM_TREE_SURFACE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.ORANGE_MUSHROOM_TREE_KEY), CountPlacementModifier.of(10), SquarePlacementModifier.of(), PlacedFeatures.WORLD_SURFACE_WG_HEIGHTMAP, BiomePlacementModifier.of());
@@ -140,9 +145,10 @@ public class ModSurfacePlacedFeatures {
         register(context, ARUM_SURFACE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.ARUM_KEY), RarityFilterPlacementModifier.of(4), SquarePlacementModifier.of(), PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of());
         register(context, HYDRANGEA_SURFACE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.HYDRANGEA_KEY), RarityFilterPlacementModifier.of(4), SquarePlacementModifier.of(), PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of());
         register(context, ANEMONE_SURFACE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.ANEMONE_KEY), RarityFilterPlacementModifier.of(4), SquarePlacementModifier.of(), PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of());
-        register(context, JACYNTHE_SURFACE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.JACYNTHE_KEY), RarityFilterPlacementModifier.of(4), SquarePlacementModifier.of(), PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of());
+        register(context, JACYNTHE_SURFACE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.JACYNTHE_KEY), CountPlacementModifier.of(2), SquarePlacementModifier.of(), PlacedFeatures.WORLD_SURFACE_WG_HEIGHTMAP, BiomePlacementModifier.of());
         register(context, ACONIT_SURFACE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.ACONIT_KEY), RarityFilterPlacementModifier.of(4), SquarePlacementModifier.of(), PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of());
-        register(context, PERVENCHE_SURFACE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.PERVENCHE_KEY), RarityFilterPlacementModifier.of(4), SquarePlacementModifier.of(), PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of());
+        register(context, PERVENCHE_SURFACE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.PERVENCHE_KEY), CountPlacementModifier.of(16), SquarePlacementModifier.of(), PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of());
+        register(context, PICK_BLUE_SURFACE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.PICK_BLUE_KEY), CountPlacementModifier.of(12), SquarePlacementModifier.of(), PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of());
 
         //Grass
         register(context, TINY_GRASS_SURFACE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.TINY_GRASSS_KEY), RarityFilterPlacementModifier.of(4), SquarePlacementModifier.of(), PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of());
@@ -151,6 +157,10 @@ public class ModSurfacePlacedFeatures {
         //Bush
         register(context, BUSH_SURFACE_SURFACE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.BUSH_KEY), CountPlacementModifier.of(3), SquarePlacementModifier.of(), PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of());
         register(context, COLORFUL_BUSH_SURFACE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.COLORFUL_BUSH_KEY), CountPlacementModifier.of(1), SquarePlacementModifier.of(), PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of());
+
+        //terrain
+        register(context, ARCH_SURFACE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.ARCH_KEY), CountPlacementModifier.of(1), SquarePlacementModifier.of(), PlacedFeatures.WORLD_SURFACE_WG_HEIGHTMAP, BiomePlacementModifier.of());
+        register(context, SPIRAL_MUSHROOM_FEATURE, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.SPIRAL_MUSHROOM_KEY), CountPlacementModifier.of(4), SquarePlacementModifier.of(), PlacedFeatures.WORLD_SURFACE_WG_HEIGHTMAP, BiomePlacementModifier.of());
 
     }
 

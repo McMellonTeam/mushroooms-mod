@@ -1,15 +1,14 @@
 package net.rodofire.mushrooomsmod.block.custom;
 
+import net.fabricmc.yarn.constants.MiningLevels;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.TransparentBlock;
 import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.AxeItem;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.ToolMaterials;
-import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.registry.tag.ItemTags;
 import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
@@ -18,8 +17,10 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
+import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.rodofire.mushrooomsmod.util.ModTags;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 import java.util.function.Supplier;
@@ -45,7 +46,7 @@ public class FermentedTransparentMushroomBlock extends TransparentBlock {
                 return ActionResult.SUCCESS;
             }
         } else {
-            if (stack.isIn(ItemTags.AXES) && stack.getItem() instanceof AxeItem axeItem && axeItem.getMaterial().getMiningSpeedMultiplier() > ToolMaterials.STONE.getMiningSpeedMultiplier()) {
+            if (stack.isIn(ItemTags.AXES) && stack.getItem() instanceof AxeItem axeItem && axeItem.getMaterial().getMiningLevel() > MiningLevels.STONE) {
                 world.setBlockState(pos, blockSupplier.get().getDefaultState());
                 return ActionResult.SUCCESS;
             }
@@ -61,15 +62,14 @@ public class FermentedTransparentMushroomBlock extends TransparentBlock {
         return super.isSideInvisible(state, stateFrom, direction);
     }
 
-
     @Override
-    public void appendTooltip(ItemStack stack, Item.TooltipContext context, List<Text> tooltip, TooltipType options) {
+    public void appendTooltip(ItemStack stack, @Nullable BlockView world, List<Text> tooltip, TooltipContext options) {
         if (Screen.hasShiftDown()) {
             tooltip.add(Text.translatable("tooltip.mushrooomsmod.fermented_mushroom_block").formatted(Formatting.BLUE));
             tooltip.add(Text.translatable("tooltip.mushrooomsmod.fermented_mushroom_block_axe").formatted(Formatting.BLUE));
         }else {
             tooltip.add(Text.translatable("tooltip.mushrooomsmod.shift"));
         }
-        super.appendTooltip(stack, context, tooltip, options);
+        super.appendTooltip(stack, world, tooltip, options);
     }
 }

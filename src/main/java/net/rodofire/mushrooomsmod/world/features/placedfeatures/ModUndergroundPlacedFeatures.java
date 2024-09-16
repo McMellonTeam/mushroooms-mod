@@ -28,6 +28,7 @@ public class ModUndergroundPlacedFeatures {
     public static final RegistryKey<PlacedFeature> OAK_TREE_UNDERGROUND_PLACED_KEY = registerKey("oak_tree_underground_placed_key");
     public static final RegistryKey<PlacedFeature> AZALEA_TREE_UNDERGROUND_PLACED_KEY = registerKey("alazea_tree_underground_placed_key");
     public static final RegistryKey<PlacedFeature> OAK_BERRIES_TREE_UNDERGROUND_PLACED_KEY = registerKey("oak_berries_tree_underground_placed_key");
+    public static final RegistryKey<PlacedFeature> BLUE_LUMINESCENT_TREE_UNDERGROUND_PLACED_KEY = registerKey("blue_luminescent_tree_underground_placed_key");
 
     //Mushrooms Flowers
     public static final RegistryKey<PlacedFeature> MUSHROOM_SIDE_BLUE_LUMINESCENT_UNDERGROUND_PLACED_KEY = registerKey("mushroom_side_blue_luminescent_underground_placed_key");
@@ -40,6 +41,9 @@ public class ModUndergroundPlacedFeatures {
     public static final RegistryKey<PlacedFeature> HUGE_RED_MUSHROOM_UNDERGROUND_PLACED_KEY = registerKey("huge_red_mushroom_underground_placed_key");
     public static final RegistryKey<PlacedFeature> HUGE_BROWN_MUSHROOM_UNDERGROUND_PLACED_KEY = registerKey("huge_brown_mushroom_underground_placed_key");
     public static final RegistryKey<PlacedFeature> BLUE_LUMINESCENT_MUSHROOM_TREE_UNDERGROUND_PLACED_KEY = registerKey("blue_luminescent_mushroom_tree_underground_placed_key");
+    public static final RegistryKey<PlacedFeature> PURPLE_MUSHROOM_TREE_UNDERGROUND_PLACED_KEY = registerKey("purple_mushroom_tree_underground_placed_key");
+    public static final RegistryKey<PlacedFeature> HUGE_PURPLE_MUSHROOM_TREE_UNDERGROUND_PLACED_KEY = registerKey("huge_purple_mushroom_tree_underground_placed_key");
+    public static final RegistryKey<PlacedFeature> PINK_LUMINESCENT_MUSHROOM_TREE_UNDERGROUND_PLACED_KEY = registerKey("pink_luminescent_mushroom_tree_underground_placed_key");
 
 
     //Flowers
@@ -80,7 +84,7 @@ public class ModUndergroundPlacedFeatures {
 
     //Ore
     public static final RegistryKey<PlacedFeature> RHYOLITE_UNDERGROUND_PLACED_KEY = registerKey("rhyolite_underground_placed_key");
-
+    public static final RegistryKey<PlacedFeature> AMBER_MINERAL_UNDERGROUND_PLACED_FEATURE = registerKey("amber_mineral_underground_placed_key");
     public static void bootstrap(Registerable<PlacedFeature> context) {
         var configuredFeatureRegistryEntryLookup = context.getRegistryLookup(RegistryKeys.CONFIGURED_FEATURE);
         //Mushrooms
@@ -118,7 +122,7 @@ public class ModUndergroundPlacedFeatures {
         register(context, TALL_GRASS_BLUE_LUMINESCENT_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.TALL_GRASS_BLUE_LUMINESCENT_KEY), CountPlacementModifier.of(7), SquarePlacementModifier.of(), ModPlacedFeatures.DEEPSLATE_LEVEL, BiomePlacementModifier.of());
 
         //Vines
-        register(context, BLUE_LUMINESCENT_VINES_UP_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.BLUE_LUMINESCENT_VINES_UP_KEY), CountPlacementModifier.of(11), SquarePlacementModifier.of(), ModPlacedFeatures.DEEPSLATE_LEVEL, BiomePlacementModifier.of());
+        register(context, BLUE_LUMINESCENT_VINES_UP_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.BLUE_LUMINESCENT_VINES_UP_KEY), CountPlacementModifier.of(9), SquarePlacementModifier.of(), ModPlacedFeatures.DEEPSLATE_LEVEL, BiomePlacementModifier.of());
         register(context, BLUE_LUMINESCENT_VINES_DOWN_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.BLUE_LUMINESCENT_VINES_DOWN_KEY), CountPlacementModifier.of(7), SquarePlacementModifier.of(), ModPlacedFeatures.DEEPSLATE_LEVEL, BiomePlacementModifier.of());
         register(context, HANGING_ROOTS_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.HANGING_ROOT_KEY), CountPlacementModifier.of(80), SquarePlacementModifier.of(), ModPlacedFeatures.STONE_LEVEL, BiomePlacementModifier.of());
 
@@ -127,11 +131,15 @@ public class ModUndergroundPlacedFeatures {
         register(context, HUGE_BROWN_MUSHROOM_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(TreeConfiguredFeatures.HUGE_BROWN_MUSHROOM), CountPlacementModifier.of(165), SquarePlacementModifier.of(), ModPlacedFeatures.STONE_LEVEL, BiomePlacementModifier.of());
         register(context, HUGE_RED_MUSHROOM_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(TreeConfiguredFeatures.HUGE_RED_MUSHROOM), CountPlacementModifier.of(170), SquarePlacementModifier.of(), ModPlacedFeatures.STONE_LEVEL, BiomePlacementModifier.of());
         register(context, FERTILE_RED_MUSHROOM_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.FERTILE_RED_MUSHROOM_KEY), CountPlacementModifier.of(240), SquarePlacementModifier.of(), ModPlacedFeatures.STONE_LEVEL, BiomePlacementModifier.of());
+        register(context, PURPLE_MUSHROOM_TREE_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.PURPLE_MUSHROOM_TREE_KEY), CountPlacementModifier.of(240), SquarePlacementModifier.of(), ModPlacedFeatures.DEEPSLATE_LEVEL, BiomePlacementModifier.of());
+        register(context, HUGE_PURPLE_MUSHROOM_TREE_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.BIG_PURPLE_MUSHROOM_TREE_KEY), CountPlacementModifier.of(240), SquarePlacementModifier.of(), ModPlacedFeatures.DEEPSLATE_LEVEL, BiomePlacementModifier.of());
+        register(context, PINK_LUMINESCENT_MUSHROOM_TREE_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.PINK_LUMINESCENT_MUSHROOM_TREE_KEY), CountPlacementModifier.of(240), SquarePlacementModifier.of(), ModPlacedFeatures.DEEPSLATE_LEVEL, BiomePlacementModifier.of());
 
         //Tree
-        register(context, OAK_TREE_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(TreeConfiguredFeatures.OAK), ModPlacedFeatures.undergroundTreeModifiersWithWouldSurvive(PlacedFeatures.createCountExtraModifier(90, 1f, 45), Blocks.OAK_SAPLING));
-        register(context, OAK_BERRIES_TREE_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.OAK_BERRIES_TREE_KEY), ModPlacedFeatures.undergroundTreeModifiersWithWouldSurvive(PlacedFeatures.createCountExtraModifier(240, 1f, 10), ModBlocks.OAK_BERRIES_SAPLING));
-        register(context, AZALEA_TREE_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(TreeConfiguredFeatures.AZALEA_TREE), ModPlacedFeatures.undergroundTreeModifiersWithWouldSurvive(PlacedFeatures.createCountExtraModifier(230, 1f, 6), Blocks.AZALEA));
+        register(context, OAK_TREE_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(TreeConfiguredFeatures.OAK), ModPlacedFeatures.undergroundStoneLevelTreeModifiersWithWouldSurvive(PlacedFeatures.createCountExtraModifier(90, 1f, 45), Blocks.OAK_SAPLING));
+        register(context, OAK_BERRIES_TREE_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.OAK_BERRIES_TREE_KEY), ModPlacedFeatures.undergroundStoneLevelTreeModifiersWithWouldSurvive(PlacedFeatures.createCountExtraModifier(240, 1f, 10), ModBlocks.OAK_BERRIES_SAPLING));
+        register(context, AZALEA_TREE_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(TreeConfiguredFeatures.AZALEA_TREE), ModPlacedFeatures.undergroundStoneLevelTreeModifiersWithWouldSurvive(PlacedFeatures.createCountExtraModifier(230, 1f, 6), Blocks.AZALEA));
+        register(context, BLUE_LUMINESCENT_TREE_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.BLUE_LUMINESCENT_TREE_KEY), ModPlacedFeatures.undergroundDeepslateLevelTreeModifiersWithWouldSurvive(PlacedFeatures.createCountExtraModifier(150, 1f, 6), ModBlocks.BLUE_LUMINESCENT_SAPPLING));
 
 
         //Crystal
@@ -147,6 +155,8 @@ public class ModUndergroundPlacedFeatures {
         register(context, RHYOLITE_UNDERGROUND_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.RHYOLITE_KEY),
                 ModOrePlacement.modifiersWithCount(12, // Veins per Chunk
                         HeightRangePlacementModifier.uniform(YOffset.fixed(10), YOffset.fixed(80))));
+
+        register(context, AMBER_MINERAL_UNDERGROUND_PLACED_FEATURE, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.AMBER_MINERAL_KEY), RarityFilterPlacementModifier.of(20), SquarePlacementModifier.of(), ModPlacedFeatures.CAVE_LEVEL, BiomePlacementModifier.of());
     }
 
     public static RegistryKey<PlacedFeature> registerKey(String name) {

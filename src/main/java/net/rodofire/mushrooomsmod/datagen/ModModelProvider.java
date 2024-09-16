@@ -182,6 +182,7 @@ public class ModModelProvider extends FabricModelProvider {
         //Crystals
         generator.registerSimpleCubeAll(ModBlocks.PINK_CRYSTAL_BLOCK);
         generator.registerSimpleCubeAll(ModBlocks.AMBER_ORE);
+        generator.registerSimpleCubeAll(ModBlocks.AMBER_MINERAL);
         generator.registerSimpleCubeAll(ModBlocks.RAW_AMBER_BLOCK);
         generator.registerSimpleCubeAll(ModBlocks.AMBER_BLOCK);
         generator.registerSimpleCubeAll(ModBlocks.AMBER_BLOCK_SANDIFIED);
@@ -201,6 +202,7 @@ public class ModModelProvider extends FabricModelProvider {
         generator.registerParentedItemModel(ModItems.CRYSTAL_CREEPER_SPAWN_EGG, ModelIds.getMinecraftNamespacedItem("template_spawn_egg"));
         generator.registerParentedItemModel(ModItems.CRYSTAL_GOLEM_SPAWN_EGG, ModelIds.getMinecraftNamespacedItem("template_spawn_egg"));
         generator.registerParentedItemModel(ModItems.SCHROOM_STICK_SPAWN_EGG, ModelIds.getMinecraftNamespacedItem("template_spawn_egg"));
+        //generator.registerParentedItemModel(ModItems.MOSQUITO_SPAWN_EGG, ModelIds.getMinecraftNamespacedItem("template_spawn_egg"));
 
         generator.blockStateCollector.accept(VariantsBlockStateSupplier.create(ModBlocks.BLUE_CRYSTAL)
                 .coordinate(BlockStateVariantMap.create(Properties.AGE_1, Properties.VERTICAL_DIRECTION)
@@ -274,6 +276,7 @@ public class ModModelProvider extends FabricModelProvider {
         generator.register(ModItems.CRUSHED_DIAMOND, Models.GENERATED);
         generator.register(ModItems.LUMINESCENT_SCHROOM_SOUP, Models.GENERATED);
         generator.register(ModItems.PURPLE_MUSHROOM_POWDER, Models.GENERATED);
+        generator.register(ModItems.KEY, Models.GENERATED);
 
 
     }
