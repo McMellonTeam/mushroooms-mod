@@ -65,7 +65,7 @@ public class ModItems {
     public static final Item CRUSHED_AMBER_ITEM = registerItem("amber_crushed_item", new Item(new FabricItemSettings()));
     //Tools
     public static final Item IRON_HAMMER = registerItem("iron_hammer", new HammerItem(ToolMaterials.IRON, 27, -3.8f, 4, new FabricItemSettings()));
-    public static final Item KEY = registerItem("key", new KeyItem(new FabricItemSettings()));
+    public static final Item KEY = registerItem("key", new KeyItem(new FabricItemSettings().maxCount(1)));
 
 
     private static Item registerItem(String name, Item item) {
