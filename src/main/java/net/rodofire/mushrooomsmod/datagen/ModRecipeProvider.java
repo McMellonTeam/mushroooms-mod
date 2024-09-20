@@ -174,6 +174,30 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .offerTo(exporter, new Identifier("blue_luminescent_wood_craft"));
 
 
+        offerPressurePlateRecipe(exporter, ModBlocks.PELTOGYNE_PRESSURE_PLATE, ModBlocks.PELTOGYNE_PLANKS);
+        offerSlabRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.PELTOGYNE_SLAB, ModBlocks.PELTOGYNE_PLANKS);
+        createStairsRecipe(ModBlocks.PELTOGYNE_STAIRS, Ingredient.ofItems(ModBlocks.PELTOGYNE_PLANKS));
+        offerSingleOutputShapelessRecipe(exporter, ModBlocks.PELTOGYNE_BUTTON, ModBlocks.PELTOGYNE_PLANKS, "button");
+        createTrapdoorRecipe(ModBlocks.PELTOGYNE_TRAPDOOR, Ingredient.ofItems(ModBlocks.PELTOGYNE_PLANKS));
+        createDoorRecipe(ModBlocks.PELTOGYNE_DOOR, Ingredient.ofItems(ModBlocks.PELTOGYNE_PLANKS));
+        createFenceGateRecipe(ModBlocks.PELTOGYNE_FENCE_GATE, Ingredient.ofItems(ModBlocks.PELTOGYNE_PLANKS));
+        createFenceRecipe(ModBlocks.PELTOGYNE_FENCE, Ingredient.ofItems(ModBlocks.PELTOGYNE_PLANKS));
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.PELTOGYNE_STRIPPED_WOOD, 3)
+                .pattern("RR")
+                .pattern("RR")
+                .input(Character.valueOf('R'), ModBlocks.PELTOGYNE_STRIPPED_LOG)
+                .criterion(hasItem(ModBlocks.PELTOGYNE_STRIPPED_LOG), conditionsFromItem(ModBlocks.PELTOGYNE_STRIPPED_LOG))
+                .offerTo(exporter, new Identifier("peltogyne_stripped_wood_craft"));
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.PELTOGYNE_WOOD, 4)
+                .pattern("RR")
+                .pattern("RR")
+                .input(Character.valueOf('R'), ModBlocks.PELTOGYNE_LOG)
+                .criterion(hasItem(ModBlocks.PELTOGYNE_LOG), conditionsFromItem(ModBlocks.PELTOGYNE_LOG))
+                .offerTo(exporter, new Identifier("peltogyne_wood_craft"));
+
+
         //utils
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModBlocks.FORGE_BLOCK)
                 .pattern("RRR")

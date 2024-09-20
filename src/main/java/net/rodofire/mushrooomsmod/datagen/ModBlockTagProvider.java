@@ -123,7 +123,22 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.BLUE_LUMINESCENT_STAIRS)
                 .add(ModBlocks.BLUE_LUMINESCENT_SLAB)
                 .add(ModBlocks.BLUE_LUMINESCENT_FENCE)
-                .add(ModBlocks.BLUE_LUMINESCENT_FENCE_GATE);
+                .add(ModBlocks.BLUE_LUMINESCENT_FENCE_GATE)
+
+
+                .add(ModBlocks.PELTOGYNE_LOG)
+                .add(ModBlocks.PELTOGYNE_WOOD)
+                .add(ModBlocks.PELTOGYNE_STRIPPED_LOG)
+                .add(ModBlocks.PELTOGYNE_STRIPPED_WOOD)
+                .add(ModBlocks.PELTOGYNE_PLANKS)
+                .add(ModBlocks.PELTOGYNE_STAIRS)
+                .add(ModBlocks.PELTOGYNE_SLAB)
+                .add(ModBlocks.PELTOGYNE_FENCE)
+                .add(ModBlocks.PELTOGYNE_FENCE_GATE)
+                .add(ModBlocks.PELTOGYNE_DOOR)
+                .add(ModBlocks.PELTOGYNE_TRAPDOOR)
+                .add(ModBlocks.PELTOGYNE_PRESSURE_PLATE)
+                .add(ModBlocks.PELTOGYNE_BUTTON);
 
         getOrCreateTagBuilder(BlockTags.HOE_MINEABLE)
                 .add(ModBlocks.BLUE_LUMINESCENT_LEAVES)
@@ -278,7 +293,8 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.GREEN_STONY_SCHROOM_DEPOT);
 
         getOrCreateTagBuilder(BlockTags.SAPLINGS)
-                .add(ModBlocks.BLUE_LUMINESCENT_SAPPLING);
+                .add(ModBlocks.BLUE_LUMINESCENT_SAPPLING)
+                .add(ModBlocks.PELTOGYNE_SAPPLING);
 
 
         getOrCreateTagBuilder(BlockTags.CLIMBABLE)
@@ -288,16 +304,24 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 
         /*-------------------- Construction Blocks --------------------*/
         getOrCreateTagBuilder(BlockTags.FENCES)
-                .add(ModBlocks.BLUE_LUMINESCENT_FENCE);
+                .add(ModBlocks.BLUE_LUMINESCENT_FENCE)
+                .add(ModBlocks.PELTOGYNE_FENCE);
 
         getOrCreateTagBuilder(BlockTags.FENCE_GATES)
-                .add(ModBlocks.BLUE_LUMINESCENT_FENCE_GATE);
+                .add(ModBlocks.BLUE_LUMINESCENT_FENCE_GATE)
+                .add(ModBlocks.PELTOGYNE_FENCE_GATE);
 
         getOrCreateTagBuilder(BlockTags.LOGS_THAT_BURN)
                 .add(ModBlocks.BLUE_LUMINESCENT_LOG)
                 .add(ModBlocks.BLUE_LUMINESCENT_STRIPPED_LOG)
                 .add(ModBlocks.BLUE_LUMINESCENT_STRIPPED_WOOD)
-                .add(ModBlocks.BLUE_LUMINESCENT_WOOD);
+                .add(ModBlocks.BLUE_LUMINESCENT_WOOD)
+
+                .add(ModBlocks.PELTOGYNE_LOG)
+                .add(ModBlocks.PELTOGYNE_WOOD)
+                .add(ModBlocks.PELTOGYNE_STRIPPED_LOG)
+                .add(ModBlocks.PELTOGYNE_STRIPPED_WOOD)
+                .add(ModBlocks.PELTOGYNE_PLANKS);
 
 
     }

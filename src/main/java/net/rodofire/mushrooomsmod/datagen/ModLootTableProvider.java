@@ -248,6 +248,21 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.OAK_BERRIES_SAPLING);
 
 
+        addDrop(ModBlocks.PELTOGYNE_LOG);
+        addDrop(ModBlocks.PELTOGYNE_WOOD);
+        addDrop(ModBlocks.PELTOGYNE_STRIPPED_LOG);
+        addDrop(ModBlocks.PELTOGYNE_STRIPPED_WOOD);
+        addDrop(ModBlocks.PELTOGYNE_PLANKS);
+        addDrop(ModBlocks.PELTOGYNE_STAIRS);
+        addDrop(ModBlocks.PELTOGYNE_SLAB);
+        addDrop(ModBlocks.PELTOGYNE_FENCE);
+        addDrop(ModBlocks.PELTOGYNE_FENCE_GATE);
+        addDrop(ModBlocks.PELTOGYNE_DOOR);
+        addDrop(ModBlocks.PELTOGYNE_TRAPDOOR);
+        addDrop(ModBlocks.PELTOGYNE_PRESSURE_PLATE);
+        addDrop(ModBlocks.PELTOGYNE_BUTTON);
+
+
         //Leaves
         addDrop(ModBlocks.BLUE_LUMINESCENT_LEAVES, leavesDrops(ModBlocks.BLUE_LUMINESCENT_LEAVES, ModBlocks.BLUE_LUMINESCENT_SAPPLING, 0.025f));
         addDrop(ModBlocks.RED_COLORFUL_LEAVES, leavesDrops(ModBlocks.RED_COLORFUL_LEAVES, ModBlocks.BLUE_LUMINESCENT_SAPPLING, 0.025f));
