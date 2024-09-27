@@ -47,6 +47,7 @@
   "block.mushrooomsmod.leaves_colorful_pink" : "Colorful Pink Leaves",
   "block.mushrooomsmod.leaves_colorful_blue" : "Colorful Blue Leaves",
   "block.mushrooomsmod.leaves_oak_berries": "Oak Berries Leaves",
+  "block.mushrooomsmod.leaves_peltogyne": "Peltogyne Leaves",
 
   "block.mushrooomsmod.mushroom_stem_blue_luminescent" : "Blue Luminescent Mushroom Stem",
   "block.mushrooomsmod.mushroom_stem_transparent" : "Transparent Mushroom Stem",
@@ -94,7 +95,8 @@
   "block.mushrooomsmod.fence_gate_peltogyne": "Peltogyne Fence Gate",
   "block.mushrooomsmod.stairs_peltogyne": "Peltogyne Stairs",
   "block.mushrooomsmod.slab_peltogyne": "Peltogyne Slab",
-  "block.mushrooomsmod.sappling_peltogyne": "Peltogyne Sappling",
+  "block.mushrooomsmod.sapling_peltogyne": "Peltogyne Sappling",
+  "block.mushrooomsmod.sapling_colorful_tree": "Colorful Tree Sappling",
 
   "block.mushrooomsmod.rhyolite" : "Rhyolite",
   "block.mushrooomsmod.rhyolite_tiles": "Rhyolite Tiles",
