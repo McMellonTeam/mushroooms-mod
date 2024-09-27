@@ -137,6 +137,7 @@ public class ModItemGroup {
                         entries.add(ModBlocks.RED_COLORFUL_LEAVES);
                         entries.add(ModBlocks.PINK_COLORFUL_LEAVES);
                         entries.add(ModBlocks.OAK_BERRIES_LEAVES);
+                        entries.add(ModBlocks.PELTOGYNE_LEAVES);
 
                         //Mushrooms
                         entries.add(ModBlocks.BLUE_LUMINESCENT_MUSHROOM);
@@ -153,6 +154,8 @@ public class ModItemGroup {
                         //Sapling
                         entries.add(ModBlocks.BLUE_LUMINESCENT_SAPPLING);
                         entries.add(ModBlocks.OAK_BERRIES_SAPLING);
+                        entries.add(ModBlocks.PELTOGYNE_SAPLING);
+                        entries.add(ModBlocks.COLORFUL_TREE_SAPLING);
 
                         //Flowers Mushrooms
                         entries.add(ModBlocks.STERILE_BLUE_MUSHROOM);
