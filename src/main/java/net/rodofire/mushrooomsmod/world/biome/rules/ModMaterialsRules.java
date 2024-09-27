@@ -20,6 +20,8 @@ public class ModMaterialsRules {
 
     //Stone Related
     private static final MaterialRules.MaterialRule STONE = makeStateRule(Blocks.STONE);
+    private static final MaterialRules.MaterialRule COBBLESTONE = makeStateRule(Blocks.COBBLESTONE);
+    private static final MaterialRules.MaterialRule MOSSY_COBBLESTONE = makeStateRule(Blocks.MOSSY_COBBLESTONE);
     private static final MaterialRules.MaterialRule DEEPSLATE = makeStateRule(Blocks.DEEPSLATE);
     private static final MaterialRules.MaterialRule PURPLE_MUSHROOM_BLOCK = makeStateRule(ModBlocks.PURPLE_MUSHROOM_BLOCK);
     private static final MaterialRules.MaterialRule GREEN_MUSHROOM_BLOCK = makeStateRule(ModBlocks.GREEN_MUSHROOM_BLOCK);
@@ -33,6 +35,7 @@ public class ModMaterialsRules {
     private static final MaterialRules.MaterialCondition ABOVE_TOP = MaterialRules.aboveY(YOffset.belowTop(-2), 0);
     private static final MaterialRules.MaterialCondition BELOW_TOP = MaterialRules.not(MaterialRules.aboveY(YOffset.belowTop(10), 1));
     private static final MaterialRules.MaterialCondition ABOVE_WATER = MaterialRules.aboveY(YOffset.fixed(60), 0);
+    private static final MaterialRules.MaterialCondition IS_AT_OR_ABOVE_WATER = MaterialRules.water(-1, 0);
 
     public static MaterialRules.MaterialRule makeRules() {
         return sequence(
@@ -45,7 +48,8 @@ public class ModMaterialsRules {
 
                 /*--- Surface ---*/
                 createSchroomIsland1Rule(),
-                createSchroomIsland2Rule()
+                createSchroomIsland2Rule(),
+                createMagicalPlainRule()
         );
     }
 
@@ -82,6 +86,7 @@ public class ModMaterialsRules {
                         condition(MaterialRules.STONE_DEPTH_FLOOR_WITH_SURFACE_DEPTH_RANGE_6, DIRT), condition(MaterialRules.STONE_DEPTH_CEILING, DIRT)))));
     }
 
+
     /* ---------- Surface ---------*/
     private static MaterialRules.MaterialRule createSchroomIsland1Rule() {
         return condition(MaterialRules.biome(ModOverworldBiomes.SHROOM_ISLAND1),
@@ -91,6 +96,28 @@ public class ModMaterialsRules {
     private static MaterialRules.MaterialRule createSchroomIsland2Rule() {
         return condition(MaterialRules.biome(ModOverworldBiomes.SHROOM_ISLAND1),
                 condition(ABOVE_WATER, sequence(condition(MaterialRules.STONE_DEPTH_FLOOR, MYCELIUM), condition(MaterialRules.STONE_DEPTH_FLOOR_WITH_SURFACE_DEPTH_RANGE_6, DIRT))));
+    }
+
+    private static MaterialRules.MaterialRule createMagicalPlainRule() {
+        return condition(MaterialRules.biome(ModOverworldBiomes.SAKURA_FOREST),
+                sequence(condition(IS_AT_OR_ABOVE_WATER, sequence(
+                                condition(MaterialRules.STONE_DEPTH_FLOOR, sequence(
+                                        condition(patchNoiseAbove(0.15d), GRASS_BLOCK),
+                                        condition(patchNoiseAbove(-0.16d), sequence(
+                                                condition(emmentalNoiseAbove(0.4d), COBBLESTONE),
+                                                condition(emmentalNoiseAbove(-0.4d), STONE),
+                                                MOSSY_COBBLESTONE)),
+                                        GRASS_BLOCK)))),
+
+                        condition(MaterialRules.STONE_DEPTH_FLOOR, sequence(
+                                condition(patchNoiseAbove(0.15d), DIRT),
+                                condition(patchNoiseAbove(-0.16d), sequence(
+                                        condition(emmentalNoiseAbove(0.4d), COBBLESTONE),
+                                        condition(emmentalNoiseAbove(-0.4d), STONE),
+                                        MOSSY_COBBLESTONE)),
+                                DIRT))
+
+                ));
     }
 
 
