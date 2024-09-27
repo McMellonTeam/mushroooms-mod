@@ -149,6 +149,7 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.ORANGE_COLORFUL_LEAVES)
                 .add(ModBlocks.GREEN_COLORFUL_LEAVES)
                 .add(ModBlocks.OAK_BERRIES_LEAVES)
+                .add(ModBlocks.PELTOGYNE_LEAVES)
                 .add(ModBlocks.PINK_COLORFUL_LEAVES);
 
 
@@ -163,6 +164,7 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.ORANGE_COLORFUL_LEAVES)
                 .add(ModBlocks.GREEN_COLORFUL_LEAVES)
                 .add(ModBlocks.OAK_BERRIES_LEAVES)
+                .add(ModBlocks.PELTOGYNE_LEAVES)
                 .add(ModBlocks.PINK_COLORFUL_LEAVES);
 
         //Mushroom Plant
@@ -294,7 +296,8 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 
         getOrCreateTagBuilder(BlockTags.SAPLINGS)
                 .add(ModBlocks.BLUE_LUMINESCENT_SAPPLING)
-                .add(ModBlocks.PELTOGYNE_SAPPLING);
+                .add(ModBlocks.COLORFUL_TREE_SAPLING)
+                .add(ModBlocks.PELTOGYNE_SAPLING);
 
 
         getOrCreateTagBuilder(BlockTags.CLIMBABLE)

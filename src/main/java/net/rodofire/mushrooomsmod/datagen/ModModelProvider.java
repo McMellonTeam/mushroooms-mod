@@ -133,6 +133,8 @@ public class ModModelProvider extends FabricModelProvider {
         //Potted Sapplings
         generator.registerFlowerPotPlant(ModBlocks.BLUE_LUMINESCENT_SAPPLING, ModBlocks.POTTED_BLUE_LUMINESCENT_SAPPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
         generator.registerFlowerPotPlant(ModBlocks.OAK_BERRIES_SAPLING, ModBlocks.POTTED_OAK_BERRIES_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
+        generator.registerFlowerPotPlant(ModBlocks.PELTOGYNE_SAPLING, ModBlocks.POTTED_PELTOGYNE_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
+        generator.registerFlowerPotPlant(ModBlocks.COLORFUL_TREE_SAPLING, ModBlocks.POTTED_COLORFUL_TREE_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
 
         //Vines
         generator.registerTintableCross(ModBlocks.BLUE_LUMINESCENT_VINES, BlockStateModelGenerator.TintType.NOT_TINTED);
@@ -164,7 +166,7 @@ public class ModModelProvider extends FabricModelProvider {
         generator.registerSimpleCubeAll(ModBlocks.LAVA_BLACKSTONE_TINY_BRICKS);
         //Wood
         generator.registerLog(ModBlocks.BLUE_LUMINESCENT_LOG).log(ModBlocks.BLUE_LUMINESCENT_LOG).wood(ModBlocks.BLUE_LUMINESCENT_WOOD);
-        generator.registerLog(ModBlocks.BLUE_LUMINESCENT_LOG).log(ModBlocks.PELTOGYNE_LOG).wood(ModBlocks.PELTOGYNE_WOOD);
+        generator.registerLog(ModBlocks.PELTOGYNE_LOG).log(ModBlocks.PELTOGYNE_LOG).wood(ModBlocks.PELTOGYNE_WOOD);
 
         generator.registerLog(ModBlocks.BLUE_LUMINESCENT_STRIPPED_LOG).log(ModBlocks.BLUE_LUMINESCENT_STRIPPED_LOG).wood(ModBlocks.BLUE_LUMINESCENT_STRIPPED_WOOD);
         generator.registerLog(ModBlocks.PELTOGYNE_STRIPPED_LOG).log(ModBlocks.PELTOGYNE_STRIPPED_LOG).wood(ModBlocks.PELTOGYNE_STRIPPED_WOOD);
@@ -189,6 +191,9 @@ public class ModModelProvider extends FabricModelProvider {
         peltogyne_wood_pool.fenceGate(ModBlocks.PELTOGYNE_FENCE_GATE);
         peltogyne_wood_pool.stairs(ModBlocks.PELTOGYNE_STAIRS);
         peltogyne_wood_pool.slab(ModBlocks.PELTOGYNE_SLAB);
+
+        generator.registerDoor(ModBlocks.PELTOGYNE_DOOR);
+        generator.registerTrapdoor(ModBlocks.PELTOGYNE_TRAPDOOR);
 
 
 
