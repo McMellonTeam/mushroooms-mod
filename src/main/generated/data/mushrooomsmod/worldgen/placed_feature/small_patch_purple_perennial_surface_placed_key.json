@@ -1,16 +1,16 @@
 {
-  "feature": "mushrooomsmod:sakura_arch_key",
+  "feature": "mushrooomsmod:small_patch_purple_perennial_key",
   "placement": [
     {
       "type": "minecraft:rarity_filter",
-      "chance": 25
+      "chance": 2
     },
     {
       "type": "minecraft:in_square"
     },
     {
       "type": "minecraft:heightmap",
-      "heightmap": "WORLD_SURFACE_WG"
+      "heightmap": "MOTION_BLOCKING"
     },
     {
       "type": "minecraft:biome"
