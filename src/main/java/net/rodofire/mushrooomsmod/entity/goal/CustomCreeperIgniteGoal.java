@@ -14,7 +14,7 @@ public class CustomCreeperIgniteGoal extends Goal {
 
     public CustomCreeperIgniteGoal(CustomCreeperEntity creeper) {
         this.creeper = creeper;
-        this.setControls(EnumSet.of(Goal.Control.MOVE));
+        this.setControls(EnumSet.of(Control.MOVE));
     }
 
     @Override

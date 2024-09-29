@@ -22,16 +22,15 @@ public class ModOverworldRegion extends Region {
     @Override
     public void addBiomes(Registry<Biome> registry, Consumer<Pair<MultiNoiseUtil.NoiseHypercube, RegistryKey<Biome>>> mapper) {
         VanillaParameterOverlayBuilder builder = new VanillaParameterOverlayBuilder();
-        //Magical Plain
-        /*new ParameterUtils.ParameterPointListBuilder()
-                .temperature(ParameterUtils.Temperature.span(ParameterUtils.Temperature.ICY, ParameterUtils.Temperature.FROZEN))
-                    .humidity(ParameterUtils.Humidity.span(ParameterUtils.Humidity.NEUTRAL, ParameterUtils.Humidity.WET))
-                        .continentalness(ParameterUtils.Continentalness.INLAND, ParameterUtils.Continentalness.DEEP_OCEAN, ParameterUtils.Continentalness.OCEAN,ParameterUtils.Continentalness.COAST)
-                            .erosion(ParameterUtils.Erosion.EROSION_0, ParameterUtils.Erosion.EROSION_1,ParameterUtils.Erosion.EROSION_2)
+        //Sakura Plain
+        new ParameterUtils.ParameterPointListBuilder()
+                .temperature(ParameterUtils.Temperature.NEUTRAL)
+                .humidity(ParameterUtils.Humidity.HUMID)
+                .continentalness(ParameterUtils.Continentalness.MID_INLAND)
+                .erosion(ParameterUtils.Erosion.EROSION_6)
                                 .depth(ParameterUtils.Depth.SURFACE)
-                                    .weirdness(ParameterUtils.Weirdness.MID_SLICE_NORMAL_ASCENDING, ParameterUtils.Weirdness.MID_SLICE_NORMAL_DESCENDING)
-                                        .build().forEach(point -> builder.add(point, ModOverworldBiomes.MAGICAL_PLAIN));*/
-
+                .weirdness(ParameterUtils.Weirdness.LOW_SLICE_VARIANT_ASCENDING)
+                .build().forEach(point -> builder.add(point, ModOverworldBiomes.SAKURA_FOREST));
 
         //Shroom Island
         /*new ParameterUtils.ParameterPointListBuilder()
@@ -56,19 +55,29 @@ public class ModOverworldRegion extends Region {
         //colorful plains
         new ParameterUtils.ParameterPointListBuilder()
                 .temperature(ParameterUtils.Temperature.NEUTRAL)
-                .humidity(ParameterUtils.Humidity.WET)
+                .humidity(ParameterUtils.Humidity.NEUTRAL)
                 .continentalness(ParameterUtils.Continentalness.INLAND)
                 .erosion(MultiNoiseUtil.ParameterRange.of(-1f, 0f))
                 .depth(ParameterUtils.Depth.SURFACE)
                 .weirdness(MultiNoiseUtil.ParameterRange.of(-1f, 0.05f))
                 .build().forEach(point -> builder.add(point, ModOverworldBiomes.COLORFUL_PLAINS));
 
+        //colorful forest
+        new ParameterUtils.ParameterPointListBuilder()
+                .temperature(ParameterUtils.Temperature.NEUTRAL)
+                .humidity(ParameterUtils.Humidity.NEUTRAL)
+                .continentalness(ParameterUtils.Continentalness.INLAND)
+                .erosion(ParameterUtils.Erosion.EROSION_5, ParameterUtils.Erosion.EROSION_4)
+                .depth(ParameterUtils.Depth.SURFACE)
+                .weirdness(MultiNoiseUtil.ParameterRange.of(-1f, 0.05f))
+                .build().forEach(point -> builder.add(point, ModOverworldBiomes.COLORFUL_FOREST));
+
         //blue mushroom forest
         new ParameterUtils.ParameterPointListBuilder()
                 .temperature(ParameterUtils.Temperature.NEUTRAL)
                 .humidity(ParameterUtils.Humidity.WET)
                 .continentalness(ParameterUtils.Continentalness.INLAND)
-                .erosion(ParameterUtils.Erosion.EROSION_5, ParameterUtils.Erosion.EROSION_6)
+                .erosion(ParameterUtils.Erosion.EROSION_3)
                 .depth(ParameterUtils.Depth.SURFACE)
                 .weirdness(MultiNoiseUtil.ParameterRange.of(-1f, 0.05f))
                 .build().forEach(point -> builder.add(point, ModOverworldBiomes.BLUE_MUSHROOM_FOREST));

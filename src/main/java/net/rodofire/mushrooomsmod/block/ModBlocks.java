@@ -28,8 +28,6 @@ import net.rodofire.mushrooomsmod.sound.ModBlockSoundGroup;
 import net.rodofire.mushrooomsmod.world.features.configuredfeatures.ModConfiguredFeatures;
 import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.tree.ModSaplings;
 
-import java.util.function.ToIntFunction;
-
 
 public class ModBlocks {
     private static void addItemstoNaturalGroup(FabricItemGroupEntries entries) {
@@ -255,12 +253,14 @@ public class ModBlocks {
     public static final Block POTTED_ANEMONE = Registry.register(Registries.BLOCK, Identifier.of(MushrooomsMod.MOD_ID, "potted_anemone"), new FlowerPotBlock(ANEMONE, AbstractBlock.Settings.copy(Blocks.POTTED_RED_MUSHROOM).nonOpaque()));
     public static final Block POTTED_JACYNTHE = Registry.register(Registries.BLOCK, Identifier.of(MushrooomsMod.MOD_ID, "potted_jacynthe"), new FlowerPotBlock(JACYNTHE, AbstractBlock.Settings.copy(Blocks.POTTED_RED_MUSHROOM).nonOpaque()));
     public static final Block POTTED_BLUE_LUMINESCENT_SAPPLING = Registry.register(Registries.BLOCK, Identifier.of(MushrooomsMod.MOD_ID, "potted_blue_luminescent_sappling"), new FlowerPotBlock(ModBlocks.BLUE_LUMINESCENT_SAPPLING, AbstractBlock.Settings.copy(Blocks.POTTED_RED_MUSHROOM).nonOpaque()));
-    public static final Block OAK_BERRIES_LEAVES = registerBlock("leaves_oak_berries", new BerriesLeaves(AbstractBlock.Settings.copy(Blocks.OAK_LEAVES).nonOpaque().mapColor(MapColor.DARK_GREEN).strength(0.2f).ticksRandomly().sounds(BlockSoundGroup.GRASS).nonOpaque().allowsSpawning(Blocks::canSpawnOnLeaves).suffocates(Blocks::never).blockVision(Blocks::never).burnable().pistonBehavior(PistonBehavior.DESTROY).solidBlock(Blocks::never).luminance(BerriesLeaves.getLuminanceSupplier())));
+    public static final Block POTTED_COLORFUL_TREE_SAPLING = registerHiddenBlock(("potted_colorful_tree_sapling"), new FlowerPotBlock(ModBlocks.COLORFUL_TREE_SAPLING, AbstractBlock.Settings.copy(Blocks.POTTED_RED_MUSHROOM).nonOpaque()));
+    public static final Block POTTED_PELTOGYNE_SAPLING = registerHiddenBlock(("potted_peltogyne_sapling"), new FlowerPotBlock(ModBlocks.PELTOGYNE_SAPLING, AbstractBlock.Settings.copy(Blocks.POTTED_RED_MUSHROOM).nonOpaque()));
+    public static final Block POTTED_OAK_BERRIES_SAPLING = Registry.register(Registries.BLOCK, Identifier.of(MushrooomsMod.MOD_ID, "potted_oak_berries_sapling"), new FlowerPotBlock(ModBlocks.OAK_BERRIES_LEAVES, AbstractBlock.Settings.copy(Blocks.POTTED_RED_MUSHROOM).nonOpaque()));
 
 
     //Grass
-    public static final Block TINY_GRASS = registerBlock("tiny_grass", new GrassBlock(AbstractBlock.Settings.copy(Blocks.SHORT_GRASS)));
-    public static final Block BLUE_LUMINESCENT_GRASS = registerBlock("grass_blue_luminescent", new GrassBlock(AbstractBlock.Settings.copy(Blocks.SHORT_GRASS).luminance(state ->9)));
+    public static final Block TINY_GRASS = registerBlock("tiny_grass", new ShortPlantBlock(AbstractBlock.Settings.copy(Blocks.SHORT_GRASS)));
+    public static final Block BLUE_LUMINESCENT_GRASS = registerBlock("grass_blue_luminescent", new ShortPlantBlock(AbstractBlock.Settings.copy(Blocks.SHORT_GRASS).luminance(state ->9)));
     public static final Block BLUE_LUMINESCENT_TALL_GRASS = registerBlock("grass_tall_blue_luminescent", new TallPlantBlock(AbstractBlock.Settings.copy(Blocks.TALL_GRASS).luminance(state ->11)));
 
     //Vines
@@ -272,7 +272,7 @@ public class ModBlocks {
     public static final Block BLUE_LUMINESCENT_VINES = registerBlock("vines_blue_luminescent", new RoofSimpleVines(AbstractBlock.Settings.copy(Blocks.VINE).nonOpaque().luminance(state ->10)));
 
     //Leaves
-    public static final Block BLUE_LUMINESCENT_LEAVES = registerBlock("leaves_blue_luminescent", new LeavesBlock(AbstractBlock.Settings.copy(Blocks.OAK_LEAVES).luminance(state ->10).nonOpaque()));
+    public static final Block BLUE_LUMINESCENT_LEAVES = registerBlock("leaves_blue_luminescent", new LeavesBlock(AbstractBlock.Settings.copy(Blocks.OAK_LEAVES).luminance(state -> 10).nonOpaque()));
     public static final Block RED_COLORFUL_LEAVES = registerBlock("leaves_colorful_red", new LeavesBlock(AbstractBlock.Settings.copy(Blocks.OAK_LEAVES).nonOpaque()));
     public static final Block PINK_COLORFUL_LEAVES = registerBlock("leaves_colorful_pink", new LeavesBlock(AbstractBlock.Settings.copy(Blocks.OAK_LEAVES).nonOpaque()));
     public static final Block ORANGE_COLORFUL_LEAVES = registerBlock("leaves_colorful_orange", new LeavesBlock(AbstractBlock.Settings.copy(Blocks.OAK_LEAVES).nonOpaque()));
@@ -280,7 +280,9 @@ public class ModBlocks {
     public static final Block GREEN_COLORFUL_LEAVES = registerBlock("leaves_colorful_green", new LeavesBlock(AbstractBlock.Settings.copy(Blocks.OAK_LEAVES).nonOpaque()));
     public static final Block BLUE_COLORFUL_LEAVES = registerBlock("leaves_colorful_blue", new LeavesBlock(AbstractBlock.Settings.copy(Blocks.OAK_LEAVES).nonOpaque()));
     public static final Block PURPLE_COLORFUL_LEAVES = registerBlock("leaves_colorful_purple", new LeavesBlock(AbstractBlock.Settings.copy(Blocks.OAK_LEAVES).nonOpaque()));
-    public static final Block POTTED_OAK_BERRIES_SAPLING = Registry.register(Registries.BLOCK, Identifier.of(MushrooomsMod.MOD_ID, "potted_oak_berries_sapling"), new FlowerPotBlock(ModBlocks.OAK_BERRIES_LEAVES, AbstractBlock.Settings.copy(Blocks.POTTED_RED_MUSHROOM).nonOpaque()));
+    public static final Block OAK_BERRIES_LEAVES = registerBlock("leaves_oak_berries", new BerriesLeaves(AbstractBlock.Settings.copy(Blocks.OAK_LEAVES).nonOpaque().mapColor(MapColor.DARK_GREEN).strength(0.2f).ticksRandomly().sounds(BlockSoundGroup.GRASS).nonOpaque().allowsSpawning(Blocks::canSpawnOnLeaves).suffocates(Blocks::never).blockVision(Blocks::never).burnable().pistonBehavior(PistonBehavior.DESTROY).solidBlock(Blocks::never).luminance(BerriesLeaves.getLuminanceSupplier())));
+    public static final Block PELTOGYNE_LEAVES = registerBlock("leaves_peltogyne", new LeavesBlock(AbstractBlock.Settings.copy(Blocks.OAK_LEAVES).nonOpaque()));
+
 
     //Light Blocks
     public static final Block RED_LANTERN = registerBlock("lantern_red", new LanternBlock(AbstractBlock.Settings.copy(Blocks.LANTERN).luminance(state ->15).nonOpaque()));
@@ -298,20 +300,49 @@ public class ModBlocks {
 
     //Wood
     public static final Block BLUE_LUMINESCENT_LOG = registerBlock("log_blue_luminescent", new PillarBlock(AbstractBlock.Settings.copy(Blocks.OAK_LOG)));
-    public static final Block BLUE_LUMINESCENT_STRIPPED_LOG = registerBlock("log_stripped_blue_luminescent", new PillarBlock(AbstractBlock.Settings.copy(Blocks.STRIPPED_OAK_LOG)));
-    public static final Block BLUE_LUMINESCENT_STRIPPED_WOOD = registerBlock("wood_stripped_blue_luminescent", new PillarBlock(AbstractBlock.Settings.copy(Blocks.STRIPPED_OAK_WOOD)));
+    public static final Block PELTOGYNE_LOG = registerBlock("log_peltogyne", new PillarBlock(AbstractBlock.Settings.copy(Blocks.OAK_LOG)));
+
     public static final Block BLUE_LUMINESCENT_WOOD = registerBlock("wood_blue_luminescent", new PillarBlock(AbstractBlock.Settings.copy(Blocks.OAK_WOOD)));
+    public static final Block PELTOGYNE_WOOD = registerBlock("wood_peltogyne", new PillarBlock(AbstractBlock.Settings.copy(Blocks.OAK_WOOD)));
+
+    public static final Block BLUE_LUMINESCENT_STRIPPED_LOG = registerBlock("log_stripped_blue_luminescent", new PillarBlock(AbstractBlock.Settings.copy(Blocks.STRIPPED_OAK_LOG)));
+    public static final Block PELTOGYNE_STRIPPED_LOG = registerBlock("log_stripped_peltogyne", new PillarBlock(AbstractBlock.Settings.copy(Blocks.STRIPPED_OAK_LOG)));
+
+    public static final Block BLUE_LUMINESCENT_STRIPPED_WOOD = registerBlock("wood_stripped_blue_luminescent", new PillarBlock(AbstractBlock.Settings.copy(Blocks.STRIPPED_OAK_WOOD)));
+    public static final Block PELTOGYNE_STRIPPED_WOOD = registerBlock("wood_stripped_peltogyne", new PillarBlock(AbstractBlock.Settings.copy(Blocks.STRIPPED_OAK_WOOD)));
+
     public static final Block BLUE_LUMINESCENT_PLANKS = registerBlock("planks_blue_luminescent", new Block(AbstractBlock.Settings.copy(Blocks.OAK_PLANKS)));
-    public static final Block BLUE_LUMINESCENT_TRAPDOOR = registerBlock("trapdoor_blue_luminescent", new TrapdoorBlock(BlockSetType.OAK,AbstractBlock.Settings.copy(Blocks.OAK_TRAPDOOR)));
-    public static final Block BLUE_LUMINESCENT_DOOR = registerBlock("door_blue_luminescent", new DoorBlock(BlockSetType.OAK,AbstractBlock.Settings.copy(Blocks.OAK_DOOR)));
+    public static final Block PELTOGYNE_PLANKS = registerBlock("planks_peltogyne", new Block(AbstractBlock.Settings.copy(Blocks.OAK_PLANKS)));
+
+    public static final Block BLUE_LUMINESCENT_TRAPDOOR = registerBlock("trapdoor_blue_luminescent", new TrapdoorBlock(BlockSetType.OAK, AbstractBlock.Settings.copy(Blocks.OAK_TRAPDOOR)));
+    public static final Block PELTOGYNE_TRAPDOOR = registerBlock("trapdoor_peltogyne", new TrapdoorBlock(BlockSetType.OAK, AbstractBlock.Settings.copy(Blocks.OAK_TRAPDOOR)));
+
+    public static final Block BLUE_LUMINESCENT_DOOR = registerBlock("door_blue_luminescent", new DoorBlock(BlockSetType.OAK, AbstractBlock.Settings.copy(Blocks.OAK_DOOR)));
+    public static final Block PELTOGYNE_DOOR = registerBlock("door_peltogyne", new DoorBlock(BlockSetType.OAK, AbstractBlock.Settings.copy(Blocks.OAK_DOOR)));
+
     public static final Block BLUE_LUMINESCENT_BUTTON = registerBlock("button_blue_luminescent", new ButtonBlock(BlockSetType.OAK, 20, AbstractBlock.Settings.copy(Blocks.OAK_BUTTON)));
-    public static final Block BLUE_LUMINESCENT_PRESSURE_PLATE = registerBlock("pressure_plate_blue_luminescent", new PressurePlateBlock(BlockSetType.OAK ,AbstractBlock.Settings.copy(Blocks.OAK_PRESSURE_PLATE)));
+    public static final Block PELTOGYNE_BUTTON = registerBlock("button_peltogyne", new ButtonBlock(BlockSetType.OAK, 20, AbstractBlock.Settings.copy(Blocks.OAK_BUTTON)));
+
+    public static final Block BLUE_LUMINESCENT_PRESSURE_PLATE = registerBlock("pressure_plate_blue_luminescent", new PressurePlateBlock(BlockSetType.OAK, AbstractBlock.Settings.copy(Blocks.OAK_PRESSURE_PLATE)));
+    public static final Block PELTOGYNE_PRESSURE_PLATE = registerBlock("pressure_plate_peltogyne", new PressurePlateBlock(BlockSetType.OAK, AbstractBlock.Settings.copy(Blocks.OAK_PRESSURE_PLATE)));
+
     public static final Block BLUE_LUMINESCENT_FENCE = registerBlock("fence_blue_luminescent", new FenceBlock(AbstractBlock.Settings.copy(Blocks.OAK_FENCE)));
-    public static final Block BLUE_LUMINESCENT_FENCE_GATE = registerBlock("fence_gate_blue_luminescent", new FenceGateBlock(WoodType.OAK,AbstractBlock.Settings.copy(Blocks.OAK_FENCE_GATE)));
-    public static final Block BLUE_LUMINESCENT_SAPPLING = registerBlock("sappling_blue_luminescent", new SaplingBlock(ModSaplings.BLUE_LUMINESCENT_SAPLING, AbstractBlock.Settings.copy(Blocks.OAK_SAPLING)));
-    public static final Block BLUE_LUMINESCENT_STAIRS = registerBlock("stairs_blue_luminescent", new StairsBlock(BLUE_LUMINESCENT_PLANKS.getDefaultState(), AbstractBlock.Settings.copy(Blocks.OAK_STAIRS).luminance(state ->8)));
+    public static final Block PELTOGYNE_FENCE = registerBlock("fence_peltogyne", new FenceBlock(AbstractBlock.Settings.copy(Blocks.OAK_FENCE)));
+
+    public static final Block BLUE_LUMINESCENT_STAIRS = registerBlock("stairs_blue_luminescent", new StairsBlock(BLUE_LUMINESCENT_PLANKS.getDefaultState(), AbstractBlock.Settings.copy(Blocks.OAK_STAIRS).luminance(state->8)));
+    public static final Block PELTOGYNE_STAIRS = registerBlock("stairs_peltogyne", new StairsBlock(PELTOGYNE_PLANKS.getDefaultState(), AbstractBlock.Settings.copy(Blocks.OAK_STAIRS).luminance(state->8)));
+
     public static final Block BLUE_LUMINESCENT_SLAB = registerBlock("slab_blue_luminescent", new SlabBlock(AbstractBlock.Settings.copy(Blocks.OAK_SLAB)));
-    public static final Block OAK_BERRIES_SAPLING = registerBlock("sapling_oak_berries", new SaplingBlock(ModSaplings.OAK_BERRIES_SAPLING_GENERATOR, AbstractBlock.Settings.copy(Blocks.OAK_SAPLING).luminance(state ->9)));
+    public static final Block PELTOGYNE_SLAB = registerBlock("slab_peltogyne", new SlabBlock(AbstractBlock.Settings.copy(Blocks.OAK_SLAB)));
+
+    public static final Block BLUE_LUMINESCENT_FENCE_GATE = registerBlock("fence_gate_blue_luminescent", new FenceGateBlock(WoodType.OAK, AbstractBlock.Settings.copy(Blocks.OAK_FENCE_GATE)));
+    public static final Block PELTOGYNE_FENCE_GATE = registerBlock("fence_gate_peltogyne", new FenceGateBlock(WoodType.OAK, AbstractBlock.Settings.copy(Blocks.OAK_FENCE_GATE)));
+
+    public static final Block COLORFUL_TREE_SAPLING = registerBlock("sapling_colorful_tree", new SaplingBlock(ModSaplings.COLORFUL_TREE_SAPLING_GENERATOR, AbstractBlock.Settings.copy(Blocks.OAK_SAPLING)));
+    public static final Block BLUE_LUMINESCENT_SAPPLING = registerBlock("sappling_blue_luminescent", new SaplingBlock(ModSaplings.BLUE_LUMINESCENT_SAPLING, AbstractBlock.Settings.copy(Blocks.OAK_SAPLING)));
+    public static final Block OAK_BERRIES_SAPLING = registerBlock("sapling_oak_berries", new SaplingBlock(ModSaplings.OAK_BERRIES_SAPLING_GENERATOR, AbstractBlock.Settings.copy(Blocks.OAK_SAPLING).luminance(state->9)));
+    public static final Block PELTOGYNE_SAPLING = registerBlock("sapling_peltogyne", new SaplingBlock(ModSaplings.PELTOGYNE_SAPLING_GENERATOR, AbstractBlock.Settings.copy(Blocks.OAK_SAPLING)));
+
     //Crystal Blocks
     public static final Block PINK_CRYSTAL = registerHiddenBlock("crystal_pink", new Block(AbstractBlock.Settings.copy(Blocks.AMETHYST_CLUSTER)));
     public static final Block BLUE_CRYSTAL = registerHiddenBlock("crystal_blue", new StraightCrystal(AbstractBlock.Settings.create().solid().nonOpaque().sounds(BlockSoundGroup.AMETHYST_CLUSTER).strength(1.5f).pistonBehavior(PistonBehavior.DESTROY).luminance(state ->8)));

@@ -21,4 +21,20 @@ public class ModSaplings {
             Optional.empty(),
             Optional.empty(),
             Optional.empty());
+
+    public static final SaplingGenerator PELTOGYNE_SAPLING_GENERATOR = new SaplingGenerator("peltogyne_sapling", 0f,
+            Optional.empty(),
+            Optional.empty(),
+            Optional.of(ModConfiguredFeatures.PELTOGYNE_TREE_KEY),
+            Optional.empty(),
+            Optional.empty(),
+            Optional.empty());
+
+    public static final SaplingGenerator COLORFUL_TREE_SAPLING_GENERATOR = new SaplingGenerator("colorful_tree_sapling", 0f,
+            Optional.empty(),
+            Optional.empty(),
+            Optional.of(ModConfiguredFeatures.COLORFUL_TREE_KEY),
+            Optional.empty(),
+            Optional.empty(),
+            Optional.empty());
 }
