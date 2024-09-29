@@ -8,10 +8,7 @@
           "to_place": {
             "type": "minecraft:simple_state_provider",
             "state": {
-              "Name": "mushrooomsmod:tiny_grass",
-              "Properties": {
-                "snowy": "false"
-              }
+              "Name": "mushrooomsmod:tiny_grass"
             }
           }
         }

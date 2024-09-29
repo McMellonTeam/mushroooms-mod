@@ -1,7 +1,5 @@
 package net.rodofire.mushrooomsmod.entity;
 
-import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
-import net.minecraft.entity.EntityDimensions;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
 import net.minecraft.registry.Registries;
@@ -9,8 +7,6 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import net.rodofire.mushrooomsmod.MushrooomsMod;
 import net.rodofire.mushrooomsmod.entity.custom.*;
-
-import java.util.concurrent.locks.Lock;
 
 public class ModEntities {
     public static final EntityType<GrokiEntity> GROKI = Registry.register(Registries.ENTITY_TYPE,

@@ -8,10 +8,7 @@
           "to_place": {
             "type": "minecraft:simple_state_provider",
             "state": {
-              "Name": "mushrooomsmod:grass_blue_luminescent",
-              "Properties": {
-                "snowy": "false"
-              }
+              "Name": "mushrooomsmod:grass_blue_luminescent"
             }
           }
         }
