@@ -1,0 +1,18 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "mushrooomsmod:block/pick_blue_tall",
+        "weight": 1
+      },
+      {
+        "model": "mushrooomsmod:block/pick_blue_medium",
+        "weight": 1
+      },
+      {
+        "model": "mushrooomsmod:block/pick_blue_small",
+        "weight": 1
+      }
+    ]
+  }
+}

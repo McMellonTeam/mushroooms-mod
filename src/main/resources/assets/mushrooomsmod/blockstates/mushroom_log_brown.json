@@ -1,0 +1,20 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "mushrooomsmod:block/mushroom_log1_brown",
+      "y": 0
+    },
+    "facing=north": {
+      "model": "mushrooomsmod:block/mushroom_log1_brown",
+      "y": 270
+    },
+    "facing=south": {
+      "model": "mushrooomsmod:block/mushroom_log1_brown",
+      "y": 90
+    },
+    "facing=west": {
+      "model": "mushrooomsmod:block/mushroom_log1_brown",
+      "y": 180
+    }
+  }
+}

@@ -30,6 +30,7 @@ public class BlueLuminescentTrunkPlacer extends TrunkPlacer {
         this.secondRandomHeight = secondRandomHeight;
     }
 
+
     @Override
     protected TrunkPlacerType<?> getType() {
         return ModTrunkPlacerTypes.BLUE_LUMINESCENT_TRUNK_PLACER;
