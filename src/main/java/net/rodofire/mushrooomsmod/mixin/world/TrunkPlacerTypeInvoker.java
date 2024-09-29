@@ -1,7 +1,6 @@
 package net.rodofire.mushrooomsmod.mixin.world;
 
 import com.mojang.serialization.Codec;
-import com.mojang.serialization.MapCodec;
 import net.minecraft.world.gen.trunk.TrunkPlacer;
 import net.minecraft.world.gen.trunk.TrunkPlacerType;
 import org.spongepowered.asm.mixin.Mixin;

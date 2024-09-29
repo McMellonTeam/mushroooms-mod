@@ -2,16 +2,12 @@ package net.rodofire.mushrooomsmod.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
-import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.loot.condition.BlockStatePropertyLootCondition;
 import net.minecraft.predicate.StatePredicate;
-import net.minecraft.registry.RegistryWrapper;
 import net.rodofire.mushrooomsmod.block.ModBlocks;
 import net.rodofire.mushrooomsmod.block.custom.bigmushroom.BigMushroomPlant;
 import net.rodofire.mushrooomsmod.item.ModItems;
-
-import java.util.concurrent.CompletableFuture;
 
 public class ModLootTableProvider extends FabricBlockLootTableProvider {
 
@@ -253,16 +249,35 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.OAK_BERRIES_SAPLING);
 
 
+        addDrop(ModBlocks.PELTOGYNE_LOG);
+        addDrop(ModBlocks.PELTOGYNE_WOOD);
+        addDrop(ModBlocks.PELTOGYNE_STRIPPED_LOG);
+        addDrop(ModBlocks.PELTOGYNE_STRIPPED_WOOD);
+        addDrop(ModBlocks.PELTOGYNE_PLANKS);
+        addDrop(ModBlocks.PELTOGYNE_STAIRS);
+        addDrop(ModBlocks.PELTOGYNE_SLAB);
+        addDrop(ModBlocks.PELTOGYNE_FENCE);
+        addDrop(ModBlocks.PELTOGYNE_FENCE_GATE);
+        addDrop(ModBlocks.PELTOGYNE_DOOR);
+        addDrop(ModBlocks.PELTOGYNE_TRAPDOOR);
+        addDrop(ModBlocks.PELTOGYNE_PRESSURE_PLATE);
+        addDrop(ModBlocks.PELTOGYNE_BUTTON);
+        addDrop(ModBlocks.PELTOGYNE_SAPLING);
+
+        addDrop(ModBlocks.COLORFUL_TREE_SAPLING);
+
+
         //Leaves
         addDrop(ModBlocks.BLUE_LUMINESCENT_LEAVES, leavesDrops(ModBlocks.BLUE_LUMINESCENT_LEAVES, ModBlocks.BLUE_LUMINESCENT_SAPPLING, 0.025f));
-        addDrop(ModBlocks.RED_COLORFUL_LEAVES, leavesDrops(ModBlocks.RED_COLORFUL_LEAVES, ModBlocks.BLUE_LUMINESCENT_SAPPLING, 0.025f));
-        addDrop(ModBlocks.BLUE_COLORFUL_LEAVES, leavesDrops(ModBlocks.BLUE_COLORFUL_LEAVES, ModBlocks.BLUE_LUMINESCENT_SAPPLING, 0.025f));
-        addDrop(ModBlocks.ORANGE_COLORFUL_LEAVES, leavesDrops(ModBlocks.ORANGE_COLORFUL_LEAVES, ModBlocks.BLUE_LUMINESCENT_SAPPLING, 0.025f));
-        addDrop(ModBlocks.YELLOW_COLORFUL_LEAVES, leavesDrops(ModBlocks.YELLOW_COLORFUL_LEAVES, ModBlocks.BLUE_LUMINESCENT_SAPPLING, 0.025f));
-        addDrop(ModBlocks.PURPLE_COLORFUL_LEAVES, leavesDrops(ModBlocks.PURPLE_COLORFUL_LEAVES, ModBlocks.BLUE_LUMINESCENT_SAPPLING, 0.025f));
-        addDrop(ModBlocks.GREEN_COLORFUL_LEAVES, leavesDrops(ModBlocks.GREEN_COLORFUL_LEAVES, ModBlocks.BLUE_LUMINESCENT_SAPPLING, 0.025f));
-        addDrop(ModBlocks.PINK_COLORFUL_LEAVES, leavesDrops(ModBlocks.PINK_COLORFUL_LEAVES, ModBlocks.BLUE_LUMINESCENT_SAPPLING, 0.025f));
+        addDrop(ModBlocks.RED_COLORFUL_LEAVES, leavesDrops(ModBlocks.RED_COLORFUL_LEAVES, ModBlocks.COLORFUL_TREE_SAPLING, 0.025f));
+        addDrop(ModBlocks.BLUE_COLORFUL_LEAVES, leavesDrops(ModBlocks.BLUE_COLORFUL_LEAVES, ModBlocks.COLORFUL_TREE_SAPLING, 0.025f));
+        addDrop(ModBlocks.ORANGE_COLORFUL_LEAVES, leavesDrops(ModBlocks.ORANGE_COLORFUL_LEAVES, ModBlocks.COLORFUL_TREE_SAPLING, 0.025f));
+        addDrop(ModBlocks.YELLOW_COLORFUL_LEAVES, leavesDrops(ModBlocks.YELLOW_COLORFUL_LEAVES, ModBlocks.COLORFUL_TREE_SAPLING, 0.025f));
+        addDrop(ModBlocks.PURPLE_COLORFUL_LEAVES, leavesDrops(ModBlocks.PURPLE_COLORFUL_LEAVES, ModBlocks.COLORFUL_TREE_SAPLING, 0.025f));
+        addDrop(ModBlocks.GREEN_COLORFUL_LEAVES, leavesDrops(ModBlocks.GREEN_COLORFUL_LEAVES, ModBlocks.COLORFUL_TREE_SAPLING, 0.025f));
+        addDrop(ModBlocks.PINK_COLORFUL_LEAVES, leavesDrops(ModBlocks.PINK_COLORFUL_LEAVES, ModBlocks.COLORFUL_TREE_SAPLING, 0.025f));
         addDrop(ModBlocks.OAK_BERRIES_LEAVES, leavesDrops(ModBlocks.OAK_BERRIES_LEAVES, ModBlocks.OAK_BERRIES_SAPLING, 0.025f));
+        addDrop(ModBlocks.PELTOGYNE_LEAVES, leavesDrops(ModBlocks.PELTOGYNE_LEAVES, ModBlocks.PELTOGYNE_SAPLING, 0.025f));
 
         //Crystals
         //addDropWithSilkTouch(Block.getBlockFromItem(ModItems.PINK_CRYSTAL_ITEM), ModBlocks.PINK_CRYSTAL);

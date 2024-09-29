@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "key": {
+    "#": {
+      "item": "mushrooomsmod:planks_peltogyne"
+    }
+  },
+  "pattern": [
+    "##"
+  ],
+  "result": {
+    "item": "mushrooomsmod:pressure_plate_peltogyne"
+  }
+}
