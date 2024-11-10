@@ -101,13 +101,9 @@ public class SakuraArchFeature extends Feature<ArchConfig> {
         cylinder2.setYrotation(-rotattionY - 90);*/
 
 
-        try {
-            torus.place(poslist);
-            //cylinder.place();
-            //cylinder2.place();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        torus.place(poslist);
+        //cylinder.place();
+        //cylinder2.place();
 
         return true;
     }
