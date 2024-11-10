@@ -24,7 +24,7 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
     public void generate() {
         //Blocks
         //Mushroom
-        /*addDrop(ModBlocks.PURPLE_MUSHROOM_BLOCK);
+        addDrop(ModBlocks.PURPLE_MUSHROOM_BLOCK);
         addDrop(ModBlocks.PURPLE_ALTERED_MUSHROOM_BLOCK);
         addDrop(ModBlocks.PURPLE_DEGRADATED_MUSHROOM_BLOCK);
         addDrop(ModBlocks.PURPLE_FERMENTED_MUSHROOM_BLOCK);
@@ -152,16 +152,16 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.OCULAE);
         addDrop(ModBlocks.PICK_BLUE);
 
-        addDrop(ModBlocks.RAPANGE_FLOWERS);*/
-        addDrop(ModBlocks.FLEUR_BERRIES);
+        addDrop(ModBlocks.RAPANGE_FLOWERS);
+        //addDrop(ModBlocks.FLEUR_BERRIES, ModItems.FLEUR_BERRIES_ITEM);
 
         //Grass
-        /*addDrop(ModBlocks.TINY_GRASS);
+        addDrop(ModBlocks.TINY_GRASS);
 
         //Vines
         addDrop(ModBlocks.PINK_MUSHROOM_VINES, ModItems.PINK_MUSHROOM_VINES_ITEM);
         addDrop(ModBlocks.PINK_MUSHROOM_VINES_PLANT, ModItems.PINK_MUSHROOM_VINES_ITEM);
-        addDrop(ModBlocks.CAERULEA_VOLUBILIS);
+        addDrop(ModBlocks.CAERULEA_VOLUBILIS, ModItems.CAERULEA_VOLUBILIS_ITEM);
         addDrop(ModBlocks.BLUE_LUMINESCENT_VINES);
 
 
@@ -231,7 +231,8 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         //Light Blocks
         addDrop(ModBlocks.RED_LANTERN);
         addDrop(ModBlocks.GREEN_LANTERN);
-        addDrop(ModBlocks.GREEN_TORCH);
+        addDrop(ModBlocks.GREEN_TORCH, ModItems.GREEN_TORCH);
+        addDrop(ModBlocks.WALL_GREEN_TORCH, ModItems.GREEN_TORCH);
 
         //Construction Blocks
         addDrop(ModBlocks.LAVA_BLACKSTONE_BRICKS);
@@ -289,8 +290,8 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         //Crystals
         //addDropWithSilkTouch(Block.getBlockFromItem(ModItems.PINK_CRYSTAL_ITEM), ModBlocks.PINK_CRYSTAL);
         addDrop(ModBlocks.PINK_CRYSTAL_BLOCK);
-        addDrop(ModBlocks.BLUE_CRYSTAL);
-        addDrop(ModBlocks.RED_CRYSTAL);
+        addDrop(ModBlocks.BLUE_CRYSTAL, ModItems.BLUE_CRYSTAL_ITEM);
+        addDrop(ModBlocks.RED_CRYSTAL, ModItems.RED_CRYSTAL_ITEM);
         addDrop(ModBlocks.RED_CRYSTAL_BLOCK);
         addDrop(ModBlocks.BLUE_CRYSTAL_BLOCK);
         addDrop(ModBlocks.WHITE_CRYSTAL_BLOCK);
@@ -306,7 +307,7 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.FORGE_BLOCK);
 
         //Idk
-        addDrop(ModBlocks.CLOUD_BLOCK);*/
+        addDrop(ModBlocks.CLOUD_BLOCK);
 
     }
 }
