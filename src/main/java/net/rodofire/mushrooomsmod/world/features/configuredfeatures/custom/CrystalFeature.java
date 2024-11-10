@@ -45,8 +45,8 @@ public class CrystalFeature extends Feature<CrystalConfig> {
 
     public Direction getDirection(StructureWorldAccess world, BlockPos pos) {
         BlockState state = world.getBlockState(pos);
-        if (world.getBlockState(pos.down()).isOpaqueFullCube(world, pos.down()) && state.isAir()) return Direction.UP;
-        if (world.getBlockState(pos.up()).isOpaqueFullCube(world, pos.up()) && state.isAir()) return Direction.DOWN;
+        if (world.getBlockState(pos.down()).isOpaqueFullCube() && state.isAir()) return Direction.UP;
+        if (world.getBlockState(pos.up()).isOpaqueFullCube() && state.isAir()) return Direction.DOWN;
         return null;
     }
 

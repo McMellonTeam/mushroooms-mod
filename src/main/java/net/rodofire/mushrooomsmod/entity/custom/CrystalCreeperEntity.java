@@ -71,7 +71,7 @@ public class CrystalCreeperEntity extends CustomCreeperEntity implements GeoEnti
             mutable.set(pos);
             for (int i = 0; i < radius * radius; i++) {
                 mutable.set(pos, random.nextBetween(-radius, radius), random.nextBetween(-radius, radius), random.nextBetween(-radius, radius));
-                if (world.getBlockState(mutable.down()).isOpaqueFullCube(world, mutable.down()) && world.getBlockState(mutable).isAir()) {
+                if (world.getBlockState(mutable.down()).isOpaqueFullCube() && world.getBlockState(mutable).isAir()) {
                     Block block = getCrystal();
 
                     //place crystal column if block is a StraightCrystal

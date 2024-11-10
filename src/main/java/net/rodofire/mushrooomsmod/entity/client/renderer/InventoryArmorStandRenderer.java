@@ -5,10 +5,10 @@ import net.minecraft.client.render.VertexConsumer;
 import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.client.render.entity.model.BipedEntityModel;
-import net.minecraft.client.render.model.json.ModelTransformationMode;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.ModelTransformationMode;
 import net.minecraft.util.math.RotationAxis;
 import net.rodofire.mushrooomsmod.entity.client.model.InventoryArmorStandModel;
 import net.rodofire.mushrooomsmod.entity.custom.InventoryArmorStandEntity;
@@ -133,7 +133,7 @@ public class InventoryArmorStandRenderer extends DynamicGeoEntityRenderer<Invent
     }
 
     @Override
-    public boolean hasLabel(InventoryArmorStandEntity animatable) {
+    public boolean hasLabel(InventoryArmorStandEntity animatable, double distToCameraSq) {
         return animatable.hasCustomName();
     }
 }

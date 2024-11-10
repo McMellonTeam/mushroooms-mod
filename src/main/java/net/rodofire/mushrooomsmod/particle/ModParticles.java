@@ -19,5 +19,6 @@ public class ModParticles {
                 PINK_CRYSTAL_PARTICLE);
         Registry.register(Registries.PARTICLE_TYPE, Identifier.of(MushrooomsMod.MOD_ID, "forge_particle"),
                 FORGE_PARTICLE);
+        MushrooomsMod.LOGGER.info("Registering Particles");
     }
 }

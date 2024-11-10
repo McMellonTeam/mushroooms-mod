@@ -20,7 +20,7 @@ public class ForgeDisplay extends BasicDisplay {
     }
 
     public ForgeDisplay(RecipeEntry<ForgeRecipe> recipe) {
-        super(getInputList(recipe.value()), List.of(EntryIngredient.of(EntryStacks.of(recipe.value().getResult(null)))));
+        super(getInputList(recipe.value()), List.of(EntryIngredient.of(EntryStacks.of(recipe.value().getOutput()))));
         this.recipe = recipe;
     }
 
@@ -29,7 +29,7 @@ public class ForgeDisplay extends BasicDisplay {
     private static List<EntryIngredient> getInputList(ForgeRecipe recipe) {
         if (recipe == null) return Collections.emptyList();
         List<EntryIngredient> list = new ArrayList<>();
-        list.add(EntryIngredients.ofIngredient(recipe.getIngredients().get(0)));
+        list.add(EntryIngredients.ofIngredient(recipe.getRecipeItem()));
         return list;
     }
 

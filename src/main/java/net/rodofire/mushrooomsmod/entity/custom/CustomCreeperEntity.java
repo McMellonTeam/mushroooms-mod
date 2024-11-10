@@ -37,7 +37,7 @@ import java.util.Collection;
 //creeper that allow you to change explosion beacause the vanilla mob has a private method
 public class CustomCreeperEntity
         extends HostileEntity
-        implements SkinOverlayOwner {
+        /*implements SkinO*/ {
     private static final TrackedData<Integer> FUSE_SPEED = DataTracker.registerData(CustomCreeperEntity.class, TrackedDataHandlerRegistry.INTEGER);
     private static final TrackedData<Boolean> CHARGED = DataTracker.registerData(CustomCreeperEntity.class, TrackedDataHandlerRegistry.BOOLEAN);
     private static final TrackedData<Boolean> IGNITED = DataTracker.registerData(CustomCreeperEntity.class, TrackedDataHandlerRegistry.BOOLEAN);
@@ -56,8 +56,8 @@ public class CustomCreeperEntity
     }
 
     public static DefaultAttributeContainer.Builder createCreeperAttributes() {
-        return HostileEntity.createHostileAttributes().add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.25)
-                .add(EntityAttributes.GENERIC_MAX_HEALTH, 10.0D);
+        return HostileEntity.createHostileAttributes().add(EntityAttributes.MOVEMENT_SPEED, 0.25)
+                .add(EntityAttributes.MAX_HEALTH, 10.0D);
 
     }
 
@@ -75,6 +75,9 @@ public class CustomCreeperEntity
         this.targetSelector.add(1, new ActiveTargetGoal<PlayerEntity>((MobEntity) this, PlayerEntity.class, true));
         this.targetSelector.add(2, new RevengeGoal(this, new Class[0]));
 
+    }
+    protected boolean shouldRenderOverlay(){
+        return this.dataTracker.get(CHARGED);
     }
 
     @Override
@@ -178,19 +181,10 @@ public class CustomCreeperEntity
         Entity entity = source.getAttacker();
         if (entity != this && entity instanceof CustomCreeperEntity && (creeperEntity = (CustomCreeperEntity) entity).shouldDropHead()) {
             creeperEntity.onHeadDropped();
-            this.dropItem(Items.CREEPER_HEAD);
+            this.dropItem(world, Items.CREEPER_HEAD);
         }
     }
 
-    @Override
-    public boolean tryAttack(Entity target) {
-        return true;
-    }
-
-    @Override
-    public boolean shouldRenderOverlay() {
-        return this.dataTracker.get(CHARGED);
-    }
 
     public float getClientFuseTime(float timeDelta) {
         return MathHelper.lerp(timeDelta, (float) this.lastFuseTime, (float) this.currentFuseTime) / (float) (this.fuseTime - 2);
@@ -228,7 +222,7 @@ public class CustomCreeperEntity
                     }
                 }
             }
-            return ActionResult.success(this.getWorld().isClient);
+            return this.getWorld().isClient ? ActionResult.FAIL : ActionResult.SUCCESS;
         }
         return super.interactMob(player, hand);
     }

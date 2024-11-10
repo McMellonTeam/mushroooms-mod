@@ -1,7 +1,6 @@
 package net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom;
 
 import com.mojang.serialization.Codec;
-import me.emafire003.dev.structureplacerapi.StructurePlacerAPI;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.LeavesBlock;
@@ -13,6 +12,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.DefaultFeatureConfig;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.util.FeatureContext;
+import net.rodofire.easierworldcreator.structure.NbtPlacer;
 import net.rodofire.mushrooomsmod.MushrooomsMod;
 
 public class BushFeature extends Feature<DefaultFeatureConfig> {
@@ -45,8 +45,8 @@ public class BushFeature extends Feature<DefaultFeatureConfig> {
         BlockPos pos = context.getOrigin();
         int capnumber = Random.create().nextBetween(1, 4);
         if (!canGenerate(world, pos, 5, 3)) return false;
-        StructurePlacerAPI bush = new StructurePlacerAPI((ServerWorld) world, Identifier.of(MushrooomsMod.MOD_ID, "bush_" + capnumber), pos);
-        bush.loadStructure();
+        NbtPlacer bush = new NbtPlacer((ServerWorld) world, Identifier.of(MushrooomsMod.MOD_ID, "bush_" + capnumber));
+        bush.place(pos);
         BlockState blockState = Blocks.OAK_LEAVES.getDefaultState().with(LeavesBlock.PERSISTENT, true);
         for (int i = 0; i < 5; ++i) {
             for (int j = 0; j < 3; j++) {

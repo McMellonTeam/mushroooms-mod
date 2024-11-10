@@ -38,16 +38,16 @@ public class ArchFeature extends Feature<ArchConfig> {
         if (MathUtil.getRandomBoolean(0.90f)) return false;
         boolean bl = false;
         for (int i = 0; i < 10; i++) {
-            if (world.getBlockState(pos.down(i)).isOpaqueFullCube(world, pos.down(i))) bl = true;
+            if (world.getBlockState(pos.down(i)).isOpaqueFullCube()) bl = true;
         }
         if (!bl) return false;
 
         TorusGen sphereGen = new TorusGen(world, pos, Shape.PlaceMoment.WORLD_GEN, Random.create().nextBetween(2, 7), Random.create().nextBetween(24, 64));
         sphereGen.setBlockLayers(new BlockLayer(Blocks.GRASS_BLOCK.getDefaultState(), 1), new BlockLayer(Blocks.STONE.getDefaultState(), 2));
-        sphereGen.setOuterRadiusz(Random.create().nextBetween(24, 64));
+        sphereGen.setOuterRadiusZ(Random.create().nextBetween(24, 64));
         sphereGen.setLayersType(Shape.LayersType.SURFACE);
-        sphereGen.setYrotation(Random.create().nextBetween(50, 140));
-        sphereGen.setSecondxrotation(Random.create().nextBetween(0, 180));
+        sphereGen.setYRotation(Random.create().nextBetween(50, 140));
+        sphereGen.setSecondYRotation(Random.create().nextBetween(0, 180));
 
         try {
             sphereGen.place();

@@ -15,7 +15,6 @@ import net.rodofire.mushrooomsmod.item.ModItems;
 import net.rodofire.mushrooomsmod.networking.ModNetwork;
 import net.rodofire.mushrooomsmod.particle.ModParticles;
 import net.rodofire.mushrooomsmod.recipe.ModRecipes;
-import net.rodofire.mushrooomsmod.screen.ModScreenHandlers;
 import net.rodofire.mushrooomsmod.sound.ModSounds;
 import net.rodofire.mushrooomsmod.util.ModLootTableModifier;
 import net.rodofire.mushrooomsmod.world.features.configuredfeatures.ModFeatures;
@@ -25,7 +24,6 @@ import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.tree.
 import net.rodofire.mushrooomsmod.world.gen.ModWorldGeneration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import software.bernie.geckolib.GeckoLib;
 
 public class MushrooomsMod implements ModInitializer {
 
@@ -54,7 +52,7 @@ public class MushrooomsMod implements ModInitializer {
 
         ModSounds.registerModSound();
 
-        ModDecoratorTypes.registerDecorators();
+        ModDecoratorTypes.register();
         ModTrunkPlacerTypes.register();
         ModFoliagePlacerTypes.register();
 
@@ -69,7 +67,7 @@ public class MushrooomsMod implements ModInitializer {
         ModNetwork.registerC2SPackets();
 
 
-        ServerTickEvents.START_SERVER_TICK.register(new PlayerTickHandler());
+        //ServerTickEvents.START_SERVER_TICK.register(new PlayerTickHandler());
 
 
         LOGGER.info("Starting MushrooomsMod!");

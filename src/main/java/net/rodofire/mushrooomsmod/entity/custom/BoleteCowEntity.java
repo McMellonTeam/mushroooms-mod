@@ -1,6 +1,7 @@
 package net.rodofire.mushrooomsmod.entity.custom;
 
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
@@ -35,7 +36,7 @@ public class BoleteCowEntity extends CowEntity implements GeoEntity {
     @Nullable
     @Override
     public CowEntity createChild(ServerWorld world, PassiveEntity entity) {
-        return ModEntities.BOLETE_COW.create(world);
+        return ModEntities.BOLETE_COW.create(world, SpawnReason.NATURAL);
     }
 
     @Override
@@ -49,8 +50,8 @@ public class BoleteCowEntity extends CowEntity implements GeoEntity {
 
     public static DefaultAttributeContainer.Builder setAttributes() {
         return AnimalEntity.createMobAttributes()
-                .add(EntityAttributes.GENERIC_MAX_HEALTH, 20.0D)
-                .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.45f);
+                .add(EntityAttributes.MAX_HEALTH, 20.0D)
+                .add(EntityAttributes.MOVEMENT_SPEED, 0.45f);
     }
 
     @Override

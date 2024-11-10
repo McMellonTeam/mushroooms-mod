@@ -1,6 +1,7 @@
 package net.rodofire.mushrooomsmod.entity.custom;
 
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
@@ -36,8 +37,8 @@ public class PlotiEntity extends AnimalEntity implements GeoEntity {
 
     public static DefaultAttributeContainer.Builder setAttributes() {
         return AnimalEntity.createMobAttributes()
-                .add(EntityAttributes.GENERIC_MAX_HEALTH, 10.0D)
-                .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.25f);
+                .add(EntityAttributes.MAX_HEALTH, 10.0D)
+                .add(EntityAttributes.MOVEMENT_SPEED, 0.25f);
     }
 
     @Override
@@ -58,7 +59,7 @@ public class PlotiEntity extends AnimalEntity implements GeoEntity {
     @Nullable
     @Override
     public PassiveEntity createChild(ServerWorld world, PassiveEntity entity) {
-        return ModEntities.PLOTI.create(world);
+        return ModEntities.PLOTI.create(world, SpawnReason.NATURAL);
     }
 
     @Override

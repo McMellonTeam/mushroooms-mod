@@ -38,24 +38,24 @@ public abstract class DefaultRockFeature extends Feature<DefaultFeatureConfig> {
         if (world.getBlockState(pos).getBlock() == Blocks.SHORT_GRASS)
             pos.add(0, -1, 0);
 
-        if (!world.getBlockState(pos.down()).isOpaqueFullCube(world, pos)) {
+        if (!world.getBlockState(pos.down()).isOpaqueFullCube()) {
             return false;
         }
         BlockLayer layer = this.getBlockLayer();
         Vec3i dimensions = this.getDimesions();
+        layer.setBlocksToForce(Set.of(Blocks.GRASS_BLOCK, Blocks.DIRT));
 
         SphereGen circleGen = new SphereGen(world, pos, Shape.PlaceMoment.WORLD_GEN, 0);
         circleGen.setHalfSphere(SphereGen.SphereType.HALF);
 
-        circleGen.setRadiusx(dimensions.getX());
-        circleGen.setRadiusy(dimensions.getY());
-        circleGen.setRadiusz(dimensions.getZ());
+        circleGen.setRadiusX(dimensions.getX());
+        circleGen.setRadiusY(dimensions.getY());
+        circleGen.setRadiusZ(dimensions.getZ());
 
-        circleGen.setXrotation(Random.create().nextBetween(-20, 20));
-        circleGen.setYrotation(Random.create().nextBetween(-20, 20));
+        circleGen.setZRotation(Random.create().nextBetween(-20, 20));
+        circleGen.setYRotation(Random.create().nextBetween(-20, 20));
 
         circleGen.setBlockLayers(layer);
-        circleGen.setBlocksToForce(List.of(Blocks.GRASS_BLOCK, Blocks.DIRT));
 
 
         circleGen.setLayerPlace(Shape.LayerPlace.NOISE3D);
@@ -84,11 +84,7 @@ public abstract class DefaultRockFeature extends Feature<DefaultFeatureConfig> {
             set.addAll(toAdd);
         }
 
-        try {
-            circleGen.place(posList);
-        } catch (IOException e) {
-            return false;
-        }
+        circleGen.place(posList);
 
         return true;
     }

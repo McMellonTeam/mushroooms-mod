@@ -296,6 +296,6 @@ public class ModItemGroup {
                     }).build());
 
     public static void registerItemGroup() {
-        MushrooomsMod.LOGGER.info("Registering Mod Item Group for Mushrooomsmod");
+        MushrooomsMod.LOGGER.info("Registering Item Group");
     }
 }

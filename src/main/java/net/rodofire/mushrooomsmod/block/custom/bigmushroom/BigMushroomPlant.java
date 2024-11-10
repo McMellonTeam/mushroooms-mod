@@ -113,7 +113,7 @@ public class BigMushroomPlant extends CropBlock implements Fertilizable {
 
     @Override
     protected boolean canPlantOnTop(BlockState floor, BlockView world, BlockPos pos) {
-        return floor.isOpaqueFullCube(world, pos);
+        return floor.isOpaqueFullCube();
     }
 
     @Override

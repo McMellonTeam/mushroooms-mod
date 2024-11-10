@@ -24,7 +24,7 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
     public void generate() {
         //Blocks
         //Mushroom
-        addDrop(ModBlocks.PURPLE_MUSHROOM_BLOCK);
+        /*addDrop(ModBlocks.PURPLE_MUSHROOM_BLOCK);
         addDrop(ModBlocks.PURPLE_ALTERED_MUSHROOM_BLOCK);
         addDrop(ModBlocks.PURPLE_DEGRADATED_MUSHROOM_BLOCK);
         addDrop(ModBlocks.PURPLE_FERMENTED_MUSHROOM_BLOCK);
@@ -109,6 +109,7 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.SIDE_MUSHROOM_BLUE_LUMINESCENT);
         addDrop(ModBlocks.LOG_MUSHROOM_BROWN);
 
+
         //Flowers
         addDrop(ModBlocks.MUSHROOM_FLOWERS);
         addDrop(ModBlocks.RED_LUMERIA);
@@ -151,17 +152,18 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.OCULAE);
         addDrop(ModBlocks.PICK_BLUE);
 
-        addDrop(ModBlocks.RAPANGE_FLOWERS);
+        addDrop(ModBlocks.RAPANGE_FLOWERS);*/
         addDrop(ModBlocks.FLEUR_BERRIES);
 
         //Grass
-        addDrop(ModBlocks.TINY_GRASS);
+        /*addDrop(ModBlocks.TINY_GRASS);
 
         //Vines
         addDrop(ModBlocks.PINK_MUSHROOM_VINES, ModItems.PINK_MUSHROOM_VINES_ITEM);
         addDrop(ModBlocks.PINK_MUSHROOM_VINES_PLANT, ModItems.PINK_MUSHROOM_VINES_ITEM);
         addDrop(ModBlocks.CAERULEA_VOLUBILIS);
         addDrop(ModBlocks.BLUE_LUMINESCENT_VINES);
+
 
         //Big Mushrooms
         addDrop(ModBlocks.TINY_PURPLE_MUSHROOM);
@@ -176,6 +178,7 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
 
         BlockStatePropertyLootCondition.Builder builder = BlockStatePropertyLootCondition.builder(ModBlocks.BIG_PURPLE_MUSHROOM_PLANT).properties(StatePredicate.Builder.create().exactMatch(BigMushroomPlant.AGE, 3));
         addDrop(ModBlocks.BIG_PURPLE_MUSHROOM_PLANT, cropDrops(ModBlocks.BIG_PURPLE_MUSHROOM_PLANT, ModItems.PURPLE_MUSHROOM_POWDER, ModItems.BIG_PURPLE_MUSHROOM_SEED, builder));
+
 
         //Potted Flowers
         addPottedPlantDrops(ModBlocks.POTTED_BLUE_LUMINESCENT_MUSHROOM);
@@ -267,7 +270,6 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.PELTOGYNE_PRESSURE_PLATE);
         addDrop(ModBlocks.PELTOGYNE_BUTTON);
         addDrop(ModBlocks.PELTOGYNE_SAPLING);
-
         addDrop(ModBlocks.COLORFUL_TREE_SAPLING);
 
 
@@ -282,6 +284,7 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.PINK_COLORFUL_LEAVES, leavesDrops(ModBlocks.PINK_COLORFUL_LEAVES, ModBlocks.COLORFUL_TREE_SAPLING, 0.025f));
         addDrop(ModBlocks.OAK_BERRIES_LEAVES, leavesDrops(ModBlocks.OAK_BERRIES_LEAVES, ModBlocks.OAK_BERRIES_SAPLING, 0.025f));
         addDrop(ModBlocks.PELTOGYNE_LEAVES, leavesDrops(ModBlocks.PELTOGYNE_LEAVES, ModBlocks.PELTOGYNE_SAPLING, 0.025f));
+
 
         //Crystals
         //addDropWithSilkTouch(Block.getBlockFromItem(ModItems.PINK_CRYSTAL_ITEM), ModBlocks.PINK_CRYSTAL);
@@ -303,6 +306,7 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.FORGE_BLOCK);
 
         //Idk
-        addDrop(ModBlocks.CLOUD_BLOCK);
+        addDrop(ModBlocks.CLOUD_BLOCK);*/
+
     }
 }

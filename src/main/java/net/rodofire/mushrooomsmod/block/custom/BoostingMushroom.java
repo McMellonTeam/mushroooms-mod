@@ -23,6 +23,7 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
 import net.minecraft.world.WorldView;
+import net.minecraft.world.tick.ScheduledTickView;
 import net.rodofire.mushrooomsmod.block.entity.BoostingMushroomBlockEntity;
 import net.rodofire.mushrooomsmod.sound.ModSounds;
 import org.jetbrains.annotations.Nullable;
@@ -49,14 +50,14 @@ public class BoostingMushroom extends BlockWithEntity {
     }
 
     @Override
-    public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
+    protected BlockState getStateForNeighborUpdate(BlockState state, WorldView world, ScheduledTickView tickView, BlockPos pos, Direction direction, BlockPos neighborPos, BlockState neighborState, Random random) {
         if (!canPlaceAt(state, world, pos)) return Blocks.AIR.getDefaultState();
-        return state;
+        return super.getStateForNeighborUpdate(state, world, tickView, pos, direction, neighborPos, neighborState, random);
     }
 
     @Override
     public boolean canPlaceAt(BlockState state, WorldView world, BlockPos pos) {
-        return world.getBlockState(pos.down()).isOpaqueFullCube(world, pos.down());
+        return world.getBlockState(pos.down()).isOpaqueFullCube();
     }
 
     @Override

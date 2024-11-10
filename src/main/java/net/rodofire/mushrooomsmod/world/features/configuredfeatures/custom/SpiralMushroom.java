@@ -40,7 +40,7 @@ public class SpiralMushroom extends Feature<DefaultFeatureConfig> {
         StructureWorldAccess world = context.getWorld();
         BlockPos pos = context.getOrigin();
 
-        if (!world.getBlockState(pos.down()).isOpaqueFullCube(world, pos.down())) return false;
+        if (!world.getBlockState(pos.down()).isOpaqueFullCube()) return false;
 
         BlockState block = ModBlocks.BLUE_MUSHROOM_BLOCK.getDefaultState();
         BlockState block2 = ModBlocks.BLUE_ALTERED_MUSHROOM_BLOCK.getDefaultState();
@@ -55,23 +55,19 @@ public class SpiralMushroom extends Feature<DefaultFeatureConfig> {
         spiral.setBlockLayers(new BlockLayer(List.of(block, block, block, block, block, block, block2, block2, block2, block2, block3, block3, block4)));
 
 
-        spiral.setOutlineRadiusx(2);
-        spiral.setOutlineRadiusx(2);
+        spiral.setOutlineRadiusX(2);
+        spiral.setOutlineRadiusX(2);
 
-        spiral.setRadiusx(new Pair<>(large, 1));
-        spiral.setRadiusz(new Pair<>(large, 1));
+        spiral.setRadiusX(new Pair<>(large, 1));
+        spiral.setRadiusZ(new Pair<>(large, 1));
 
-        spiral.setOffset(Random.create().nextBetween(0, 360));
-        spiral.setYrotation(Random.create().nextBetween(-20, 20));
+        spiral.setSpiralOffset(Random.create().nextBetween(0, 360));
+        spiral.setYRotation(Random.create().nextBetween(-20, 20));
 
         List<Set<BlockPos>> posList = spiral.getBlockPos();
         if (!canPlace(world, posList)) return false;
 
-        try {
-            spiral.place(posList);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        spiral.place(posList);
 
         return true;
     }

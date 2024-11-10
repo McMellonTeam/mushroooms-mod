@@ -29,11 +29,11 @@ public class SchroomSoup extends Item {
     }
 
     public void applyeffect(World world, LivingEntity user, ItemStack stack) {
-        if (user.eatFood(world, stack, ModFoodComponents.BLUE_LUMINESCENT_SCHROOM_SOUP).isOf(ModItems.LUMINESCENT_SCHROOM_SOUP)) {
+        //if (user.eatFood(world, stack, ModFoodComponents.BLUE_LUMINESCENT_SCHROOM_SOUP).isOf(ModItems.LUMINESCENT_SCHROOM_SOUP)) {
             if (world.getBiome(user.getBlockPos()).getKey().get().equals(ModOverworldBiomes.BLUE_LUMINESCENT_SHROOM_CAVE)) {
                 user.addStatusEffect(effects);
             }
-        }
+        //}
     }
 
     @Override

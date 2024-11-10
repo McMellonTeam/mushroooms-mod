@@ -2,10 +2,12 @@ package net.rodofire.mushrooomsmod.entity;
 
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.minecraft.entity.LivingEntity;
+import net.rodofire.mushrooomsmod.MushrooomsMod;
 import net.rodofire.mushrooomsmod.entity.custom.*;
 
 public class ModEntitiesAttribute {
     public static void registerAttributes() {
+        MushrooomsMod.LOGGER.info("Registering Entities Attributes");
         FabricDefaultAttributeRegistry.register(ModEntities.GROKI, GrokiEntity.setAttributes());
         FabricDefaultAttributeRegistry.register(ModEntities.BOLETE_COW, BoleteCowEntity.setAttributes());
         FabricDefaultAttributeRegistry.register(ModEntities.PLOTI, PlotiEntity.setAttributes());

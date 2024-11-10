@@ -23,13 +23,9 @@ import net.rodofire.mushrooomsmod.item.ModItems;
 
 public class BigPurpleMushroomPlant extends CropBlock implements Fertilizable {
     public static int MAX_AGE = 3;
-    public static Block stage0;
-    public static Block stage1;
-    public static Block stage2;
-    public static Block stage3;
     public static final IntProperty AGE = Properties.AGE_3;
 
-    public BigPurpleMushroomPlant(Settings settings, Block stage0, Block stage1, Block stage2, Block stage3) {
+    public BigPurpleMushroomPlant(Settings settings) {
         super(settings);
     }
 
@@ -107,7 +103,7 @@ public class BigPurpleMushroomPlant extends CropBlock implements Fertilizable {
 
     @Override
     protected boolean canPlantOnTop(BlockState floor, BlockView world, BlockPos pos) {
-        return floor.isOpaqueFullCube(world, pos);
+        return floor.isOpaqueFullCube();
     }
 
     @Override
