@@ -3,6 +3,7 @@ package net.rodofire.mushrooomsmod.datagen;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.block.Blocks;
+import net.minecraft.data.server.recipe.CraftingRecipeJsonBuilder;
 import net.minecraft.data.server.recipe.RecipeExporter;
 import net.minecraft.data.server.recipe.RecipeGenerator;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
@@ -12,6 +13,7 @@ import net.minecraft.item.Items;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.registry.RegistryEntryLookup;
+import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.entry.RegistryEntry;
@@ -45,7 +47,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .pattern("RRR")
                         .input('R', ModItems.PURPLE_MUSHROOM_POWDER)
                         .criterion(hasItem(ModItems.PURPLE_MUSHROOM_POWDER), conditionsFromItem(ModItems.PURPLE_MUSHROOM_POWDER))
-                        .offerTo(exporter/*exporter/*Identifier.of(("compressed_purple_mushroom_craft"))*/);
+                        .offerTo(exporter/*Identifier.of(("compressed_purple_mushroom_craft"));
 
 
                 //Food
@@ -55,15 +57,15 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .pattern("###")
                         .pattern("###")
                         .criterion(hasItem(Items.WHEAT), conditionsFromItem(Items.WHEAT))
-                        .offerTo(exporter/* Identifier.of("baguettess_craft"));
+                        .offerTo(exporter,"baguettess_craft");
 
                 ShapedRecipeJsonBuilder.create(registry, RecipeCategory.FOOD, ModItems.LUMINESCENT_SCHROOM_SOUP, 1)
-                        .input(Character.valueOf('#'), ModBlocks.BLUE_LUMINESCENT_MUSHROOM)
-                        .input(Character.valueOf('C'), Items.BOWL)
+                        .input('#', ModBlocks.BLUE_LUMINESCENT_MUSHROOM)
+                        .input('C', Items.BOWL)
                         .pattern(" # ")
                         .pattern("#C#")
                         .criterion(hasItem(Items.WHEAT), conditionsFromItem(Items.WHEAT))
-                        .offerTo(exporter/* Identifier.of("blue_luminescent_soup_craft"));
+                        .offerTo(exporter,"blue_luminescent_soup_craft"*/);
 
 
                 //Lights
@@ -71,11 +73,11 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .pattern("RRR")
                         .pattern("RSR")
                         .pattern("RRR")
-                        .input(Character.valueOf('R'), Items.IRON_NUGGET)
-                        .input(Character.valueOf('S'), ModBlocks.GREEN_TORCH)
+                        .input('R', Items.IRON_NUGGET)
+                        .input('S', ModItems.GREEN_TORCH)
                         .criterion(hasItem(Items.IRON_NUGGET), conditionsFromItem(Items.IRON_NUGGET))
                         .criterion(hasItem(ModBlocks.GREEN_TORCH), conditionsFromItem(ModBlocks.GREEN_TORCH))
-                        .offerTo(exporter/* Identifier.of("green_lantern_craft")*/);
+                        .offerTo(exporter, "green_lantern_craft");
 
                 ShapedRecipeJsonBuilder.create(registry, RecipeCategory.BUILDING_BLOCKS, ModBlocks.RED_LANTERN, 1)
                         .pattern("RRR")
@@ -85,15 +87,15 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .input('S', Blocks.REDSTONE_TORCH)
                         .criterion(hasItem(Items.IRON_NUGGET), conditionsFromItem(Items.IRON_NUGGET))
                         .criterion(hasItem(Blocks.REDSTONE_TORCH), conditionsFromItem(Blocks.REDSTONE_TORCH))
-                        .offerTo(exporter/* Identifier.of("red_lantern_craft")*/);
+                        .offerTo(exporter, "red_lantern_craft");
 
-                ShapedRecipeJsonBuilder.create(registry, RecipeCategory.BUILDING_BLOCKS, ModBlocks.GREEN_TORCH, 1)
+                ShapedRecipeJsonBuilder.create(registry, RecipeCategory.BUILDING_BLOCKS, ModItems.GREEN_TORCH, 1)
                         .pattern("RS")
                         .input('R', Blocks.TORCH)
                         .input('S', Items.GREEN_DYE)
                         .criterion(hasItem(Blocks.TORCH), conditionsFromItem(Blocks.TORCH))
                         .criterion(hasItem(Items.GREEN_DYE), conditionsFromItem(Items.GREEN_DYE))
-                        .offerTo(exporter/* Identifier.of("green_torch_craft")*/);
+                        .offerTo(exporter, "green_torch_craft");
 
                 //dye
                 //yellow
@@ -119,7 +121,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 offerSingleOutputShapelessRecipe(Items.LIGHT_BLUE_DYE, ModBlocks.NOCTULICA, "light_blue_dye");
                 offerSingleOutputShapelessRecipe(Items.LIGHT_BLUE_DYE, ModBlocks.TURQUOSUM_STILUS, "light_blue_dye");
                 offerSingleOutputShapelessRecipe(Items.LIGHT_BLUE_DYE, ModBlocks.SAPHIRA_FLORENS, "light_blue_dye");
-                offerSingleOutputShapelessRecipe(Items.LIGHT_BLUE_DYE, ModBlocks.CAERULEA_VOLUBILIS, "light_blue_dye");
+                offerSingleOutputShapelessRecipe(Items.LIGHT_BLUE_DYE, ModItems.CAERULEA_VOLUBILIS_ITEM, "light_blue_dye");
                 offerSingleOutputShapelessRecipe(Items.LIGHT_BLUE_DYE, ModBlocks.APAGANTHE, "light_blue_dye");
                 offerSingleOutputShapelessRecipe(Items.LIGHT_BLUE_DYE, ModBlocks.PLATUM, "light_blue_dye");
                 offerSingleOutputShapelessRecipe(Items.LIGHT_BLUE_DYE, ModBlocks.PERVENCHE, "light_blue_dye");
@@ -147,7 +149,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 offerSingleOutputShapelessRecipe(Items.GREEN_DYE, ModBlocks.GREEN_PERENNIAL, "green_dye");
                 offerSingleOutputShapelessRecipe(Items.GREEN_DYE, ModBlocks.VIPERIN, "green_dye");
                 offerSingleOutputShapelessRecipe(Items.GREEN_DYE, ModBlocks.ARUM, "green_dye");
-
+/*
 
                 //Construction Blocks
                 ShapedRecipeJsonBuilder.create(registry, RecipeCategory.BUILDING_BLOCKS, ModBlocks.LAVA_BLACKSTONE_BRICKS, 4)
@@ -155,7 +157,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .pattern("RR")
                         .input('R', ModBlocks.LAVA_BLACKSTONE)
                         .criterion(hasItem(ModBlocks.LAVA_BLACKSTONE), conditionsFromItem(ModBlocks.LAVA_BLACKSTONE))
-                        .offerTo(exporter/*Identifier.of("lava_blackstone_bricks_craft")*/);
+                        .offerTo(exporter, "lava_blackstone_bricks_craft");
 
                 offerPressurePlateRecipe(ModBlocks.LAVA_BLACKSTONE_MEDIUM_BRICKS, ModBlocks.LAVA_BLACKSTONE_BRICKS);
                 offerPressurePlateRecipe(ModBlocks.LAVA_BLACKSTONE_TINY_BRICKS, ModBlocks.LAVA_BLACKSTONE_MEDIUM_BRICKS);
@@ -165,51 +167,51 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 offerPlanksRecipe(ModBlocks.BLUE_LUMINESCENT_PLANKS, ModTags.Items.BLUE_LUMINESCENT_LOGS, 4);
                 offerPressurePlateRecipe(ModBlocks.BLUE_LUMINESCENT_PRESSURE_PLATE, ModBlocks.BLUE_LUMINESCENT_PLANKS);
                 offerSlabRecipe(RecipeCategory.BUILDING_BLOCKS, ModBlocks.BLUE_LUMINESCENT_SLAB, ModBlocks.BLUE_LUMINESCENT_PLANKS);
-                createStairsRecipe(ModBlocks.BLUE_LUMINESCENT_STAIRS, Ingredient.ofItems(ModBlocks.BLUE_LUMINESCENT_PLANKS)).criterion(hasItem(ModBlocks.PELTOGYNE_PLANKS), conditionsFromItem(ModBlocks.PELTOGYNE_PLANKS)).offerTo(exporter/* Identifier.of("blue_luminescent_stairs")*/);
+                createStairsRecipe(ModBlocks.BLUE_LUMINESCENT_STAIRS, Ingredient.ofItems(ModBlocks.BLUE_LUMINESCENT_PLANKS)).criterion(hasItem(ModBlocks.PELTOGYNE_PLANKS), conditionsFromItem(ModBlocks.PELTOGYNE_PLANKS)).offerTo(exporter, "blue_luminescent_stairs");
                 offerSingleOutputShapelessRecipe(ModBlocks.BLUE_LUMINESCENT_BUTTON, ModBlocks.BLUE_LUMINESCENT_PLANKS, "button");
-                createTrapdoorRecipe(ModBlocks.BLUE_LUMINESCENT_TRAPDOOR, Ingredient.ofItems(ModBlocks.BLUE_LUMINESCENT_PLANKS)).criterion(hasItem(ModBlocks.PELTOGYNE_PLANKS), conditionsFromItem(ModBlocks.PELTOGYNE_PLANKS)).offerTo(exporter/* Identifier.of("blue_luminescent_trapdoor")*/);
-                createDoorRecipe(ModBlocks.BLUE_LUMINESCENT_DOOR, Ingredient.ofItems(ModBlocks.BLUE_LUMINESCENT_PLANKS)).criterion(hasItem(ModBlocks.PELTOGYNE_PLANKS), conditionsFromItem(ModBlocks.PELTOGYNE_PLANKS)).offerTo(exporter/* Identifier.of("blue_luminescent_door")*/);
-                createFenceGateRecipe(ModBlocks.BLUE_LUMINESCENT_FENCE_GATE, Ingredient.ofItems(ModBlocks.BLUE_LUMINESCENT_PLANKS)).criterion(hasItem(ModBlocks.PELTOGYNE_PLANKS), conditionsFromItem(ModBlocks.PELTOGYNE_PLANKS)).offerTo(exporter/* Identifier.of("blue_luminescent_fence_gate")*/);
-                createFenceRecipe(ModBlocks.BLUE_LUMINESCENT_FENCE, Ingredient.ofItems(ModBlocks.BLUE_LUMINESCENT_PLANKS)).criterion(hasItem(ModBlocks.PELTOGYNE_PLANKS), conditionsFromItem(ModBlocks.PELTOGYNE_PLANKS)).offerTo(exporter/* Identifier.of("blue_luminescent_fence")*/);
+                createTrapdoorRecipe(ModBlocks.BLUE_LUMINESCENT_TRAPDOOR, Ingredient.ofItems(ModBlocks.BLUE_LUMINESCENT_PLANKS)).criterion(hasItem(ModBlocks.PELTOGYNE_PLANKS), conditionsFromItem(ModBlocks.PELTOGYNE_PLANKS)).offerTo(exporter, "blue_luminescent_trapdoor");
+                createDoorRecipe(ModBlocks.BLUE_LUMINESCENT_DOOR, Ingredient.ofItems(ModBlocks.BLUE_LUMINESCENT_PLANKS)).criterion(hasItem(ModBlocks.PELTOGYNE_PLANKS), conditionsFromItem(ModBlocks.PELTOGYNE_PLANKS)).offerTo(exporter, "blue_luminescent_door");
+                createFenceGateRecipe(ModBlocks.BLUE_LUMINESCENT_FENCE_GATE, Ingredient.ofItems(ModBlocks.BLUE_LUMINESCENT_PLANKS)).criterion(hasItem(ModBlocks.PELTOGYNE_PLANKS), conditionsFromItem(ModBlocks.PELTOGYNE_PLANKS)).offerTo(exporter, "blue_luminescent_fence_gate");
+                createFenceRecipe(ModBlocks.BLUE_LUMINESCENT_FENCE, Ingredient.ofItems(ModBlocks.BLUE_LUMINESCENT_PLANKS)).criterion(hasItem(ModBlocks.PELTOGYNE_PLANKS), conditionsFromItem(ModBlocks.PELTOGYNE_PLANKS)).offerTo(exporter, "blue_luminescent_fence");
 
                 ShapedRecipeJsonBuilder.create(registry, RecipeCategory.BUILDING_BLOCKS, ModBlocks.BLUE_LUMINESCENT_STRIPPED_WOOD, 3)
                         .pattern("RR")
                         .pattern("RR")
                         .input('R', ModBlocks.BLUE_LUMINESCENT_STRIPPED_LOG)
                         .criterion(hasItem(ModBlocks.BLUE_LUMINESCENT_STRIPPED_LOG), conditionsFromItem(ModBlocks.BLUE_LUMINESCENT_STRIPPED_LOG))
-                        .offerTo(exporter/* Identifier.of("blue_luminescent_stripped_wood_craft")*/);
+                        .offerTo(exporter, "blue_luminescent_stripped_wood_craft");
 
                 ShapedRecipeJsonBuilder.create(registry, RecipeCategory.BUILDING_BLOCKS, ModBlocks.BLUE_LUMINESCENT_WOOD, 4)
                         .pattern("RR")
                         .pattern("RR")
                         .input('R', ModBlocks.BLUE_LUMINESCENT_LOG)
                         .criterion(hasItem(ModBlocks.BLUE_LUMINESCENT_LOG), conditionsFromItem(ModBlocks.BLUE_LUMINESCENT_LOG))
-                        .offerTo(exporter/* Identifier.of("blue_luminescent_wood_craft")*/);
+                        .offerTo(exporter, "blue_luminescent_wood_craft");
 
 
                 offerPlanksRecipe(ModBlocks.PELTOGYNE_PLANKS, ModTags.Items.PELTOGYNE_LOGS, 4);
                 offerPressurePlateRecipe(ModBlocks.PELTOGYNE_PRESSURE_PLATE, ModBlocks.PELTOGYNE_PLANKS);
                 offerSlabRecipe(RecipeCategory.BUILDING_BLOCKS, ModBlocks.PELTOGYNE_SLAB, ModBlocks.PELTOGYNE_PLANKS);
-                createStairsRecipe(ModBlocks.PELTOGYNE_STAIRS, Ingredient.ofItems(ModBlocks.PELTOGYNE_PLANKS)).criterion(hasItem(ModBlocks.PELTOGYNE_PLANKS), conditionsFromItem(ModBlocks.PELTOGYNE_PLANKS)).offerTo(exporter/* Identifier.of("peltogyne_stairs")*/);
+                createStairsRecipe(ModBlocks.PELTOGYNE_STAIRS, Ingredient.ofItems(ModBlocks.PELTOGYNE_PLANKS)).criterion(hasItem(ModBlocks.PELTOGYNE_PLANKS), conditionsFromItem(ModBlocks.PELTOGYNE_PLANKS)).offerTo(exporter, "peltogyne_stairs");
                 offerSingleOutputShapelessRecipe(ModBlocks.PELTOGYNE_BUTTON, ModBlocks.PELTOGYNE_PLANKS, "button");
-                createTrapdoorRecipe(ModBlocks.PELTOGYNE_TRAPDOOR, Ingredient.ofItems(ModBlocks.PELTOGYNE_PLANKS)).criterion(hasItem(ModBlocks.PELTOGYNE_PLANKS), conditionsFromItem(ModBlocks.PELTOGYNE_PLANKS)).offerTo(exporter/* Identifier.of("peltogyne_trapdoor")*/);
-                createDoorRecipe(ModBlocks.PELTOGYNE_DOOR.asItem(), Ingredient.ofItems(ModBlocks.PELTOGYNE_PLANKS)).criterion(hasItem(ModBlocks.PELTOGYNE_PLANKS), conditionsFromItem(ModBlocks.PELTOGYNE_PLANKS)).offerTo(exporter/* Identifier.of("peltogyne_door")*/);
-                createFenceGateRecipe(ModBlocks.PELTOGYNE_FENCE_GATE, Ingredient.ofItems(ModBlocks.PELTOGYNE_PLANKS)).criterion(hasItem(ModBlocks.PELTOGYNE_PLANKS), conditionsFromItem(ModBlocks.PELTOGYNE_PLANKS)).offerTo(exporter/* Identifier.of("peltogyne_fence_gate")*/);
-                createFenceRecipe(ModBlocks.PELTOGYNE_FENCE, Ingredient.ofItems(ModBlocks.PELTOGYNE_PLANKS.asItem())).criterion(hasItem(ModBlocks.PELTOGYNE_PLANKS), conditionsFromItem(ModBlocks.PELTOGYNE_PLANKS)).offerTo(exporter/* Identifier.of("peltogyne_fence")*/);
+                createTrapdoorRecipe(ModBlocks.PELTOGYNE_TRAPDOOR, Ingredient.ofItems(ModBlocks.PELTOGYNE_PLANKS)).criterion(hasItem(ModBlocks.PELTOGYNE_PLANKS), conditionsFromItem(ModBlocks.PELTOGYNE_PLANKS)).offerTo(exporter, "peltogyne_trapdoor");
+                createDoorRecipe(ModBlocks.PELTOGYNE_DOOR.asItem(), Ingredient.ofItems(ModBlocks.PELTOGYNE_PLANKS)).criterion(hasItem(ModBlocks.PELTOGYNE_PLANKS), conditionsFromItem(ModBlocks.PELTOGYNE_PLANKS)).offerTo(exporter, "peltogyne_door");
+                createFenceGateRecipe(ModBlocks.PELTOGYNE_FENCE_GATE, Ingredient.ofItems(ModBlocks.PELTOGYNE_PLANKS)).criterion(hasItem(ModBlocks.PELTOGYNE_PLANKS), conditionsFromItem(ModBlocks.PELTOGYNE_PLANKS)).offerTo(exporter, "peltogyne_fence_gate");
+                createFenceRecipe(ModBlocks.PELTOGYNE_FENCE, Ingredient.ofItems(ModBlocks.PELTOGYNE_PLANKS.asItem())).criterion(hasItem(ModBlocks.PELTOGYNE_PLANKS), conditionsFromItem(ModBlocks.PELTOGYNE_PLANKS)).offerTo(exporter, "peltogyne_fence");
 
                 ShapedRecipeJsonBuilder.create(registry, RecipeCategory.BUILDING_BLOCKS, ModBlocks.PELTOGYNE_STRIPPED_WOOD, 3)
                         .pattern("RR")
                         .pattern("RR")
                         .input('R', ModBlocks.PELTOGYNE_STRIPPED_LOG)
                         .criterion(hasItem(ModBlocks.PELTOGYNE_STRIPPED_LOG), conditionsFromItem(ModBlocks.PELTOGYNE_STRIPPED_LOG))
-                        .offerTo(exporter/* Identifier.of("peltogyne_stripped_wood_craft")*/);
+                        .offerTo(exporter, "peltogyne_stripped_wood_craft");
 
                 ShapedRecipeJsonBuilder.create(registry, RecipeCategory.BUILDING_BLOCKS, ModBlocks.PELTOGYNE_WOOD, 4)
                         .pattern("RR")
                         .pattern("RR")
                         .input('R', ModBlocks.PELTOGYNE_LOG)
                         .criterion(hasItem(ModBlocks.PELTOGYNE_LOG), conditionsFromItem(ModBlocks.PELTOGYNE_LOG))
-                        .offerTo(exporter/* Identifier.of("peltogyne_wood_craft")*/);
+                        .offerTo(exporter, "peltogyne_wood_craft");
 
 
                 //utils
@@ -220,7 +222,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .input('R', Blocks.IRON_BLOCK)
                         .input('S', Items.IRON_INGOT)
                         .criterion(hasItem(Items.IRON_INGOT), conditionsFromItem(Blocks.IRON_BLOCK))
-                        .offerTo(exporter/* Identifier.of("forge_craft")*/);
+                        .offerTo(exporter, "forge_craft");
 
                 ShapedRecipeJsonBuilder.create(registry, RecipeCategory.MISC, ModBlocks.FORGE_BLOCK)
                         .pattern("S S")
@@ -229,7 +231,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .input('S', Items.IRON_INGOT)
                         .input('R', Blocks.ANVIL)
                         .criterion(hasItem(Items.IRON_INGOT), conditionsFromItem(Blocks.ANVIL))
-                        .offerTo(exporter/* Identifier.of("forge_craft_with_anvil")*/);
+                        .offerTo(exporter, "forge_craft_with_anvil");
 
                 ShapedRecipeJsonBuilder.create(registry, RecipeCategory.MISC, ModItems.IRON_HAMMER)
                         .pattern("BBB")
@@ -239,7 +241,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .input('B', Blocks.IRON_BLOCK)
                         .input('I', Items.IRON_INGOT)
                         .criterion(hasItem(Items.IRON_INGOT), conditionsFromItem(Blocks.IRON_BLOCK))
-                        .offerTo(exporter/* Identifier.of("hammer_craft")*/);
+                        .offerTo(exporter, "hammer_craft");
 
                 //Crystals
                 //offerCompactingRecipe( RecipeCategory.BUILDING_BLOCKS, ModBlocks.AMBER_BLOCK, ModItems.CRUSHED_AMBER_ITEM);
@@ -252,11 +254,11 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 //Forge Recipe
         /*new ForgeRecipeBuilder(Items.DIAMOND, ModItems.CRUSHED_DIAMOND, 1)
                 .criterion(hasItem(Items.DIAMOND), conditionsFromItem(Items.DIAMOND))
-                .offerTo(exporter/* Identifier.of("diamond_forge_craft"));
+                .offerTo(exporter,"diamond_forge_craft"));
 
         new ForgeRecipeBuilder(ModItems.AMBER_ITEM, ModItems.CRUSHED_AMBER_ITEM, 1)
                 .criterion(hasItem(ModItems.AMBER_ITEM), conditionsFromItem(Items.AIR))
-                .offerTo(exporter/* Identifier.of("amber_forge_craft"));*/
+                .offerTo(exporter,"amber_forge_craft"));*/
 
                 offerSmelting(YELLOW_BERRIES, RecipeCategory.FOOD, ModItems.COOKED_YELLOW_BERRIES, 0.3f, 100, "yellow_berries");
                 offerBlasting(YELLOW_BERRIES, RecipeCategory.FOOD, ModItems.COOKED_YELLOW_BERRIES, 0.3f, 50, "yellow_berries");
@@ -270,13 +272,15 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .input('P', Blocks.SMOOTH_STONE_SLAB)
                         .input('C', Blocks.CHEST)
                         .criterion(hasItem(Items.STICK), conditionsFromItem(Blocks.CHEST))
-                        .offerTo(exporter/* Identifier.of("inventory_armor_stand_craft")*/);
+                        .offerTo(exporter, "inventory_armor_stand_craft");
+
             }
         };
     }
 
+
     @Override
     public String getName() {
-        return MushrooomsMod.MOD_ID;
+        return "recipes." + MushrooomsMod.MOD_ID;
     }
 }
