@@ -197,17 +197,20 @@ public class InventoryArmorStandEntity extends LivingEntity implements GeoEntity
         NbtList nbtList2 = new NbtList();
         NbtList nbtList3 = new NbtList();
         for (ItemStack itemStack : this.armorItems) {
-            nbtList3.add(itemStack.toNbt(this.getRegistryManager()));
+            if (itemStack != null && !itemStack.isEmpty())
+                nbtList3.add(itemStack.toNbt(this.getRegistryManager()));
         }
         nbt.put("ArmorItems", nbtList);
 
         for (ItemStack itemStack : this.heldItems) {
-            nbtList3.add(itemStack.toNbt(this.getRegistryManager()));
+            if (itemStack != null && !itemStack.isEmpty())
+                nbtList3.add(itemStack.toNbt(this.getRegistryManager()));
         }
         nbt.put("HeldItem", nbtList2);
 
         for (ItemStack itemStack : this.inventory) {
-            nbtList3.add(itemStack.toNbt(this.getRegistryManager()));
+            if (itemStack != null && !itemStack.isEmpty())
+                nbtList3.add(itemStack.toNbt(this.getRegistryManager()));
         }
         nbt.put("Inventory", nbtList3);
     }
