@@ -8,7 +8,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.AxeItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.ToolMaterials;
+import net.minecraft.item.ToolMaterial;
 import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.registry.tag.ItemTags;
 import net.minecraft.text.Text;
@@ -45,7 +45,7 @@ public class FermentedTransparentMushroomBlock extends TransparentBlock {
                 return ActionResult.SUCCESS;
             }
         } else {
-            if (stack.isIn(ItemTags.AXES) && stack.getItem() instanceof AxeItem axeItem && axeItem.getMaterial().getMiningSpeedMultiplier() > ToolMaterials.STONE.getMiningSpeedMultiplier()) {
+            if (stack.isIn(ItemTags.AXES) && stack.getItem() instanceof AxeItem) {
                 world.setBlockState(pos, blockSupplier.get().getDefaultState());
                 return ActionResult.SUCCESS;
             }

@@ -45,7 +45,7 @@ public class InventoryArmorStandItem extends Item {
             ServerWorld worldServer = (ServerWorld) world;
             Consumer<InventoryArmorStandEntity> consumer = EntityType.copier(worldServer, itemStack, context.getPlayer());
 
-            InventoryArmorStandEntity entity = ModEntities.INVENTORY_ARMOR_STAND_ENTITY.create(worldServer, consumer, pos, SpawnReason.SPAWN_EGG, true, true);
+            InventoryArmorStandEntity entity = ModEntities.INVENTORY_ARMOR_STAND_ENTITY.create(worldServer, consumer, pos, SpawnReason.MOB_SUMMONED, true, true);
             if (entity == null) {
                 return ActionResult.FAIL;
             }

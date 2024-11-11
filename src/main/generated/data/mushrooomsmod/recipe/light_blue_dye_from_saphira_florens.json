@@ -3,9 +3,7 @@
   "category": "misc",
   "group": "light_blue_dye",
   "ingredients": [
-    {
-      "item": "mushrooomsmod:saphira_florens"
-    }
+    "mushrooomsmod:saphira_florens"
   ],
   "result": {
     "count": 1,

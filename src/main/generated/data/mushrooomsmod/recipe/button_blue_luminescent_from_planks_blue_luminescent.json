@@ -3,9 +3,7 @@
   "category": "misc",
   "group": "button",
   "ingredients": [
-    {
-      "item": "mushrooomsmod:planks_blue_luminescent"
-    }
+    "mushrooomsmod:planks_blue_luminescent"
   ],
   "result": {
     "count": 1,

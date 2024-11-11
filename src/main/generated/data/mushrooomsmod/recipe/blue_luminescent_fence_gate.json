@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "redstone",
   "key": {
-    "#": {
-      "item": "minecraft:stick"
-    },
-    "W": {
-      "item": "mushrooomsmod:planks_blue_luminescent"
-    }
+    "#": "minecraft:stick",
+    "W": "mushrooomsmod:planks_blue_luminescent"
   },
   "pattern": [
     "#W#",

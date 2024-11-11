@@ -3,9 +3,7 @@
   "category": "misc",
   "group": "blue_dye",
   "ingredients": [
-    {
-      "item": "mushrooomsmod:perennial_blue"
-    }
+    "mushrooomsmod:perennial_blue"
   ],
   "result": {
     "count": 1,

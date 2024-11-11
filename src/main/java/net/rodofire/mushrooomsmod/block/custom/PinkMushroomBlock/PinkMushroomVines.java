@@ -32,7 +32,7 @@ public interface PinkMushroomVines {
             BlockState blockState = state.with(BERRIES, false);
             world.setBlockState(pos, blockState, Block.NOTIFY_LISTENERS);
             world.emitGameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Emitter.of(picker, blockState));
-            return ActionResult.success(world.isClient);
+            return world.isClient ? ActionResult.SUCCESS : ActionResult.PASS;
         }
         return ActionResult.PASS;
     }

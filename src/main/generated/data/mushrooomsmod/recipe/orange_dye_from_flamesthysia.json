@@ -3,9 +3,7 @@
   "category": "misc",
   "group": "orange_dye",
   "ingredients": [
-    {
-      "item": "mushrooomsmod:flamesthysia"
-    }
+    "mushrooomsmod:flamesthysia"
   ],
   "result": {
     "count": 1,

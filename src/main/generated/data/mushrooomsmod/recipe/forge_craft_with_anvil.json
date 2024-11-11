@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "R": {
-      "item": "minecraft:anvil"
-    },
-    "S": {
-      "item": "minecraft:iron_ingot"
-    }
+    "R": "minecraft:anvil",
+    "S": "minecraft:iron_ingot"
   },
   "pattern": [
     "S S",

@@ -243,7 +243,7 @@ public class ModItemGroup {
                         //Light Blocks
                         entries.add(ModBlocks.GREEN_LANTERN);
                         entries.add(ModBlocks.RED_LANTERN);
-                        entries.add(ModItems.GREEN_TORCH);
+                        //entries.add(ModItems.GREEN_TORCH);
                         entries.add(ModBlocks.GREEN_CAMPFIRE);
 
 
@@ -296,6 +296,6 @@ public class ModItemGroup {
                     }).build());
 
     public static void registerItemGroup() {
-        MushrooomsMod.LOGGER.info("Registering Mod Item Group for Mushrooomsmod");
+        MushrooomsMod.LOGGER.info("Registering Item Group");
     }
 }

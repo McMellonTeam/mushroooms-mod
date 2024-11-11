@@ -3,9 +3,7 @@
   "category": "misc",
   "group": "orange_dye",
   "ingredients": [
-    {
-      "item": "mushrooomsmod:hibiscus"
-    }
+    "mushrooomsmod:hibiscus"
   ],
   "result": {
     "count": 1,

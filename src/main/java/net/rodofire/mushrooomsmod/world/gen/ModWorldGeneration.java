@@ -12,6 +12,6 @@ public class ModWorldGeneration {
 
         ModOreGeneration.generateOres();
 
-        MushrooomsMod.LOGGER.info("Generating Mod World Generation");
+        MushrooomsMod.LOGGER.info("Registering World Generation");
     }
 }

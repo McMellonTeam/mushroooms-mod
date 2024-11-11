@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "category": "building",
   "ingredients": [
-    {
-      "item": "mushrooomsmod:amber_block_raw"
-    }
+    "mushrooomsmod:amber_block_raw"
   ],
   "result": {
     "count": 9,

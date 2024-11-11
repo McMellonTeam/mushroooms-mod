@@ -3,9 +3,7 @@
   "category": "misc",
   "group": "green_dye",
   "ingredients": [
-    {
-      "item": "mushrooomsmod:viperin"
-    }
+    "mushrooomsmod:viperin"
   ],
   "result": {
     "count": 1,

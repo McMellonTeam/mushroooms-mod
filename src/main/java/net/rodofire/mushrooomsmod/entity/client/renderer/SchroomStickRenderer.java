@@ -2,6 +2,7 @@ package net.rodofire.mushrooomsmod.entity.client.renderer;
 
 import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.client.render.entity.EntityRendererFactory;
+import net.minecraft.client.render.entity.state.EntityRenderState;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.util.Identifier;
 import net.rodofire.mushrooomsmod.MushrooomsMod;
@@ -20,8 +21,7 @@ public class SchroomStickRenderer extends GeoEntityRenderer<SchroomStickEntity> 
     }
 
     @Override
-    public void render(SchroomStickEntity entity, float entityYaw, float partialTick, MatrixStack poseStack,
-                       VertexConsumerProvider bufferSource, int packedLight) {
-        super.render(entity, entityYaw, partialTick, poseStack, bufferSource, packedLight);
+    public void render(EntityRenderState entityRenderState, MatrixStack poseStack, VertexConsumerProvider bufferSource, int packedLight) {
+        super.render(entityRenderState, poseStack, bufferSource, packedLight);
     }
 }

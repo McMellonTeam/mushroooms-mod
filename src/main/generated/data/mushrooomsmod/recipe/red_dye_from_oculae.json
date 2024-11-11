@@ -3,9 +3,7 @@
   "category": "misc",
   "group": "red_dye",
   "ingredients": [
-    {
-      "item": "mushrooomsmod:oculae"
-    }
+    "mushrooomsmod:oculae"
   ],
   "result": {
     "count": 1,

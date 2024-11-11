@@ -27,7 +27,7 @@ public class BigGreenMushroomPlant extends CropBlock implements Fertilizable {
     public static final VoxelShape[] AGE_TO_SHAPE = new VoxelShape[]{Block.createCuboidShape(1, 0, 1, 15, 7, 15), Block.createCuboidShape(0, 0, 0, 16, 10, 16), Block.createCuboidShape(0, 0, 0, 16, 14, 16), Block.createCuboidShape(0, 0, 0, 16, 20, 16)};
 
 
-    public BigGreenMushroomPlant(Settings settings, Block stage0, Block stage1, Block stage2, Block stage3) {
+    public BigGreenMushroomPlant(Settings settings) {
         super(settings);
     }
 
@@ -104,7 +104,7 @@ public class BigGreenMushroomPlant extends CropBlock implements Fertilizable {
 
     @Override
     protected boolean canPlantOnTop(BlockState floor, BlockView world, BlockPos pos) {
-        return floor.isOpaqueFullCube(world, pos);
+        return floor.isOpaqueFullCube();
     }
 
     @Override

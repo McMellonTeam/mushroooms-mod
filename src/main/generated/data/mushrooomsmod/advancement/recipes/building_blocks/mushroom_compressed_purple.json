@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_green_dye": {
+    "has_mushroom_powder_purple": {
       "conditions": {
         "items": [
           {
-            "items": "minecraft:green_dye"
+            "items": "mushrooomsmod:mushroom_powder_purple"
           }
         ]
       },
@@ -13,31 +13,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:green_torch_craft"
+        "recipe": "mushrooomsmod:mushroom_compressed_purple"
       },
       "trigger": "minecraft:recipe_unlocked"
-    },
-    "has_torch": {
-      "conditions": {
-        "items": [
-          {
-            "items": "minecraft:torch"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
     }
   },
   "requirements": [
     [
       "has_the_recipe",
-      "has_torch",
-      "has_green_dye"
+      "has_mushroom_powder_purple"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:green_torch_craft"
+      "mushrooomsmod:mushroom_compressed_purple"
     ]
   }
 }

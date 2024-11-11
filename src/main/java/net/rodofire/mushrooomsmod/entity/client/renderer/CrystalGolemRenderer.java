@@ -19,9 +19,4 @@ public class CrystalGolemRenderer extends GeoEntityRenderer<CrystalGolemEntity> 
         return Identifier.of(MushrooomsMod.MOD_ID, "textures/entity/crystal_golem.png");
     }
 
-    @Override
-    public void render(CrystalGolemEntity entity, float entityYaw, float partialTick, MatrixStack poseStack,
-                       VertexConsumerProvider bufferSource, int packedLight) {
-        super.render(entity, entityYaw, partialTick, poseStack, bufferSource, packedLight);
-    }
 }

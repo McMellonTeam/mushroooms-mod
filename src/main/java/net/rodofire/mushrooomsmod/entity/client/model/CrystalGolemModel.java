@@ -4,21 +4,24 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.math.MathHelper;
 import net.rodofire.mushrooomsmod.MushrooomsMod;
 import net.rodofire.mushrooomsmod.entity.custom.CrystalGolemEntity;
+import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.animation.AnimationState;
 import software.bernie.geckolib.cache.object.GeoBone;
 import software.bernie.geckolib.constant.DataTickets;
 import software.bernie.geckolib.model.GeoModel;
 import software.bernie.geckolib.model.data.EntityModelData;
+import software.bernie.geckolib.renderer.GeoRenderer;
 
 public class CrystalGolemModel extends GeoModel<CrystalGolemEntity> {
+
     @Override
-    public Identifier getModelResource(CrystalGolemEntity animatable) {
+    public Identifier getModelResource(CrystalGolemEntity animatable, @Nullable GeoRenderer<CrystalGolemEntity> renderer) {
         return Identifier.of(MushrooomsMod.MOD_ID, "geo/crystal_golem.geo.json");
+
     }
 
     @Override
-    public Identifier getTextureResource(CrystalGolemEntity animatable) {
-
+    public Identifier getTextureResource(CrystalGolemEntity animatable, @Nullable GeoRenderer<CrystalGolemEntity> renderer) {
         return Identifier.of(MushrooomsMod.MOD_ID, "textures/entity/crystal_golem.png");
 
     }

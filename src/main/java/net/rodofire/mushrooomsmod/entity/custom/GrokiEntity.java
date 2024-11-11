@@ -1,6 +1,7 @@
 package net.rodofire.mushrooomsmod.entity.custom;
 
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.ai.goal.LookAroundGoal;
 import net.minecraft.entity.ai.goal.SwimGoal;
 import net.minecraft.entity.ai.goal.WanderAroundFarGoal;
@@ -9,6 +10,7 @@ import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.ItemStack;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.ActionResult;
@@ -41,13 +43,13 @@ public class GrokiEntity extends AnimalEntity implements GeoEntity {
     @Nullable
     @Override
     public PassiveEntity createChild(ServerWorld world, PassiveEntity entity) {
-        return ModEntities.GROKI.create(world);
+        return ModEntities.GROKI.create(world, SpawnReason.NATURAL);
     }
 
     public static DefaultAttributeContainer.Builder setAttributes() {
         return AnimalEntity.createMobAttributes()
-                .add(EntityAttributes.GENERIC_MAX_HEALTH, 10.0D)
-                .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.35f);
+                .add(EntityAttributes.MAX_HEALTH, 10.0D)
+                .add(EntityAttributes.MOVEMENT_SPEED, 0.35f);
     }
 
     @Override
@@ -83,8 +85,11 @@ public class GrokiEntity extends AnimalEntity implements GeoEntity {
     public ActionResult interactMob(PlayerEntity player, Hand hand) {
         if (this.interact != 0) {
             if (this.interact == 1) {
-                this.dropItem(ModItems.CRUSHED_DIAMOND,1);
-                this.trading = false;
+                World world = this.getEntityWorld();
+                if (world instanceof ServerWorld worldServer) {
+                    this.dropItem(worldServer, ModItems.CRUSHED_DIAMOND);
+                    this.trading = false;
+                }
             }
             return ActionResult.PASS;
         }

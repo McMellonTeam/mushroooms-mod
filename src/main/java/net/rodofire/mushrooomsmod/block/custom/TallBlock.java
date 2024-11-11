@@ -22,6 +22,6 @@ public class TallBlock extends Block {
 
     @Override
     public boolean canPlaceAt(BlockState state, WorldView world, BlockPos pos) {
-        return world.getBlockState(pos.down()).isOpaqueFullCube(world, pos.down());
+        return world.getBlockState(pos.down()).isOpaqueFullCube();
     }
 }

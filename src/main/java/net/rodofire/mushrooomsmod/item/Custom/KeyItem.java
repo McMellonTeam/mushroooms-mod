@@ -67,7 +67,7 @@ public class KeyItem extends Item {
                 float f = entity.getBodyYaw();
                 entity.remove(Entity.RemovalReason.DISCARDED);
                 Consumer<LockedInventoryArmorStand> consumer = EntityType.copier(worldServer, stack, user);
-                LockedInventoryArmorStand newEntity = ModEntities.LOCKED_INVENTORY_ARMOR_STAND.create(worldServer, consumer, pos, SpawnReason.SPAWN_EGG, true, true);
+                LockedInventoryArmorStand newEntity = ModEntities.LOCKED_INVENTORY_ARMOR_STAND.create(worldServer, consumer, pos, SpawnReason.MOB_SUMMONED, true, true);
                 if (newEntity == null) {
                     return ActionResult.FAIL;
                 }

@@ -16,16 +16,14 @@ import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.inventory.SimpleInventory;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.ToolItem;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.item.tooltip.TooltipType;
-import net.minecraft.recipe.RecipeEntry;
-import net.minecraft.recipe.RecipeManager;
-import net.minecraft.recipe.RecipeType;
-import net.minecraft.recipe.SmeltingRecipe;
+import net.minecraft.recipe.*;
 import net.minecraft.recipe.input.SingleStackRecipeInput;
 import net.minecraft.registry.DynamicRegistryManager;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Text;
@@ -40,29 +38,31 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 import java.util.Optional;
 
-public class HammerItem extends ToolItem {
-    double attackDamage;
-    double attackSpeed;
+public class HammerItem extends Item {
     int maxcrushableblocks;
     private int hammeruse = 0;
 
-    public HammerItem(ToolMaterial material, int maxcrushableblocks, Settings settings) {
-        super(material, settings);
+    public HammerItem(ToolMaterial material, int attackDamage, float attackSpeed, int maxcrushableblocks, Settings settings) {
+        super(material.applySwordSettings(settings, attackDamage, attackSpeed));
         this.maxcrushableblocks = maxcrushableblocks;
     }
-
-    public static AttributeModifiersComponent createAttributeModifiers(ToolMaterial material, int baseAttackDamage, float attackSpeed) {
-        return AttributeModifiersComponent.builder().add(EntityAttributes.GENERIC_ATTACK_DAMAGE, new EntityAttributeModifier(BASE_ATTACK_DAMAGE_MODIFIER_ID, (float)baseAttackDamage + material.getAttackDamage(), EntityAttributeModifier.Operation.ADD_VALUE), AttributeModifierSlot.MAINHAND).add(EntityAttributes.GENERIC_ATTACK_SPEED, new EntityAttributeModifier(BASE_ATTACK_SPEED_MODIFIER_ID, attackSpeed, EntityAttributeModifier.Operation.ADD_VALUE), AttributeModifierSlot.MAINHAND).build();
-    }
-
 
     public static ItemStack getResult(World world, ItemStack stack) {
         RecipeManager recipeManager = world.getRecipeManager();
         DynamicRegistryManager registryManager = world.getRegistryManager();
-        Optional<RecipeEntry<ForgeRecipe>> optional = world
-                .getRecipeManager()
-                .getFirstMatch(ForgeRecipe.Type.INSTANCE, new SingleStackRecipeInput(stack), world);
-        if (optional.isPresent()) return optional.get().value().getResult(registryManager);
+        if (world instanceof ServerWorld serverWorld) {
+
+            ServerRecipeManager.MatchGetter<SingleStackRecipeInput, ForgeRecipe> matchGetter = ServerRecipeManager.createCachedMatchGetter(
+                    ForgeRecipe.Type.INSTANCE
+            );
+            SingleStackRecipeInput singleStackRecipeInput = new SingleStackRecipeInput(stack);
+
+            ItemStack itemStack2 = (ItemStack) matchGetter.getFirstMatch(singleStackRecipeInput, serverWorld)
+                    .map(recipe -> ((ForgeRecipe) recipe.value()).craft(singleStackRecipeInput, world.getRegistryManager()))
+                    .orElse(stack);
+            return itemStack2;
+        }
+
         return ItemStack.EMPTY;
     }
 

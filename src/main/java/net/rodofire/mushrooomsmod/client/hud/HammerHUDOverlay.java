@@ -3,8 +3,10 @@ package net.rodofire.mushrooomsmod.client.hud;
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback;
 import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.gl.ShaderProgramKeys;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.render.GameRenderer;
+import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.render.RenderTickCounter;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
@@ -30,7 +32,7 @@ public class HammerHUDOverlay implements HudRenderCallback {
         int x = width / 2 - 6;
         int y = height / 2 + 10;
 
-        RenderSystem.setShader(GameRenderer::getPositionTexProgram);
+        RenderSystem.setShader(ShaderProgramKeys.POSITION_TEX_COLOR);
         RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
         RenderSystem.setShaderTexture(0, HAMMER);
 
@@ -39,9 +41,9 @@ public class HammerHUDOverlay implements HudRenderCallback {
         float proportion = 1 - ((float) progress / 200);
         int filled = (int) (16 * proportion);
 
-        drawContext.drawTexture(HAMMER, x, y, 0, 0, 16, 16, 16, 16);
+        drawContext.drawTexture(RenderLayer::getGuiTextured, HAMMER, x, y, 0, 0, 16, 16, 16, 16);
         RenderSystem.setShaderTexture(0, HAMMER_FULL);
-        drawContext.drawTexture(HAMMER_FULL, x, y, 0, 0, filled, 16, 16, 16);
+        drawContext.drawTexture(RenderLayer::getGuiTextured, HAMMER_FULL, x, y, 0, 0, filled, 16, 16, 16);
     }
 
     @Override

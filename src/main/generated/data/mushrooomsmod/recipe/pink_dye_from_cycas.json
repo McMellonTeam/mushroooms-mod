@@ -3,9 +3,7 @@
   "category": "misc",
   "group": "pink_dye",
   "ingredients": [
-    {
-      "item": "mushrooomsmod:cycas"
-    }
+    "mushrooomsmod:cycas"
   ],
   "result": {
     "count": 1,

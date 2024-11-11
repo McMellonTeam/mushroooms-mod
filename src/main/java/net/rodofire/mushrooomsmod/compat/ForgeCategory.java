@@ -51,10 +51,10 @@ public class ForgeCategory implements DisplayCategory<BasicDisplay> {
                 new Rectangle(startPoint.x, startPoint.y, 175, 182)));
 
         widgets.add(Widgets.createSlot(new Point(startPoint.x + 26, startPoint.y + 33))
-                .entries(display.getInputEntries().get(0)));
+                .entries(display.getInputEntries().getFirst()));
 
         widgets.add(Widgets.createSlot(new Point(startPoint.x + 134, startPoint.y + 33))
-                .markOutput().entries(display.getOutputEntries().get(0)));
+                .markOutput().entries(display.getOutputEntries().getFirst()));
         return widgets;
     }
 }

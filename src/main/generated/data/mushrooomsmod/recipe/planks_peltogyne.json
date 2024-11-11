@@ -3,9 +3,7 @@
   "category": "building",
   "group": "planks",
   "ingredients": [
-    {
-      "tag": "mushrooomsmod:peltogyne_logs"
-    }
+    "#mushrooomsmod:peltogyne_logs"
   ],
   "result": {
     "count": 4,

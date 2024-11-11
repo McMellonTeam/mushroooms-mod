@@ -3,9 +3,7 @@
   "category": "misc",
   "group": "light_blue_dye",
   "ingredients": [
-    {
-      "item": "mushrooomsmod:cyanea"
-    }
+    "mushrooomsmod:cyanea"
   ],
   "result": {
     "count": 1,

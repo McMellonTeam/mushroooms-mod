@@ -65,8 +65,8 @@ public class SchroomStickEntity extends AnimalEntity implements GeoEntity {
 
     public static DefaultAttributeContainer.Builder setAttributes() {
         return AnimalEntity.createMobAttributes()
-                .add(EntityAttributes.GENERIC_MAX_HEALTH, 5.0D)
-                .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.8f);
+                .add(EntityAttributes.MAX_HEALTH, 5.0D)
+                .add(EntityAttributes.MOVEMENT_SPEED, 0.8f);
     }
 
     @Override
@@ -110,14 +110,12 @@ public class SchroomStickEntity extends AnimalEntity implements GeoEntity {
         super.tick();
     }
 
-
-
     @Override
-    public boolean damage(DamageSource source, float amount) {
+    public boolean damage(ServerWorld world, DamageSource source, float amount) {
         if(this.isJumping()){
             return false;
         }
-        return super.damage(source, amount);
+        return super.damage(world, source, amount);
     }
 
     @Override

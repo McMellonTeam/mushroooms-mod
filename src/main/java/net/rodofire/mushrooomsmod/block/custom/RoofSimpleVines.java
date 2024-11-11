@@ -11,6 +11,7 @@ import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
 import net.minecraft.world.WorldView;
+import net.minecraft.world.tick.ScheduledTickView;
 
 public class RoofSimpleVines extends Block implements Fertilizable {
     public RoofSimpleVines(Settings settings) {
@@ -34,12 +35,12 @@ public class RoofSimpleVines extends Block implements Fertilizable {
 
     @Override
     public boolean canPlaceAt(BlockState state, WorldView world, BlockPos pos) {
-        return world.getBlockState(pos.up()).isOpaqueFullCube(world, pos.up()) || world.getBlockState(pos.up()) == this.getDefaultState();
+        return world.getBlockState(pos.up()).isOpaqueFullCube() || world.getBlockState(pos.up()) == this.getDefaultState();
     }
 
     @Override
-    public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
+    protected BlockState getStateForNeighborUpdate(BlockState state, WorldView world, ScheduledTickView tickView, BlockPos pos, Direction direction, BlockPos neighborPos, BlockState neighborState, Random random) {
         if (!canPlaceAt(state, world, pos)) return Blocks.AIR.getDefaultState();
-        return super.getStateForNeighborUpdate(state, direction, neighborState, world, pos, neighborPos);
+        return super.getStateForNeighborUpdate(state, world, tickView, pos, direction, neighborPos, neighborState, random);
     }
 }

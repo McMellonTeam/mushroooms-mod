@@ -41,7 +41,7 @@ public class CustomPurpleMushroomFeature extends CustomPurpleMushroom {
                 if (bl5 && bl104) continue;
                 if (bl6 && bl105) continue;
                 mutable.set(start, j, y, k);
-                if (world.getBlockState(mutable).isOpaqueFullCube(world, mutable)) continue;
+                if (world.getBlockState(mutable).isOpaqueFullCube()) continue;
                 BlockState blockState = config.capProvider.get(random, start);
                 this.setBlockState(world, mutable, blockState);
             }

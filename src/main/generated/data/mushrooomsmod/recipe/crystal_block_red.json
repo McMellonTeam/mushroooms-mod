@@ -2,33 +2,15 @@
   "type": "minecraft:crafting_shapeless",
   "category": "building",
   "ingredients": [
-    {
-      "item": "mushrooomsmod:crystal_red_item"
-    },
-    {
-      "item": "mushrooomsmod:crystal_red_item"
-    },
-    {
-      "item": "mushrooomsmod:crystal_red_item"
-    },
-    {
-      "item": "mushrooomsmod:crystal_red_item"
-    },
-    {
-      "item": "mushrooomsmod:crystal_red_item"
-    },
-    {
-      "item": "mushrooomsmod:crystal_red_item"
-    },
-    {
-      "item": "mushrooomsmod:crystal_red_item"
-    },
-    {
-      "item": "mushrooomsmod:crystal_red_item"
-    },
-    {
-      "item": "mushrooomsmod:crystal_red_item"
-    }
+    "mushrooomsmod:crystal_red_item",
+    "mushrooomsmod:crystal_red_item",
+    "mushrooomsmod:crystal_red_item",
+    "mushrooomsmod:crystal_red_item",
+    "mushrooomsmod:crystal_red_item",
+    "mushrooomsmod:crystal_red_item",
+    "mushrooomsmod:crystal_red_item",
+    "mushrooomsmod:crystal_red_item",
+    "mushrooomsmod:crystal_red_item"
   ],
   "result": {
     "count": 1,

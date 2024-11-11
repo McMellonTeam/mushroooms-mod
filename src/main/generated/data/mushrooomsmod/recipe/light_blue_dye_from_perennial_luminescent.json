@@ -3,9 +3,7 @@
   "category": "misc",
   "group": "light_blue_dye",
   "ingredients": [
-    {
-      "item": "mushrooomsmod:perennial_luminescent"
-    }
+    "mushrooomsmod:perennial_luminescent"
   ],
   "result": {
     "count": 1,

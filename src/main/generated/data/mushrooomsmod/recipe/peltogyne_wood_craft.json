@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "R": {
-      "item": "mushrooomsmod:log_peltogyne"
-    }
+    "R": "mushrooomsmod:log_peltogyne"
   },
   "pattern": [
     "RR",

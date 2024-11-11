@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "C": {
-      "item": "minecraft:chest"
-    },
-    "P": {
-      "item": "minecraft:smooth_stone_slab"
-    },
-    "S": {
-      "item": "minecraft:stick"
-    }
+    "C": "minecraft:chest",
+    "P": "minecraft:smooth_stone_slab",
+    "S": "minecraft:stick"
   },
   "pattern": [
     "SSS",

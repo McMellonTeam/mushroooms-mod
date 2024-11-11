@@ -3,9 +3,7 @@
   "category": "building",
   "group": "planks",
   "ingredients": [
-    {
-      "tag": "mushrooomsmod:blue_luminescent_logs"
-    }
+    "#mushrooomsmod:blue_luminescent_logs"
   ],
   "result": {
     "count": 4,

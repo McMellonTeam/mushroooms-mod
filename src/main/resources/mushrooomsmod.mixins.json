@@ -14,7 +14,6 @@
   },
   "client": [
     "client.ClothConfigScreenMixin",
-    "client.ScreenMixin",
-    "client.ClothConfigScreenMixin"
+    "client.ScreenMixin"
   ]
 }

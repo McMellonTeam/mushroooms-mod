@@ -13,6 +13,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtElement;
 import net.minecraft.nbt.NbtList;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.Arm;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.world.World;
@@ -196,17 +197,20 @@ public class InventoryArmorStandEntity extends LivingEntity implements GeoEntity
         NbtList nbtList2 = new NbtList();
         NbtList nbtList3 = new NbtList();
         for (ItemStack itemStack : this.armorItems) {
-            nbtList3.add(itemStack.encodeAllowEmpty(this.getRegistryManager()));
+            if (itemStack != null && !itemStack.isEmpty())
+                nbtList3.add(itemStack.toNbt(this.getRegistryManager()));
         }
         nbt.put("ArmorItems", nbtList);
 
         for (ItemStack itemStack : this.heldItems) {
-            nbtList3.add(itemStack.encodeAllowEmpty(this.getRegistryManager()));
+            if (itemStack != null && !itemStack.isEmpty())
+                nbtList3.add(itemStack.toNbt(this.getRegistryManager()));
         }
         nbt.put("HeldItem", nbtList2);
 
         for (ItemStack itemStack : this.inventory) {
-            nbtList3.add(itemStack.encodeAllowEmpty(this.getRegistryManager()));
+            if (itemStack != null && !itemStack.isEmpty())
+                nbtList3.add(itemStack.toNbt(this.getRegistryManager()));
         }
         nbt.put("Inventory", nbtList3);
     }
@@ -252,14 +256,16 @@ public class InventoryArmorStandEntity extends LivingEntity implements GeoEntity
     public void onDeath(DamageSource damageSource) {
         World world = this.getWorld();
         if (world.isClient) return;
-        for (ItemStack itemStack : this.inventory) {
-            this.dropStack(itemStack);
-        }
-        for (ItemStack itemStack : this.armorItems) {
-            this.dropStack(itemStack);
-        }
-        for (ItemStack itemStack : this.heldItems) {
-            this.dropStack(itemStack);
+        if (world instanceof ServerWorld serverWorld) {
+            for (ItemStack itemStack : this.inventory) {
+                this.dropStack(serverWorld, itemStack);
+            }
+            for (ItemStack itemStack : this.armorItems) {
+                this.dropStack(serverWorld, itemStack);
+            }
+            for (ItemStack itemStack : this.heldItems) {
+                this.dropStack(serverWorld, itemStack);
+            }
         }
         super.onDeath(damageSource);
     }

@@ -1,13 +1,17 @@
 package net.rodofire.mushrooomsmod.entity.client.renderer;
 
+import net.minecraft.client.render.VertexConsumer;
 import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.client.render.entity.EntityRendererFactory;
+import net.minecraft.client.render.entity.state.EntityRenderState;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.MathHelper;
 import net.rodofire.mushrooomsmod.MushrooomsMod;
 import net.rodofire.mushrooomsmod.entity.client.model.CrystalCreeperModel;
 import net.rodofire.mushrooomsmod.entity.custom.CrystalCreeperEntity;
+import org.jetbrains.annotations.Nullable;
+import software.bernie.geckolib.cache.object.BakedGeoModel;
 import software.bernie.geckolib.renderer.GeoEntityRenderer;
 
 public class CrystalCreeperRenderer extends GeoEntityRenderer<CrystalCreeperEntity> {
@@ -22,10 +26,8 @@ public class CrystalCreeperRenderer extends GeoEntityRenderer<CrystalCreeperEnti
     }
 
     @Override
-    public void render(CrystalCreeperEntity entity, float entityYaw, float partialTick, MatrixStack poseStack,
-                       VertexConsumerProvider bufferSource, int packedLight) {
-
-        float g = entity.getClientFuseTime(partialTick);
+    public void renderFinal(MatrixStack poseStack, CrystalCreeperEntity animatable, BakedGeoModel model, VertexConsumerProvider bufferSource, @Nullable VertexConsumer buffer, float partialTick, int packedLight, int packedOverlay, int renderColor) {
+        float g = animatable.getClientFuseTime(partialTick);
         float h = 1.0f + MathHelper.sin(g * 100.0f) * g * 0.01f;
         g = MathHelper.clamp(g, 0.0f, 1.0f);
         g *= g;
@@ -34,7 +36,7 @@ public class CrystalCreeperRenderer extends GeoEntityRenderer<CrystalCreeperEnti
         float j = (1.0f + g * 0.1f) / h;
 
         poseStack.scale(i, j, i);
-        super.render(entity, entityYaw, partialTick, poseStack, bufferSource, packedLight);
+        super.renderFinal(poseStack, animatable, model, bufferSource, buffer, partialTick, packedLight, packedOverlay, renderColor);
     }
 
     @Override

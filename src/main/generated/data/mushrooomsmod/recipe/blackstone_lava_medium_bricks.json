@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "redstone",
   "key": {
-    "#": {
-      "item": "mushrooomsmod:blackstone_lava_bricks"
-    }
+    "#": "mushrooomsmod:blackstone_lava_bricks"
   },
   "pattern": [
     "##"

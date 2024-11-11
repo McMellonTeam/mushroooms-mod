@@ -3,9 +3,7 @@
   "category": "misc",
   "group": "red_dye",
   "ingredients": [
-    {
-      "item": "mushrooomsmod:prehistoric_rose"
-    }
+    "mushrooomsmod:prehistoric_rose"
   ],
   "result": {
     "count": 1,

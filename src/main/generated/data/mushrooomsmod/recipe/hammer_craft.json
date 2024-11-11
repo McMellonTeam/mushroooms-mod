@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "B": {
-      "item": "minecraft:iron_block"
-    },
-    "I": {
-      "item": "minecraft:iron_ingot"
-    },
-    "S": {
-      "item": "minecraft:stick"
-    }
+    "B": "minecraft:iron_block",
+    "I": "minecraft:iron_ingot",
+    "S": "minecraft:stick"
   },
   "pattern": [
     "BBB",

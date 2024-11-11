@@ -20,7 +20,7 @@ public abstract class CustomLuminescentBlueMushroom extends Feature<HugeMushroom
     protected void generateStem(WorldAccess world, Random random, BlockPos pos, HugeMushroomFeatureConfig config, int height, BlockPos.Mutable mutablePos) {
         for (int i = 0; i < height; ++i) {
             mutablePos.set(pos).move(Direction.UP, i);
-            if (world.getBlockState(mutablePos).isOpaqueFullCube(world, mutablePos)) continue;
+            if (world.getBlockState(mutablePos).isOpaqueFullCube()) continue;
             this.setBlockState(world, mutablePos, config.stemProvider.get(random, pos));
         }
     }

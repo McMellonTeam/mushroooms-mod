@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "R": {
-      "item": "minecraft:iron_nugget"
-    },
-    "S": {
-      "item": "minecraft:redstone_torch"
-    }
+    "R": "minecraft:iron_nugget",
+    "S": "minecraft:redstone_torch"
   },
   "pattern": [
     "RRR",

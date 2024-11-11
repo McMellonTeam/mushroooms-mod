@@ -3,9 +3,7 @@
   "category": "misc",
   "group": "light_blue_dye",
   "ingredients": [
-    {
-      "item": "mushrooomsmod:turquosum_stilus"
-    }
+    "mushrooomsmod:turquosum_stilus"
   ],
   "result": {
     "count": 1,

@@ -63,10 +63,8 @@ dependencies {
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
 	mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
-	modImplementation 'com.github.glitchfiend:TerraBlender-fabric:1.21-4.0.0.1'
+	modImplementation 'com.github.glitchfiend:TerraBlender-fabric:1.21.3-4.2.0.1'
 
-	modImplementation 'maven.modrinth:structureplacerapi:1.1.5'
-	include "maven.modrinth:structureplacerapi:1.1.5"
 
 	// Fabric API. This is technically optional, but you probably want it anyway.
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
@@ -75,21 +73,21 @@ dependencies {
 	// These are included in the Fabric API production distribution and allow you to update your mod to the latest modules at a later more convenient time.
 
 	// modImplementation "net.fabricmc.fabric-api:fabric-api-deprecated:${project.fabric_version}"
-	modImplementation 'software.bernie.geckolib:geckolib-fabric-1.21:4.5.6'
+	modImplementation 'software.bernie.geckolib:geckolib-fabric-1.21.3:4.7.1'
 
-	modCompileOnly "me.shedaniel:RoughlyEnoughItems-api-fabric:16.0.729"
-	modRuntimeOnly "me.shedaniel:RoughlyEnoughItems-fabric:16.0.729"
+	modCompileOnly "me.shedaniel:RoughlyEnoughItems-api-fabric:17.0.790"
+	modRuntimeOnly "me.shedaniel:RoughlyEnoughItems-fabric:17.0.790"
 
-	modApi("me.shedaniel.cloth:cloth-config-fabric:15.0.127"){
+	modApi("me.shedaniel.cloth:cloth-config-fabric:16.0.141"){
 		exclude(group: "net.fabricmc.fabric-api")
 	}
-	modApi "dev.architectury:architectury-fabric:13.0.3"
+	modApi "dev.architectury:architectury-fabric:14.0.4"
 
 
-	modImplementation 'maven.modrinth:ewc:2.1.7-1.21'
+	modImplementation 'maven.modrinth:ewc:2.2.0-1.21'
 
 
-	modApi "com.terraformersmc:modmenu:11.0.1"
+	modApi "com.terraformersmc:modmenu:12.0.0-beta.1"
 
 }
 

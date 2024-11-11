@@ -14,18 +14,17 @@ public class FlickeringStatusEffect extends StatusEffect {
     }
 
     @Override
-    public boolean applyUpdateEffect(LivingEntity entity, int amplifier) {
+    public boolean applyUpdateEffect(ServerWorld world, LivingEntity entity, int amplifier) {
         if (entity.getWorld().isClient()) {
             return false;
         }
-        ServerWorld world = (ServerWorld) entity.getWorld();
         Vec3d vec3d = entity.getPos();
         for (int i = 0; i < 400; ++i) {
             Vec3d vec3d2 = vec3d.add((float) Random.create().nextBetween(-200, 200) / 10, (float) Random.create().nextBetween(-200, 200) / 10, (float) Random.create().nextBetween(-200, 200) / 10);
             Vec3d vec3d3 = vec3d.add((float) Random.create().nextBetween(-20, 20) / 10, (float) Random.create().nextBetween(-20, 20) / 10, (float) Random.create().nextBetween(-20, 20) / 10);
             world.spawnParticles(ParticleTypes.GLOW_SQUID_INK, vec3d2.x, vec3d2.y, vec3d2.z, 0, vec3d3.x, vec3d3.y, vec3d3.z, 0.00001f);
         }
-        super.applyUpdateEffect(entity, amplifier);
+        super.applyUpdateEffect(world, entity, amplifier);
         return true;
     }
 

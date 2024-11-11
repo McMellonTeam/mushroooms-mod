@@ -3,9 +3,7 @@
   "category": "misc",
   "group": "button",
   "ingredients": [
-    {
-      "item": "mushrooomsmod:planks_peltogyne"
-    }
+    "mushrooomsmod:planks_peltogyne"
   ],
   "result": {
     "count": 1,

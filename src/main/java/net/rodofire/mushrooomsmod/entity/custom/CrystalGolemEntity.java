@@ -72,19 +72,19 @@ public class CrystalGolemEntity extends GolemEntity implements Angerable, GeoEnt
     }
 
     public static DefaultAttributeContainer.Builder createCrystalGolemAttributes() {
-        return GolemEntity.createLivingAttributes().add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.2f)
-                .add(EntityAttributes.GENERIC_MAX_HEALTH, 70.0f)
-                .add(EntityAttributes.GENERIC_KNOCKBACK_RESISTANCE, 2.5)
-                .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 15.0)
-                .add(EntityAttributes.GENERIC_FOLLOW_RANGE, 54.5);
+        return GolemEntity.createLivingAttributes().add(EntityAttributes.MOVEMENT_SPEED, 0.2f)
+                .add(EntityAttributes.MAX_HEALTH, 70.0f)
+                .add(EntityAttributes.KNOCKBACK_RESISTANCE, 2.5)
+                .add(EntityAttributes.ATTACK_DAMAGE, 15.0)
+                .add(EntityAttributes.FOLLOW_RANGE, 54.5);
     }
 
     private float getAttackDamage() {
-        return (float) this.getAttributeValue(EntityAttributes.GENERIC_ATTACK_DAMAGE);
+        return (float) this.getAttributeValue(EntityAttributes.ATTACK_DAMAGE);
     }
 
     @Override
-    public boolean tryAttack(Entity target) {
+    public boolean tryAttack(ServerWorld world, Entity target) {
         if (this.attackTicksLeft != 0) return false;
         this.attackTicksLeft = 100;
         this.getWorld().sendEntityStatus(this, EntityStatuses.PLAY_ATTACK_SOUND);
@@ -135,22 +135,26 @@ public class CrystalGolemEntity extends GolemEntity implements Angerable, GeoEnt
             Vec3d pull = this.getPos().subtract(entity.getPos());
             float f = this.getAttackDamage();
             float g = (int) f > 0 ? f / 2.0f + (float) this.random.nextInt((int) f) : f;
+            World world = entity.getWorld();
+            if(world instanceof ServerWorld) {
+                ServerWorld serverWorld = (ServerWorld) world;
 
-            boolean bl = entity.damage(this.getDamageSources().mobAttack(this), g);
-            if (pull.horizontalLength() > 5 || !bl) {
-                continue;
+                boolean bl = entity.damage(serverWorld, this.getDamageSources().mobAttack(this), g);
+                if (pull.horizontalLength() > 5 || !bl) {
+                    continue;
+                }
+                ++i;
+                if (i == 1) {
+                    this.getWorld().playSound(null, this.getBlockPos(), ModSounds.STONE_DESTROYED, SoundCategory.HOSTILE, 5f, 0.2f);
+                }
+                pull.subtract(this.getRotationVector());
+
+                double d = entity.getAttributeValue(EntityAttributes.KNOCKBACK_RESISTANCE);
+                double e = Math.max(0.0, 1.0 - d);
+
+                entity.setVelocity(-pull.getX() * 0.5f * e, 0.5f * e, -pull.getZ() * 0.5f * e);
+                entity.velocityModified = true;
             }
-            ++i;
-            if(i==1){
-                this.getWorld().playSound(null, this.getBlockPos(), ModSounds.STONE_DESTROYED, SoundCategory.HOSTILE, 5f,0.2f);
-            }
-            pull.subtract(this.getRotationVector());
-
-            double d = entity.getAttributeValue(EntityAttributes.GENERIC_KNOCKBACK_RESISTANCE);
-            double e = Math.max(0.0, 1.0 - d);
-
-            entity.setVelocity(-pull.getX() * 0.5f * e, 0.5f * e, -pull.getZ() * 0.5f * e);
-            entity.velocityModified = true;
         }
         return i!=0;
     }

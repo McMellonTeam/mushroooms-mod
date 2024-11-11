@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "#": {
-      "item": "mushrooomsmod:amber_item"
-    }
+    "#": "mushrooomsmod:amber_item"
   },
   "pattern": [
     "###",

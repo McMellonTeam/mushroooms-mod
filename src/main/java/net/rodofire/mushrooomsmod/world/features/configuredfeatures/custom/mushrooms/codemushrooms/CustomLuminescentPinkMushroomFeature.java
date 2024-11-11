@@ -41,7 +41,7 @@ public class CustomLuminescentPinkMushroomFeature extends CustomLuminescentPinkM
                 if (bl5 && bl104) continue;
                 if (bl6 && bl105) continue;
                 mutable.set(start, j, y, k);
-                if (world.getBlockState(mutable).isOpaqueFullCube(world, mutable)) continue;
+                if (world.getBlockState(mutable).isOpaqueFullCube()) continue;
                 BlockState blockState = config.capProvider.get(random, start);
                 this.setBlockState(world, mutable, blockState);
             }
@@ -75,7 +75,7 @@ public class CustomLuminescentPinkMushroomFeature extends CustomLuminescentPinkM
                 if (bl6 && bl105) continue;
                 if (bl204 && bl205) continue;
                 mutable.set(start, j, y, k);
-                if (world.getBlockState(mutable).isOpaqueFullCube(world, mutable)) continue;
+                if (world.getBlockState(mutable).isOpaqueFullCube()) continue;
                 BlockState blockState = config.capProvider.get(random, start);
                 this.setBlockState(world, mutable, blockState);
             }
@@ -150,7 +150,7 @@ public class CustomLuminescentPinkMushroomFeature extends CustomLuminescentPinkM
                 if (bl6 && bl204) continue;
                 if (bl5 && bl205) continue;
                 mutable.set(start, j, y, k);
-                if (world.getBlockState(mutable).isOpaqueFullCube(world, mutable)) continue;
+                if (world.getBlockState(mutable).isOpaqueFullCube()) continue;
                 BlockState blockState = config.capProvider.get(random, start);
                 this.setBlockState(world, mutable, blockState);
 
