@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "R": "minecraft:anvil",
+    "S": "minecraft:iron_ingot"
+  },
+  "pattern": [
+    "S S",
+    "SRS",
+    " S "
+  ],
+  "result": {
+    "count": 1,
+    "id": "mushrooomsmod:forge_block"
+  }
+}

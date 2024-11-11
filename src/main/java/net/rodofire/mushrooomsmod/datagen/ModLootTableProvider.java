@@ -231,8 +231,8 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         //Light Blocks
         addDrop(ModBlocks.RED_LANTERN);
         addDrop(ModBlocks.GREEN_LANTERN);
-        addDrop(ModBlocks.GREEN_TORCH, ModItems.GREEN_TORCH);
-        addDrop(ModBlocks.WALL_GREEN_TORCH, ModItems.GREEN_TORCH);
+        //addDrop(ModBlocks.GREEN_TORCH, ModItems.GREEN_TORCH);
+        //addDrop(ModBlocks.WALL_GREEN_TORCH, ModItems.GREEN_TORCH);
 
         //Construction Blocks
         addDrop(ModBlocks.LAVA_BLACKSTONE_BRICKS);

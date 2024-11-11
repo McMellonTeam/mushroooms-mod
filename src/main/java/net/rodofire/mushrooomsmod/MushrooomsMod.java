@@ -2,6 +2,12 @@ package net.rodofire.mushrooomsmod;
 
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
+import net.fabricmc.loader.api.FabricLoader;
+import net.minecraft.block.Block;
+import net.minecraft.item.BlockItem;
+import net.minecraft.item.Item;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
 import net.rodofire.mushrooomsmod.block.BlockUtils;
 import net.rodofire.mushrooomsmod.block.ModBlockEntities;
 import net.rodofire.mushrooomsmod.block.ModBlocks;
@@ -24,6 +30,8 @@ import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.tree.
 import net.rodofire.mushrooomsmod.world.gen.ModWorldGeneration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.List;
 
 public class MushrooomsMod implements ModInitializer {
 
@@ -65,8 +73,6 @@ public class MushrooomsMod implements ModInitializer {
         ModRecipes.registerRecipes();
 
         ModNetwork.registerC2SPackets();
-
-
         //ServerTickEvents.START_SERVER_TICK.register(new PlayerTickHandler());
 
 

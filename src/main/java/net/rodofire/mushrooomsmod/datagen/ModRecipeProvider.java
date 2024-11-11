@@ -69,7 +69,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
 
                 //Lights
-                ShapedRecipeJsonBuilder.create(registry, RecipeCategory.BUILDING_BLOCKS, ModBlocks.GREEN_LANTERN, 1)
+                /*ShapedRecipeJsonBuilder.create(registry, RecipeCategory.BUILDING_BLOCKS, ModBlocks.GREEN_LANTERN, 1)
                         .pattern("RRR")
                         .pattern("RSR")
                         .pattern("RRR")
@@ -77,7 +77,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .input('S', ModItems.GREEN_TORCH)
                         .criterion(hasItem(Items.IRON_NUGGET), conditionsFromItem(Items.IRON_NUGGET))
                         .criterion(hasItem(ModBlocks.GREEN_TORCH), conditionsFromItem(ModBlocks.GREEN_TORCH))
-                        .offerTo(exporter, "green_lantern_craft");
+                        .offerTo(exporter, "green_lantern_craft");*/
 
                 ShapedRecipeJsonBuilder.create(registry, RecipeCategory.BUILDING_BLOCKS, ModBlocks.RED_LANTERN, 1)
                         .pattern("RRR")
@@ -89,13 +89,13 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .criterion(hasItem(Blocks.REDSTONE_TORCH), conditionsFromItem(Blocks.REDSTONE_TORCH))
                         .offerTo(exporter, "red_lantern_craft");
 
-                ShapedRecipeJsonBuilder.create(registry, RecipeCategory.BUILDING_BLOCKS, ModItems.GREEN_TORCH, 1)
+                /*ShapedRecipeJsonBuilder.create(registry, RecipeCategory.BUILDING_BLOCKS, ModItems.GREEN_TORCH, 1)
                         .pattern("RS")
                         .input('R', Blocks.TORCH)
                         .input('S', Items.GREEN_DYE)
                         .criterion(hasItem(Blocks.TORCH), conditionsFromItem(Blocks.TORCH))
                         .criterion(hasItem(Items.GREEN_DYE), conditionsFromItem(Items.GREEN_DYE))
-                        .offerTo(exporter, "green_torch_craft");
+                        .offerTo(exporter, "green_torch_craft");*/
 
                 //dye
                 //yellow
@@ -149,7 +149,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 offerSingleOutputShapelessRecipe(Items.GREEN_DYE, ModBlocks.GREEN_PERENNIAL, "green_dye");
                 offerSingleOutputShapelessRecipe(Items.GREEN_DYE, ModBlocks.VIPERIN, "green_dye");
                 offerSingleOutputShapelessRecipe(Items.GREEN_DYE, ModBlocks.ARUM, "green_dye");
-/*
+
 
                 //Construction Blocks
                 ShapedRecipeJsonBuilder.create(registry, RecipeCategory.BUILDING_BLOCKS, ModBlocks.LAVA_BLACKSTONE_BRICKS, 4)

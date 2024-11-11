@@ -1,21 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_air": {
+    "has_planks_peltogyne": {
       "conditions": {
         "items": [
           {
-            "items": "minecraft:air"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "has_iron_nugget": {
-      "conditions": {
-        "items": [
-          {
-            "items": "minecraft:iron_nugget"
+            "items": "mushrooomsmod:planks_peltogyne"
           }
         ]
       },
@@ -23,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:green_lantern_craft"
+        "recipe": "minecraft:blue_luminescent_fence_gate"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -31,13 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_iron_nugget",
-      "has_air"
+      "has_planks_peltogyne"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:green_lantern_craft"
+      "minecraft:blue_luminescent_fence_gate"
     ]
   }
 }

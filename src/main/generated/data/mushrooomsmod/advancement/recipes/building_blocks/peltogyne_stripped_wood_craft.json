@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_green_dye": {
+    "has_log_stripped_peltogyne": {
       "conditions": {
         "items": [
           {
-            "items": "minecraft:green_dye"
+            "items": "mushrooomsmod:log_stripped_peltogyne"
           }
         ]
       },
@@ -13,31 +13,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:green_torch_craft"
+        "recipe": "minecraft:peltogyne_stripped_wood_craft"
       },
       "trigger": "minecraft:recipe_unlocked"
-    },
-    "has_torch": {
-      "conditions": {
-        "items": [
-          {
-            "items": "minecraft:torch"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
     }
   },
   "requirements": [
     [
       "has_the_recipe",
-      "has_torch",
-      "has_green_dye"
+      "has_log_stripped_peltogyne"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:green_torch_craft"
+      "minecraft:peltogyne_stripped_wood_craft"
     ]
   }
 }

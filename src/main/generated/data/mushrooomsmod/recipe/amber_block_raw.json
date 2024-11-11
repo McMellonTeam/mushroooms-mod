@@ -2,14 +2,15 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "R": "minecraft:torch",
-    "S": "minecraft:green_dye"
+    "#": "mushrooomsmod:amber_item"
   },
   "pattern": [
-    "RS"
+    "###",
+    "###",
+    "###"
   ],
   "result": {
     "count": 1,
-    "id": "mushrooomsmod:torch_green_item"
+    "id": "mushrooomsmod:amber_block_raw"
   }
 }

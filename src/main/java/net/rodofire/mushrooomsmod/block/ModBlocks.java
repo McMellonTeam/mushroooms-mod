@@ -9,6 +9,8 @@ import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroups;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.sound.BlockSoundGroup;
@@ -352,9 +354,10 @@ public class ModBlocks {
 
 
     private static Block registerBlock(String name, Function<AbstractBlock.Settings, Block> factory, AbstractBlock.Settings settings) {
-        Block block = Blocks.register(keyOf(name), factory, settings);
-        registerBlockItem(name, block);
-        return block;
+        Block block = factory.apply(settings.registryKey(keyOf(name)));
+        Block block2 = Registry.register(Registries.BLOCK, keyOf(name), block);
+        registerBlockItem(name, block2);
+        return block2;
     }
 
     private static RegistryKey<Block> keyOf(String id) {
@@ -362,7 +365,10 @@ public class ModBlocks {
     }
 
     private static Item registerBlockItem(String name, Block block) {
-        return ModItems.registerItem(name, settings -> new BlockItem(block, settings));
+        return Registry.register(Registries.ITEM, Identifier.of(MushrooomsMod.MOD_ID, name), new BlockItem(block, new Item.Settings().useBlockPrefixedTranslationKey().registryKey(keyOfItem(name))));
+    }
+    public static RegistryKey<Item> keyOfItem(String id) {
+        return RegistryKey.of(RegistryKeys.ITEM, Identifier.of(MushrooomsMod.MOD_ID, id));
     }
 
     private static Block registerHiddenBlock(String id, Function<AbstractBlock.Settings, Block> factory, AbstractBlock.Settings settings) {

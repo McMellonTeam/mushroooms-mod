@@ -87,8 +87,8 @@ public class ForgeRecipe implements Recipe<SingleStackRecipeInput> {
         , DataResult.success(Ingredient.ofItem(i))).forGetter(ForgeRecipe::getRecipeItems), (ItemStack.VALIDATED_CODEC.fieldOf("result")).forGetter(recipe -> recipe.output)).apply(instance, ForgeRecipe::new));
 */
         private static final MapCodec<ForgeRecipe> CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(
-                Ingredient.CODEC.fieldOf("ingredients").forGetter(recipe -> recipe.recipeItem),
-                ItemStack.CODEC.fieldOf("result").forGetter(recipe -> recipe.output)
+                Ingredient.CODEC.fieldOf("ingredient").forGetter(recipe -> recipe.recipeItem),
+                ItemStack.CODEC.fieldOf("output").forGetter(recipe -> recipe.output)
         ).apply(instance, ForgeRecipe::new));
 
         @Override

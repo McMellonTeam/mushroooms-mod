@@ -24,14 +24,14 @@ public class ImageButtonWidget extends ButtonWidget {
     @Override
     protected void renderWidget(DrawContext context, int mouseX, int mouseY, float delta) {
         MinecraftClient minecraftClient = MinecraftClient.getInstance();
-        //context.setShaderColor(1.0F, 1.0F, 1.0F, this.alpha);
+        //context.setS(1.0F, 1.0F, 1.0F, this.alpha);
         RenderSystem.enableBlend();
         RenderSystem.enableDepthTest();
         context.drawGuiTexture(RenderLayer::getGuiTextured, TEXTURES.get(this.active, this.isSelected()), this.getX(), this.getY(), this.getWidth(), this.getHeight());
         //context.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
         int i = this.active ? 16777215 : 10526880;
         this.drawMessage(context, minecraftClient.textRenderer, i | MathHelper.ceil(this.alpha * 255.0F) << 24);
-        context.drawTexture(RenderLayer::getGuiTextured, image, this.getX() + 3, this.getY() + 3, 0, 0, 0, this.width - 6, this.height - 6, this.width - 6, this.height - 6);
+        context.drawTexture(RenderLayer::getGuiTextured, image, this.getX() + 3, this.getY() + 3, 0, 0, this.width-6, this.height - 6, this.width - 6, this.height - 6);
     }
 
     private int getTextureY() {

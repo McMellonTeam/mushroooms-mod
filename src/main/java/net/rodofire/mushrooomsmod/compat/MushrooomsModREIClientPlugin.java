@@ -19,11 +19,10 @@ public class MushrooomsModREIClientPlugin implements REIClientPlugin {
         registry.addWorkstations(ForgeCategory.FORGE_EMPOWERING, EntryStacks.of(ModBlocks.FORGE_BLOCK));
     }
 
-    @Override
+    /*@Override
     public void registerDisplays(DisplayRegistry registry) {
-        registry.registerRecipeFiller(ForgeRecipe.class, ForgeRecipe.Type.INSTANCE,
-                ForgeDisplay::new);
-    }
+        //registry.registerDisplayGenerator(ForgeRecipe.class, ForgeRecipe.Type.INSTANCE);
+    }*/
 
     @Override
     public void registerScreens(ScreenRegistry registry) {
