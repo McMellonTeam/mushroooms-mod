@@ -51,10 +51,10 @@ public abstract class DefaultRockFeature extends Feature<DefaultFeatureConfig> {
         circleGen.setRadiusY(dimensions.getY());
         circleGen.setRadiusZ(dimensions.getZ());
 
-        circleGen.setYRotation(Random.create().nextBetween(-20, 20));
         circleGen.setZRotation(Random.create().nextBetween(-20, 20));
+        circleGen.setYRotation(Random.create().nextBetween(-20, 20));
 
-        layer.addBlocksToForce(Set.of(Blocks.GRASS_BLOCK, Blocks.DIRT));
+        layer.setBlocksToForce(Set.of(Blocks.GRASS_BLOCK, Blocks.DIRT));
         circleGen.setBlockLayers(layer);
 
 
@@ -84,11 +84,7 @@ public abstract class DefaultRockFeature extends Feature<DefaultFeatureConfig> {
             set.addAll(toAdd);
         }
 
-        try {
-            circleGen.place(posList);
-        } catch (IOException e) {
-            return false;
-        }
+        circleGen.place(posList);
 
         return true;
     }
