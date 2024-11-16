@@ -51,9 +51,10 @@ public class SakuraArchFeature extends Feature<ArchConfig> {
                 Blocks.STONE.getDefaultState(),
                 RockUtil.getRandomStone(Blocks.TUFF.getDefaultState()));
 
+        stone.setBlocksToForce(Set.of(Blocks.GRASS_BLOCK, Blocks.DIRT));
         torus.setBlockLayers(
                 new BlockLayer(
-                        Blocks.GRASS_BLOCK.getDefaultState(), 1, Set.of(Blocks.GRASS_BLOCK, Blocks.DIRT)),
+                        Blocks.GRASS_BLOCK.getDefaultState(), 1),
 
                 stone);
 
@@ -68,24 +69,17 @@ public class SakuraArchFeature extends Feature<ArchConfig> {
         torus.setOuterRadiusZ(radiusz);
         torus.setLayersType(Shape.LayersType.SURFACE);
 
-        int rotationX = Random.create().nextBetween(0, 180);
+        int rotationZ = Random.create().nextBetween(0, 180);
         int rotattionY = -Random.create().nextBetween(50, 140);
 
-        torus.setZRotation(rotationX);
+        torus.setZRotation(rotationZ);
         torus.setYRotation(rotattionY);
         //torus.setSecondxrotation(Random.create().nextBetween(0, 180));
 
         List<Set<BlockPos>> poslist = torus.getBlockPos();
 
         for (Set<BlockPos> set : poslist) {
-            Iterator<BlockPos> iterator = set.iterator();
-
-            while (iterator.hasNext()) {
-                BlockPos pos1 = iterator.next();
-                if (noise.GetNoise(pos1.getX(), pos1.getY(), pos1.getZ()) <= -0.8f) {
-                    iterator.remove();
-                }
-            }
+            set.removeIf(pos1 -> noise.GetNoise(pos1.getX(), pos1.getY(), pos1.getZ()) <= -0.8f);
         }
 
         /*BlockPos pos1 = new BlockPos((int) (radiusx * FastMaths.getFastCos(rotationX)), 0, (int) (radiusz * FastMaths.getFastSin(rotationX)));
@@ -101,13 +95,9 @@ public class SakuraArchFeature extends Feature<ArchConfig> {
         cylinder2.setYrotation(-rotattionY - 90);*/
 
 
-        try {
-            torus.place(poslist);
-            //cylinder.place();
-            //cylinder2.place();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        torus.place(poslist);
+        //cylinder.place();
+        //cylinder2.place();
 
         return true;
     }
