@@ -32,10 +32,10 @@
       "net.rodofire.mushrooomsmod.world.biome.ModTerrablenderAPI"
     ],
     "rei_client": [
-      "net.rodofire.mushrooomsmod.compat.MushrooomsModREIClientPlugin"
+      "net.rodofire.mushrooomsmod.compat.rei.MushrooomsModREIClientPlugin"
     ],
     "modmenu": [
-      "net.rodofire.mushrooomsmod.compat.ModMenuCompat"
+      "net.rodofire.mushrooomsmod.compat.modmenu.ModMenuCompat"
     ]
   },
   "mixins": [

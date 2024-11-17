@@ -1,13 +1,16 @@
-package net.rodofire.mushrooomsmod.compat;
+package net.rodofire.mushrooomsmod.compat.rei;
 
 import me.shedaniel.math.Rectangle;
 import me.shedaniel.rei.api.client.plugins.REIClientPlugin;
 import me.shedaniel.rei.api.client.registry.category.CategoryRegistry;
 import me.shedaniel.rei.api.client.registry.display.DisplayRegistry;
+import me.shedaniel.rei.api.client.registry.display.DynamicDisplayGenerator;
 import me.shedaniel.rei.api.client.registry.screen.ScreenRegistry;
 import me.shedaniel.rei.api.common.util.EntryStacks;
+import net.minecraft.recipe.display.RecipeDisplay;
 import net.rodofire.mushrooomsmod.block.ModBlocks;
 import net.rodofire.mushrooomsmod.recipe.ForgeRecipe;
+import net.rodofire.mushrooomsmod.recipe.display.ForgeDisplay;
 import net.rodofire.mushrooomsmod.screen.ForgeScreen;
 
 public class MushrooomsModREIClientPlugin implements REIClientPlugin {
@@ -23,6 +26,11 @@ public class MushrooomsModREIClientPlugin implements REIClientPlugin {
     public void registerDisplays(DisplayRegistry registry) {
         //registry.registerDisplayGenerator(ForgeRecipe.class, ForgeRecipe.Type.INSTANCE);
     }*/
+
+    @Override
+    public void registerDisplays(DisplayRegistry registry) {
+        registry.add(ForgeDisplay.SERIALIZER);
+    }
 
     @Override
     public void registerScreens(ScreenRegistry registry) {

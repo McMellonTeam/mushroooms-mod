@@ -7,21 +7,21 @@ import net.minecraft.network.RegistryByteBuf;
 import net.minecraft.network.codec.PacketCodec;
 import net.minecraft.recipe.*;
 import net.minecraft.recipe.book.RecipeBookCategory;
+import net.minecraft.recipe.display.RecipeDisplay;
+import net.minecraft.recipe.display.SlotDisplay;
 import net.minecraft.recipe.input.SingleStackRecipeInput;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.world.World;
+import net.rodofire.mushrooomsmod.block.ModBlocks;
+import net.rodofire.mushrooomsmod.recipe.book.ModBooksCategory;
+import net.rodofire.mushrooomsmod.recipe.display.ForgeDisplay;
 import org.jetbrains.annotations.NotNull;
 
-public class ForgeRecipe implements Recipe<SingleStackRecipeInput> {
-    @NotNull
-    private final ItemStack output;
-    @NotNull
-    private final Ingredient recipeItem;
+import java.util.List;
+import java.util.Optional;
 
-    public ForgeRecipe(Ingredient recipeItem, ItemStack output) {
-        this.output = output;
-        this.recipeItem = recipeItem;
-    }
+public record ForgeRecipe(@NotNull Ingredient recipeItem,
+                          @NotNull ItemStack output) implements Recipe<SingleStackRecipeInput> {
 
     @Override
     public boolean matches(SingleStackRecipeInput input, World world) {
@@ -39,7 +39,7 @@ public class ForgeRecipe implements Recipe<SingleStackRecipeInput> {
 
     @Override
     public RecipeSerializer<? extends Recipe<SingleStackRecipeInput>> getSerializer() {
-        return Serializer.INSTANCE;
+        return ForgeSerializer.INSTANCE;
     }
 
     @Override
@@ -55,15 +55,18 @@ public class ForgeRecipe implements Recipe<SingleStackRecipeInput> {
 
     @Override
     public RecipeBookCategory getRecipeBookCategory() {
-        return null;
+        return ModBooksCategory.FORGING;
     }
 
-    public Ingredient getRecipeItem() {
-        return recipeItem;
-    }
-
-    public ItemStack getOutput() {
-        return output;
+    @Override
+    public List<RecipeDisplay> getDisplays() {
+        return List.of(
+                new ForgeDisplay(
+                        Ingredient.toDisplay(Optional.of(this.recipeItem)),
+                        new SlotDisplay.StackSlotDisplay(this.output),
+                        new SlotDisplay.ItemSlotDisplay(ModBlocks.FORGE_BLOCK.asItem())
+                )
+        );
     }
 
 
@@ -76,16 +79,12 @@ public class ForgeRecipe implements Recipe<SingleStackRecipeInput> {
     }
 
 
-    public static class Serializer implements RecipeSerializer<ForgeRecipe> {
-        public static final Serializer INSTANCE = new Serializer();
+    public static class ForgeSerializer implements RecipeSerializer<ForgeRecipe> {
+        public static final ForgeSerializer INSTANCE = new ForgeSerializer();
         public static final String ID = "forge_crafting";
 
-        private static final PacketCodec<RegistryByteBuf, ForgeRecipe> PACKET_CODEC = PacketCodec.ofStatic(Serializer::write, Serializer::read);
-        /*
-        private static final MapCodec<ForgeRecipe> CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group((Ingredient.ENTRIES_CODEC.fieldOf("ingredients")).flatXmap(ingredients ->
-            DataResult.success(Ingredient.EMPTY, ingredients)
-        , DataResult.success(Ingredient.ofItem(i))).forGetter(ForgeRecipe::getRecipeItems), (ItemStack.VALIDATED_CODEC.fieldOf("result")).forGetter(recipe -> recipe.output)).apply(instance, ForgeRecipe::new));
-*/
+        private static final PacketCodec<RegistryByteBuf, ForgeRecipe> PACKET_CODEC = PacketCodec.ofStatic(ForgeSerializer::write, ForgeSerializer::read);
+
         private static final MapCodec<ForgeRecipe> CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(
                 Ingredient.CODEC.fieldOf("ingredient").forGetter(recipe -> recipe.recipeItem),
                 ItemStack.CODEC.fieldOf("output").forGetter(recipe -> recipe.output)
@@ -114,8 +113,8 @@ public class ForgeRecipe implements Recipe<SingleStackRecipeInput> {
         public static void write(RegistryByteBuf buf, ForgeRecipe recipe) {
             buf.writeInt(1);
 
-            Ingredient.PACKET_CODEC.encode(buf, recipe.getRecipeItem());
-            ItemStack.PACKET_CODEC.encode(buf, recipe.getOutput());
+            Ingredient.PACKET_CODEC.encode(buf, recipe.recipeItem());
+            ItemStack.PACKET_CODEC.encode(buf, recipe.output());
         }
     }
 }
