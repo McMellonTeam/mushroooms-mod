@@ -21,6 +21,7 @@ import net.rodofire.mushrooomsmod.item.ModItems;
 import net.rodofire.mushrooomsmod.networking.ModNetwork;
 import net.rodofire.mushrooomsmod.particle.ModParticles;
 import net.rodofire.mushrooomsmod.recipe.ModRecipes;
+import net.rodofire.mushrooomsmod.recipe.book.ModBooksCategory;
 import net.rodofire.mushrooomsmod.sound.ModSounds;
 import net.rodofire.mushrooomsmod.util.ModLootTableModifier;
 import net.rodofire.mushrooomsmod.world.features.configuredfeatures.ModFeatures;
@@ -70,6 +71,7 @@ public class MushrooomsMod implements ModInitializer {
 
         ModLootTableModifier.modifyLootTable();
 
+        ModBooksCategory.registerModBooksCategory();
         ModRecipes.registerRecipes();
 
         ModNetwork.registerC2SPackets();

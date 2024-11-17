@@ -49,11 +49,7 @@ public class ArchFeature extends Feature<ArchConfig> {
         sphereGen.setYRotation(Random.create().nextBetween(50, 140));
         sphereGen.setSecondYRotation(Random.create().nextBetween(0, 180));
 
-        try {
-            sphereGen.place();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        sphereGen.place();
 
         return false;
     }

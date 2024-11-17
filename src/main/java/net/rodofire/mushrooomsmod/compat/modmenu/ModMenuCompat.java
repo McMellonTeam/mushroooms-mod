@@ -1,4 +1,4 @@
-package net.rodofire.mushrooomsmod.compat;
+package net.rodofire.mushrooomsmod.compat.modmenu;
 
 import com.terraformersmc.modmenu.api.ConfigScreenFactory;
 import com.terraformersmc.modmenu.api.ModMenuApi;

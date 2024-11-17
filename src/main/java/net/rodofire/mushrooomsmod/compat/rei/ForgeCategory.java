@@ -1,4 +1,4 @@
-package net.rodofire.mushrooomsmod.compat;
+package net.rodofire.mushrooomsmod.compat.rei;
 
 import me.shedaniel.math.Point;
 import me.shedaniel.math.Rectangle;

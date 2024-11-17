@@ -1,4 +1,4 @@
-package net.rodofire.mushrooomsmod.compat;
+package net.rodofire.mushrooomsmod.compat.rei;
 
 import me.shedaniel.rei.api.common.category.CategoryIdentifier;
 import me.shedaniel.rei.api.common.display.Display;
@@ -18,21 +18,22 @@ import java.util.List;
 public class ForgeDisplay extends BasicDisplay {
     private RecipeEntry<ForgeRecipe> recipe;
 
-    public ForgeDisplay(List<EntryIngredient> inputs, List<EntryIngredient> outputs) {
-        super(inputs, outputs);
+    public ForgeDisplay(EntryIngredient inputs, EntryIngredient outputs) {
+        super(Collections.singletonList(inputs), Collections.singletonList(outputs));
     }
 
-    /*public ForgeDisplay(RecipeEntry<ForgeRecipe> recipe) {
-        super(getInputList(recipe.value()), List.of(EntryIngredient.of(EntryStacks.of(recipe.value().getOutput()))));
+
+    public ForgeDisplay(RecipeEntry<ForgeRecipe> recipe) {
+        super(getInputList(recipe.value()), List.of(EntryIngredient.of(EntryStacks.of(recipe.value().output()))));
         this.recipe = recipe;
-    }*/
+    }
 
 
 
     private static List<EntryIngredient> getInputList(ForgeRecipe recipe) {
         if (recipe == null) return Collections.emptyList();
         List<EntryIngredient> list = new ArrayList<>();
-        list.add(EntryIngredients.ofIngredient(recipe.getRecipeItem()));
+        list.add(EntryIngredients.ofIngredient(recipe.recipeItem()));
         return list;
     }
 
@@ -45,4 +46,6 @@ public class ForgeDisplay extends BasicDisplay {
     public @Nullable DisplaySerializer<? extends Display> getSerializer() {
         return null;
     }
+
+
 }

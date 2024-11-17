@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "mushrooomsmod",
-  "version": "0.0.14-1.21.3",
+  "version": "0.0.15-1.21.3",
   "name": "Mushroooms Mod",
   "description": "This is my first mod where I try to add new mushrooms a bunch of things to minecraft!",
   "authors": [
@@ -32,10 +32,10 @@
       "net.rodofire.mushrooomsmod.world.biome.ModTerrablenderAPI"
     ],
     "rei_client": [
-      "net.rodofire.mushrooomsmod.compat.MushrooomsModREIClientPlugin"
+      "net.rodofire.mushrooomsmod.compat.rei.MushrooomsModREIClientPlugin"
     ],
     "modmenu": [
-      "net.rodofire.mushrooomsmod.compat.ModMenuCompat"
+      "net.rodofire.mushrooomsmod.compat.modmenu.ModMenuCompat"
     ]
   },
   "mixins": [
