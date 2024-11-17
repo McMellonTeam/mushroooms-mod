@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "mushrooomsmod",
-  "version": "0.0.12-1.21",
+  "version": "0.0.15-1.21",
   "name": "Mushroooms Mod",
   "description": "This is my first mod where I try to add new mushrooms a bunch of things to minecraft!",
   "authors": [
@@ -44,13 +44,19 @@
   ],
   "depends": {
     "fabricloader": ">=0.15.11",
-    "minecraft": ["1.21","1.21.1"],
+    "minecraft": [
+      "1.21",
+      "1.21.1"
+    ],
     "java": ">=21",
     "geckolib": ">=4.5.6",
-    "terrablender" : ">=4.0.0.1",
+    "terrablender": ">=4.0.0.1",
     "fabric-api": "*",
     "cloth-config": ">=15.0.127",
-    "easierworldcreator": ">=2.1.7-1.21"
+    "easierworldcreator": ">=2.2.1-1.21"
+  },
+  "breaks": {
+    "easierworldcreator": "<2.2.1-1.21"
   },
   "suggests": {
     "another-mod": "*"
