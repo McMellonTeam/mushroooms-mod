@@ -61,11 +61,7 @@ public class ColorfulTreeFoliagePlacer extends FoliagePlacer {
         sphere.setHalfSphere(SphereGen.SphereType.HALF);
         BlockState state = getLeaveBlock().with(Properties.PERSISTENT, true);
         sphere.setBlockLayers(new BlockLayer(state));
-        try {
-            sphere.place();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        sphere.place();
         for (int x = -radiusB; x <= radiusB; x++) {
             int xx = x * x;
             for (int z = -radiusB; z <= radiusB; z++) {
