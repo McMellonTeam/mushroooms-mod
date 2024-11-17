@@ -84,11 +84,7 @@ public abstract class DefaultRockFeature extends Feature<DefaultFeatureConfig> {
             set.addAll(toAdd);
         }
 
-        try {
-            circleGen.place(posList);
-        } catch (IOException e) {
-            return false;
-        }
+        circleGen.place(posList);
 
         return true;
     }

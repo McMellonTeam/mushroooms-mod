@@ -13,7 +13,6 @@
     "issues": "https://github.com/RodoFire/mushroooms-mod/issues"
   },
   "license": "MIT with aditions",
-  "license link": "https://github.com/RodoFire/mushroooms-mod/blob/main/LICENSE",
   "icon": "assets/mushrooomsmod/icon.png",
   "environment": "*",
   "entrypoints": {
@@ -51,6 +50,9 @@
     "fabric-api": "*",
     "cloth-config": ">=13.0.114",
     "easierworldcreator": ">=2.1.5-1.20.4"
+  },
+  "breaks" : {
+    "easierworldcreator" : "<2.2.1-1.20.1"
   },
   "suggests": {
     "another-mod": "*"

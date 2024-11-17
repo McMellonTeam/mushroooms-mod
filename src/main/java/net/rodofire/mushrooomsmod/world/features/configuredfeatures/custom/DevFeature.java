@@ -114,13 +114,9 @@ public class DevFeature extends Feature<ModSimpleBlockFeatureConfig> {
         cylinder2.setYRotation(-rotattionY);
 
 
-        try {
-            torus.place(poslist);
-            cylinder.place();
-            cylinder2.place();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        torus.place(poslist);
+        cylinder.place();
+        cylinder2.place();
 
         return true;
 
