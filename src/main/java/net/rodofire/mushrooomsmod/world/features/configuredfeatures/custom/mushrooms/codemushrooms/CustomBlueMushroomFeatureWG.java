@@ -7,16 +7,17 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.StructureWorldAccess;
-import net.rodofire.easierworldcreator.shapegen.SphereGen;
-import net.rodofire.easierworldcreator.shapeutil.BlockLayer;
-import net.rodofire.easierworldcreator.shapeutil.BlockList;
-import net.rodofire.easierworldcreator.shapeutil.ShapeBase;
-import net.rodofire.easierworldcreator.shapeutil.ShapePlaceType;
-import net.rodofire.easierworldcreator.util.FastMaths;
-import net.rodofire.easierworldcreator.util.MathUtil;
-import net.rodofire.easierworldcreator.worldgenutil.BlockPlaceUtil;
-import net.rodofire.easierworldcreator.worldgenutil.FastNoiseLite;
-import net.rodofire.easierworldcreator.worldgenutil.GenLines;
+import net.rodofire.easierworldcreator.blockdata.blocklist.basic.DefaultBlockList;
+import net.rodofire.easierworldcreator.blockdata.layer.BlockLayer;
+import net.rodofire.easierworldcreator.blockdata.layer.BlockLayerComparator;
+import net.rodofire.easierworldcreator.maths.FastMaths;
+import net.rodofire.easierworldcreator.maths.MathUtil;
+import net.rodofire.easierworldcreator.placer.blocks.util.BlockPlaceUtil;
+import net.rodofire.easierworldcreator.shape.block.gen.SphereGen;
+import net.rodofire.easierworldcreator.shape.block.instanciator.AbstractBlockShapeBase;
+import net.rodofire.easierworldcreator.shape.block.instanciator.AbstractBlockShapePlaceType;
+import net.rodofire.easierworldcreator.shape.block.simplegen.GenLines;
+import net.rodofire.easierworldcreator.util.FastNoiseLite;
 import net.rodofire.mushrooomsmod.block.ModBlocks;
 import net.rodofire.mushrooomsmod.world.features.config.ModMushroomFeatureConfig;
 
@@ -29,16 +30,18 @@ public class CustomBlueMushroomFeatureWG extends CustomBlueMushroom {
 
 
     @Override
-    public void generateLargeCap(StructureWorldAccess world, Random random, BlockPos pos, int maxLarge, BlockState state, int large, int height, BlockList blockLists, int yOffset) {
+    public void generateLargeCap(StructureWorldAccess world, Random random, BlockPos pos, int maxLarge, BlockState state, int large, int height, DefaultBlockList blockLists, int yOffset) {
         FastNoiseLite noise = new FastNoiseLite((int) world.getSeed());
         noise.SetNoiseType(FastNoiseLite.NoiseType.Perlin);
         noise.SetFrequency(0.06f);
-        SphereGen sphere = new SphereGen(world, pos.up(height-2), ShapeBase.PlaceMoment.OTHER, large);
+        SphereGen sphere = new SphereGen(world, pos.up(height - 2), AbstractBlockShapeBase.PlaceMoment.OTHER, large);
         sphere.setRadiusY(height);
-        sphere.setZRotation(MathUtil.getRandomOpposite() * (Random.create().nextBetween(0, 20) + Random.create().nextBetween(0, 10)));
-        sphere.setSecondYRotation(Random.create().nextBetween(0,180));
-        sphere.setBlockLayers(new BlockLayer(List.of(ModBlocks.BLUE_MUSHROOM_BLOCK.getDefaultState(), ModBlocks.BLUE_MUSHROOM_BLOCK.getDefaultState(), ModBlocks.BLUE_MUSHROOM_BLOCK.getDefaultState(), ModBlocks.BLUE_ALTERED_MUSHROOM_BLOCK.getDefaultState())));
-        sphere.setLayerPlace(ShapePlaceType.LayerPlace.RANDOM);
+        sphere.setZRotation(MathUtil.getRandomOpposite() * (random.nextBetween(0, 20) + random.nextBetween(0, 10)));
+        sphere.setSecondYRotation(random.nextBetween(0, 180));
+
+        BlockLayer layer = new BlockLayer(List.of(ModBlocks.BLUE_MUSHROOM_BLOCK.getDefaultState(), ModBlocks.BLUE_ALTERED_MUSHROOM_BLOCK.getDefaultState()), List.of((short) 3, (short) 1));
+        sphere.setBlockLayer(new BlockLayerComparator(layer));
+        sphere.setLayerPlace(AbstractBlockShapePlaceType.LayerPlace.RANDOM);
         List<Set<BlockPos>> posList = sphere.getBlockPos();
 
         Map<Pair<Integer, Integer>, Float> offset = new HashMap<>();
@@ -59,7 +62,7 @@ public class CustomBlueMushroomFeatureWG extends CustomBlueMushroom {
     }
 
     @Override
-    public BlockList generateLargeTrunk(StructureWorldAccess world, Random random, BlockPos pos, BlockState trunk, boolean force, int height, int maxlarge, int minlarge) {
+    public DefaultBlockList generateLargeTrunk(StructureWorldAccess world, Random random, BlockPos pos, BlockState trunk, boolean force, int height, int maxlarge, int minlarge) {
         BlockPos.Mutable mutable = new BlockPos.Mutable();
         FastNoiseLite noise = new FastNoiseLite((int) world.getSeed());
         noise.SetFractalType(FastNoiseLite.FractalType.FBm);
