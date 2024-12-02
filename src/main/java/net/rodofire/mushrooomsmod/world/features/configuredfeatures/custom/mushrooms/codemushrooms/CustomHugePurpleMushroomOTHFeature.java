@@ -4,32 +4,31 @@ import com.mojang.serialization.Codec;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Vec3i;
 import net.minecraft.util.math.random.Random;
-import net.minecraft.world.gen.feature.DefaultFeatureConfig;
 import net.rodofire.easierworldcreator.blockdata.blocklist.basic.DefaultBlockList;
 import net.rodofire.easierworldcreator.blockdata.blocklist.basic.comparator.DefaultBlockListComparator;
 import net.rodofire.easierworldcreator.blockdata.blocklist.ordered.comparator.DefaultOrderedBlockListComparator;
 import net.rodofire.easierworldcreator.blockdata.sorter.BlockSorter;
 import net.rodofire.easierworldcreator.maths.MathUtil;
 import net.rodofire.mushrooomsmod.block.ModBlocks;
+import net.rodofire.mushrooomsmod.world.features.config.PurpleMushroomConfig;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class CustomHugePurpleMushroomFeature extends CustomHugePurpleMushroom {
+public class CustomHugePurpleMushroomOTHFeature extends CustomHugePurpleMushroomOTH {
     int xDir;
     int zDir;
     int maxHeight;
 
-    public CustomHugePurpleMushroomFeature(Codec<DefaultFeatureConfig> configCodec) {
+    public CustomHugePurpleMushroomOTHFeature(Codec<PurpleMushroomConfig> configCodec) {
         super(configCodec);
     }
 
     @Override
-    protected DefaultBlockList getTrunkCoordinates(BlockPos base, int direction, int trunk) {
+    protected DefaultBlockList getTrunkCoordinates(BlockPos base, int direction, int trunk, PurpleMushroomConfig config) {
         calculateDirection(direction);
-        return calculateTrunkCoordinates(direction, base, trunk);
+        return calculateTrunkCoordinates(direction, base, trunk, config);
     }
 
     Integer[] getOffset(int direction) {
@@ -94,11 +93,11 @@ public class CustomHugePurpleMushroomFeature extends CustomHugePurpleMushroom {
     /**
      * méthode pour calculer les coordonnées du trunk
      */
-    private DefaultBlockList calculateTrunkCoordinates(int direction, BlockPos pos, int trunk) {
+    private DefaultBlockList calculateTrunkCoordinates(int direction, BlockPos pos, int trunk, PurpleMushroomConfig config) {
         ///on calcule la direction
         calculateDirection(direction);
         int startHeight = Random.create().nextBetween(1, 6);
-        this.maxHeight = Random.create().nextBetween(12, 26);
+        this.maxHeight = Random.create().nextBetween(config.minHeight(), config.maxHeight());
         List<BlockPos> posList = new ArrayList<>();
 
         ///on place les blocks jusqu'en startheight
@@ -115,7 +114,6 @@ public class CustomHugePurpleMushroomFeature extends CustomHugePurpleMushroom {
             blockList.addBlockPos(moveTrunk(direction, blockList.getLastPos(), oldHeight, actualHeight));
             oldHeight = blockList.getLastPos().getY() - actualHeight - pos.getY();
             actualHeight += oldHeight;
-            System.out.println(actualHeight + "   " + oldHeight);
         } while (actualHeight < maxHeight);
 
         ///on met la pos de fin
@@ -125,9 +123,9 @@ public class CustomHugePurpleMushroomFeature extends CustomHugePurpleMushroom {
 
 
     @Override
-    protected DefaultOrderedBlockListComparator getCapCoordinates(BlockPos pos) {
+    protected DefaultOrderedBlockListComparator getCapCoordinates(BlockPos pos, PurpleMushroomConfig config) {
         int height = Random.create().nextBetween(2, 3);
-        int radius = getradiusLarge();
+        int radius = getRadius(config);
         DefaultBlockListComparator blockLists = new DefaultBlockListComparator();
 
 
@@ -167,12 +165,7 @@ public class CustomHugePurpleMushroomFeature extends CustomHugePurpleMushroom {
         return blockLists.getOrderedSorted(sorter);
     }
 
-    public int getradiusLarge() {
-        int random = Random.create().nextBetween(2, 12);
-        if (random <= 4) return 2;
-        if (random <= 7) return 3;
-        if (random <= 9) return 4;
-        if (random <= 11) return 5;
-        return 6;
+    public int getRadius(PurpleMushroomConfig config) {
+        return Random.create().nextBetween(config.minCapSize(), config.maxCapSize());
     }
 }
