@@ -11,11 +11,12 @@ import net.minecraft.world.gen.feature.HugeMushroomFeatureConfig;
 import net.minecraft.world.gen.feature.util.FeatureContext;
 import net.rodofire.mushrooomsmod.block.ModBlocks;
 
-import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
 
-public abstract class CustomYellowMushroom extends Feature<HugeMushroomFeatureConfig> {
+public abstract class CustomYellowMushroomWG extends Feature<HugeMushroomFeatureConfig> {
 
-    public CustomYellowMushroom(Codec<HugeMushroomFeatureConfig> configCodec) {
+    public CustomYellowMushroomWG(Codec<HugeMushroomFeatureConfig> configCodec) {
         super(configCodec);
     }
 
@@ -53,7 +54,7 @@ public abstract class CustomYellowMushroom extends Feature<HugeMushroomFeatureCo
         boolean flatcap = false;
         float multiplier = 1.5f;
 
-        Integer[] coordinates;
+        Set<BlockPos> coordinates;
 
         int large;
         int height;
@@ -68,7 +69,7 @@ public abstract class CustomYellowMushroom extends Feature<HugeMushroomFeatureCo
             height = Random.create().nextBetween(10, 20);
             large = Random.create().nextBetween(4, 8);
 
-            ArrayList<Double> direction = this.direction(world, random, blockPos, height, mutable, hugeMushroomFeatureConfig);
+            List<Double> direction = this.direction(world, random, blockPos, height, mutable, hugeMushroomFeatureConfig);
             double randomx = (direction.get(0));
             double randomz = direction.get(1);
             double phi = direction.get(2);
@@ -84,7 +85,7 @@ public abstract class CustomYellowMushroom extends Feature<HugeMushroomFeatureCo
             height = Random.create().nextBetween(5, 11);
             large = Random.create().nextBetween(2, 4);
 
-            ArrayList<Double> direction = this.direction(world, random, blockPos, height, mutable, hugeMushroomFeatureConfig);
+            List<Double> direction = this.direction(world, random, blockPos, height, mutable, hugeMushroomFeatureConfig);
             double randomx = (direction.get(0));
             double randomz = direction.get(1);
             double phi = direction.get(2);
@@ -103,14 +104,14 @@ public abstract class CustomYellowMushroom extends Feature<HugeMushroomFeatureCo
         return this.generateCap(world, random, blockPos, height, mutable, hugeMushroomFeatureConfig, large, coordinates);
     }
 
-    protected abstract Integer[] generateHugeTrunk(StructureWorldAccess world, Random random, BlockPos pos, BlockPos.Mutable mutable, int height, HugeMushroomFeatureConfig config, int randomx, int randomz, double phi, double theta);
+    protected abstract Set<BlockPos> generateHugeTrunk(StructureWorldAccess world, Random random, BlockPos pos, BlockPos.Mutable mutable, int height, HugeMushroomFeatureConfig config, int randomx, int randomz, double phi, double theta);
 
-    protected abstract Integer[] generateTrunk(StructureWorldAccess world, Random random, BlockPos pos, BlockPos.Mutable mutable, int height, HugeMushroomFeatureConfig config, int randomx, int randomz, double phi, double theta);
+    protected abstract Set<BlockPos> generateTrunk(StructureWorldAccess world, Random random, BlockPos pos, BlockPos.Mutable mutable, int height, HugeMushroomFeatureConfig config, int randomx, int randomz, double phi, double theta);
 
-    protected abstract boolean generateCap(StructureWorldAccess var1, Random var2, BlockPos var3, int var4, BlockPos.Mutable var5, HugeMushroomFeatureConfig var6, int large, Integer[] coordinates);
+    protected abstract boolean generateCap(StructureWorldAccess var1, Random var2, BlockPos var3, int var4, BlockPos.Mutable var5, HugeMushroomFeatureConfig var6, int large, Set<BlockPos> coordinates);
 
-    protected abstract boolean generateFlatterCap(StructureWorldAccess var1, Random var2, BlockPos var3, int var4, BlockPos.Mutable var5, HugeMushroomFeatureConfig var6, int large, Integer[] coordinates);
+    protected abstract boolean generateFlatterCap(StructureWorldAccess var1, Random var2, BlockPos var3, int var4, BlockPos.Mutable var5, HugeMushroomFeatureConfig var6, int large, Set<BlockPos> coordinates);
 
-    protected abstract ArrayList<Double> direction(StructureWorldAccess world, Random random, BlockPos pos, int height, BlockPos.Mutable mutable, HugeMushroomFeatureConfig config);
+    protected abstract List<Double> direction(StructureWorldAccess world, Random random, BlockPos pos, int height, BlockPos.Mutable mutable, HugeMushroomFeatureConfig config);
 
 }
