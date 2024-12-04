@@ -2,6 +2,7 @@ package net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.mush
 
 import com.mojang.serialization.Codec;
 import net.minecraft.block.Blocks;
+import net.minecraft.util.Pair;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.Direction;
@@ -15,6 +16,7 @@ import net.rodofire.easierworldcreator.blockdata.layer.BlockLayer;
 import net.rodofire.easierworldcreator.blockdata.layer.BlockLayerComparator;
 import net.rodofire.easierworldcreator.shape.block.gen.SphereGen;
 import net.rodofire.easierworldcreator.shape.block.instanciator.AbstractBlockShapeBase;
+import net.rodofire.easierworldcreator.util.FastNoiseLite;
 import net.rodofire.easierworldcreator.util.WorldGenUtil;
 import net.rodofire.mushrooomsmod.block.ModBlocks;
 
@@ -113,8 +115,13 @@ public class OrangeMushroomFeatureWG extends OrangeMushroomWG {
             posSet.removeAll(blockPosSet);
         }
 
+        Map<Pair<Integer, Integer>, Float> noiseMap = new HashMap<>();
+        FastNoiseLite noise = new FastNoiseLite((int) world.getSeed());
+        noise.SetFrequency(0.1f);
         Map<ChunkPos, Set<BlockPos>> chunkMap = new HashMap<>();
         for (BlockPos pos1 : posSet) {
+            Pair<Integer, Integer> pair = new Pair<>(pos1.getX(), pos1.getZ());
+            noiseMap.computeIfAbsent(pair, fun -> noise.GetNoise(pair.getLeft(), pair.getRight()));
             WorldGenUtil.modifyChunkMap(pos1, chunkMap);
         }
 

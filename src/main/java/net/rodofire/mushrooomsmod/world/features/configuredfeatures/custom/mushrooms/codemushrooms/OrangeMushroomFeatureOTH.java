@@ -20,6 +20,7 @@ import net.rodofire.easierworldcreator.blockdata.sorter.BlockSorter;
 import net.rodofire.easierworldcreator.placer.blocks.animator.StructurePlaceAnimator;
 import net.rodofire.easierworldcreator.shape.block.gen.SphereGen;
 import net.rodofire.easierworldcreator.shape.block.instanciator.AbstractBlockShapeBase;
+import net.rodofire.easierworldcreator.util.FastNoiseLite;
 import net.rodofire.easierworldcreator.util.WorldGenUtil;
 import net.rodofire.mushrooomsmod.block.ModBlocks;
 
@@ -118,9 +119,15 @@ public class OrangeMushroomFeatureOTH extends OrangeMushroomOTH {
             posSet.removeAll(blockPosSet);
         }
 
+        Map<Pair<Integer, Integer>, Float> noiseMap = new HashMap<>();
+        FastNoiseLite noise = new FastNoiseLite((int) world.getSeed());
+        noise.SetFrequency(0.1f);
         Map<ChunkPos, Set<BlockPos>> chunkMap = new HashMap<>();
         for (BlockPos pos1 : posSet) {
-            WorldGenUtil.modifyChunkMap(pos1, chunkMap);
+            Pair<Integer, Integer> pair = new Pair<>(pos1.getX(), pos1.getZ());
+            noiseMap.computeIfAbsent(pair, fun -> noise.GetNoise(pair.getLeft(), pair.getRight()));
+
+            WorldGenUtil.modifyChunkMap(pos1.up((int) (3 * noiseMap.get(pair))), chunkMap);
         }
         System.out.println("hudeif");
 
