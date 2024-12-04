@@ -73,7 +73,7 @@ public abstract class YellowMushroomOTH extends Feature<HugeMushroomFeatureConfi
 
         BlockPos end;
 
-        if (MathUtil.getRandomBoolean(0.3f)) {
+        if (world.getBlockState(blockPos.east()).isOf(ModBlocks.ORANGE_MUSHROOM) || world.getBlockState(blockPos.north()).isOf(ModBlocks.ORANGE_MUSHROOM) || world.getBlockState(blockPos.south()).isOf(ModBlocks.ORANGE_MUSHROOM) || world.getBlockState(blockPos.west()).isOf(ModBlocks.ORANGE_MUSHROOM)) {
             height = Random.create().nextBetween(10, 20);
             large = Random.create().nextBetween(5, 9);
 
@@ -109,7 +109,7 @@ public abstract class YellowMushroomOTH extends Feature<HugeMushroomFeatureConfi
         return this.place(world, blockPos, end, coordinates, spheres[0], spheres[1]);
     }
 
-    protected abstract DefaultBlockListComparator generateHugeTrunk(StructureWorldAccess world, BlockPos pos, BlockPos pos2, int height, HugeMushroomFeatureConfig config);
+    protected abstract DefaultBlockListComparator generateHugeTrunk(StructureWorldAccess world, BlockPos blockPos, BlockPos pos2, int height, HugeMushroomFeatureConfig config);
 
     protected abstract DefaultBlockListComparator generateTrunk(StructureWorldAccess world, BlockPos pos, BlockPos pos2, int height, HugeMushroomFeatureConfig config);
 
