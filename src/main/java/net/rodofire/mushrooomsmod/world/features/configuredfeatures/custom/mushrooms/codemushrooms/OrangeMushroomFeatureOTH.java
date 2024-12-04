@@ -25,7 +25,7 @@ import net.rodofire.mushrooomsmod.block.ModBlocks;
 
 import java.util.*;
 
-public class OrangeMushroomFeatureOTH extends OrangeMushroom {
+public class OrangeMushroomFeatureOTH extends OrangeMushroomOTH {
     public OrangeMushroomFeatureOTH(Codec<DefaultFeatureConfig> configCodec) {
         super(configCodec);
     }

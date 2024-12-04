@@ -13,10 +13,10 @@ import net.rodofire.easierworldcreator.placer.blocks.util.BlockPlaceUtil;
 import net.rodofire.easierworldcreator.shape.block.gen.SphereGen;
 import net.rodofire.mushrooomsmod.block.ModBlocks;
 
-public abstract class OrangeMushroom extends Feature<DefaultFeatureConfig> {
+public abstract class OrangeMushroomOTH extends Feature<DefaultFeatureConfig> {
     protected BlockPos end;
 
-    public OrangeMushroom(Codec<DefaultFeatureConfig> configCodec) {
+    public OrangeMushroomOTH(Codec<DefaultFeatureConfig> configCodec) {
         super(configCodec);
     }
 
