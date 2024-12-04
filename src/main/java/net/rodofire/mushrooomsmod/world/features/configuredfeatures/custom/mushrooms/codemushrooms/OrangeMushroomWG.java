@@ -2,129 +2,98 @@ package net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.mush
 
 import com.mojang.serialization.Codec;
 import net.minecraft.block.Blocks;
-import net.minecraft.util.Pair;
+import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.ChunkPos;
-import net.minecraft.util.math.Direction;
-import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.StructureWorldAccess;
 import net.minecraft.world.gen.feature.DefaultFeatureConfig;
-import net.rodofire.easierworldcreator.blockdata.blocklist.BlockListUtil;
+import net.minecraft.world.gen.feature.Feature;
+import net.minecraft.world.gen.feature.util.FeatureContext;
 import net.rodofire.easierworldcreator.blockdata.blocklist.basic.DefaultBlockList;
 import net.rodofire.easierworldcreator.blockdata.blocklist.basic.comparator.DefaultBlockListComparator;
-import net.rodofire.easierworldcreator.blockdata.blocklist.ordered.comparator.DefaultOrderedBlockListComparator;
-import net.rodofire.easierworldcreator.blockdata.layer.BlockLayer;
-import net.rodofire.easierworldcreator.blockdata.layer.BlockLayerComparator;
-import net.rodofire.easierworldcreator.blockdata.sorter.BlockSorter;
-import net.rodofire.easierworldcreator.placer.blocks.animator.StructurePlaceAnimator;
+import net.rodofire.easierworldcreator.maths.MathUtil;
+import net.rodofire.easierworldcreator.placer.blocks.util.BlockPlaceUtil;
 import net.rodofire.easierworldcreator.shape.block.gen.SphereGen;
-import net.rodofire.easierworldcreator.shape.block.instanciator.AbstractBlockShapeBase;
-import net.rodofire.easierworldcreator.util.WorldGenUtil;
 import net.rodofire.mushrooomsmod.block.ModBlocks;
 
-import java.util.*;
+public abstract class OrangeMushroomWG extends Feature<DefaultFeatureConfig> {
+    protected BlockPos end;
 
-public class OrangeMushroomWG extends OrangeMushroom{
     public OrangeMushroomWG(Codec<DefaultFeatureConfig> configCodec) {
         super(configCodec);
     }
 
-    @Override
-    protected DefaultBlockList getHugeTrunk(StructureWorldAccess world, Random random, BlockPos pos, int radius, int height) {
-        List<BlockPos> posList = new ArrayList<>();
-        for (int i = 0; i < height; i++) {
-            posList.add(pos.up(i));
-        }
-
-        for (int i = -2; i <= 2; i++) {
-            for (int j = -2; j <= 2; j++) {
-                int distance = Math.abs(i) + Math.abs(j);
-                if (distance != 0 && distance != 4) {
-                    int partialHeight = (int) ((float) random.nextBetween(3, 8) / distance);
-                    for (int k = 0; k < partialHeight; k++) {
-                        posList.add(pos.add(i, k, j));
-                    }
+    public boolean canGenerate(StructureWorldAccess world, BlockPos pos, int large, int largeY, int height) {
+        for (int i = -1; i <= 1; ++i) {
+            for (int j = 1; j <= height; ++j) {
+                for (int k = -1; k <= 1; ++k) {
+                    if (BlockPlaceUtil.verifyBlock(world, false, null, pos.add(i, j, k))) continue;
+                    return false;
                 }
             }
         }
-        for (int i = -2; i <= 2; i++) {
-            for (int j = -2; j <= 2; j++) {
-                int distance = Math.abs(i) + Math.abs(j);
-                if (distance != 0 && distance != 4) {
-                    int partialHeight = (int) ((float) random.nextBetween(3, 8) / distance);
-                    for (int k = 0; k < partialHeight; k++) {
-                        posList.add(end.add(i, -k, j));
-                    }
+        for (int i = -large; i <= large; ++i) {
+            for (int j = -largeY / 2; j <= largeY; ++j) {
+                for (int k = -large; k <= large; ++k) {
+                    if (BlockPlaceUtil.verifyBlock(world, false, null, end.add(i, j, k))) continue;
+                    return false;
                 }
             }
         }
-        return new DefaultBlockList(posList, Blocks.MUSHROOM_STEM.getDefaultState());
+        return true;
     }
 
     @Override
-    protected DefaultBlockList getTrunk(StructureWorldAccess world, Random random, BlockPos pos, int radius, int height) {
-        List<BlockPos> posList = new ArrayList<>();
-        for (int i = 0; i < height; i++) {
-            posList.add(pos.up(i));
-        }
+    public boolean generate(FeatureContext<DefaultFeatureConfig> context) {
+        StructureWorldAccess world = context.getWorld();
+        BlockPos pos = context.getOrigin();
+        Random random = context.getRandom();
 
-        for (int i = -1; i <= 1; i++) {
-            for (int j = -1; j <= 1; j++) {
-                int distance = Math.abs(i) + Math.abs(j);
-                if (distance != 0) {
-                    int partialHeight = (int) ((float) random.nextBetween(2, 6) / distance);
-                    for (int k = 0; k < partialHeight; k++) {
-                        posList.add(pos.add(i, k, j));
-                    }
-                }
+        if(world.getBlockState(pos).isOf(Blocks.WATER))
+            return false;
+        if(!world.getBlockState(pos.down()).isIn(BlockTags.MUSHROOM_GROW_BLOCK))
+            return false;
+
+        DefaultBlockList blockList;
+        int radius;
+        int radiusY;
+
+        if (MathUtil.getRandomBoolean(0.3f)) {
+            radius = random.nextBetween(5, 8);
+            radiusY = (int) ((float) random.nextBetween(20, 55) / 10 * radius + random.nextBetween(2, 6));
+            int height = 3 * radiusY / 4 + random.nextBetween(-3, 3);
+
+            this.end = pos.up(height);
+            if (!canGenerate(world, pos, radius, radiusY, height)) {
+                return false;
             }
-        }
-        for (int i = -1; i <= 1; i++) {
-            for (int j = -1; j <= 1; j++) {
-                int distance = Math.abs(i) + Math.abs(j);
-                if (distance != 0) {
-                    int partialHeight = (int) ((float) random.nextBetween(2, 6) / distance);
-                    for (int k = 0; k < partialHeight; k++) {
-                        posList.add(end.add(i, -k, j));
-                    }
-                }
+
+            blockList = this.getHugeTrunk(world, random, pos, radius, height);
+            this.getCap(world, random, pos, radius, radiusY, blockList);
+        } else {
+            radius = random.nextBetween(3, 5);
+            radiusY = (int) ((float) random.nextBetween(20, 40) / 10 * radius + random.nextBetween(2, 6));
+            int height = 3 * radiusY / 4;
+
+            this.end = pos.up(height);
+            if (!canGenerate(world, pos, radius, radiusY, height)) {
+                return false;
             }
+
+            blockList = this.getTrunk(world, random, pos, radius, height);
         }
-        return new DefaultBlockList(posList, Blocks.MUSHROOM_STEM.getDefaultState());
+        SphereGen[] spgeres = this.getCap(world, random, pos, radius, radiusY, blockList);
+        this.place(world, pos, end, new DefaultBlockListComparator(blockList), spgeres[0], spgeres[1]);
+        return true;
     }
 
-    @Override
-    protected SphereGen[] getCap(StructureWorldAccess world, Random random, BlockPos pos, int radius, int radiusY, DefaultBlockList trunk) {
-        SphereGen sphere = new SphereGen(world, end.down(radiusY / 2), AbstractBlockShapeBase.PlaceMoment.ANIMATED_OTHER, radius);
-        sphere.setRadiusY(radiusY);
-        sphere.setHalfSphere(SphereGen.SphereType.HALF);
-        sphere.setHalfSphereDirection(Direction.UP);
-        sphere.setBlockLayer(new BlockLayerComparator(new BlockLayer(List.of(ModBlocks.ORANGE_MUSHROOM_BLOCK.getDefaultState(), ModBlocks.ORANGE_ALTERED_MUSHROOM_BLOCK.getDefaultState(), ModBlocks.ORANGE_DEGRADATED_MUSHROOM_BLOCK.getDefaultState()), List.of((short) 4, (short) 2, (short) 1))));
-        SphereGen voidSphere = new SphereGen(world, end.down(radiusY), AbstractBlockShapeBase.PlaceMoment.ANIMATED_OTHER, (int) (radius * 1.3f));
-        voidSphere.setRadiusY(radiusY);
-        return new SphereGen[]{sphere, voidSphere};
-    }
+    protected abstract DefaultBlockList getHugeTrunk(StructureWorldAccess world, Random random, BlockPos pos, int radius, int height);
 
-    @Override
-    protected void place(StructureWorldAccess world, BlockPos pos, BlockPos pos2, DefaultBlockListComparator coordinates, SphereGen sphere, SphereGen secondSphere) {
-        Set<BlockPos> posSet = new HashSet<>();
-        List<Set<BlockPos>> posSphere = sphere.getBlockPos();
-        for (Set<BlockPos> blockPosSet : posSphere) {
-            posSet.addAll(blockPosSet);
-        }
-        posSphere = secondSphere.getBlockPos();
-        for (Set<BlockPos> blockPosSet : posSphere) {
-            posSet.removeAll(blockPosSet);
-        }
 
-        Map<ChunkPos, Set<BlockPos>> chunkMap = new HashMap<>();
-        for (BlockPos pos1 : posSet) {
-            WorldGenUtil.modifyChunkMap(pos1, chunkMap);
-        }
+    protected abstract DefaultBlockList getTrunk(StructureWorldAccess world, Random random, BlockPos pos, int radius, int height);
 
-        List<Set<DefaultBlockList>> blockList = sphere.getBlockListWithVerification(new ArrayList<>(chunkMap.values()));
-        DefaultBlockListComparator comparator = new DefaultBlockListComparator(BlockListUtil.unDivideBlockList(blockList));
-        comparator.placeAllWithDeletion(world);
-    }
+    protected abstract SphereGen[] getCap(StructureWorldAccess world, Random random, BlockPos pos, int radius, int radiusY, DefaultBlockList trunk);
+
+
+    protected abstract void place(StructureWorldAccess world, BlockPos pos, BlockPos pos2, DefaultBlockListComparator coordinates, SphereGen sphere, SphereGen secondSphere);
 }
