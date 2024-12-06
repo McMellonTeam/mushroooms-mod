@@ -79,8 +79,10 @@ public class PeltogyneTrunkPlacer extends TrunkPlacer {
 
         BlockPos direction = new BlockPos(randomX, randomY, randomZ);
 
+
         LineGen line = new LineGen((StructureWorldAccess) world, startPos, AbstractBlockShapeBase.PlaceMoment.OTHER, startPos.add(direction));
         line.setBlockLayer(new BlockLayerComparator(new BlockLayer(config.trunkProvider.get(random, startPos))));
+
         line.place();
 
         return new FoliagePlacer.TreeNode(startPos.add(direction), 0, false);

@@ -35,8 +35,10 @@ public class PeltogyneFoliagePlacer extends FoliagePlacer {
 
     @Override
     protected void generate(TestableWorld world, BlockPlacer placer, Random random, TreeFeatureConfig config, int trunkHeight, TreeNode treeNode, int foliageHeight, int radius, int offset) {
+
         SphereGen sphereGen = new SphereGen((StructureWorldAccess) world, treeNode.getCenter(), AbstractBlockShapeBase.PlaceMoment.OTHER, Random.create().nextBetween(2, 3));
         sphereGen.setBlockLayer(new BlockLayerComparator(new BlockLayer(config.foliageProvider.get(random, treeNode.getCenter()))));
+
         sphereGen.place();
     }
 
