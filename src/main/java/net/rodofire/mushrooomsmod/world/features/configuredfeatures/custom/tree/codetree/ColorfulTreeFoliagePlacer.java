@@ -14,10 +14,11 @@ import net.minecraft.world.gen.feature.TreeFeature;
 import net.minecraft.world.gen.feature.TreeFeatureConfig;
 import net.minecraft.world.gen.foliage.FoliagePlacer;
 import net.minecraft.world.gen.foliage.FoliagePlacerType;
-import net.rodofire.easierworldcreator.shapegen.SphereGen;
-import net.rodofire.easierworldcreator.shapeutil.BlockLayer;
-import net.rodofire.easierworldcreator.shapeutil.Shape;
-import net.rodofire.easierworldcreator.util.MathUtil;
+import net.rodofire.easierworldcreator.blockdata.layer.BlockLayer;
+import net.rodofire.easierworldcreator.blockdata.layer.BlockLayerComparator;
+import net.rodofire.easierworldcreator.maths.MathUtil;
+import net.rodofire.easierworldcreator.shape.block.gen.SphereGen;
+import net.rodofire.easierworldcreator.shape.block.instanciator.AbstractBlockShapeBase;
 import net.rodofire.mushrooomsmod.block.ModBlocks;
 import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.tree.ModFoliagePlacerTypes;
 
@@ -57,10 +58,12 @@ public class ColorfulTreeFoliagePlacer extends FoliagePlacer {
     @Override
     protected void generate(TestableWorld world, BlockPlacer placer, Random random, TreeFeatureConfig config, int trunkHeight, TreeNode treeNode, int foliageHeight, int radius, int offset) {
         int radiusB = Random.create().nextBetween(4, 5);
-        SphereGen sphere = new SphereGen((StructureWorldAccess) world, treeNode.getCenter(), Shape.PlaceMoment.OTHER, radiusB);
+        SphereGen sphere = new SphereGen((StructureWorldAccess) world, treeNode.getCenter(), AbstractBlockShapeBase.PlaceMoment.OTHER, radiusB);
         sphere.setHalfSphere(SphereGen.SphereType.HALF);
         BlockState state = getLeaveBlock().with(Properties.PERSISTENT, true);
-        sphere.setBlockLayers(new BlockLayer(state));
+
+        sphere.setBlockLayer(new BlockLayerComparator(new BlockLayer(state)));
+
         sphere.place();
         for (int x = -radiusB; x <= radiusB; x++) {
             int xx = x * x;
