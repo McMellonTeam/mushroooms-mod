@@ -1,9 +1,9 @@
 package net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.mushrooms.structuremushrooms;
 
 import com.mojang.serialization.Codec;
-import me.emafire003.dev.structureplacerapi.StructurePlacerAPI;
 import net.minecraft.block.BlockState;
 import net.minecraft.registry.tag.BlockTags;
+import net.minecraft.util.BlockMirror;
 import net.minecraft.util.BlockRotation;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
@@ -13,6 +13,7 @@ import net.minecraft.world.StructureWorldAccess;
 import net.minecraft.world.gen.feature.DefaultFeatureConfig;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.util.FeatureContext;
+import net.rodofire.easierworldcreator.structure.NbtPlacer;
 import net.rodofire.mushrooomsmod.MushrooomsMod;
 
 
@@ -148,8 +149,8 @@ public class CustomRedFertileMushroom extends Feature<DefaultFeatureConfig> {
 
     public void placeMushroom(StructureWorldAccess world, BlockPos pos, int mushroom, BlockRotation rotation) {
         if (!world.isClient()) {
-            StructurePlacerAPI structuremushroom = new StructurePlacerAPI(world, new Identifier(MushrooomsMod.MOD_ID, "red_mushroom/red_mushroom_" + mushroom), pos, rotation);
-            structuremushroom.loadStructure();
+            NbtPlacer structuremushroom = new NbtPlacer(world, Identifier.of(MushrooomsMod.MOD_ID, "red_mushroom/red_mushroom_" + mushroom));
+            structuremushroom.place(1.0f, pos, new BlockPos(0,0,0), BlockMirror.NONE, rotation, true);
         }
     }
 

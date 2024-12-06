@@ -16,20 +16,15 @@ public class ModOverworldBiomeCreator {
         public static Biome createShroomIsland1(Registerable<Biome> context) {
             SpawnSettings.Builder spawnBuilder = new SpawnSettings.Builder();
 
-            spawnBuilder.spawn(SpawnGroup.CREATURE, new SpawnSettings.SpawnEntry(EntityType.WOLF, 5, 4, 4));
 
             DefaultBiomeFeatures.addFarmAnimals(spawnBuilder);
-            DefaultBiomeFeatures.addBatsAndMonsters(spawnBuilder);
 
             GenerationSettings.LookupBackedBuilder biomeBuilder =
                     new GenerationSettings.LookupBackedBuilder(context.getRegistryLookup(RegistryKeys.PLACED_FEATURE),
                             context.getRegistryLookup(RegistryKeys.CONFIGURED_CARVER));
 
             ModBiomeFeatures.globalOverworldGeneration(biomeBuilder);
-            DefaultBiomeFeatures.addMossyRocks(biomeBuilder);
             DefaultBiomeFeatures.addDefaultOres(biomeBuilder);
-
-            biomeBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, VegetationPlacedFeatures.TREES_PLAINS);
 
             ModBiomeFeatures.SurfaceBiomes.addSchroomIsland1Features(biomeBuilder);
 
@@ -40,12 +35,11 @@ public class ModOverworldBiomeCreator {
                     .generationSettings(biomeBuilder.build())
                     .spawnSettings(spawnBuilder.build())
                     .effects((new BiomeEffects.Builder())
-                            .waterColor(0x3fceda)
-                            .waterFogColor(0xbf1b26)
-                            .skyColor(0x30c918)
-                            .grassColor(0x7f03fc)
+                            .waterColor(0x6fb1ec)
+                            .waterFogColor(0xc2def6)
+                            .skyColor(0x84d7f6)
                             .foliageColor(0xd203fc)
-                            .fogColor(0x22a1e6)
+                            .fogColor(0xc2e9f6)
                             .moodSound(BiomeMoodSound.CAVE)
                             .build())
                     .build();
