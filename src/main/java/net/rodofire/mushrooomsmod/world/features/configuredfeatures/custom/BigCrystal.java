@@ -8,10 +8,10 @@ import net.minecraft.util.math.random.Random;
 import net.minecraft.world.StructureWorldAccess;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.util.FeatureContext;
-import net.rodofire.easierworldcreator.util.FastMaths;
-import net.rodofire.easierworldcreator.util.MathUtil;
-import net.rodofire.easierworldcreator.worldgenutil.GenLines;
-import net.rodofire.easierworldcreator.worldgenutil.GenSpheres;
+import net.rodofire.easierworldcreator.maths.FastMaths;
+import net.rodofire.easierworldcreator.maths.MathUtil;
+import net.rodofire.easierworldcreator.shape.block.simplegen.GenLines;
+import net.rodofire.easierworldcreator.shape.block.simplegen.GenSpheres;
 import net.rodofire.mushrooomsmod.world.features.config.ModSimpleBlockFeatureConfig;
 
 public class BigCrystal extends Feature<ModSimpleBlockFeatureConfig> {
