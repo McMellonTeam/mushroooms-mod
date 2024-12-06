@@ -1,4 +1,4 @@
-package net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.mushrooms.codemushrooms;
+package net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.mushrooms.codemushrooms.oth;
 
 import com.mojang.serialization.Codec;
 import net.minecraft.block.Blocks;
@@ -25,9 +25,9 @@ import net.rodofire.mushrooomsmod.block.ModBlocks;
 
 import java.util.*;
 
-public class YellowMushroomWGFeature extends YellowMushroomOTH {
+public class YellowMushroomOTHFeature extends YellowMushroomOTH {
 
-    public YellowMushroomWGFeature(Codec<HugeMushroomFeatureConfig> configCodec) {
+    public YellowMushroomOTHFeature(Codec<HugeMushroomFeatureConfig> configCodec) {
         super(configCodec);
     }
 
@@ -139,7 +139,18 @@ public class YellowMushroomWGFeature extends YellowMushroomOTH {
 
         List<Set<DefaultBlockList>> blockList = sphere.getBlockListWithVerification(new ArrayList<>(chunkMap.values()));
         DefaultBlockListComparator comparator = new DefaultBlockListComparator(BlockListUtil.unDivideBlockList(blockList));
-        comparator.placeAllWithDeletion(world);
+        BlockSorter sorter = new BlockSorter(BlockSorter.BlockSorterType.FROM_POINT_INVERTED);
+        sorter.setCenterPoint(pos);
+
+
+        DefaultOrderedBlockListComparator comp = coordinates.getOrderedSorted(sorter);
+        sorter.setCenterPoint(pos2);
+        comp.put(comparator.getOrderedSorted(sorter));
+
+        StructurePlaceAnimator animator = new StructurePlaceAnimator(world, sorter, StructurePlaceAnimator.AnimatorTime.LINEAR_TICKS);
+        animator.setBounds(new Pair<>(1, 60));
+        animator.place(new BlockSorter(BlockSorter.BlockSorterType.INVERSE).sortBlockList(comp));
+
         return true;
     }
 

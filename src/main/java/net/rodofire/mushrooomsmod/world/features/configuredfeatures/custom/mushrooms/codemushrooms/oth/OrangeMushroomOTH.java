@@ -1,8 +1,6 @@
-package net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.mushrooms.codemushrooms;
+package net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.mushrooms.codemushrooms.oth;
 
 import com.mojang.serialization.Codec;
-import net.minecraft.block.Blocks;
-import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.StructureWorldAccess;
@@ -11,15 +9,14 @@ import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.util.FeatureContext;
 import net.rodofire.easierworldcreator.blockdata.blocklist.basic.DefaultBlockList;
 import net.rodofire.easierworldcreator.blockdata.blocklist.basic.comparator.DefaultBlockListComparator;
-import net.rodofire.easierworldcreator.maths.MathUtil;
 import net.rodofire.easierworldcreator.placer.blocks.util.BlockPlaceUtil;
 import net.rodofire.easierworldcreator.shape.block.gen.SphereGen;
 import net.rodofire.mushrooomsmod.block.ModBlocks;
 
-public abstract class OrangeMushroomWG extends Feature<DefaultFeatureConfig> {
+public abstract class OrangeMushroomOTH extends Feature<DefaultFeatureConfig> {
     protected BlockPos end;
 
-    public OrangeMushroomWG(Codec<DefaultFeatureConfig> configCodec) {
+    public OrangeMushroomOTH(Codec<DefaultFeatureConfig> configCodec) {
         super(configCodec);
     }
 
@@ -48,17 +45,11 @@ public abstract class OrangeMushroomWG extends Feature<DefaultFeatureConfig> {
         StructureWorldAccess world = context.getWorld();
         BlockPos pos = context.getOrigin();
         Random random = context.getRandom();
-
-        if(world.getBlockState(pos).isOf(Blocks.WATER))
-            return false;
-        if(!world.getBlockState(pos.down()).isIn(BlockTags.MUSHROOM_GROW_BLOCK))
-            return false;
-
         DefaultBlockList blockList;
         int radius;
         int radiusY;
 
-        if (MathUtil.getRandomBoolean(0.3f)) {
+        if (world.getBlockState(pos.east()).isOf(ModBlocks.ORANGE_MUSHROOM) || world.getBlockState(pos.north()).isOf(ModBlocks.ORANGE_MUSHROOM) || world.getBlockState(pos.south()).isOf(ModBlocks.ORANGE_MUSHROOM) || world.getBlockState(pos.west()).isOf(ModBlocks.ORANGE_MUSHROOM)) {
             radius = random.nextBetween(5, 8);
             radiusY = (int) ((float) random.nextBetween(20, 55) / 10 * radius + random.nextBetween(2, 6));
             int height = 3 * radiusY / 4 + random.nextBetween(-3, 3);

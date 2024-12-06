@@ -1,4 +1,4 @@
-package net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.mushrooms.codemushrooms;
+package net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.mushrooms.codemushrooms.wg;
 
 import com.mojang.serialization.Codec;
 import net.minecraft.block.Blocks;
@@ -93,12 +93,12 @@ public class OrangeMushroomFeatureWG extends OrangeMushroomWG {
 
     @Override
     protected SphereGen[] getCap(StructureWorldAccess world, Random random, BlockPos pos, int radius, int radiusY, DefaultBlockList trunk) {
-        SphereGen sphere = new SphereGen(world, end.down(radiusY / 2), AbstractBlockShapeBase.PlaceMoment.ANIMATED_OTHER, radius);
+        SphereGen sphere = new SphereGen(world, end.down(radiusY / 2), AbstractBlockShapeBase.PlaceMoment.OTHER, radius);
         sphere.setRadiusY(radiusY);
         sphere.setHalfSphere(SphereGen.SphereType.HALF);
         sphere.setHalfSphereDirection(Direction.UP);
         sphere.setBlockLayer(new BlockLayerComparator(new BlockLayer(List.of(ModBlocks.ORANGE_MUSHROOM_BLOCK.getDefaultState(), ModBlocks.ORANGE_ALTERED_MUSHROOM_BLOCK.getDefaultState(), ModBlocks.ORANGE_DEGRADATED_MUSHROOM_BLOCK.getDefaultState()), List.of((short) 4, (short) 2, (short) 1))));
-        SphereGen voidSphere = new SphereGen(world, end.down(radiusY), AbstractBlockShapeBase.PlaceMoment.ANIMATED_OTHER, (int) (radius * 1.3f));
+        SphereGen voidSphere = new SphereGen(world, end.down(radiusY), AbstractBlockShapeBase.PlaceMoment.OTHER, (int) (radius * 1.3f));
         voidSphere.setRadiusY(radiusY);
         return new SphereGen[]{sphere, voidSphere};
     }
@@ -127,6 +127,7 @@ public class OrangeMushroomFeatureWG extends OrangeMushroomWG {
 
         List<Set<DefaultBlockList>> blockList = sphere.getBlockListWithVerification(new ArrayList<>(chunkMap.values()));
         DefaultBlockListComparator comparator = new DefaultBlockListComparator(BlockListUtil.unDivideBlockList(blockList));
-        comparator.placeAllWithDeletion(world);
+        comparator.placeAll(world);
+        coordinates.placeAll(world);
     }
 }

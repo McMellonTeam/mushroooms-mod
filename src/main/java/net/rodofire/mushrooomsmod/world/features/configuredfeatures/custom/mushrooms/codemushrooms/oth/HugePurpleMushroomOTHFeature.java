@@ -1,4 +1,4 @@
-package net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.mushrooms.codemushrooms;
+package net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.mushrooms.codemushrooms.oth;
 
 import com.mojang.serialization.Codec;
 import net.minecraft.block.BlockState;
@@ -16,12 +16,12 @@ import net.rodofire.mushrooomsmod.world.features.config.PurpleMushroomConfig;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CustomHugePurpleMushroomOTHFeature extends CustomHugePurpleMushroomOTH {
+public class HugePurpleMushroomOTHFeature extends HugePurpleMushroomOTH {
     int xDir;
     int zDir;
     int maxHeight;
 
-    public CustomHugePurpleMushroomOTHFeature(Codec<PurpleMushroomConfig> configCodec) {
+    public HugePurpleMushroomOTHFeature(Codec<PurpleMushroomConfig> configCodec) {
         super(configCodec);
     }
 

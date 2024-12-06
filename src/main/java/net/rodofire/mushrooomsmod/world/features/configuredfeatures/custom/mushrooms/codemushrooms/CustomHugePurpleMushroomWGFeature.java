@@ -8,15 +8,15 @@ import net.minecraft.util.math.random.Random;
 import net.rodofire.easierworldcreator.blockdata.blocklist.basic.DefaultBlockList;
 import net.rodofire.easierworldcreator.blockdata.blocklist.basic.comparator.DefaultBlockListComparator;
 import net.rodofire.easierworldcreator.blockdata.blocklist.ordered.comparator.DefaultOrderedBlockListComparator;
-import net.rodofire.easierworldcreator.blockdata.sorter.BlockSorter;
 import net.rodofire.easierworldcreator.maths.MathUtil;
 import net.rodofire.mushrooomsmod.block.ModBlocks;
 import net.rodofire.mushrooomsmod.world.features.config.PurpleMushroomConfig;
+import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.mushrooms.codemushrooms.oth.HugePurpleMushroomOTH;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class CustomHugePurpleMushroomWGFeature extends CustomHugePurpleMushroomOTH {
+public class CustomHugePurpleMushroomWGFeature extends HugePurpleMushroomOTH {
     int xDir;
     int zDir;
     int maxHeight;

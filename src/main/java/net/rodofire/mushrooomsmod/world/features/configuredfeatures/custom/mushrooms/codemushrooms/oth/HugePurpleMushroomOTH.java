@@ -1,4 +1,4 @@
-package net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.mushrooms.codemushrooms;
+package net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.mushrooms.codemushrooms.oth;
 
 import com.mojang.serialization.Codec;
 import net.minecraft.util.math.BlockPos;
@@ -7,7 +7,6 @@ import net.minecraft.world.StructureWorldAccess;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.util.FeatureContext;
 import net.rodofire.easierworldcreator.blockdata.blocklist.basic.DefaultBlockList;
-import net.rodofire.easierworldcreator.blockdata.blocklist.basic.comparator.DefaultBlockListComparator;
 import net.rodofire.easierworldcreator.blockdata.blocklist.ordered.comparator.DefaultOrderedBlockListComparator;
 import net.rodofire.easierworldcreator.blockdata.sorter.BlockSorter;
 import net.rodofire.easierworldcreator.maths.MathUtil;
@@ -15,11 +14,11 @@ import net.rodofire.easierworldcreator.placer.blocks.animator.StructurePlaceAnim
 import net.rodofire.easierworldcreator.placer.blocks.util.BlockPlaceUtil;
 import net.rodofire.mushrooomsmod.world.features.config.PurpleMushroomConfig;
 
-public abstract class CustomHugePurpleMushroomOTH extends Feature<PurpleMushroomConfig> {
+public abstract class HugePurpleMushroomOTH extends Feature<PurpleMushroomConfig> {
     /// la liste des fin des blockPos
     protected BlockPos[] end;
 
-    public CustomHugePurpleMushroomOTH(Codec<PurpleMushroomConfig> configCodec) {
+    public HugePurpleMushroomOTH(Codec<PurpleMushroomConfig> configCodec) {
         super(configCodec);
     }
 

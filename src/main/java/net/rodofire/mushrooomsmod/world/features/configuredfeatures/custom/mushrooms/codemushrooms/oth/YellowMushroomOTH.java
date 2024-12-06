@@ -1,4 +1,4 @@
-package net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.mushrooms.codemushrooms;
+package net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.mushrooms.codemushrooms.oth;
 
 import com.mojang.serialization.Codec;
 import net.minecraft.block.Blocks;
@@ -15,13 +15,14 @@ import net.rodofire.easierworldcreator.placer.blocks.util.BlockPlaceUtil;
 import net.rodofire.easierworldcreator.shape.block.gen.LineGen;
 import net.rodofire.easierworldcreator.shape.block.gen.SphereGen;
 import net.rodofire.easierworldcreator.shape.block.instanciator.AbstractBlockShapeBase;
+import net.rodofire.mushrooomsmod.block.ModBlocks;
 
 import java.util.List;
 import java.util.Set;
 
-public abstract class YellowMushroomWG extends Feature<HugeMushroomFeatureConfig> {
+public abstract class YellowMushroomOTH extends Feature<HugeMushroomFeatureConfig> {
 
-    public YellowMushroomWG(Codec<HugeMushroomFeatureConfig> configCodec) {
+    public YellowMushroomOTH(Codec<HugeMushroomFeatureConfig> configCodec) {
         super(configCodec);
     }
 
@@ -72,7 +73,7 @@ public abstract class YellowMushroomWG extends Feature<HugeMushroomFeatureConfig
 
         BlockPos end;
 
-        if (MathUtil.getRandomBoolean(0.3f)) {
+        if (world.getBlockState(blockPos.east()).isOf(ModBlocks.YELLOW_MUSHROOM) || world.getBlockState(blockPos.north()).isOf(ModBlocks.YELLOW_MUSHROOM) || world.getBlockState(blockPos.south()).isOf(ModBlocks.YELLOW_MUSHROOM) || world.getBlockState(blockPos.west()).isOf(ModBlocks.YELLOW_MUSHROOM)) {
             height = Random.create().nextBetween(10, 20);
             large = Random.create().nextBetween(5, 9);
 
@@ -108,7 +109,7 @@ public abstract class YellowMushroomWG extends Feature<HugeMushroomFeatureConfig
         return this.place(world, blockPos, end, coordinates, spheres[0], spheres[1]);
     }
 
-    protected abstract DefaultBlockListComparator generateHugeTrunk(StructureWorldAccess world, BlockPos pos, BlockPos pos2, int height, HugeMushroomFeatureConfig config);
+    protected abstract DefaultBlockListComparator generateHugeTrunk(StructureWorldAccess world, BlockPos blockPos, BlockPos pos2, int height, HugeMushroomFeatureConfig config);
 
     protected abstract DefaultBlockListComparator generateTrunk(StructureWorldAccess world, BlockPos pos, BlockPos pos2, int height, HugeMushroomFeatureConfig config);
 
