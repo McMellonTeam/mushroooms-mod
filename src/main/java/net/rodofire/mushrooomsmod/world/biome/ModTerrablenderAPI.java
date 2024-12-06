@@ -37,7 +37,6 @@ public class ModTerrablenderAPI implements TerraBlenderApi {
 
     @Override
     public void onTerraBlenderInitialized() {
-
         /*AutoConfig.register(ModConfig.class, PartitioningSerializer.wrap(JanksonConfigSerializer::new));
         MushrooomsMod.CONFIG = AutoConfig.getConfigHolder(ModConfig.class).getConfig();*/
         Regions.register(new ModOverworldRegion(new Identifier(MushrooomsMod.MOD_ID, "overworld"), getCommonBiomesSpawnRate()));

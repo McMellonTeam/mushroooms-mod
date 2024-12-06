@@ -37,8 +37,8 @@ public class ModOverworldRegion extends Region {
                 .temperature(ParameterUtils.Temperature.HOT)
                 .humidity(ParameterUtils.Humidity.DRY)
                 .continentalness(ParameterUtils.Continentalness.MUSHROOM_FIELDS, ParameterUtils.Continentalness.NEAR_INLAND)
-                .erosion(ParameterUtils.Erosion.EROSION_0)
-                .depth(ParameterUtils.Depth.UNDERGROUND)
+                .erosion(MultiNoiseUtil.ParameterRange.of(-1.0F, 0.1F))
+                .depth(MultiNoiseUtil.ParameterRange.of(-1.0F, 0.1F))
                 .weirdness(MultiNoiseUtil.ParameterRange.of(-1f, 0f))
                 .build().forEach(point -> builder.add(point, ModOverworldBiomes.SHROOM_ISLAND1));
 
@@ -47,8 +47,8 @@ public class ModOverworldRegion extends Region {
                 .temperature(ParameterUtils.Temperature.HOT)
                 .humidity(ParameterUtils.Humidity.DRY)
                 .continentalness(ParameterUtils.Continentalness.MUSHROOM_FIELDS, ParameterUtils.Continentalness.NEAR_INLAND)
-                .erosion(ParameterUtils.Erosion.EROSION_0)
-                .depth(ParameterUtils.Depth.UNDERGROUND)
+                .erosion(MultiNoiseUtil.ParameterRange.of(-1.0F, 0.1F))
+                .depth(MultiNoiseUtil.ParameterRange.of(-1.0F, 0.1F))
                 .weirdness(MultiNoiseUtil.ParameterRange.of(0f, 1f))
                 .build().forEach(point -> builder.add(point, ModOverworldBiomes.SHROOM_ISLAND2));*/
 
