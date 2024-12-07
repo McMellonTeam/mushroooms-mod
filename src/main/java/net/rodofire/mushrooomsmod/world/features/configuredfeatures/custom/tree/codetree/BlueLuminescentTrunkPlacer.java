@@ -1,6 +1,8 @@
 package net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.tree.codetree;
 
+import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
+import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
@@ -16,18 +18,10 @@ import java.util.List;
 import java.util.function.BiConsumer;
 
 public class BlueLuminescentTrunkPlacer extends TrunkPlacer {
-    private int baseheight;
-    private int firstRandomHeight;
-    private int secondRandomHeight;
-
     public static final BlueLuminescentTrunkPlacer INSTANCE = new BlueLuminescentTrunkPlacer(6,6,6);
     public static final MapCodec<BlueLuminescentTrunkPlacer> CODEC = MapCodec.unit(() -> INSTANCE);
-
     public BlueLuminescentTrunkPlacer(int baseHeight, int firstRandomHeight, int secondRandomHeight) {
         super(baseHeight, firstRandomHeight, secondRandomHeight);
-        this.baseheight = baseHeight;
-        this.firstRandomHeight = firstRandomHeight;
-        this.secondRandomHeight = secondRandomHeight;
     }
 
     @Override

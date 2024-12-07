@@ -29,9 +29,6 @@ public class ModEntities {
             Identifier.of(MushrooomsMod.MOD_ID, "crystal_golem"), EntityType.Builder.create(CrystalGolemEntity::new, SpawnGroup.CREATURE)
                     .dimensions(1.2f, 2.8f).build());
 
-    public static final EntityType<SchroomStickEntity> SCHROOM_STICK = Registry.register(Registries.ENTITY_TYPE,
-            Identifier.of(MushrooomsMod.MOD_ID, "schroom_stick"), EntityType.Builder.create(SchroomStickEntity::new, SpawnGroup.CREATURE)
-                    .dimensions(0.3f, 1.6f).build());
 
     public static final EntityType<InventoryArmorStandEntity> INVENTORY_ARMOR_STAND_ENTITY = Registry.register(Registries.ENTITY_TYPE,
             Identifier.of(MushrooomsMod.MOD_ID, "inventory_armor_stand"), EntityType.Builder.create(InventoryArmorStandEntity::new, SpawnGroup.MISC)
@@ -41,6 +38,9 @@ public class ModEntities {
                     .dimensions(0.9f, 1.8f).build());
 
 
+    /*public static final EntityType<SchroomStickEntity> SCHROOM_STICK = Registry.register(Registries.ENTITY_TYPE,
+            Identifier.of(MushrooomsMod.MOD_ID, "schroom_stick"), EntityType.Builder.create(SchroomStickEntity::new, SpawnGroup.CREATURE)
+                    .dimensions(0.3f, 1.6f).build());*/
     /*public static final EntityType<MosquitoEntity> MOSQUITO_ENTITY = Registry.register(Registries.ENTITY_TYPE,
             Identifier.of(MushrooomsMod.MOD_ID, "mosquito"), FabricEntityTypeBuilder.create(SpawnGroup.AMBIENT, MosquitoEntity::new)
                     .dimensions(EntityDimensions.fixed(0.2f, 0.5f)).build());*/
