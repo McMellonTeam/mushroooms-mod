@@ -62,12 +62,12 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(ModBlocks.BLUE_LUMINESCENT_LOG.asItem())
                 .add(ModBlocks.BLUE_LUMINESCENT_STRIPPED_LOG.asItem())
                 .add(ModBlocks.BLUE_LUMINESCENT_WOOD.asItem())
-                .add(ModBlocks.BLUE_LUMINESCENT_WOOD.asItem());
+                .add(ModBlocks.PELTOGYNE_STRIPPED_WOOD.asItem());
 
         getOrCreateTagBuilder(ModTags.Items.PELTOGYNE_LOGS)
                 .add(ModBlocks.PELTOGYNE_LOG.asItem())
                 .add(ModBlocks.PELTOGYNE_STRIPPED_LOG.asItem())
                 .add(ModBlocks.PELTOGYNE_WOOD.asItem())
-                .add(ModBlocks.PELTOGYNE_WOOD.asItem());
+                .add(ModBlocks.PELTOGYNE_STRIPPED_WOOD.asItem());
     }
 }
