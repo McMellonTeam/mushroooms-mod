@@ -135,6 +135,7 @@ publishMods {
 		projectId = "955698"
 		javaVersions.add(JavaVersion.VERSION_17)
 		serverRequired = true
+		clientRequired = true
 		requires("fabric-api")
 		changelogType = "markdown"
 	}
@@ -147,6 +148,10 @@ publishMods {
 		}
 		projectId = "hxHbPoS6"
 		requires("fabric-api")
+		requires("cloth-config")
+		requires("terrablender")
+		requires("geckolib")
+		requires("ewc")
 		type = ALPHA
 	}
 }
