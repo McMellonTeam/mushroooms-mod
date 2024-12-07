@@ -1,6 +1,7 @@
 plugins {
 	id 'fabric-loom' version '1.7-SNAPSHOT'
 	id 'maven-publish'
+	id "me.modmuss50.mod-publish-plugin" version "0.8.1"
 }
 
 version = project.mod_version
@@ -65,9 +66,6 @@ dependencies {
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 	modImplementation 'com.github.glitchfiend:TerraBlender-fabric:1.21-4.0.0.1'
 
-	modImplementation 'maven.modrinth:structureplacerapi:1.1.5'
-	include "maven.modrinth:structureplacerapi:1.1.5"
-
 	// Fabric API. This is technically optional, but you probably want it anyway.
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
@@ -86,7 +84,7 @@ dependencies {
 	modApi "dev.architectury:architectury-fabric:13.0.3"
 
 
-	modImplementation 'maven.modrinth:ewc:2.2.1-1.21'
+	modImplementation 'maven.modrinth:ewc:2.3.4-1.21'
 
 
 	modApi "com.terraformersmc:modmenu:11.0.1"
@@ -121,20 +119,40 @@ jar {
 	}
 }
 
-// configure the maven publication
-publishing {
-	publications {
-		mavenJava(MavenPublication) {
-			from components.java
+publishMods {
+	file = remapJar.archiveFile
+
+	changelog = file("changelog.md").text
+
+	modLoaders.add("fabric")
+	modLoaders.add("quilt")
+	curseforge {
+		accessToken = getApiKey()["CURSEFORGE_API_KEY"]
+		minecraftVersionRange {
+			start = "1.21"
+			end = "1.21.1"
 		}
+		projectId = "955698"
+		javaVersions.add(JavaVersion.VERSION_17)
+		serverRequired = true
+		requires("fabric-api")
+		changelogType = "markdown"
 	}
 
-	// See https://docs.gradle.org/current/userguide/publishing_maven.html for information on how to set up publishing.
-	repositories {
-
-		// Add repositories to publish to here.
-		// Notice: This block does NOT have the same function as the block in the top level.
-		// The repositories here will be used for publishing your artifact, not for
-		// retrieving dependencies.
+	modrinth {
+		accessToken = getApiKey()["MODRINTH_API_KEY"]
+		minecraftVersionRange {
+			start = "1.21"
+			end = "1.21.1"
+		}
+		projectId = "hxHbPoS6"
+		requires("fabric-api")
+		type = ALPHA
 	}
+}
+
+static def getApiKey() {
+	def Properties props = new Properties()
+	props.load(new FileInputStream(new File('api.properties')))
+	return props
 }

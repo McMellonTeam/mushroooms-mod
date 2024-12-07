@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "mushrooomsmod",
-  "version": "0.0.16-1.21",
+  "version": "0.0.17-1.21",
   "name": "Mushroooms Mod",
   "description": "This is my first mod where I try to add new mushrooms a bunch of things to minecraft!",
   "authors": [
@@ -12,8 +12,7 @@
     "sources": "https://github.com/RodoFire/mushroooms-mod",
     "issues": "https://github.com/RodoFire/mushroooms-mod/issues"
   },
-  "license": "MIT with aditions",
-  "license link": "https://github.com/RodoFire/mushroooms-mod/blob/main/LICENSE",
+  "license": "modified MIT, see github",
   "icon": "assets/mushrooomsmod/icon.png",
   "environment": "*",
   "entrypoints": {
@@ -53,7 +52,7 @@
     "terrablender": ">=4.0.0.1",
     "fabric-api": "*",
     "cloth-config": ">=15.0.127",
-    "easierworldcreator": "2.2.1-1.21"
+    "easierworldcreator": "~2.3.4-1.21"
   },
   "suggests": {
     "another-mod": "*"
@@ -61,7 +60,7 @@
   "custom": {
     "modmenu": {
       "links": {
-        "discord": "https://discord.gg/Y6Nye8U8"
+        "discord": "https://discord.gg/bAQRUxNyFj"
       },
       "update_checker": true
     }

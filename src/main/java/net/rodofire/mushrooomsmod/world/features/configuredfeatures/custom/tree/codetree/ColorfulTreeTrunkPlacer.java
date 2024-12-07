@@ -11,7 +11,7 @@ import net.minecraft.world.gen.feature.TreeFeatureConfig;
 import net.minecraft.world.gen.foliage.FoliagePlacer;
 import net.minecraft.world.gen.trunk.TrunkPlacer;
 import net.minecraft.world.gen.trunk.TrunkPlacerType;
-import net.rodofire.easierworldcreator.util.MathUtil;
+import net.rodofire.easierworldcreator.maths.MathUtil;
 import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.tree.ModTrunkPlacerTypes;
 
 import java.util.List;
@@ -20,7 +20,6 @@ import java.util.function.BiConsumer;
 public class ColorfulTreeTrunkPlacer extends TrunkPlacer {
     public static final ColorfulTreeTrunkPlacer INSTANCE = new ColorfulTreeTrunkPlacer(6,6,6);
     public static final MapCodec<ColorfulTreeTrunkPlacer> CODEC = MapCodec.unit(() -> INSTANCE);
-
     public ColorfulTreeTrunkPlacer(int baseHeight, int firstRandomHeight, int secondRandomHeight) {
         super(baseHeight, firstRandomHeight, secondRandomHeight);
     }
