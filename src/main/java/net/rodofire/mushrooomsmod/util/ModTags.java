@@ -16,6 +16,7 @@ public class ModTags {
         public static final TagKey<Block> MOSSY_STALACTITE_BASE = createTag("mossy_stalactite_base");
         public static final TagKey<Block> ROCKY_STALACTITE_TOP = createTag("rocky_stalactite_top");
         public static final TagKey<Block> MOSSY_STALACTITE_TOP = createTag("mossy_stalactite_top");
+        public static final TagKey<Block> FLUIDS = createTag("fluids");
 
         private static TagKey<Block> createTag(String name) {
             return TagKey.of(RegistryKeys.BLOCK, Identifier.of(MushrooomsMod.MOD_ID, name));

@@ -167,6 +167,7 @@ public class ModConfiguredFeatures<FC extends FeatureConfig> {
     //terrain
     public static final RegistryKey<ConfiguredFeature<?, ?>> SAKURA_ARCH_KEY = registerKey("sakura_arch_key");
     public static final RegistryKey<ConfiguredFeature<?, ?>> SAKURA_ROCK_STRAIGHT_KEY = registerKey("sakura_rock_straight_key");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> SAKURA_ROCK_FLAT_KEY = registerKey("sakura_rock_flat_key");
     public static final RegistryKey<ConfiguredFeature<?, ?>> ROCKY_STALACTITE_KEY = registerKey("rocky_stalactite_key");
     public static final RegistryKey<ConfiguredFeature<?, ?>> MOSSY_STALACTITE_KEY = registerKey("mossy_stalactite_key");
     public static final RegistryKey<ConfiguredFeature<?, ?>> HUGE_STALACTITE_KEY = registerKey("huge_stalactite_key");
@@ -360,6 +361,7 @@ public class ModConfiguredFeatures<FC extends FeatureConfig> {
         //terrain
         register(context, SAKURA_ARCH_KEY, ModFeatures.ARCH, new ArchConfig(10, 3, 60, 30, 30, 30, 30));
         register(context, SAKURA_ROCK_STRAIGHT_KEY, ModFeatures.SAKURA_ROCK_STRAIGHT, new DefaultFeatureConfig());
+        register(context, SAKURA_ROCK_FLAT_KEY, ModFeatures.SAKURA_ROCK_FLAT, new DefaultFeatureConfig());
         register(context, ROCKY_STALACTITE_KEY, ModFeatures.ROCKY_STALACTITE, new StalactiteFeatureConfig(52));
         register(context, MOSSY_STALACTITE_KEY, ModFeatures.MOSSY_STALACTITE, new StalactiteFeatureConfig(39));
         register(context, HUGE_STALACTITE_KEY, ModFeatures.HUGE_STALACTITE, new DefaultFeatureConfig());
