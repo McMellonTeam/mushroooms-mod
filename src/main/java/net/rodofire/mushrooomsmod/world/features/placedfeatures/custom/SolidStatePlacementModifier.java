@@ -7,7 +7,7 @@ import net.minecraft.world.StructureWorldAccess;
 import net.minecraft.world.gen.feature.FeaturePlacementContext;
 import net.minecraft.world.gen.placementmodifier.PlacementModifier;
 import net.minecraft.world.gen.placementmodifier.PlacementModifierType;
-import net.rodofire.easierworldcreator.placer.blocks.util.BlockPlaceUtil;
+import net.rodofire.easierworldcreator.util.BlockPlaceUtil;
 import net.rodofire.mushrooomsmod.world.features.placedfeatures.placementmodifier.ModPlacementModifierType;
 
 import java.util.stream.Stream;

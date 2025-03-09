@@ -13,7 +13,7 @@ import net.minecraft.world.gen.feature.DefaultFeatureConfig;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.util.FeatureContext;
 import net.rodofire.easierworldcreator.maths.MathUtil;
-import net.rodofire.easierworldcreator.placer.blocks.util.BlockPlaceUtil;
+import net.rodofire.easierworldcreator.util.BlockPlaceUtil;
 
 import java.util.Arrays;
 import java.util.HashMap;

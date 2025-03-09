@@ -74,6 +74,7 @@ public class ModBiomeFeatures {
 
         public static void addSakuraForestFeatures(GenerationSettings.LookupBackedBuilder builder) {
             builder.feature(GenerationStep.Feature.TOP_LAYER_MODIFICATION, ModSurfacePlacedFeatures.SAKURA_ROCK_STRAIGHT_PLACED_KEY);
+            builder.feature(GenerationStep.Feature.TOP_LAYER_MODIFICATION, ModSurfacePlacedFeatures.SAKURA_ROCK_FLAT_PLACED_KEY);
             builder.feature(GenerationStep.Feature.TOP_LAYER_MODIFICATION, ModSurfacePlacedFeatures.SAKURA_ARCH_SURFACE_PLACED_KEY);
             builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModSurfacePlacedFeatures.CHERRY_BLOSSOM_TREE_SURFACE_PLACED_FEATURE);
             builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModSurfacePlacedFeatures.PELTOGYNE_TREE_SURFACED_PLACED_KEY);

@@ -1,6 +1,7 @@
 package net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.bush;
 
 import com.mojang.serialization.Codec;
+import it.unimi.dsi.fastutil.longs.LongOpenHashSet;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.state.property.Properties;
@@ -11,10 +12,10 @@ import net.minecraft.world.StructureWorldAccess;
 import net.minecraft.world.gen.feature.DefaultFeatureConfig;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.util.FeatureContext;
-import net.rodofire.easierworldcreator.placer.blocks.util.BlockPlaceUtil;
 import net.rodofire.easierworldcreator.shape.block.gen.SphereGen;
-import net.rodofire.easierworldcreator.shape.block.instanciator.AbstractBlockShapeBase;
+import net.rodofire.easierworldcreator.util.BlockPlaceUtil;
 import net.rodofire.easierworldcreator.util.FastNoiseLite;
+import net.rodofire.easierworldcreator.util.LongPosHelper;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -51,22 +52,22 @@ public class CaveBushFeature extends Feature<DefaultFeatureConfig> {
         }
 
 
-        SphereGen sphere = new SphereGen(world, pos, AbstractBlockShapeBase.PlaceMoment.OTHER, random.nextBetween(1, 3));
+        SphereGen sphere = new SphereGen(pos, random.nextBetween(1, 3));
         sphere.setRadiusY(random.nextBetween(1, 2));
 
-        Map<ChunkPos, Set<BlockPos>> posList = sphere.getBlockPos();
+        Map<ChunkPos, LongOpenHashSet> posList = sphere.getShapeCoordinates();
 
         FastNoiseLite noise = new FastNoiseLite((int) world.getSeed());
 
         Map<BlockPos, Boolean> isAirNear = new HashMap<>();
         BlockState[] finalBlocks = blocks;
-        for (Set<BlockPos> entry : posList.values()) {
+        for (LongOpenHashSet entry : posList.values()) {
             entry.forEach(
                     (blockPos) -> {
-                        if (noise.GetNoise(blockPos) > 0.5f && verifyAir(blockPos, isAirNear, world)) {
+                        if (noise.GetNoise(blockPos) > 0.5f && verifyAir(LongPosHelper.decodeBlockPos(blockPos), isAirNear, world)) {
                             return;
                         }
-                        BlockPlaceUtil.placeVerifiedBlock(world, false, Set.of(), blockPos, finalBlocks[finalBlocks.length == 1 ? 0 : random.nextInt(finalBlocks.length - 1)]);
+                        BlockPlaceUtil.placeVerifiedBlock(world, false, Set.of(), LongPosHelper.decodeBlockPos(blockPos), finalBlocks[finalBlocks.length == 1 ? 0 : random.nextInt(finalBlocks.length - 1)]);
                     }
             );
         }

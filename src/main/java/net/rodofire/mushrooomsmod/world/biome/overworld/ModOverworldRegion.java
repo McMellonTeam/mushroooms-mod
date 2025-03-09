@@ -26,11 +26,11 @@ public class ModOverworldRegion extends Region {
         //Sakura Plain
         new ParameterUtils.ParameterPointListBuilder()
                 .temperature(ParameterUtils.Temperature.NEUTRAL)
-                .humidity(ParameterUtils.Humidity.HUMID)
+                .humidity(MultiNoiseUtil.ParameterRange.of(-0.25f, 0.2f))
                 .continentalness(ParameterUtils.Continentalness.MID_INLAND)
-                .erosion(ParameterUtils.Erosion.EROSION_6)
+                .erosion(ParameterUtils.Erosion.EROSION_6, ParameterUtils.Erosion.EROSION_5)
                 .depth(ParameterUtils.Depth.SURFACE)
-                .weirdness(ParameterUtils.Weirdness.LOW_SLICE_VARIANT_ASCENDING)
+                .weirdness(ParameterUtils.Weirdness.VALLEY)
                 .build().forEach(point -> builder.add(point, ModOverworldBiomes.SAKURA_FOREST));
 
         //Shroom Island

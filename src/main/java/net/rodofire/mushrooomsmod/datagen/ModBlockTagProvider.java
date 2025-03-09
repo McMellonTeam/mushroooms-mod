@@ -360,5 +360,9 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(Blocks.COBBLESTONE_WALL)
                 .add(Blocks.MOSSY_COBBLESTONE_WALL)
                 .add(Blocks.ANDESITE_WALL);
+
+        getOrCreateTagBuilder(ModTags.Blocks.FLUIDS)
+                .add(Blocks.WATER)
+                .add(Blocks.LAVA);
     }
 }

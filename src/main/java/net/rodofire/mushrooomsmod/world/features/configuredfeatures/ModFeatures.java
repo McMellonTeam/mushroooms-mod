@@ -26,6 +26,7 @@ import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.mushr
 import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.mushrooms.structuremushrooms.CustomRedFertileMushroom;
 import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.mushrooms.structuremushrooms.CustomRedHugeMushroomFeature;
 import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.pubble.TinyPuddle;
+import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.rock.SakuraPlainFlatRockFeature;
 import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.rock.SakuraPlainStraightRockFeature;
 import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.stalactite.MossyStalactiteFeature;
 import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.stalactite.RockyStalactiteFeature;
@@ -76,6 +77,7 @@ public class ModFeatures<FC extends FeatureConfig> {
     //terrain
     public static Feature<ArchConfig> ARCH;
     public static Feature<DefaultFeatureConfig> SAKURA_ROCK_STRAIGHT;
+    public static Feature<DefaultFeatureConfig> SAKURA_ROCK_FLAT;
     public static Feature<StalactiteFeatureConfig> ROCKY_STALACTITE;
     public static Feature<StalactiteFeatureConfig> MOSSY_STALACTITE;
     public static Feature<DefaultFeatureConfig> HUGE_STALACTITE;
@@ -127,6 +129,7 @@ public class ModFeatures<FC extends FeatureConfig> {
 
         ARCH = registerCustomFeature("arch", new SakuraArchFeature(ArchConfig.CODEC));
         SAKURA_ROCK_STRAIGHT = registerCustomFeature("sakura_rock_straight", new SakuraPlainStraightRockFeature(DefaultFeatureConfig.CODEC));
+        SAKURA_ROCK_FLAT = registerCustomFeature("sakura_rock_flat", new SakuraPlainFlatRockFeature(DefaultFeatureConfig.CODEC));
         SPIRAL_MUSHROOM = registerCustomFeature("spiral_mushroom", new SpiralMushroom(DefaultFeatureConfig.CODEC));
 
         FEATURE_TESTER = registerCustomFeature("feature_tester", new DevFeature(ModSimpleBlockFeatureConfig.CODEC));
