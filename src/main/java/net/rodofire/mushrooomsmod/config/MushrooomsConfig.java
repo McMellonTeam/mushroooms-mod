@@ -42,8 +42,8 @@ public class MushrooomsConfig {
 
         CLIENT.addBoolean("beta_warning_message", "send warning chat message upon world join", true);
 
-        CONFIG.addCategories(SERVER);
         CONFIG.addCategories(CLIENT);
+        CONFIG.addCategories(SERVER);
 
         CONFIG.init();
         init = true;

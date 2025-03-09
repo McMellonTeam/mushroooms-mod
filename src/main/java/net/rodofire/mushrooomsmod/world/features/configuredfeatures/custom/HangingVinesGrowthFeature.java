@@ -11,7 +11,7 @@ import net.minecraft.util.math.random.Random;
 import net.minecraft.world.StructureWorldAccess;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.util.FeatureContext;
-import net.rodofire.easierworldcreator.placer.blocks.util.BlockPlaceUtil;
+import net.rodofire.easierworldcreator.util.BlockPlaceUtil;
 import net.rodofire.mushrooomsmod.world.features.config.HangingGrowthFeatureConfig;
 
 import java.util.List;

@@ -101,7 +101,7 @@ public class ModBlocks {
     public static final Block BLUE_MUSHROOM = registerBlock("mushroom_blue", new MushroomPlantBlock(ModConfiguredFeatures.BLUE_MUSHROOM_TREE_KEY_OTH, AbstractBlock.Settings.copy(Blocks.RED_MUSHROOM)));
     public static final Block BLUE_LUMINESCENT_MUSHROOM = registerBlock("mushroom_blue_luminescent", new MushroomPlantBlock(ModConfiguredFeatures.BLUE_LUMINESCENT_MUSHROOM_TREE_KEY, AbstractBlock.Settings.copy(Blocks.RED_MUSHROOM).luminance(state ->5)));
     public static final Block LUMINESCENT_PINK_MUSHROOM = registerBlock("mushroom_pink_luminescent", new MushroomPlantBlock(ModConfiguredFeatures.PINK_LUMINESCENT_MUSHROOM_TREE_KEY, AbstractBlock.Settings.copy(Blocks.RED_MUSHROOM).luminance(state ->5)));
-    public static final Block ORANGE_MUSHROOM = registerBlock("mushroom_orange", new MushroomPlantBlock(ModConfiguredFeatures.YELLOW_MUSHROOM_TREE_KEY_OTH, AbstractBlock.Settings.copy(Blocks.RED_MUSHROOM)));
+    public static final Block ORANGE_MUSHROOM = registerBlock("mushroom_orange", new MushroomPlantBlock(ModConfiguredFeatures.ORANGE_MUSHROOM_TREE_KEY_OTH, AbstractBlock.Settings.copy(Blocks.RED_MUSHROOM)));
     public static final Block YELLOW_MUSHROOM = registerBlock("mushroom_yellow", new MushroomPlantBlock(ModConfiguredFeatures.YELLOW_MUSHROOM_TREE_KEY_OTH, AbstractBlock.Settings.copy(Blocks.RED_MUSHROOM).luminance(state ->5)));
     public static final Block FERTILE_RED_MUSHROOM = registerBlock("mushroom_fertile_red", new MushroomPlantBlock(ModConfiguredFeatures.FERTILE_RED_MUSHROOM_KEY, AbstractBlock.Settings.copy(Blocks.RED_MUSHROOM)));
 
