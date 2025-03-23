@@ -13,7 +13,9 @@ import net.rodofire.mushrooomsmod.block.entity.RapangeFlowersBlockEntity;
 public class ModBlockEntities {
     public static void registerBlockEntities() {
         MushrooomsMod.LOGGER.info("|\t-Registering Block Entities");
-    }    public static final BlockEntityType<ForgeBlockEntity> FORGE_BLOCK_ENTITY = Registry.register(Registries.BLOCK_ENTITY_TYPE, Identifier.of(MushrooomsMod.MOD_ID, "forge_be")
+        BlockEntityType.CAMPFIRE.addSupportedBlock(ModBlocks.GREEN_CAMPFIRE);
+    }
+    public static final BlockEntityType<ForgeBlockEntity> FORGE_BLOCK_ENTITY = Registry.register(Registries.BLOCK_ENTITY_TYPE, Identifier.of(MushrooomsMod.MOD_ID, "forge_be")
             , BlockEntityType.Builder.create(ForgeBlockEntity::new, ModBlocks.FORGE_BLOCK).build());
 
     public static final BlockEntityType<BoostingMushroomBlockEntity> BOOSTING_MUSHROOM_ENTITY = Registry.register(Registries.BLOCK_ENTITY_TYPE, Identifier.of(MushrooomsMod.MOD_ID, "boosting_mushroom_be")
