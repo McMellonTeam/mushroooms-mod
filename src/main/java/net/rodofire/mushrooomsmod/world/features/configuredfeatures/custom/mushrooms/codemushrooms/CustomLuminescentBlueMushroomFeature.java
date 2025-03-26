@@ -22,7 +22,7 @@ public class CustomLuminescentBlueMushroomFeature extends CustomLuminescentBlueM
 
     @Override
     protected int getCapSize(int capSize) {
-        return Random.create().nextBetween(capSize - 1, capSize);
+        return random.nextBetween(capSize - 1, capSize);
     }
 
 

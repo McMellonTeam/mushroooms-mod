@@ -31,22 +31,22 @@ public class RockUtil {
         return new BlockLayer(new LayerPlacer(LayerPlacer.PlacingType.NOISE3D, noise), blockStates);
     }
 
-    public static BlockState[] getRandomStone() {
-        return getRandomStone(0.5f, (BlockState) null);
+    public static BlockState[] getRandomStone(Random random) {
+        return getRandomStone(random, 0.5f, (BlockState) null);
     }
 
-    public static BlockState[] getRandomStone(float chance) {
-        return getRandomStone(chance, (BlockState) null);
+    public static BlockState[] getRandomStone(Random random,float chance) {
+        return getRandomStone(random, chance, (BlockState) null);
     }
 
-    public static BlockState[] getRandomStone(BlockState... exclude) {
-        return getRandomStone(0.5f, exclude);
+    public static BlockState[] getRandomStone(Random random,BlockState... exclude) {
+        return getRandomStone(random, 0.5f, exclude);
     }
 
-    public static BlockState[] getRandomStone(float chance, BlockState... exclude) {
+    public static BlockState[] getRandomStone(Random random, float chance, BlockState... exclude) {
         List<BlockState> newStates = new ArrayList<>();
         for (BlockState state : STATES) {
-            if (Arrays.stream(exclude).noneMatch(state::equals) && MathUtil.getRandomBoolean(chance)) {
+            if (Arrays.stream(exclude).noneMatch(state::equals) && MathUtil.getRandomBoolean(random, chance)) {
                 newStates.add(state);
             }
         }

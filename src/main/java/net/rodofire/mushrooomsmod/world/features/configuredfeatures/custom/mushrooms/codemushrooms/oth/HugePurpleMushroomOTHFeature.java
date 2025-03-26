@@ -37,19 +37,19 @@ public class HugePurpleMushroomOTHFeature extends HugePurpleMushroomOTH {
         int z;
 
         if (direction % 4 == 0) {
-            z = Random.create().nextBetween(0, 1) * this.zDir;
-            x = Random.create().nextBetween(0, 5) / 5 * this.xDir;
+            z = random.nextBetween(0, 1) * this.zDir;
+            x = random.nextBetween(0, 5) / 5 * this.xDir;
             if (x == 0 && z == 0) z = this.zDir;
             return new Integer[]{x, z};
         }
         if (direction % 4 == 2) {
-            x = Random.create().nextBetween(0, 1) * this.xDir;
-            z = Random.create().nextBetween(0, 5) / 5 * this.xDir;
+            x = random.nextBetween(0, 1) * this.xDir;
+            z = random.nextBetween(0, 5) / 5 * this.xDir;
             if (x == 0 && z == 0) x = this.xDir;
             return new Integer[]{x, z};
         }
-        z = Random.create().nextBetween(0, 1) * this.zDir;
-        x = Random.create().nextBetween(0, 1) * this.xDir;
+        z = random.nextBetween(0, 1) * this.zDir;
+        x = random.nextBetween(0, 1) * this.xDir;
         if (x == 0 && z == 0) {
             z = this.zDir;
             x = this.xDir;
@@ -78,10 +78,10 @@ public class HugePurpleMushroomOTHFeature extends HugePurpleMushroomOTH {
         Integer[] offset = getOffset(direction);
         int segmentHeight;
         if (maxHeight - height <= 0) return posList;
-        if (maxHeight - height <= 10) segmentHeight = Random.create().nextBetween(1, maxHeight - height);
-        else if (oldHeight < 2) segmentHeight = Random.create().nextBetween(1, 3);
-        else if (oldHeight < 4) segmentHeight = Random.create().nextBetween(1, 4);
-        else segmentHeight = Random.create().nextBetween(3, 7);
+        if (maxHeight - height <= 10) segmentHeight = random.nextBetween(1, maxHeight - height);
+        else if (oldHeight < 2) segmentHeight = random.nextBetween(1, 3);
+        else if (oldHeight < 4) segmentHeight = random.nextBetween(1, 4);
+        else segmentHeight = random.nextBetween(3, 7);
 
         for (int i = 0; i < segmentHeight; i++) {
             posList.add(pos.add(offset[0], i + 1, offset[1]));
@@ -96,8 +96,8 @@ public class HugePurpleMushroomOTHFeature extends HugePurpleMushroomOTH {
     private BlockList calculateTrunkCoordinates(int direction, BlockPos pos, int trunk, PurpleMushroomConfig config) {
         ///on calcule la direction
         calculateDirection(direction);
-        int startHeight = Random.create().nextBetween(1, 6);
-        this.maxHeight = Random.create().nextBetween(config.minHeight(), config.maxHeight());
+        int startHeight = random.nextBetween(1, 6);
+        this.maxHeight = random.nextBetween(config.minHeight(), config.maxHeight());
         List<BlockPos> posList = new ArrayList<>();
 
         ///on place les blocks jusqu'en startheight
@@ -124,7 +124,7 @@ public class HugePurpleMushroomOTHFeature extends HugePurpleMushroomOTH {
 
     @Override
     protected OrderedBlockListManager getCapCoordinates(BlockPos pos, PurpleMushroomConfig config) {
-        int height = Random.create().nextBetween(2, 3);
+        int height = random.nextBetween(2, 3);
         int radius = getRadius(config);
         BlockListManager blockLists = new BlockListManager();
 
@@ -166,6 +166,6 @@ public class HugePurpleMushroomOTHFeature extends HugePurpleMushroomOTH {
     }
 
     public int getRadius(PurpleMushroomConfig config) {
-        return Random.create().nextBetween(config.minCapSize(), config.maxCapSize());
+        return random.nextBetween(config.minCapSize(), config.maxCapSize());
     }
 }

@@ -55,10 +55,10 @@ public class ColorfulTreeFoliagePlacer extends FoliagePlacer {
 
     @Override
     protected void generate(TestableWorld world, BlockPlacer placer, Random random, TreeFeatureConfig config, int trunkHeight, TreeNode treeNode, int foliageHeight, int radius, int offset) {
-        int radiusB = Random.create().nextBetween(4, 5);
+        int radiusB = random.nextBetween(4, 5);
         SphereGen sphere = new SphereGen(treeNode.getCenter(), radiusB);
         sphere.setHalfSphere(SphereGen.SphereType.HALF);
-        BlockState state = getLeaveBlock().with(Properties.PERSISTENT, true);
+        BlockState state = getLeaveBlock(random).with(Properties.PERSISTENT, true);
 
         ShapePlacer placer1 = new ShapePlacer((StructureWorldAccess) world, ShapePlacer.PlaceMoment.OTHER, treeNode.getCenter());
         placer1.place(sphere.getShapeCoordinates(), new LayerManager(
@@ -71,7 +71,7 @@ public class ColorfulTreeFoliagePlacer extends FoliagePlacer {
             for (int z = -radiusB; z <= radiusB; z++) {
                 if (xx + z * z <= radiusB * radiusB) {
                     if (MathUtil.getRandomBoolean(0.8f)) {
-                        for (int y = 0; y >= -Random.create().nextBetween(0, 8); y--) {
+                        for (int y = 0; y >= -random.nextBetween(0, 8); y--) {
                             placeFoliageBlock(world, placer, treeNode.getCenter().add(x, y, z), state);
                         }
                     }
@@ -90,9 +90,9 @@ public class ColorfulTreeFoliagePlacer extends FoliagePlacer {
         return false;
     }
 
-    private BlockState getLeaveBlock() {
-        int random = Random.create().nextBetween(0, 6);
-        return switch (random) {
+    private BlockState getLeaveBlock(Random random) {
+        int randomInt = random.nextBetween(0, 6);
+        return switch (randomInt) {
             case 0 -> ModBlocks.BLUE_COLORFUL_LEAVES.getDefaultState();
             case 1 -> ModBlocks.RED_COLORFUL_LEAVES.getDefaultState();
             case 2 -> ModBlocks.YELLOW_COLORFUL_LEAVES.getDefaultState();

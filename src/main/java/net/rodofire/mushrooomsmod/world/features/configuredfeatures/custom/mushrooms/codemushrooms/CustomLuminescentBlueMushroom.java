@@ -13,6 +13,8 @@ import net.minecraft.world.gen.feature.HugeMushroomFeatureConfig;
 import net.minecraft.world.gen.feature.util.FeatureContext;
 
 public abstract class CustomLuminescentBlueMushroom extends Feature<HugeMushroomFeatureConfig> {
+    Random random;
+
     public CustomLuminescentBlueMushroom(Codec<HugeMushroomFeatureConfig> configCodec) {
         super(configCodec);
     }
@@ -57,13 +59,16 @@ public abstract class CustomLuminescentBlueMushroom extends Feature<HugeMushroom
         BlockPos.Mutable mutable;
         StructureWorldAccess structureWorldAccess = context.getWorld();
         BlockPos blockPos = context.getOrigin();
-        Random random = context.getRandom();
+        this.random = context.getRandom();
         HugeMushroomFeatureConfig hugeMushroomFeatureConfig = context.getConfig();
+
         int i = this.getHeight(random);
         int large = this.getCapSize(hugeMushroomFeatureConfig.foliageRadius);
+
         if (!this.canGenerate(structureWorldAccess, blockPos, i, mutable = new BlockPos.Mutable(), hugeMushroomFeatureConfig, large)) {
             return false;
         }
+
         this.generateCap(structureWorldAccess, random, blockPos, i, mutable, hugeMushroomFeatureConfig, large);
         this.generateStem(structureWorldAccess, random, blockPos, hugeMushroomFeatureConfig, i, mutable);
         return true;

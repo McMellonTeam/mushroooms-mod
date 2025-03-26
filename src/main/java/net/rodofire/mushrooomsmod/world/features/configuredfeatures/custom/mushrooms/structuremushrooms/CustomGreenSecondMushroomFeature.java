@@ -192,8 +192,8 @@ public class CustomGreenSecondMushroomFeature extends CustomGreenSecondMushroom 
     protected Integer getCap(int large) {
         return switch (large) {
             case 1 -> random.nextBetween(1, 6);
-            case 2 -> Random.createLocal().nextBetween(1, 5);
-            case 3 -> Random.createLocal().nextBetween(1, 8);
+            case 2 -> random.nextBetween(1, 5);
+            case 3 -> random.nextBetween(1, 8);
             default -> random.nextBetween(1, 10);
         };
     }

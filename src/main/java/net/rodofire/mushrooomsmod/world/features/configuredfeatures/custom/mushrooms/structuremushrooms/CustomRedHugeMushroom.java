@@ -22,12 +22,12 @@ public abstract class CustomRedHugeMushroom extends Feature<ModMushroomFeatureCo
         Random random = context.getRandom();
 
         int large;
-        int height = Random.create().nextBetween(5, 9);
+        int height = random.nextBetween(5, 9);
 
         ModMushroomFeatureConfig modMushroomFeatureConfig = context.getConfig();
 
-        if (height < 7) large = Random.create().nextBetween(1, 2);
-        else large = Random.create().nextBetween(2, 3);
+        if (height < 7) large = random.nextBetween(1, 2);
+        else large = random.nextBetween(2, 3);
 
         Integer[] coordinates = trunkPlace(blockPos, large, mutable, structureWorldAccess, modMushroomFeatureConfig, random);
 

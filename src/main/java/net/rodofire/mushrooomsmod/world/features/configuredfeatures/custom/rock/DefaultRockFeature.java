@@ -50,7 +50,7 @@ public abstract class DefaultRockFeature extends Feature<DefaultFeatureConfig> {
             return false;
         }
 
-        BlockLayer layer = this.getBlockLayer(world.getSeed());
+        BlockLayer layer = this.getBlockLayer(random, world.getSeed());
         Vec3i dimensions = this.getDimensions(random);
 
         SphereGen circleGen = new SphereGen(pos, 0);
@@ -100,7 +100,7 @@ public abstract class DefaultRockFeature extends Feature<DefaultFeatureConfig> {
 
     public abstract Rotator getRotator(BlockPos pos, Random random);
 
-    public abstract BlockLayer getBlockLayer(long seed);
+    public abstract BlockLayer getBlockLayer(Random random, long seed);
 
     public abstract Vec3i getDimensions(Random random);
 

@@ -31,17 +31,17 @@ public class BlueLuminescentTrunkPlacer extends TrunkPlacer {
 
     @Override
     public List<FoliagePlacer.TreeNode> generate(TestableWorld world, BiConsumer<BlockPos, BlockState> replacer, Random random, int height, BlockPos startPos, TreeFeatureConfig config) {
-        int realheight = Random.create().nextBetween(firstRandomHeight, firstRandomHeight + 4);
+        int realheight =random.nextBetween(firstRandomHeight, firstRandomHeight + 4);
         List<FoliagePlacer.TreeNode> list = new ArrayList<FoliagePlacer.TreeNode>();
 
         generateColumn(world, replacer, random, startPos, config, realheight, 0);
         for (int i = 0; i <= realheight; ++i) {
             if (Random.create().nextBetween(0, realheight / 4) == 0) {
-                list.add(generateColumn(world, replacer, random, startPos.add(Random.create().nextBetween(-1, 1), 0, Random.create().nextBetween(-1, 1)), config, realheight, i));
+                list.add(generateColumn(world, replacer, random, startPos.add(Random.create().nextBetween(-1, 1), 0,random.nextBetween(-1, 1)), config, realheight, i));
             }
         }
-        for (int i = 0; i <= Random.create().nextBetween(1, 4); ++i) {
-            getAndSetState(world, replacer, random, startPos.add(Random.create().nextBetween(-3, 3), realheight + Random.create().nextBetween(0, 2), Random.create().nextBetween(-3, 3)), config);
+        for (int i = 0; i <=random.nextBetween(1, 4); ++i) {
+            getAndSetState(world, replacer, random, startPos.add(Random.create().nextBetween(-3, 3), realheight +random.nextBetween(0, 2),random.nextBetween(-3, 3)), config);
         }
         return list;
     }

@@ -24,7 +24,6 @@ public class OakBerriesTreeDecorator extends TreeDecorator {
 
     @Override
     public void generate(Generator generator) {
-        // Iterate through block positions
         generator.getLeavesPositions().forEach(pos -> {
             Random random = generator.getRandom();
             if (random.nextInt(4) == 0) {

@@ -22,8 +22,9 @@ public class SimpleBlockFeature extends Feature<ModSimpleBlockFeatureConfig> imp
         Random random = context.getRandom();
         BlockState blockState = context.getConfig().blockprovider.get(random, pos);
         BlockPos.Mutable mutable = new BlockPos.Mutable();
+
         for (int i = 0; i < 81; i++) {
-            mutable.set(pos).move(Random.create().nextBetween(-9, 9), Random.create().nextBetween(-9, 9), Random.create().nextBetween(-9, 9));
+            mutable.set(pos).move(random.nextBetween(-9, 9), random.nextBetween(-9, 9), random.nextBetween(-9, 9));
             if (!world.getBlockState(mutable).isAir() || !blockState.canPlaceAt(world, mutable)) continue;
             world.setBlockState(mutable, blockState, 2);
         }

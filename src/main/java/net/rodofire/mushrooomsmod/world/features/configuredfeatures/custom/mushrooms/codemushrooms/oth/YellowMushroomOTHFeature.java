@@ -12,7 +12,6 @@ import net.minecraft.world.StructureWorldAccess;
 import net.minecraft.world.gen.feature.HugeMushroomFeatureConfig;
 import net.rodofire.easierworldcreator.blockdata.blocklist.BlockListManager;
 import net.rodofire.easierworldcreator.blockdata.blocklist.OrderedBlockListManager;
-import net.rodofire.easierworldcreator.blockdata.layer.BlockLayer;
 import net.rodofire.easierworldcreator.blockdata.layer.BlockLayerManager;
 import net.rodofire.easierworldcreator.blockdata.sorter.BlockSorter;
 import net.rodofire.easierworldcreator.shape.block.gen.LineGen;
@@ -21,9 +20,9 @@ import net.rodofire.easierworldcreator.shape.block.layer.LayerManager;
 import net.rodofire.easierworldcreator.shape.block.placer.animator.StructurePlaceAnimator;
 import net.rodofire.easierworldcreator.shape.block.rotations.Rotator;
 import net.rodofire.easierworldcreator.util.LongPosHelper;
-import net.rodofire.mushrooomsmod.block.ModBlocks;
 
-import java.util.*;
+import java.util.Map;
+import java.util.Set;
 
 public class YellowMushroomOTHFeature extends YellowMushroomOTH {
 

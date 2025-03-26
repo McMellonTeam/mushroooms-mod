@@ -22,10 +22,12 @@ public class FleurBerriesFeature extends Feature<DefaultFeatureConfig> {
         BlockState state = ModBlocks.FLEUR_BERRIES.getDefaultState();
         BlockPos pos = context.getOrigin();
         BlockPos.Mutable mutable = new BlockPos.Mutable();
+        Random random = context.getRandom();
+
         for (int a = 0; a <= 55; a++) {
-            mutable.set(pos, Random.create().nextBetween(-9, 9), Random.create().nextBetween(-3, 3), Random.create().nextBetween(-9, 9));
+            mutable.set(pos, random.nextBetween(-9, 9), random.nextBetween(-3, 3), random.nextBetween(-9, 9));
             if (state.canPlaceAt(world, mutable) && world.getBlockState(mutable).isAir() && world.getBlockState(mutable.up()).isAir()) {
-                world.setBlockState(mutable, state.with(Properties.AGE_3, Random.create().nextBetween(0, 3)), 2);
+                world.setBlockState(mutable, state.with(Properties.AGE_3, random.nextBetween(0, 3)), 2);
             }
         }
         return true;

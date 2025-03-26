@@ -64,7 +64,7 @@ public class SakuraArchFeature extends Feature<ArchConfig> {
                 random.nextBetween(2, 5),
                 Blocks.STONE.getDefaultState(),
                 world.getSeed(),
-                RockUtil.getRandomStone(Blocks.TUFF.getDefaultState()));
+                RockUtil.getRandomStone(random, Blocks.TUFF.getDefaultState()));
 
         BlockLayer grass = new BlockLayer(new LayerPlacer(LayerPlacer.PlacingType.RANDOM), Blocks.GRASS_BLOCK.getDefaultState(), 1);
 

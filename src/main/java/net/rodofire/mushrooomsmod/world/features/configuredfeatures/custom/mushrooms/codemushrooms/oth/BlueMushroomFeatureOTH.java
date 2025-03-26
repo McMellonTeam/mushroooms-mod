@@ -49,7 +49,7 @@ public class BlueMushroomFeatureOTH extends CustomBlueMushroom {
         sphere.setRotator(
                 new Rotator(pos,
                         0,
-                        MathUtil.getRandomOpposite() * (random.nextBetween(0, 20) + random.nextBetween(0, 10)),
+                        MathUtil.getRandomOpposite(random) * (random.nextBetween(0, 20) + random.nextBetween(0, 10)),
                         random.nextBetween(0, 360)
                 )
         );

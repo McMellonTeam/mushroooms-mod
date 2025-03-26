@@ -80,7 +80,7 @@ public abstract class YellowMushroomOTH extends Feature<HugeMushroomFeatureConfi
         if (!world.getBlockState(origin.down()).isIn(BlockTags.MUSHROOM_GROW_BLOCK))
             return false;
 
-        boolean flatCap = MathUtil.getRandomBoolean(0.33f);
+        boolean flatCap = MathUtil.getRandomBoolean(random, 0.33f);
         int large;
         int height;
 

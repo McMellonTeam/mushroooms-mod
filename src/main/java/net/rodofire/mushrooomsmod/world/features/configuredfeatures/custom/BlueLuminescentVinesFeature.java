@@ -21,6 +21,7 @@ public class BlueLuminescentVinesFeature extends Feature<TwistingVinesFeatureCon
     public boolean generate(FeatureContext<TwistingVinesFeatureConfig> context) {
         BlockPos.Mutable mutable = new BlockPos.Mutable();
         BlockPos.Mutable secondmutable = new BlockPos.Mutable();
+        Random random = context.getRandom();
         BlockPos pos = context.getOrigin();
         StructureWorldAccess world = context.getWorld();
         TwistingVinesFeatureConfig config = context.getConfig();
@@ -31,10 +32,10 @@ public class BlueLuminescentVinesFeature extends Feature<TwistingVinesFeatureCon
 
         mutable.set(pos);
         for (int a = 0; a <= i * i; ++a) {
-            mutable.set(pos).move(Random.create().nextBetween(-i, i), randomheight = Random.create().nextBetween(3, config.maxHeight()), Random.create().nextBetween(-i, i));
+            mutable.set(pos).move(random.nextBetween(-i, i), randomheight = random.nextBetween(3, config.maxHeight()), random.nextBetween(-i, i));
             secondmutable.set(mutable);
             if ((maxheight = canGenerate(randomheight, secondmutable, world)) == 0) continue;
-            if (maxheight < randomheight) randomheight = Random.create().nextBetween(0, maxheight);
+            if (maxheight < randomheight) randomheight = random.nextBetween(0, maxheight);
             generateColumn(randomheight, world, mutable);
         }
 
