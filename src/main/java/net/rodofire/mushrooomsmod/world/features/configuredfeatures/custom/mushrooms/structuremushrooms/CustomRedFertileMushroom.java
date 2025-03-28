@@ -46,12 +46,12 @@ public class CustomRedFertileMushroom extends Feature<DefaultFeatureConfig> {
     public boolean generate(FeatureContext<DefaultFeatureConfig> context) {
         StructureWorldAccess world = context.getWorld();
         BlockPos pos = context.getOrigin();
+        this.random = context.getRandom();
         int mushroom = getMushroom();
         int large = getLarge(mushroom);
         int height = getHeight(mushroom);
         BlockRotation rotation = getBlockRotation();
         Vec3i offset = getOffset(mushroom, rotation);
-        this.random = context.getRandom();
 
         if (!world.getBlockState(pos.down()).isOpaqueFullCube(world, pos.down())) {
             return false;

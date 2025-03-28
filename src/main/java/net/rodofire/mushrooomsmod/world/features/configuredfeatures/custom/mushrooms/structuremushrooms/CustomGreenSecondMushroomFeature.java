@@ -25,7 +25,7 @@ public class CustomGreenSecondMushroomFeature extends CustomGreenSecondMushroom 
     }
 
     protected RegistryKey<ConfiguredFeature<?, ?>> getTreeFeature(Random random, boolean bees) {
-        return ModConfiguredFeatures.GREEN_MUSHROOM_TREE_KEY;
+        return ModConfiguredFeatures.GREEN_MUSHROOM_TREE;
     }
 
     @Override

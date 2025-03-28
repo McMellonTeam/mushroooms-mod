@@ -19,6 +19,8 @@ import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.mushr
 import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.mushrooms.codemushrooms.oth.HugePurpleMushroomOTHFeature;
 import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.mushrooms.codemushrooms.oth.OrangeMushroomFeatureOTH;
 import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.mushrooms.codemushrooms.oth.YellowMushroomOTHFeature;
+import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.mushrooms.codemushrooms.wg.BlueMushroomFeatureWG;
+import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.mushrooms.codemushrooms.wg.OrangeMushroomFeatureWG;
 import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.mushrooms.structuremushrooms.CustomGreenSecondMushroomFeature;
 import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.mushrooms.structuremushrooms.CustomRedFertileMushroom;
 import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.mushrooms.structuremushrooms.CustomRedHugeMushroomFeature;
@@ -35,12 +37,13 @@ public class ModFeatures<FC extends FeatureConfig> {
     public static Feature<ModMushroomFeatureConfig> HUGE_GREEN_MUSHROOM;
     public static Feature<HugeMushroomFeatureConfig> HUGE_BLUE_LUMINESCENT_MUSHROOM;
     public static Feature<HugeMushroomFeatureConfig> HUGE_LUMINESCENT_PINK_MUSHROOM;
-    public static Feature<PurpleMushroomConfig> HUGE_BIG_PURPLE_MUSHROOM_OTH;
-    public static Feature<PurpleMushroomConfig> HUGE_BIG_PURPLE_MUSHROOM_WG;
+    public static Feature<PurpleMushroomConfig> HUGE_BIG_PURPLE_MUSHROOM;
     public static Feature<HugeMushroomFeatureConfig> HUGE_BIG_GREEN_MUSHROOM;
     public static Feature<ModMushroomFeatureConfig> HUGE_BIG_RED_MUSHROOM;
     public static Feature<ModMushroomFeatureConfig> HUGE_BLUE_MUSHROOM;
+    public static Feature<ModMushroomFeatureConfig> HUGE_BLUE_MUSHROOM_WG;
     public static Feature<DefaultFeatureConfig> HUGE_BIG_ORANGE_MUSHROOM;
+    public static Feature<DefaultFeatureConfig> HUGE_BIG_ORANGE_MUSHROOM_WG;
     public static Feature<HugeMushroomFeatureConfig> HUGE_YELLOW_MUSHROOM;
     public static Feature<DefaultFeatureConfig> FERTILE_RED_MUSHROOM;
 
@@ -87,12 +90,13 @@ public class ModFeatures<FC extends FeatureConfig> {
         HUGE_GREEN_MUSHROOM = registerCustomFeature("huge_green_mushroom", new CustomGreenMushroomFeature(ModMushroomFeatureConfig.CODEC));
         HUGE_BLUE_LUMINESCENT_MUSHROOM = registerCustomFeature("huge_blue_luminescent_mushroom", new CustomLuminescentBlueMushroomFeature(HugeMushroomFeatureConfig.CODEC));
         HUGE_LUMINESCENT_PINK_MUSHROOM = registerCustomFeature("huge_luminescent_pink_mushroom", new CustomLuminescentPinkMushroomFeature(HugeMushroomFeatureConfig.CODEC));
-        HUGE_BIG_PURPLE_MUSHROOM_WG = registerCustomFeature("wg_huge_big_purple_mushroom_feature", new HugePurpleMushroomOTHFeature(PurpleMushroomConfig.CODEC));
-        HUGE_BIG_PURPLE_MUSHROOM_OTH = registerCustomFeature("huge_big_purple_mushroom_feature", new HugePurpleMushroomOTHFeature(PurpleMushroomConfig.CODEC));
+        HUGE_BIG_PURPLE_MUSHROOM = registerCustomFeature("huge_big_purple_mushroom_feature", new HugePurpleMushroomOTHFeature(PurpleMushroomConfig.CODEC));
         HUGE_BIG_GREEN_MUSHROOM = registerCustomFeature("huge_big_green_mushroom_feature", new CustomGreenSecondMushroomFeature(HugeMushroomFeatureConfig.CODEC));
         HUGE_BLUE_MUSHROOM = registerCustomFeature("huge_blue_mushroom", new BlueMushroomFeatureOTH(ModMushroomFeatureConfig.CODEC));
+        HUGE_BLUE_MUSHROOM_WG = registerCustomFeature("huge_blue_mushroom_wg", new BlueMushroomFeatureWG(ModMushroomFeatureConfig.CODEC));
         HUGE_BIG_RED_MUSHROOM = registerCustomFeature("huge_red_red_mushroom_feature", new CustomRedHugeMushroomFeature(ModMushroomFeatureConfig.CODEC));
         HUGE_BIG_ORANGE_MUSHROOM = registerCustomFeature("huge_orange_mushroom_feature", new OrangeMushroomFeatureOTH(DefaultFeatureConfig.CODEC));
+        HUGE_BIG_ORANGE_MUSHROOM_WG = registerCustomFeature("huge_orange_mushroom_feature", new OrangeMushroomFeatureWG(DefaultFeatureConfig.CODEC));
         HUGE_YELLOW_MUSHROOM = registerCustomFeature("huge_yellow_mushroom_feature", new YellowMushroomOTHFeature(HugeMushroomFeatureConfig.CODEC));
         FERTILE_RED_MUSHROOM = registerCustomFeature("mushroom_fertile_red", new CustomRedFertileMushroom(DefaultFeatureConfig.CODEC));
 
