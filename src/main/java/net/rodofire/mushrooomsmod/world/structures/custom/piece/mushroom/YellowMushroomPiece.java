@@ -1,4 +1,4 @@
-package net.rodofire.mushrooomsmod.world.structures.mushrooms;
+package net.rodofire.mushrooomsmod.world.structures.custom.piece.mushroom;
 
 import it.unimi.dsi.fastutil.longs.LongOpenHashSet;
 import it.unimi.dsi.fastutil.longs.LongSet;
@@ -111,11 +111,6 @@ public class YellowMushroomPiece extends MultiChunkFeaturePiece {
     @Override
     public Pair<Map<ChunkPos, LongOpenHashSet>, LayerManager> getStructurePair(StructureWorldAccess structureWorldAccess, StructureAccessor structureAccessor, ChunkGenerator chunkGenerator, Random random, BlockBox blockBox, ChunkPos chunkPos, BlockPos blockPos) {
         return null;
-    }
-
-    @Override
-    public void generateBaseStructure(StructureWorldAccess structureWorldAccess, StructureAccessor structureAccessor, ChunkGenerator chunkGenerator, Random random, BlockBox blockBox, ChunkPos chunkPos, BlockPos blockPos) {
-
     }
 
     public DividedBlockListManager getTrunk(Random random) {

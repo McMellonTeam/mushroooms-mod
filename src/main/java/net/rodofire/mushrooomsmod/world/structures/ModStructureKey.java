@@ -8,6 +8,7 @@ import net.rodofire.mushrooomsmod.MushrooomsMod;
 
 public interface ModStructureKey {
     RegistryKey<Structure> YELLOW_MUSHROOM = of("yellow_mushroom");
+    RegistryKey<Structure> GIANT_YELLOW_MUSHROOM = of("giant_yellow_mushroom");
 
     private static RegistryKey<Structure> of(String id) {
         return RegistryKey.of(RegistryKeys.STRUCTURE, Identifier.of(MushrooomsMod.MOD_ID, id));

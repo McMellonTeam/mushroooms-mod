@@ -1,4 +1,4 @@
-package net.rodofire.mushrooomsmod.world.structures.mushrooms;
+package net.rodofire.mushrooomsmod.world.structures.custom.structure.mushrooms;
 
 import com.mojang.serialization.MapCodec;
 import it.unimi.dsi.fastutil.longs.LongSet;
@@ -17,6 +17,7 @@ import net.rodofire.easierworldcreator.shape.block.gen.SphereGen;
 import net.rodofire.easierworldcreator.shape.block.rotations.Rotator;
 import net.rodofire.mushrooomsmod.MushrooomsMod;
 import net.rodofire.mushrooomsmod.world.structures.ModStructureTypes;
+import net.rodofire.mushrooomsmod.world.structures.custom.piece.mushroom.YellowMushroomPiece;
 
 import java.util.Optional;
 import java.util.Set;
@@ -35,7 +36,6 @@ public class YellowMushroomStructure extends Structure {
         int x = chunkPos.getCenterX() + context.random().nextBetween(-7, 7);
         int z = chunkPos.getCenterZ() + context.random().nextBetween(-7, 7);
 
-        //donne des fois des positions sur l'océan
         int y = context.chunkGenerator().getHeightOnGround(x, z, Heightmap.Type.WORLD_SURFACE_WG, context.world(), context.noiseConfig());
 
         if(context.chunkGenerator().getSeaLevel() == y) return Optional.empty();
