@@ -1,9 +1,13 @@
 package net.rodofire.mushrooomsmod.world.structures.custom.piece.mushroom;
 
+import com.mojang.serialization.DataResult;
+import com.mojang.serialization.DynamicOps;
 import it.unimi.dsi.fastutil.longs.LongOpenHashSet;
 import it.unimi.dsi.fastutil.longs.LongSet;
 import net.minecraft.block.Blocks;
 import net.minecraft.nbt.NbtCompound;
+import net.minecraft.nbt.NbtElement;
+import net.minecraft.nbt.NbtOps;
 import net.minecraft.structure.StructureContext;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Pair;
@@ -27,6 +31,8 @@ import net.rodofire.easierworldcreator.shape.block.rotations.Rotator;
 import net.rodofire.easierworldcreator.structure.MultiChunkFeaturePiece;
 import net.rodofire.mushrooomsmod.block.ModBlocks;
 import net.rodofire.mushrooomsmod.world.structures.ModStructurePieceType;
+import net.rodofire.mushrooomsmod.world.structures.custom.config.mushroom.GiantYellowMushroomGeneratorConfig;
+import net.rodofire.mushrooomsmod.world.structures.custom.config.mushroom.YellowMushroomGeneratorConfig;
 
 import java.util.List;
 import java.util.Map;
@@ -42,28 +48,28 @@ public class YellowMushroomPiece extends MultiChunkFeaturePiece {
 
     BlockLayer capLayer;
     BlockLayer trunkLayer;
+    YellowMushroomGeneratorConfig config;
 
-    public YellowMushroomPiece(BlockBox boundingBox, BlockPos center, BlockPos end, Rotator rotator, int radius, boolean flat, Identifier structureReference, Set<ChunkPos> chunkPosSet) {
+    public YellowMushroomPiece(BlockBox boundingBox, YellowMushroomGeneratorConfig config, Identifier structureReference, Set<ChunkPos> chunkPosSet) {
         super(ModStructurePieceType.YELLOW_MUSHROOM, 0, boundingBox, structureReference, chunkPosSet);
-        this.rotator = rotator;
-        this.end = end;
-        this.center = center;
-        this.radius = radius;
-        this.flat = flat;
+        this.rotator = config.rotator();
+        this.end = config.end();
+        this.center = config.start();
+        this.radius = config.radius();
+        this.flat = config.flat();
+        this.config = config;
     }
 
-    public YellowMushroomPiece(NbtCompound nbtCompound) {
-        super(ModStructurePieceType.YELLOW_MUSHROOM, nbtCompound);
-        this.center = new BlockPos(nbtCompound.getInt("center_x"), nbtCompound.getInt("center_y"), nbtCompound.getInt("center_z"));
-        this.end = new BlockPos(nbtCompound.getInt("end_x"), nbtCompound.getInt("end_y"), nbtCompound.getInt("end_z"));
-        this.radius = nbtCompound.getInt("radius");
-        this.flat = nbtCompound.getBoolean("flat");
-        this.rotator = new Rotator(
-                new BlockPos(nbtCompound.getInt("rotator_x"), nbtCompound.getInt("rotator_y"), nbtCompound.getInt("rotator_z")),
-                nbtCompound.getInt("rotation1"),
-                nbtCompound.getInt("rotation2"),
-                nbtCompound.getInt("rotation3")
-        );
+    public YellowMushroomPiece(NbtCompound nbt) {
+        super(ModStructurePieceType.YELLOW_MUSHROOM, nbt);
+        this.config = YellowMushroomGeneratorConfig.CODEC.parse(NbtOps.INSTANCE, nbt.get("config"))
+                .result()
+                .orElseThrow(() -> new IllegalStateException("Failed to decode config"));
+        this.center = config.start();
+        this.radius = config.radius();
+        this.flat = config.flat();
+        this.end = config.end();
+        this.rotator = config.rotator();
     }
 
     public YellowMushroomPiece(StructureContext structureContext, NbtCompound nbtCompound) {
@@ -73,20 +79,10 @@ public class YellowMushroomPiece extends MultiChunkFeaturePiece {
     @Override
     protected void writeNbt(StructureContext context, NbtCompound nbt) {
         super.writeNbt(context, nbt);
-        nbt.putInt("center_x", center.getX());
-        nbt.putInt("center_y", center.getY());
-        nbt.putInt("center_z", center.getZ());
-        nbt.putInt("end_x", end.getX());
-        nbt.putInt("end_y", end.getY());
-        nbt.putInt("end_z", end.getZ());
-        nbt.putInt("radius", radius);
-        nbt.putBoolean("flat", flat);
-        nbt.putInt("rotator_x", rotator.getCenterPos().getX());
-        nbt.putInt("rotator_y", rotator.getCenterPos().getY());
-        nbt.putInt("rotator_z", rotator.getCenterPos().getZ());
-        nbt.putInt("rotation1", rotator.getYRotation());
-        nbt.putInt("rotation2", rotator.getZRotation());
-        nbt.putInt("rotation3", rotator.getSecondYRotation());
+        DynamicOps<NbtElement> ops = NbtOps.INSTANCE;
+        DataResult<NbtElement> encoded = YellowMushroomGeneratorConfig.CODEC.encode(config, ops, ops.empty());
+
+        encoded.result().ifPresent(element -> nbt.put("config", element));
     }
 
     @Override

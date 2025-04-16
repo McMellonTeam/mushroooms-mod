@@ -17,6 +17,7 @@ import net.rodofire.easierworldcreator.shape.block.gen.SphereGen;
 import net.rodofire.easierworldcreator.shape.block.rotations.Rotator;
 import net.rodofire.mushrooomsmod.MushrooomsMod;
 import net.rodofire.mushrooomsmod.world.structures.ModStructureTypes;
+import net.rodofire.mushrooomsmod.world.structures.custom.config.mushroom.YellowMushroomGeneratorConfig;
 import net.rodofire.mushrooomsmod.world.structures.custom.piece.mushroom.YellowMushroomPiece;
 
 import java.util.Optional;
@@ -38,7 +39,7 @@ public class YellowMushroomStructure extends Structure {
 
         int y = context.chunkGenerator().getHeightOnGround(x, z, Heightmap.Type.WORLD_SURFACE_WG, context.world(), context.noiseConfig());
 
-        if(context.chunkGenerator().getSeaLevel() == y) return Optional.empty();
+        if (context.chunkGenerator().getSeaLevel() == y) return Optional.empty();
 
         BlockPos pos = new BlockPos(x, y, z);
 
@@ -75,10 +76,17 @@ public class YellowMushroomStructure extends Structure {
         Identifier id = Identifier.of(MushrooomsMod.MOD_ID, "yellow_mushroom_" + random.nextLong());
         Set<ChunkPos> chunkPosSet = covered.longStream().mapToObj(ChunkPos::new).collect(Collectors.toSet());
 
+        YellowMushroomGeneratorConfig config1 = new YellowMushroomGeneratorConfig(pos, end, flatCap, large, rotator);
+
         for (long encodedChunkPos : covered) {
             ChunkPos chunkPos = new ChunkPos(encodedChunkPos);
 
-            builder.addPiece(new YellowMushroomPiece(new BlockBox(chunkPos.getStartX(), 0, chunkPos.getStartZ(), chunkPos.getStartX() + 16, 300, chunkPos.getStartZ() + 16), pos, end, rotator, large, flatCap, id, chunkPosSet));
+            builder.addPiece(new YellowMushroomPiece(
+                    new BlockBox(chunkPos.getStartX(), 0, chunkPos.getStartZ(), chunkPos.getStartX() + 16, 300, chunkPos.getStartZ() + 16),
+                    config1,
+                    id,
+                    chunkPosSet
+            ));
         }
 
     }
