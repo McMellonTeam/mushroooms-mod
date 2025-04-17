@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "mushrooomsmod:purple_mushroom",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 17283946827,
+    "spacing": 3,
+    "separation": 1
+  }
+}
