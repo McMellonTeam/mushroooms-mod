@@ -1,7 +1,5 @@
 package net.rodofire.mushrooomsmod.world.structures.custom.piece.mushroom;
 
-import com.mojang.serialization.DataResult;
-import com.mojang.serialization.DynamicOps;
 import it.unimi.dsi.fastutil.longs.Long2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.longs.LongArrayList;
 import it.unimi.dsi.fastutil.longs.LongIterator;
@@ -10,10 +8,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.MultifaceGrowthBlock;
 import net.minecraft.nbt.NbtCompound;
-import net.minecraft.nbt.NbtElement;
-import net.minecraft.nbt.NbtOps;
 import net.minecraft.structure.StructureContext;
-import net.minecraft.structure.StructurePieceType;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Pair;
 import net.minecraft.util.math.BlockBox;
@@ -25,7 +20,6 @@ import net.minecraft.world.StructureWorldAccess;
 import net.minecraft.world.gen.StructureAccessor;
 import net.minecraft.world.gen.chunk.ChunkGenerator;
 import net.rodofire.easierworldcreator.blockdata.StructurePlacementRuleManager;
-import net.rodofire.easierworldcreator.blockdata.blocklist.BlockListManager;
 import net.rodofire.easierworldcreator.blockdata.blocklist.DividedBlockListManager;
 import net.rodofire.easierworldcreator.blockdata.layer.BlockLayer;
 import net.rodofire.easierworldcreator.blockdata.layer.BlockLayerManager;
@@ -43,7 +37,10 @@ import net.rodofire.mushrooomsmod.world.structures.ModStructurePieceType;
 import net.rodofire.mushrooomsmod.world.structures.custom.config.mushroom.GiantYellowMushroomGeneratorConfig;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 public class GiantYellowMushroomPiece extends MultiChunkFeaturePiece {
     GiantYellowMushroomGeneratorConfig config;
@@ -66,10 +63,7 @@ public class GiantYellowMushroomPiece extends MultiChunkFeaturePiece {
 
     public GiantYellowMushroomPiece(NbtCompound nbt) {
         super(ModStructurePieceType.GIANT_YELLOW_MUSHROOM, nbt);
-        this.config = GiantYellowMushroomGeneratorConfig.CODEC.parse(NbtOps.INSTANCE, nbt.get("config"))
-                .result()
-                .orElseThrow(() -> new IllegalStateException("Failed to decode config"));
-
+        this.config = getGeneratorConfig(nbt, GiantYellowMushroomGeneratorConfig.CODEC);
         this.start = config.start();
         this.end = config.end();
         this.cap = config.sphere();
@@ -83,11 +77,7 @@ public class GiantYellowMushroomPiece extends MultiChunkFeaturePiece {
     @Override
     protected void writeNbt(StructureContext context, NbtCompound nbt) {
         super.writeNbt(context, nbt);
-
-        DynamicOps<NbtElement> ops = NbtOps.INSTANCE;
-        DataResult<NbtElement> encoded = GiantYellowMushroomGeneratorConfig.CODEC.encode(config, ops, ops.empty());
-
-        encoded.result().ifPresent(element -> nbt.put("config", element));
+        writeGeneratorConfigCodec(nbt, GiantYellowMushroomGeneratorConfig.CODEC, config);
     }
 
     @Override

@@ -9,6 +9,7 @@ import net.minecraft.world.gen.GenerationStep;
 import net.minecraft.world.gen.structure.Structure;
 import net.rodofire.mushrooomsmod.util.ModTags;
 import net.rodofire.mushrooomsmod.world.structures.custom.structure.mushrooms.GiantYellowMushroomStructure;
+import net.rodofire.mushrooomsmod.world.structures.custom.structure.mushrooms.PurpleMushroomStructure;
 import net.rodofire.mushrooomsmod.world.structures.custom.structure.mushrooms.YellowMushroomStructure;
 
 public class ModStructures {
@@ -31,6 +32,16 @@ public class ModStructures {
                 new GiantYellowMushroomStructure(
                         new Structure.Config.Builder(
                                 biomeLookup.getOrThrow(ModTags.Biomes.HAS_GIANT_YELLOW_MUSHROOM))
+                                .step(GenerationStep.Feature.VEGETAL_DECORATION)
+                                .build()
+                )
+        );
+
+        structureRegisterable.register(
+                ModStructureKey.PURPLE_MUSHROOM,
+                new PurpleMushroomStructure(
+                        new Structure.Config.Builder(
+                                biomeLookup.getOrThrow(ModTags.Biomes.HAS_PURPLE_MUSHROOM))
                                 .step(GenerationStep.Feature.VEGETAL_DECORATION)
                                 .build()
                 )

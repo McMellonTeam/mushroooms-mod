@@ -4,8 +4,9 @@ import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.util.math.BlockPos;
 import net.rodofire.easierworldcreator.shape.block.rotations.Rotator;
+import net.rodofire.easierworldcreator.structure.config.StructureGeneratorConfig;
 
-public record YellowMushroomGeneratorConfig(BlockPos start, BlockPos end, boolean flat, int radius, Rotator rotator) {
+public record YellowMushroomGeneratorConfig(BlockPos start, BlockPos end, boolean flat, int radius, Rotator rotator) implements StructureGeneratorConfig<YellowMushroomGeneratorConfig> {
     public static final Codec<YellowMushroomGeneratorConfig> CODEC = RecordCodecBuilder.create((instance) ->
             instance.group(
                     BlockPos.CODEC.fieldOf("start").forGetter(YellowMushroomGeneratorConfig::start),

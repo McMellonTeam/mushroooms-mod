@@ -62,9 +62,7 @@ public class YellowMushroomPiece extends MultiChunkFeaturePiece {
 
     public YellowMushroomPiece(NbtCompound nbt) {
         super(ModStructurePieceType.YELLOW_MUSHROOM, nbt);
-        this.config = YellowMushroomGeneratorConfig.CODEC.parse(NbtOps.INSTANCE, nbt.get("config"))
-                .result()
-                .orElseThrow(() -> new IllegalStateException("Failed to decode config"));
+        this.config = getGeneratorConfig(nbt, YellowMushroomGeneratorConfig.CODEC);
         this.center = config.start();
         this.radius = config.radius();
         this.flat = config.flat();
@@ -79,10 +77,7 @@ public class YellowMushroomPiece extends MultiChunkFeaturePiece {
     @Override
     protected void writeNbt(StructureContext context, NbtCompound nbt) {
         super.writeNbt(context, nbt);
-        DynamicOps<NbtElement> ops = NbtOps.INSTANCE;
-        DataResult<NbtElement> encoded = YellowMushroomGeneratorConfig.CODEC.encode(config, ops, ops.empty());
-
-        encoded.result().ifPresent(element -> nbt.put("config", element));
+        writeGeneratorConfigCodec(nbt, YellowMushroomGeneratorConfig.CODEC, config);
     }
 
     @Override

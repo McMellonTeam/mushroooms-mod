@@ -8,8 +8,6 @@ import net.minecraft.util.math.BlockBox;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.random.Random;
-import net.minecraft.world.Heightmap;
-import net.minecraft.world.gen.structure.Structure;
 import net.minecraft.world.gen.structure.StructureType;
 import net.rodofire.easierworldcreator.maths.MathUtil;
 import net.rodofire.easierworldcreator.shape.block.gen.LineGen;
@@ -20,35 +18,19 @@ import net.rodofire.mushrooomsmod.world.structures.ModStructureTypes;
 import net.rodofire.mushrooomsmod.world.structures.custom.config.mushroom.YellowMushroomGeneratorConfig;
 import net.rodofire.mushrooomsmod.world.structures.custom.piece.mushroom.YellowMushroomPiece;
 
-import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-public class YellowMushroomStructure extends Structure {
+public class YellowMushroomStructure extends MushrooomsModStructure {
     public static final MapCodec<YellowMushroomStructure> CODEC = createCodec(YellowMushroomStructure::new);
 
     public YellowMushroomStructure(Config config) {
         super(config);
     }
 
+
     @Override
-    protected Optional<StructurePosition> getStructurePosition(Context context) {
-        ChunkPos chunkPos = context.chunkPos();
-        int x = chunkPos.getCenterX() + context.random().nextBetween(-7, 7);
-        int z = chunkPos.getCenterZ() + context.random().nextBetween(-7, 7);
-
-        int y = context.chunkGenerator().getHeightOnGround(x, z, Heightmap.Type.WORLD_SURFACE_WG, context.world(), context.noiseConfig());
-
-        if (context.chunkGenerator().getSeaLevel() == y) return Optional.empty();
-
-        BlockPos pos = new BlockPos(x, y, z);
-
-        return Optional.of(new StructurePosition(pos, collector -> {
-            getPieces(collector, pos, context);
-        }));
-    }
-
-    private void getPieces(StructurePiecesCollector builder, BlockPos pos, Context context) {
+    protected void getPieces(StructurePiecesCollector builder, BlockPos pos, Context context) {
         Random random = context.random();
         boolean flatCap = MathUtil.getRandomBoolean(random, 0.33f);
         int height = random.nextBetween(12, 22);

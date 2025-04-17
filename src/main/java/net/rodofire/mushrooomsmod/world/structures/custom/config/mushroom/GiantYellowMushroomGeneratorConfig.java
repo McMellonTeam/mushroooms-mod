@@ -4,8 +4,9 @@ import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.util.math.BlockPos;
 import net.rodofire.easierworldcreator.shape.block.gen.SphereGen;
+import net.rodofire.easierworldcreator.structure.config.StructureGeneratorConfig;
 
-public record GiantYellowMushroomGeneratorConfig(SphereGen sphere, SphereGen mask, BlockPos start, BlockPos end) {
+public record GiantYellowMushroomGeneratorConfig(SphereGen sphere, SphereGen mask, BlockPos start, BlockPos end) implements StructureGeneratorConfig<GiantYellowMushroomGeneratorConfig> {
     public static final Codec<GiantYellowMushroomGeneratorConfig> CODEC = RecordCodecBuilder.create(instance ->
             instance.group(
                     SphereGen.CODEC.fieldOf("sphere").forGetter(GiantYellowMushroomGeneratorConfig::sphere),
