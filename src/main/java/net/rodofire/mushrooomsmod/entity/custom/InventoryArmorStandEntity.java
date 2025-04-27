@@ -1,26 +1,39 @@
 package net.rodofire.mushrooomsmod.entity.custom;
 
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityType;
-import net.minecraft.entity.EquipmentSlot;
-import net.minecraft.entity.LivingEntity;
+import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
+import net.minecraft.component.DataComponentTypes;
+import net.minecraft.entity.*;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.data.DataTracker;
 import net.minecraft.entity.data.TrackedData;
 import net.minecraft.entity.data.TrackedDataHandlerRegistry;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtElement;
 import net.minecraft.nbt.NbtList;
+import net.minecraft.particle.BlockStateParticleEffect;
+import net.minecraft.particle.ParticleTypes;
+import net.minecraft.registry.tag.DamageTypeTags;
+import net.minecraft.server.world.ServerWorld;
+import net.minecraft.sound.SoundEvent;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Arm;
+import net.minecraft.util.Util;
 import net.minecraft.util.collection.DefaultedList;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
+import net.minecraft.world.event.GameEvent;
+import net.rodofire.mushrooomsmod.item.ModItems;
+import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.animatable.GeoAnimatable;
 import software.bernie.geckolib.animatable.GeoEntity;
 import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
 import software.bernie.geckolib.animatable.instance.SingletonAnimatableInstanceCache;
 import software.bernie.geckolib.animation.*;
+import software.bernie.geckolib.animation.AnimationState;
 
 public class InventoryArmorStandEntity extends LivingEntity implements GeoEntity {
     protected static final TrackedData<Boolean> CAN_USE = DataTracker.registerData(InventoryArmorStandEntity.class, TrackedDataHandlerRegistry.BOOLEAN);
@@ -29,9 +42,14 @@ public class InventoryArmorStandEntity extends LivingEntity implements GeoEntity
     protected final DefaultedList<ItemStack> armorItems = DefaultedList.ofSize(4, ItemStack.EMPTY);
     protected final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(36, ItemStack.EMPTY);
     private int lefttickusage;
+    public long lastHitTime;
+    private boolean invisible;
+
 
     public InventoryArmorStandEntity(EntityType<? extends LivingEntity> entityType, World world) {
         super(entityType, world);
+        this.bodyYaw = ((int) (this.bodyYaw / 45.0f)) * 45.0f;
+        this.headYaw = ((int) (this.headYaw / 45.0f)) * 45.0f;
     }
 
     public DefaultedList<DefaultedList<ItemStack>> getInventory() {
@@ -58,7 +76,18 @@ public class InventoryArmorStandEntity extends LivingEntity implements GeoEntity
             this.inventory.set(i, base.get(i));
         }
     }
+    @Override
+    public void kill() {
+        this.remove(Entity.RemovalReason.KILLED);
+        this.emitGameEvent(GameEvent.ENTITY_DIE);
+    }
 
+
+    @Override
+    public void setYaw(float yaw) {
+        yaw = ((int) (yaw / 45.0f)) * 45.0f;
+        super.setYaw(yaw);
+    }
 
     @Override
     public boolean shouldRenderName() {
@@ -72,15 +101,11 @@ public class InventoryArmorStandEntity extends LivingEntity implements GeoEntity
 
     @Override
     public ItemStack getEquippedStack(EquipmentSlot slot) {
-        switch (slot.getType()) {
-            case HAND: {
-                return this.heldItems.get(slot.getEntitySlotId());
-            }
-            case HUMANOID_ARMOR: {
-                return this.armorItems.get(slot.getEntitySlotId());
-            }
-        }
-        return ItemStack.EMPTY;
+        return switch (slot.getType()) {
+            case HAND -> this.heldItems.get(slot.getEntitySlotId());
+            case HUMANOID_ARMOR -> this.armorItems.get(slot.getEntitySlotId());
+            default -> ItemStack.EMPTY;
+        };
     }
 
     @Override
@@ -96,6 +121,7 @@ public class InventoryArmorStandEntity extends LivingEntity implements GeoEntity
             }
         }
     }
+
 
     @Override
     public Arm getMainArm() {
@@ -139,6 +165,18 @@ public class InventoryArmorStandEntity extends LivingEntity implements GeoEntity
         this.lefttickusage = 160;
     }
 
+    @Override
+    public void setHeadYaw(float headYaw) {
+        headYaw = ((int) (headYaw / 45.0f)) * 45.0f;
+        super.setHeadYaw(headYaw);
+    }
+
+    @Override
+    public void setBodyYaw(float bodyYaw) {
+        bodyYaw = ((int) (bodyYaw / 45.0f)) * 45.0f;
+        super.setBodyYaw(bodyYaw);
+    }
+
     public boolean canPlayerUse(PlayerEntity entity) {
         return true;
     }
@@ -152,6 +190,21 @@ public class InventoryArmorStandEntity extends LivingEntity implements GeoEntity
             }
         }
         super.tick();
+    }
+
+    @Override
+    public void refreshPositionAndAngles(double x, double y, double z, float yaw, float pitch) {
+        super.refreshPositionAndAngles(x, y, z, yaw, pitch);
+        this.setHeadYaw(yaw);
+        this.setBodyYaw(yaw);
+    }
+
+    @Override
+    protected void updatePostDeath() {
+        if (++this.deathTime >= 1 && !this.getWorld().isClient() && !this.isRemoved()) {
+            this.getWorld().sendEntityStatus(this, EntityStatuses.ADD_DEATH_PARTICLES);
+            this.remove(Entity.RemovalReason.KILLED);
+        }
     }
 
     @Override
@@ -187,8 +240,136 @@ public class InventoryArmorStandEntity extends LivingEntity implements GeoEntity
     }
 
     @Override
+    public boolean damage(DamageSource source, float amount) {
+        if (this.isRemoved()) {
+            return false;
+        } else if (this.getWorld() instanceof ServerWorld serverWorld) {
+            if (source.isIn(DamageTypeTags.BYPASSES_INVULNERABILITY)) {
+                this.kill();
+                return false;
+            } else if (this.isInvulnerableTo(source) || this.invisible) {
+                return false;
+            } else if (source.isIn(DamageTypeTags.IS_EXPLOSION)) {
+                this.onBreak(serverWorld, source);
+                this.kill();
+                return false;
+            } else if (source.isIn(DamageTypeTags.IGNITES_ARMOR_STANDS)) {
+                if (this.isOnFire()) {
+                    this.updateHealth(serverWorld, source, 0.15F);
+                } else {
+                    this.setOnFireFor(5.0F);
+                }
+
+                return false;
+            } else if (source.isIn(DamageTypeTags.BURNS_ARMOR_STANDS) && this.getHealth() > 0.5F) {
+                this.updateHealth(serverWorld, source, 4.0F);
+                return false;
+            } else {
+                boolean bl = source.isIn(DamageTypeTags.CAN_BREAK_ARMOR_STAND);
+                boolean bl2 = source.isIn(DamageTypeTags.ALWAYS_KILLS_ARMOR_STANDS);
+                if (!bl && !bl2) {
+                    return false;
+                } else {
+                    if (source.getAttacker() instanceof PlayerEntity playerEntity && !playerEntity.getAbilities().allowModifyWorld) {
+                        return false;
+                    }
+
+                    this.addVelocity(new Vec3d(0,0.3,0));
+                    this.velocityDirty = true;
+
+                    if (source.isSourceCreativePlayer()) {
+                        this.playBreakSound();
+                        this.spawnBreakParticles();
+                        this.kill();
+                        return true;
+                    } else {
+                        long l = serverWorld.getTime();
+                        if (l - this.lastHitTime > 5L && !bl2) {
+                            serverWorld.sendEntityStatus(this, EntityStatuses.HIT_ARMOR_STAND);
+                            this.emitGameEvent(GameEvent.ENTITY_DAMAGE, source.getAttacker());
+                            this.lastHitTime = l;
+                        } else {
+                            this.breakAndDropItem(serverWorld, source);
+                            this.spawnBreakParticles();
+                            this.kill();
+                        }
+
+                        return true;
+                    }
+                }
+            }
+        } else {
+            return false;
+        }
+    }
+
+    private void breakAndDropItem(ServerWorld world, DamageSource damageSource) {
+        ItemStack itemStack = new ItemStack(ModItems.INVENTORY_ARMOR_STAND);
+        itemStack.set(DataComponentTypes.CUSTOM_NAME, this.getCustomName());
+        Block.dropStack(this.getWorld(), this.getBlockPos(), itemStack);
+        this.onBreak(world, damageSource);
+    }
+
+    @Override
+    public void handleStatus(byte status) {
+        if (status == EntityStatuses.HIT_ARMOR_STAND) {
+            if (this.getWorld().isClient) {
+                this.getWorld().playSound(this.getX(), this.getY(), this.getZ(), SoundEvents.ENTITY_ARMOR_STAND_HIT, this.getSoundCategory(), 0.3F, 1.0F, false);
+                this.lastHitTime = this.getWorld().getTime();
+            }
+        } else {
+            super.handleStatus(status);
+        }
+    }
+
+    private void spawnBreakParticles() {
+        if (this.getWorld() instanceof ServerWorld) {
+            ((ServerWorld)this.getWorld())
+                    .spawnParticles(
+                            new BlockStateParticleEffect(ParticleTypes.BLOCK, Blocks.OAK_PLANKS.getDefaultState()),
+                            this.getX(),
+                            this.getBodyY(0.6666666666666666),
+                            this.getZ(),
+                            10,
+                            (double)(this.getWidth() / 4.0F),
+                            (double)(this.getHeight() / 4.0F),
+                            (double)(this.getWidth() / 4.0F),
+                            0.05
+                    );
+        }
+    }
+
+    private void updateHealth(ServerWorld world, DamageSource damageSource, float amount) {
+        float f = this.getHealth();
+        f -= amount;
+        if (f <= 0.5F) {
+            this.onBreak(world, damageSource);
+            this.kill();
+        } else {
+            this.setHealth(f);
+            this.emitGameEvent(GameEvent.ENTITY_DAMAGE, damageSource.getAttacker());
+        }
+    }
+
+    private void playBreakSound() {
+        this.getWorld().playSound(null, this.getX(), this.getY(), this.getZ(), SoundEvents.ENTITY_ARMOR_STAND_BREAK, this.getSoundCategory(), 1.0F, 1.0F);
+    }
+
+
+    @Override
     public AnimatableInstanceCache getAnimatableInstanceCache() {
         return cache;
+    }
+
+    @Nullable
+    @Override
+    protected SoundEvent getDeathSound() {
+        return SoundEvents.ENTITY_ARMOR_STAND_BREAK;
+    }
+
+    @Override
+    public ItemStack getPickBlockStack() {
+        return new ItemStack(ModItems.INVENTORY_ARMOR_STAND);
     }
 
     protected void writeCommonNbt(NbtCompound nbt) {
@@ -248,10 +429,10 @@ public class InventoryArmorStandEntity extends LivingEntity implements GeoEntity
         readCommonNbt(nbt);
     }
 
-    @Override
-    public void onDeath(DamageSource damageSource) {
-        World world = this.getWorld();
-        if (world.isClient) return;
+    private void onBreak(ServerWorld world, DamageSource damageSource) {
+        this.playBreakSound();
+        this.drop(world, damageSource);
+
         for (ItemStack itemStack : this.inventory) {
             this.dropStack(itemStack);
         }
@@ -261,7 +442,6 @@ public class InventoryArmorStandEntity extends LivingEntity implements GeoEntity
         for (ItemStack itemStack : this.heldItems) {
             this.dropStack(itemStack);
         }
-        super.onDeath(damageSource);
     }
 
     @Override

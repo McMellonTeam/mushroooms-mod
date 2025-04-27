@@ -1,6 +1,7 @@
 package net.rodofire.mushrooomsmod.entity.client.renderer;
 
 import net.minecraft.client.model.ModelPart;
+import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.render.VertexConsumer;
 import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.client.render.entity.EntityRendererFactory;
@@ -8,8 +9,12 @@ import net.minecraft.client.render.entity.model.BipedEntityModel;
 import net.minecraft.client.render.model.json.ModelTransformationMode;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.EquipmentSlot;
+import net.minecraft.entity.decoration.ArmorStandEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.scoreboard.ScoreboardCriterion;
+import net.minecraft.util.Identifier;
 import net.minecraft.util.math.RotationAxis;
+import net.rodofire.mushrooomsmod.MushrooomsMod;
 import net.rodofire.mushrooomsmod.entity.client.model.InventoryArmorStandModel;
 import net.rodofire.mushrooomsmod.entity.custom.InventoryArmorStandEntity;
 import org.jetbrains.annotations.NotNull;
@@ -133,7 +138,31 @@ public class InventoryArmorStandRenderer extends DynamicGeoEntityRenderer<Invent
     }
 
     @Override
+    protected float getDeathMaxRotation(InventoryArmorStandEntity animatable) {
+        return 0;
+    }
+
+    @Override
+    public Identifier getTexture(InventoryArmorStandEntity animatable) {
+        return Identifier.of(MushrooomsMod.MOD_ID, "textures/entity/inventory_armor_stand.png");
+    }
+
+    @Override
     public boolean hasLabel(InventoryArmorStandEntity animatable) {
         return animatable.hasCustomName();
+    }
+
+    @Nullable
+    protected RenderLayer getRenderLayer(InventoryArmorStandEntity armorStandEntity, boolean bl, boolean bl2, boolean bl3) {
+        /*if (!armorStandEntity.isMarker()) {
+            return super.getRenderLayer(armorStandEntity, bl, bl2, bl3);
+        } else {*/
+            Identifier identifier = this.getTexture(armorStandEntity);
+            if (bl2) {
+                return RenderLayer.getEntityTranslucent(identifier, false);
+            } else {
+                return bl ? RenderLayer.getEntityCutoutNoCull(identifier, false) : null;
+            }
+        //}
     }
 }
