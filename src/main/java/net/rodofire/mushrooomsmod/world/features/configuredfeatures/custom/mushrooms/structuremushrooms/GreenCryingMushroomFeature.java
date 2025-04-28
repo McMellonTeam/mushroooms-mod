@@ -18,9 +18,9 @@ import net.rodofire.mushrooomsmod.world.features.configuredfeatures.ModConfigure
 
 import java.util.ArrayList;
 
-public class CustomGreenSecondMushroomFeature extends CustomGreenSecondMushroom {
+public class GreenCryingMushroomFeature extends GreenCryingMushroom {
 
-    public CustomGreenSecondMushroomFeature(Codec<HugeMushroomFeatureConfig> codec) {
+    public GreenCryingMushroomFeature(Codec<HugeMushroomFeatureConfig> codec) {
         super(codec);
     }
 

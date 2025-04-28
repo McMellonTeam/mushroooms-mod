@@ -109,7 +109,7 @@ public class OrangeMushroomFeatureWG extends OrangeMushroomWG {
         sphere.setRadiusY(radiusY);
         sphere.setHalfSphere(SphereGen.SphereType.HALF);
         sphere.setHalfSphereDirection(Direction.UP);
-       SphereGen voidSphere = new SphereGen(end.down(radiusY), (int) (radius * 1.3f));
+        SphereGen voidSphere = new SphereGen(end.down(radiusY), (int) (radius * 1.3f));
         voidSphere.setRadiusY(radiusY);
         return new SphereGen[]{sphere, voidSphere};
     }
@@ -138,7 +138,7 @@ public class OrangeMushroomFeatureWG extends OrangeMushroomWG {
                 LayerManager.Type.SURFACE,
                 new BlockLayerManager(
                         new BlockLayer(
-                                new LayerPlacer(LayerPlacer.PlacingType.RANDOM),
+                                LayerPlacer.ofRandom(),
                                 List.of(ModBlocks.ORANGE_MUSHROOM_BLOCK.getDefaultState(), ModBlocks.ORANGE_ALTERED_MUSHROOM_BLOCK.getDefaultState(), ModBlocks.ORANGE_DEGRADATED_MUSHROOM_BLOCK.getDefaultState()),
                                 List.of((short) 4, (short) 2, (short) 1))
                 )

@@ -51,12 +51,51 @@ public class ModBiomeFeatures {
         public static void addMushroomShireFeatures(GenerationSettings.LookupBackedBuilder builder) {
             builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModSurfacePlacedFeatures.ORANGE_MUSHROOM_TREE);
             builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModSurfacePlacedFeatures.GREEN_MUSHROOM_TREE);
+            builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModSurfacePlacedFeatures.CRYING_GREEN_MUSHROOM_TREE);
+            builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModSurfacePlacedFeatures.LIGHT_GREEN_MUSHROOM);
+            builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModSurfacePlacedFeatures.LIGHT_ORANGE_MUSHROOM);
+            builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModSurfacePlacedFeatures.LIGHT_YELLOW_MUSHROOM);
+            builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModSurfacePlacedFeatures.LIGHT_GRASS);
+
+            builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModSurfacePlacedFeatures.TINY_GREEN_MUSHROOM);
+            builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModSurfacePlacedFeatures.LITTLE_GREEN_MUSHROOM);
+            builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModSurfacePlacedFeatures.MEDIUM_GREEN_MUSHROOM);
+            builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModSurfacePlacedFeatures.BIG_GREEN_MUSHROOM);
+            builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModSurfacePlacedFeatures.BIG_GREEN_MUSHROOM_PLANT);
         }
 
-        public static void addSchroomIsland2Features(GenerationSettings.LookupBackedBuilder builder) {
-            builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModSurfacePlacedFeatures.PURPLE_MUSHROOM_TREE);
+        public static void addMysticMushGrove(GenerationSettings.LookupBackedBuilder builder) {
+            //builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModSurfacePlacedFeatures.PURPLE_MUSHROOM_TREE);
             builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModSurfacePlacedFeatures.RED_MUSHROOM_TREE);
             builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModSurfacePlacedFeatures.BROWN_MUSHROOM_TREE);
+
+            builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModSurfacePlacedFeatures.BIG_PURPLE_MUSHROOM_PLANT);
+            builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModSurfacePlacedFeatures.TINY_PURPLE_MUSHROOM);
+            builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModSurfacePlacedFeatures.LITTLE_PURPLE_MUSHROOM);
+            builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModSurfacePlacedFeatures.MEDIUM_PURPLE_MUSHROOM);
+            builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModSurfacePlacedFeatures.BIG_PURPLE_MUSHROOM);
+
+            builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModSurfacePlacedFeatures.LIGHT_TINY_LILAC);
+            builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModSurfacePlacedFeatures.LIGHT_APAGANTHE);
+            builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModSurfacePlacedFeatures.LIGHT_WYSTERIA);
+            builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModSurfacePlacedFeatures.LIGHT_BLUEBELL);
+            builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModSurfacePlacedFeatures.LIGHT_ACONIT);
+            builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModSurfacePlacedFeatures.LIGHT_PERVENCHE);
+        }
+
+        public static void addGoldenMycoShroom(GenerationSettings.LookupBackedBuilder builder) {
+            builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModSurfacePlacedFeatures.SINUSO_SHROOM);
+            builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModSurfacePlacedFeatures.LIGHT_YELLOW_MUSHROOM);
+            builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModSurfacePlacedFeatures.LIGHT_GRASS);
+            builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModSurfacePlacedFeatures.LIGHT_RAPANGE_FLOWERS);
+            builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModSurfacePlacedFeatures.BUSHY_YELLOW_MUSHROOMS);
+            builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModSurfacePlacedFeatures.BRIGHT_YELLOW_MUSHROOM);
+            builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModSurfacePlacedFeatures.YELICE);
+            builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModSurfacePlacedFeatures.TURQUOSUM_STILUS);
+            builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModSurfacePlacedFeatures.NOCTULICA);
+            builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModSurfacePlacedFeatures.SMALL_PATCH_YELLOW_PERENNIAL);
+            builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModSurfacePlacedFeatures.FLAMESTHYSIA);
+            builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModSurfacePlacedFeatures.MUSHROOM_TALL_YELLOW);
         }
 
         public static void addBlueMushroomForestFeatures(GenerationSettings.LookupBackedBuilder builder) {

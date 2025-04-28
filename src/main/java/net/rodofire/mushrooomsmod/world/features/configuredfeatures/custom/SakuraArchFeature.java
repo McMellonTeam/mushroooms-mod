@@ -66,7 +66,7 @@ public class SakuraArchFeature extends Feature<ArchConfig> {
                 world.getSeed(),
                 RockUtil.getRandomStone(random, Blocks.TUFF.getDefaultState()));
 
-        BlockLayer grass = new BlockLayer(new LayerPlacer(LayerPlacer.PlacingType.RANDOM), Blocks.GRASS_BLOCK.getDefaultState(), 1);
+        BlockLayer grass = new BlockLayer(LayerPlacer.ofRandom(random), Blocks.GRASS_BLOCK.getDefaultState(), 1);
 
         StructurePlacementRuleManager stoneRule = new StructurePlacementRuleManager();
         stoneRule.addTagKeys(Set.of(

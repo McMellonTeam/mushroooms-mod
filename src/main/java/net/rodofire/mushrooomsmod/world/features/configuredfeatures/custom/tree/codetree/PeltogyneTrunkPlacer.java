@@ -87,7 +87,7 @@ public class PeltogyneTrunkPlacer extends TrunkPlacer {
 
         LayerManager layerManager = new LayerManager(
                 LayerManager.Type.SURFACE,
-                new BlockLayerManager(new BlockLayer(new LayerPlacer(LayerPlacer.PlacingType.RANDOM), config.trunkProvider.get(random, startPos)))
+                new BlockLayerManager(new BlockLayer(LayerPlacer.ofRandom(random), config.trunkProvider.get(random, startPos)))
         );
         layerManager.place((StructureWorldAccess) world, line.getShapeCoordinates());
 

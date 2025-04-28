@@ -56,7 +56,7 @@ public abstract class OrangeMushroomWG extends Feature<DefaultFeatureConfig> {
         int radius;
         int radiusY;
 
-        if (MathUtil.getRandomBoolean(0.3f)) {
+        if (MathUtil.getRandomBoolean(random, 0.3f)) {
             radius = random.nextBetween(5, 8);
             radiusY = (int) ((float) random.nextBetween(20, 55) / 10 * radius + random.nextBetween(2, 6));
             int height = 3 * radiusY / 4 + random.nextBetween(-3, 3);

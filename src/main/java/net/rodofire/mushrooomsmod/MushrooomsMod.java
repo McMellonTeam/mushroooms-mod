@@ -21,6 +21,9 @@ import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.tree.
 import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.tree.ModTrunkPlacerTypes;
 import net.rodofire.mushrooomsmod.world.features.placedfeatures.placementmodifier.ModPlacementModifierType;
 import net.rodofire.mushrooomsmod.world.gen.ModWorldGeneration;
+import net.rodofire.mushrooomsmod.world.structures.ModStructureKey;
+import net.rodofire.mushrooomsmod.world.structures.ModStructurePieceType;
+import net.rodofire.mushrooomsmod.world.structures.ModStructureTypes;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -62,6 +65,11 @@ public class MushrooomsMod implements ModInitializer {
         ModWorldGeneration.registerModWorldGen();
         ModFeatures.registerFeatures();
         ModPlacementModifierType.registerPlacementModifiers();
+
+        LOGGER.info("-[Structures] Initializing :");
+        ModStructureTypes.registerStructureTypes();
+        ModStructurePieceType.registerStructurePiecesType();
+        ModStructureKey.registerStructureKeys();
 
 
         LOGGER.info("-[Misc] Initializing :");

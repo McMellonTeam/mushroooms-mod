@@ -74,7 +74,7 @@ public abstract class OrangeMushroomOTH extends Feature<DefaultFeatureConfig> {
             blockList = this.getTrunk(world, random, pos, radius, height);
         }
         SphereGen[] spgeres = this.getCap(world, random, pos, radius, radiusY, blockList);
-        this.place(world, pos, end, new BlockListManager(blockList), spgeres[0], spgeres[1]);
+        this.place(world, pos, end, new BlockListManager(blockList), spgeres[0], spgeres[1], random);
         return true;
     }
 
@@ -86,5 +86,5 @@ public abstract class OrangeMushroomOTH extends Feature<DefaultFeatureConfig> {
     protected abstract SphereGen[] getCap(StructureWorldAccess world, Random random, BlockPos pos, int radius, int radiusY, BlockList trunk);
 
 
-    protected abstract void place(StructureWorldAccess world, BlockPos pos, BlockPos pos2, BlockListManager coordinates, SphereGen sphere, SphereGen secondSphere);
+    protected abstract void place(StructureWorldAccess world, BlockPos pos, BlockPos pos2, BlockListManager coordinates, SphereGen sphere, SphereGen secondSphere, Random random);
 }

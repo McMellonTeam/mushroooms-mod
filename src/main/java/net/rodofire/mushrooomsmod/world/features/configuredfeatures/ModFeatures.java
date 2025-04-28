@@ -11,17 +11,14 @@ import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.bush.
 import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.bush.CaveBushFeature;
 import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.bush.CaveTopBushFeature;
 import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.bush.ColorfulBushFeature;
-import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.mushrooms.codemushrooms.CustomGreenMushroomFeature;
-import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.mushrooms.codemushrooms.CustomLuminescentBlueMushroomFeature;
-import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.mushrooms.codemushrooms.CustomLuminescentPinkMushroomFeature;
-import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.mushrooms.codemushrooms.CustomPurpleMushroomFeature;
+import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.mushrooms.codemushrooms.*;
 import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.mushrooms.codemushrooms.oth.BlueMushroomFeatureOTH;
 import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.mushrooms.codemushrooms.oth.HugePurpleMushroomOTHFeature;
 import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.mushrooms.codemushrooms.oth.OrangeMushroomFeatureOTH;
 import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.mushrooms.codemushrooms.oth.YellowMushroomOTHFeature;
 import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.mushrooms.codemushrooms.wg.BlueMushroomFeatureWG;
 import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.mushrooms.codemushrooms.wg.OrangeMushroomFeatureWG;
-import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.mushrooms.structuremushrooms.CustomGreenSecondMushroomFeature;
+import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.mushrooms.structuremushrooms.GreenCryingMushroomFeature;
 import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.mushrooms.structuremushrooms.CustomRedFertileMushroom;
 import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.mushrooms.structuremushrooms.CustomRedHugeMushroomFeature;
 import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.pubble.TinyPuddle;
@@ -38,17 +35,18 @@ public class ModFeatures<FC extends FeatureConfig> {
     public static Feature<HugeMushroomFeatureConfig> HUGE_BLUE_LUMINESCENT_MUSHROOM;
     public static Feature<HugeMushroomFeatureConfig> HUGE_LUMINESCENT_PINK_MUSHROOM;
     public static Feature<PurpleMushroomConfig> HUGE_BIG_PURPLE_MUSHROOM;
-    public static Feature<HugeMushroomFeatureConfig> HUGE_BIG_GREEN_MUSHROOM;
+    public static Feature<HugeMushroomFeatureConfig> CRYING_BIG_GREEN_MUSHROOM;
     public static Feature<ModMushroomFeatureConfig> HUGE_BIG_RED_MUSHROOM;
     public static Feature<ModMushroomFeatureConfig> HUGE_BLUE_MUSHROOM;
     public static Feature<ModMushroomFeatureConfig> HUGE_BLUE_MUSHROOM_WG;
     public static Feature<DefaultFeatureConfig> HUGE_BIG_ORANGE_MUSHROOM;
     public static Feature<DefaultFeatureConfig> HUGE_BIG_ORANGE_MUSHROOM_WG;
     public static Feature<HugeMushroomFeatureConfig> HUGE_YELLOW_MUSHROOM;
+    public static Feature<DefaultFeatureConfig> SINUSO_SHROOM;
     public static Feature<DefaultFeatureConfig> FERTILE_RED_MUSHROOM;
 
     //Flowers
-    public static Feature<DefaultFeatureConfig> FLEUR_BERRIES;
+    public static Feature<FleurBerriesConfig> FLEUR_BERRIES;
 
     //Vines Features;
     public static Feature<TwistingVinesFeatureConfig> BLUE_LUMINESCENT_VINES;
@@ -91,16 +89,17 @@ public class ModFeatures<FC extends FeatureConfig> {
         HUGE_BLUE_LUMINESCENT_MUSHROOM = registerCustomFeature("huge_blue_luminescent_mushroom", new CustomLuminescentBlueMushroomFeature(HugeMushroomFeatureConfig.CODEC));
         HUGE_LUMINESCENT_PINK_MUSHROOM = registerCustomFeature("huge_luminescent_pink_mushroom", new CustomLuminescentPinkMushroomFeature(HugeMushroomFeatureConfig.CODEC));
         HUGE_BIG_PURPLE_MUSHROOM = registerCustomFeature("huge_big_purple_mushroom_feature", new HugePurpleMushroomOTHFeature(PurpleMushroomConfig.CODEC));
-        HUGE_BIG_GREEN_MUSHROOM = registerCustomFeature("huge_big_green_mushroom_feature", new CustomGreenSecondMushroomFeature(HugeMushroomFeatureConfig.CODEC));
+        CRYING_BIG_GREEN_MUSHROOM = registerCustomFeature("huge_big_green_mushroom_feature", new GreenCryingMushroomFeature(HugeMushroomFeatureConfig.CODEC));
         HUGE_BLUE_MUSHROOM = registerCustomFeature("huge_blue_mushroom", new BlueMushroomFeatureOTH(ModMushroomFeatureConfig.CODEC));
         HUGE_BLUE_MUSHROOM_WG = registerCustomFeature("huge_blue_mushroom_wg", new BlueMushroomFeatureWG(ModMushroomFeatureConfig.CODEC));
         HUGE_BIG_RED_MUSHROOM = registerCustomFeature("huge_red_red_mushroom_feature", new CustomRedHugeMushroomFeature(ModMushroomFeatureConfig.CODEC));
         HUGE_BIG_ORANGE_MUSHROOM = registerCustomFeature("huge_orange_mushroom_feature", new OrangeMushroomFeatureOTH(DefaultFeatureConfig.CODEC));
-        HUGE_BIG_ORANGE_MUSHROOM_WG = registerCustomFeature("huge_orange_mushroom_feature", new OrangeMushroomFeatureWG(DefaultFeatureConfig.CODEC));
+        HUGE_BIG_ORANGE_MUSHROOM_WG = registerCustomFeature("huge_orange_mushroom_feature_wg", new OrangeMushroomFeatureWG(DefaultFeatureConfig.CODEC));
         HUGE_YELLOW_MUSHROOM = registerCustomFeature("huge_yellow_mushroom_feature", new YellowMushroomOTHFeature(HugeMushroomFeatureConfig.CODEC));
         FERTILE_RED_MUSHROOM = registerCustomFeature("mushroom_fertile_red", new CustomRedFertileMushroom(DefaultFeatureConfig.CODEC));
+        SINUSO_SHROOM = registerCustomFeature("sinuso_shroom", new SinusoShroom(DefaultFeatureConfig.CODEC));
 
-        FLEUR_BERRIES = registerCustomFeature("fleur_berries_feature", new FleurBerriesFeature(DefaultFeatureConfig.CODEC));
+        FLEUR_BERRIES = registerCustomFeature("fleur_berries_feature", new FleurBerriesFeature(FleurBerriesConfig.CODEC));
 
         BLUE_LUMINESCENT_VINES = registerCustomFeature("blue_luminescent_vines_feature", new BlueLuminescentVinesFeature(TwistingVinesFeatureConfig.CODEC));
         SIMPLE_VINES = registerCustomFeature("simple_vines", new SimpleVinesFeature(DirectionConfig.CODEC));

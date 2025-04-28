@@ -33,34 +33,46 @@ public class ModOverworldRegion extends Region {
                 .weirdness(ParameterUtils.Weirdness.VALLEY)
                 .build().forEach(point -> builder.add(point, ModOverworldBiomes.SAKURA_FOREST));
 
-        //Shroom Island
-        /*new ParameterUtils.ParameterPointListBuilder()
-                .temperature(ParameterUtils.Temperature.HOT)
-                .humidity(ParameterUtils.Humidity.DRY)
-                .continentalness(ParameterUtils.Continentalness.MUSHROOM_FIELDS, ParameterUtils.Continentalness.NEAR_INLAND)
-                .erosion(MultiNoiseUtil.ParameterRange.of(-1.0F, 0.1F))
-                .depth(MultiNoiseUtil.ParameterRange.of(-1.0F, 0.1F))
-                .weirdness(MultiNoiseUtil.ParameterRange.of(-1f, 0f))
-                .build().forEach(point -> builder.add(point, ModOverworldBiomes.SHROOM_ISLAND1));
+        //MUSHROOM_SHIRE
+        new ParameterUtils.ParameterPointListBuilder()
+                .temperature(ParameterUtils.Temperature.NEUTRAL)
+                .humidity(MultiNoiseUtil.ParameterRange.of(-0.35f, 0.1f))
+                .continentalness(ParameterUtils.Continentalness.MUSHROOM_FIELDS, ParameterUtils.Continentalness.FAR_INLAND)
+                .erosion(MultiNoiseUtil.ParameterRange.of(-1.0F, -0.6f))
+                .depth(ParameterUtils.Depth.SURFACE)
+                .weirdness(MultiNoiseUtil.ParameterRange.of(-0.15f, 0.15f))
+                .build().forEach(point -> builder.add(point, ModOverworldBiomes.MUSHROOM_SHIRE));
 
-        //Shroom Island 2
+        //MYSTIC_MUSHROGROVE
         new ParameterUtils.ParameterPointListBuilder()
                 .temperature(ParameterUtils.Temperature.HOT)
                 .humidity(ParameterUtils.Humidity.DRY)
                 .continentalness(ParameterUtils.Continentalness.MUSHROOM_FIELDS, ParameterUtils.Continentalness.NEAR_INLAND)
-                .erosion(MultiNoiseUtil.ParameterRange.of(-1.0F, 0.1F))
-                .depth(MultiNoiseUtil.ParameterRange.of(-1.0F, 0.1F))
-                .weirdness(MultiNoiseUtil.ParameterRange.of(0f, 1f))
-                .build().forEach(point -> builder.add(point, ModOverworldBiomes.SHROOM_ISLAND2));*/
+                .erosion(MultiNoiseUtil.ParameterRange.of(-0.7F, -0.4F))
+                .depth(ParameterUtils.Depth.SURFACE)
+                .weirdness(MultiNoiseUtil.ParameterRange.of(0f, 0.55f))
+                .build().forEach(point -> builder.add(point, ModOverworldBiomes.MYSTIC_MUSHROGROVE));
+
+
+        //GOLDEN_MYCOSHROOM
+        new ParameterUtils.ParameterPointListBuilder()
+                .temperature(ParameterUtils.Temperature.WARM)
+                .humidity(ParameterUtils.Humidity.ARID, ParameterUtils.Humidity.DRY)
+                .continentalness(ParameterUtils.Continentalness.FAR_INLAND)
+                .erosion(ParameterUtils.Erosion.EROSION_3, ParameterUtils.Erosion.EROSION_4)
+                .depth(ParameterUtils.Depth.SURFACE)
+                .weirdness(ParameterUtils.Weirdness.PEAK_VARIANT)
+                .build().forEach(point -> builder.add(point, ModOverworldBiomes.GOLDEN_MYCOSHROOM));
+
 
         //colorful plains
         new ParameterUtils.ParameterPointListBuilder()
                 .temperature(ParameterUtils.Temperature.NEUTRAL)
                 .humidity(ParameterUtils.Humidity.NEUTRAL)
                 .continentalness(ParameterUtils.Continentalness.INLAND)
-                .erosion(MultiNoiseUtil.ParameterRange.of(-1f, 0f))
+                .erosion(MultiNoiseUtil.ParameterRange.of(-0.4f, 0.15f))
                 .depth(ParameterUtils.Depth.SURFACE)
-                .weirdness(MultiNoiseUtil.ParameterRange.of(-1f, 0.05f))
+                .weirdness(MultiNoiseUtil.ParameterRange.of(-1f, -0.45f))
                 .build().forEach(point -> builder.add(point, ModOverworldBiomes.COLORFUL_PLAINS));
 
         //colorful forest

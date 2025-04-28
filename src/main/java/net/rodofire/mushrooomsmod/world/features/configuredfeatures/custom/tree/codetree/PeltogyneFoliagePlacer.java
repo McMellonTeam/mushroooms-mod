@@ -39,7 +39,7 @@ public class PeltogyneFoliagePlacer extends FoliagePlacer {
 
         SphereGen sphereGen = new SphereGen(treeNode.getCenter(), random.nextBetween(2, 3));
         BlockLayer layer = new BlockLayer(
-                new LayerPlacer(LayerPlacer.PlacingType.RANDOM),
+                LayerPlacer.ofRandom(random),
                 config.foliageProvider.get(random, treeNode.getCenter())
         );
 

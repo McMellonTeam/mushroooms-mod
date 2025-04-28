@@ -53,6 +53,8 @@ public class ModBlockRenderType {
         getCutout(ModBlocks.ORANGE_MUSHROOM);
         getCutout(ModBlocks.YELLOW_MUSHROOM);
         getCutout(ModBlocks.FERTILE_RED_MUSHROOM);
+        getCutout(ModBlocks.BUSHY_YELLOW_MUSHROOM);
+        getCutout(ModBlocks.BRIGHT_YELLOW_MUSHROOM);
 
 
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.OAK_BERRIES_LEAVES, RenderLayer.getCutoutMipped());

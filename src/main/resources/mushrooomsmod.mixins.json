@@ -5,9 +5,9 @@
   "mixins": [
     "item.BrushItemMixin",
     "world.gen.FoliagePlacerTypeInvoker",
+    "world.gen.PlacementModifierTypeInvoker",
     "world.gen.TreeDecoratorTypeInvoker",
-    "world.gen.TrunkPlacerTypeInvoker",
-    "world.gen.PlacementModifierTypeInvoker"
+    "world.gen.TrunkPlacerTypeInvoker"
   ],
   "injectors": {
     "defaultRequire": 1

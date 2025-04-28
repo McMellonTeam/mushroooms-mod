@@ -28,18 +28,18 @@ public class RockUtil {
         }
         FastNoiseLite noise = new FastNoiseLite((int) seed);
         noise.SetFrequency(0.07f);
-        return new BlockLayer(new LayerPlacer(LayerPlacer.PlacingType.NOISE3D, noise), blockStates);
+        return new BlockLayer(LayerPlacer.of3DNoise(noise), blockStates);
     }
 
     public static BlockState[] getRandomStone(Random random) {
         return getRandomStone(random, 0.5f, (BlockState) null);
     }
 
-    public static BlockState[] getRandomStone(Random random,float chance) {
+    public static BlockState[] getRandomStone(Random random, float chance) {
         return getRandomStone(random, chance, (BlockState) null);
     }
 
-    public static BlockState[] getRandomStone(Random random,BlockState... exclude) {
+    public static BlockState[] getRandomStone(Random random, BlockState... exclude) {
         return getRandomStone(random, 0.5f, exclude);
     }
 

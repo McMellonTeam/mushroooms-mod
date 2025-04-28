@@ -9,9 +9,9 @@ import net.rodofire.mushrooomsmod.MushrooomsMod;
 
 public class ModOverworldBiomes {
     /*----------Surface----------*/
-    public static final RegistryKey<Biome> MUSHROOM_SHIRE = registerBiome("shroom_island1");
-    //Schroom island with different mushrooms than the first biome
-    public static final RegistryKey<Biome> SHROOM_ISLAND2 = registerBiome("shroom_island2");
+    public static final RegistryKey<Biome> MUSHROOM_SHIRE = registerBiome("mushroom_shire");
+    public static final RegistryKey<Biome> MYSTIC_MUSHROGROVE = registerBiome("mystic_mushgrove");
+    public static final RegistryKey<Biome> GOLDEN_MYCOSHROOM = registerBiome("golden_mycoschroom");
     public static final RegistryKey<Biome> SAKURA_FOREST = registerBiome("sakura_forest");
     public static final RegistryKey<Biome> MAGICAL_PLAINS = registerBiome("magical_plain");
     public static final RegistryKey<Biome> COLORFUL_PLAINS = registerBiome("colorful_plain");
@@ -29,12 +29,13 @@ public class ModOverworldBiomes {
 
     public static void bootstrap(Registerable<Biome> context) {
         //Surface
-        //context.register(MUSHROOM_SHIRE, ModOverworldBiomeCreator.SurFaceBiomes.createMushroomShire(context));
-        //context.register(SHROOM_ISLAND2, ModOverworldBiomeCreator.SurFaceBiomes.createShroomIsland2(context));
+        context.register(MUSHROOM_SHIRE, ModOverworldBiomeCreator.SurFaceBiomes.createMushroomShire(context));
+        context.register(MYSTIC_MUSHROGROVE, ModOverworldBiomeCreator.SurFaceBiomes.createMysticMushGrove(context));
+        context.register(GOLDEN_MYCOSHROOM, ModOverworldBiomeCreator.SurFaceBiomes.createGoldenMycoShroom(context));
+        context.register(BLUE_MUSHROOM_FOREST, ModOverworldBiomeCreator.SurFaceBiomes.createBlueMushroomForest(context));
         context.register(SAKURA_FOREST, ModOverworldBiomeCreator.SurFaceBiomes.createSakuraForest(context));
         context.register(COLORFUL_PLAINS, ModOverworldBiomeCreator.SurFaceBiomes.createColorfulPlains(context));
         context.register(COLORFUL_FOREST, ModOverworldBiomeCreator.SurFaceBiomes.createColorfulForest(context));
-        context.register(BLUE_MUSHROOM_FOREST, ModOverworldBiomeCreator.SurFaceBiomes.createBlueMushroomForest(context));
 
         //Underground
         context.register(BLUE_LUMINESCENT_SHROOM_CAVE, ModOverworldBiomeCreator.UnderGroundBiomes.createBlueLuminescentShroomCave(context));

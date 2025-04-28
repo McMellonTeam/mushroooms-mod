@@ -23,7 +23,7 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
 import net.minecraft.world.WorldView;
-import net.rodofire.mushrooomsmod.block.entity.BoostingMushroomBlockEntity;
+import net.rodofire.mushrooomsmod.block.entity.BoostingMushroomBE;
 import net.rodofire.mushrooomsmod.sound.ModSounds;
 import org.jetbrains.annotations.Nullable;
 
@@ -78,7 +78,7 @@ public class BoostingMushroom extends BlockWithEntity {
     @Nullable
     @Override
     public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
-        return new BoostingMushroomBlockEntity(pos, state);
+        return new BoostingMushroomBE(pos, state);
     }
 
     @Override

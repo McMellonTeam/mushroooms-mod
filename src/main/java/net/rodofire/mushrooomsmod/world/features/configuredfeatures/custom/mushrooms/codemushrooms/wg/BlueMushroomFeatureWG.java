@@ -50,7 +50,7 @@ public class BlueMushroomFeatureWG extends CustomBlueMushroom {
         Rotator rotator = new Rotator(pos, 0, MathUtil.getRandomOpposite(random) * (random.nextBetween(0, 20) + random.nextBetween(0, 10)), random.nextBetween(0, 180));
         sphere.setRotator(rotator);
 
-        BlockLayer layer = new BlockLayer(new LayerPlacer(LayerPlacer.PlacingType.RANDOM), List.of(ModBlocks.BLUE_MUSHROOM_BLOCK.getDefaultState(), ModBlocks.BLUE_ALTERED_MUSHROOM_BLOCK.getDefaultState()), List.of((short) 3, (short) 1));
+        BlockLayer layer = new BlockLayer(LayerPlacer.ofRandom(random), List.of(ModBlocks.BLUE_MUSHROOM_BLOCK.getDefaultState(), ModBlocks.BLUE_ALTERED_MUSHROOM_BLOCK.getDefaultState()), List.of((short) 3, (short) 1));
         Map<ChunkPos, LongOpenHashSet> posList = sphere.getShapeCoordinates();
 
         Long2FloatOpenHashMap noiseMap = new Long2FloatOpenHashMap(posList.size());

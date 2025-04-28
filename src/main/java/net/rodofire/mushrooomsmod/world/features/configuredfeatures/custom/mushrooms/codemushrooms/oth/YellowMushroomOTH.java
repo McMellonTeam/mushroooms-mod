@@ -25,16 +25,9 @@ import java.util.List;
 import java.util.Map;
 
 public abstract class YellowMushroomOTH extends Feature<HugeMushroomFeatureConfig> {
-    BlockLayer capLayer = new BlockLayer(
-            new LayerPlacer(LayerPlacer.PlacingType.RANDOM),
-            List.of(ModBlocks.YELLOW_MUSHROOM_BLOCK.getDefaultState(), ModBlocks.YELLOW_ALTERED_MUSHROOM_BLOCK.getDefaultState()),
-            List.of((short) 2, (short) 1)
-    );
+    BlockLayer capLayer;
 
-    BlockLayer trunkLayer = new BlockLayer(
-            new LayerPlacer(LayerPlacer.PlacingType.RANDOM),
-            Blocks.MUSHROOM_STEM.getDefaultState()
-    );
+    BlockLayer trunkLayer;
 
     public YellowMushroomOTH(Codec<HugeMushroomFeatureConfig> configCodec) {
         super(configCodec);
@@ -75,6 +68,17 @@ public abstract class YellowMushroomOTH extends Feature<HugeMushroomFeatureConfi
         Random random = context.getRandom();
         HugeMushroomFeatureConfig hugeMushroomFeatureConfig = context.getConfig();
 
+        capLayer = new BlockLayer(
+                LayerPlacer.ofRandom(random),
+                List.of(ModBlocks.YELLOW_MUSHROOM_BLOCK.getDefaultState(), ModBlocks.YELLOW_ALTERED_MUSHROOM_BLOCK.getDefaultState()),
+                List.of((short) 2, (short) 1)
+        );
+
+        trunkLayer = new BlockLayer(
+                LayerPlacer.ofRandom(random),
+                Blocks.MUSHROOM_STEM.getDefaultState()
+        );
+
         if (world.getBlockState(origin).isOf(Blocks.WATER))
             return false;
         if (!world.getBlockState(origin.down()).isIn(BlockTags.MUSHROOM_GROW_BLOCK))
@@ -95,7 +99,7 @@ public abstract class YellowMushroomOTH extends Feature<HugeMushroomFeatureConfi
             int maxXOffset = 16 - large + 16 - origin.getX() % 16;
             int maxZOffset = 16 - large + 16 - origin.getZ() % 16;
 
-            end = origin.add(height * random.nextBetween(-maxXOffset, maxXOffset) / 20, height, height *  random.nextBetween(-maxZOffset, maxZOffset) / 20);
+            end = origin.add(height * random.nextBetween(-maxXOffset, maxXOffset) / 20, height, height * random.nextBetween(-maxZOffset, maxZOffset) / 20);
 
 
             if (!this.canGenerate(world, origin, end, large, flatCap))
@@ -128,9 +132,9 @@ public abstract class YellowMushroomOTH extends Feature<HugeMushroomFeatureConfi
 
     protected abstract BlockListManager generateTrunk(StructureWorldAccess world, BlockPos pos, BlockPos pos2, int height, HugeMushroomFeatureConfig config);
 
-    protected abstract SphereGen[] generateCap(StructureWorldAccess world, BlockPos pos, BlockPos pos2, HugeMushroomFeatureConfig var6, int height, int large, BlockListManager coordinates,Random random);
+    protected abstract SphereGen[] generateCap(StructureWorldAccess world, BlockPos pos, BlockPos pos2, HugeMushroomFeatureConfig var6, int height, int large, BlockListManager coordinates, Random random);
 
-    protected abstract SphereGen[] generateFlatterCap(StructureWorldAccess world, BlockPos pos, BlockPos pos2, HugeMushroomFeatureConfig var6, int height, int large, BlockListManager coordinates,Random random);
+    protected abstract SphereGen[] generateFlatterCap(StructureWorldAccess world, BlockPos pos, BlockPos pos2, HugeMushroomFeatureConfig var6, int height, int large, BlockListManager coordinates, Random random);
 
     protected abstract boolean place(StructureWorldAccess world, BlockPos pos, BlockPos pos2, BlockListManager coordinates, SphereGen sphere, SphereGen secondSphere);
 }

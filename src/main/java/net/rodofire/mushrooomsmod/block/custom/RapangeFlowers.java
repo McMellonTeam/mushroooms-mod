@@ -22,7 +22,7 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
 import net.minecraft.world.WorldView;
-import net.rodofire.mushrooomsmod.block.entity.RapangeFlowersBlockEntity;
+import net.rodofire.mushrooomsmod.block.entity.RapangeFlowersBE;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.function.ToIntFunction;
@@ -77,7 +77,7 @@ public class RapangeFlowers extends BlockWithEntity {
     @Nullable
     @Override
     public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
-        return new RapangeFlowersBlockEntity(pos, state);
+        return new RapangeFlowersBE(pos, state);
     }
 
     @Override

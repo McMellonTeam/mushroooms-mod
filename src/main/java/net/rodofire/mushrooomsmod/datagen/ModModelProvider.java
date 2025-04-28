@@ -196,7 +196,6 @@ public class ModModelProvider extends FabricModelProvider {
         generator.registerTrapdoor(ModBlocks.PELTOGYNE_TRAPDOOR);
 
 
-
         //Crystals
         generator.registerSimpleCubeAll(ModBlocks.PINK_CRYSTAL_BLOCK);
         generator.registerSimpleCubeAll(ModBlocks.AMBER_ORE);
@@ -277,8 +276,8 @@ public class ModModelProvider extends FabricModelProvider {
         generator.register(ModItems.BIG_GREEN_MUSHROOM_SEED, Models.GENERATED);
         generator.register(ModItems.BIG_PURPLE_MUSHROOM_SEED, Models.GENERATED);
         generator.register(ModItems.CAERULEA_VOLUBILIS_ITEM, Models.GENERATED);
-       //generator.register(ModItems.HYMNE_URSS_MUSIC_DISC, Models.GENERATED);
-       //generator.register(ModItems.HYMNE_FRANCAIS_MUSIC_DISC, Models.GENERATED);
+        //generator.register(ModItems.HYMNE_URSS_MUSIC_DISC, Models.GENERATED);
+        //generator.register(ModItems.HYMNE_FRANCAIS_MUSIC_DISC, Models.GENERATED);
         generator.register(ModItems.PINK_MUSHROOM_VINES_ITEM, Models.GENERATED);
 
         //generator.register(ModItems.PINK_CRYSTAL_ITEM, Models.GENERATED);
@@ -296,6 +295,8 @@ public class ModModelProvider extends FabricModelProvider {
         generator.register(ModItems.PURPLE_MUSHROOM_POWDER, Models.GENERATED);
         generator.register(ModItems.KEY, Models.GENERATED);
 
+        generator.register(ModBlocks.BUSHY_YELLOW_MUSHROOM.asItem(), Models.GENERATED);
+        generator.register(ModBlocks.BRIGHT_YELLOW_MUSHROOM.asItem(), Models.GENERATED);
 
     }
 

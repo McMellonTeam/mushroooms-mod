@@ -132,7 +132,7 @@ public class HugePurpleMushroomOTHFeature extends HugePurpleMushroomOTH {
         for (int i = -radius; i <= radius; i++) {
             for (int j = 0; j < height; j++) {
                 for (int k = -radius; k < radius; k++) {
-                    BlockState state = MathUtil.getRandomBoolean(0.6f) ? ModBlocks.PURPLE_MUSHROOM_BLOCK.getDefaultState() : (MathUtil.getRandomBoolean(0.3f) ? ModBlocks.PURPLE_DEGRADATED_MUSHROOM_BLOCK.getDefaultState() : ModBlocks.PURPLE_ALTERED_MUSHROOM_BLOCK.getDefaultState());
+                    BlockState state = MathUtil.getRandomBoolean(random,0.6f) ? ModBlocks.PURPLE_MUSHROOM_BLOCK.getDefaultState() : (MathUtil.getRandomBoolean(random,0.3f) ? ModBlocks.PURPLE_DEGRADATED_MUSHROOM_BLOCK.getDefaultState() : ModBlocks.PURPLE_ALTERED_MUSHROOM_BLOCK.getDefaultState());
                     if (j < 2) {
                         boolean maxim1 = Math.abs(i) == radius - 1;
                         boolean maxkm1 = Math.abs(k) == radius - 1;

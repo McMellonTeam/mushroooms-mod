@@ -377,12 +377,12 @@ public class InventoryArmorStandEntity extends LivingEntity implements GeoEntity
         NbtList nbtList2 = new NbtList();
         NbtList nbtList3 = new NbtList();
         for (ItemStack itemStack : this.armorItems) {
-            nbtList3.add(itemStack.encodeAllowEmpty(this.getRegistryManager()));
+            nbtList.add(itemStack.encodeAllowEmpty(this.getRegistryManager()));
         }
         nbt.put("ArmorItems", nbtList);
 
         for (ItemStack itemStack : this.heldItems) {
-            nbtList3.add(itemStack.encodeAllowEmpty(this.getRegistryManager()));
+            nbtList2.add(itemStack.encodeAllowEmpty(this.getRegistryManager()));
         }
         nbt.put("HeldItem", nbtList2);
 
@@ -405,7 +405,7 @@ public class InventoryArmorStandEntity extends LivingEntity implements GeoEntity
             NbtList nbtList = nbt.getList("HeldItem", NbtElement.COMPOUND_TYPE);
             for (int i = 0; i < this.heldItems.size(); ++i) {
                 nbtCompound = nbtList.getCompound(i);
-                this.armorItems.set(i, ItemStack.fromNbtOrEmpty(this.getRegistryManager(), nbtCompound));
+                this.heldItems.set(i, ItemStack.fromNbtOrEmpty(this.getRegistryManager(), nbtCompound));
             }
         }
         if (nbt.contains("Inventory", NbtElement.LIST_TYPE)) {

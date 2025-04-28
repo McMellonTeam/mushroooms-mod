@@ -19,7 +19,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
-import net.rodofire.mushrooomsmod.block.entity.ForgeBlockEntity;
+import net.rodofire.mushrooomsmod.block.entity.ForgeBE;
 import net.rodofire.mushrooomsmod.util.ModTags;
 import org.jetbrains.annotations.Nullable;
 
@@ -51,7 +51,7 @@ public class ForgeBlock extends BlockWithEntity implements BlockEntityProvider {
     @Nullable
     @Override
     public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
-        return new ForgeBlockEntity(pos, state);
+        return new ForgeBE(pos, state);
     }
 
     @Override
@@ -132,7 +132,7 @@ public class ForgeBlock extends BlockWithEntity implements BlockEntityProvider {
     public void onStateReplaced(BlockState state, World world, BlockPos pos, BlockState newState, boolean moved) {
         if (state.getBlock() != newState.getBlock()) {
             BlockEntity blockEntity = world.getBlockEntity(pos);
-            if (blockEntity instanceof ForgeBlockEntity) {
+            if (blockEntity instanceof ForgeBE) {
                 ItemScatterer.spawn(world, pos, (Inventory) blockEntity);
                 world.updateComparators(pos, this);
             }

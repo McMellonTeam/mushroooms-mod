@@ -77,6 +77,7 @@ public class SinusoShroom extends Feature<DefaultFeatureConfig> {
 
         Map<ChunkPos, LongOpenHashSet> positions = sphereGen.getShapeCoordinates();
         Map<ChunkPos, LongOpenHashSet> newPositions = new HashMap<>();
+        Map<ChunkPos, LongOpenHashSet> shroomLightPositions = new HashMap<>();
 
         this.sinusDirection = SinusDirection.values()[random.nextBetween(0, 2)];
 
@@ -89,6 +90,7 @@ public class SinusoShroom extends Feature<DefaultFeatureConfig> {
             ChunkPos chunkPos = entry.getKey();
             LongOpenHashSet originalSet = entry.getValue();
             LongOpenHashSet modifiedSet = new LongOpenHashSet();
+            LongOpenHashSet shroomSet = new LongOpenHashSet();
 
             for (long packedPos : originalSet) {
 
@@ -97,14 +99,17 @@ public class SinusoShroom extends Feature<DefaultFeatureConfig> {
                     System.out.println(pos);
                 }
 
-                double wave = getYOffset(pos.getX(), pos.getZ(), divide, multiply) ;
+                double wave = getYOffset(pos.getX(), pos.getZ(), divide, multiply);
                 int newY = (int) (pos.getY() + wave - baseYOffset);
 
                 BlockPos newPos = new BlockPos(pos.getX(), newY, pos.getZ());
-                modifiedSet.add(LongPosHelper.encodeBlockPos(newPos));
+
+                if (MathUtil.getRandomBoolean(random, 0.045f)) shroomSet.add(LongPosHelper.encodeBlockPos(newPos));
+                else modifiedSet.add(LongPosHelper.encodeBlockPos(newPos));
             }
 
             newPositions.put(chunkPos, modifiedSet);
+            shroomLightPositions.put(chunkPos, shroomSet);
         }
 
         manager.placeAll(world);
@@ -120,6 +125,11 @@ public class SinusoShroom extends Feature<DefaultFeatureConfig> {
 
         LayerManager layerManager = new LayerManager(LayerManager.Type.SURFACE, blockLayerManager);
         layerManager.place(world, newPositions);
+        shroomLightPositions.forEach((chunkPos, longs) -> {
+            longs.forEach(aLong -> {
+                world.setBlockState(LongPosHelper.decodeBlockPos(aLong), Blocks.OCHRE_FROGLIGHT.getDefaultState(), 3);
+            });
+        });
 
 
         return true;

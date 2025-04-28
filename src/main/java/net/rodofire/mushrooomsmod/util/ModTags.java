@@ -5,6 +5,7 @@ import net.minecraft.item.Item;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
+import net.minecraft.world.biome.Biome;
 import net.rodofire.mushrooomsmod.MushrooomsMod;
 
 public class ModTags {
@@ -36,6 +37,16 @@ public class ModTags {
 
         private static TagKey<Item> createTag(String name) {
             return TagKey.of(RegistryKeys.ITEM, Identifier.of(MushrooomsMod.MOD_ID, name));
+        }
+    }
+
+    public static class Biomes {
+        public static final TagKey<Biome> HAS_YELLOW_MUSHROOM = createTag("has_structure/yellow_mushroom_biomes");
+        public static final TagKey<Biome> HAS_PURPLE_MUSHROOM = createTag("has_structure/purple_mushroom_biomes");
+        public static final TagKey<Biome> HAS_GIANT_YELLOW_MUSHROOM = createTag("has_structure/giant_yellow_mushroom_biomes");
+
+        private static TagKey<Biome> createTag(String name) {
+            return TagKey.of(RegistryKeys.BIOME, Identifier.of(MushrooomsMod.MOD_ID, name));
         }
     }
 }

@@ -63,7 +63,7 @@ public class ColorfulTreeFoliagePlacer extends FoliagePlacer {
         ShapePlacer placer1 = new ShapePlacer((StructureWorldAccess) world, ShapePlacer.PlaceMoment.OTHER, treeNode.getCenter());
         placer1.place(sphere.getShapeCoordinates(), new LayerManager(
                 LayerManager.Type.SURFACE,
-                new BlockLayerManager(new LayerPlacer(LayerPlacer.PlacingType.NOISE2D), state, (short) 1)
+                new BlockLayerManager(LayerPlacer.of2DNoise(), state, (short) 1)
         ));
 
         for (int x = -radiusB; x <= radiusB; x++) {

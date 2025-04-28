@@ -21,7 +21,7 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
 import net.minecraft.world.WorldView;
-import net.rodofire.mushrooomsmod.block.entity.DangerousBoostingMushroomBlockEntity;
+import net.rodofire.mushrooomsmod.block.entity.DangerousBoostingMushroomBE;
 import net.rodofire.mushrooomsmod.sound.ModSounds;
 import org.jetbrains.annotations.Nullable;
 
@@ -75,7 +75,7 @@ public class DangerousBoostingMushroom extends BlockWithEntity {
     @Nullable
     @Override
     public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
-        return new DangerousBoostingMushroomBlockEntity(pos, state);
+        return new DangerousBoostingMushroomBE(pos, state);
     }
 
     @Override
