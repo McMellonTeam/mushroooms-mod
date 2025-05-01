@@ -65,6 +65,7 @@ public class SinusoShroom extends Feature<DefaultFeatureConfig> {
         int radiusY = random.nextBetween(2, 5);
 
         this.start = context.getOrigin();
+        if (!world.getBlockState(start.down()).isOpaqueFullCube(world, start.down())) return false;
         this.end = this.start.add(random.nextBetween(-2, 2), random.nextBetween(15, 25), random.nextBetween(-2, 2));
 
         if (!canPlace(world, radius))

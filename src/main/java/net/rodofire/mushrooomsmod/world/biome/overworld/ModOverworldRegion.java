@@ -45,12 +45,12 @@ public class ModOverworldRegion extends Region {
 
         //MYSTIC_MUSHROGROVE
         new ParameterUtils.ParameterPointListBuilder()
-                .temperature(ParameterUtils.Temperature.HOT)
+                .temperature(MultiNoiseUtil.ParameterRange.of(-0.3f, 0.2f))
                 .humidity(ParameterUtils.Humidity.DRY)
                 .continentalness(ParameterUtils.Continentalness.MUSHROOM_FIELDS, ParameterUtils.Continentalness.NEAR_INLAND)
-                .erosion(MultiNoiseUtil.ParameterRange.of(-0.7F, -0.4F))
+                .erosion(ParameterUtils.Erosion.EROSION_1)
                 .depth(ParameterUtils.Depth.SURFACE)
-                .weirdness(MultiNoiseUtil.ParameterRange.of(0f, 0.55f))
+                .weirdness(MultiNoiseUtil.ParameterRange.of(-0.15f, 0.55f))
                 .build().forEach(point -> builder.add(point, ModOverworldBiomes.MYSTIC_MUSHROGROVE));
 
 
