@@ -17,12 +17,12 @@ public class CustomLuminescentBlueMushroomFeature extends CustomLuminescentBlueM
     }
 
     protected RegistryKey<ConfiguredFeature<?, ?>> getTreeFeature(Random random, boolean bees) {
-        return ModConfiguredFeatures.BLUE_LUMINESCENT_MUSHROOM_TREE_KEY;
+        return ModConfiguredFeatures.BLUE_LUMINESCENT_MUSHROOM_TREE;
     }
 
     @Override
     protected int getCapSize(int capSize) {
-        return Random.create().nextBetween(capSize - 1, capSize);
+        return random.nextBetween(capSize - 1, capSize);
     }
 
 

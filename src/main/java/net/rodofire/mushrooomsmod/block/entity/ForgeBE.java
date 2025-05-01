@@ -16,11 +16,11 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 
-public class ForgeBlockEntity extends BlockEntity implements ImplementedInventory {
+public class ForgeBE extends BlockEntity implements ImplementedInventory {
     private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(2, ItemStack.EMPTY);
 
-    public ForgeBlockEntity(BlockPos pos, BlockState state) {
-        super(ModBlockEntities.FORGE_BLOCK_ENTITY, pos, state);
+    public ForgeBE(BlockPos pos, BlockState state) {
+        super(ModBlockEntities.FORGE_BLOCK, pos, state);
     }
 
     @Override

@@ -14,11 +14,11 @@ import net.minecraft.world.gen.feature.util.FeatureContext;
 
 import java.util.ArrayList;
 
-public abstract class CustomGreenSecondMushroom extends Feature<HugeMushroomFeatureConfig> {
+public abstract class GreenCryingMushroom extends Feature<HugeMushroomFeatureConfig> {
     Random random;
 
 
-    public CustomGreenSecondMushroom(Codec<HugeMushroomFeatureConfig> configCodec) {
+    public GreenCryingMushroom(Codec<HugeMushroomFeatureConfig> configCodec) {
         super(configCodec);
     }
 
@@ -83,6 +83,8 @@ public abstract class CustomGreenSecondMushroom extends Feature<HugeMushroomFeat
         mutable = new BlockPos.Mutable();
         boolean threecap = true;
         int secondlarge;
+
+        if(!structureWorldAccess.getBlockState(blockPos.down()).isOpaqueFullCube(structureWorldAccess, blockPos.down())) return false;
 
         ArrayList<Integer> heightb = new ArrayList<>();
         ArrayList<Integer> coordinates = new ArrayList<>();

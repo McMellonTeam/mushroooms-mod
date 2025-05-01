@@ -2,12 +2,11 @@ package net.rodofire.mushrooomsmod.config.client;
 
 import net.minecraft.client.font.MultilineText;
 import net.minecraft.client.gui.DrawContext;
-import net.minecraft.text.*;
-import net.minecraft.util.Formatting;
+import net.minecraft.text.OrderedText;
+import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
-import net.rodofire.easierworldcreator.Ewc;
-import net.rodofire.easierworldcreator.client.hud.screen.AbstractInfoScreen;
-import net.rodofire.easierworldcreator.client.hud.widget.ScrollBarWidget;
+import net.rodofire.easierworldcreator.client.gui.screen.AbstractInfoScreen;
+import net.rodofire.easierworldcreator.client.gui.widget.ScrollBarWidget;
 import net.rodofire.mushrooomsmod.MushrooomsMod;
 
 import java.util.List;

@@ -162,6 +162,9 @@ public class ModItemGroup {
                         entries.add(ModBlocks.MUSHROOM_SMALL_BROWN);
                         entries.add(ModBlocks.MUSHROOM_SMALL_RED);
                         entries.add(ModBlocks.MUSHROOM_DEATH_TRUMPET);
+                        entries.add(ModBlocks.BUSHY_YELLOW_MUSHROOM);
+                        entries.add(ModBlocks.BRIGHT_YELLOW_MUSHROOM);
+                        entries.add(ModBlocks.TALL_YELLOW_MUSHROOMS);
 
                         //Side Mushrooms
                         entries.add(ModBlocks.SIDE_MUSHROOM_BLUE_LUMINESCENT);

@@ -18,6 +18,8 @@ import net.rodofire.mushrooomsmod.MushrooomsMod;
 
 
 public class CustomRedFertileMushroom extends Feature<DefaultFeatureConfig> {
+    Random random;
+
     public CustomRedFertileMushroom(Codec<DefaultFeatureConfig> configCodec) {
         super(configCodec);
     }
@@ -44,15 +46,19 @@ public class CustomRedFertileMushroom extends Feature<DefaultFeatureConfig> {
     public boolean generate(FeatureContext<DefaultFeatureConfig> context) {
         StructureWorldAccess world = context.getWorld();
         BlockPos pos = context.getOrigin();
+        this.random = context.getRandom();
         int mushroom = getMushroom();
         int large = getLarge(mushroom);
         int height = getHeight(mushroom);
         BlockRotation rotation = getBlockRotation();
         Vec3i offset = getOffset(mushroom, rotation);
+
         if (!world.getBlockState(pos.down()).isOpaqueFullCube(world, pos.down())) {
             return false;
         }
+
         if (!canGenerate(world, pos.add(offset), large, height, rotation)) return false;
+
         placeMushroom(world, pos.add(offset), mushroom, rotation);
         return true;
     }
@@ -130,7 +136,7 @@ public class CustomRedFertileMushroom extends Feature<DefaultFeatureConfig> {
 
     //return wich mushroom wiil be placed
     public int getMushroom() {
-        int rand = Random.create().nextBetween(0, 120);
+        int rand = random.nextBetween(0, 120);
         if (rand < 14) return 0;
         if (rand < 26) return 1;
         if (rand < 38) return 2;
@@ -156,7 +162,7 @@ public class CustomRedFertileMushroom extends Feature<DefaultFeatureConfig> {
 
     //return random rotation
     public BlockRotation getBlockRotation() {
-        return switch (Random.create().nextBetween(0, 3)) {
+        return switch (random.nextBetween(0, 3)) {
             case 1 -> BlockRotation.CLOCKWISE_90;
             case 2 -> BlockRotation.COUNTERCLOCKWISE_90;
             case 3 -> BlockRotation.CLOCKWISE_180;

@@ -80,7 +80,7 @@ public abstract class CustomPurpleMushroom extends Feature<HugeMushroomFeatureCo
         HugeMushroomFeatureConfig hugeMushroomFeatureConfig = context.getConfig();
 
         int i = this.getHeight(random);
-        int z = Random.create().nextBetween(3, 6);
+        int z = random.nextBetween(3, 6);
 
         if (!this.canGenerate(structureWorldAccess, blockPos, i, mutable = new BlockPos.Mutable(), z)) {
             return false;

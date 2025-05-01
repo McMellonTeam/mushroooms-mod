@@ -1,10 +1,10 @@
 package net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom;
 
+import com.mojang.datafixers.util.Pair;
 import com.mojang.serialization.Codec;
 import it.unimi.dsi.fastutil.longs.LongOpenHashSet;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
-import net.minecraft.util.Pair;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.random.Random;
@@ -53,12 +53,12 @@ public class SpiralMushroom extends Feature<DefaultFeatureConfig> {
         BlockState block3 = ModBlocks.BLUE_DEGRADATED_MUSHROOM_BLOCK.getDefaultState();
         BlockState block4 = Blocks.MUSHROOM_STEM.getDefaultState();
 
-        int large = Random.create().nextBetween(5, 10);
+        int large = random.nextBetween(5, 10);
 
-        SpiralGen spiral = new SpiralGen(pos, large, Random.create().nextBetween(25, 50));
+        SpiralGen spiral = new SpiralGen(pos, large, random.nextBetween(25, 50));
         spiral.setSpiralType(SpiralGen.SpiralType.LARGE_OUTLINE);
 
-        BlockLayer layer = new BlockLayer(new LayerPlacer(LayerPlacer.PlacingType.RANDOM), List.of(block, block2, block3, block4), List.of((short) 6, (short) 4, (short) 2, (short) 1));
+        BlockLayer layer = new BlockLayer(LayerPlacer.ofRandom(random), List.of(block, block2, block3, block4), List.of((short) 6, (short) 4, (short) 2, (short) 1));
 
 
         int outline = context.getRandom().nextBetween(1,2);

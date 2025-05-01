@@ -6,15 +6,12 @@ import it.unimi.dsi.fastutil.longs.LongArrayList;
 import it.unimi.dsi.fastutil.longs.LongOpenHashSet;
 import net.minecraft.block.Blocks;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.Pair;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.StructureWorldAccess;
 import net.minecraft.world.gen.feature.DefaultFeatureConfig;
-import net.rodofire.easierworldcreator.blockdata.blocklist.BlockList;
-import net.rodofire.easierworldcreator.blockdata.blocklist.BlockListManager;
 import net.rodofire.easierworldcreator.blockdata.blocklist.DividedBlockListManager;
 import net.rodofire.easierworldcreator.blockdata.layer.BlockLayer;
 import net.rodofire.easierworldcreator.blockdata.layer.BlockLayerManager;
@@ -24,11 +21,12 @@ import net.rodofire.easierworldcreator.shape.block.placer.LayerPlacer;
 import net.rodofire.easierworldcreator.shape.block.placer.ShapePlacer;
 import net.rodofire.easierworldcreator.util.FastNoiseLite;
 import net.rodofire.easierworldcreator.util.LongPosHelper;
-import net.rodofire.easierworldcreator.util.WorldGenUtil;
 import net.rodofire.mushrooomsmod.MushrooomsMod;
 import net.rodofire.mushrooomsmod.block.ModBlocks;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class OrangeMushroomFeatureWG extends OrangeMushroomWG {
     public OrangeMushroomFeatureWG(Codec<DefaultFeatureConfig> configCodec) {
@@ -111,7 +109,7 @@ public class OrangeMushroomFeatureWG extends OrangeMushroomWG {
         sphere.setRadiusY(radiusY);
         sphere.setHalfSphere(SphereGen.SphereType.HALF);
         sphere.setHalfSphereDirection(Direction.UP);
-       SphereGen voidSphere = new SphereGen(end.down(radiusY), (int) (radius * 1.3f));
+        SphereGen voidSphere = new SphereGen(end.down(radiusY), (int) (radius * 1.3f));
         voidSphere.setRadiusY(radiusY);
         return new SphereGen[]{sphere, voidSphere};
     }
@@ -140,7 +138,7 @@ public class OrangeMushroomFeatureWG extends OrangeMushroomWG {
                 LayerManager.Type.SURFACE,
                 new BlockLayerManager(
                         new BlockLayer(
-                                new LayerPlacer(LayerPlacer.PlacingType.RANDOM),
+                                LayerPlacer.ofRandom(),
                                 List.of(ModBlocks.ORANGE_MUSHROOM_BLOCK.getDefaultState(), ModBlocks.ORANGE_ALTERED_MUSHROOM_BLOCK.getDefaultState(), ModBlocks.ORANGE_DEGRADATED_MUSHROOM_BLOCK.getDefaultState()),
                                 List.of((short) 4, (short) 2, (short) 1))
                 )

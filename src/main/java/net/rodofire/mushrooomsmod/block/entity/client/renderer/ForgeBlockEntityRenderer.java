@@ -14,16 +14,16 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RotationAxis;
 import net.minecraft.world.LightType;
 import net.minecraft.world.World;
-import net.rodofire.mushrooomsmod.block.entity.ForgeBlockEntity;
+import net.rodofire.mushrooomsmod.block.entity.ForgeBE;
 
 import java.util.ArrayList;
 
-public class ForgeBlockEntityRenderer implements BlockEntityRenderer<ForgeBlockEntity> {
+public class ForgeBlockEntityRenderer implements BlockEntityRenderer<ForgeBE> {
     public ForgeBlockEntityRenderer(BlockEntityRendererFactory.Context context) {
     }
 
     @Override
-    public void render(ForgeBlockEntity entity, float tickDelta, MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, int overlay) {
+    public void render(ForgeBE entity, float tickDelta, MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, int overlay) {
         ItemRenderer itemRenderer = MinecraftClient.getInstance().getItemRenderer();
         ItemStack stack;
         ArrayList<ItemStack> stackList = entity.getRenderStack();
@@ -83,7 +83,7 @@ public class ForgeBlockEntityRenderer implements BlockEntityRenderer<ForgeBlockE
 
     }
 
-    public void renderMatrix(MatrixStack matrices, ItemRenderer itemRenderer, ItemStack stack, ForgeBlockEntity entity, VertexConsumerProvider vertexConsumers, float x, float y, float z, float x2, float y2, float z2) {
+    public void renderMatrix(MatrixStack matrices, ItemRenderer itemRenderer, ItemStack stack, ForgeBE entity, VertexConsumerProvider vertexConsumers, float x, float y, float z, float x2, float y2, float z2) {
         matrices.push();
         matrices.translate(x, y, z);
         matrices.scale(x2, y2, z2);

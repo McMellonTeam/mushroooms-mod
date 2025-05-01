@@ -47,9 +47,9 @@ public class PeltogyneTrunkPlacer extends TrunkPlacer {
         generateBase(world, replacer, random, startPos, config);
 
         List<FoliagePlacer.TreeNode> list = new ArrayList<FoliagePlacer.TreeNode>();
-        for (int i = 0; i < Random.create().nextBetween(3, 4); i++) {
-            int heightb = Random.create().nextBetween(3, height);
-            list.add(addBranch(world, replacer, random, startPos.add(0, heightb, 0), config, WorldGenUtil.getRandomHorizontalDirection(), heightb, height));
+        for (int i = 0; i < random.nextBetween(3, 4); i++) {
+            int heightb = random.nextBetween(3, height);
+            list.add(addBranch(world, replacer, random, startPos.add(0, heightb, 0), config, WorldGenUtil.getRandomHorizontalDirection(random), heightb, height));
         }
         list.add(new FoliagePlacer.TreeNode(startPos.up(height), 0, false));
         return list;
@@ -57,7 +57,7 @@ public class PeltogyneTrunkPlacer extends TrunkPlacer {
 
     private void generateBasicTrunk(TestableWorld world, BiConsumer<BlockPos, BlockState> replacer, Random random, BlockPos startPos, TreeFeatureConfig config, int height) {
 
-        for (int y = 0; y < height + Random.create().nextBetween(-2, 2); y++) {
+        for (int y = 0; y < height + random.nextBetween(-2, 2); y++) {
             getAndSetState(world, replacer, random, startPos.add(0, y, 0), config);
         }
 
@@ -67,7 +67,7 @@ public class PeltogyneTrunkPlacer extends TrunkPlacer {
         for (int x = -1; x <= 1; x += 1) {
             for (int z = -1; z <= 1; z += 1) {
                 if (z + x == 0 || Math.abs(x) + Math.abs(z) == 2) continue;
-                double a = Random.create().nextBetween(0, 4);
+                double a = random.nextBetween(0, 4);
                 for (int i = 0; i < a; i++) {
                     getAndSetState(world, replacer, random, startPos.add(x, i, z), config);
                 }
@@ -76,9 +76,9 @@ public class PeltogyneTrunkPlacer extends TrunkPlacer {
     }
 
     private FoliagePlacer.TreeNode addBranch(TestableWorld world, BiConsumer<BlockPos, BlockState> replacer, Random random, BlockPos startPos, TreeFeatureConfig config, Direction dir, int height, int maxHeight) {
-        int randomX = (int) (((float) maxHeight / height) / 3 * getXSign(dir) * Random.create().nextBetween(2, 5));
-        int randomZ = (int) (((float) maxHeight / height) / 3 * getZSign(dir) * Random.create().nextBetween(2, 5));
-        int randomY = (int) (FastMaths.getLength(randomX, randomZ) * (double) Random.create().nextBetween(10, 20) / 10);
+        int randomX = (int) (((float) maxHeight / height) / 3 * getXSign(dir) * random.nextBetween(2, 5));
+        int randomZ = (int) (((float) maxHeight / height) / 3 * getZSign(dir) * random.nextBetween(2, 5));
+        int randomY = (int) (FastMaths.getLength(randomX, randomZ) * (double) random.nextBetween(10, 20) / 10);
 
         BlockPos direction = new BlockPos(randomX, randomY, randomZ);
 
@@ -87,7 +87,7 @@ public class PeltogyneTrunkPlacer extends TrunkPlacer {
 
         LayerManager layerManager = new LayerManager(
                 LayerManager.Type.SURFACE,
-                new BlockLayerManager(new BlockLayer(new LayerPlacer(LayerPlacer.PlacingType.RANDOM), config.trunkProvider.get(random, startPos)))
+                new BlockLayerManager(new BlockLayer(LayerPlacer.ofRandom(random), config.trunkProvider.get(random, startPos)))
         );
         layerManager.place((StructureWorldAccess) world, line.getShapeCoordinates());
 

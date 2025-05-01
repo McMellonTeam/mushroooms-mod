@@ -14,14 +14,14 @@ import software.bernie.geckolib.animation.Animation;
 import software.bernie.geckolib.animation.AnimationController;
 import software.bernie.geckolib.animation.RawAnimation;
 
-public class RapangeFlowersBlockEntity extends BlockEntity implements GeoBlockEntity {
+public class RapangeFlowersBE extends BlockEntity implements GeoBlockEntity {
     private static final RawAnimation DOWN = RawAnimation.begin().then("animation.rapange_flowers.down", Animation.LoopType.HOLD_ON_LAST_FRAME);
     private static final RawAnimation UP = RawAnimation.begin().then("animation.rapange_flowers.up", Animation.LoopType.PLAY_ONCE).then("animation.rapange_flowers.idle", Animation.LoopType.LOOP);
     private final AnimatableInstanceCache cache = new SingletonAnimatableInstanceCache(this);
 
 
-    public RapangeFlowersBlockEntity(BlockPos pos, BlockState state) {
-        super(ModBlockEntities.RAPANGE_FLOWERS_BLOCK_ENTITY, pos, state);
+    public RapangeFlowersBE(BlockPos pos, BlockState state) {
+        super(ModBlockEntities.RAPANGE_FLOWERS_BLOCK, pos, state);
     }
 
     @Override

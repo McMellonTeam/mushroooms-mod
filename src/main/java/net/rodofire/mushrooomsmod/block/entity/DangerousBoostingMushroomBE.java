@@ -9,18 +9,21 @@ import software.bernie.geckolib.animatable.GeoBlockEntity;
 import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
 import software.bernie.geckolib.animatable.instance.SingletonAnimatableInstanceCache;
 import software.bernie.geckolib.animation.*;
-import software.bernie.geckolib.util.RenderUtil;
 
-public class BoostingMushroomBlockEntity extends BlockEntity implements GeoBlockEntity {
+public class DangerousBoostingMushroomBE extends BlockEntity implements GeoBlockEntity {
     private final AnimatableInstanceCache cache = new SingletonAnimatableInstanceCache(this);
-
-    public BoostingMushroomBlockEntity(BlockPos pos, BlockState state) {
-        super(ModBlockEntities.BOOSTING_MUSHROOM_ENTITY, pos, state);
+    public DangerousBoostingMushroomBE(BlockPos pos, BlockState state) {
+        super(ModBlockEntities.DANGEROUS_BOOSTING_MUSHROOM,pos, state);
     }
 
     @Override
     public void registerControllers(AnimatableManager.ControllerRegistrar controllerRegistrar) {
-        controllerRegistrar.add(new AnimationController<GeoAnimatable>(this, "controller", 0, this::predicate));
+        controllerRegistrar.add(new AnimationController<>(this, "controller", 0, this::predicate));
+    }
+
+    private <T extends GeoAnimatable> PlayState predicate(AnimationState<T> tAnimationState) {
+        tAnimationState.getController().setAnimation(RawAnimation.begin().then("animation.mushroom_boost.idle", Animation.LoopType.LOOP));
+        return PlayState.CONTINUE;
     }
 
     @Override
@@ -28,15 +31,4 @@ public class BoostingMushroomBlockEntity extends BlockEntity implements GeoBlock
         return cache;
     }
 
-    private <T extends GeoAnimatable> PlayState predicate(AnimationState<GeoAnimatable> tAnimationState) {
-        tAnimationState.getController().setAnimation(RawAnimation.begin().then("animation.mushroom_boost.idle", Animation.LoopType.LOOP));
-        return PlayState.CONTINUE;
-    }
-
-
-
-    @Override
-    public double getTick(Object blockEntity) {
-        return RenderUtil.getCurrentTick();
-    }
 }

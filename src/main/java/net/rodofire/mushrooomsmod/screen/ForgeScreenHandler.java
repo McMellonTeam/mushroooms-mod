@@ -9,14 +9,14 @@ import net.minecraft.screen.ArrayPropertyDelegate;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.screen.slot.Slot;
-import net.rodofire.mushrooomsmod.block.entity.ForgeBlockEntity;
+import net.rodofire.mushrooomsmod.block.entity.ForgeBE;
 
 public class ForgeScreenHandler extends ScreenHandler {
 
 
     private final Inventory inventory;
     private final PropertyDelegate propertyDelegate;
-    public final ForgeBlockEntity blockEntity;
+    public final ForgeBE blockEntity;
 
     //public static final PacketCodec<RegistryByteBuf, ForgeScreenHandler> PACKET_CODEC = PacketCodec.tuple(
     //        PacketCodecs.STRING, buf -> buf. );
@@ -67,7 +67,7 @@ public class ForgeScreenHandler extends ScreenHandler {
         this.inventory = ((Inventory) blockEntity);
         inventory.onOpen(playerInventory.player);
         this.propertyDelegate = arrayPropertyDelegate;
-        this.blockEntity = ((ForgeBlockEntity) blockEntity);
+        this.blockEntity = ((ForgeBE) blockEntity);
 
         this.addSlot(new Slot(inventory, 0, 25, 32));
         this.addSlot(new Slot(inventory, 1, 133, 32));

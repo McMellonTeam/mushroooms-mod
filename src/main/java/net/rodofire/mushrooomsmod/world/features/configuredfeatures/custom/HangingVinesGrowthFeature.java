@@ -30,6 +30,7 @@ public class HangingVinesGrowthFeature extends Feature<HangingGrowthFeatureConfi
         Random random = context.getRandom();
         HangingGrowthFeatureConfig multifaceGrowthFeatureConfig = context.getConfig();
         boolean placed = false;
+
         for (int a = 0; a < 10; a++) {
             if (!isAirOrWater(structureWorldAccess.getBlockState(blockPos))) {
             } else {

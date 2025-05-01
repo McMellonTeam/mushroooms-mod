@@ -22,18 +22,18 @@ public class CustomRedHugeMushroomFeature extends CustomRedHugeMushroom {
 
     @Override
     protected Integer[] trunkPlace(BlockPos start, int large, BlockPos.Mutable mutable, WorldAccess world, ModMushroomFeatureConfig config, Random random) {
-        int trunkheight = Random.create().nextBetween(2, 5);
+        int trunkheight = random.nextBetween(2, 5);
         int randx = 0;
         int randz = 0;
 
         BlockState blockstate = config.stemProvider.get(random, mutable);
 
         if (trunkheight > 2) {
-            randx = Random.create().nextBetween(-1, 1);
-            randz = Random.create().nextBetween(-1, 1);
+            randx = random.nextBetween(-1, 1);
+            randz = random.nextBetween(-1, 1);
             while (randx == 0 && randz == 0) {
-                randx = Random.create().nextBetween(-1, 1);
-                randz = Random.create().nextBetween(-1, 1);
+                randx = random.nextBetween(-1, 1);
+                randz = random.nextBetween(-1, 1);
             }
         }
 
@@ -59,8 +59,8 @@ public class CustomRedHugeMushroomFeature extends CustomRedHugeMushroom {
         int randx = coordinates[0];
         int height1 = coordinates[1];
         int randz = coordinates[2];
-        int rotation = Random.create().nextInt(4);
-        int randomcapnumber = Random.create().nextInt(3) + 1;
+        int rotation = random.nextInt(4);
+        int randomcapnumber = random.nextInt(3) + 1;
 
         String path = "red_cap/red_cap_" + large + "_" + randomcapnumber;
         BlockRotation blockRotation;

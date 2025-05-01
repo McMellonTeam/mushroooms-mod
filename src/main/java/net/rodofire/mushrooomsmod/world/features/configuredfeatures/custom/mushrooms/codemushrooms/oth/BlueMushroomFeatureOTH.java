@@ -49,13 +49,13 @@ public class BlueMushroomFeatureOTH extends CustomBlueMushroom {
         sphere.setRotator(
                 new Rotator(pos,
                         0,
-                        MathUtil.getRandomOpposite() * (random.nextBetween(0, 20) + random.nextBetween(0, 10)),
+                        MathUtil.getRandomOpposite(random) * (random.nextBetween(0, 20) + random.nextBetween(0, 10)),
                         random.nextBetween(0, 360)
                 )
         );
         sphere.setRadiusY(height);
 
-        BlockLayer layer = new BlockLayer(new LayerPlacer(LayerPlacer.PlacingType.RANDOM),
+        BlockLayer layer = new BlockLayer(LayerPlacer.ofRandom(random),
                 List.of(ModBlocks.BLUE_MUSHROOM_BLOCK.getDefaultState(), ModBlocks.BLUE_ALTERED_MUSHROOM_BLOCK.getDefaultState()), List.of((short) 3, (short) 1)
         );
         StructurePlacementRuleManager tuler = new StructurePlacementRuleManager();

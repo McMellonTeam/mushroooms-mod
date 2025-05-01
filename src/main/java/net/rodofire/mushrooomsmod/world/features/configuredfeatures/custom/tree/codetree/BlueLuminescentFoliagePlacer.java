@@ -39,7 +39,7 @@ public class BlueLuminescentFoliagePlacer extends FoliagePlacer {
         noise.SetFractalOctaves(2);
         noise.SetFrequency(0.7f);
 
-        int yradius = radius - Random.create().nextBetween(1, 3);
+        int yradius = radius - random.nextBetween(1, 3);
 
         int largexsquared = radius * radius;
         int largeysquared = yradius * yradius;

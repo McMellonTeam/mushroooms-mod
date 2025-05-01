@@ -9,7 +9,7 @@ public class ModSaplings {
     public static final SaplingGenerator BLUE_LUMINESCENT_SAPLING = new SaplingGenerator("blue_luminescent_sapling", 0f,
             Optional.empty(),
             Optional.empty(),
-            Optional.of(ModConfiguredFeatures.BLUE_LUMINESCENT_TREE_KEY),
+            Optional.of(ModConfiguredFeatures.BLUE_LUMINESCENT_TREE),
             Optional.empty(),
             Optional.empty(),
             Optional.empty());
@@ -17,7 +17,7 @@ public class ModSaplings {
     public static final SaplingGenerator OAK_BERRIES_SAPLING_GENERATOR = new SaplingGenerator("oak_berries_sapling", 0f,
             Optional.empty(),
             Optional.empty(),
-            Optional.of(ModConfiguredFeatures.OAK_BERRIES_TREE_KEY),
+            Optional.of(ModConfiguredFeatures.OAK_BERRIES_TREE),
             Optional.empty(),
             Optional.empty(),
             Optional.empty());
@@ -25,7 +25,7 @@ public class ModSaplings {
     public static final SaplingGenerator PELTOGYNE_SAPLING_GENERATOR = new SaplingGenerator("peltogyne_sapling", 0f,
             Optional.empty(),
             Optional.empty(),
-            Optional.of(ModConfiguredFeatures.PELTOGYNE_TREE_KEY),
+            Optional.of(ModConfiguredFeatures.PELTOGYNE_TREE),
             Optional.empty(),
             Optional.empty(),
             Optional.empty());
@@ -33,7 +33,7 @@ public class ModSaplings {
     public static final SaplingGenerator COLORFUL_TREE_SAPLING_GENERATOR = new SaplingGenerator("colorful_tree_sapling", 0f,
             Optional.empty(),
             Optional.empty(),
-            Optional.of(ModConfiguredFeatures.COLORFUL_TREE_KEY),
+            Optional.of(ModConfiguredFeatures.COLORFUL_TREE),
             Optional.empty(),
             Optional.empty(),
             Optional.empty());

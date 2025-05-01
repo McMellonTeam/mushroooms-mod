@@ -6,7 +6,7 @@ import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Util;
 import net.rodofire.easierworldcreator.Ewc;
-import net.rodofire.easierworldcreator.client.hud.widget.ImageButtonWidget;
+import net.rodofire.easierworldcreator.client.gui.widget.ImageButtonWidget;
 import net.rodofire.easierworldcreator.config.ConfigCategory;
 import net.rodofire.easierworldcreator.config.client.DefaultConfigScreen;
 import net.rodofire.mushrooomsmod.MushrooomsMod;

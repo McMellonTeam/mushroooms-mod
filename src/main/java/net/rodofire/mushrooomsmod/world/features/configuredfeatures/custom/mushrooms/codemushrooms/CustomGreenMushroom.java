@@ -44,8 +44,8 @@ public abstract class CustomGreenMushroom extends Feature<ModMushroomFeatureConf
         Random random = context.getRandom();
         ModMushroomFeatureConfig modMushroomFeatureConfig = context.getConfig();
         boolean bigcap = false;
-        int height = Random.create().nextBetween(5, 20);
-        int large = Random.create().nextBetween(2, 7);
+        int height = random.nextBetween(5, 20);
+        int large = random.nextBetween(2, 7);
 
         if (structureWorldAccess.getBlockState(blockPos).isOf(Blocks.WATER))
             return false;
@@ -56,7 +56,7 @@ public abstract class CustomGreenMushroom extends Feature<ModMushroomFeatureConf
 
         this.trunkPlace(blockPos, mutable, structureWorldAccess, modMushroomFeatureConfig, height, random);
 
-        if (Random.create().nextBetween(0, 1) == 0) bigcap = true;
+        if (random.nextBetween(0, 1) == 0) bigcap = true;
 
         this.capPlacer(blockPos, mutable, structureWorldAccess, modMushroomFeatureConfig, large, height, random, bigcap);
 

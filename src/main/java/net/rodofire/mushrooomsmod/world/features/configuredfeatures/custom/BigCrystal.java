@@ -23,13 +23,13 @@ public class BigCrystal extends Feature<ModSimpleBlockFeatureConfig> {
 
     @Override
     public boolean generate(FeatureContext<ModSimpleBlockFeatureConfig> context) {
-        if (Random.create().nextBetween(0, 4) == 0) {
-            BlockPos pos = context.getOrigin();
-            BlockPos secondPos = pos.add(Random.create().nextBetween(1, 16) * MathUtil.getRandomOpposite(), Random.create().nextBetween(6, 30) * MathUtil.getRandomOpposite(), Random.create().nextBetween(1, 16) * MathUtil.getRandomOpposite());
-            BlockPos thirdPos = pos.add(Random.create().nextBetween(1, 16) * MathUtil.getRandomOpposite(), Random.create().nextBetween(6, 30) * MathUtil.getSign(secondPos.getY()), Random.create().nextBetween(1, 16) * MathUtil.getRandomOpposite());
+        Random random = context.getRandom();
+        BlockPos pos = context.getOrigin();
+        if (random.nextBetween(0, 4) == 0) {
+            BlockPos secondPos = pos.add(random.nextBetween(1, 16) * MathUtil.getRandomOpposite(random), random.nextBetween(6, 30) * MathUtil.getRandomOpposite(random), random.nextBetween(1, 16) * MathUtil.getRandomOpposite(random));
+            BlockPos thirdPos = pos.add(random.nextBetween(1, 16) * MathUtil.getRandomOpposite(random), random.nextBetween(6, 30) * MathUtil.getSign(secondPos.getY()), random.nextBetween(1, 16) * MathUtil.getRandomOpposite(random));
 
             ModSimpleBlockFeatureConfig config = context.getConfig();
-            Random random = context.getRandom();
             StructureWorldAccess world = context.getWorld();
             BlockState state = config.blockprovider.get(random, pos);
             BlockPos.Mutable mutable = new BlockPos.Mutable();
@@ -45,11 +45,9 @@ public class BigCrystal extends Feature<ModSimpleBlockFeatureConfig> {
             if (!generatePillar(secondPos, pos, state2, state1, world, mutable, state, random)) return false;
             return generatePillar(thirdPos, pos, state3, state1, world, mutable, state, random);
         } else {
-            BlockPos pos = context.getOrigin();
-            BlockPos secondpos = pos.add(Random.create().nextBetween(1, 16) * MathUtil.getRandomOpposite(), Random.create().nextBetween(6, 30) * MathUtil.getRandomOpposite(), Random.create().nextBetween(1, 16) * MathUtil.getRandomOpposite());
+            BlockPos secondpos = pos.add(random.nextBetween(1, 16) * MathUtil.getRandomOpposite(random), random.nextBetween(6, 30) * MathUtil.getRandomOpposite(random), random.nextBetween(1, 16) * MathUtil.getRandomOpposite(random));
 
             ModSimpleBlockFeatureConfig config = context.getConfig();
-            Random random = context.getRandom();
             StructureWorldAccess world = context.getWorld();
             BlockState state = config.blockprovider.get(random, pos);
             BlockPos.Mutable mutable = new BlockPos.Mutable();
@@ -73,7 +71,7 @@ public class BigCrystal extends Feature<ModSimpleBlockFeatureConfig> {
             return false;
 
         //create a round base
-        int baseLarge = Random.create().nextBetween(2, 5);
+        int baseLarge = random.nextBetween(2, 5);
         for (int i = 1; i <= baseLarge; i++) {
             for (float j = (float) 0; j < 360; j += (float) 45 / i) {
                 int x = (int) ((i) * FastMaths.getFastCos(j));

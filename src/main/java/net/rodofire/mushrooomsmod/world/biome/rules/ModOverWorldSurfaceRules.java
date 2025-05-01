@@ -17,6 +17,7 @@ public class ModOverWorldSurfaceRules {
     private static final boolean FAST_RULES = MushrooomsConfig.getFastSurfaceRules();
 
     private static final Identifier rockyId = Identifier.of("rocky_cave");
+    private static final Identifier mushroomShireId = Identifier.of("mushroom_shire");
     //Dirt Related
     private static final MaterialRules.MaterialRule DIRT = makeStateRule(Blocks.DIRT);
     private static final MaterialRules.MaterialRule GRASS_BLOCK = makeStateRule(Blocks.GRASS_BLOCK);
@@ -60,8 +61,8 @@ public class ModOverWorldSurfaceRules {
                     createFastMossyCaveRules(),
 
                     /*--- Surface ---*/
-                    createSchroomIsland1Rule(),
-                    createSchroomIsland2Rule(),
+                    createMushroomShireRule(),
+                    createMysticMushroGroveRule(),
                     createFastSakuraForestRule()
             );
         }
@@ -76,8 +77,9 @@ public class ModOverWorldSurfaceRules {
                 createMossyCaveRules(),
 
                 /*--- Surface ---*/
-                createSchroomIsland1Rule(),
-                createSchroomIsland2Rule(),
+                createMushroomShireRule(),
+                createMysticMushroGroveRule(),
+                createGoldenMycoShroomRule(),
                 createSakuraForestRule()
         );
     }
@@ -144,14 +146,78 @@ public class ModOverWorldSurfaceRules {
 
 
     /* ---------- Surface ---------*/
-    private static MaterialRules.MaterialRule createSchroomIsland1Rule() {
+    private static MaterialRules.MaterialRule createMushroomShireRule() {
         return condition(MaterialRules.biome(ModOverworldBiomes.MUSHROOM_SHIRE),
-                condition(ABOVE_WATER, sequence(condition(MaterialRules.STONE_DEPTH_FLOOR, MYCELIUM), condition(MaterialRules.STONE_DEPTH_FLOOR_WITH_SURFACE_DEPTH_RANGE_6, DIRT))));
+                condition(ABOVE_WATER,
+                        sequence(
+                                condition(MaterialRules.STONE_DEPTH_FLOOR,
+                                        sequence(
+                                                condition(simplifiedSurfaceNoiseAbove(0.05), MYCELIUM),
+                                                condition(simplifiedSurfaceNoiseAbove(-0.05),
+                                                        sequence(
+                                                                condition(ExtendedMaterialRules.random(mushroomShireId, 0.5f), MYCELIUM),
+                                                                condition(ExtendedMaterialRules.random(mushroomShireId, 0.75f), ROOTED_DIRT),
+                                                                COARSE_DIRT
+                                                        )),
+                                                MYCELIUM
+                                        )),
+                                condition(MaterialRules.STONE_DEPTH_FLOOR_WITH_SURFACE_DEPTH_RANGE_6,
+                                        DIRT
+                                )
+                        )
+                )
+        );
     }
 
-    private static MaterialRules.MaterialRule createSchroomIsland2Rule() {
-        return condition(MaterialRules.biome(ModOverworldBiomes.MUSHROOM_SHIRE),
-                condition(ABOVE_WATER, sequence(condition(MaterialRules.STONE_DEPTH_FLOOR, MYCELIUM), condition(MaterialRules.STONE_DEPTH_FLOOR_WITH_SURFACE_DEPTH_RANGE_6, DIRT))));
+    private static MaterialRules.MaterialRule createMysticMushroGroveRule() {
+        return condition(MaterialRules.biome(ModOverworldBiomes.MYSTIC_MUSHROGROVE),
+                condition(ABOVE_WATER,
+                        sequence(
+                                condition(MaterialRules.STONE_DEPTH_FLOOR,
+                                        sequence(
+                                                condition(vanillaPatchNoiseAbove(0.14), MYCELIUM),
+                                                condition(vanillaPatchNoiseAbove(0.10),
+                                                        sequence(
+                                                                condition(ExtendedMaterialRules.random(mushroomShireId, 0.5f), ROOTED_DIRT),
+                                                                COARSE_DIRT
+                                                        )),
+                                                condition(vanillaPatchNoiseAbove(-0.10), GRASS_BLOCK),
+                                                condition(vanillaPatchNoiseAbove(-0.14),
+                                                        sequence(
+                                                                condition(ExtendedMaterialRules.random(mushroomShireId, 0.5f), ROOTED_DIRT),
+                                                                COARSE_DIRT
+                                                        )),
+                                                MYCELIUM
+                                        )),
+                                condition(MaterialRules.STONE_DEPTH_FLOOR_WITH_SURFACE_DEPTH_RANGE_6,
+                                        DIRT
+                                )
+                        )
+                )
+        );
+    }
+
+    private static MaterialRules.MaterialRule createGoldenMycoShroomRule() {
+        return condition(MaterialRules.biome(ModOverworldBiomes.GOLDEN_MYCOSHROOM),
+                condition(ABOVE_WATER,
+                        sequence(
+                                condition(MaterialRules.STONE_DEPTH_FLOOR,
+                                        sequence(
+                                                condition(simplifiedSurfaceNoiseAbove(0.05), MYCELIUM),
+                                                condition(simplifiedSurfaceNoiseAbove(-0.05),
+                                                        sequence(
+                                                                condition(ExtendedMaterialRules.random(mushroomShireId, 0.5f), MYCELIUM),
+                                                                condition(ExtendedMaterialRules.random(mushroomShireId, 0.75f), ROOTED_DIRT),
+                                                                COARSE_DIRT
+                                                        )),
+                                                MYCELIUM
+                                        )),
+                                condition(MaterialRules.STONE_DEPTH_FLOOR_WITH_SURFACE_DEPTH_RANGE_6,
+                                        DIRT
+                                )
+                        )
+                )
+        );
     }
 
     private static MaterialRules.MaterialRule createFastRockyCaveRules() {
@@ -290,8 +356,16 @@ public class ModOverWorldSurfaceRules {
         return MaterialRules.noiseThreshold(ModNoises.PATCH_NOISE, min, Double.MAX_VALUE);
     }
 
+    private static MaterialRules.MaterialCondition vanillaPatchNoiseAbove(double min) {
+        return MaterialRules.noiseThreshold(NoiseParametersKeys.PATCH, min, Double.MAX_VALUE);
+    }
+
     private static MaterialRules.MaterialCondition intermediateNoiseAbove(double min) {
         return MaterialRules.noiseThreshold(ModNoises.INTERMEDIATE_NOISE, min, Double.MAX_VALUE);
+    }
+
+    private static MaterialRules.MaterialCondition simplifiedSurfaceNoiseAbove(double min) {
+        return MaterialRules.noiseThreshold(ModNoises.SIMPLIFIED_SURFACE, min, Double.MAX_VALUE);
     }
 
     //Methods for better readability

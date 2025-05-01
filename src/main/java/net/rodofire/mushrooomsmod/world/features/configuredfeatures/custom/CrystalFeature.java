@@ -32,12 +32,12 @@ public class CrystalFeature extends Feature<CrystalConfig> {
 
         for (int i = 0; i<width; i++) {
             mutable.set(pos);
-            mutable.move(Random.create().nextBetween(-width, width), Random.create().nextBetween(-width, width), Random.create().nextBetween(-width, width));
+            mutable.move(random.nextBetween(-width, width), random.nextBetween(-width, width), random.nextBetween(-width, width));
             Direction direction = getDirection(world, mutable);
             if (direction == null) continue;
             maxheight = getHeight(world, mutable, direction, maxheight);
             if (maxheight <= 0) continue;
-            int height = Random.create().nextBetween(1, maxheight);
+            int height = random.nextBetween(1, maxheight);
             generateColumn(world, mutable, direction, height, blockState);
         }
         return true;

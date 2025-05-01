@@ -45,25 +45,22 @@ public class ModOverworldBiomeCreator {
                     .build();
         }
 
-        public static Biome createShroomIsland2(Registerable<Biome> context) {
+        public static Biome createMysticMushGrove(Registerable<Biome> context) {
             SpawnSettings.Builder spawnBuilder = new SpawnSettings.Builder();
 
             spawnBuilder.spawn(SpawnGroup.CREATURE, new SpawnSettings.SpawnEntry(EntityType.WOLF, 5, 4, 4));
 
             DefaultBiomeFeatures.addFarmAnimals(spawnBuilder);
-            DefaultBiomeFeatures.addBatsAndMonsters(spawnBuilder);
 
             GenerationSettings.LookupBackedBuilder biomeBuilder =
                     new GenerationSettings.LookupBackedBuilder(context.getRegistryLookup(RegistryKeys.PLACED_FEATURE),
                             context.getRegistryLookup(RegistryKeys.CONFIGURED_CARVER));
 
             ModBiomeFeatures.globalOverworldGeneration(biomeBuilder);
-            DefaultBiomeFeatures.addMossyRocks(biomeBuilder);
             DefaultBiomeFeatures.addDefaultOres(biomeBuilder);
 
-            biomeBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, VegetationPlacedFeatures.TREES_PLAINS);
 
-            ModBiomeFeatures.SurfaceBiomes.addMushroomShireFeatures(biomeBuilder);
+            ModBiomeFeatures.SurfaceBiomes.addMysticMushGrove(biomeBuilder);
 
             return new Biome.Builder()
                     .precipitation(true)
@@ -74,11 +71,45 @@ public class ModOverworldBiomeCreator {
                     .effects((new BiomeEffects.Builder())
                             .waterColor(0x3fceda)
                             .waterFogColor(0xbf1b26)
-                            .skyColor(0x30c918)
-                            .grassColor(0x7f03fc)
-                            .foliageColor(0xd203fc)
-                            .fogColor(0x22a1e6)
+                            .skyColor(0xa8fffb)
+                            .grassColor(0x91ff8b)
+                            .foliageColor(0x91ff8b)
+                            .fogColor(0xc3fffc)
                             .moodSound(BiomeMoodSound.CAVE)
+                            .build())
+                    .build();
+        }
+
+        public static Biome createGoldenMycoShroom(Registerable<Biome> context) {
+            SpawnSettings.Builder spawnBuilder = new SpawnSettings.Builder();
+
+            spawnBuilder.spawn(SpawnGroup.CREATURE, new SpawnSettings.SpawnEntry(EntityType.WOLF, 5, 4, 4));
+
+            DefaultBiomeFeatures.addFarmAnimals(spawnBuilder);
+
+            GenerationSettings.LookupBackedBuilder biomeBuilder =
+                    new GenerationSettings.LookupBackedBuilder(context.getRegistryLookup(RegistryKeys.PLACED_FEATURE),
+                            context.getRegistryLookup(RegistryKeys.CONFIGURED_CARVER));
+
+            ModBiomeFeatures.globalOverworldGeneration(biomeBuilder);
+            DefaultBiomeFeatures.addDefaultOres(biomeBuilder);
+
+
+            ModBiomeFeatures.SurfaceBiomes.addGoldenMycoShroom(biomeBuilder);
+
+            return new Biome.Builder()
+                    .precipitation(true)
+                    .downfall(0.4f)
+                    .temperature(0.7f)
+                    .generationSettings(biomeBuilder.build())
+                    .spawnSettings(spawnBuilder.build())
+                    .effects((new BiomeEffects.Builder())
+                            .waterColor(0x29A7FF)
+                            .waterFogColor(0x066AAF)
+                            .skyColor(0x18A4E6)
+                            .grassColor(0xDAA520)
+                            .foliageColor(0xFFD700)
+                            .fogColor(0x7BC5E8)
                             .build())
                     .build();
         }
@@ -372,7 +403,6 @@ public class ModOverworldBiomeCreator {
                             .build())
                     .build();
         }
-
 
 
         public static Biome createBlueLuminescentShroomCave(Registerable<Biome> context) {

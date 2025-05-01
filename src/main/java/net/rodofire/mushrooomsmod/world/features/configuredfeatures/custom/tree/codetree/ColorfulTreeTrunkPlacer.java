@@ -18,8 +18,9 @@ import java.util.List;
 import java.util.function.BiConsumer;
 
 public class ColorfulTreeTrunkPlacer extends TrunkPlacer {
-    public static final ColorfulTreeTrunkPlacer INSTANCE = new ColorfulTreeTrunkPlacer(6,6,6);
+    public static final ColorfulTreeTrunkPlacer INSTANCE = new ColorfulTreeTrunkPlacer(6, 6, 6);
     public static final MapCodec<ColorfulTreeTrunkPlacer> CODEC = MapCodec.unit(() -> INSTANCE);
+
     public ColorfulTreeTrunkPlacer(int baseHeight, int firstRandomHeight, int secondRandomHeight) {
         super(baseHeight, firstRandomHeight, secondRandomHeight);
     }
@@ -37,8 +38,8 @@ public class ColorfulTreeTrunkPlacer extends TrunkPlacer {
 
 
         for (int i = 0; i < height; ++i) {
-            if (MathUtil.getRandomBoolean(0.4f)) {
-                pos.move(Random.create().nextBetween(-1, 1), 0, Random.create().nextBetween(-1, 1));
+            if (MathUtil.getRandomBoolean(random, 0.4f)) {
+                pos.move(random.nextBetween(-1, 1), 0, random.nextBetween(-1, 1));
                 getAndSetState(world, replacer, random, pos.up(i - 1), config);
             }
             getAndSetState(world, replacer, random, pos.up(i), config);

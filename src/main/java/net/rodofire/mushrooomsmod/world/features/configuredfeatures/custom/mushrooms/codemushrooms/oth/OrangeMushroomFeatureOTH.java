@@ -112,7 +112,7 @@ public class OrangeMushroomFeatureOTH extends OrangeMushroomOTH {
     }
 
     @Override
-    protected void place(StructureWorldAccess world, BlockPos pos, BlockPos pos2, BlockListManager coordinates, SphereGen sphere, SphereGen secondSphere) {
+    protected void place(StructureWorldAccess world, BlockPos pos, BlockPos pos2, BlockListManager coordinates, SphereGen sphere, SphereGen secondSphere, Random random) {
         Map<ChunkPos, LongOpenHashSet> posSet = sphere.getShapeCoordinates();
         Map<ChunkPos, LongOpenHashSet> maskPosSet = secondSphere.getShapeCoordinates();
 
@@ -135,12 +135,11 @@ public class OrangeMushroomFeatureOTH extends OrangeMushroomOTH {
             }
             newSet.put(entry.getKey(), newPos);
         }
-
         LayerManager layerManager = new LayerManager(
                 LayerManager.Type.SURFACE,
                 new BlockLayerManager(
                         new BlockLayer(
-                                new LayerPlacer(LayerPlacer.PlacingType.RANDOM),
+                                LayerPlacer.ofRandom(random),
                                 List.of(ModBlocks.ORANGE_MUSHROOM_BLOCK.getDefaultState(), ModBlocks.ORANGE_ALTERED_MUSHROOM_BLOCK.getDefaultState(), ModBlocks.ORANGE_DEGRADATED_MUSHROOM_BLOCK.getDefaultState()),
                                 List.of((short) 4, (short) 2, (short) 1))
                 )

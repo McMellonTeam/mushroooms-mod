@@ -11,6 +11,7 @@ import net.rodofire.mushrooomsmod.world.features.placedfeatures.ModNetherPlacedF
 import net.rodofire.mushrooomsmod.world.features.placedfeatures.ModSurfacePlacedFeatures;
 import net.rodofire.mushrooomsmod.world.features.placedfeatures.ModUndergroundPlacedFeatures;
 import net.rodofire.mushrooomsmod.world.noises.ModNoises;
+import net.rodofire.mushrooomsmod.world.structures.ModStructures;
 
 public class MushrooomsModDataGenerator implements DataGeneratorEntrypoint {
     @Override
@@ -33,6 +34,7 @@ public class MushrooomsModDataGenerator implements DataGeneratorEntrypoint {
         registryBuilder.addRegistry(RegistryKeys.PLACED_FEATURE, ModUndergroundPlacedFeatures::bootstrap);
         registryBuilder.addRegistry(RegistryKeys.PLACED_FEATURE, ModNetherPlacedFeatures::bootstrap);
         registryBuilder.addRegistry(RegistryKeys.BIOME, ModOverworldBiomes::bootstrap);
+        registryBuilder.addRegistry(RegistryKeys.STRUCTURE, ModStructures::bootstrap);
         registryBuilder.addRegistry(RegistryKeys.NOISE_PARAMETERS, ModNoises::bootstrap);
     }
 }

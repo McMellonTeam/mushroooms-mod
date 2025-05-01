@@ -49,13 +49,15 @@ public class InventoryArmorStandItem extends Item {
             if (entity == null) {
                 return ActionResult.FAIL;
             }
-            float f = (float) MathHelper.floor((MathHelper.wrapDegrees(context.getPlayerYaw() - 180.0f) + 90.0f) / 45.0f) * 45.0f;
+            float f = (float)MathHelper.floor((MathHelper.wrapDegrees(context.getPlayerYaw() - 180.0F) + 22.5F) / 45.0F) * 45.0F;
             entity.refreshPositionAndAngles(entity.getX(), entity.getY(), entity.getZ(), f, 0.0f);
             worldServer.spawnEntityAndPassengers(entity);
-            return ActionResult.SUCCESS;
+            itemStack.decrement(1);
         }
-        return ActionResult.PASS;
+        return ActionResult.success(world.isClient);
     }
+
+
 
     @Override
     public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
