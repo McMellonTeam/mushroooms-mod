@@ -1,31 +1,30 @@
-## 0.0.17 update:
+## 0.0.22 update:
+### Additions:
+- added 3 new biomes:
+  - golden myscoshroom
+    - new mushroom biome.
+    - has giant yellow mushroom that can go up to 60 blocks high
+    - has yellow sinusoshroom. Yellow mushroom with a sinusoïdal cap.
+    - include new mushrooms
+    - include flowers
+  - mushroom shire
+    - include green huge mushrooms
+    - include yellow huge mushrooms
+    - include orange huge mushrooms
+  - mystic mushgrove
+    - include huge purple mushrooms 
+    - include huge red mushrooms 
+    - include huge brown mushrooms
+- added new mushroom flowers
+- a lot of blocks unobtainable in survival now generates in new biomes
+- new purple mushroom house structure spawning in mystic mushgrove
+
 ### Changes:
-Changed how some huge mushrooms generates:
-
-    -they are now animated when placed
-    -blue mushroom:
-        now has some rotation on the cap    
-
-    -yellow mushroom:
-        cap now contains 3 altered versions of the mushroom blocks
-        the cap has now some rotation
-        the cap and the stem might be bigger   
-
-    -orange mushroom:
-        cap now contains 3 altered versions of the mushroom blocks
-        the cap now has some noise 
-        the cap and the stem might be bigger
-    
-    -purple mushroom:
-        cap now contains 3 altered versions of the mushroom blocks
-        the branches now goes expand less   
-
-    -this also have technical advantages:
-        better code readibility
-        allows the mushroom to be used during world-gen
-
-mod now requires version 3.3.4+ of [easierWorldCreator](https://modrinth.com/mod/ewc)
-
-
-### Fixes:
-    -fixed wood recipes that wouldn't work when using log and stripped log
+- Inventory armor stand ameliorations:
+  - fixed bug with inventory save causing the inventory to disapear
+  - fixed armor stand not being perfectly alligned to cardinal axis
+  - it instantally dies when killed
+  - removed default entity damage animation(red overlay). The armor stand now has a slight jump animation
+  - changed damage sound
+  - regenerate life like the armor stand
+- changed multiple features generation (like flowers in colorful plains being too present)

@@ -1,9 +1,9 @@
 package net.rodofire.mushrooomsmod.config;
 
-import net.rodofire.easierworldcreator.config.ConfigCategory;
-import net.rodofire.easierworldcreator.config.ModConfig;
-import net.rodofire.easierworldcreator.config.objects.BooleanConfigObject;
-import net.rodofire.easierworldcreator.config.objects.IntegerConfigObject;
+import fr.rodofire.ewc.config.ConfigCategory;
+import fr.rodofire.ewc.config.ModConfig;
+import fr.rodofire.ewc.config.objects.BooleanConfigObject;
+import fr.rodofire.ewc.config.objects.IntegerConfigObject;
 import net.rodofire.mushrooomsmod.MushrooomsMod;
 
 public class MushrooomsConfig {

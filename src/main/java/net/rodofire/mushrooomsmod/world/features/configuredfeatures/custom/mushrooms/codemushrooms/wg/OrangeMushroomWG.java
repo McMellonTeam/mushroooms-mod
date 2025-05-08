@@ -1,6 +1,10 @@
 package net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.mushrooms.codemushrooms.wg;
 
 import com.mojang.serialization.Codec;
+import fr.rodofire.ewc.blockdata.blocklist.DividedBlockListManager;
+import fr.rodofire.ewc.maths.MathUtil;
+import fr.rodofire.ewc.shape.block.gen.SphereGen;
+import fr.rodofire.ewc.util.BlockPlaceUtil;
 import net.minecraft.block.Blocks;
 import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.util.math.BlockPos;
@@ -9,13 +13,10 @@ import net.minecraft.world.StructureWorldAccess;
 import net.minecraft.world.gen.feature.DefaultFeatureConfig;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.util.FeatureContext;
-import net.rodofire.easierworldcreator.blockdata.blocklist.DividedBlockListManager;
-import net.rodofire.easierworldcreator.maths.MathUtil;
-import net.rodofire.easierworldcreator.shape.block.gen.SphereGen;
-import net.rodofire.easierworldcreator.util.BlockPlaceUtil;
 
 public abstract class OrangeMushroomWG extends Feature<DefaultFeatureConfig> {
     protected BlockPos end;
+    protected Random random;
 
     public OrangeMushroomWG(Codec<DefaultFeatureConfig> configCodec) {
         super(configCodec);
@@ -46,6 +47,7 @@ public abstract class OrangeMushroomWG extends Feature<DefaultFeatureConfig> {
         StructureWorldAccess world = context.getWorld();
         BlockPos pos = context.getOrigin();
         Random random = context.getRandom();
+        this.random = random;
 
         if(world.getBlockState(pos).isOf(Blocks.WATER))
             return false;

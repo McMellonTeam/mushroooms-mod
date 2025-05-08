@@ -1,6 +1,16 @@
 package net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.mushrooms.codemushrooms;
 
 import com.mojang.serialization.Codec;
+import fr.rodofire.ewc.blockdata.blocklist.BlockListManager;
+import fr.rodofire.ewc.blockdata.layer.BlockLayerManager;
+import fr.rodofire.ewc.maths.FastMaths;
+import fr.rodofire.ewc.maths.MathUtil;
+import fr.rodofire.ewc.shape.block.gen.SphereGen;
+import fr.rodofire.ewc.shape.block.layer.LayerManager;
+import fr.rodofire.ewc.shape.block.placer.LayerPlacer;
+import fr.rodofire.ewc.util.FastNoiseLite;
+import fr.rodofire.ewc.util.LongPosHelper;
+import fr.rodofire.ewc.util.WorldGenUtil;
 import it.unimi.dsi.fastutil.longs.Long2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.longs.LongArrayList;
 import it.unimi.dsi.fastutil.longs.LongOpenHashSet;
@@ -15,19 +25,6 @@ import net.minecraft.world.StructureWorldAccess;
 import net.minecraft.world.gen.feature.DefaultFeatureConfig;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.util.FeatureContext;
-import net.rodofire.easierworldcreator.blockdata.BlockDataKey;
-import net.rodofire.easierworldcreator.blockdata.blocklist.BlockListManager;
-import net.rodofire.easierworldcreator.blockdata.blocklist.DividedBlockListManager;
-import net.rodofire.easierworldcreator.blockdata.layer.BlockLayerManager;
-import net.rodofire.easierworldcreator.maths.FastMaths;
-import net.rodofire.easierworldcreator.maths.MathUtil;
-import net.rodofire.easierworldcreator.shape.block.gen.SphereGen;
-import net.rodofire.easierworldcreator.shape.block.layer.LayerManager;
-import net.rodofire.easierworldcreator.shape.block.placer.LayerPlacer;
-import net.rodofire.easierworldcreator.util.BlockPlaceUtil;
-import net.rodofire.easierworldcreator.util.FastNoiseLite;
-import net.rodofire.easierworldcreator.util.LongPosHelper;
-import net.rodofire.easierworldcreator.util.WorldGenUtil;
 import net.rodofire.mushrooomsmod.block.ModBlocks;
 
 import java.util.HashMap;

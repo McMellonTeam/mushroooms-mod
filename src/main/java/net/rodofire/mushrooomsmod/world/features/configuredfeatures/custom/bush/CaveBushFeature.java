@@ -1,6 +1,10 @@
 package net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.bush;
 
 import com.mojang.serialization.Codec;
+import fr.rodofire.ewc.shape.block.gen.SphereGen;
+import fr.rodofire.ewc.util.BlockPlaceUtil;
+import fr.rodofire.ewc.util.FastNoiseLite;
+import fr.rodofire.ewc.util.LongPosHelper;
 import it.unimi.dsi.fastutil.longs.LongOpenHashSet;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -12,10 +16,6 @@ import net.minecraft.world.StructureWorldAccess;
 import net.minecraft.world.gen.feature.DefaultFeatureConfig;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.util.FeatureContext;
-import net.rodofire.easierworldcreator.shape.block.gen.SphereGen;
-import net.rodofire.easierworldcreator.util.BlockPlaceUtil;
-import net.rodofire.easierworldcreator.util.FastNoiseLite;
-import net.rodofire.easierworldcreator.util.LongPosHelper;
 
 import java.util.Arrays;
 import java.util.HashMap;

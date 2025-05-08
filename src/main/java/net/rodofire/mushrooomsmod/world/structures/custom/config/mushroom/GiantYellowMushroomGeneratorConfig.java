@@ -2,9 +2,9 @@ package net.rodofire.mushrooomsmod.world.structures.custom.config.mushroom;
 
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
+import fr.rodofire.ewc.shape.block.gen.SphereGen;
+import fr.rodofire.ewc.structure.config.StructureGeneratorConfig;
 import net.minecraft.util.math.BlockPos;
-import net.rodofire.easierworldcreator.shape.block.gen.SphereGen;
-import net.rodofire.easierworldcreator.structure.config.StructureGeneratorConfig;
 
 public record GiantYellowMushroomGeneratorConfig(SphereGen sphere, SphereGen mask, BlockPos start, BlockPos end) implements StructureGeneratorConfig<GiantYellowMushroomGeneratorConfig> {
     public static final Codec<GiantYellowMushroomGeneratorConfig> CODEC = RecordCodecBuilder.create(instance ->

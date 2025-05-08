@@ -1,10 +1,10 @@
 package net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.rock;
 
 import com.mojang.serialization.Codec;
+import fr.rodofire.ewc.blockdata.layer.BlockLayer;
 import net.minecraft.block.Blocks;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.gen.feature.DefaultFeatureConfig;
-import net.rodofire.easierworldcreator.blockdata.layer.BlockLayer;
 import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.util.RockUtil;
 
 public abstract class SakuraPlainRock extends DefaultRockFeature {

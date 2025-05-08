@@ -1,6 +1,6 @@
 package net.rodofire.mushrooomsmod.config;
 
-import net.rodofire.easierworldcreator.config.ModClientConfig;
+import fr.rodofire.ewc.config.ModClientConfig;
 import net.rodofire.mushrooomsmod.config.client.FastSurfaceRulesScreen;
 
 public class MushrooomsClientConfig {

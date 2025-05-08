@@ -1,6 +1,12 @@
 package net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.tree.codetree;
 
 import com.mojang.serialization.MapCodec;
+import fr.rodofire.ewc.blockdata.layer.BlockLayerManager;
+import fr.rodofire.ewc.maths.MathUtil;
+import fr.rodofire.ewc.shape.block.gen.SphereGen;
+import fr.rodofire.ewc.shape.block.layer.LayerManager;
+import fr.rodofire.ewc.shape.block.placer.LayerPlacer;
+import fr.rodofire.ewc.shape.block.placer.ShapePlacer;
 import net.minecraft.block.BlockState;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.state.property.Properties;
@@ -14,12 +20,6 @@ import net.minecraft.world.gen.feature.TreeFeature;
 import net.minecraft.world.gen.feature.TreeFeatureConfig;
 import net.minecraft.world.gen.foliage.FoliagePlacer;
 import net.minecraft.world.gen.foliage.FoliagePlacerType;
-import net.rodofire.easierworldcreator.blockdata.layer.BlockLayerManager;
-import net.rodofire.easierworldcreator.maths.MathUtil;
-import net.rodofire.easierworldcreator.shape.block.gen.SphereGen;
-import net.rodofire.easierworldcreator.shape.block.layer.LayerManager;
-import net.rodofire.easierworldcreator.shape.block.placer.LayerPlacer;
-import net.rodofire.easierworldcreator.shape.block.placer.ShapePlacer;
 import net.rodofire.mushrooomsmod.block.ModBlocks;
 import net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.tree.ModFoliagePlacerTypes;
 

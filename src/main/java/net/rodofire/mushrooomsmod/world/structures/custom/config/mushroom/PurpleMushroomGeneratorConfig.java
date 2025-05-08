@@ -2,9 +2,9 @@ package net.rodofire.mushrooomsmod.world.structures.custom.config.mushroom;
 
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
+import fr.rodofire.ewc.blockdata.blocklist.DividedBlockListManager;
+import fr.rodofire.ewc.structure.config.StructureGeneratorConfig;
 import net.minecraft.util.math.BlockPos;
-import net.rodofire.easierworldcreator.blockdata.blocklist.DividedBlockListManager;
-import net.rodofire.easierworldcreator.structure.config.StructureGeneratorConfig;
 
 import java.util.Arrays;
 

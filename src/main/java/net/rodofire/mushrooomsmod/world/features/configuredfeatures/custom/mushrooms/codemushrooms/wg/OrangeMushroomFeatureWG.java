@@ -1,6 +1,15 @@
 package net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.mushrooms.codemushrooms.wg;
 
 import com.mojang.serialization.Codec;
+import fr.rodofire.ewc.blockdata.blocklist.DividedBlockListManager;
+import fr.rodofire.ewc.blockdata.layer.BlockLayer;
+import fr.rodofire.ewc.blockdata.layer.BlockLayerManager;
+import fr.rodofire.ewc.shape.block.gen.SphereGen;
+import fr.rodofire.ewc.shape.block.layer.LayerManager;
+import fr.rodofire.ewc.shape.block.placer.LayerPlacer;
+import fr.rodofire.ewc.shape.block.placer.ShapePlacer;
+import fr.rodofire.ewc.util.FastNoiseLite;
+import fr.rodofire.ewc.util.LongPosHelper;
 import it.unimi.dsi.fastutil.longs.Long2FloatOpenHashMap;
 import it.unimi.dsi.fastutil.longs.LongArrayList;
 import it.unimi.dsi.fastutil.longs.LongOpenHashSet;
@@ -12,15 +21,6 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.StructureWorldAccess;
 import net.minecraft.world.gen.feature.DefaultFeatureConfig;
-import net.rodofire.easierworldcreator.blockdata.blocklist.DividedBlockListManager;
-import net.rodofire.easierworldcreator.blockdata.layer.BlockLayer;
-import net.rodofire.easierworldcreator.blockdata.layer.BlockLayerManager;
-import net.rodofire.easierworldcreator.shape.block.gen.SphereGen;
-import net.rodofire.easierworldcreator.shape.block.layer.LayerManager;
-import net.rodofire.easierworldcreator.shape.block.placer.LayerPlacer;
-import net.rodofire.easierworldcreator.shape.block.placer.ShapePlacer;
-import net.rodofire.easierworldcreator.util.FastNoiseLite;
-import net.rodofire.easierworldcreator.util.LongPosHelper;
 import net.rodofire.mushrooomsmod.MushrooomsMod;
 import net.rodofire.mushrooomsmod.block.ModBlocks;
 
@@ -138,7 +138,7 @@ public class OrangeMushroomFeatureWG extends OrangeMushroomWG {
                 LayerManager.Type.SURFACE,
                 new BlockLayerManager(
                         new BlockLayer(
-                                LayerPlacer.ofRandom(),
+                                LayerPlacer.ofRandom(random),
                                 List.of(ModBlocks.ORANGE_MUSHROOM_BLOCK.getDefaultState(), ModBlocks.ORANGE_ALTERED_MUSHROOM_BLOCK.getDefaultState(), ModBlocks.ORANGE_DEGRADATED_MUSHROOM_BLOCK.getDefaultState()),
                                 List.of((short) 4, (short) 2, (short) 1))
                 )

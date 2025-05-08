@@ -1,8 +1,8 @@
 package net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.stalactite;
 
 import com.mojang.serialization.Codec;
+import fr.rodofire.ewc.tag.TagUtil;
 import net.minecraft.block.Block;
-import net.rodofire.easierworldcreator.tag.TagUtil;
 import net.rodofire.mushrooomsmod.util.ModTags;
 import net.rodofire.mushrooomsmod.world.features.config.StalactiteFeatureConfig;
 

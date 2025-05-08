@@ -1,6 +1,9 @@
 package net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom;
 
 import com.mojang.serialization.Codec;
+import fr.rodofire.ewc.maths.MathUtil;
+import fr.rodofire.ewc.tag.TagUtil;
+import fr.rodofire.ewc.util.BlockPlaceUtil;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;
@@ -9,9 +12,6 @@ import net.minecraft.world.StructureWorldAccess;
 import net.minecraft.world.gen.feature.DefaultFeatureConfig;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.util.FeatureContext;
-import net.rodofire.easierworldcreator.maths.MathUtil;
-import net.rodofire.easierworldcreator.tag.TagUtil;
-import net.rodofire.easierworldcreator.util.BlockPlaceUtil;
 import net.rodofire.mushrooomsmod.util.ModTags;
 
 import java.util.Set;
