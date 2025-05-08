@@ -1,6 +1,10 @@
 package net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom;
 
 import com.mojang.serialization.Codec;
+import fr.rodofire.ewc.maths.FastMaths;
+import fr.rodofire.ewc.maths.MathUtil;
+import fr.rodofire.ewc.shape.block.simplegen.GenLines;
+import fr.rodofire.ewc.shape.block.simplegen.GenSpheres;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
@@ -8,10 +12,6 @@ import net.minecraft.util.math.random.Random;
 import net.minecraft.world.StructureWorldAccess;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.util.FeatureContext;
-import net.rodofire.easierworldcreator.maths.FastMaths;
-import net.rodofire.easierworldcreator.maths.MathUtil;
-import net.rodofire.easierworldcreator.shape.block.simplegen.GenLines;
-import net.rodofire.easierworldcreator.shape.block.simplegen.GenSpheres;
 import net.rodofire.mushrooomsmod.world.features.config.ModSimpleBlockFeatureConfig;
 
 public class BigCrystal extends Feature<ModSimpleBlockFeatureConfig> {

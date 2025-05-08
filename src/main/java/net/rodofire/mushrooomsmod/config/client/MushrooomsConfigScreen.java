@@ -1,14 +1,14 @@
 package net.rodofire.mushrooomsmod.config.client;
 
+import fr.rodofire.ewc.EwcConstants;
+import fr.rodofire.ewc.client.gui.widget.ImageButtonWidget;
+import fr.rodofire.ewc.config.ConfigCategory;
+import fr.rodofire.ewc.config.client.DefaultConfigScreen;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.screen.ConfirmLinkScreen;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Util;
-import net.rodofire.easierworldcreator.Ewc;
-import net.rodofire.easierworldcreator.client.gui.widget.ImageButtonWidget;
-import net.rodofire.easierworldcreator.config.ConfigCategory;
-import net.rodofire.easierworldcreator.config.client.DefaultConfigScreen;
 import net.rodofire.mushrooomsmod.MushrooomsMod;
 import net.rodofire.mushrooomsmod.config.MushrooomsClientConfig;
 import org.spongepowered.asm.mixin.Unique;
@@ -18,11 +18,11 @@ import java.util.List;
 
 public class MushrooomsConfigScreen extends DefaultConfigScreen {
     //*/icons
-    private static final Identifier DISCORD_ICON = Identifier.of(Ewc.MOD_ID, "textures/gui/discord.png");
-    private static final Identifier GITHUB_ICON = Identifier.of(Ewc.MOD_ID, "textures/gui/github.png");
-    private static final Identifier KOFI_ICON = Identifier.of(Ewc.MOD_ID, "textures/gui/kofi.png");
-    private static final Identifier CURSEFORGE_ICON = Identifier.of(Ewc.MOD_ID, "textures/gui/curseforge.png");
-    private static final Identifier MODRINTH_ICON = Identifier.of(Ewc.MOD_ID, "textures/gui/modrinth.png");
+    private static final Identifier DISCORD_ICON = Identifier.of(EwcConstants.MOD_ID, "textures/gui/discord.png");
+    private static final Identifier GITHUB_ICON = Identifier.of(EwcConstants.MOD_ID, "textures/gui/github.png");
+    private static final Identifier KOFI_ICON = Identifier.of(EwcConstants.MOD_ID, "textures/gui/kofi.png");
+    private static final Identifier CURSEFORGE_ICON = Identifier.of(EwcConstants.MOD_ID, "textures/gui/curseforge.png");
+    private static final Identifier MODRINTH_ICON = Identifier.of(EwcConstants.MOD_ID, "textures/gui/modrinth.png");
 
     //links
     private static final String DISCORD_LINK = "https://discord.gg/bAQRUxNyFj";

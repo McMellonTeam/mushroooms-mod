@@ -1,6 +1,8 @@
 package net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.bush;
 
 import com.mojang.serialization.Codec;
+import fr.rodofire.ewc.maths.MathUtil;
+import fr.rodofire.ewc.util.BlockPlaceUtil;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -12,8 +14,6 @@ import net.minecraft.world.StructureWorldAccess;
 import net.minecraft.world.gen.feature.DefaultFeatureConfig;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.util.FeatureContext;
-import net.rodofire.easierworldcreator.maths.MathUtil;
-import net.rodofire.easierworldcreator.util.BlockPlaceUtil;
 
 import java.util.Arrays;
 import java.util.HashMap;

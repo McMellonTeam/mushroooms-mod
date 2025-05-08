@@ -1,20 +1,19 @@
 package net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.mushrooms.codemushrooms.oth;
 
 import com.mojang.serialization.Codec;
+import fr.rodofire.ewc.blockdata.blocklist.BlockList;
+import fr.rodofire.ewc.blockdata.blocklist.OrderedBlockListManager;
+import fr.rodofire.ewc.blockdata.sorter.BlockSorter;
+import fr.rodofire.ewc.maths.MathUtil;
+import fr.rodofire.ewc.shape.block.placer.animator.StructurePlaceAnimator;
+import fr.rodofire.ewc.util.BlockPlaceUtil;
+import fr.rodofire.ewc.util.LongPosHelper;
 import it.unimi.dsi.fastutil.longs.LongShortImmutablePair;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.StructureWorldAccess;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.util.FeatureContext;
-import net.rodofire.easierworldcreator.blockdata.blocklist.BlockList;
-import net.rodofire.easierworldcreator.blockdata.blocklist.BlockListManager;
-import net.rodofire.easierworldcreator.blockdata.blocklist.OrderedBlockListManager;
-import net.rodofire.easierworldcreator.blockdata.sorter.BlockSorter;
-import net.rodofire.easierworldcreator.maths.MathUtil;
-import net.rodofire.easierworldcreator.shape.block.placer.animator.StructurePlaceAnimator;
-import net.rodofire.easierworldcreator.util.BlockPlaceUtil;
-import net.rodofire.easierworldcreator.util.LongPosHelper;
 import net.rodofire.mushrooomsmod.world.features.config.PurpleMushroomConfig;
 
 public abstract class HugePurpleMushroomOTH extends Feature<PurpleMushroomConfig> {

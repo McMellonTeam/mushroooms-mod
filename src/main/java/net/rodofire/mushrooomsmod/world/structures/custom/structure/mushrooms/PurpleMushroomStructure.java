@@ -1,27 +1,24 @@
 package net.rodofire.mushrooomsmod.world.structures.custom.structure.mushrooms;
 
 import com.mojang.serialization.MapCodec;
+import fr.rodofire.ewc.blockdata.blocklist.DividedBlockListManager;
+import fr.rodofire.ewc.maths.MathUtil;
 import net.minecraft.block.Blocks;
 import net.minecraft.structure.StructurePiecesCollector;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.random.Random;
-import net.minecraft.world.StructureWorldAccess;
-import net.minecraft.world.gen.structure.Structure;
 import net.minecraft.world.gen.structure.StructureType;
-import net.rodofire.easierworldcreator.blockdata.blocklist.BlockList;
-import net.rodofire.easierworldcreator.blockdata.blocklist.DividedBlockListManager;
-import net.rodofire.easierworldcreator.blockdata.blocklist.OrderedBlockListManager;
-import net.rodofire.easierworldcreator.blockdata.sorter.BlockSorter;
-import net.rodofire.easierworldcreator.maths.MathUtil;
 import net.rodofire.mushrooomsmod.MushrooomsMod;
-import net.rodofire.mushrooomsmod.world.features.config.PurpleMushroomConfig;
 import net.rodofire.mushrooomsmod.world.structures.ModStructureTypes;
 import net.rodofire.mushrooomsmod.world.structures.custom.config.mushroom.PurpleMushroomGeneratorConfig;
 import net.rodofire.mushrooomsmod.world.structures.custom.piece.mushroom.PurpleMushroomPiece;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 public class PurpleMushroomStructure extends MushrooomsModStructure {
     public static final MapCodec<PurpleMushroomStructure> CODEC = createCodec(PurpleMushroomStructure::new);

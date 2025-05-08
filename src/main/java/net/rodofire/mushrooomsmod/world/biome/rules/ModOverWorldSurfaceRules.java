@@ -1,5 +1,6 @@
 package net.rodofire.mushrooomsmod.world.biome.rules;
 
+import fr.rodofire.ewc.world.gen.surfacebuilder.ExtendedSurfaceRules;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.util.Identifier;
@@ -7,7 +8,6 @@ import net.minecraft.util.math.VerticalSurfaceType;
 import net.minecraft.world.gen.YOffset;
 import net.minecraft.world.gen.noise.NoiseParametersKeys;
 import net.minecraft.world.gen.surfacebuilder.MaterialRules;
-import net.rodofire.easierworldcreator.world.gen.surfacebuilder.ExtendedMaterialRules;
 import net.rodofire.mushrooomsmod.block.ModBlocks;
 import net.rodofire.mushrooomsmod.config.MushrooomsConfig;
 import net.rodofire.mushrooomsmod.world.biome.overworld.ModOverworldBiomes;
@@ -155,8 +155,8 @@ public class ModOverWorldSurfaceRules {
                                                 condition(simplifiedSurfaceNoiseAbove(0.05), MYCELIUM),
                                                 condition(simplifiedSurfaceNoiseAbove(-0.05),
                                                         sequence(
-                                                                condition(ExtendedMaterialRules.random(mushroomShireId, 0.5f), MYCELIUM),
-                                                                condition(ExtendedMaterialRules.random(mushroomShireId, 0.75f), ROOTED_DIRT),
+                                                                condition(ExtendedSurfaceRules.random(mushroomShireId, 0.5f), MYCELIUM),
+                                                                condition(ExtendedSurfaceRules.random(mushroomShireId, 0.75f), ROOTED_DIRT),
                                                                 COARSE_DIRT
                                                         )),
                                                 MYCELIUM
@@ -178,13 +178,13 @@ public class ModOverWorldSurfaceRules {
                                                 condition(vanillaPatchNoiseAbove(0.14), MYCELIUM),
                                                 condition(vanillaPatchNoiseAbove(0.10),
                                                         sequence(
-                                                                condition(ExtendedMaterialRules.random(mushroomShireId, 0.5f), ROOTED_DIRT),
+                                                                condition(ExtendedSurfaceRules.random(mushroomShireId, 0.5f), ROOTED_DIRT),
                                                                 COARSE_DIRT
                                                         )),
                                                 condition(vanillaPatchNoiseAbove(-0.10), GRASS_BLOCK),
                                                 condition(vanillaPatchNoiseAbove(-0.14),
                                                         sequence(
-                                                                condition(ExtendedMaterialRules.random(mushroomShireId, 0.5f), ROOTED_DIRT),
+                                                                condition(ExtendedSurfaceRules.random(mushroomShireId, 0.5f), ROOTED_DIRT),
                                                                 COARSE_DIRT
                                                         )),
                                                 MYCELIUM
@@ -206,8 +206,8 @@ public class ModOverWorldSurfaceRules {
                                                 condition(simplifiedSurfaceNoiseAbove(0.05), MYCELIUM),
                                                 condition(simplifiedSurfaceNoiseAbove(-0.05),
                                                         sequence(
-                                                                condition(ExtendedMaterialRules.random(mushroomShireId, 0.5f), MYCELIUM),
-                                                                condition(ExtendedMaterialRules.random(mushroomShireId, 0.75f), ROOTED_DIRT),
+                                                                condition(ExtendedSurfaceRules.random(mushroomShireId, 0.5f), MYCELIUM),
+                                                                condition(ExtendedSurfaceRules.random(mushroomShireId, 0.75f), ROOTED_DIRT),
                                                                 COARSE_DIRT
                                                         )),
                                                 MYCELIUM
@@ -223,7 +223,7 @@ public class ModOverWorldSurfaceRules {
     private static MaterialRules.MaterialRule createFastRockyCaveRules() {
         return condition(MaterialRules.biome(ModOverworldBiomes.ROCKY_CAVE),
                 sequence(
-                        condition(ExtendedMaterialRules.random(rockyId, 0.24f), COBBLESTONE),
+                        condition(ExtendedSurfaceRules.random(rockyId, 0.24f), COBBLESTONE),
                         sequence(
                                 condition(MaterialRules.verticalGradient("deepslate", YOffset.fixed(-25), YOffset.fixed(-20)), DEEPSLATE),
                                 STONE
@@ -235,12 +235,12 @@ public class ModOverWorldSurfaceRules {
     private static MaterialRules.MaterialRule createRockyCaveRules() {
         return condition(MaterialRules.biome(ModOverworldBiomes.ROCKY_CAVE),
                 sequence(
-                        condition(ExtendedMaterialRules.random(rockyId, 0.24f), COBBLESTONE),
-                        condition(ExtendedMaterialRules.random(rockyId, 0.34f), TUFF),
-                        condition(ExtendedMaterialRules.random(rockyId, 0.52f), ANDESITE),
-                        condition(ExtendedMaterialRules.random(rockyId, 0.90f), sequence(
+                        condition(ExtendedSurfaceRules.random(rockyId, 0.24f), COBBLESTONE),
+                        condition(ExtendedSurfaceRules.random(rockyId, 0.34f), TUFF),
+                        condition(ExtendedSurfaceRules.random(rockyId, 0.52f), ANDESITE),
+                        condition(ExtendedSurfaceRules.random(rockyId, 0.90f), sequence(
                                 condition(MaterialRules.verticalGradient("deepslate", YOffset.fixed(-25), YOffset.fixed(-20)), sequence(
-                                        condition(ExtendedMaterialRules.random(Identifier.of("deepslate"), 0.3f), DEEPSLATE),
+                                        condition(ExtendedSurfaceRules.random(Identifier.of("deepslate"), 0.3f), DEEPSLATE),
                                         COBBLED_DEEPSLATE)),
                                 STONE)),
                         MOSSY_COBBLESTONE
@@ -254,12 +254,12 @@ public class ModOverWorldSurfaceRules {
                         condition(MaterialRules.STONE_DEPTH_FLOOR, sequence(
                                 condition(patchNoiseAbove(0.1f),
                                         sequence(
-                                                condition(ExtendedMaterialRules.random(rockyId, 0.24f), COBBLESTONE),
+                                                condition(ExtendedSurfaceRules.random(rockyId, 0.24f), COBBLESTONE),
                                                 STONE)),
 
                                 condition(patchNoiseAbove(-0.1f), MOSS))
                         ),
-                        condition(ExtendedMaterialRules.random(rockyId, 0.24f), COBBLESTONE),
+                        condition(ExtendedSurfaceRules.random(rockyId, 0.24f), COBBLESTONE),
                         STONE
                 )
         );
@@ -271,27 +271,27 @@ public class ModOverWorldSurfaceRules {
                         condition(MaterialRules.STONE_DEPTH_FLOOR, sequence(
                                 condition(patchNoiseAbove(0.1f),
                                         sequence(
-                                                condition(ExtendedMaterialRules.random(rockyId, 0.24f), COBBLESTONE),
-                                                condition(ExtendedMaterialRules.random(rockyId, 0.62f), STONE),
-                                                condition(ExtendedMaterialRules.random(rockyId, 0.72f), TUFF),
-                                                condition(ExtendedMaterialRules.random(rockyId, 0.90f), ANDESITE),
+                                                condition(ExtendedSurfaceRules.random(rockyId, 0.24f), COBBLESTONE),
+                                                condition(ExtendedSurfaceRules.random(rockyId, 0.62f), STONE),
+                                                condition(ExtendedSurfaceRules.random(rockyId, 0.72f), TUFF),
+                                                condition(ExtendedSurfaceRules.random(rockyId, 0.90f), ANDESITE),
                                                 MOSSY_COBBLESTONE)),
                                 condition(patchNoiseAbove(-0.1f),
                                         sequence(
-                                                condition(ExtendedMaterialRules.random(rockyId, 0.7f), MOSS),
+                                                condition(ExtendedSurfaceRules.random(rockyId, 0.7f), MOSS),
                                                 GRASS_BLOCK)
 
                                 ))/*,
-                                condition(ExtendedMaterialRules.random(rockyId, 0.24f), COBBLESTONE),
-                                condition(ExtendedMaterialRules.random(rockyId, 0.62f), STONE),
-                                condition(ExtendedMaterialRules.random(rockyId, 0.72f), TUFF),
-                                condition(ExtendedMaterialRules.random(rockyId, 0.90f), ANDESITE),
+                                condition(ExtendedSurfaceRules.random(rockyId, 0.24f), COBBLESTONE),
+                                condition(ExtendedSurfaceRules.random(rockyId, 0.62f), STONE),
+                                condition(ExtendedSurfaceRules.random(rockyId, 0.72f), TUFF),
+                                condition(ExtendedSurfaceRules.random(rockyId, 0.90f), ANDESITE),
                                 MOSSY_COBBLESTONE)*/
                         ),
-                        condition(ExtendedMaterialRules.random(rockyId, 0.24f), COBBLESTONE),
-                        condition(ExtendedMaterialRules.random(rockyId, 0.62f), STONE),
-                        condition(ExtendedMaterialRules.random(rockyId, 0.72f), TUFF),
-                        condition(ExtendedMaterialRules.random(rockyId, 0.90f), ANDESITE),
+                        condition(ExtendedSurfaceRules.random(rockyId, 0.24f), COBBLESTONE),
+                        condition(ExtendedSurfaceRules.random(rockyId, 0.62f), STONE),
+                        condition(ExtendedSurfaceRules.random(rockyId, 0.72f), TUFF),
+                        condition(ExtendedSurfaceRules.random(rockyId, 0.90f), ANDESITE),
                         MOSSY_COBBLESTONE
                 )
         );

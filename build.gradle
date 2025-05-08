@@ -64,7 +64,7 @@ dependencies {
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
 	mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
-	modImplementation "com.github.glitchfiend:TerraBlender-fabric:${project.minecraft_version}-${project.terrablender_version}"
+	modImplementation "com.github.glitchfiend:TerraBlender-fabric:1.21-${project.terrablender_version}"
 
 	// Fabric API. This is technically optional, but you probably want it anyway.
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
@@ -73,14 +73,14 @@ dependencies {
 	// These are included in the Fabric API production distribution and allow you to update your mod to the latest modules at a later more convenient time.
 
 	// modImplementation "net.fabricmc.fabric-api:fabric-api-deprecated:${project.fabric_version}"
-	modImplementation "software.bernie.geckolib:geckolib-fabric-${project.minecraft_version}:${project.geckolib_version}"
+	modImplementation "software.bernie.geckolib:geckolib-fabric-1.21:${project.geckolib_version}"
 
 	modCompileOnly "me.shedaniel:RoughlyEnoughItems-api-fabric:${project.REI_version}"
 	modRuntimeOnly "me.shedaniel:RoughlyEnoughItems-fabric:${project.REI_version}"
 
 	modApi "dev.architectury:architectury-fabric:${project.architectury_version}"
 
-	modImplementation "maven.modrinth:ewc:${project.ewc_version}+1.21.1"
+	modImplementation "maven.modrinth:ewc:${project.ewc_version}"
 
 	modImplementation 'maven.modrinth:worldgen-devtools:1.1.0+1.21.1'
 	modApi "com.terraformersmc:modmenu:11.0.1"

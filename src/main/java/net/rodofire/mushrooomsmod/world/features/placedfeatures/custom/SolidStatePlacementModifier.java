@@ -1,13 +1,13 @@
 package net.rodofire.mushrooomsmod.world.features.placedfeatures.custom;
 
 import com.mojang.serialization.MapCodec;
+import fr.rodofire.ewc.util.BlockPlaceUtil;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.StructureWorldAccess;
 import net.minecraft.world.gen.feature.FeaturePlacementContext;
 import net.minecraft.world.gen.placementmodifier.PlacementModifier;
 import net.minecraft.world.gen.placementmodifier.PlacementModifierType;
-import net.rodofire.easierworldcreator.util.BlockPlaceUtil;
 import net.rodofire.mushrooomsmod.world.features.placedfeatures.placementmodifier.ModPlacementModifierType;
 
 import java.util.stream.Stream;

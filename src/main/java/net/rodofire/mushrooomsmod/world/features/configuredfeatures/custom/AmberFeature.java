@@ -1,6 +1,8 @@
 package net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom;
 
 import com.mojang.serialization.Codec;
+import fr.rodofire.ewc.util.FastNoiseLite;
+import fr.rodofire.ewc.util.WorldGenUtil;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
@@ -8,8 +10,6 @@ import net.minecraft.world.StructureWorldAccess;
 import net.minecraft.world.gen.feature.DefaultFeatureConfig;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.util.FeatureContext;
-import net.rodofire.easierworldcreator.util.FastNoiseLite;
-import net.rodofire.easierworldcreator.util.WorldGenUtil;
 import net.rodofire.mushrooomsmod.block.ModBlocks;
 
 public class AmberFeature extends Feature<DefaultFeatureConfig> {

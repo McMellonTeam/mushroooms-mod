@@ -1,11 +1,11 @@
 package net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.rock;
 
 import com.mojang.serialization.Codec;
+import fr.rodofire.ewc.shape.block.rotations.Rotator;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3i;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.gen.feature.DefaultFeatureConfig;
-import net.rodofire.easierworldcreator.shape.block.rotations.Rotator;
 
 public class SakuraPlainFlatRockFeature extends SakuraPlainRock {
     @Override

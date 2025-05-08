@@ -1,6 +1,7 @@
 package net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.mushrooms.structuremushrooms;
 
 import com.mojang.serialization.Codec;
+import fr.rodofire.ewc.structure.NbtPlacer;
 import net.minecraft.block.BlockState;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.util.BlockMirror;
@@ -12,7 +13,6 @@ import net.minecraft.world.StructureWorldAccess;
 import net.minecraft.world.WorldAccess;
 import net.minecraft.world.gen.feature.ConfiguredFeature;
 import net.minecraft.world.gen.feature.HugeMushroomFeatureConfig;
-import net.rodofire.easierworldcreator.structure.NbtPlacer;
 import net.rodofire.mushrooomsmod.MushrooomsMod;
 import net.rodofire.mushrooomsmod.world.features.configuredfeatures.ModConfiguredFeatures;
 

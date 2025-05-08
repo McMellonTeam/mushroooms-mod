@@ -1,5 +1,6 @@
 package net.rodofire.mushrooomsmod.entity.custom;
 
+import fr.rodofire.ewc.util.WorldGenUtil;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.EntityType;
@@ -20,7 +21,6 @@ import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
-import net.rodofire.easierworldcreator.util.WorldGenUtil;
 import net.rodofire.mushrooomsmod.entity.ModEntities;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.animatable.GeoAnimatable;

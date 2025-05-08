@@ -1,16 +1,22 @@
 package net.rodofire.mushrooomsmod.world.structures.custom.piece.mushroom;
 
-import com.mojang.serialization.DataResult;
-import com.mojang.serialization.DynamicOps;
+import com.mojang.datafixers.util.Pair;
+import fr.rodofire.ewc.blockdata.blocklist.DividedBlockListManager;
+import fr.rodofire.ewc.blockdata.layer.BlockLayer;
+import fr.rodofire.ewc.blockdata.layer.BlockLayerManager;
+import fr.rodofire.ewc.shape.block.MultiChunkFeaturesHandler;
+import fr.rodofire.ewc.shape.block.gen.LineGen;
+import fr.rodofire.ewc.shape.block.gen.SphereGen;
+import fr.rodofire.ewc.shape.block.layer.LayerManager;
+import fr.rodofire.ewc.shape.block.placer.LayerPlacer;
+import fr.rodofire.ewc.shape.block.rotations.Rotator;
+import fr.rodofire.ewc.structure.MultiChunkFeaturePiece;
 import it.unimi.dsi.fastutil.longs.LongOpenHashSet;
 import it.unimi.dsi.fastutil.longs.LongSet;
 import net.minecraft.block.Blocks;
 import net.minecraft.nbt.NbtCompound;
-import net.minecraft.nbt.NbtElement;
-import net.minecraft.nbt.NbtOps;
 import net.minecraft.structure.StructureContext;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.Pair;
 import net.minecraft.util.math.BlockBox;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
@@ -19,20 +25,10 @@ import net.minecraft.util.math.random.Random;
 import net.minecraft.world.StructureWorldAccess;
 import net.minecraft.world.gen.StructureAccessor;
 import net.minecraft.world.gen.chunk.ChunkGenerator;
-import net.rodofire.easierworldcreator.blockdata.blocklist.DividedBlockListManager;
-import net.rodofire.easierworldcreator.blockdata.layer.BlockLayer;
-import net.rodofire.easierworldcreator.blockdata.layer.BlockLayerManager;
-import net.rodofire.easierworldcreator.shape.block.MultiChunkFeaturesHandler;
-import net.rodofire.easierworldcreator.shape.block.gen.LineGen;
-import net.rodofire.easierworldcreator.shape.block.gen.SphereGen;
-import net.rodofire.easierworldcreator.shape.block.layer.LayerManager;
-import net.rodofire.easierworldcreator.shape.block.placer.LayerPlacer;
-import net.rodofire.easierworldcreator.shape.block.rotations.Rotator;
-import net.rodofire.easierworldcreator.structure.MultiChunkFeaturePiece;
 import net.rodofire.mushrooomsmod.block.ModBlocks;
 import net.rodofire.mushrooomsmod.world.structures.ModStructurePieceType;
-import net.rodofire.mushrooomsmod.world.structures.custom.config.mushroom.GiantYellowMushroomGeneratorConfig;
 import net.rodofire.mushrooomsmod.world.structures.custom.config.mushroom.YellowMushroomGeneratorConfig;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 import java.util.Map;
@@ -100,7 +96,7 @@ public class YellowMushroomPiece extends MultiChunkFeaturePiece {
     }
 
     @Override
-    public Pair<Map<ChunkPos, LongOpenHashSet>, LayerManager> getStructurePair(StructureWorldAccess structureWorldAccess, StructureAccessor structureAccessor, ChunkGenerator chunkGenerator, Random random, BlockBox blockBox, ChunkPos chunkPos, BlockPos blockPos) {
+    public @Nullable Pair<Map<ChunkPos, LongOpenHashSet>, LayerManager> getStructurePair(StructureWorldAccess structureWorldAccess, StructureAccessor structureAccessor, ChunkGenerator chunkGenerator, Random random, BlockBox blockBox, ChunkPos chunkPos, BlockPos blockPos) {
         return null;
     }
 

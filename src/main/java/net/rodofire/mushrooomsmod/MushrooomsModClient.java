@@ -3,7 +3,6 @@ package net.rodofire.mushrooomsmod;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback;
-import net.rodofire.easierworldcreator.config.ModConfig;
 import net.rodofire.mushrooomsmod.client.blocks.ModBlockEntityRenderFactory;
 import net.rodofire.mushrooomsmod.client.blocks.ModBlockRenderType;
 import net.rodofire.mushrooomsmod.client.colors.ModColor;

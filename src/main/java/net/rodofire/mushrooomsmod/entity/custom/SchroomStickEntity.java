@@ -1,5 +1,6 @@
 package net.rodofire.mushrooomsmod.entity.custom;
 
+import fr.rodofire.ewc.maths.MathUtil;
 import net.minecraft.entity.EntityDimensions;
 import net.minecraft.entity.EntityPose;
 import net.minecraft.entity.EntityType;
@@ -24,7 +25,6 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
-import net.rodofire.easierworldcreator.maths.MathUtil;
 import net.rodofire.mushrooomsmod.sound.ModSounds;
 import net.rodofire.mushrooomsmod.util.ModTags;
 import org.jetbrains.annotations.Nullable;

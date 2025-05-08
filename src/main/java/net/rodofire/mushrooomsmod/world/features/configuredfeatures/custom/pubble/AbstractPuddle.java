@@ -1,6 +1,8 @@
 package net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.pubble;
 
 import com.mojang.serialization.Codec;
+import fr.rodofire.ewc.util.BlockPlaceUtil;
+import fr.rodofire.ewc.util.FastNoiseLite;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.state.property.Properties;
@@ -10,8 +12,6 @@ import net.minecraft.world.StructureWorldAccess;
 import net.minecraft.world.gen.feature.DefaultFeatureConfig;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.util.FeatureContext;
-import net.rodofire.easierworldcreator.util.BlockPlaceUtil;
-import net.rodofire.easierworldcreator.util.FastNoiseLite;
 
 import java.util.HashSet;
 import java.util.Set;

@@ -1,6 +1,14 @@
 package net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom;
 
 import com.mojang.serialization.Codec;
+import fr.rodofire.ewc.blockdata.StructurePlacementRuleManager;
+import fr.rodofire.ewc.blockdata.layer.BlockLayer;
+import fr.rodofire.ewc.blockdata.layer.BlockLayerManager;
+import fr.rodofire.ewc.shape.block.gen.SphereGen;
+import fr.rodofire.ewc.shape.block.layer.LayerManager;
+import fr.rodofire.ewc.shape.block.placer.LayerPlacer;
+import fr.rodofire.ewc.shape.block.rotations.Rotator;
+import fr.rodofire.ewc.util.FastNoiseLite;
 import it.unimi.dsi.fastutil.longs.LongOpenHashSet;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -10,16 +18,6 @@ import net.minecraft.util.math.random.Random;
 import net.minecraft.world.StructureWorldAccess;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.util.FeatureContext;
-import net.rodofire.easierworldcreator.blockdata.StructurePlacementRuleManager;
-import net.rodofire.easierworldcreator.blockdata.layer.BlockLayer;
-import net.rodofire.easierworldcreator.blockdata.layer.BlockLayerManager;
-import net.rodofire.easierworldcreator.maths.MathUtil;
-import net.rodofire.easierworldcreator.shape.block.gen.SphereGen;
-import net.rodofire.easierworldcreator.shape.block.layer.LayerManager;
-import net.rodofire.easierworldcreator.shape.block.placer.LayerPlacer;
-import net.rodofire.easierworldcreator.shape.block.rotations.Rotator;
-import net.rodofire.easierworldcreator.util.FastNoiseLite;
-import net.rodofire.easierworldcreator.util.WorldGenUtil;
 import net.rodofire.mushrooomsmod.block.ModBlocks;
 import net.rodofire.mushrooomsmod.world.features.config.ModSimpleBlockFeatureConfig;
 

@@ -1,15 +1,14 @@
 package net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.mushrooms.codemushrooms.oth;
 
 import com.mojang.serialization.Codec;
+import fr.rodofire.ewc.blockdata.blocklist.BlockList;
+import fr.rodofire.ewc.blockdata.blocklist.BlockListManager;
+import fr.rodofire.ewc.blockdata.blocklist.OrderedBlockListManager;
+import fr.rodofire.ewc.blockdata.sorter.BlockSorter;
+import fr.rodofire.ewc.maths.MathUtil;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.random.Random;
-import net.rodofire.easierworldcreator.blockdata.blocklist.BlockList;
-import net.rodofire.easierworldcreator.blockdata.blocklist.BlockListManager;
-import net.rodofire.easierworldcreator.blockdata.blocklist.OrderedBlockListManager;
-import net.rodofire.easierworldcreator.blockdata.sorter.BlockSorter;
-import net.rodofire.easierworldcreator.maths.MathUtil;
 import net.rodofire.mushrooomsmod.block.ModBlocks;
 import net.rodofire.mushrooomsmod.world.features.config.PurpleMushroomConfig;
 

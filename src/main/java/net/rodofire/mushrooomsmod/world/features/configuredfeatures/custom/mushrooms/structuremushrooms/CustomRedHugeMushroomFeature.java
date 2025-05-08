@@ -1,6 +1,7 @@
 package net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.mushrooms.structuremushrooms;
 
 import com.mojang.serialization.Codec;
+import fr.rodofire.ewc.structure.NbtPlacer;
 import net.minecraft.block.BlockState;
 import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.server.world.ServerWorld;
@@ -10,7 +11,6 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.WorldAccess;
-import net.rodofire.easierworldcreator.structure.NbtPlacer;
 import net.rodofire.mushrooomsmod.MushrooomsMod;
 import net.rodofire.mushrooomsmod.world.features.config.ModMushroomFeatureConfig;
 

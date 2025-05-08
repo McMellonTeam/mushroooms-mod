@@ -1,25 +1,25 @@
 package net.rodofire.mushrooomsmod.world.features.configuredfeatures.custom.mushrooms.codemushrooms.oth;
 
+import com.mojang.datafixers.util.Pair;
 import com.mojang.serialization.Codec;
+import fr.rodofire.ewc.blockdata.blocklist.BlockListManager;
+import fr.rodofire.ewc.blockdata.blocklist.OrderedBlockListManager;
+import fr.rodofire.ewc.blockdata.layer.BlockLayerManager;
+import fr.rodofire.ewc.blockdata.sorter.BlockSorter;
+import fr.rodofire.ewc.shape.block.gen.LineGen;
+import fr.rodofire.ewc.shape.block.gen.SphereGen;
+import fr.rodofire.ewc.shape.block.layer.LayerManager;
+import fr.rodofire.ewc.shape.block.placer.animator.StructurePlaceAnimator;
+import fr.rodofire.ewc.shape.block.rotations.Rotator;
+import fr.rodofire.ewc.util.LongPosHelper;
 import it.unimi.dsi.fastutil.longs.LongArrayList;
 import it.unimi.dsi.fastutil.longs.LongOpenHashSet;
 import net.minecraft.block.Blocks;
-import net.minecraft.util.Pair;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.StructureWorldAccess;
 import net.minecraft.world.gen.feature.HugeMushroomFeatureConfig;
-import net.rodofire.easierworldcreator.blockdata.blocklist.BlockListManager;
-import net.rodofire.easierworldcreator.blockdata.blocklist.OrderedBlockListManager;
-import net.rodofire.easierworldcreator.blockdata.layer.BlockLayerManager;
-import net.rodofire.easierworldcreator.blockdata.sorter.BlockSorter;
-import net.rodofire.easierworldcreator.shape.block.gen.LineGen;
-import net.rodofire.easierworldcreator.shape.block.gen.SphereGen;
-import net.rodofire.easierworldcreator.shape.block.layer.LayerManager;
-import net.rodofire.easierworldcreator.shape.block.placer.animator.StructurePlaceAnimator;
-import net.rodofire.easierworldcreator.shape.block.rotations.Rotator;
-import net.rodofire.easierworldcreator.util.LongPosHelper;
 
 import java.util.Map;
 import java.util.Set;

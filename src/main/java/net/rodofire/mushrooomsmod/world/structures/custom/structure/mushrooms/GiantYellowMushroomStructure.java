@@ -1,6 +1,8 @@
 package net.rodofire.mushrooomsmod.world.structures.custom.structure.mushrooms;
 
 import com.mojang.serialization.MapCodec;
+import fr.rodofire.ewc.shape.block.gen.SphereGen;
+import fr.rodofire.ewc.shape.block.rotations.Rotator;
 import it.unimi.dsi.fastutil.longs.LongOpenHashSet;
 import net.minecraft.structure.StructurePiecesCollector;
 import net.minecraft.util.Identifier;
@@ -9,8 +11,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.gen.structure.StructureType;
-import net.rodofire.easierworldcreator.shape.block.gen.SphereGen;
-import net.rodofire.easierworldcreator.shape.block.rotations.Rotator;
 import net.rodofire.mushrooomsmod.MushrooomsMod;
 import net.rodofire.mushrooomsmod.world.structures.ModStructureTypes;
 import net.rodofire.mushrooomsmod.world.structures.custom.config.mushroom.GiantYellowMushroomGeneratorConfig;
