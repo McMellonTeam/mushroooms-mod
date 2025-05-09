@@ -37,7 +37,7 @@ public abstract class AbstractStalactiteFeature extends Feature<StalactiteFeatur
         top = getTopBlock();
 
         for (int i = 0; i < tries; i++) {
-            BlockPos secondPos = pos.add(random.nextBetween(-15, 15), random.nextBetween(-25, 25), random.nextBetween(-15, 15));
+            BlockPos secondPos = pos.add(random.nextBetween(-14, 14), random.nextBetween(-25, 25), random.nextBetween(-14, 14));
             if (secondPos.getY() < world.getBottomY())
                 continue;
 
