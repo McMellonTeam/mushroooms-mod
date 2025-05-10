@@ -2,6 +2,7 @@ package net.rodofire.mushrooomsmod.world.features.configuredfeatures;
 
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import net.minecraft.util.Identifier;
 import net.minecraft.world.gen.feature.*;
 import net.rodofire.mushrooomsmod.MushrooomsMod;
 import net.rodofire.mushrooomsmod.world.features.config.*;
@@ -130,6 +131,6 @@ public class ModFeatures<FC extends FeatureConfig> {
     }
 
     private static <C extends FeatureConfig, F extends Feature<C>> F registerCustomFeature(String name, F feature) {
-        return Registry.register(Registries.FEATURE, name, feature);
+        return Registry.register(Registries.FEATURE, Identifier.of(MushrooomsMod.MOD_ID, name), feature);
     }
 }
